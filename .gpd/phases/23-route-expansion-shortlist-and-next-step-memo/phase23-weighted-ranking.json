@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "room_temperature_k": 300,
+  "axes": [
+    {
+      "id": "A1",
+      "name": "Absolute Tc headroom",
+      "weight": 0.30,
+      "description": "Best credible retained/ambient Tc vs 300 K gap"
+    },
+    {
+      "id": "A2",
+      "name": "Evidence depth",
+      "weight": 0.25,
+      "description": "Independent reproductions, measurement types, sample quality"
+    },
+    {
+      "id": "A3",
+      "name": "Controllable lever count",
+      "weight": 0.20,
+      "description": "Named experimentally demonstrated uplift levers"
+    },
+    {
+      "id": "A4",
+      "name": "Operating-pressure feasibility",
+      "weight": 0.15,
+      "description": "Is the best Tc achievable at ambient operating conditions?"
+    },
+    {
+      "id": "A5",
+      "name": "Ambient retention pathway clarity",
+      "weight": 0.10,
+      "description": "Demonstrated or plausible mechanism to retain pressure-enhanced Tc at ambient"
+    }
+  ],
+  "weight_sum": 1.00,
+  "routes": [
+    {
+      "name": "Hg-family cuprates",
+      "rank": 1,
+      "status": "primary",
+      "scores": {
+        "A1": 5,
+        "A2": 4,
+        "A3": 3,
+        "A4": 5,
+        "A5": 3
+      },
+      "weighted_scores": {
+        "A1": 1.50,
+        "A2": 1.00,
+        "A3": 0.60,
+        "A4": 0.75,
+        "A5": 0.30
+      },
+      "weighted_total": 4.15,
+      "key_benchmarks": [
+        {
+          "tc_k": 151,
+          "tc_definition": "zero-resistance",
+          "operating_state": "retained ambient after pressure-quench synthesis",
+          "gap_to_300k": 149,
+          "source": "Deng, Chu et al., PNAS 2026 (arXiv:2603.12437)"
+        },
+        {
+          "tc_k": 153,
+          "tc_definition": "zero-resistance",
+          "operating_state": "under ~23 GPa pressure",
+          "gap_to_300k": 147,
+          "source": "Gao et al., Nature Commun. 2015 (doi:10.1038/ncomms9990)"
+        },
+        {
+          "tc_k": 166,
+          "tc_definition": "onset",
+          "operating_state": "under ~23 GPa pressure",
+          "gap_to_300k": 134,
+          "source": "Gao et al., Nature Commun. 2015 (doi:10.1038/ncomms9990)"
+        }
+      ],
+      "control_knobs": [
+        "pressure-quench transfer",
+        "multilayer optimization",
+        "inner_outer_plane_differentiation",
+        "oxygen_tuning",
+        "reservoir_layer_chemistry"
+      ]
+    },
+    {
+      "name": "nickelates",
+      "rank": 2,
+      "status": "secondary",
+      "scores": {
+        "A1": 2,
+        "A2": 3,
+        "A3": 4,
+        "A4": 3,
+        "A5": 3
+      },
+      "weighted_scores": {
+        "A1": 0.60,
+        "A2": 0.75,
+        "A3": 0.80,
+        "A4": 0.45,
+        "A5": 0.30
+      },
+      "weighted_total": 2.90,
+      "key_benchmarks": [
+        {
+          "tc_k": 63,
+          "tc_definition": "onset",
+          "operating_state": "ambient pressure (bilayer La3Ni2O7-class film)",
+          "gap_to_300k": 237,
+          "source": "arXiv:2512.04708"
+        },
+        {
+          "tc_k": 40,
+          "tc_definition": "zero-resistance",
+          "operating_state": "ambient pressure (infinite-layer SmNiO2-class bulk)",
+          "gap_to_300k": 260,
+          "source": "Sun et al., Nature 2025 (s41586-025-08893-4)"
+        },
+        {
+          "tc_k": 96,
+          "tc_definition": "onset",
+          "operating_state": "under >20 GPa operating pressure (single crystal)",
+          "gap_to_300k": 204,
+          "source": "Wang et al., Nature 2025 (s41586-025-09954-4)"
+        }
+      ],
+      "sub_families": [
+        {
+          "name": "bilayer La3Ni2O7-class",
+          "best_ambient_tc_k": 63,
+          "best_ambient_tc_definition": "onset",
+          "best_pressurized_tc_k": 96,
+          "best_pressurized_tc_definition": "onset"
+        },
+        {
+          "name": "infinite-layer SmNiO2-class",
+          "best_ambient_tc_k": 40,
+          "best_ambient_tc_definition": "zero-resistance",
+          "best_pressurized_tc_k": null,
+          "best_pressurized_tc_definition": null
+        },
+        {
+          "name": "trilayer La4Ni3O10-class",
+          "best_ambient_tc_k": null,
+          "best_ambient_tc_definition": null,
+          "best_pressurized_tc_k": 30,
+          "best_pressurized_tc_definition": "approximate, under 69 GPa"
+        }
+      ],
+      "control_knobs": [
+        "compressive_strain",
+        "hydrostatic_pressure",
+        "oxygen_stoichiometry",
+        "rare_earth_substitution",
+        "bilayer_trilayer_choice"
+      ]
+    }
+  ],
+  "ranking_result": {
+    "primary": "Hg-family cuprates",
+    "primary_score": 4.15,
+    "secondary": "nickelates",
+    "secondary_score": 2.90,
+    "spread": 1.25
+  },
+  "gap_arithmetic": {
+    "hg1223_retained_ambient": {
+      "tc_k": 151,
+      "gap_k": 149,
+      "check": "300 - 151 = 149"
+    },
+    "nickelate_ambient_onset": {
+      "tc_k": 63,
+      "gap_k": 237,
+      "check": "300 - 63 = 237"
+    },
+    "nickelate_ambient_bulk": {
+      "tc_k": 40,
+      "gap_k": 260,
+      "check": "300 - 40 = 260"
+    }
+  }
+}
