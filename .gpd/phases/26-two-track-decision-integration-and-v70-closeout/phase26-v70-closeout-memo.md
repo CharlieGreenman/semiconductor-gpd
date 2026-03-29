@@ -271,6 +271,34 @@ Room-temperature gap: 300 - 151 = **149 K**. Unchanged.
 
 ---
 
+## Appendix: 17-Dimension Cross-Artifact Consistency Check
+
+Verified across the closeout memo, integrated assessment (26-01), pivot assessment (DEC-02), stall memo (DEC-03), Phase 24 summaries/deliverables, and Phase 25 summaries/deliverables.
+
+| # | Dimension | Expected | Closeout | Assessment | Pivot | Stall | Ph24 | Ph25 | Result |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | Success gate value | 131 K | 131 K | 131 K | 131 K | 131 K | 131 K | -- | **PASS** |
+| 2 | Room-temperature gap | 149 K (300-151) | 149 K (7 sections) | 149 K (11x) | 149 K (4x) | 149 K (5x) | 149 K | 149 K | **PASS** |
+| 3 | Fallback gap | 166 K (300-134) | 166 K | 166 K | 166 K | 166 K | 166 K | -- | **PASS** |
+| 4 | Nickelate invest gate | 50 K zero-resist | 50 K | 50 K | 50 K | 50 K | -- | 50 K | **PASS** |
+| 5 | Nickelate evaluate gate | 80 K zero-resist | 80 K | 80 K | 80 K | -- | -- | 80 K | **PASS** |
+| 6 | Nickelate promote gate | 100 K zero-resist | 100 K | 100 K | 100 K | -- | -- | 100 K | **PASS** |
+| 7 | Nickelate current status | WATCH (below invest) | WATCH | WATCH | WATCH | WATCH | -- | WATCH | **PASS** |
+| 8 | Best nickelate zero-resist | 40 K (SmNiO2) | 40 K | 40 K | 40 K | 40 K | -- | 40 K | **PASS** |
+| 9 | Best bilayer film zero-resist | ~2-3 K | ~2-3 K | ~3 K | -- | ~3 K | -- | ~3 K | **PASS** |
+| 10 | Route ranking | Hg1223 primary, nickelates secondary | Confirmed | Confirmed | N/A | N/A | N/A | N/A | **PASS** |
+| 11 | VALD-01: pressure separation | Enforced | Yes (Sec 9) | Yes (Sec 5) | Yes (all Tc) | Yes (Sec 5) | Yes | Yes | **PASS** |
+| 12 | VALD-02: 149 K gap | In all documents | Yes (7 secs) | Yes (11x) | Yes (4x) | Yes (5x) | Yes | Yes | **PASS** |
+| 13 | VALD-03: route decisions traced | All traced | 24/24 ref'd | 24/24 traced | Per-outcome | Per-restart | N/A | N/A | **PASS** |
+| 14 | Forbidden proxy violations | None | None | 5/5 rejected | None | None | 6/6 rejected | 5/5 rejected | **PASS** |
+| 15 | Phase 23 pivot triggers | Correctly referenced | Yes (Sec 4, 8) | Yes (Rule B) | Yes (Sec 1) | Yes (Sec 3) | Yes | Yes | **PASS** |
+| 16 | Phase 24 15/15 consistency | Still valid | Referenced | N/A | N/A | N/A | 15/15 PASS | N/A | **PASS** |
+| 17 | Phase 25 gates match Phase 23 | Thresholds unchanged | 50/80/100 K | 50/80/100 K | 50/80/100 K | 50 K | N/A | 50/80/100 K exact | **PASS** |
+
+**Result: 17/17 cross-checks PASS.** No inconsistencies found between Phase 26 documents and Phase 24/25 source documents. No corrections needed.
+
+---
+
 _Phase: 26-two-track-decision-integration-and-v70-closeout_
 _Plan: 02, DEC-01_
 _Completed: 2026-03-29_
