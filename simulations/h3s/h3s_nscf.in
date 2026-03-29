@@ -1,0 +1,51 @@
+! H3S Im-3m NSCF calculation for Wannier90/EPW
+! ASSERT_CONVENTION: natural_units=NOT_used, fourier_convention=QE_plane_wave, unit_system_internal=Rydberg_atomic, xc_functional=PBEsol, pseudopotential=ONCV_norm_conserving
+!
+! Run AFTER SCF. Computes eigenvalues on uniform k-grid for Wannier interpolation.
+! The k-grid here must match the coarse k-grid used in EPW (nk1=nk2=nk3 in epw.in).
+! Using 24x24x24 for consistency with SCF; EPW coarse grid is 6x6x6 (subset).
+!
+! nbnd: Include enough bands above E_F for disentanglement window.
+!   H3S has 4 atoms, 7 valence electrons (S: 6, H: 1 each, total 6+3=9?
+!   Actually S: 6 valence (3s2 3p4), H: 1 each => 6 + 3 = 9 valence electrons)
+!   Need ~15-20 bands to capture bands in disentanglement window.
+
+&CONTROL
+  calculation  = 'nscf'
+  prefix       = 'h3s'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  verbosity    = 'high'
+/
+
+&SYSTEM
+  ibrav        = 3           ! BCC primitive cell
+  celldm(1)    = 5.66918     ! UPDATE with relaxed value from vc-relax
+  nat          = 4
+  ntyp         = 2
+  ecutwfc      = 100.0
+  ecutrho      = 400.0
+  occupations  = 'smearing'
+  smearing     = 'mp'
+  degauss      = 0.02
+  nbnd         = 20          ! Include bands above E_F for Wannier disentanglement
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10
+  diagonalization = 'david'
+/
+
+ATOMIC_SPECIES
+  S   32.065  S.upf
+  H    1.008  H.upf
+
+ATOMIC_POSITIONS {crystal}
+  S   0.000000  0.000000  0.000000
+  H   0.500000  0.500000  0.000000
+  H   0.500000  0.000000  0.500000
+  H   0.000000  0.500000  0.500000
+
+! Uniform k-grid for NSCF (same as SCF for maximum consistency)
+K_POINTS {automatic}
+  24  24  24  0  0  0

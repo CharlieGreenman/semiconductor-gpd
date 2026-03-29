@@ -1,0 +1,71 @@
+! H3S Im-3m variable-cell relaxation at 150 GPa
+! ASSERT_CONVENTION: natural_units=NOT_used, fourier_convention=QE_plane_wave, unit_system_internal=Rydberg_atomic, pressure_unit_qe=kbar, xc_functional=PBEsol, pseudopotential=ONCV_norm_conserving
+!
+! Structure: Im-3m (space group #229), BCC primitive cell
+!   S at 2a: (0,0,0)
+!   H at 6b: (1/2,1/2,0), (1/2,0,1/2), (0,1/2,1/2) in crystal coords
+!   4 atoms per primitive cell (1 S + 3 H)
+!
+! Target pressure: 150 GPa = 1500 kbar
+! Initial lattice parameter: a_conv ~ 3.0 A (will be optimized)
+!
+! Pseudopotentials: ONCV PseudoDojo PBEsol stringent
+! Reference: Drozdov et al., Nature 525, 73 (2015) -- Tc = 203 K at 155 GPa
+! Reference: Einaga et al., Nature Physics 12, 835 (2016) -- a ~ 3.10 A at 140 GPa
+
+&CONTROL
+  calculation  = 'vc-relax'
+  prefix       = 'h3s'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  tprnfor      = .true.
+  tstress      = .true.
+  forc_conv_thr = 1.0d-4
+  etot_conv_thr = 1.0d-6
+  nstep        = 200
+/
+
+&SYSTEM
+  ibrav        = 3           ! BCC primitive cell
+  celldm(1)    = 5.66918     ! a_conv = 3.0 A = 5.66918 Bohr (initial guess)
+  nat          = 4
+  ntyp         = 2
+  ecutwfc      = 100.0       ! Ry (will convergence-test: 60, 80, 100, 120 Ry)
+  ecutrho      = 400.0       ! Ry (4x ecutwfc for NC PPs)
+  occupations  = 'smearing'
+  smearing     = 'mp'        ! Methfessel-Paxton order 1
+  degauss      = 0.02        ! Ry (~0.27 eV; appropriate for metallic H3S)
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10     ! Tight convergence for phonon-quality wavefunctions
+  mixing_beta  = 0.3         ! Conservative mixing for metallic system under pressure
+  mixing_mode  = 'plain'
+  diagonalization = 'david'
+/
+
+&IONS
+  ion_dynamics = 'bfgs'
+/
+
+&CELL
+  cell_dynamics = 'bfgs'
+  press        = 1500.0      ! Target pressure in kbar (150 GPa = 1500 kbar)
+  press_conv_thr = 0.5       ! kbar convergence threshold (0.05 GPa)
+  cell_dofree  = 'ibrav'     ! Preserve BCC symmetry during relaxation
+/
+
+ATOMIC_SPECIES
+  S   32.065  S.upf         ! PseudoDojo PBEsol ONCV NC
+  H    1.008  H.upf         ! PseudoDojo PBEsol ONCV NC
+
+! Atomic positions in crystal (fractional) coordinates of primitive BCC cell
+ATOMIC_POSITIONS {crystal}
+  S   0.000000  0.000000  0.000000
+  H   0.500000  0.500000  0.000000
+  H   0.500000  0.000000  0.500000
+  H   0.000000  0.500000  0.500000
+
+! 24x24x24 Monkhorst-Pack k-grid, Gamma-centered
+K_POINTS {automatic}
+  24  24  24  0  0  0

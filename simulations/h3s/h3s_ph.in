@@ -1,0 +1,29 @@
+! H3S Im-3m DFPT phonon calculation at 150 GPa
+! ASSERT_CONVENTION: natural_units=NOT_used, fourier_convention=QE_plane_wave, unit_system_internal=Rydberg_atomic, xc_functional=PBEsol, asr_enforcement=crystal
+!
+! Computes dynamical matrices and electron-phonon matrix elements on coarse q-grid.
+! The q-grid must match the EPW coarse grid (nq1=nq2=nq3 in epw.in).
+!
+! Output: dynamical matrices at each q-point, dvscf files for EPW.
+! Post-processing: q2r.x (force constants) -> matdyn.x (phonon dispersion)
+!
+! Phonon frequency ranges expected for H3S at 150 GPa:
+!   - S-derived modes: 20-60 meV (160-484 cm^-1)
+!   - H-stretching modes: 100-200 meV (807-1613 cm^-1)
+!   - All frequencies must be real (no imaginary modes for dynamically stable Im-3m)
+
+Phonon calculation for H3S at 150 GPa
+&INPUTPH
+  prefix       = 'h3s'
+  outdir       = './tmp/'
+  fildyn       = 'h3s.dyn'
+  fildvscf     = 'dvscf'
+  ldisp        = .true.
+  nq1          = 6
+  nq2          = 6
+  nq3          = 6
+  tr2_ph       = 1.0d-14      ! Tight threshold for e-ph quality
+  alpha_mix(1) = 0.3
+  niter_ph     = 100
+  electron_phonon = 'interpolated'
+/
