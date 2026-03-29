@@ -1,0 +1,534 @@
+{
+  "material": "KGaH3",
+  "space_group": "Pm-3m",
+  "pressure_GPa": 10.0,
+  "structure": {
+    "celldm1_bohr": 7.02724,
+    "a_angstrom": 3.71865378148,
+    "primitive_atoms": [
+      [
+        "K",
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        "Ga",
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      [
+        "H",
+        [
+          0.5,
+          0.5,
+          0.0
+        ]
+      ],
+      [
+        "H",
+        [
+          0.5,
+          0.0,
+          0.5
+        ]
+      ],
+      [
+        "H",
+        [
+          0.0,
+          0.5,
+          0.5
+        ]
+      ]
+    ],
+    "nat_primitive": 5
+  },
+  "supercell": {
+    "size": [
+      2,
+      2,
+      2
+    ],
+    "nat": 40,
+    "cell_bohr": [
+      [
+        14.05448,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        14.05448,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        14.05448
+      ]
+    ],
+    "atoms_frac": [
+      [
+        "K",
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        "Ga",
+        [
+          0.25,
+          0.25,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.25,
+          0.0
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.0,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.0,
+          0.25,
+          0.25
+        ]
+      ],
+      [
+        "K",
+        [
+          0.0,
+          0.0,
+          0.5
+        ]
+      ],
+      [
+        "Ga",
+        [
+          0.25,
+          0.25,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.25,
+          0.5
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.0,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.0,
+          0.25,
+          0.75
+        ]
+      ],
+      [
+        "K",
+        [
+          0.0,
+          0.5,
+          0.0
+        ]
+      ],
+      [
+        "Ga",
+        [
+          0.25,
+          0.75,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.75,
+          0.0
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.5,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.0,
+          0.75,
+          0.25
+        ]
+      ],
+      [
+        "K",
+        [
+          0.0,
+          0.5,
+          0.5
+        ]
+      ],
+      [
+        "Ga",
+        [
+          0.25,
+          0.75,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.75,
+          0.5
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.5,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.0,
+          0.75,
+          0.75
+        ]
+      ],
+      [
+        "K",
+        [
+          0.5,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        "Ga",
+        [
+          0.75,
+          0.25,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.25,
+          0.0
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.0,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.5,
+          0.25,
+          0.25
+        ]
+      ],
+      [
+        "K",
+        [
+          0.5,
+          0.0,
+          0.5
+        ]
+      ],
+      [
+        "Ga",
+        [
+          0.75,
+          0.25,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.25,
+          0.5
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.0,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.5,
+          0.25,
+          0.75
+        ]
+      ],
+      [
+        "K",
+        [
+          0.5,
+          0.5,
+          0.0
+        ]
+      ],
+      [
+        "Ga",
+        [
+          0.75,
+          0.75,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.75,
+          0.0
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.5,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.5,
+          0.75,
+          0.25
+        ]
+      ],
+      [
+        "K",
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      [
+        "Ga",
+        [
+          0.75,
+          0.75,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.75,
+          0.5
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.5,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.5,
+          0.75,
+          0.75
+        ]
+      ]
+    ]
+  },
+  "sscha_parameters": {
+    "temperature_K": 0,
+    "n_configs": 100,
+    "min_step_dyn": 0.01,
+    "kong_liu_threshold": 0.5,
+    "max_populations": 20,
+    "gradient_threshold": 1e-08,
+    "meaningful_factor": 0.001,
+    "enforce_symmetry": true,
+    "symmetry_group": "Pm-3m",
+    "random_seed": 42,
+    "supercell": [
+      2,
+      2,
+      2
+    ],
+    "nat_supercell": 40,
+    "nat_primitive": 5,
+    "pressure_GPa": 10.0
+  },
+  "qe_parameters": {
+    "calculation": "scf",
+    "prefix": "kgah3_sc",
+    "ecutwfc": 80.0,
+    "ecutrho": 640.0,
+    "conv_thr": 1e-08,
+    "smearing": "mp",
+    "degauss": 0.02,
+    "k_points": [
+      2,
+      2,
+      2
+    ],
+    "k_offsets": [
+      0,
+      0,
+      0
+    ],
+    "mixing_beta": 0.3,
+    "mixing_mode": "plain",
+    "diagonalization": "david",
+    "press": 100.0,
+    "pseudo_dir": "./pseudo/",
+    "outdir": "./tmp/",
+    "xc_functional": "PBEsol"
+  },
+  "pseudopotentials": {
+    "K": {
+      "mass": 39.0983,
+      "file": "K.upf"
+    },
+    "Ga": {
+      "mass": 69.723,
+      "file": "Ga.upf"
+    },
+    "H": {
+      "mass": 1.008,
+      "file": "H.upf"
+    }
+  },
+  "harmonic_reference": {
+    "source": "Phase 3 DFPT (simulations/kgah3/kgah3_ph.in)",
+    "q_grid": [
+      2,
+      2,
+      2
+    ],
+    "n_qpoints": 8,
+    "nat": 5,
+    "n_modes": 15,
+    "gamma_frequencies_cm1": {
+      "acoustic_1": 0.0,
+      "acoustic_2": 0.0,
+      "acoustic_3": 0.0,
+      "K_Ga_modes": [
+        108.5,
+        108.5,
+        108.5,
+        185.2,
+        185.2,
+        185.2
+      ],
+      "H_bend": [
+        412.8,
+        412.8,
+        412.8
+      ],
+      "H_stretch": [
+        1156.3,
+        1156.3,
+        1156.3
+      ],
+      "min_freq_cm1": 35.0
+    },
+    "reference_values": {
+      "lambda": 2.115,
+      "Tc_eliashberg_mu010_K": 162.5,
+      "Tc_eliashberg_mu013_K": 152.5,
+      "omega_log_K": 554.3,
+      "omega_log_meV": 47.76,
+      "min_freq_cm1": 35.0,
+      "benchmark": {
+        "source": "Du et al., Adv. Sci. 11, 2408370 (2024)",
+        "Tc_K": 146.0,
+        "deviation_pct": 11.3,
+        "note": "Our Tc=152.5 K vs Du 146 K at 10 GPa; SSCHA should reduce our Tc toward Du"
+      }
+    },
+    "dynmat_files": [
+      "kgah3_dyn1",
+      "kgah3_dyn2",
+      "kgah3_dyn3",
+      "kgah3_dyn4",
+      "kgah3_dyn5",
+      "kgah3_dyn6",
+      "kgah3_dyn7",
+      "kgah3_dyn8"
+    ],
+    "note": "Harmonic dynamical matrices from Phase 3 DFPT at 10 GPa. These serve as the SSCHA starting point."
+  },
+  "convergence_criteria": {
+    "free_energy_meV_per_atom": 1.0,
+    "phonon_freq_cm1": 5.0,
+    "gradient_Ry2": 1e-08,
+    "kong_liu_min": 0.5,
+    "min_populations_for_convergence": 3
+  },
+  "expected_results": {
+    "note": "Expected from H3S/YH6/CaH6 analogy",
+    "lambda_reduction_pct": "20-35%",
+    "Tc_reduction_pct": "15-25%",
+    "H_mode_hardening": true,
+    "all_frequencies_real": true,
+    "du_et_al_benchmark": "SSCHA Tc should be closer to Du et al. 146 K than harmonic 152.5 K"
+  }
+}

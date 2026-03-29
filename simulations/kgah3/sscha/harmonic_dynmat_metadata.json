@@ -1,0 +1,60 @@
+{
+  "source": "Phase 3 DFPT (simulations/kgah3/kgah3_ph.in)",
+  "q_grid": [
+    2,
+    2,
+    2
+  ],
+  "n_qpoints": 8,
+  "nat": 5,
+  "n_modes": 15,
+  "gamma_frequencies_cm1": {
+    "acoustic_1": 0.0,
+    "acoustic_2": 0.0,
+    "acoustic_3": 0.0,
+    "K_Ga_modes": [
+      108.5,
+      108.5,
+      108.5,
+      185.2,
+      185.2,
+      185.2
+    ],
+    "H_bend": [
+      412.8,
+      412.8,
+      412.8
+    ],
+    "H_stretch": [
+      1156.3,
+      1156.3,
+      1156.3
+    ],
+    "min_freq_cm1": 35.0
+  },
+  "reference_values": {
+    "lambda": 2.115,
+    "Tc_eliashberg_mu010_K": 162.5,
+    "Tc_eliashberg_mu013_K": 152.5,
+    "omega_log_K": 554.3,
+    "omega_log_meV": 47.76,
+    "min_freq_cm1": 35.0,
+    "benchmark": {
+      "source": "Du et al., Adv. Sci. 11, 2408370 (2024)",
+      "Tc_K": 146.0,
+      "deviation_pct": 11.3,
+      "note": "Our Tc=152.5 K vs Du 146 K at 10 GPa; SSCHA should reduce our Tc toward Du"
+    }
+  },
+  "dynmat_files": [
+    "kgah3_dyn1",
+    "kgah3_dyn2",
+    "kgah3_dyn3",
+    "kgah3_dyn4",
+    "kgah3_dyn5",
+    "kgah3_dyn6",
+    "kgah3_dyn7",
+    "kgah3_dyn8"
+  ],
+  "note": "Harmonic dynamical matrices from Phase 3 DFPT at 10 GPa. These serve as the SSCHA starting point."
+}
