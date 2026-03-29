@@ -1,0 +1,137 @@
+{
+  "description": "SSCHA-corrected Tc(P) for CsInH3 at 5 pressures with reference compounds",
+  "plan": "05-01",
+  "phase": "05-characterization-and-sensitivity-analysis",
+  "method": "Phase 3 harmonic Tc * Phase 4 SSCHA correction ratio",
+  "sscha_correction_model": {
+    "type": "linear interpolation/extrapolation",
+    "calibration_points": "3 GPa (lambda_ratio=0.643) and 5 GPa (lambda_ratio=0.681)",
+    "extrapolation_note": "lambda_ratio increases with P (phonons stiffen); capped at 0.85",
+    "Tc_ratio_model": "Linear in P, calibrated at 3 and 5 GPa"
+  },
+  "mustar_protocol": "FIXED at 0.10 and 0.13 (NOT tuned)",
+  "fp_harmonic_on_final_fig": "REJECTED: All plotted Tc values are SSCHA-corrected",
+  "fp_tuned_mustar": "REJECTED: mu*=0.13 is primary; 0.10 shown as band only",
+  "conventions": {
+    "pressure": "GPa",
+    "temperature": "K",
+    "lambda": "dimensionless",
+    "omega_log": "K (where noted) or meV (harmonic input)",
+    "lambda_definition": "2*integral[alpha2F/omega]"
+  },
+  "CsInH3": [
+    {
+      "pressure_gpa": 3.0,
+      "Tc_harmonic_mu010": 315.0,
+      "Tc_harmonic_mu013": 305.0,
+      "Tc_sscha_mu010": 233.8,
+      "Tc_sscha_mu013": 214.4,
+      "lambda_harmonic": 3.5204,
+      "lambda_sscha": 2.2627,
+      "lambda_ratio": 0.6427,
+      "omega_log_harmonic_meV": 68.67,
+      "omega_log_sscha_K": 830.8,
+      "sscha_stable": true,
+      "quantum_stabilized": true,
+      "source": "direct_sscha"
+    },
+    {
+      "pressure_gpa": 5.0,
+      "Tc_harmonic_mu010": 295.0,
+      "Tc_harmonic_mu013": 285.0,
+      "Tc_sscha_mu010": 224.2,
+      "Tc_sscha_mu013": 204.4,
+      "lambda_harmonic": 2.8079,
+      "lambda_sscha": 1.9136,
+      "lambda_ratio": 0.6815,
+      "omega_log_harmonic_meV": 81.37,
+      "omega_log_sscha_K": 976.0,
+      "sscha_stable": true,
+      "quantum_stabilized": false,
+      "source": "direct_sscha"
+    },
+    {
+      "pressure_gpa": 7.0,
+      "Tc_harmonic_mu010": 275.0,
+      "Tc_harmonic_mu013": 265.0,
+      "Tc_sscha_mu010": 214.0,
+      "Tc_sscha_mu013": 193.7,
+      "lambda_harmonic": 2.4246,
+      "lambda_sscha": 1.7464,
+      "lambda_ratio": 0.7203,
+      "omega_log_harmonic_meV": 90.1,
+      "omega_log_sscha_K": 1082.2,
+      "sscha_stable": true,
+      "quantum_stabilized": false,
+      "source": "extrapolated"
+    },
+    {
+      "pressure_gpa": 10.0,
+      "Tc_harmonic_mu010": 255.0,
+      "Tc_harmonic_mu013": 245.0,
+      "Tc_sscha_mu010": 205.3,
+      "Tc_sscha_mu013": 184.2,
+      "lambda_harmonic": 2.079,
+      "lambda_sscha": 1.6185,
+      "lambda_ratio": 0.7785,
+      "omega_log_harmonic_meV": 99.5,
+      "omega_log_sscha_K": 1212.4,
+      "sscha_stable": true,
+      "quantum_stabilized": false,
+      "source": "extrapolated"
+    },
+    {
+      "pressure_gpa": 15.0,
+      "Tc_harmonic_mu010": 235.0,
+      "Tc_harmonic_mu013": 225.0,
+      "Tc_sscha_mu010": 199.8,
+      "Tc_sscha_mu013": 177.1,
+      "lambda_harmonic": 1.7494,
+      "lambda_sscha": 1.487,
+      "lambda_ratio": 0.85,
+      "omega_log_harmonic_meV": 110.2,
+      "omega_log_sscha_K": 1374.7,
+      "sscha_stable": true,
+      "quantum_stabilized": false,
+      "source": "extrapolated"
+    }
+  ],
+  "KGaH3": [
+    {
+      "pressure_gpa": 10.0,
+      "Tc_harmonic_mu010": 162.5,
+      "Tc_harmonic_mu013": 152.5,
+      "Tc_sscha_mu010": 94.4,
+      "Tc_sscha_mu013": 84.7,
+      "lambda_harmonic": 2.115,
+      "lambda_sscha": 1.4855,
+      "lambda_ratio": 0.7024,
+      "omega_log_sscha_K": 571.2,
+      "sscha_stable": true,
+      "quantum_stabilized": false,
+      "source": "direct_sscha"
+    }
+  ],
+  "reference_points": {
+    "H3S": {
+      "Tc_K": 203,
+      "P_GPa": 155,
+      "source": "Drozdov et al., Nature 525, 73 (2015)",
+      "note": "Experimental (first measured high-Tc hydride)"
+    },
+    "LaH10": {
+      "Tc_K": 250,
+      "P_GPa": 170,
+      "source": "Somayazulu et al., PRL 122, 027001 (2019)",
+      "note": "Experimental (highest confirmed Tc)"
+    }
+  },
+  "summary": {
+    "max_Tc_sscha_mu013": 214.4,
+    "max_Tc_pressure_GPa": 3.0,
+    "max_Tc_sscha_mu010": 233.8,
+    "target_300K_reached": false,
+    "shortfall_K": 85.6,
+    "pressure_advantage_vs_H3S": "30x lower (3-5 GPa vs 155 GPa)"
+  }
+}
