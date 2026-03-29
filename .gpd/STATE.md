@@ -14,9 +14,9 @@ See: .gpd/PROJECT.md (updated 2026-03-29)
 **Total Phases:** 23
 **Current Plan:** 03 (complete)
 **Total Plans in Phase:** 3
-**Status:** Phase complete, v6.0 ready to close
+**Status:** Milestone complete
 **Last Activity:** 2026-03-29
-**Last Activity Description:** Phase `23` executed: weighted ranking, named shortlist, next-step memo, and cross-artifact consistency check all complete
+**Last Activity Description:** v6.0 milestone completed and archived
 
 **Progress:** [██████████] 100%
 

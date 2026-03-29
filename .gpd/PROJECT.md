@@ -1,98 +1,103 @@
-# Room-Temperature Superconductor Discovery via First-Principles Hydride Design
+# Room-Temperature Superconductor Discovery via Metastability-Guided Materials Design
 
 ## What This Is
 
-The first milestone of this project established that low-pressure ternary MXH3 perovskite hydrides do not deliver room-temperature superconductivity below 10 GPa: the best candidate in the repo, CsInH3, reaches about 214 K at 3 GPa after anharmonic correction, with ambient-pressure retention still unproven. The active program then tested whether any hydride or hydride-derived route could plausibly cross from high-Tc research material into consumer-relevant operation through ambient stability, pressure quenchability, or redesigned chemistry. That route now closes negatively, and the current focus is the broader benchmark pivot: identify the strongest experimentally anchored ambient or pressure-quench candidate after the hydride no-go.
+This project started as a first-principles search for room-temperature superconductivity in lower-pressure hydrides. Milestone `v1.0` closed that route negatively for the `MXH3` perovskite family: the best repo result remains `CsInH3` at about `214 K` and `3 GPa`, with no evidence for ambient retention. Milestone `v2.0` tested whether ambient stability, pressure quenchability, or hydride-derived chemistry could rescue a consumer-relevant path; that route also closed negatively. Milestone `v3.0` widened the scope to experimentally anchored metastability and route ranking, ending with `Hg1223`-class pressure-quenched multilayer cuprates as the primary route and bilayer nickelate films as the backup. Milestone `v4.0` made the `Hg1223` route protocol-specified, control-mapped, and campaign-defined. Milestone `v5.0` then converted that route into a collaborator-facing Stage `A` runbook plus a clean evidence ladder and route-gate package.
 
-## Current Milestone: v2.0 Ambient Retention and Practical Viability
+The active program now shifts again, from campaign packaging back to route expansion. The repo now asks which current route family has the best chance of shrinking the remaining `149 K` gap to room temperature: `Hg`-family multilayer cuprates with higher known pressure headroom, or the fast-moving nickelate frontier with stronger ambient and chemical-pressure control.
 
-**Goal:** Determine whether a credible path exists from the repo's 3 GPa / 214 K CsInH3 result to ambient-pressure, hardware-relevant superconductivity, and if not, pivot to the strongest experimentally anchored benchmark route.
+## Current State (after v6.0)
 
-**Target results:**
+Milestone `v6.0` completed 2026-03-29. The route-expansion question is answered: `Hg`-family cuprates confirmed as the **primary gap-closing route** (weighted score `4.15/5.00`) and nickelates confirmed as **secondary** (`2.90/5.00`). The ranking is robust to `+/-20%` weight perturbation. Named candidates: `Hg1223` (primary), bilayer `La3Ni2O7`-class (secondary lead), infinite-layer `SmNiO2`-class (secondary backup). No room-temperature superconductor has been found. The best carried retained benchmark remains `Hg1223` at `151 K`, still `149 K` below `300 K`.
 
-- Practical viability matrix separating synthesis pressure, operating pressure, and quenchability
-- Quenchability verdict for CsInH3-class phases and one derivative pathway
-- New shortlist of ambient-leaning hydride or hydride-derived candidate families with validation priorities
-- Confidence-ranked benchmark selection after the hydride no-go, with `HgBa2Ca2Cu3O8+delta` identified as the strongest broader benchmark candidate
+## Next Milestone Goals (v7.0)
+
+The next milestone should start with two parallel tracks:
+
+1. **Primary route: Hg1223 PQP reproducibility campaign** — independent reproduction of the `151 K` retained benchmark; success gate = retained ambient zero-resist `Tc >= 131 K`
+2. **Secondary route: Bilayer nickelate strain-Tc mapping** — epitaxial strain engineering in `La3Ni2O7`-class films; success gate = ambient zero-resist `Tc > 80 K`
+
+**Pivot trigger:** If PQP reproduction fails below `131 K`, reassess whether `Hg1223` should remain primary.
+**Promotion trigger:** If nickelate ambient zero-resist reaches `100 K`, promote to co-primary.
 
 ## Core Research Question
 
-Can any hydride or hydride-derived pathway supported by first-principles evidence retain superconductivity at ambient pressure, or after pressure quench, and if not, which experimentally anchored broader benchmark route should replace that search as the repo's next high-confidence candidate?
+After `v5.0`, which route family gives the best chance of actually shrinking the remaining `149 K` gap: `Hg`-family uplift around the `Hg1223` benchmark, nickelate escalation via pressure, strain, and chemical pressure, or neither?
 
 ## Scoping Contract Summary
 
 ### Contract Coverage
 
-- **claim-practical-map**: Build a literature-grounded map that cleanly separates stable ambient, metastable ambient, pressure-quenched, and low-pressure-only superconducting pathways
-- **claim-quenchability**: Produce an explicit decompression and barrier-based verdict on whether CsInH3-class phases can plausibly survive pressure release
-- **claim-practical-candidate**: Identify at least one pathway that achieves either ambient pressure with Tc >= 77 K or a credible retained-pressure/quench route above 150 K
-- **Acceptance signals**: Viability matrix, quenchability scorecard, top-candidate shortlist, and at least one real-`alpha^2F` validation target
-- **False progress to reject**: Treating synthesis pressure as operating pressure, ambient claims from unstable phases, or room-temperature claims based only on synthetic spectra or extrapolation
+- **claim-frontier-headroom-map**: Build a literature-grounded map of the route families that still have meaningful `Tc` headroom after the hydride no-go and `v5.0`
+- **claim-route-expansion-program**: Convert the headroom map into an explicit next-step route program with one primary route and one secondary route
 
 ### User Guidance To Preserve
 
-- **User-stated observables:** Tc(P), operating pressure after synthesis, quenchability, decomposition path, ambient-pressure stability
-- **User-stated deliverables:** Practical viability matrix, quenchability scorecard, updated synthesis guide, next-candidate roadmap
-- **Must-have references / prior outputs:** `data/project_conclusions.md`, `SYNTHESIS-GUIDE.md`, `.gpd/milestones/v1.0-ROADMAP.md`, `.gpd/research/PRACTICAL-PATHWAYS.md`
-- **Stop / rethink conditions:** If no credible ambient or quench-retained path survives and the conventional ambient ceiling remains well below room temperature, this project should stop claiming a consumer-hardware path within conventional hydrides
+- **User-stated objective:** keep pushing the repo toward a more credible discovery path instead of stopping at route pessimism
+- **User-stated guardrail:** do not confuse a benchmark or research platform with a consumer-ready room-temperature material
+- **Must-have prior outputs:** `data/project_conclusions.md`, `SYNTHESIS-GUIDE.md`, [phase21-final-memo.md](/Users/charlie/Razroo/room-temp-semiconductor/.gpd/phases/21-first-campaign-route-gates-and-backup-trigger-memo/phase21-final-memo.md), [phase21-backup-trigger-memo.md](/Users/charlie/Razroo/room-temp-semiconductor/.gpd/phases/21-first-campaign-route-gates-and-backup-trigger-memo/phase21-backup-trigger-memo.md)
+- **Stop / rethink conditions:** if the route-expansion pass still cannot find a route with more upside than the carried `Hg1223` benchmark plus clearer control than a thin experimental anomaly, the next milestone should stop broadening and focus on the single best executable program
 
 ### Scope Boundaries
 
 **In scope**
 
-- Pressure release, metastability, and quenchability of CsInH3-class phases
-- Ambient-pressure and near-ambient hydrides or hydride-derived frameworks
-- Alloying and structural redesign around MXH3, Mg2XH6-like, and hydride-unit/clathrate families
-- Practical viability metrics: operating pressure, synthesis pressure, ambient stability, barriers, cost/toxicity
-- Real DFPT/EPW/SSCHA validation targets for any candidate advanced as practically relevant
+- current primary-source route comparison across `Hg`-family cuprates, nickelates, and conventional near-ambient controls
+- explicit comparison of `Tc` headroom, operating pressure, retention status, and controllable uplift levers
+- ranking the next route-expansion target for post-`v5.0` work
 
 **Out of scope**
 
-- Device engineering, interconnect design, cryogenic packaging, or fabrication workflows
-- Exhaustive AIRSS/CALYPSO searches beyond current compute scope
-- Experimental synthesis claims not backed by direct evidence
-- Unconventional pairing as the main research program for this milestone
+- claiming a room-temperature finished material before decisive evidence exists
+- treating a pressure-only or onset-only signal as an ambient practical route
+- device engineering, consumer hardware design, or industrial scale-up
+- reopening blind hydride screening that ignores completed milestones
 
 ### Active Anchor Registry
 
-- **ref-v1-conclusions**: `data/project_conclusions.md`
-  - Why it matters: Definitive v1.0 answer; establishes the 3 GPa / 214 K baseline and ambient-pressure unknowns
+- **ref-v5-final**: [phase21-final-memo.md](/Users/charlie/Razroo/room-temp-semiconductor/.gpd/phases/21-first-campaign-route-gates-and-backup-trigger-memo/phase21-final-memo.md)
+  - Why it matters: defines the current best retained benchmark and the post-`v5.0` route logic
   - Carry forward: planning | execution | verification | writing
-  - Required action: read | compare | use
-
-- **ref-synthesis-guide**: `SYNTHESIS-GUIDE.md`
-  - Why it matters: Encodes the practical distinction between synthesis conditions and operating conditions for CsInH3
-  - Carry forward: planning | execution | writing
-  - Required action: read | compare | update
-
-- **ref-ambient-ceiling**: Gao et al., "The maximum Tc of conventional superconductors at ambient pressure" (Nature Communications, 2025)
-  - Why it matters: Sets a hard skepticism prior for room-temperature conventional superconductivity at ambient pressure
-  - Carry forward: planning | verification | writing
   - Required action: read | compare | cite
 
-- **ref-stable-ambient-hydrides**: Yanagizawa et al., stable ambient-pressure hydride survey in GNoME (Nature, 2026)
-  - Why it matters: Provides the current stable-ambient hydride baseline, far below room temperature
-  - Carry forward: planning | verification | writing
+- **ref-hg1223-quench**: `Ambient-pressure 151-K superconductivity in HgBa2Ca2Cu3O8+delta via pressure quench` (arXiv, 2026)
+  - Why it matters: strongest carried retained-ambient benchmark
+  - Carry forward: planning | execution | verification | writing
   - Required action: read | compare | cite
 
-- **ref-kb3c3**: Guo et al., "Dynamic high-temperature superconductor at ambient pressure" (Nature, 2025)
-  - Why it matters: Evidence that non-equilibrium pressure history can matter for ambient superconductivity
-  - Carry forward: planning | verification | writing
+- **ref-hg-family-pressure**: `High pressure effects revisited for the cuprate superconductor family with highest critical temperature` (Nature Communications, 2015)
+  - Why it matters: anchors the best known pressure headroom inside the `Hg` family, including `153 K` zero-resist and `166 K` onset in `Hg1223`
+  - Carry forward: planning | execution | verification | writing
   - Required action: read | compare | cite
 
-- **ref-hg1223-quench**: "Ambient-pressure 151-K superconductivity in HgBa2Ca2Cu3O8+δ via pressure quench" (PNAS, 2026)
-  - Why it matters: Strong proof-of-principle that pressure-quench metastability can retain superconductivity at ambient pressure, even outside hydrides
-  - Carry forward: planning | verification | writing
+- **ref-hg1223-gap**: `Unprecedentedly large gap in HgBa2Ca2Cu3O8+delta with the highest Tc at ambient pressure` (npj Quantum Materials, 2025)
+  - Why it matters: supports multilayer and inner-plane physics as a real uplift lever rather than a vague materials slogan
+  - Carry forward: planning | execution | verification | writing
   - Required action: read | compare | cite
 
-- **ref-mg2xh6**: Ambient-pressure hydride family predictions above 80 K (npj Computational Materials, 2024)
-  - Why it matters: Shows the best currently discussed stable-ambient conventional hydride direction still falls well short of room temperature
-  - Carry forward: planning | verification | writing
+- **ref-lapr327-ambient**: `Superconductivity onset above 60 K in ambient-pressure nickelate films` (arXiv, 2025; National Science Review 2026)
+  - Why it matters: strongest carried ambient nickelate film watchpoint
+  - Carry forward: planning | execution | verification | writing
   - Required action: read | compare | cite
 
-- **ref-clathrate-units**: Hydride-unit filled B-C clathrate design strategy (Communications Physics, 2024)
-  - Why it matters: Motivates moving beyond simple MXH3 perovskites toward hydride-derived frameworks
-  - Carry forward: planning | execution | writing
+- **ref-smnio2-40k**: `Bulk superconductivity near 40 K in hole-doped SmNiO2 at ambient pressure` (Nature, 2025)
+  - Why it matters: adds an ambient infinite-layer nickelate benchmark with stronger bulk evidence
+  - Carry forward: planning | execution | verification | writing
+  - Required action: read | compare | cite
+
+- **ref-nickelate-pressure-film**: `Enhanced superconductivity in the compressively strained bilayer nickelate thin films by pressure` (Nature Communications, 2026)
+  - Why it matters: shows that pressure and strain act cooperatively in bilayer nickelates rather than as unrelated routes
+  - Carry forward: planning | execution | verification | writing
+  - Required action: read | compare | cite
+
+- **ref-nickelate-96k**: `Bulk superconductivity up to 96 K in pressurized nickelate single crystals` (Nature, 2026)
+  - Why it matters: current highest nickelate `Tc` anchor and strongest evidence that nickelates still have headroom
+  - Carry forward: planning | execution | verification | writing
+  - Required action: read | compare | cite
+
+- **ref-conventional-ceiling**: `The maximum Tc of conventional superconductors at ambient pressure` (Nature Communications, 2025)
+  - Why it matters: keeps the conventional near-ambient route as a control rather than a hidden optimism sink
+  - Carry forward: planning | execution | verification | writing
   - Required action: read | compare | cite
 
 ### Carry-Forward Inputs
@@ -100,142 +105,84 @@ Can any hydride or hydride-derived pathway supported by first-principles evidenc
 - `data/project_conclusions.md`
 - `SYNTHESIS-GUIDE.md`
 - `.gpd/milestones/v1.0-ROADMAP.md`
-- `.gpd/milestones/v1.0-REQUIREMENTS.md`
-- CsInH3 baseline: Tc = 214 K at 3 GPa, `E_hull = 6 meV/atom`, ambient-pressure retention unknown
-- Benchmark baseline: H3S error 10.5%, LaH10 error 10.6%
+- `.gpd/milestones/v2.0-ROADMAP.md`
+- `.gpd/milestones/v3.0-ROADMAP.md`
+- `.gpd/milestones/v4.0-ROADMAP.md`
+- `.gpd/milestones/v5.0-ROADMAP.md`
+- `CsInH3` benchmark: `Tc = 214 K` at `3 GPa`, ambient retention unsupported
+- `Hg1223` retained benchmark: up to `151 K` after pressure quench
+- nickelate frontier: ambient film onset near `63 K`, ambient bulk around `40 K`, and pressurized single-crystal reports up to `96 K`
 
 ### Skeptical Review
 
-- **Weakest anchor:** Ambient-pressure superconducting retention in hydrides themselves is still unestablished; current positive evidence is indirect or from adjacent materials classes
-- **Unvalidated assumptions:** CsInH3 can survive decompression; alloying can improve ambient stability without killing H-mode physics; synthetic `alpha^2F` trends will survive real EPW validation
-- **Competing explanation:** Conventional hydride-derived materials may simply saturate far below room temperature at ambient pressure, with only pressure-quenched or non-equilibrium states offering any path upward
-- **Disconfirming observation:** All decompression paths for CsInH3-class phases develop barrierless distortion or decomposition before ambient pressure
-- **False progress to reject:** Calling a 3 GPa synthesis route "consumer viable" without an ambient operating phase
-
-### Open Contract Questions
-
-- Can CsInH3 or a close derivative be quenched to ambient pressure without structural collapse?
-- Which family offers the best trade-off among Tc, operating pressure, and metastability confidence?
-- Is pressure quench more credible than intrinsically stable ambient hydrides for this problem?
-- Does the 2025-2026 conventional-superconductor literature already force a pivot away from room-temperature claims in this route?
+- **Weakest anchor:** none of the current routes are close to room temperature in the ambient operational sense
+- **Unvalidated assumption:** more headroom inside the `Hg` family or nickelates can be translated into a retained or ambient route rather than staying pressure-only
+- **Competing explanation:** the repo may already be near the practical `Tc` ceiling for experimentally credible ambient or retained unconventional routes
+- **Disconfirming observation:** the new route-expansion pass still finds no route with both higher headroom than `Hg1223` retained `151 K` and a believable path to ambient operation
 
 ## Research Questions
 
 ### Answered
 
-- [x] MXH3 perovskites do not reach Tc >= 300 K at P <= 10 GPa; the best repo result is CsInH3 at about 214 K and 3 GPa
-- [x] Room temperature after synthesis is not supported by v1.0
-- [x] Ambient pressure after synthesis is not supported by v1.0
-- [x] Chemical precompression can reduce required pressure dramatically without yet making the material consumer practical
+- [x] The `MXH3` hydride route does not yield a credible consumer-relevant room-temperature path
+- [x] `Hg1223` remains the strongest carried retained-ambient benchmark after the hydride no-go
+- [x] `v5.0` built a clean Stage `A` decision package for the current `Hg1223` route
+
+### Answered (v6.0)
+
+- [x] Yes, `Hg` cuprates still offer the best absolute `Tc` headroom (151 K retained, 153-166 K under pressure) — v6.0
+- [x] Nickelates improved but not enough for promotion; stay secondary with promotion trigger at 100 K ambient — v6.0
+- [x] Primary route = `Hg1223` PQP reproduction; secondary = bilayer `La3Ni2O7` strain mapping — v6.0
 
 ### Active
 
-- [ ] Can CsInH3 or a derivative survive decompression to ambient pressure with a metastable superconducting phase?
-- [ ] Which hydride or hydride-derived families offer the best trade-off among ambient stability, Tc, and practical synthesis pressure?
-- [ ] Do pressure-quench strategies offer a more credible path than intrinsically stable ambient hydrides?
-- [x] Does the current literature rule out room-temperature consumer hardware within this conventional route?
-- [x] Which broader benchmark candidate is the strongest confidence-ranked replacement after the hydride no-go? -- `HgBa2Ca2Cu3O8+delta` via pressure quench
+- [ ] Can the `Hg1223` `151 K` PQP benchmark be independently reproduced?
+- [ ] Can bilayer `La3Ni2O7`-class films reach ambient zero-resist `Tc > 80 K` via strain engineering?
+- [ ] Is the `Hg`-family pressure headroom (`153-166 K`) transferable to retained ambient operation beyond `151 K`?
 
 ### Out of Scope
 
-- Direct hardware design for consumer electronics — premature without an ambient superconducting phase
-- Unconventional pairing as the main program — deferred unless v2.0 forces a pivot
-- Large-scale exhaustive structure prediction — beyond current compute budget
+- Claiming a room-temperature finished material without decisive evidence
+- Calling a pressure-only or onset-only signal an ambient practical route
+- Consumer hardware design
 
 ## Research Context
 
 ### Physical System
 
-Hydrides and hydride-derived frameworks that could bridge the gap between high-Tc under pressure and practical superconducting operation. This includes low-pressure ternary hydrides such as CsInH3, alloyed MXH3 derivatives, Mg2XH6-like ambient hydrides, hydride-unit clathrates, and pressure-quenched metastable phases.
+Two route families dominate the post-`v5.0` landscape:
+
+- `Hg`-family multilayer cuprates, centered on `Hg1223`, which still define the smallest carried gap to room temperature
+- nickelates, where pressure, strain, rare-earth substitution, and oxygen control are all active uplift knobs
+
+Conventional near-ambient hydrides and clathrate-like routes remain useful controls, but not the main path for the next milestone.
 
 ### Theoretical Framework
 
-Condensed matter first-principles superconductivity and metastability analysis:
+This milestone compares routes by four criteria:
 
-- DFT for structural energetics and decompression pathways
-- DFPT and EPW for phonons, electron-phonon coupling, and `alpha^2F`
-- SSCHA or equivalent anharmonic methods for hydrogen-rich systems
-- Barrier and metastability analysis for pressure release and decomposition
-- Literature-grounded practical viability analysis that explicitly separates synthesis and operating conditions
+1. best current `Tc` headroom
+2. evidence for ambient or retained operation
+3. richness of controllable uplift levers
+4. risk of false progress from pressure-only, onset-only, or theory-only claims
 
 ### Key Parameters and Scales
 
 | Parameter | Symbol | Regime | Notes |
 |-----------|--------|--------|-------|
-| Critical temperature | `Tc` | 17-214 K established; 300 K stretch goal | Ambient or quench-retained `Tc` matters more than loaded-pressure `Tc` |
-| Operating pressure | `P_op` | 0-5 GPa target | Consumer relevance demands `P_op ~ 0 GPa` |
-| Synthesis pressure | `P_syn` | 0-5 GPa practical band | Must never be confused with `P_op` |
-| Decomposition / quench barrier | `E_b` | `> 0.5 eV/f.u.` heuristic target | Needed for metastable retention arguments |
-| Distance from hull | `E_hull` | `<= 50 meV/atom` primary screen | Ambient and near-ambient values both matter now |
-| Minimum phonon frequency | `omega_min` | all real at target condition | Needed both during decompression and at ambient |
-| Electron-phonon coupling | `lambda` | ~1-3 | Large `lambda` alone is not enough without stability and viable `P_op` |
-| Logarithmic phonon frequency | `omega_log` | ~300-1500 K | Ambient conventional ceiling depends on `lambda`-`omega_log` tradeoff |
-
-### Known Results
-
-- H3S: `Tc = 203 K` at `155 GPa` — benchmark conventional hydride superconductor
-- LaH10: `Tc = 250 K` at `170 GPa` — benchmark conventional hydride superconductor
-- Repo v1.0: CsInH3 reaches `Tc = 214 K` at `3 GPa` after anharmonic correction, with ambient retention unknown
-- Gao et al. (2025): current conventional-ambient analysis places the practical ceiling near `~100 K` at `0 GPa`
-- Yanagizawa et al. (2026): current stable ambient hydride survey finds superconducting candidates far below room temperature, with best values around the `~10 K` scale
-- Guo et al. (2025): dynamic compression / non-equilibrium route can yield ambient superconductivity around `102.5 K` in a hydride-derived carbon framework
-- Pressure-quench cuprate work (2026): ambient `151 K` superconductivity after pressure history shows that metastable retention is a real phenomenon, though not yet demonstrated for hydrides
-- Phase 10 benchmark pivot: `HgBa2Ca2Cu3O8+delta` now outranks the hydride-side and framework-side routes on confidence grounds, but remains far below room temperature
+| Best carried retained benchmark | `Tc_ret,max` | `151 K` | `Hg1223` after pressure quench |
+| `Hg`-family high-pressure zero-resist peak | `Tc_Hg,HP` | `153 K` zero-resist, `166 K` onset | `Hg1223` family headroom under pressure |
+| Ambient nickelate film watchpoint | `Tc_Ni,film` | about `63 K` onset | `(La,Pr)3Ni2O7` films |
+| Ambient nickelate bulk benchmark | `Tc_Ni,bulk` | about `40 K` | hole-doped `SmNiO2` |
+| Pressurized nickelate single-crystal benchmark | `Tc_Ni,HP` | up to `96 K` onset | `La2SmNi2O7-delta` family |
+| Practical conventional ambient control | `Tc_conv,AP` | roughly `100-120 K` likely ceiling, lower in current evidence | keeps conventional optimism bounded |
+| Room-temperature gap of carried benchmark | `Delta T_RT` | `149 K` | guardrail against overclaiming |
 
 ### What Is New
 
-This milestone stops treating "low synthesis pressure" as equivalent to "practical operation" and instead attacks the actual missing link: ambient retention, metastability, and practical viability. The project contribution is now a decision-grade map of whether conventional hydride-derived materials have any credible path toward consumer conditions, not just a higher `Tc` under load, plus a benchmark pivot that names the strongest experimentally anchored route after the hydride no-go.
-
-### Target Venue
-
-Physical Review B, npj Computational Materials, or Nature Communications, depending on whether the result is a decisive negative practical-viability study or a validated ambient/quench pathway.
-
-### Computational Environment
-
-Local workstation for literature-guided screening, decompression path setup, and pre-HPC validation. HPC or external compute remains the validation route for real EPW and high-fidelity SSCHA on any candidate advanced as practically credible.
+This milestone does not claim a new material. It asks a sharper route-selection question: among the surviving non-hydride paths, which one actually has enough headroom and enough control to deserve the next tranche of research effort?
 
 ## Notation and Conventions
 
-See `.gpd/CONVENTIONS.md` for all notation and sign conventions.
+See `.gpd/CONVENTIONS.md` for notation and sign conventions.
 See `.gpd/NOTATION_GLOSSARY.md` for symbol definitions.
-
-## Unit System
-
-Rydberg atomic units for electronic-structure workflows; reporting in K, GPa, meV/atom, and eV/f.u.
-
-## Requirements
-
-See `.gpd/REQUIREMENTS.md` for the detailed requirements specification.
-
-Key requirement categories: LITR, META, SCREEN, EPW, VALD
-
-## Key References
-
-- `ref-v1-conclusions`: local v1.0 conclusion artifact
-- `ref-ambient-ceiling`: ambient conventional Tc ceiling analysis (2025)
-- `ref-stable-ambient-hydrides`: stable ambient hydride survey (2026)
-- `ref-kb3c3`: ambient dynamic high-Tc pathway paper (2025)
-- `ref-hg1223-quench`: pressure-quench ambient superconductivity paper (2026)
-- `ref-h3s`, `ref-lah10`: benchmark hydride anchors carried forward
-
-## Constraints
-
-- **Computational resources:** Local workstation first, HPC only for final validation targets
-- **Method constraint:** Consumer relevance requires explicit `P_op` and quenchability accounting; no loaded-pressure claim counts as practical
-- **Accuracy constraint:** Any final practical claim must be free of synthetic `alpha^2F` dependence
-- **Materials constraint:** Cost, toxicity, and synthesis complexity are now part of the screening criteria, not an afterthought
-
-## Key Decisions
-
-| Decision | Rationale | Outcome |
-|----------|-----------|---------|
-| Archive v1.0 as a completed negative-result milestone | The original `300 K below 10 GPa` question has been answered decisively for MXH3 perovskites | Confirmed |
-| Separate synthesis pressure from operating pressure | This is the central practical mistake the repo must now avoid | Confirmed |
-| Make quenchability a first-class requirement | Ambient retention is the missing link between scientific interest and hardware relevance | Confirmed |
-| Keep conventional hydrides as the active scope for v2.0 | Stronger grounding before any pivot to unconventional mechanisms | Confirmed |
-
-Full log: `.gpd/DECISIONS.md`
-
----
-
-_Last updated: 2026-03-29 after starting milestone v2.0_
