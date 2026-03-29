@@ -75,9 +75,25 @@
 
 | Requirement | Phase | Status |
 | --- | --- | --- |
-| All | TBD | Pending |
+| VALD-01 | Phase 27 | Pending |
+| VALD-02 | Phase 27 | Pending |
+| HG-01 | Phase 28 | Pending |
+| HG-02 | Phase 28 | Pending |
+| HG-03 | Phase 28 | Pending |
+| HG-04 | Phase 28, 31 | Pending |
+| NI-01 | Phase 29 | Pending |
+| NI-02 | Phase 29 | Pending |
+| NI-03 | Phase 29 | Pending |
+| NI-04 | Phase 29, 31 | Pending |
+| HY-01 | Phase 30 | Pending |
+| HY-02 | Phase 30 | Pending |
+| HY-03 | Phase 30 | Pending |
+| VALD-03 | Phase 31, 33 | Pending |
+| VALD-04 | Phase 32 | Pending |
+| DEC-01 | Phase 32 | Pending |
+| DEC-02 | Phase 33 | Pending |
 
-**Coverage:** 18 primary requirements, 0 mapped (pending roadmap)
+**Coverage:** 18/18 primary requirements mapped (17 unique; HG-04 and NI-04 have secondary mapping in Phase 31 for mechanism analysis; VALD-03 carried in Phase 31 and 33)
 
 ---
 
