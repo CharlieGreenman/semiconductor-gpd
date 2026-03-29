@@ -69,7 +69,12 @@ This roadmap guides a first-principles computational search for room-temperature
 
 **Backtracking trigger:** Benchmark Tc off by > 30% -- stop and rethink entire pipeline (pseudopotentials, convergence, functional choice). This is a project-level stop condition.
 
-**Plans:** TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md -- H3S (Im-3m) benchmark: structure, phonons, e-ph coupling, Eliashberg Tc at 150 GPa
+- [ ] 01-02-PLAN.md -- LaH10 (Fm-3m) benchmark: structure, phonons, e-ph coupling, Eliashberg Tc at 170 GPa
+- [ ] 01-03-PLAN.md -- Benchmark table assembly, convergence report, EOS validation, go/no-go decision
 
 ### Phase 2: Candidate Screening
 
@@ -188,7 +193,7 @@ This roadmap guides a first-principles computational search for room-temperature
 
 | Phase | Plans Complete | Status | Completed |
 | --- | --- | --- | --- |
-| 1. Pipeline Validation | 0/TBD | Not started | - |
+| 1. Pipeline Validation | 0/3 | Plans created | - |
 | 2. Candidate Screening | 0/TBD | Not started | - |
 | 3. Eliashberg Tc Predictions | 0/TBD | Not started | - |
 | 4. Anharmonic Corrections | 0/TBD | Not started | - |
