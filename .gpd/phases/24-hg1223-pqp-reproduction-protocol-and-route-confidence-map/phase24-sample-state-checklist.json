@@ -1,0 +1,768 @@
+{
+  "checklist_version": "1.0",
+  "date": "2026-03-29",
+  "purpose": "Per-run logging form for Hg1223 PQP independent reproduction campaign",
+  "assert_convention": "units=SI-derived (K, GPa), room_temperature=300 K, tc_definition=zero-resistance unless onset explicitly labeled, evidence_tiers=T0-T3 per Phase 20, handling_classes=H0-H3 per Phase 19",
+  "requirement_levels": {
+    "REQUIRED": "Run is T0 (invalid) without this field",
+    "CONDITIONAL": "Required only for specific handling classes or stages",
+    "OPTIONAL": "Informational; does not affect evidence tier"
+  },
+  "required_fields": [
+    {
+      "name": "sample_id",
+      "section": "pre_run_sample_state",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "format": "[GROUP]-S-[SEQ]",
+      "invalidation_rule_ref": null,
+      "notes": "Unique per sample"
+    },
+    {
+      "name": "run_id",
+      "section": "pre_run_sample_state",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "format": "[GROUP]-[DATE]-[CONDITION_ID]-[SEQ]",
+      "invalidation_rule_ref": null,
+      "notes": "Unique per run"
+    },
+    {
+      "name": "sample_class",
+      "section": "pre_run_sample_state",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": 3,
+      "notes": "Source batch identifier; enables sample-state-dependence detection"
+    },
+    {
+      "name": "oxygen_history_class",
+      "section": "pre_run_sample_state",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": 3,
+      "notes": "Delta value if measured, or qualitative annealing history"
+    },
+    {
+      "name": "geometry_dimensions",
+      "section": "pre_run_sample_state",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "Length x width x thickness in micrometers"
+    },
+    {
+      "name": "geometry_mass_estimate_mg",
+      "section": "pre_run_sample_state",
+      "requirement": "OPTIONAL",
+      "data_type": "number",
+      "invalidation_rule_ref": null,
+      "notes": "If measurable at 50-80 um scale"
+    },
+    {
+      "name": "ambient_tc_baseline_zero_resistance_k",
+      "section": "pre_run_sample_state",
+      "requirement": "REQUIRED",
+      "data_type": "number_or_null",
+      "invalidation_rule_ref": null,
+      "notes": "Expected ~133 K [VALD-01: zero-resistance, thermodynamically stable, ambient]; null if not measured pre-PQP",
+      "vald_01_label": "zero-resistance, thermodynamically stable, ambient"
+    },
+    {
+      "name": "ambient_tc_baseline_onset_k",
+      "section": "pre_run_sample_state",
+      "requirement": "OPTIONAL",
+      "data_type": "number_or_null",
+      "invalidation_rule_ref": null,
+      "notes": "For information only; NOT for gate evaluation"
+    },
+    {
+      "name": "contact_configuration",
+      "section": "pre_run_sample_state",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "4-probe geometry and lead material"
+    },
+    {
+      "name": "pressure_medium",
+      "section": "pre_run_sample_state",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "DAC pressure medium material"
+    },
+    {
+      "name": "dac_type",
+      "section": "pre_run_sample_state",
+      "requirement": "OPTIONAL",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "For reproducibility documentation"
+    },
+    {
+      "name": "condition_id",
+      "section": "pre_quench_state",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "One of A-01 through A-06"
+    },
+    {
+      "name": "assigned_handling_class",
+      "section": "pre_quench_state",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "H0, H1, H2, or H3; assigned BEFORE run starts"
+    },
+    {
+      "name": "target_pq_gpa",
+      "section": "pre_quench_state",
+      "requirement": "REQUIRED",
+      "data_type": "number",
+      "invalidation_rule_ref": null,
+      "notes": "Per node matrix"
+    },
+    {
+      "name": "achieved_pq_gpa",
+      "section": "pre_quench_state",
+      "requirement": "REQUIRED",
+      "data_type": "number",
+      "invalidation_rule_ref": null,
+      "notes": "Measured; within +/- 1 GPa of target"
+    },
+    {
+      "name": "pressure_calibration_method",
+      "section": "pre_quench_state",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "ruby fluorescence or diamond Raman edge; specify scale"
+    },
+    {
+      "name": "target_tq_k",
+      "section": "pre_quench_state",
+      "requirement": "REQUIRED",
+      "data_type": "number",
+      "invalidation_rule_ref": null,
+      "notes": "4.2 or 77 per node matrix"
+    },
+    {
+      "name": "achieved_tq_k",
+      "section": "pre_quench_state",
+      "requirement": "REQUIRED",
+      "data_type": "number",
+      "invalidation_rule_ref": null,
+      "notes": "Measured"
+    },
+    {
+      "name": "thermometry_method",
+      "section": "pre_quench_state",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "Thermometer type and location"
+    },
+    {
+      "name": "source_state_confirmed",
+      "section": "pre_quench_state",
+      "requirement": "REQUIRED",
+      "data_type": "boolean",
+      "invalidation_rule_ref": 1,
+      "notes": "True = in-DAC transport shows high-Tc state at PQ"
+    },
+    {
+      "name": "source_state_rt_data_file",
+      "section": "pre_quench_state",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "File reference for in-DAC measurement"
+    },
+    {
+      "name": "source_state_tc_under_pressure_k",
+      "section": "pre_quench_state",
+      "requirement": "OPTIONAL",
+      "data_type": "number_or_null",
+      "invalidation_rule_ref": null,
+      "notes": "[VALD-01: specify zero-resistance or onset, under pressure]"
+    },
+    {
+      "name": "quench_timestamp",
+      "section": "quench_event",
+      "requirement": "REQUIRED",
+      "data_type": "string_iso8601",
+      "invalidation_rule_ref": null,
+      "notes": "Start of pressure release"
+    },
+    {
+      "name": "pressure_release_trace_file",
+      "section": "quench_event",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": 2,
+      "notes": "Path to full P(t) trace data"
+    },
+    {
+      "name": "pressure_release_trace_status",
+      "section": "quench_event",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "allowed_values": ["complete", "partial", "failed"],
+      "invalidation_rule_ref": 2,
+      "notes": "partial or failed triggers Rule 2 (T0)"
+    },
+    {
+      "name": "vq_estimate_gpa_per_s",
+      "section": "quench_event",
+      "requirement": "REQUIRED",
+      "data_type": "number_or_string",
+      "invalidation_rule_ref": 2,
+      "notes": "Number if derivable from trace; 'not derivable' if not (must state reason). vQ is REQUIRED, not optional."
+    },
+    {
+      "name": "vq_derivation_method",
+      "section": "quench_event",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "How vQ was extracted from the trace"
+    },
+    {
+      "name": "vq_not_derivable_reason",
+      "section": "quench_event",
+      "requirement": "CONDITIONAL",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "Required if vq_estimate = 'not derivable'"
+    },
+    {
+      "name": "decompression_method",
+      "section": "quench_event",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "membrane release, manual screw, or other"
+    },
+    {
+      "name": "anomalies_during_quench",
+      "section": "quench_event",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "'none' or description"
+    },
+    {
+      "name": "lead_integrity_post_quench",
+      "section": "quench_event",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "allowed_values": ["intact", "partial_loss", "complete_loss"],
+      "invalidation_rule_ref": null,
+      "notes": "Affects whether resistivity is measurable"
+    },
+    {
+      "name": "first_measurement_timestamp",
+      "section": "post_quench_measurement",
+      "requirement": "REQUIRED",
+      "data_type": "string_iso8601",
+      "invalidation_rule_ref": null,
+      "notes": "Time of first cryogenic R(T) at ambient"
+    },
+    {
+      "name": "time_gap_quench_to_measurement_min",
+      "section": "post_quench_measurement",
+      "requirement": "REQUIRED",
+      "data_type": "number",
+      "invalidation_rule_ref": null,
+      "notes": "Computed from timestamps"
+    },
+    {
+      "name": "thermal_path_max_temp_k",
+      "section": "post_quench_measurement",
+      "requirement": "REQUIRED",
+      "data_type": "number",
+      "invalidation_rule_ref": 4,
+      "notes": "Max temperature between quench and first measurement"
+    },
+    {
+      "name": "unplanned_warm_excursion",
+      "section": "post_quench_measurement",
+      "requirement": "REQUIRED",
+      "data_type": "boolean",
+      "invalidation_rule_ref": 4,
+      "notes": "True triggers Rule 4 if before next checkpoint"
+    },
+    {
+      "name": "unplanned_excursion_max_t_k",
+      "section": "post_quench_measurement",
+      "requirement": "CONDITIONAL",
+      "data_type": "number",
+      "invalidation_rule_ref": 4,
+      "notes": "Required if unplanned_warm_excursion = true"
+    },
+    {
+      "name": "first_ambient_cryogenic_rt_file",
+      "section": "post_quench_measurement",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "File reference for first R(T) data"
+    },
+    {
+      "name": "retained_tc_zero_resistance_k",
+      "section": "post_quench_measurement",
+      "requirement": "REQUIRED",
+      "data_type": "number_or_null",
+      "invalidation_rule_ref": null,
+      "notes": "R < noise floor; null if no crossing [VALD-01: zero-resistance, retained ambient, metastable]",
+      "vald_01_label": "zero-resistance, retained ambient, metastable"
+    },
+    {
+      "name": "noise_floor_specification",
+      "section": "post_quench_measurement",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "Measurement system noise floor for zero-resistance determination"
+    },
+    {
+      "name": "retained_tc_onset_k",
+      "section": "post_quench_measurement",
+      "requirement": "OPTIONAL",
+      "data_type": "number_or_null",
+      "invalidation_rule_ref": null,
+      "notes": "Information only -- NOT for gate [VALD-01: onset, retained ambient, metastable]"
+    },
+    {
+      "name": "hold_77k_24h_tc_k",
+      "section": "post_quench_measurement",
+      "requirement": "REQUIRED",
+      "data_type": "number_or_null",
+      "invalidation_rule_ref": null,
+      "notes": "Zero-resistance Tc at ~24 h [VALD-01: zero-resistance, retained ambient, metastable]"
+    },
+    {
+      "name": "hold_77k_72h_tc_k",
+      "section": "post_quench_measurement",
+      "requirement": "REQUIRED",
+      "data_type": "number_or_null",
+      "invalidation_rule_ref": null,
+      "notes": "Zero-resistance Tc at ~72 h [VALD-01: zero-resistance, retained ambient, metastable]"
+    },
+    {
+      "name": "hold_77k_stability_assessment",
+      "section": "post_quench_measurement",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "allowed_values": ["stable", "degrading", "lost"],
+      "invalidation_rule_ref": null,
+      "notes": "Stable = Tc unchanged; degrading = specify rate; lost = signal gone"
+    },
+    {
+      "name": "warm_160_170k_performed",
+      "section": "warm_side_testing",
+      "requirement": "CONDITIONAL",
+      "data_type": "boolean",
+      "invalidation_rule_ref": null,
+      "notes": "Required for H1, H2, H3",
+      "applies_to_classes": ["H1", "H2", "H3"]
+    },
+    {
+      "name": "warm_160_170k_hold_temp_k",
+      "section": "warm_side_testing",
+      "requirement": "CONDITIONAL",
+      "data_type": "number",
+      "invalidation_rule_ref": null,
+      "notes": "Actual hold temperature",
+      "applies_to_classes": ["H1", "H2", "H3"]
+    },
+    {
+      "name": "warm_160_170k_hold_duration_min",
+      "section": "warm_side_testing",
+      "requirement": "CONDITIONAL",
+      "data_type": "number",
+      "invalidation_rule_ref": null,
+      "notes": "Duration of hold",
+      "applies_to_classes": ["H1", "H2", "H3"]
+    },
+    {
+      "name": "warm_160_170k_tc_after_k",
+      "section": "warm_side_testing",
+      "requirement": "CONDITIONAL",
+      "data_type": "number_or_null",
+      "invalidation_rule_ref": null,
+      "notes": "[VALD-01: zero-resistance, retained ambient, metastable, post-warm-stress]",
+      "applies_to_classes": ["H1", "H2", "H3"]
+    },
+    {
+      "name": "warm_200k_performed",
+      "section": "warm_side_testing",
+      "requirement": "CONDITIONAL",
+      "data_type": "boolean",
+      "invalidation_rule_ref": null,
+      "notes": "Required for H2, H3",
+      "applies_to_classes": ["H2", "H3"]
+    },
+    {
+      "name": "warm_200k_hold_temp_k",
+      "section": "warm_side_testing",
+      "requirement": "CONDITIONAL",
+      "data_type": "number",
+      "invalidation_rule_ref": null,
+      "applies_to_classes": ["H2", "H3"]
+    },
+    {
+      "name": "warm_200k_hold_duration_min",
+      "section": "warm_side_testing",
+      "requirement": "CONDITIONAL",
+      "data_type": "number",
+      "invalidation_rule_ref": null,
+      "applies_to_classes": ["H2", "H3"]
+    },
+    {
+      "name": "warm_200k_tc_after_k",
+      "section": "warm_side_testing",
+      "requirement": "CONDITIONAL",
+      "data_type": "number_or_null",
+      "invalidation_rule_ref": null,
+      "notes": "[VALD-01: zero-resistance, retained ambient, metastable, post-warm-stress]",
+      "applies_to_classes": ["H2", "H3"]
+    },
+    {
+      "name": "warm_293k_performed",
+      "section": "warm_side_testing",
+      "requirement": "CONDITIONAL",
+      "data_type": "boolean",
+      "invalidation_rule_ref": null,
+      "notes": "Required for H3 only",
+      "applies_to_classes": ["H3"]
+    },
+    {
+      "name": "warm_293k_hold_temp_k",
+      "section": "warm_side_testing",
+      "requirement": "CONDITIONAL",
+      "data_type": "number",
+      "invalidation_rule_ref": null,
+      "applies_to_classes": ["H3"]
+    },
+    {
+      "name": "warm_293k_hold_duration_min",
+      "section": "warm_side_testing",
+      "requirement": "CONDITIONAL",
+      "data_type": "number",
+      "invalidation_rule_ref": null,
+      "applies_to_classes": ["H3"]
+    },
+    {
+      "name": "warm_293k_tc_after_k",
+      "section": "warm_side_testing",
+      "requirement": "CONDITIONAL",
+      "data_type": "number_or_null",
+      "invalidation_rule_ref": null,
+      "notes": "[VALD-01: zero-resistance, retained ambient, metastable, post-warm-stress]",
+      "applies_to_classes": ["H3"]
+    },
+    {
+      "name": "retrieval_performed",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "REQUIRED",
+      "data_type": "boolean",
+      "invalidation_rule_ref": null,
+      "notes": "Whether sample was removed from DAC"
+    },
+    {
+      "name": "retrieval_thermal_path",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "CONDITIONAL",
+      "data_type": "string",
+      "invalidation_rule_ref": 5,
+      "notes": "Required if retrieval = true; describes thermal path during extraction"
+    },
+    {
+      "name": "retrieval_thermal_path_max_t_k",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "CONDITIONAL",
+      "data_type": "number",
+      "invalidation_rule_ref": 5,
+      "notes": "Required if retrieval = true"
+    },
+    {
+      "name": "retrieval_thermal_path_logged",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "CONDITIONAL",
+      "data_type": "boolean",
+      "invalidation_rule_ref": 5,
+      "notes": "Required if retrieval = true; false triggers Rule 5"
+    },
+    {
+      "name": "ex_dac_transport_rt_file",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "CONDITIONAL",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "Required if ex-DAC transport performed"
+    },
+    {
+      "name": "ex_dac_tc_zero_resistance_k",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "CONDITIONAL",
+      "data_type": "number_or_null",
+      "invalidation_rule_ref": null,
+      "notes": "[VALD-01: zero-resistance, retained ambient, metastable, post-retrieval]"
+    },
+    {
+      "name": "meissner_verification_performed",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "CONDITIONAL",
+      "data_type": "boolean",
+      "invalidation_rule_ref": null,
+      "notes": "Required for T1+ runs"
+    },
+    {
+      "name": "meissner_fc_data_file",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "CONDITIONAL",
+      "data_type": "string",
+      "invalidation_rule_ref": null
+    },
+    {
+      "name": "meissner_zfc_data_file",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "CONDITIONAL",
+      "data_type": "string",
+      "invalidation_rule_ref": null
+    },
+    {
+      "name": "sc_volume_fraction",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "CONDITIONAL",
+      "data_type": "number",
+      "invalidation_rule_ref": null,
+      "notes": "Demagnetization-corrected; >0.30 for T1, >0.50 for T2"
+    },
+    {
+      "name": "xrd_performed",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "CONDITIONAL",
+      "data_type": "boolean",
+      "invalidation_rule_ref": null,
+      "notes": "Required for T2+ runs"
+    },
+    {
+      "name": "xrd_source_type",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "CONDITIONAL",
+      "data_type": "string",
+      "allowed_values": ["synchrotron", "lab"],
+      "invalidation_rule_ref": null
+    },
+    {
+      "name": "xrd_structure_confirmed",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "CONDITIONAL",
+      "data_type": "string",
+      "allowed_values": ["tetragonal_confirmed", "different_structure", "inconclusive"],
+      "invalidation_rule_ref": null
+    },
+    {
+      "name": "xrd_data_file",
+      "section": "retrieval_and_ex_dac",
+      "requirement": "CONDITIONAL",
+      "data_type": "string",
+      "invalidation_rule_ref": null
+    },
+    {
+      "name": "invalidation_rule_1_check",
+      "section": "run_validity_assessment",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": 1,
+      "notes": "pass or fail:[reason]"
+    },
+    {
+      "name": "invalidation_rule_2_check",
+      "section": "run_validity_assessment",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": 2,
+      "notes": "pass or fail:[reason]"
+    },
+    {
+      "name": "invalidation_rule_3_check",
+      "section": "run_validity_assessment",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": 3,
+      "notes": "pass or fail:[reason]"
+    },
+    {
+      "name": "invalidation_rule_4_check",
+      "section": "run_validity_assessment",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": 4,
+      "notes": "pass or fail:[reason]"
+    },
+    {
+      "name": "invalidation_rule_5_check",
+      "section": "run_validity_assessment",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": 5,
+      "notes": "pass or N/A or fail:[reason]"
+    },
+    {
+      "name": "invalidation_rule_6_check",
+      "section": "run_validity_assessment",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": 6,
+      "notes": "pass or fail:[reason]"
+    },
+    {
+      "name": "all_invalidation_rules_passed",
+      "section": "run_validity_assessment",
+      "requirement": "REQUIRED",
+      "data_type": "boolean",
+      "invalidation_rule_ref": null
+    },
+    {
+      "name": "evidence_tier_assigned",
+      "section": "run_validity_assessment",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "allowed_values": ["T0", "T1", "T2", "T3"],
+      "invalidation_rule_ref": null,
+      "notes": "Per Phase 20 definitions"
+    },
+    {
+      "name": "evidence_tier_justification",
+      "section": "run_validity_assessment",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null
+    },
+    {
+      "name": "success_gate_evaluation",
+      "section": "run_validity_assessment",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "pass: Tc=[X] K >= 131 K (zero-resistance), fail: Tc=[X] K < 131 K, or N/A (T0 run)"
+    },
+    {
+      "name": "missing_logs",
+      "section": "run_validity_assessment",
+      "requirement": "REQUIRED",
+      "data_type": "string",
+      "invalidation_rule_ref": null,
+      "notes": "'none' or list of missing entries"
+    },
+    {
+      "name": "stage_tags",
+      "section": "run_validity_assessment",
+      "requirement": "REQUIRED",
+      "data_type": "string_list",
+      "invalidation_rule_ref": 6,
+      "notes": "All stages completed in this run"
+    },
+    {
+      "name": "stage_tags_complete",
+      "section": "run_validity_assessment",
+      "requirement": "REQUIRED",
+      "data_type": "boolean",
+      "invalidation_rule_ref": 6,
+      "notes": "True if all applicable stages are tagged"
+    },
+    {
+      "name": "notes",
+      "section": "run_validity_assessment",
+      "requirement": "OPTIONAL",
+      "data_type": "string",
+      "invalidation_rule_ref": null
+    }
+  ],
+  "invalidation_triggers": [
+    {
+      "rule": 1,
+      "trigger": "Source state not confirmed under pressure before release",
+      "checklist_fields": ["source_state_confirmed"],
+      "condition": "source_state_confirmed = false",
+      "consequence": "T0"
+    },
+    {
+      "rule": 2,
+      "trigger": "Full vQ or pressure-release trace missing or corrupted",
+      "checklist_fields": ["pressure_release_trace_status", "vq_estimate_gpa_per_s"],
+      "condition": "pressure_release_trace_status != 'complete'",
+      "consequence": "T0"
+    },
+    {
+      "rule": 3,
+      "trigger": "Sample class or oxygen-history class missing",
+      "checklist_fields": ["sample_class", "oxygen_history_class"],
+      "condition": "sample_class is empty OR oxygen_history_class is empty",
+      "consequence": "T0"
+    },
+    {
+      "rule": 4,
+      "trigger": "Unplanned warm excursion before next checkpoint",
+      "checklist_fields": ["unplanned_warm_excursion", "thermal_path_max_temp_k"],
+      "condition": "unplanned_warm_excursion = true AND before next scheduled checkpoint",
+      "consequence": "T0"
+    },
+    {
+      "rule": 5,
+      "trigger": "Retrieval without logged thermal pathway",
+      "checklist_fields": ["retrieval_thermal_path_logged"],
+      "condition": "retrieval_performed = true AND retrieval_thermal_path_logged = false",
+      "consequence": "T0 for ex-DAC data only"
+    },
+    {
+      "rule": 6,
+      "trigger": "Stage tags incomplete for failure localization",
+      "checklist_fields": ["stage_tags_complete"],
+      "condition": "stage_tags_complete = false",
+      "consequence": "T0"
+    }
+  ],
+  "evidence_tiers": [
+    {
+      "tier": "T0",
+      "label": "Invalid / non-countable",
+      "requirements": "Any invalidation rule triggered",
+      "allowed_claim": "Troubleshooting only"
+    },
+    {
+      "tier": "T1",
+      "label": "Headline reproduction candidate",
+      "requirements": "Full PQ/TQ/vQ trace, source confirmed, first ambient cryogenic check, countable artifacts",
+      "allowed_claim": "Headline candidate; no basin language"
+    },
+    {
+      "tier": "T2",
+      "label": "Basin-candidate support",
+      "requirements": "T1 + replicate at fixed node + 24 h 77 K hold",
+      "allowed_claim": "Basin candidate; no strengthened-route language"
+    },
+    {
+      "tier": "T3",
+      "label": "Strengthened-route support",
+      "requirements": "T2 + ex-DAC bulk support + controlled retrieval",
+      "allowed_claim": "Strengthened route; no room-temperature language"
+    }
+  ],
+  "sections": [
+    "pre_run_sample_state",
+    "pre_quench_state",
+    "quench_event",
+    "post_quench_measurement",
+    "warm_side_testing",
+    "retrieval_and_ex_dac",
+    "run_validity_assessment"
+  ],
+  "vald_01_compliance": "Every Tc field specifies: definition (zero-resistance or onset), operating conditions, and phase state",
+  "vald_02_compliance": "Room-temperature gap = 300 - 151 = 149 K; no room-temperature progress language; vQ field requires trace logging only, not unpublished values"
+}
