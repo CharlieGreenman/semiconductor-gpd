@@ -1,0 +1,55 @@
+! RbInH3 Pm-3m NSCF calculation for Wannier90/EPW at 10 GPa
+! ASSERT_CONVENTION: natural_units=NOT_used, fourier_convention=QE_plane_wave, unit_system_internal=Rydberg_atomic, xc_functional=PBEsol, pseudopotential=ONCV_norm_conserving
+!
+! Run AFTER SCF. Computes eigenvalues on uniform k-grid for Wannier interpolation.
+! The k-grid here is dense (24x24x24) for high-quality Wannier functions.
+! EPW coarse grid (6x6x6) is a subset of this grid.
+!
+! RbInH3 valence electrons:
+!   Rb: 9 (4s2 4p6 5s1) or semicore included
+!   In: 3 (5s2 5p1) or 13 (4d10 5s2 5p1) depending on PP
+!   H:  1 each, x3 = 3
+!   Total: ~15-25 depending on PP semicore treatment
+!   Need ~25-30 bands to capture disentanglement window
+
+&CONTROL
+  calculation  = 'nscf'
+  prefix       = 'rbinh3'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  verbosity    = 'high'
+/
+
+&SYSTEM
+  ibrav        = 1            ! Simple cubic (Pm-3m)
+  celldm(1)    = 7.21614      ! UPDATE with relaxed value from vc-relax
+  nat          = 5
+  ntyp         = 3
+  ecutwfc      = 90.0
+  ecutrho      = 360.0
+  occupations  = 'smearing'
+  smearing     = 'mp'
+  degauss      = 0.02
+  nbnd         = 30           ! Include bands above E_F for Wannier disentanglement
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10
+  diagonalization = 'david'
+/
+
+ATOMIC_SPECIES
+  Rb  85.4678  Rb.upf
+  In  114.818  In.upf
+  H    1.008   H.upf
+
+ATOMIC_POSITIONS {crystal}
+  Rb  0.000000  0.000000  0.000000
+  In  0.500000  0.500000  0.500000
+  H   0.500000  0.500000  0.000000
+  H   0.500000  0.000000  0.500000
+  H   0.000000  0.500000  0.500000
+
+! Dense uniform k-grid for NSCF
+K_POINTS {automatic}
+  24  24  24  0  0  0

@@ -1,0 +1,28 @@
+! RbInH3 Pm-3m DFPT phonon calculation at 10 GPa
+! ASSERT_CONVENTION: natural_units=NOT_used, fourier_convention=QE_plane_wave, unit_system_internal=Rydberg_atomic, xc_functional=PBEsol, asr_enforcement=crystal
+!
+! Computes dynamical matrices and electron-phonon matrix elements on 6x6x6 q-grid.
+! The q-grid MUST match the EPW coarse grid (nq1=nq2=nq3 in epw.in).
+!
+! Phonon frequency ranges expected for RbInH3 at 10 GPa:
+!   - Rb-derived acoustic modes: 0-15 meV (0-121 cm^-1)
+!   - In-derived/mixed optical: 15-60 meV (121-484 cm^-1)
+!   - H-stretching modes: 60-180 meV (484-1452 cm^-1)
+!   - All frequencies must be real (dynamically stable at 10 GPa per Phase 2)
+!   - 5 atoms => 15 phonon branches (3 acoustic + 12 optical)
+
+Phonon calculation for RbInH3 at 10 GPa
+&INPUTPH
+  prefix       = 'rbinh3'
+  outdir       = './tmp/'
+  fildyn       = 'rbinh3.dyn'
+  fildvscf     = 'dvscf'
+  ldisp        = .true.
+  nq1          = 6
+  nq2          = 6
+  nq3          = 6
+  tr2_ph       = 1.0d-14      ! Tight threshold for e-ph quality
+  alpha_mix(1) = 0.3
+  niter_ph     = 100
+  electron_phonon = 'interpolated'
+/

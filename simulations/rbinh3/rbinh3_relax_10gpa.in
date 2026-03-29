@@ -1,0 +1,74 @@
+! RbInH3 Pm-3m variable-cell relaxation at 10 GPa
+! ASSERT_CONVENTION: natural_units=NOT_used, fourier_convention=QE_plane_wave, unit_system_internal=Rydberg_atomic, pressure_unit_qe=kbar, xc_functional=PBEsol, pseudopotential=ONCV_norm_conserving
+!
+! Structure: Pm-3m (space group #221), simple cubic perovskite
+!   Rb at 1a: (0, 0, 0)
+!   In at 1b: (0.5, 0.5, 0.5)
+!   H  at 3d: (0.5, 0.5, 0), (0.5, 0, 0.5), (0, 0.5, 0.5)
+!   5 atoms per unit cell
+!
+! Target pressure: 10 GPa = 100 kbar
+! Initial lattice parameter: a ~ 3.82 A (will be optimized)
+!
+! Pseudopotentials: ONCV PseudoDojo PBEsol stringent
+! Reference: Du et al., Adv. Sci. 11, 2408370 (2024) -- Tc = 130 K at 6 GPa
+! Note: We compute at 10 GPa (higher pressure than Du et al.)
+
+&CONTROL
+  calculation  = 'vc-relax'
+  prefix       = 'rbinh3'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  tprnfor      = .true.
+  tstress      = .true.
+  forc_conv_thr = 1.0d-4
+  etot_conv_thr = 1.0d-6
+  nstep        = 200
+/
+
+&SYSTEM
+  ibrav        = 1            ! Simple cubic
+  celldm(1)    = 7.21614      ! a = 3.82 A = 7.21614 Bohr (initial guess)
+  nat          = 5
+  ntyp         = 3
+  ecutwfc      = 90.0         ! Ry (Phase 3 standard for perovskite hydrides)
+  ecutrho      = 360.0        ! Ry (4x ecutwfc for NC PPs)
+  occupations  = 'smearing'
+  smearing     = 'mp'         ! Methfessel-Paxton order 1
+  degauss      = 0.02         ! Ry (~0.27 eV; metallic system)
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10      ! Tight convergence for phonon-quality wavefunctions
+  mixing_beta  = 0.3          ! Conservative mixing for metallic system
+  mixing_mode  = 'plain'
+  diagonalization = 'david'
+/
+
+&IONS
+  ion_dynamics = 'bfgs'
+/
+
+&CELL
+  cell_dynamics = 'bfgs'
+  press        = 100.0        ! Target pressure in kbar (10 GPa = 100 kbar)
+  press_conv_thr = 0.5        ! kbar convergence threshold (0.05 GPa)
+  cell_dofree  = 'ibrav'      ! Preserve cubic symmetry during relaxation
+/
+
+ATOMIC_SPECIES
+  Rb  85.4678  Rb.upf        ! PseudoDojo PBEsol ONCV NC
+  In  114.818  In.upf        ! PseudoDojo PBEsol ONCV NC
+  H    1.008   H.upf         ! PseudoDojo PBEsol ONCV NC
+
+! Atomic positions in crystal (fractional) coordinates
+ATOMIC_POSITIONS {crystal}
+  Rb  0.000000  0.000000  0.000000
+  In  0.500000  0.500000  0.500000
+  H   0.500000  0.500000  0.000000
+  H   0.500000  0.000000  0.500000
+  H   0.000000  0.500000  0.500000
+
+! 12x12x12 Monkhorst-Pack k-grid for vc-relax (adequate for relaxation)
+K_POINTS {automatic}
+  12  12  12  0  0  0

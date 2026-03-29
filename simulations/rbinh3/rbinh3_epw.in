@@ -1,0 +1,83 @@
+--
+&inputepw
+  prefix       = 'rbinh3'
+  outdir       = './tmp/'
+  dvscf_dir    = './save/'
+
+  ! Electron-phonon calculation settings
+  ep_coupling  = .true.
+  elph         = .true.
+  epbwrite     = .true.
+  epbread      = .false.
+  epwwrite     = .true.
+  epwread      = .false.
+
+  ! Wannier90 settings
+  ! RbInH3 (Pm-3m, 5 atoms): Valence depends on PP semicore treatment
+  ! Wannier functions: Rb s,p (4); In s,p (4); H 3*s (3); + hybridization ~ 14
+  ! Select bands crossing E_F plus margin for disentanglement
+  nbndsub      = 14           ! Number of Wannier functions (bands to Wannierize)
+  num_iter     = 500          ! Wannier spread minimization iterations
+
+  ! Disentanglement window (eV relative to E_F)
+  ! RbInH3 has In-p/H-s hybridization near E_F
+  ! Frozen window should capture all bands at E_F
+  dis_win_min  = -15.0        ! Lower disentanglement window (eV)
+  dis_win_max  =  25.0        ! Upper disentanglement window (eV)
+  dis_froz_min = -5.0         ! Lower frozen window (eV)
+  dis_froz_max =  5.0         ! Upper frozen window (eV)
+
+  ! Coarse grids (MUST match DFPT calculation)
+  nk1          = 12
+  nk2          = 12
+  nk3          = 12
+  nq1          = 6
+  nq2          = 6
+  nq3          = 6
+
+  ! Fine interpolation grids
+  ! 40x40x40 k-grid / 20x20x20 q-grid (Phase 3 standard)
+  nkf1         = 40
+  nkf2         = 40
+  nkf3         = 40
+  nqf1         = 20
+  nqf2         = 20
+  nqf3         = 20
+
+  ! Delta function smearing
+  degaussw     = 0.05         ! eV
+  fsthick      = 2.0          ! eV (Fermi surface thickness for e-ph)
+
+  ! Eliashberg solver settings
+  ! ASSERT_CONVENTION: eliashberg_method=isotropic_Matsubara, mustar_protocol=fixed_0.10_0.13
+  limag        = .true.        ! Imaginary-axis Eliashberg
+  lpade        = .true.        ! Pade analytic continuation to real axis
+  liso         = .true.        ! Isotropic Eliashberg
+
+  ! Matsubara frequency cutoff
+  ! RbInH3 max phonon ~ 150-180 meV -> wscut >= 5 * 180 meV = 0.9 eV; use 1.0 eV
+  wscut        = 1.0           ! eV (Matsubara frequency cutoff)
+  nsiter       = 500           ! Max Eliashberg iterations
+  conv_thr_iaxis = 1.0d-4     ! Convergence threshold for imaginary axis
+
+  ! Coulomb pseudopotential -- FIXED, NOT TUNED (fp-tuned-mustar FORBIDDEN)
+  ! Run twice: mu* = 0.10 and mu* = 0.13
+  muc          = 0.13          ! Morel-Anderson Coulomb pseudopotential
+  ! NOTE: Re-run with muc = 0.10 for bracketing
+
+  ! Temperature sweep for Tc determination (K)
+  ! Expected Tc ~ 100-160 K based on Du et al. (130 K at 6 GPa)
+  ! At 10 GPa, Tc may be different (pressure effect on lambda)
+  temps        = 200 180 170 160 155 150 145 140 135 130 125 120 115 110 105 100 90 80 60 40
+
+  ! Output settings
+  prtgkk       = .true.        ! Print e-ph matrix elements
+  a2f          = .true.        ! Compute alpha^2F(omega)
+
+  ! Band structure path for Wannier quality check (simple cubic Pm-3m)
+  band_plot    = .true.
+  filkf        = 'kpath_sc.dat'
+
+  ! Phonon linewidths and lambda
+  phonselfen   = .true.        ! Phonon self-energy (linewidths)
+/
