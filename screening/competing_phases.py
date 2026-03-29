@@ -464,22 +464,26 @@ def list_required_competing_phases(system_name: str) -> list:
         })
 
     # Known ternaries
+    seen_compositions = {p["composition"] for p in phases}
     for t in sys.get("known_ternaries", []):
-        available = t in KNOWN_TERNARY_0GPA
-        phases.append({
-            "composition": t,
-            "type": "ternary",
-            "source": KNOWN_TERNARY_0GPA.get(t, {}).get("source", "needs computation"),
-            "available_0GPa": available,
-        })
+        if t not in seen_compositions:
+            available = t in KNOWN_TERNARY_0GPA
+            phases.append({
+                "composition": t,
+                "type": "ternary",
+                "source": KNOWN_TERNARY_0GPA.get(t, {}).get("source", "needs computation"),
+                "available_0GPa": available,
+            })
+            seen_compositions.add(t)
 
-    # Candidate itself
-    phases.append({
-        "composition": sys["candidate"],
-        "type": "candidate",
-        "source": sys["source"],
-        "available_0GPa": False,
-    })
+    # Candidate itself (skip if already listed as known ternary)
+    if sys["candidate"] not in seen_compositions:
+        phases.append({
+            "composition": sys["candidate"],
+            "type": "candidate",
+            "source": sys["source"],
+            "available_0GPa": False,
+        })
 
     return phases
 

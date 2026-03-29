@@ -1,0 +1,649 @@
+{
+  "pressure_GPa": 50,
+  "pressure_kbar": 500.0,
+  "systems": {
+    "K-Ga-H": {
+      "elements": [
+        "K",
+        "Ga",
+        "H"
+      ],
+      "candidate": "KGaH3",
+      "family": "perovskite",
+      "phases": [
+        {
+          "composition": "K",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "Ga",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "H2",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "KH",
+          "type": "binary_hydride",
+          "source": "Materials Project + NIST [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": "mp-23712",
+          "delta_Hf_eV_per_atom": -0.295,
+          "space_group": "Fm-3m"
+        },
+        {
+          "composition": "GaH3",
+          "type": "binary_hydride",
+          "source": "Literature estimate [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": 0.1,
+          "space_group": "Pm-3n (high-P)"
+        },
+        {
+          "composition": "KGa",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.15,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "KGa2",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.12,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "K2Ga",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.1,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "KGa4",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.08,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "KGaH3",
+          "type": "candidate",
+          "source": "Du et al., Adv. Sci. 2024",
+          "available_0GPa": false
+        }
+      ],
+      "total_phases": 10,
+      "phases_with_data": 9,
+      "phases_need_compute": 1
+    },
+    "Rb-In-H": {
+      "elements": [
+        "Rb",
+        "In",
+        "H"
+      ],
+      "candidate": "RbInH3",
+      "family": "perovskite",
+      "phases": [
+        {
+          "composition": "Rb",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "In",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "H2",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "RbH",
+          "type": "binary_hydride",
+          "source": "Materials Project + NIST [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": "mp-24072",
+          "delta_Hf_eV_per_atom": -0.269,
+          "space_group": "Fm-3m"
+        },
+        {
+          "composition": "InH",
+          "type": "binary_hydride",
+          "source": "Estimated [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": 0.05,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "InH3",
+          "type": "binary_hydride",
+          "source": "Estimated [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": 0.08,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "RbIn",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.18,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "Rb2In",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.12,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "RbIn2",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.14,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "RbInH3",
+          "type": "candidate",
+          "source": "Du et al., Adv. Sci. 2024",
+          "available_0GPa": false
+        }
+      ],
+      "total_phases": 10,
+      "phases_with_data": 9,
+      "phases_need_compute": 1
+    },
+    "Cs-In-H": {
+      "elements": [
+        "Cs",
+        "In",
+        "H"
+      ],
+      "candidate": "CsInH3",
+      "family": "perovskite",
+      "phases": [
+        {
+          "composition": "Cs",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "In",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "H2",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "CsH",
+          "type": "binary_hydride",
+          "source": "Materials Project + NIST [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": "mp-23779",
+          "delta_Hf_eV_per_atom": -0.273,
+          "space_group": "Fm-3m"
+        },
+        {
+          "composition": "InH",
+          "type": "binary_hydride",
+          "source": "Estimated [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": 0.05,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "InH3",
+          "type": "binary_hydride",
+          "source": "Estimated [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": 0.08,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "CsIn",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.2,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "Cs2In",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.13,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "CsIn2",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.15,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "CsInH3",
+          "type": "candidate",
+          "source": "Du et al., Adv. Sci. 2024",
+          "available_0GPa": false
+        }
+      ],
+      "total_phases": 10,
+      "phases_with_data": 9,
+      "phases_need_compute": 1
+    },
+    "Mg-Ir-H": {
+      "elements": [
+        "Mg",
+        "Ir",
+        "H"
+      ],
+      "candidate": "Mg2IrH6",
+      "family": "octahedral",
+      "phases": [
+        {
+          "composition": "Mg",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "Ir",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "H2",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "MgH2",
+          "type": "binary_hydride",
+          "source": "Experimental (NIST) [BENCHMARK]",
+          "available_0GPa": true,
+          "mp_id": "mp-23710",
+          "delta_Hf_eV_per_atom": -0.26,
+          "space_group": "P4_2/mnm"
+        },
+        {
+          "composition": "IrH",
+          "type": "binary_hydride",
+          "source": "Estimated [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": 0.15,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "IrH2",
+          "type": "binary_hydride",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": 0.12,
+          "space_group": "Pa-3"
+        },
+        {
+          "composition": "IrH3",
+          "type": "binary_hydride",
+          "source": "Estimated [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": 0.1,
+          "space_group": "Pm-3n"
+        },
+        {
+          "composition": "MgIr",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.28,
+          "space_group": "Pm-3m"
+        },
+        {
+          "composition": "Mg2Ir",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.2,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "MgIr2",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.22,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "Mg2IrH6",
+          "type": "ternary",
+          "source": "Lucrezi et al., PRL 132, 166001 (2024) [BENCHMARK]",
+          "available_0GPa": true
+        }
+      ],
+      "total_phases": 11,
+      "phases_with_data": 11,
+      "phases_need_compute": 0
+    },
+    "Sr-N-B-C-H": {
+      "elements": [
+        "Sr",
+        "N",
+        "B",
+        "C",
+        "H"
+      ],
+      "candidate": "SrNH4B6C6",
+      "family": "clathrate",
+      "phases": [
+        {
+          "composition": "Sr",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "N2",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "B",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "C",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "H2",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "SrH2",
+          "type": "binary_hydride",
+          "source": "Materials Project + NIST [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": "mp-23718",
+          "delta_Hf_eV_per_atom": -0.306,
+          "space_group": "Pnma"
+        },
+        {
+          "composition": "BH3",
+          "type": "binary_hydride",
+          "source": "Estimated [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": 0.05,
+          "space_group": "molecular"
+        },
+        {
+          "composition": "B2H6",
+          "type": "binary_hydride",
+          "source": "NIST [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.045,
+          "space_group": "molecular"
+        },
+        {
+          "composition": "NH3",
+          "type": "binary_hydride",
+          "source": "NIST [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.118,
+          "space_group": "molecular"
+        },
+        {
+          "composition": "SrB6",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.35,
+          "space_group": "Pm-3m"
+        },
+        {
+          "composition": "B4C",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.12,
+          "space_group": "R-3m"
+        },
+        {
+          "composition": "BN",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -1.28,
+          "space_group": "F-43m"
+        },
+        {
+          "composition": "Sr3N2",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.5,
+          "space_group": "Ia-3"
+        },
+        {
+          "composition": "SrNH4B6C6",
+          "type": "candidate",
+          "source": "Wang et al., Commun. Phys. 2024",
+          "available_0GPa": false
+        }
+      ],
+      "total_phases": 14,
+      "phases_with_data": 13,
+      "phases_need_compute": 1,
+      "notes": "5-component system; use pseudo-ternary hull (fix B6C6 cage)"
+    },
+    "Pb-N-B-C-H": {
+      "elements": [
+        "Pb",
+        "N",
+        "B",
+        "C",
+        "H"
+      ],
+      "candidate": "PbNH4B6C6",
+      "family": "clathrate",
+      "phases": [
+        {
+          "composition": "Pb",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "N2",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "B",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "C",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "H2",
+          "type": "elemental",
+          "source": "standard state",
+          "available_0GPa": true
+        },
+        {
+          "composition": "PbH2",
+          "type": "binary_hydride",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": 0.05,
+          "space_group": "Fm-3m"
+        },
+        {
+          "composition": "PbH4",
+          "type": "binary_hydride",
+          "source": "Estimated [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": 0.1,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "BH3",
+          "type": "binary_hydride",
+          "source": "Estimated [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": 0.05,
+          "space_group": "molecular"
+        },
+        {
+          "composition": "B2H6",
+          "type": "binary_hydride",
+          "source": "NIST [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.045,
+          "space_group": "molecular"
+        },
+        {
+          "composition": "NH3",
+          "type": "binary_hydride",
+          "source": "NIST [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.118,
+          "space_group": "molecular"
+        },
+        {
+          "composition": "PbB",
+          "type": "binary_intermetallic",
+          "source": "Estimated [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": 0.02,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "B4C",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.12,
+          "space_group": "R-3m"
+        },
+        {
+          "composition": "BN",
+          "type": "binary_intermetallic",
+          "source": "Materials Project [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -1.28,
+          "space_group": "F-43m"
+        },
+        {
+          "composition": "Pb3N2",
+          "type": "binary_intermetallic",
+          "source": "Estimated [UNVERIFIED - training data]",
+          "available_0GPa": true,
+          "mp_id": null,
+          "delta_Hf_eV_per_atom": -0.1,
+          "space_group": "unknown"
+        },
+        {
+          "composition": "PbNH4B6C6",
+          "type": "candidate",
+          "source": "Wang et al., Commun. Phys. 2024",
+          "available_0GPa": false
+        }
+      ],
+      "total_phases": 15,
+      "phases_with_data": 14,
+      "phases_need_compute": 1,
+      "notes": "5-component system; use pseudo-ternary hull (fix B6C6 cage)"
+    }
+  },
+  "metadata": {
+    "source": "screening/competing_phases.py",
+    "convention": "PBEsol, ONCV PseudoDojo, eV/atom, GPa",
+    "h2_reference": "molecular H2 at target pressure",
+    "note_0GPa": "0 GPa data from Materials Project (PBE) and NIST; systematic offset 10-30 meV/atom vs PBEsol",
+    "note_finiteP": "All enthalpies at 50 GPa MUST be recomputed with vc-relax"
+  }
+}
