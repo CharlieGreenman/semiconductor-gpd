@@ -162,7 +162,12 @@ Plans:
 
 **Backtracking trigger:** If SSCHA reveals that the Phase 2 "stable" candidates are actually unstable (imaginary SSCHA phonon frequencies), return to Phase 2 to screen additional families. If anharmonic corrections reduce ALL Tc below 150 K, document as negative result and assess whether the 300 K target is achievable within the phonon-mediated framework.
 
-**Plans:** TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 04-01-PLAN.md -- CsInH3 SSCHA at 5 GPa: supercell setup, minimization, renormalized phonons
+- [ ] 04-02-PLAN.md -- KGaH3 SSCHA at 10 GPa + CsInH3 3 GPa quantum stabilization assessment
+- [ ] 04-03-PLAN.md -- Anharmonic alpha^2F, corrected Tc, Phase 4 synthesis and contract audit
 
 ### Phase 5: Characterization and Sensitivity Analysis
 
