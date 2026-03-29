@@ -1,8 +1,8 @@
 {
   "project_reference": {
-    "project_md_updated": null,
-    "core_research_question": null,
-    "current_focus": null
+    "project_md_updated": "2026-03-28",
+    "core_research_question": "Can a thermodynamically or dynamically stable ternary hydride be identified from first principles with Tc >= 300 K at near-ambient pressure (P <= 10 GPa)?",
+    "current_focus": "Phase 1 - Pipeline Validation and Benchmarking"
   },
   "project_contract": {
     "schema_version": 1,
@@ -369,7 +369,7 @@
     "total_phases": null,
     "current_plan": null,
     "total_plans_in_phase": null,
-    "status": null,
+    "status": "Phase complete \u2014 ready for verification",
     "last_activity": null,
     "last_activity_desc": null,
     "progress_percent": 0,
@@ -389,8 +389,8 @@
   "approximations": [],
   "convention_lock": {
     "metric_signature": null,
-    "fourier_convention": null,
-    "natural_units": null,
+    "fourier_convention": "QE plane-wave: Bloch psi_nk = e^{ikr} u_nk; asymmetric 1/Omega normalization",
+    "natural_units": "NOT used; explicit hbar and k_B",
     "gauge_choice": null,
     "regularization_scheme": null,
     "renormalization_scheme": null,
@@ -406,7 +406,23 @@
     "covariant_derivative_sign": null,
     "gamma_matrix_convention": null,
     "creation_annihilation_order": null,
-    "custom_conventions": {}
+    "custom_conventions": {
+      "unit_system_internal": "Rydberg atomic units (Ry, Bohr)",
+      "unit_system_reporting": "SI-derived (K, GPa, eV, meV)",
+      "pressure_unit_qe": "kbar",
+      "pressure_unit_report": "GPa (1 GPa = 10 kbar)",
+      "energy_conversion": "1 Ry = 13.6057 eV = 157887 K",
+      "lambda_definition": "lambda = 2 * integral[alpha2F(omega)/omega d(omega)]",
+      "mustar_protocol": "Fixed 0.10-0.13 bracket; NOT tuned",
+      "pseudopotential": "ONCV norm-conserving (SG15 or PseudoDojo)",
+      "xc_functional": "PBEsol primary; PBE cross-check",
+      "dos_convention": "N_F per spin per cell (EPW); QE dos.x gives total for both spins",
+      "phonon_imaginary": "Negative frequency = imaginary mode; threshold -5 cm^-1",
+      "ehull_threshold": "50 meV/atom above hull",
+      "electron_charge": "e > 0; electron has charge -e",
+      "eliashberg_method": "Isotropic Eliashberg on Matsubara axis; Allen-Dynes cross-check only",
+      "asr_enforcement": "asr=crystal in QE matdyn.x"
+    }
   },
   "propagated_uncertainties": [],
   "pending_todos": [],
@@ -415,5 +431,7 @@
     "last_date": null,
     "stopped_at": null,
     "resume_file": null
-  }
+  },
+  "_version": 1,
+  "_synced_at": "2026-03-29T06:08:47.149289+00:00"
 }

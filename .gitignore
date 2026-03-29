@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# GPD internals (backup files, not config)
+.gpd/state.json.bak
+
+# MCP config (local)
+.mcp.json
+
+# Claude Code config (local hooks/settings)
+.claude/
