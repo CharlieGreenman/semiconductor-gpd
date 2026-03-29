@@ -120,7 +120,12 @@ Plans:
 
 **Backtracking trigger:** If literature review reveals that the 0-2% compressive strain range is already well-mapped with no ambient zero-resist Tc above 50 K, flag as a potential ceiling and evaluate whether the 80 K gate is realistic or should be revised downward with an honest assessment.
 
-**Plans:** TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 25-01-PLAN.md -- Consolidate strain-Tc data and write mapping protocol with success gates
+- [ ] 25-02-PLAN.md -- Compile nickelate sub-family landscape table with ranking rationale
+- [ ] 25-03-PLAN.md -- Write promotion-decision memo with gate framework and current assessment
 
 ### Phase 26: Two-Track Decision Integration and v7.0 Closeout
 
