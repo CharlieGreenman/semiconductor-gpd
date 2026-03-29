@@ -1,0 +1,52 @@
+{
+  "source": "Phase 3 DFPT (simulations/csinh3/csinh3_ph.in)",
+  "q_grid": [
+    2,
+    2,
+    2
+  ],
+  "n_qpoints": 8,
+  "nat": 5,
+  "n_modes": 15,
+  "gamma_frequencies_cm1": {
+    "acoustic_1": 0.0,
+    "acoustic_2": 0.0,
+    "acoustic_3": 0.0,
+    "Cs_In_modes": [
+      82.3,
+      82.3,
+      82.3,
+      145.7,
+      145.7,
+      145.7
+    ],
+    "H_bend": [
+      356.2,
+      356.2,
+      356.2
+    ],
+    "H_stretch": [
+      1089.4,
+      1089.4,
+      1089.4
+    ],
+    "min_freq_cm1": 14.4
+  },
+  "reference_values": {
+    "lambda": 2.8,
+    "Tc_eliashberg_mu013_K": 278,
+    "omega_log_K": 1175.5,
+    "min_freq_cm1": 14.4
+  },
+  "dynmat_files": [
+    "csinh3_dyn1",
+    "csinh3_dyn2",
+    "csinh3_dyn3",
+    "csinh3_dyn4",
+    "csinh3_dyn5",
+    "csinh3_dyn6",
+    "csinh3_dyn7",
+    "csinh3_dyn8"
+  ],
+  "note": "Harmonic dynamical matrices from Phase 3 DFPT at 5 GPa. These serve as the SSCHA starting point. The SSCHA trial density matrix is initialized from these matrices."
+}

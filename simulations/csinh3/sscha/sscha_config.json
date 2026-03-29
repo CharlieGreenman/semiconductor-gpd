@@ -1,0 +1,525 @@
+{
+  "material": "CsInH3",
+  "space_group": "Pm-3m",
+  "pressure_GPa": 5.0,
+  "structure": {
+    "celldm1_bohr": 7.48278,
+    "a_angstrom": 3.95971507206,
+    "primitive_atoms": [
+      [
+        "Cs",
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        "In",
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      [
+        "H",
+        [
+          0.5,
+          0.5,
+          0.0
+        ]
+      ],
+      [
+        "H",
+        [
+          0.5,
+          0.0,
+          0.5
+        ]
+      ],
+      [
+        "H",
+        [
+          0.0,
+          0.5,
+          0.5
+        ]
+      ]
+    ],
+    "nat_primitive": 5
+  },
+  "supercell": {
+    "size": [
+      2,
+      2,
+      2
+    ],
+    "nat": 40,
+    "cell_bohr": [
+      [
+        14.96556,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        14.96556,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        14.96556
+      ]
+    ],
+    "atoms_frac": [
+      [
+        "Cs",
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        "In",
+        [
+          0.25,
+          0.25,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.25,
+          0.0
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.0,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.0,
+          0.25,
+          0.25
+        ]
+      ],
+      [
+        "Cs",
+        [
+          0.0,
+          0.0,
+          0.5
+        ]
+      ],
+      [
+        "In",
+        [
+          0.25,
+          0.25,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.25,
+          0.5
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.0,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.0,
+          0.25,
+          0.75
+        ]
+      ],
+      [
+        "Cs",
+        [
+          0.0,
+          0.5,
+          0.0
+        ]
+      ],
+      [
+        "In",
+        [
+          0.25,
+          0.75,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.75,
+          0.0
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.5,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.0,
+          0.75,
+          0.25
+        ]
+      ],
+      [
+        "Cs",
+        [
+          0.0,
+          0.5,
+          0.5
+        ]
+      ],
+      [
+        "In",
+        [
+          0.25,
+          0.75,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.75,
+          0.5
+        ]
+      ],
+      [
+        "H",
+        [
+          0.25,
+          0.5,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.0,
+          0.75,
+          0.75
+        ]
+      ],
+      [
+        "Cs",
+        [
+          0.5,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        "In",
+        [
+          0.75,
+          0.25,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.25,
+          0.0
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.0,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.5,
+          0.25,
+          0.25
+        ]
+      ],
+      [
+        "Cs",
+        [
+          0.5,
+          0.0,
+          0.5
+        ]
+      ],
+      [
+        "In",
+        [
+          0.75,
+          0.25,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.25,
+          0.5
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.0,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.5,
+          0.25,
+          0.75
+        ]
+      ],
+      [
+        "Cs",
+        [
+          0.5,
+          0.5,
+          0.0
+        ]
+      ],
+      [
+        "In",
+        [
+          0.75,
+          0.75,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.75,
+          0.0
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.5,
+          0.25
+        ]
+      ],
+      [
+        "H",
+        [
+          0.5,
+          0.75,
+          0.25
+        ]
+      ],
+      [
+        "Cs",
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      [
+        "In",
+        [
+          0.75,
+          0.75,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.75,
+          0.5
+        ]
+      ],
+      [
+        "H",
+        [
+          0.75,
+          0.5,
+          0.75
+        ]
+      ],
+      [
+        "H",
+        [
+          0.5,
+          0.75,
+          0.75
+        ]
+      ]
+    ]
+  },
+  "sscha_parameters": {
+    "temperature_K": 0,
+    "n_configs": 100,
+    "min_step_dyn": 0.01,
+    "kong_liu_threshold": 0.5,
+    "max_populations": 20,
+    "gradient_threshold": 1e-08,
+    "meaningful_factor": 0.001,
+    "enforce_symmetry": true,
+    "symmetry_group": "Pm-3m",
+    "random_seed": 42,
+    "supercell": [
+      2,
+      2,
+      2
+    ],
+    "nat_supercell": 40,
+    "nat_primitive": 5,
+    "pressure_GPa": 5.0
+  },
+  "qe_parameters": {
+    "calculation": "scf",
+    "prefix": "csinh3_sc",
+    "ecutwfc": 80.0,
+    "ecutrho": 640.0,
+    "conv_thr": 1e-08,
+    "smearing": "mp",
+    "degauss": 0.02,
+    "k_points": [
+      2,
+      2,
+      2
+    ],
+    "k_offsets": [
+      0,
+      0,
+      0
+    ],
+    "mixing_beta": 0.3,
+    "mixing_mode": "plain",
+    "diagonalization": "david",
+    "press": 50.0,
+    "pseudo_dir": "./pseudo/",
+    "outdir": "./tmp/",
+    "xc_functional": "PBEsol"
+  },
+  "pseudopotentials": {
+    "Cs": {
+      "mass": 132.905,
+      "file": "Cs.upf"
+    },
+    "In": {
+      "mass": 114.818,
+      "file": "In.upf"
+    },
+    "H": {
+      "mass": 1.008,
+      "file": "H.upf"
+    }
+  },
+  "harmonic_reference": {
+    "source": "Phase 3 DFPT (simulations/csinh3/csinh3_ph.in)",
+    "q_grid": [
+      2,
+      2,
+      2
+    ],
+    "n_qpoints": 8,
+    "nat": 5,
+    "n_modes": 15,
+    "gamma_frequencies_cm1": {
+      "acoustic_1": 0.0,
+      "acoustic_2": 0.0,
+      "acoustic_3": 0.0,
+      "Cs_In_modes": [
+        82.3,
+        82.3,
+        82.3,
+        145.7,
+        145.7,
+        145.7
+      ],
+      "H_bend": [
+        356.2,
+        356.2,
+        356.2
+      ],
+      "H_stretch": [
+        1089.4,
+        1089.4,
+        1089.4
+      ],
+      "min_freq_cm1": 14.4
+    },
+    "reference_values": {
+      "lambda": 2.8,
+      "Tc_eliashberg_mu013_K": 278,
+      "omega_log_K": 1175.5,
+      "min_freq_cm1": 14.4
+    },
+    "dynmat_files": [
+      "csinh3_dyn1",
+      "csinh3_dyn2",
+      "csinh3_dyn3",
+      "csinh3_dyn4",
+      "csinh3_dyn5",
+      "csinh3_dyn6",
+      "csinh3_dyn7",
+      "csinh3_dyn8"
+    ],
+    "note": "Harmonic dynamical matrices from Phase 3 DFPT at 5 GPa. These serve as the SSCHA starting point. The SSCHA trial density matrix is initialized from these matrices."
+  },
+  "convergence_criteria": {
+    "free_energy_meV_per_atom": 1.0,
+    "phonon_freq_cm1": 5.0,
+    "gradient_Ry2": 1e-08,
+    "kong_liu_min": 0.5,
+    "min_populations_for_convergence": 3
+  },
+  "expected_results": {
+    "note": "Expected from H3S/YH6/CaH6 analogy",
+    "lambda_reduction_pct": "20-35%",
+    "Tc_reduction_pct": "15-25%",
+    "H_mode_hardening": true,
+    "all_frequencies_real": true
+  }
+}
