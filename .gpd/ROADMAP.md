@@ -192,7 +192,12 @@ Plans:
 
 **Backtracking trigger:** If final assembly reveals inconsistencies between phases (e.g., Phase 3 Tc and Phase 4 corrected Tc cannot be reconciled, or stability status is ambiguous), return to the relevant phase for resolution.
 
-**Plans:** TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 05-01-PLAN.md -- SSCHA-corrected Tc(P) figure for CsInH3 with H3S/LaH10 comparison and 300 K line (deliv-tc-curve)
+- [ ] 05-02-PLAN.md -- Complete CsInH3 candidate report: structure, phonons, alpha^2F, Tc, E_hull, anharmonic corrections, uncertainty budget (deliv-candidate)
+- [ ] 05-03-PLAN.md -- Final benchmark table with error budget, full contract audit, and project conclusions (deliv-benchmark + synthesis)
 
 ## Risk Register
 
@@ -214,4 +219,4 @@ Plans:
 | 2. Candidate Screening | 0/4 | Plans created | - |
 | 3. Eliashberg Tc Predictions | 0/4 | Plans created | - |
 | 4. Anharmonic Corrections | 0/TBD | Not started | - |
-| 5. Characterization | 0/TBD | Not started | - |
+| 5. Characterization | 0/3 | Plans created | - |
