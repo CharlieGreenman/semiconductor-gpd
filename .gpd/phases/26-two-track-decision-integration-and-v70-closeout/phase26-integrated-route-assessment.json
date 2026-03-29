@@ -1,0 +1,119 @@
+{
+  "document": "phase26-integrated-route-assessment",
+  "version": "1.0",
+  "date": "2026-03-29",
+  "status": "pre-registered decision framework",
+  "honest_statement": "v7.0 designed protocols, not ran experiments. The 149 K gap is unchanged. No Tc improvement occurred during this milestone.",
+  "key_values": {
+    "best_retained_ambient_tc_K": 151,
+    "best_retained_ambient_tc_source": "Deng, Chu et al. 2026 (arXiv:2603.12437)",
+    "best_retained_ambient_tc_vald01": "zero-resistance, retained ambient, metastable, single-group",
+    "stable_ambient_tc_baseline_K": 134,
+    "stable_ambient_tc_vald01": "zero-resistance, thermodynamically stable, ambient",
+    "pqp_success_gate_K": 131,
+    "room_temperature_K": 300,
+    "room_temperature_gap_K": 149,
+    "room_temperature_gap_arithmetic": "300 - 151 = 149",
+    "fallback_gap_K": 166,
+    "fallback_gap_arithmetic": "300 - 134 = 166",
+    "nickelate_best_ambient_zero_resist_K": 40,
+    "nickelate_best_ambient_zero_resist_source": "Sun et al. Nature 2025 (SmNiO2 bulk)",
+    "nickelate_best_ambient_film_zero_resist_K": 3,
+    "nickelate_best_ambient_film_onset_K": 63,
+    "nickelate_invest_gate_K": 50,
+    "nickelate_evaluate_gate_K": 80,
+    "nickelate_promote_gate_K": 100
+  },
+  "track_b_status": {
+    "current": "WATCH",
+    "reason": "Below invest threshold. Best zero-resist 40 K vs 50 K gate.",
+    "fixed_for_assessment": true,
+    "why_fixed": "v7.0 designed protocols, not ran experiments. Nickelate status can only change when strain-Tc mapping protocol is executed."
+  },
+  "outcome_combinations": [
+    {
+      "id": "rule-a-watch",
+      "track_a_rule": "A",
+      "track_a_description": "At least one headline match (Tc >= 131 K at one node, T1+)",
+      "track_b_status": "WATCH",
+      "combined_route_decision": "Hg1223 keep-primary; nickelates stay-secondary",
+      "hg1223_status": "keep-primary",
+      "nickelate_status": "stay-secondary",
+      "gap_K": "300 - Tc_best",
+      "gap_arithmetic": "Depends on best confirmed node. If 151 K: 300 - 151 = 149 K. If 140 K: 300 - 140 = 160 K.",
+      "gap_guardrail": "Even at 151 K, gap is still 149 K. No room-temperature progress.",
+      "traces_to_phase24": "Rule A (Section 3)",
+      "traces_to_phase25": "NIC-04 Section 3 (current status: watch)"
+    },
+    {
+      "id": "rule-b-watch",
+      "track_a_rule": "B",
+      "track_a_description": "All clean misses (no node passes 131 K, most runs T1)",
+      "track_b_status": "WATCH",
+      "combined_route_decision": "Activate pivot trigger. Hg1223 falls back to 134 K. Nickelates increased investment, still secondary.",
+      "hg1223_status": "fallback-to-134K",
+      "nickelate_status": "increased-investment-still-secondary",
+      "gap_K": 166,
+      "gap_arithmetic": "300 - 134 = 166",
+      "nickelate_gate_evaluation": {
+        "watch": "MET (63 K onset > 50 K)",
+        "invest": "NOT MET (40 K < 50 K, short by 10 K)",
+        "evaluate": "NOT MET (40 K < 80 K, short by 40 K)",
+        "promote": "NOT MET (40 K < 100 K, short by 60 K)"
+      },
+      "nickelate_promotion_blocked": true,
+      "nickelate_promotion_blocked_reason": "Invest gate not met (40 K vs 50 K). Promote gate requires 100 K from 2+ groups; best is 40 K from 1 group.",
+      "traces_to_phase24": "Rule B (Section 3)",
+      "traces_to_phase25": "NIC-04 Section 1 (all 5 gates), Section 3 (current assessment)",
+      "traces_to_phase23": "Memo Section 2 (pivot trigger)"
+    },
+    {
+      "id": "rule-c-watch",
+      "track_a_rule": "C",
+      "track_a_description": "All T0 (operational failure, first 3+ runs invalid)",
+      "track_b_status": "WATCH",
+      "combined_route_decision": "No route update. Both tracks unchanged. Troubleshoot operations.",
+      "hg1223_status": "no-route-update",
+      "nickelate_status": "no-change",
+      "gap_K": 149,
+      "gap_arithmetic": "300 - 151 = 149 (unchanged; T0 is uninformative)",
+      "traces_to_phase24": "Rule C (Section 3)",
+      "traces_to_phase25": "No gate evaluation triggered (T0 is uninformative)"
+    },
+    {
+      "id": "rule-d-watch",
+      "track_a_rule": "D",
+      "track_a_description": "Mixed results (some positive, some negative, no uniform pattern)",
+      "track_b_status": "WATCH",
+      "combined_route_decision": "Hg1223 hold-pending-diagnostic; nickelates stay secondary.",
+      "hg1223_status": "hold-pending-diagnostic",
+      "nickelate_status": "no-change",
+      "gap_K": "149 or 300 - Tc_best",
+      "gap_arithmetic": "If any node passes 131 K: 300 - Tc_best. If none pass: 300 - 151 = 149 (unchanged).",
+      "traces_to_phase24": "Rule D (Section 3), per-outcome table (Section 2)",
+      "traces_to_phase25": "No gate evaluation triggered (no pivot)"
+    },
+    {
+      "id": "rule-e-watch",
+      "track_a_rule": "E",
+      "track_a_description": "Headline exceedance (any node Tc > 151 K)",
+      "track_b_status": "WATCH",
+      "combined_route_decision": "Hg1223 hold-pending-replication; nickelates stay secondary.",
+      "hg1223_status": "hold-pending-replication",
+      "nickelate_status": "no-change",
+      "gap_K": "149 (official until replication)",
+      "gap_arithmetic": "Provisional: 300 - Tc_exceed. Official: 300 - 151 = 149 until replicated.",
+      "gap_guardrail": "Even exceedance to 160 K leaves 140 K gap.",
+      "traces_to_phase24": "Rule E (Section 3), S2 (Section 2)",
+      "traces_to_phase25": "No gate evaluation triggered (exceedance strengthens Hg1223)"
+    }
+  ],
+  "consistency_checks": {
+    "no_contradictions": true,
+    "all_5_rules_covered": true,
+    "track_b_fixed_everywhere": true,
+    "vald01_compliant": true,
+    "vald02_gap_explicit": true,
+    "room_temperature_language_absent": true
+  }
+}
