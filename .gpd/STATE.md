@@ -64,6 +64,7 @@ None.
 - [Phase 21]: `v5.0` closed with explicit Stage `A` evidence tiers and route gates for `Hg1223`
 - [Phase 23]: `v6.0` closed with explicit two-route program: `Hg1223` PQP reproducibility campaign (primary), bilayer nickelate strain mapping (secondary), `149 K` gap unchanged
 - [Phase 0]: Started milestone v7.0: Two-Track Route Testing with phases 24-26
+- [Phase 0]: Started milestone v8.0: Computational Materials Design — v7.0 closeout requires compute or measure, not more planning; pivoting to first-principles Tc prediction for multilayer cuprates, strained nickelates, and hybrid superlattices
 
 ### Active Approximations
 
