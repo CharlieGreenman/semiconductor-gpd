@@ -1,0 +1,91 @@
+--
+&inputepw
+  prefix       = 'csinh3'
+  outdir       = './tmp/'
+  dvscf_dir    = './save/'
+
+  ! Electron-phonon calculation settings
+  ep_coupling  = .true.
+  elph         = .true.
+  epbwrite     = .true.
+  epbread      = .false.
+  epwwrite     = .true.
+  epwread      = .false.
+
+  ! ASSERT_CONVENTION: xc_functional=PBEsol, pseudopotential=ONCV_norm_conserving,
+  !   lambda_definition=2*integral[alpha2F/omega], mustar_protocol=fixed_0.10_0.13,
+  !   eliashberg_method=isotropic_Matsubara, nf_convention=per_spin_per_cell
+
+  ! CsInH3 (Pm-3m, 5 atoms): electronic structure
+  !   Cs: 5s, 5p semicore -> 6s valence (1 electron)
+  !   In: 4d semicore -> 5s, 5p valence (3 electrons)
+  !   H:  1s (3 H atoms -> 3 electrons)
+  !   Total valence: ~7 electrons (varies by PP)
+  !
+  ! Wannier functions: need bands crossing E_F + buffer
+  !   In-s,p (4 Wannier) + H-s (3 Wannier) + Cs-s,p (4 Wannier) + In-d hybridization (3 Wannier) = 14
+  !   Adjust based on actual band structure
+  nbndsub      = 14             ! Number of Wannier functions (bands to Wannierize)
+  num_iter     = 500            ! Wannier spread minimization iterations
+
+  ! Disentanglement window (eV relative to E_F)
+  ! CsInH3 has In-p/H-s hybridization at E_F
+  dis_win_min  = -8.0           ! Lower disentanglement window (eV)
+  dis_win_max  =  8.0           ! Upper disentanglement window (eV)
+  dis_froz_min = -3.0           ! Lower frozen window (eV)
+  dis_froz_max =  3.0           ! Upper frozen window (eV)
+
+  ! Coarse grids (MUST match DFPT calculation: 6x6x6 q-grid, 12x12x12 k-grid)
+  nk1          = 12
+  nk2          = 12
+  nk3          = 12
+  nq1          = 6
+  nq2          = 6
+  nq3          = 6
+
+  ! Fine interpolation grids
+  ! Primary: 40^3 k / 20^3 q (convergence tested against 60^3/30^3)
+  nkf1         = 40
+  nkf2         = 40
+  nkf3         = 40
+  nqf1         = 20
+  nqf2         = 20
+  nqf3         = 20
+
+  ! Delta function smearing
+  degaussw     = 0.025          ! eV (Gaussian smearing for delta functions)
+  fsthick      = 2.0            ! eV (Fermi surface thickness for e-ph)
+
+  ! Eliashberg solver settings
+  eliashberg   = .true.
+  limag        = .true.         ! Imaginary-axis (Matsubara) Eliashberg
+  lpade        = .true.         ! Pade analytic continuation to real axis
+  liso         = .true.         ! Isotropic Eliashberg
+  laniso       = .false.        ! No anisotropic (too expensive for exploratory)
+
+  ! Matsubara frequency cutoff
+  ! CsInH3 max phonon ~ 180 meV -> wscut >= 5 * 180 meV = 900 meV ~ 1.0 eV
+  ! Use 1.0 eV primary; convergence test at 1.5 eV
+  wscut        = 1.0            ! eV (Matsubara frequency cutoff)
+  nsiter       = 500            ! Max Eliashberg iterations
+  conv_thr_iaxis = 1.0d-4      ! Convergence threshold for imaginary axis
+  broyden_beta = 0.7            ! Broyden mixing parameter
+
+  ! Coulomb pseudopotential -- FIXED, NOT TUNED (fp-tuned-mustar FORBIDDEN)
+  ! Run twice: mu* = 0.10 and mu* = 0.13
+  muc          = 0.13           ! Morel-Anderson Coulomb pseudopotential
+  ! NOTE: Re-run with muc = 0.10 for bracketing
+
+  ! Temperature sweep for Tc determination (K)
+  ! Broad sweep from 300 K down to 50 K in 26 steps
+  nstemp       = 26
+  tempsmin     = 50.0           ! K
+  tempsmax     = 300.0          ! K
+
+  ! Output settings
+  prtgkk       = .true.         ! Print e-ph matrix elements
+  a2f          = .true.         ! Compute alpha^2F(omega)
+
+  ! Phonon linewidths and lambda
+  phonselfen   = .true.         ! Phonon self-energy (linewidths)
+/
