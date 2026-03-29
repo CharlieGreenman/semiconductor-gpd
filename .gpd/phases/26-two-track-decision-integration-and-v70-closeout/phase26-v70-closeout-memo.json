@@ -1,0 +1,179 @@
+{
+  "milestone": "v7.0",
+  "milestone_name": "Two-Track Route Testing",
+  "status": "completed",
+  "date": "2026-03-29",
+  "phases_executed": [24, 25, 26],
+  "plans_completed": 7,
+  "route_ranking": {
+    "primary": {
+      "route": "Hg1223",
+      "family": "Hg-family cuprates",
+      "score": 4.15,
+      "score_max": 5.0,
+      "status": "primary",
+      "change_from_v6": "confirmed_unchanged",
+      "best_tc_K": 151,
+      "tc_definition": "zero-resistance",
+      "tc_conditions": "retained ambient after PQP",
+      "tc_phase_state": "metastable",
+      "tc_source": "Deng, Chu et al. 2026 (arXiv:2603.12437)",
+      "tc_confirmation": "single-group",
+      "gap_K": 149,
+      "gap_arithmetic": "300 - 151 = 149"
+    },
+    "secondary": {
+      "route": "Nickelates",
+      "family": "Bilayer La3Ni2O7-class (lead), infinite-layer SmNiO2-class (backup)",
+      "score": 2.9,
+      "score_max": 5.0,
+      "status": "secondary_watch",
+      "change_from_v6": "confirmed_unchanged",
+      "best_zero_resist_tc_K": 40,
+      "best_zero_resist_source": "Sun et al. Nature 2025 (SmNiO2 bulk)",
+      "best_zero_resist_conditions": "ambient, bulk, stable",
+      "best_onset_tc_K": 63,
+      "best_onset_source": "Zhou et al. arXiv:2512.04708 (GAE film on SLAO)",
+      "best_onset_conditions": "ambient, film",
+      "best_film_zero_resist_tc_K": 3,
+      "best_film_zero_resist_source": "Ko et al. Nature 2024 (PLD on SLAO)",
+      "gap_zero_resist_K": 260,
+      "gap_onset_K": 237,
+      "promotion_status": "not_warranted",
+      "invest_gate_K": 50,
+      "invest_gate_met": false,
+      "evaluate_gate_K": 80,
+      "evaluate_gate_met": false,
+      "promote_gate_K": 100,
+      "promote_gate_met": false
+    }
+  },
+  "gap_K": 149,
+  "gap_arithmetic": "300 - 151 = 149",
+  "gap_unchanged_since": "v4.0",
+  "room_temperature_K": 300,
+  "tracks": {
+    "track_a": {
+      "name": "Hg1223 PQP Reproduction",
+      "phase": 24,
+      "plans_completed": 2,
+      "protocol_status": "ready",
+      "route_status": "primary",
+      "deliverables": [
+        "phase24-reproduction-protocol.md",
+        "phase24-reproduction-protocol.json",
+        "phase24-sample-state-checklist.md",
+        "phase24-sample-state-checklist.json",
+        "phase24-route-confidence-map.md",
+        "phase24-route-confidence-map.json"
+      ],
+      "key_parameters": {
+        "success_gate_K": 131,
+        "success_gate_arithmetic": "151 - 20 = 131",
+        "stage_a_nodes": 6,
+        "outcome_classes": 12,
+        "aggregate_rules": 5,
+        "consistency_checks_passed": "15/15"
+      }
+    },
+    "track_b": {
+      "name": "Nickelate Strain-Tc Mapping",
+      "phase": 25,
+      "plans_completed": 3,
+      "protocol_status": "ready",
+      "route_status": "secondary_watch",
+      "deliverables": [
+        "phase25-strain-tc-data.json",
+        "phase25-strain-tc-protocol.md",
+        "phase25-sub-family-landscape.md",
+        "phase25-sub-family-landscape.json",
+        "phase25-promotion-decision-memo.md",
+        "phase25-promotion-decision-memo.json"
+      ],
+      "key_parameters": {
+        "data_points": 11,
+        "substrates": 4,
+        "growth_methods": 2,
+        "success_gate_K": 80,
+        "promotion_gates": {
+          "watch": {"threshold_K": 50, "tc_definition": "onset", "met": true},
+          "invest": {"threshold_K": 50, "tc_definition": "zero-resistance", "met": false},
+          "evaluate": {"threshold_K": 80, "tc_definition": "zero-resistance", "met": false},
+          "promote": {"threshold_K": 100, "tc_definition": "zero-resistance", "met": false}
+        }
+      }
+    },
+    "integration": {
+      "name": "Two-Track Decision Integration",
+      "phase": 26,
+      "plans_completed": 2,
+      "deliverables": [
+        "phase26-integrated-route-assessment.md",
+        "phase26-integrated-route-assessment.json",
+        "phase26-pivot-assessment.md",
+        "phase26-route-stall-memo.md",
+        "phase26-v70-closeout-memo.md",
+        "phase26-v70-closeout-memo.json"
+      ],
+      "vald03_traceability": {
+        "route_decisions_traced": "24/24",
+        "arithmetic_checks_passed": "10/10",
+        "forbidden_proxies_rejected": "5/5"
+      }
+    }
+  },
+  "what_v70_accomplished": [
+    "Experiment-ready PQP reproduction protocol with pre-registered outcome interpretation",
+    "Experiment-ready strain-Tc mapping protocol with success gates",
+    "Pre-registered decision framework for pivot, promotion, and stall scenarios",
+    "15/15 cross-artifact consistency checks (Phase 24) + VALD-03 traceability",
+    "Complete sub-family landscape for nickelate secondary route",
+    "5-gate promotion-decision framework matching Phase 23 triggers exactly"
+  ],
+  "what_v70_did_not_accomplish": [
+    "149 K gap unchanged (stable since v4.0)",
+    "No experimental data generated",
+    "No Tc improvement measured",
+    "No route validated or invalidated",
+    "Hg1223 151 K benchmark remains single-group and unconfirmed",
+    "Nickelate route remains below invest threshold (40 K vs 50 K gate)"
+  ],
+  "vald_compliance": {
+    "vald01_pressure_separation": true,
+    "vald02_149k_gap_explicit": true,
+    "vald02_gap_section_count": 7,
+    "vald03_traceability": true
+  },
+  "next_actions": [
+    {
+      "track": "A",
+      "action": "Execute Phase 24 PQP reproduction protocol at >= 1 independent group",
+      "timeline": "6 months",
+      "success_gate_K": 131,
+      "success_definition": "Retained ambient zero-resistance Tc >= 131 K with valid logs (T1+)"
+    },
+    {
+      "track": "B",
+      "action": "Execute Phase 25 strain-Tc mapping protocol, prioritize GAE on SLAO",
+      "critical_unknown": "GAE zero-resistance Tc on SLAO at ambient",
+      "success_gate_K": 80,
+      "invest_gate_K": 50,
+      "success_definition": "Ambient zero-resistance Tc > 80 K with Meissner confirmation"
+    },
+    {
+      "track": "both",
+      "action": "Use Phase 26 DEC-01/02/03 to interpret results mechanically",
+      "requirement": "No post-hoc rationalization; outcomes map to pre-registered decisions"
+    }
+  ],
+  "stall_warning": {
+    "condition": "v8.0 produces no measured Tc outcomes on either track",
+    "response": "Project stalled per DEC-03 criteria",
+    "restart_criteria": {
+      "track_a": "120 K independent zero-resist",
+      "track_b": "50 K zero-resist + Meissner"
+    },
+    "escalation_timeline_months": 12,
+    "further_planning_rejected": true
+  }
+}
