@@ -1,0 +1,119 @@
+[
+  {
+    "sub_family": "Bilayer La3Ni2O7-class (Ruddlesden-Popper n=2)",
+    "priority": "lead",
+    "lead_material": "(La,Pr)3Ni2O7 bilayer films (GAE on SLAO)",
+    "best_ambient_tc_onset_K": 63,
+    "best_ambient_tc_onset_source": "Zhou et al. arXiv:2512.04708",
+    "best_ambient_tc_onset_conditions": "at ambient pressure (0 GPa) on SrLaAlO4 providing ~2.0% compressive epitaxial strain; GAE-grown",
+    "best_ambient_tc_zero_K": 3,
+    "best_ambient_tc_zero_source": "Ko et al. Nature 2024",
+    "best_ambient_tc_zero_conditions": "at ambient pressure (0 GPa) on SrLaAlO4 providing ~2.0% compressive epitaxial strain; PLD-grown La3Ni2O7",
+    "best_pressurized_tc_onset_K": 96,
+    "best_pressurized_tc_onset_source": "Wang et al. Nature 2025 (s41586-025-09954-4)",
+    "best_pressurized_tc_zero_K": 73,
+    "best_pressurized_tc_zero_source": "Wang et al. Nature 2025 (s41586-025-09954-4)",
+    "operating_pressure_GPa": {
+      "ambient_films": 0,
+      "pressurized_crystal": 21.6,
+      "lever_stacked_film": 9
+    },
+    "tc_definition": {
+      "ambient_onset": "onset",
+      "ambient_zero": "zero-resistance",
+      "pressurized_onset": "onset",
+      "pressurized_zero": "zero-resistance"
+    },
+    "gap_to_300K_onset": 237,
+    "gap_to_300K_zero": 297,
+    "gap_vs_hg1223_149K_onset": 88,
+    "gap_vs_hg1223_149K_zero": 148,
+    "strengths": [
+      "Highest frontier Tc across all nickelate sub-families (96 K onset under pressure, 63 K onset ambient films)",
+      "Most active demonstrated uplift levers (5): compressive strain, hydrostatic pressure, O-stoichiometry, RE substitution, structural choice",
+      "Active lever stacking demonstrated (strain + pressure compounds Tc)",
+      "Fastest-moving frontier: from no ambient SC (pre-2024) to 63 K onset in ~18 months"
+    ],
+    "weaknesses": [
+      "Enormous onset-to-zero-resistance gap (~37-60 K) at ambient in films",
+      "GAE growth method limited to few specialized labs",
+      "Zero-resistance Tc at ambient (~2-3 K in PLD films) far below 80 K evaluation gate",
+      "No known mechanism to retain pressurized Tc at ambient (unlike Hg1223 PQP)"
+    ],
+    "ranking_rationale": "Leads on highest frontier Tc (96 K onset), highest ambient onset (63 K), most active levers (5), and fastest frontier improvement rate. The primary weakness is the enormous onset-to-zero gap at ambient."
+  },
+  {
+    "sub_family": "Infinite-layer SmNiO2-class",
+    "priority": "backup",
+    "lead_material": "SmNiO2 (bulk)",
+    "best_ambient_tc_onset_K": null,
+    "best_ambient_tc_onset_source": null,
+    "best_ambient_tc_onset_conditions": null,
+    "best_ambient_tc_zero_K": 40,
+    "best_ambient_tc_zero_source": "Sun et al. Nature 2025 (s41586-025-08893-4)",
+    "best_ambient_tc_zero_conditions": "at ambient pressure (0 GPa); bulk sample; thermodynamically stable; air-stable",
+    "best_pressurized_tc_onset_K": null,
+    "best_pressurized_tc_onset_source": null,
+    "best_pressurized_tc_zero_K": null,
+    "best_pressurized_tc_zero_source": null,
+    "operating_pressure_GPa": {
+      "ambient_bulk": 0
+    },
+    "tc_definition": {
+      "ambient_zero": "zero-resistance"
+    },
+    "gap_to_300K_onset": null,
+    "gap_to_300K_zero": 260,
+    "gap_vs_hg1223_149K_onset": null,
+    "gap_vs_hg1223_149K_zero": 111,
+    "strengths": [
+      "Truly ambient pressure (0 GPa) and thermodynamically stable",
+      "Zero-resistance confirmed (not onset-only): 40 K is reliable",
+      "Air-stable: does not degrade under ambient storage",
+      "Bulk sample: not a thin-film artifact"
+    ],
+    "weaknesses": [
+      "Lower absolute Tc than bilayer family (40 K zero-resist vs 63 K onset / 96 K onset under pressure)",
+      "No thin-film strain engineering demonstrated",
+      "Limited uplift levers explored (O-stoichiometry is main known knob)",
+      "Ceiling unknown without strain engineering data"
+    ],
+    "ranking_rationale": "Backup because it has the highest confirmed ambient zero-resistance Tc (40 K) and thermodynamic stability, but lower absolute ceiling and fewer explored levers than bilayer."
+  },
+  {
+    "sub_family": "Trilayer La4Ni3O10-class (Ruddlesden-Popper n=3)",
+    "priority": "low",
+    "lead_material": "La4Ni3O10",
+    "best_ambient_tc_onset_K": null,
+    "best_ambient_tc_onset_source": null,
+    "best_ambient_tc_onset_conditions": "not superconducting at ambient pressure",
+    "best_ambient_tc_zero_K": null,
+    "best_ambient_tc_zero_source": null,
+    "best_ambient_tc_zero_conditions": "not superconducting at ambient pressure",
+    "best_pressurized_tc_onset_K": 30,
+    "best_pressurized_tc_onset_source": "Literature (various)",
+    "best_pressurized_tc_zero_K": null,
+    "best_pressurized_tc_zero_source": null,
+    "operating_pressure_GPa": {
+      "pressurized": 69
+    },
+    "tc_definition": {
+      "pressurized_onset": "onset"
+    },
+    "gap_to_300K_onset": null,
+    "gap_to_300K_zero": null,
+    "gap_to_300K_pressurized_onset": 270,
+    "gap_vs_hg1223_149K_pressurized_onset": 121,
+    "strengths": [
+      "Confirms Ruddlesden-Popper nickelate series as superconducting family (n=2 and n=3 both superconduct)",
+      "Provides context for understanding layer-count vs Tc in the RP series"
+    ],
+    "weaknesses": [
+      "Highest required operating pressure among three sub-families (69 GPa)",
+      "Lowest Tc among three sub-families (30 K onset)",
+      "No ambient-pressure superconductivity demonstrated",
+      "No thin-film strain engineering pathway established"
+    ],
+    "ranking_rationale": "Low priority because it has the lowest Tc (30 K onset), requires the highest operating pressure (69 GPa), and has no ambient pathway demonstrated."
+  }
+]
