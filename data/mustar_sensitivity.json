@@ -1,0 +1,119 @@
+{
+  "description": "mu* sensitivity analysis at 10 GPa for all 3 MXH3 candidates",
+  "plan": "03-04",
+  "phase": "03-eliashberg-tc-predictions",
+  "mustar_values": [
+    0.08,
+    0.1,
+    0.13,
+    0.15
+  ],
+  "mustar_protocol": "ALL 4 values reported equally. NO preferred mu*. (fp-tuned-mustar enforced)",
+  "synthetic": true,
+  "method": "Allen-Dynes exact + Eliashberg estimated via AD ratio from Plans 01-02",
+  "method_note": "Eliashberg/AD ratio R is nearly mu*-independent; R computed from known mu*=0.10 and 0.13 results",
+  "compounds": {
+    "CsInH3": {
+      "lambda": 2.35,
+      "omega_log_meV": 101.3,
+      "omega_log_K": 1175.5,
+      "omega_2_meV": 124.47,
+      "omega_2_K": 1444.4,
+      "eliashberg_AD_ratio": 1.1502,
+      "eliashberg_AD_ratio_spread": 0.0,
+      "Tc_eliashberg": {
+        "mu0.08": 282.5,
+        "mu0.10": 267.2,
+        "mu0.13": 245.8,
+        "mu0.15": 232.4
+      },
+      "Tc_allen_dynes": {
+        "mu0.08": 245.6,
+        "mu0.10": 232.3,
+        "mu0.13": 213.7,
+        "mu0.15": 202.1
+      },
+      "mustar_sensitivity": {
+        "delta_Tc_eliashberg_K": 50.1,
+        "delta_Tc_allen_dynes_K": 43.5,
+        "fractional_sensitivity_eliashberg": 0.1875,
+        "fractional_sensitivity_AD": 0.1873,
+        "sensitivity_pct_eliashberg": 18.8,
+        "sensitivity_pct_AD": 18.7,
+        "large_sensitivity_flag": false,
+        "test_mustar_range_pass": true
+      },
+      "monotonicity_eliashberg": true,
+      "monotonicity_allen_dynes": true,
+      "ad_below_eliashberg": true
+    },
+    "KGaH3": {
+      "lambda": 2.115,
+      "omega_log_meV": 47.76,
+      "omega_log_K": 554.3,
+      "omega_2_meV": 93.12,
+      "omega_2_K": 1080.7,
+      "eliashberg_AD_ratio": 1.5715,
+      "eliashberg_AD_ratio_spread": 0.0507,
+      "Tc_eliashberg": {
+        "mu0.08": 176.5,
+        "mu0.10": 162.5,
+        "mu0.13": 152.5,
+        "mu0.15": 140.8
+      },
+      "Tc_allen_dynes": {
+        "mu0.08": 112.3,
+        "mu0.10": 105.1,
+        "mu0.13": 95.5,
+        "mu0.15": 89.6
+      },
+      "mustar_sensitivity": {
+        "delta_Tc_eliashberg_K": 35.7,
+        "delta_Tc_allen_dynes_K": 22.7,
+        "fractional_sensitivity_eliashberg": 0.2197,
+        "fractional_sensitivity_AD": 0.216,
+        "sensitivity_pct_eliashberg": 22.0,
+        "sensitivity_pct_AD": 21.6,
+        "large_sensitivity_flag": false,
+        "test_mustar_range_pass": true
+      },
+      "monotonicity_eliashberg": true,
+      "monotonicity_allen_dynes": true,
+      "ad_below_eliashberg": true
+    },
+    "RbInH3": {
+      "lambda": 1.8945,
+      "omega_log_meV": 44.06,
+      "omega_log_K": 511.3,
+      "omega_2_meV": 86.62,
+      "omega_2_K": 1005.2,
+      "eliashberg_AD_ratio": 1.5425,
+      "eliashberg_AD_ratio_spread": 0.032,
+      "Tc_eliashberg": {
+        "mu0.08": 143.2,
+        "mu0.10": 132.5,
+        "mu0.13": 122.5,
+        "mu0.15": 113.5
+      },
+      "Tc_allen_dynes": {
+        "mu0.08": 92.8,
+        "mu0.10": 86.8,
+        "mu0.13": 78.6,
+        "mu0.15": 73.6
+      },
+      "mustar_sensitivity": {
+        "delta_Tc_eliashberg_K": 29.7,
+        "delta_Tc_allen_dynes_K": 19.2,
+        "fractional_sensitivity_eliashberg": 0.2242,
+        "fractional_sensitivity_AD": 0.2212,
+        "sensitivity_pct_eliashberg": 22.4,
+        "sensitivity_pct_AD": 22.1,
+        "large_sensitivity_flag": false,
+        "test_mustar_range_pass": true
+      },
+      "monotonicity_eliashberg": true,
+      "monotonicity_allen_dynes": true,
+      "ad_below_eliashberg": true
+    }
+  }
+}
