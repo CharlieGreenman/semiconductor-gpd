@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "description": "Consolidated strain-Tc data table for bilayer La3Ni2O7-class films and bulk reference points",
+    "a_bulk_angstrom": 3.833,
+    "strain_formula": "epsilon_pct = (a_sub - a_bulk) / a_bulk * 100",
+    "strain_sign_convention": "negative = compressive, positive = tensile",
+    "tc_convention": "zero-resistance Tc used for all gate decisions; onset reported but never substituted for zero-resist in decisions",
+    "pressure_convention": "operating_pressure_GPa = 0 for ambient films; epitaxial strain is NOT operating pressure (VALD-01)",
+    "ASSERT_CONVENTION": "strain_sign=negative_compressive, tc_definition=zero_resistance_primary, units=SI_derived, pressure_separation=synthesis!=operating",
+    "created": "2026-03-29",
+    "executed": "2026-03-29",
+    "phase": "25-bilayer-nickelate-strain-tc-mapping-protocol-and-promotion-assessment",
+    "plan": "01"
+  },
+  "data": [
+    {
+      "id": "STO-La327-PLD",
+      "substrate": "SrTiO3 (STO)",
+      "a_sub_angstrom": 3.905,
+      "strain_pct": 1.88,
+      "strain_pct_computed": 1.878,
+      "strain_type": "tensile",
+      "composition": "La3Ni2O7",
+      "growth_method": "PLD",
+      "tc_onset_K": 10,
+      "tc_zero_K": null,
+      "operating_pressure_GPa": 0,
+      "film_thickness_nm": null,
+      "source": "Comm. Phys. 2025 (s42005-025-02154-6)",
+      "notes": "Marginal SC onset; zero-resistance not reached. Tensile strain."
+    },
+    {
+      "id": "NGO-La327-PLD",
+      "substrate": "NdGaO3 (NGO)",
+      "a_sub_angstrom": 3.855,
+      "strain_pct": 0.57,
+      "strain_pct_computed": 0.574,
+      "strain_type": "tensile",
+      "composition": "La3Ni2O7",
+      "growth_method": "PLD",
+      "tc_onset_K": null,
+      "tc_zero_K": null,
+      "operating_pressure_GPa": 0,
+      "film_thickness_nm": null,
+      "source": "Comm. Phys. 2025 (s42005-025-02154-6)",
+      "notes": "Not superconducting at ambient pressure on this substrate."
+    },
+    {
+      "id": "LAO-La327-PLD-ambient",
+      "substrate": "LaAlO3 (LAO)",
+      "a_sub_angstrom": 3.787,
+      "strain_pct": -1.20,
+      "strain_pct_computed": -1.200,
+      "strain_type": "compressive",
+      "composition": "La3Ni2O7",
+      "growth_method": "PLD",
+      "tc_onset_K": 10,
+      "tc_zero_K": 3,
+      "operating_pressure_GPa": 0,
+      "film_thickness_nm": null,
+      "source": "Tarn et al. Adv. Mater. 2026 (arXiv:2510.27613)",
+      "notes": "SC on LAO with reduced compressive strain (-1.2%). Zero-resist very low."
+    },
+    {
+      "id": "LAO-La327-PLD-pressure",
+      "substrate": "LaAlO3 (LAO)",
+      "a_sub_angstrom": 3.787,
+      "strain_pct": -1.20,
+      "strain_pct_computed": -1.200,
+      "strain_type": "compressive",
+      "composition": "La3Ni2O7",
+      "growth_method": "PLD",
+      "tc_onset_K": 60,
+      "tc_zero_K": 48,
+      "operating_pressure_GPa": 20,
+      "film_thickness_nm": null,
+      "source": "Comm. Phys. 2025 (s42005-025-02154-6)",
+      "notes": "Strain + pressure lever stacking on LAO substrate. Operating pressure = 20 GPa."
+    },
+    {
+      "id": "SLAO-La327-PLD",
+      "substrate": "SrLaAlO4 (SLAO)",
+      "a_sub_angstrom": 3.756,
+      "strain_pct": -2.01,
+      "strain_pct_computed": -2.009,
+      "strain_type": "compressive",
+      "composition": "La3Ni2O7",
+      "growth_method": "PLD",
+      "tc_onset_K": 40,
+      "tc_zero_K": 2,
+      "operating_pressure_GPa": 0,
+      "film_thickness_nm": null,
+      "source": "Ko et al. Nature 2024 (s41586-024-08525-3)",
+      "notes": "First ambient-pressure SC in bilayer nickelate films. Onset ~40 K but zero-resist only ~2 K. Enormous onset-zero gap (~38 K)."
+    },
+    {
+      "id": "SLAO-LaPr327-GAE",
+      "substrate": "SrLaAlO4 (SLAO)",
+      "a_sub_angstrom": 3.756,
+      "strain_pct": -2.01,
+      "strain_pct_computed": -2.009,
+      "strain_type": "compressive",
+      "composition": "(La,Pr)3Ni2O7",
+      "growth_method": "GAE",
+      "tc_onset_K": 63,
+      "tc_zero_K": null,
+      "operating_pressure_GPa": 0,
+      "film_thickness_nm": null,
+      "source": "Zhou et al. arXiv:2512.04708 (Nature 2025 s41586-025-08755-z)",
+      "notes": "Highest ambient film onset Tc. GAE growth method. Zero-resistance Tc NOT reported -- critical unknown for promotion framework. Onset-zero gap unknown but PLD on same substrate shows ~38 K gap."
+    },
+    {
+      "id": "SLAO-La2Pr327-GAE",
+      "substrate": "SrLaAlO4 (SLAO)",
+      "a_sub_angstrom": 3.756,
+      "strain_pct": -2.01,
+      "strain_pct_computed": -2.009,
+      "strain_type": "compressive",
+      "composition": "La2PrNi2O7",
+      "growth_method": "GAE",
+      "tc_onset_K": 40,
+      "tc_zero_K": null,
+      "operating_pressure_GPa": 0,
+      "film_thickness_nm": null,
+      "source": "Nature Materials 2025",
+      "notes": "Pr-substituted variant on SLAO. Onset >40 K. Zero-resistance not reported."
+    },
+    {
+      "id": "SLAO-LaSr327",
+      "substrate": "SrLaAlO4 (SLAO)",
+      "a_sub_angstrom": 3.756,
+      "strain_pct": -2.01,
+      "strain_pct_computed": -2.009,
+      "strain_type": "compressive",
+      "composition": "La2.82Sr0.18Ni2O7",
+      "growth_method": "unspecified",
+      "tc_onset_K": null,
+      "tc_zero_K": null,
+      "operating_pressure_GPa": 0,
+      "film_thickness_nm": null,
+      "source": "Nature Materials 2025",
+      "notes": "Sr-doped variant on SLAO. SC reported but specific onset/zero-resist temperatures not extracted from RESEARCH.md. Growth method unspecified."
+    },
+    {
+      "id": "SLAO-La327-pressure",
+      "substrate": "SrLaAlO4 (SLAO)",
+      "a_sub_angstrom": 3.756,
+      "strain_pct": -2.01,
+      "strain_pct_computed": -2.009,
+      "strain_type": "compressive",
+      "composition": "La3Ni2O7",
+      "growth_method": "unspecified",
+      "tc_onset_K": 48.5,
+      "tc_zero_K": null,
+      "operating_pressure_GPa": 9,
+      "film_thickness_nm": null,
+      "source": "Nature Commun. 2026 (s41467-026-69660-1)",
+      "notes": "Strain + pressure lever stacking. Dome-like pressure-Tc behavior on strained films. Operating pressure = 9 GPa. Onset only."
+    },
+    {
+      "id": "bulk-La327-ambient",
+      "substrate": "none (bulk crystal)",
+      "a_sub_angstrom": 3.833,
+      "strain_pct": 0.0,
+      "strain_pct_computed": 0.0,
+      "strain_type": "none",
+      "composition": "La3Ni2O7",
+      "growth_method": "crystal",
+      "tc_onset_K": null,
+      "tc_zero_K": null,
+      "operating_pressure_GPa": 0,
+      "film_thickness_nm": null,
+      "source": "Bulk La3Ni2O7 literature",
+      "notes": "Bulk reference: NOT superconducting at ambient pressure. Strain = 0%, pressure = 0 GPa."
+    },
+    {
+      "id": "bulk-La327-pressure",
+      "substrate": "none (bulk crystal)",
+      "a_sub_angstrom": 3.833,
+      "strain_pct": 0.0,
+      "strain_pct_computed": 0.0,
+      "strain_type": "none",
+      "composition": "La3Ni2O7",
+      "growth_method": "crystal",
+      "tc_onset_K": 96,
+      "tc_zero_K": 73,
+      "operating_pressure_GPa": 20,
+      "film_thickness_nm": null,
+      "source": "Wang et al. Nature 2025 (s41586-025-09954-4)",
+      "notes": "Pressurized single-crystal reference. Upper bound for bilayer nickelate physics. Operating pressure >20 GPa."
+    }
+  ],
+  "verification": {
+    "strain_crosscheck": {
+      "a_bulk": 3.833,
+      "computed_strains": {
+        "STO": {"a_sub": 3.905, "epsilon_pct": 1.878, "literature_pct": 1.9, "match_within_0.1pct": true},
+        "NGO": {"a_sub": 3.855, "epsilon_pct": 0.574, "literature_pct": 0.6, "match_within_0.1pct": true},
+        "LAO": {"a_sub": 3.787, "epsilon_pct": -1.200, "literature_pct": -1.2, "match_within_0.1pct": true},
+        "SLAO": {"a_sub": 3.756, "epsilon_pct": -2.009, "literature_pct": -2.0, "match_within_0.1pct": true}
+      },
+      "all_match": true
+    },
+    "onset_ge_zero_check": {
+      "description": "For every data point with both onset and zero-resist, verify onset >= zero-resist",
+      "results": {
+        "LAO-La327-PLD-ambient": {"onset": 10, "zero": 3, "pass": true},
+        "LAO-La327-PLD-pressure": {"onset": 60, "zero": 48, "pass": true},
+        "SLAO-La327-PLD": {"onset": 40, "zero": 2, "pass": true},
+        "bulk-La327-pressure": {"onset": 96, "zero": 73, "pass": true}
+      },
+      "all_pass": true,
+      "large_gap_flags": [
+        {"id": "SLAO-La327-PLD", "gap_K": 38, "flag": "Onset-zero gap > 30 K: potential filamentary SC or broad transition"},
+        {"id": "bulk-La327-pressure", "gap_K": 23, "flag": "Onset-zero gap within normal range"}
+      ]
+    },
+    "ambient_zero_resist_cap_check": {
+      "description": "No ambient data point has zero-resist Tc > 73 K (pressurized single-crystal benchmark)",
+      "max_ambient_zero_resist_K": 3,
+      "benchmark_K": 73,
+      "pass": true
+    },
+    "growth_method_coverage": {
+      "description": "Every entry has growth_method populated",
+      "methods_present": ["PLD", "GAE", "crystal", "unspecified"],
+      "all_populated": true,
+      "unspecified_entries": ["SLAO-LaSr327", "SLAO-La327-pressure"]
+    },
+    "data_point_count": 11,
+    "minimum_required": 10,
+    "count_pass": true,
+    "pressure_separation_check": {
+      "description": "VALD-01: Every entry has explicit operating_pressure_GPa; strain is not conflated with pressure",
+      "all_entries_have_pressure_field": true,
+      "ambient_entries_have_zero_pressure": true,
+      "pressurized_entries_have_nonzero_pressure": true,
+      "pass": true
+    }
+  }
+}
