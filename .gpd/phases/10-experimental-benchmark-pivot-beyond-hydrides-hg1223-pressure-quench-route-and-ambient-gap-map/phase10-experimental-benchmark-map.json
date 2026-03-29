@@ -1,0 +1,102 @@
+{
+  "phase": "10",
+  "artifact": "phase10-experimental-benchmark-map",
+  "benchmarks": [
+    {
+      "name": "HgBa2Ca2Cu3O8+delta",
+      "route_class": "pressure-quenched cuprate",
+      "evidence_class": "experimental",
+      "tc_k": 151,
+      "pressure_history": "pressure-quench protocol followed by ambient operation",
+      "p_op_gpa": 0,
+      "roomtemp_gap_k": 149,
+      "scores": {
+        "evidence_confidence": 4,
+        "ambient_credibility": 3,
+        "tc_leverage": 4,
+        "total": 11
+      },
+      "rank": 1
+    },
+    {
+      "name": "MgB2",
+      "route_class": "ambient conventional boride",
+      "evidence_class": "experimental",
+      "tc_k": 39,
+      "pressure_history": "ambient synthesis and operation",
+      "p_op_gpa": 0,
+      "roomtemp_gap_k": 261,
+      "scores": {
+        "evidence_confidence": 4,
+        "ambient_credibility": 4,
+        "tc_leverage": 1,
+        "total": 9
+      },
+      "rank": 2
+    },
+    {
+      "name": "SmNiO2-family thin films",
+      "route_class": "ambient nickelate thin film",
+      "evidence_class": "experimental",
+      "tc_k": 40,
+      "pressure_history": "ambient thin-film route",
+      "p_op_gpa": 0,
+      "roomtemp_gap_k": 260,
+      "scores": {
+        "evidence_confidence": 3,
+        "ambient_credibility": 4,
+        "tc_leverage": 1,
+        "total": 8
+      },
+      "rank": 3
+    },
+    {
+      "name": "CsInH3",
+      "route_class": "low-pressure hydride benchmark",
+      "evidence_class": "repo-local theory",
+      "tc_k": 214,
+      "pressure_history": "low-pressure operating point only; no retained ambient proof",
+      "p_op_gpa": 3,
+      "roomtemp_gap_k": 86,
+      "scores": {
+        "evidence_confidence": 1,
+        "ambient_credibility": 0,
+        "tc_leverage": 4,
+        "total": 5
+      },
+      "rank": 4
+    },
+    {
+      "name": "KB3C3",
+      "route_class": "ambient framework analog",
+      "evidence_class": "published theory",
+      "tc_k": 102.5,
+      "pressure_history": "proposed high-pressure route with ambient-operation claim",
+      "p_op_gpa": 0,
+      "roomtemp_gap_k": 197.5,
+      "scores": {
+        "evidence_confidence": 1,
+        "ambient_credibility": 2,
+        "tc_leverage": 3,
+        "total": 6
+      },
+      "rank": 5
+    },
+    {
+      "name": "RbPH3",
+      "route_class": "metastable ambient hydride",
+      "evidence_class": "published theory",
+      "tc_k": 100,
+      "pressure_history": "predicted synthesis near 30 GPa and predicted ambient operation",
+      "p_op_gpa": 0,
+      "roomtemp_gap_k": 200,
+      "scores": {
+        "evidence_confidence": 1,
+        "ambient_credibility": 2,
+        "tc_leverage": 3,
+        "total": 6
+      },
+      "rank": 6
+    }
+  ]
+}

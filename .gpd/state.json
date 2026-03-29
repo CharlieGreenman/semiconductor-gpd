@@ -1,79 +1,96 @@
 {
   "project_reference": {
-    "project_md_updated": "2026-03-28",
-    "core_research_question": "Can a thermodynamically or dynamically stable ternary hydride be identified from first principles with Tc >= 300 K at near-ambient pressure (P <= 10 GPa)?",
-    "current_focus": "Phase 1 - Pipeline Validation and Benchmarking"
+    "project_md_updated": "2026-03-29",
+    "core_research_question": "Can any hydride or hydride-derived pathway supported by first-principles evidence retain superconductivity at ambient pressure, or after pressure quench, and if not, which experimentally anchored broader benchmark route should replace that search as the repo's next high-confidence candidate?",
+    "current_focus": "Phase 10 - Experimental Benchmark Pivot Beyond Hydrides"
   },
   "project_contract": {
     "schema_version": 1,
     "scope": {
-      "question": "Can a thermodynamically or dynamically stable ternary hydride be identified from first principles with Tc >= 300 K at near-ambient pressure (P <= 10 GPa)?",
+      "question": "Can any hydride or hydride-derived pathway supported by first-principles evidence retain superconductivity at ambient pressure, or after pressure quench, and if not, do current constraints rule out room-temperature consumer viability within this conventional materials route?",
       "in_scope": [
-        "Eliashberg theory framework for phonon-mediated superconductivity",
-        "DFT electronic structure and DFPT phonon calculations for hydrides",
-        "Ternary hydrides with light-element cage scaffolds (Be, B, C families)",
-        "Thermodynamic stability via convex hull analysis",
-        "Dynamic stability via phonon dispersion (no imaginary frequencies)",
-        "Chemical pre-compression strategy to reduce required external pressure",
-        "Benchmark reproduction of known hydride superconductors (H3S, LaH10)"
+        "Pressure release, metastability, and quenchability of CsInH3-class phases",
+        "Ambient-pressure and near-ambient hydrides or hydride-derived frameworks",
+        "Alloying and structural redesign around MXH3, Mg2XH6-like, and hydride-unit/clathrate families",
+        "Practical viability metrics: operating pressure, synthesis pressure, ambient stability, barriers, cost, toxicity",
+        "Real DFPT/EPW/SSCHA validation targets for any candidate advanced as practically relevant"
       ],
       "out_of_scope": [
-        "Unconventional pairing mechanisms (spin-fluctuation, excitonic, polaronic)",
-        "Experimental synthesis or characterization",
-        "Cuprate or iron-based superconductors",
-        "Full crystal structure prediction searches (AIRSS/CALYPSO) requiring HPC",
-        "Dynamical mean-field theory or beyond-Migdal vertex corrections"
+        "Device engineering, interconnect design, or packaging workflows",
+        "Experimental synthesis claims not backed by direct evidence",
+        "Exhaustive AIRSS/CALYPSO searches beyond current compute scope",
+        "Unconventional pairing as the main program for this milestone"
       ],
       "unresolved_questions": [
-        "Which specific ternary chemical families (e.g., XBeH8, XBH8, XCH) show the best Tc-vs-pressure tradeoff?",
-        "What is the practical Tc ceiling of Migdal-Eliashberg theory at lambda > 2-3?",
-        "Whether metastable low-pressure phases exist for any discovered high-Tc candidate"
+        "Which ambient-leaning or hydride-derived family can replace the failed `CsInH3`-class decompression route?",
+        "Which candidate families best balance Tc, operating pressure, synthesis pressure, quenchability, and materials practicality?",
+        "Does the 2025-2026 literature already force a pivot away from room-temperature consumer claims in conventional hydrides?",
+        "Is any pressure-quench route more credible than a fully stable ambient hydride route after the negative `CsInH3`-class verdict?"
       ]
     },
     "context_intake": {
       "must_read_refs": [
-        "ref-h3s",
-        "ref-lah10"
+        "ref-v1-conclusions",
+        "ref-synthesis-guide",
+        "ref-ambient-ceiling",
+        "ref-stable-ambient-hydrides",
+        "ref-kb3c3",
+        "ref-hg1223-quench"
       ],
-      "must_include_prior_outputs": [],
+      "must_include_prior_outputs": [
+        "data/project_conclusions.md",
+        "SYNTHESIS-GUIDE.md",
+        ".gpd/milestones/v1.0-ROADMAP.md",
+        ".gpd/research/PRACTICAL-PATHWAYS.md"
+      ],
       "user_asserted_anchors": [
-        "Reproduce H3S Tc ~ 200 K at 150 GPa before trusting new predictions",
-        "Reproduce LaH10 Tc ~ 250 K at 170 GPa before trusting new predictions"
+        "Do not treat synthesis pressure as operating pressure",
+        "Room-temperature consumer viability requires ambient retention, not just lower pressure synthesis"
       ],
-      "known_good_baselines": [],
+      "known_good_baselines": [
+        "v1.0 benchmark pipeline: H3S error 10.5%, LaH10 error 10.6%",
+        "CsInH3 SSCHA result: Tc = 214 K at 3 GPa, E_hull = 6 meV/atom"
+      ],
       "context_gaps": [
-        "No prior DFT calculations in this project yet \u2014 benchmarks must be established in Phase 1",
-        "Optimal pseudopotentials and convergence parameters for hydride systems TBD"
+        "Ambient-pressure quenchability of CsInH3 is unknown",
+        "Real DFPT+EPW alpha^2F for CsInH3 is still missing",
+        "Kinetic decomposition barriers during decompression are still missing"
       ],
       "crucial_inputs": [
-        "Eliashberg spectral function alpha^2F(omega) for benchmark systems",
-        "Convex hull data from Materials Project for stability assessment"
+        "Exact separation of operating pressure vs synthesis pressure for all cited systems",
+        "Barrier-aware decompression analysis for CsInH3-class phases",
+        "Real EPW/SSCHA validation for any candidate advanced as practical"
       ]
     },
     "approach_policy": {
       "formulations": [
-        "DFT with PBE functional for electronic structure",
-        "DFPT for phonon dispersions and electron-phonon coupling",
-        "Isotropic Migdal-Eliashberg equations for Tc prediction",
-        "Allen-Dynes modified McMillan formula as cross-check"
+        "DFT/DFPT/EPW/SSCHA for conventional superconductivity in candidate materials",
+        "Decompression phonon and enthalpy path analysis for pressure release",
+        "Barrier and metastability analysis for quenchability",
+        "Literature-grounded practical viability ranking with explicit pressure accounting"
       ],
       "allowed_estimator_families": [
         "Eliashberg spectral function",
-        "Allen-Dynes-McMillan"
+        "Allen-Dynes-McMillan as cross-check",
+        "Barrier estimates for metastability",
+        "Thermodynamic and dynamic stability analysis"
       ],
       "forbidden_estimator_families": [
-        "BCS weak-coupling Tc formula alone without Eliashberg"
+        "Ambient Tc extrapolated from high-pressure Tc without stability evidence",
+        "Treating synthesis pressure as operating pressure"
       ],
       "allowed_fit_families": [
-        "physically motivated mu* values from literature (0.10-0.15)"
+        "Fixed mu* = 0.10-0.13 for conventional hydrides",
+        "Explicit pressure-dependent fits only when anchored by computed stable points"
       ],
       "forbidden_fit_families": [
-        "tuning mu* to match desired Tc"
+        "Post-hoc mu* tuning to hit target Tc",
+        "Free extrapolation of Tc(P) beyond the stable pressure window"
       ],
       "stop_and_rethink_conditions": [
-        "All explored ternary hydrides show imaginary phonon frequencies at P < 50 GPa",
-        "Required lambda for 300 K systematically exceeds 3.0, putting Migdal approximation in doubt",
-        "Convex hull analysis shows all candidates are > 50 meV/atom above hull at target pressures"
+        "Stable ambient hydride routes remain near or below the known conventional ambient ceiling and no credible quench path survives decompression",
+        "All decompression paths for CsInH3-class phases develop strong instability or barrierless decomposition before ambient pressure",
+        "Any consumer-viability claim depends on synthetic alpha^2F or unverified extrapolation"
       ]
     },
     "observables": [
@@ -81,187 +98,390 @@
         "id": "obs-tc",
         "name": "Superconducting critical temperature Tc",
         "kind": "scalar",
-        "definition": "Tc computed from isotropic Eliashberg equations using ab initio alpha^2F(omega) and mu* = 0.10-0.13",
+        "definition": "Tc from converged Eliashberg calculations or directly cited primary-source measurements",
         "regime": null,
-        "units": null
+        "units": "K"
       },
       {
-        "id": "obs-tc-vs-p",
-        "name": "Tc as a function of pressure",
-        "kind": "curve",
-        "definition": "Tc(P) curve from Eliashberg theory at multiple pressure points for each candidate material",
-        "regime": null,
-        "units": null
-      },
-      {
-        "id": "obs-phonon-dispersion",
-        "name": "Phonon dispersion and stability",
-        "kind": "curve",
-        "definition": "Phonon band structure showing absence of imaginary frequencies at target pressure",
-        "regime": null,
-        "units": null
-      },
-      {
-        "id": "obs-lambda",
-        "name": "Electron-phonon coupling constant lambda",
+        "id": "obs-operating-pressure",
+        "name": "Operating pressure",
         "kind": "scalar",
-        "definition": "Integrated electron-phonon coupling lambda = 2 * integral[alpha^2F(omega)/omega d(omega)]",
+        "definition": "Pressure required for the superconducting phase to exist during operation",
+        "regime": null,
+        "units": "GPa"
+      },
+      {
+        "id": "obs-synthesis-pressure",
+        "name": "Synthesis pressure",
+        "kind": "scalar",
+        "definition": "Pressure used during synthesis or preparation before any decompression or quench step",
+        "regime": null,
+        "units": "GPa"
+      },
+      {
+        "id": "obs-quenchability",
+        "name": "Quenchability / ambient retention verdict",
+        "kind": "other",
+        "definition": "Barrier-aware assessment of whether a phase can survive pressure release to ambient conditions",
         "regime": null,
         "units": null
       },
       {
-        "id": "obs-convex-hull",
-        "name": "Thermodynamic stability (distance from convex hull)",
+        "id": "obs-barrier",
+        "name": "Barrier against decomposition or symmetry lowering",
         "kind": "scalar",
-        "definition": "Formation enthalpy relative to competing phases at target pressure, in meV/atom",
+        "definition": "Representative kinetic barrier for a pressure-release pathway",
+        "regime": null,
+        "units": "eV/f.u."
+      },
+      {
+        "id": "obs-ambient-stability",
+        "name": "Ambient thermodynamic and dynamic stability",
+        "kind": "other",
+        "definition": "Combined hull and phonon verdict at or near 0 GPa",
         "regime": null,
         "units": null
       }
     ],
     "claims": [
       {
-        "id": "claim-benchmark",
-        "statement": "The computational pipeline (DFT + DFPT + Eliashberg) reproduces known Tc values for H3S and LaH10 within 15%",
+        "id": "claim-practical-map",
+        "statement": "The project cleanly distinguishes stable ambient, metastable ambient, pressure-quenched, and low-pressure-only pathways relevant to practical superconductivity.",
         "observables": [
-          "obs-tc"
+          "obs-tc",
+          "obs-operating-pressure",
+          "obs-synthesis-pressure",
+          "obs-quenchability",
+          "obs-ambient-stability"
         ],
         "deliverables": [
-          "deliv-benchmark"
+          "deliv-viability-matrix"
         ],
         "acceptance_tests": [
-          "test-h3s",
-          "test-lah10"
+          "test-pressure-separation"
         ],
         "references": [
-          "ref-h3s",
-          "ref-lah10"
+          "ref-v1-conclusions",
+          "ref-ambient-ceiling",
+          "ref-stable-ambient-hydrides",
+          "ref-kb3c3",
+          "ref-hg1223-quench"
         ]
       },
       {
-        "id": "claim-candidate",
-        "statement": "At least one ternary hydride candidate is identified with Tc >= 300 K at P <= 10 GPa, confirmed dynamically and thermodynamically stable",
+        "id": "claim-quenchability",
+        "statement": "At least one CsInH3-class phase receives an explicit evidence-based quenchability verdict under decompression.",
         "observables": [
-          "obs-tc",
-          "obs-tc-vs-p",
-          "obs-phonon-dispersion",
-          "obs-lambda",
-          "obs-convex-hull"
+          "obs-operating-pressure",
+          "obs-quenchability",
+          "obs-barrier",
+          "obs-ambient-stability"
         ],
         "deliverables": [
-          "deliv-candidate",
-          "deliv-tc-curve"
+          "deliv-quench-scorecard"
         ],
         "acceptance_tests": [
-          "test-tc-target",
-          "test-stability"
+          "test-quenchability"
         ],
         "references": [
-          "ref-h3s",
-          "ref-lah10"
+          "ref-v1-conclusions",
+          "ref-synthesis-guide",
+          "ref-hg1223-quench"
+        ]
+      },
+      {
+        "id": "claim-practical-candidate",
+        "statement": "At least one pathway reaches either ambient pressure with Tc >= 77 K or a credible pressure-quench route retaining superconductivity above 150 K.",
+        "observables": [
+          "obs-tc",
+          "obs-operating-pressure",
+          "obs-synthesis-pressure",
+          "obs-quenchability",
+          "obs-ambient-stability"
+        ],
+        "deliverables": [
+          "deliv-shortlist",
+          "deliv-validation-report",
+          "deliv-decision-memo"
+        ],
+        "acceptance_tests": [
+          "test-practical-threshold"
+        ],
+        "references": [
+          "ref-ambient-ceiling",
+          "ref-stable-ambient-hydrides",
+          "ref-kb3c3",
+          "ref-mg2xh6",
+          "ref-clathrate-units"
         ]
       }
     ],
     "deliverables": [
       {
-        "id": "deliv-benchmark",
+        "id": "deliv-viability-matrix",
         "kind": "table",
-        "path": null,
-        "description": "Benchmark table comparing computed vs experimental Tc for H3S and LaH10",
+        "path": ".gpd/research/PRACTICAL-PATHWAYS.md",
+        "description": "Matrix of candidate pathways with explicit synthesis pressure, operating pressure, Tc, stability class, and evidence quality",
         "must_contain": [
-          "computed Tc",
-          "experimental Tc",
-          "relative error",
-          "lambda",
-          "omega_log"
+          "Tc",
+          "synthesis pressure",
+          "operating pressure",
+          "stability class",
+          "evidence quality"
         ]
       },
       {
-        "id": "deliv-candidate",
+        "id": "deliv-quench-scorecard",
         "kind": "report",
         "path": null,
-        "description": "Candidate material report: composition, crystal structure, electronic structure, phonon dispersion, Eliashberg function, Tc, stability analysis",
+        "description": "Barrier-aware decompression verdict for CsInH3 and one derivative",
         "must_contain": [
-          "crystal structure",
-          "band structure",
-          "phonon dispersion",
-          "alpha^2F(omega)",
-          "Tc value",
-          "convex hull distance"
+          "release path",
+          "first instability",
+          "barrier estimate",
+          "ambient verdict"
         ]
       },
       {
-        "id": "deliv-tc-curve",
-        "kind": "figure",
+        "id": "deliv-shortlist",
+        "kind": "report",
         "path": null,
-        "description": "Tc(P) curve for the best candidate material showing the pressure at which Tc crosses 300 K",
+        "description": "Ranked shortlist of ambient-leaning or quenchable candidate families and compositions",
         "must_contain": [
-          "Tc vs pressure data points",
-          "300 K reference line",
-          "comparison with H3S and LaH10 Tc(P)"
+          "family",
+          "composition",
+          "Tc",
+          "operating pressure",
+          "synthesis pressure",
+          "practicality score"
+        ]
+      },
+      {
+        "id": "deliv-validation-report",
+        "kind": "report",
+        "path": null,
+        "description": "Real EPW / SSCHA validation package for the top practical pathway",
+        "must_contain": [
+          "alpha^2F",
+          "lambda",
+          "Tc",
+          "anharmonic stability",
+          "final practical verdict"
+        ]
+      },
+      {
+        "id": "deliv-decision-memo",
+        "kind": "other",
+        "path": null,
+        "description": "Final statement on whether conventional hydrides still support a consumer-hardware path",
+        "must_contain": [
+          "ambient verdict",
+          "quench verdict",
+          "practical threshold test",
+          "pivot recommendation"
         ]
       }
     ],
     "acceptance_tests": [
       {
-        "id": "test-h3s",
-        "subject": "claim-benchmark",
-        "kind": "benchmark",
-        "procedure": "Compute Tc for Im-3m H3S at 150 GPa using Eliashberg equations and compare to experimental 200 K",
-        "pass_condition": "Computed Tc within 15% of 200 K (i.e., 170-230 K)",
+        "id": "test-pressure-separation",
+        "subject": "claim-practical-map",
+        "kind": "other",
+        "procedure": "Audit every cited pathway and repo candidate for separate synthesis-pressure and operating-pressure fields",
+        "pass_condition": "No pathway merges synthesis pressure and operating pressure into a single practicality claim",
         "evidence_required": [
-          "deliv-benchmark",
-          "ref-h3s"
+          "deliv-viability-matrix"
         ],
-        "automation": "automated"
+        "automation": "hybrid"
       },
       {
-        "id": "test-lah10",
-        "subject": "claim-benchmark",
-        "kind": "benchmark",
-        "procedure": "Compute Tc for Fm-3m LaH10 at 170 GPa using Eliashberg equations and compare to experimental 250 K",
-        "pass_condition": "Computed Tc within 15% of 250 K (i.e., 212-288 K)",
+        "id": "test-quenchability",
+        "subject": "claim-quenchability",
+        "kind": "other",
+        "procedure": "Use decompression energetics, phonons, and barriers to determine whether the phase can plausibly survive to ambient pressure",
+        "pass_condition": "The project produces an explicit quenchability verdict with barrier-aware evidence",
         "evidence_required": [
-          "deliv-benchmark",
-          "ref-lah10"
+          "deliv-quench-scorecard"
         ],
-        "automation": "automated"
+        "automation": "hybrid"
       },
       {
-        "id": "test-tc-target",
-        "subject": "claim-candidate",
-        "kind": "benchmark",
-        "procedure": "Verify that at least one candidate has Eliashberg Tc >= 300 K at P <= 10 GPa",
-        "pass_condition": "Tc >= 300 K at P <= 10 GPa from converged Eliashberg calculation",
+        "id": "test-practical-threshold",
+        "subject": "claim-practical-candidate",
+        "kind": "other",
+        "procedure": "Check whether any validated pathway reaches ambient pressure with Tc >= 77 K or a credible quench-retained route above 150 K",
+        "pass_condition": "At least one pathway satisfies one of the two practical thresholds without relying on forbidden proxies",
         "evidence_required": [
-          "deliv-candidate",
-          "deliv-tc-curve"
+          "deliv-shortlist",
+          "deliv-validation-report",
+          "deliv-decision-memo"
         ],
-        "automation": "automated"
-      },
-      {
-        "id": "test-stability",
-        "subject": "claim-candidate",
-        "kind": "consistency",
-        "procedure": "Verify candidate has no imaginary phonon frequencies and is within 50 meV/atom of convex hull at target pressure",
-        "pass_condition": "All phonon frequencies real AND convex hull distance <= 50 meV/atom",
-        "evidence_required": [
-          "deliv-candidate"
-        ],
-        "automation": "automated"
+        "automation": "hybrid"
       }
     ],
     "references": [
       {
-        "id": "ref-h3s",
-        "kind": "paper",
-        "locator": "Drozdov et al., Nature 525, 73 (2015)",
+        "id": "ref-v1-conclusions",
+        "kind": "other",
+        "locator": "data/project_conclusions.md",
         "aliases": [
-          "H3S-discovery"
+          "v1.0-conclusions"
         ],
-        "role": "benchmark",
-        "why_it_matters": "First confirmed high-Tc hydride superconductor; primary benchmark for validating the computational pipeline",
+        "role": "other",
+        "why_it_matters": "Defines the current best result and explicitly states that ambient pressure and room-temperature operation are unproven",
         "applies_to": [
-          "claim-benchmark"
+          "claim-practical-map",
+          "claim-quenchability"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare",
+          "use"
+        ]
+      },
+      {
+        "id": "ref-synthesis-guide",
+        "kind": "other",
+        "locator": "SYNTHESIS-GUIDE.md",
+        "aliases": [
+          "csinh3-synthesis-guide"
+        ],
+        "role": "other",
+        "why_it_matters": "Makes the synthesis-pressure vs operating-pressure distinction concrete for the current top candidate",
+        "applies_to": [
+          "claim-practical-map",
+          "claim-quenchability"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare",
+          "use"
+        ]
+      },
+      {
+        "id": "ref-ambient-ceiling",
+        "kind": "paper",
+        "locator": "Gao et al., The maximum Tc of conventional superconductors at ambient pressure (2025)",
+        "aliases": [
+          "ambient-conventional-ceiling"
+        ],
+        "role": "other",
+        "why_it_matters": "Provides the strongest current skepticism prior against room-temperature conventional superconductivity at ambient pressure",
+        "applies_to": [
+          "claim-practical-map",
+          "claim-practical-candidate"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare",
+          "cite"
+        ]
+      },
+      {
+        "id": "ref-stable-ambient-hydrides",
+        "kind": "paper",
+        "locator": "Yanagizawa et al., stable ambient-pressure superconducting hydrides in GNoME (2026)",
+        "aliases": [
+          "gnome-ambient-hydrides"
+        ],
+        "role": "other",
+        "why_it_matters": "Defines the current stable-ambient hydride baseline and shows how far the field remains from room temperature",
+        "applies_to": [
+          "claim-practical-map",
+          "claim-practical-candidate"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare",
+          "cite"
+        ]
+      },
+      {
+        "id": "ref-kb3c3",
+        "kind": "paper",
+        "locator": "Guo et al., Dynamic high-temperature superconductor at ambient pressure (2025)",
+        "aliases": [
+          "kb3c3-dynamic"
+        ],
+        "role": "other",
+        "why_it_matters": "Shows that non-equilibrium pressure history can produce ambient superconductivity in a hydride-derived framework",
+        "applies_to": [
+          "claim-practical-map",
+          "claim-practical-candidate"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare",
+          "cite"
+        ]
+      },
+      {
+        "id": "ref-hg1223-quench",
+        "kind": "paper",
+        "locator": "Ambient-pressure 151-K superconductivity in HgBa2Ca2Cu3O8+\u03b4 via pressure quench (2026)",
+        "aliases": [
+          "hg1223-pressure-quench"
+        ],
+        "role": "other",
+        "why_it_matters": "Demonstrates that pressure-quench metastability can retain very high Tc at ambient pressure in a nearby materials context",
+        "applies_to": [
+          "claim-practical-map",
+          "claim-quenchability"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare",
+          "cite"
+        ]
+      },
+      {
+        "id": "ref-mg2xh6",
+        "kind": "paper",
+        "locator": "Ambient-pressure hydride family predictions above 80 K in Mg2XH6-like systems (2024)",
+        "aliases": [
+          "mg2xh6-ambient"
+        ],
+        "role": "other",
+        "why_it_matters": "Best-known stable-ambient conventional hydride direction still falls well below room temperature",
+        "applies_to": [
+          "claim-practical-candidate"
         ],
         "carry_forward_to": [
           "planning",
@@ -277,16 +497,16 @@
         ]
       },
       {
-        "id": "ref-lah10",
+        "id": "ref-clathrate-units",
         "kind": "paper",
-        "locator": "Somayazulu et al., PRL 122, 027001 (2019)",
+        "locator": "Hydride-unit filled B-C clathrate design strategy for ambient-pressure high-temperature superconductors (2024)",
         "aliases": [
-          "LaH10-discovery"
+          "hydride-unit-clathrate"
         ],
-        "role": "benchmark",
-        "why_it_matters": "Highest confirmed Tc in hydrides (~250 K); second benchmark for pipeline validation",
+        "role": "other",
+        "why_it_matters": "Motivates moving beyond simple perovskites toward more complex chemically precompressed frameworks",
         "applies_to": [
-          "claim-benchmark"
+          "claim-practical-candidate"
         ],
         "carry_forward_to": [
           "planning",
@@ -304,93 +524,215 @@
     ],
     "forbidden_proxies": [
       {
-        "id": "fp-unstable-tc",
-        "subject": "claim-candidate",
-        "proxy": "High Tc prediction for a structure with imaginary phonon frequencies",
-        "reason": "Dynamically unstable structures are unphysical \u2014 high lambda from soft modes is an artifact, not superconductivity"
+        "id": "fp-synthesis-equals-operation",
+        "subject": "claim-practical-map",
+        "proxy": "Presenting a lower synthesis pressure as if it were the operating pressure of the superconducting phase",
+        "reason": "This is the central practical ambiguity that makes loaded-pressure results look more useful than they are"
       },
       {
-        "id": "fp-above-hull",
-        "subject": "claim-candidate",
-        "proxy": "High Tc for a composition far above the convex hull (> 50 meV/atom)",
-        "reason": "Thermodynamically unreachable phases cannot be synthesized regardless of predicted Tc"
+        "id": "fp-synthetic-alpha2f-final",
+        "subject": "claim-practical-candidate",
+        "proxy": "Final practical-path claims based only on synthetic alpha^2F or calibrated spectral models",
+        "reason": "Synthetic spectra are acceptable for scoping, not for a decisive practical viability claim"
       },
       {
-        "id": "fp-tuned-mustar",
-        "subject": "claim-benchmark",
-        "proxy": "Matching experimental Tc by adjusting mu* rather than computing alpha^2F accurately",
-        "reason": "Tuning the Coulomb pseudopotential to fit known data destroys predictive power for new materials"
+        "id": "fp-unstable-ambient",
+        "subject": "claim-quenchability",
+        "proxy": "Calling a decompressed phase ambient-viable when it shows unresolved imaginary modes or barrierless decomposition",
+        "reason": "Ambient utility requires survival after release, not just hope that release might work"
+      },
+      {
+        "id": "fp-roomtemp-extrapolation",
+        "subject": "claim-practical-candidate",
+        "proxy": "Extrapolating a room-temperature consumer path from low-pressure Tc without ambient evidence or without respecting known ambient ceilings",
+        "reason": "This turns a scientific low-pressure result into an unsupported product claim"
       }
     ],
     "links": [
       {
-        "id": "link-benchmark-to-candidate",
-        "source": "claim-benchmark",
-        "target": "claim-candidate",
-        "relation": "depends_on",
+        "id": "link-practical-map-to-quenchability",
+        "source": "claim-practical-map",
+        "target": "claim-quenchability",
+        "relation": "other",
         "verified_by": [
-          "test-h3s",
-          "test-lah10"
+          "test-pressure-separation",
+          "test-quenchability"
         ]
       },
       {
-        "id": "link-candidate-to-figure",
-        "source": "claim-candidate",
-        "target": "deliv-tc-curve",
-        "relation": "visualizes",
+        "id": "link-quenchability-to-practical-candidate",
+        "source": "claim-quenchability",
+        "target": "claim-practical-candidate",
+        "relation": "other",
         "verified_by": [
-          "test-tc-target"
+          "test-quenchability",
+          "test-practical-threshold"
         ]
       }
     ],
     "uncertainty_markers": {
       "weakest_anchors": [
-        "Migdal-Eliashberg validity at lambda > 2-3 (vertex corrections neglected)",
-        "Isotropic approximation may miss anisotropic gap structure that changes Tc by 10-20%"
+        "Ambient retention in hydrides themselves remains largely unproven",
+        "Synthetic alpha^2F still underlies some legacy candidate rankings"
       ],
       "unvalidated_assumptions": [
-        "PBE functional adequate for hydride electronic structure (no hybrid or GW needed)",
-        "Harmonic phonon approximation sufficient (anharmonic effects may be large for light H atoms)",
-        "mu* in range 0.10-0.13 for all candidate materials"
+        "CsInH3 can survive decompression without catastrophic symmetry lowering",
+        "Alloying can improve ambient stability without destroying hydrogen-dominated modes",
+        "Non-equilibrium pressure history can be translated from adjacent systems to hydrides"
       ],
       "competing_explanations": [
-        "Anharmonic corrections could suppress or enhance Tc significantly in hydrogen-rich systems",
-        "Strong electron-phonon coupling might drive a structural transition before superconductivity"
+        "Conventional hydrides may simply saturate far below room temperature at ambient pressure",
+        "The best practical route may require leaving the current material family altogether"
       ],
       "disconfirming_observations": [
-        "All explored ternary hydrides require P > 50 GPa for dynamic stability \u2014 chemical pre-compression insufficient",
-        "Benchmark Tc for H3S/LaH10 off by > 30% \u2014 pipeline untrustworthy for predictions"
+        "All decompression paths fail before ambient pressure",
+        "Stable ambient or quenchable candidates remain below the practical thresholds defined in VALD-02"
       ]
     }
   },
   "position": {
-    "current_phase": null,
-    "current_phase_name": null,
-    "total_phases": null,
+    "current_phase": "10",
+    "current_phase_name": "Experimental Benchmark Pivot Beyond Hydrides",
+    "total_phases": 10,
     "current_plan": null,
-    "total_plans_in_phase": null,
-    "status": "Phase complete \u2014 ready for verification",
-    "last_activity": null,
+    "total_plans_in_phase": 3,
+    "status": "Ready to plan",
+    "last_activity": "2026-03-29",
     "last_activity_desc": null,
-    "progress_percent": 0,
+    "progress_percent": 100,
     "paused_at": null
   },
   "active_calculations": [],
-  "intermediate_results": [],
+  "intermediate_results": [
+    "v1.0 archived: CsInH3 remains the best repo result at `Tc = 214 K` and `3 GPa`",
+    "Ambient pressure after synthesis remains unestablished for CsInH3",
+    "Stable ambient conventional hydrides in the recent literature remain far below room temperature",
+    "Pressure-quench / metastability is now the main escape route worth testing",
+    "Phase 07 executed: the `CsInH3` class is unlikely to retain a superconducting ambient-pressure phase after decompression",
+    "`CsInH3` remains useful as a low-pressure benchmark, not as a practical ambient-route candidate",
+    "Phase 08 executed: no candidate survives as a decisive mixed-evidence ambient winner in the shared `0-5 GPa` screen",
+    "`RbPH3` is now the Phase 09 negative-validation primary and `KB3C3` is the framework benchmark",
+    "Phase 08 triggers a no-go on consumer-hardware framing unless Phase 09 overturns it with stronger evidence",
+    "Phase 09 planned: validation is now locked to `CsInH3` baseline, `RbPH3` primary, `KB3C3` benchmark, and an explicit no-synthetic-final evidence gate",
+    "Phase 09 executed: no route passes the shared high-fidelity gate, so v2.0 closes with no credible consumer path inside the present conventional hydride route",
+    "Phase 10 executed: `HgBa2Ca2Cu3O8+delta` via pressure quench is now the repo's strongest confidence-ranked benchmark candidate, but it remains 149 K below room temperature"
+  ],
   "open_questions": [
-    "Which specific ternary chemical families (e.g., XBeH8, XBH8, XCH) show the best Tc-vs-pressure tradeoff?",
-    "What is the practical Tc ceiling of Migdal-Eliashberg theory at lambda > 2-3?",
-    "Whether metastable low-pressure phases exist for any discovered high-Tc candidate"
+    "What parameter window and reproducibility story actually govern the `Hg1223` pressure-quench route?",
+    "Which broader comparator should be treated as second priority after `Hg1223`: `SmNiO2` or a more practical ambient baseline such as `MgB2`?",
+    "Is any future route likely to close the remaining `149 K` room-temperature gap without abandoning experimental credibility?"
   ],
   "performance_metrics": {
-    "rows": []
+    "rows": [
+      {
+        "label": "v1.0 archive",
+        "duration": "\u2014",
+        "tasks": "17 plans archived",
+        "files": "`.gpd/milestones/`, `.gpd/MILESTONES.md`"
+      },
+      {
+        "label": "Phase 07 execution",
+        "duration": "\u2014",
+        "tasks": "3 plans executed",
+        "files": "`.gpd/phases/07-ambient-retention-of-csinh3-class-phases/`"
+      },
+      {
+        "label": "Phase 08 execution",
+        "duration": "\u2014",
+        "tasks": "3 plans executed",
+        "files": "`.gpd/phases/08-ambient-leaning-candidate-search/`"
+      },
+      {
+        "label": "Phase 09 execution",
+        "duration": "\u2014",
+        "tasks": "3 plans executed",
+        "files": "`.gpd/phases/09-high-fidelity-validation-and-pivot-decision/`"
+      },
+      {
+        "label": "Phase 10 execution",
+        "duration": "\u2014",
+        "tasks": "3 plans executed",
+        "files": "`.gpd/phases/10-experimental-benchmark-pivot-beyond-hydrides-hg1223-pressure-quench-route-and-ambient-gap-map/`"
+      }
+    ]
   },
-  "decisions": [],
+  "decisions": [
+    {
+      "phase": null,
+      "summary": "Start milestone `v2.0 Ambient Retention and Practical Viability`",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Separate synthesis pressure from operating pressure in every future claim",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Treat quenchability and decompression stability as first-class requirements",
+      "rationale": null
+    },
+    {
+      "phase": "0",
+      "summary": "Started milestone v2.0: Ambient Retention and Practical Viability",
+      "rationale": "Archived the v1.0 negative-result milestone and pivoted the live roadmap toward ambient retention, quenchability, and practical operating conditions"
+    },
+    {
+      "phase": "06",
+      "summary": "Phase 06 research: prioritize ambient retention and metastability over further pressure-supported Tc optimization",
+      "rationale": "The 2024-2026 literature does not support room-temperature consumer viability for conventional ambient hydrides. CsInH3 remains the best low-pressure hydride result at 3 GPa, but ambient retention is unproven. The most credible next work is decompression/barrier analysis for CsInH3 plus targeted study of ambient-leaning families such as RbPH3, Mg2IrH6, and hydride-derived clathrates."
+    },
+    {
+      "phase": "06",
+      "summary": "Phase 06 executed: CsInH3 remains Phase 07 priority, RbPH3 becomes top hydride ambient target, and consumer framing now requires >=100 K ambient-retained evidence",
+      "rationale": "Phase 06 artifacts now separate synthesis pressure from operating pressure, map metastability and quench routes, and rank pathways by practical viability. The immediate next work is decompression and barrier analysis for CsInH3, with RbPH3 as the leading ambient-leaning hydride comparator. If no path survives with P_op = 0 GPa, Tc >= 100 K, and nontrivial retention confidence, the milestone should pivot from consumer-hardware language to a low-pressure and quench-enabled superconductivity map."
+    },
+    {
+      "phase": "07",
+      "summary": "Phase 07 planning: use RbInH3 as the same-family derivative and reserve RbPH3 for Phase 08 comparator work",
+      "rationale": "The decompression verdict should test the CsInH3 perovskite class under one coherent logic. RbInH3 shares the MXH3 Pm-3m design and already has repo-local stability and Tc anchors, so it is the right derivative for Phase 07. RbPH3 remains valuable, but as an ambient-leaning literature comparator for Phase 08 rather than as a same-family decompression control."
+    },
+    {
+      "phase": "07",
+      "summary": "Phase 07 executed: CsInH3-class ambient retention is unlikely, so keep `CsInH3` as a low-pressure benchmark and move the practical search to Phase 08 families",
+      "rationale": "The decompression path fails before ambient pressure, the ambient cubic endpoint is not locally protected, and the same-family `RbInH3` comparison does not rescue the class. Practical follow-up should move toward ambient-leaning hydrides, contradiction-tracked `Mg2IrH6`, and hydride-derived clathrate/framework routes rather than plain `MXH3` retention optimism."
+    },
+    {
+      "phase": "08",
+      "summary": "Phase 08 planning: shortlist `RbPH3`, a limited perovskite-side bridge bucket, contradiction-tracked `Mg2XH6` members, and `KB3C3` / `KRbB6C6` frameworks for a common `0-5 GPa` screen",
+      "rationale": "The next candidate search should stay downstream of the negative CsInH3-class verdict. `RbPH3` remains the primary hydride ambient target, `Mg2IrH6` must stay contradiction-tracked rather than headline-driven, and framework routes deserve direct comparison because they may offer a more honest ambient path even at lower `Tc`."
+    },
+    {
+      "phase": "08",
+      "summary": "Phase 08 executed: no decisive ambient survivor emerges, so Phase 09 should negatively validate `RbPH3` against a `KB3C3` benchmark rather than force a practical winner",
+      "rationale": "The shared `0-5 GPa` screen ends with zero survivors, `Mg2IrH6` stays contradiction-tracked, the NH4-filled clathrates are rejected on prior local hull failures, and the ranking triggers a no-go on consumer-hardware language."
+    },
+    {
+      "phase": "09",
+      "summary": "Phase 09 planning: lock negative-validation roles and require real EPW / anharmonic evidence before any practical pass",
+      "rationale": "`CsInH3` stays the baseline control, `RbPH3` is the hydride-side primary, `KB3C3` is the benchmark, and the phase must end in either a validated pass or an explicit no-go without consumer-language drift."
+    },
+    {
+      "phase": "09",
+      "summary": "Phase 09 executed: no route passes the shared high-fidelity practical gate, so v2.0 closes negatively and the next milestone should pivot to experimentally anchored ambient or pressure-quench benchmarks outside the current hydride-only frame",
+      "rationale": "`CsInH3` remains the low-pressure benchmark, `RbPH3` is blocked, `KB3C3` remains benchmark-only, and `HgBa2Ca2Cu3O8+delta` becomes the strongest broader benchmark candidate."
+    },
+    {
+      "phase": "10",
+      "summary": "Added Phase 10: Experimental benchmark pivot beyond hydrides",
+      "rationale": "Continue beyond the v2.0 hydride no-go by auditing the strongest experimentally anchored ambient or pressure-quench benchmark route"
+    },
+    {
+      "phase": "10",
+      "summary": "Phase 10 executed: `HgBa2Ca2Cu3O8+delta` is now the top confidence-ranked benchmark candidate, while `MgB2` is the practical ambient floor and `SmNiO2` the main ambient-oxide comparator",
+      "rationale": "The repo now has a candidate it can actually be confident in, but not a room-temperature consumer-hardware solution."
+    }
+  ],
   "approximations": [],
   "convention_lock": {
     "metric_signature": null,
-    "fourier_convention": "QE plane-wave: Bloch psi_nk = e^{ikr} u_nk; asymmetric 1/Omega normalization",
-    "natural_units": "NOT used; explicit hbar and k_B",
+    "fourier_convention": "QE plane-wave: `psi_nk = e^{ikr} u_nk`; asymmetric `1/Omega` normalization",
+    "natural_units": "NOT used; explicit `hbar` and `k_B`",
     "gauge_choice": null,
     "regularization_scheme": null,
     "renormalization_scheme": null,
@@ -410,28 +752,34 @@
       "unit_system_internal": "Rydberg atomic units (Ry, Bohr)",
       "unit_system_reporting": "SI-derived (K, GPa, eV, meV)",
       "pressure_unit_qe": "kbar",
-      "pressure_unit_report": "GPa (1 GPa = 10 kbar)",
-      "energy_conversion": "1 Ry = 13.6057 eV = 157887 K",
-      "lambda_definition": "lambda = 2 * integral[alpha2F(omega)/omega d(omega)]",
-      "mustar_protocol": "Fixed 0.10-0.13 bracket; NOT tuned",
+      "pressure_unit_report": "GPa (`1 GPa = 10 kbar`)",
+      "energy_conversion": "`1 Ry = 13.6057 eV = 157887 K`",
+      "lambda_definition": "`lambda = 2 * integral[alpha2F(omega)/omega d(omega)]`",
+      "mustar_protocol": "Fixed `0.10-0.13` bracket; NOT tuned",
       "pseudopotential": "ONCV norm-conserving (SG15 or PseudoDojo)",
       "xc_functional": "PBEsol primary; PBE cross-check",
-      "dos_convention": "N_F per spin per cell (EPW); QE dos.x gives total for both spins",
-      "phonon_imaginary": "Negative frequency = imaginary mode; threshold -5 cm^-1",
-      "ehull_threshold": "50 meV/atom above hull",
-      "electron_charge": "e > 0; electron has charge -e",
-      "eliashberg_method": "Isotropic Eliashberg on Matsubara axis; Allen-Dynes cross-check only",
-      "asr_enforcement": "asr=crystal in QE matdyn.x"
+      "dos_convention": "`N_F` per spin per cell (EPW); QE `dos.x` gives total for both spins",
+      "phonon_imaginary": "Negative frequency = imaginary mode; threshold `-5 cm^-1`",
+      "ehull_threshold": "`50 meV/atom`",
+      "electron_charge": "`e > 0`; electron has charge `-e`",
+      "eliashberg_method": "Isotropic Eliashberg on Matsubara axis; Allen-Dynes cross-check only unless upgraded explicitly",
+      "asr_enforcement": "`asr=crystal` in QE `matdyn.x`"
     }
   },
   "propagated_uncertainties": [],
-  "pending_todos": [],
-  "blockers": [],
+  "pending_todos": [
+    "Plan the next phase around `Hg1223` pressure-quench parameter windows and reproducibility",
+    "Compare `SmNiO2` against `MgB2` as the strongest secondary benchmark family"
+  ],
+  "blockers": [
+    "The top benchmark candidate is still 149 K below room temperature",
+    "Pressure-quench reproducibility and scale-up remain unclear even for the strongest benchmark route"
+  ],
   "session": {
-    "last_date": null,
-    "stopped_at": null,
-    "resume_file": null
+    "last_date": "2026-03-29",
+    "stopped_at": "Phase 10 executed; `HgBa2Ca2Cu3O8+delta` selected as the top confidence-ranked benchmark candidate",
+    "resume_file": "`.gpd/phases/10-experimental-benchmark-pivot-beyond-hydrides-hg1223-pressure-quench-route-and-ambient-gap-map/phase10-top-candidate-memo.md`"
   },
   "_version": 1,
-  "_synced_at": "2026-03-29T06:08:47.149289+00:00"
+  "_synced_at": "2026-03-29T09:15:10.403532+00:00"
 }

@@ -1,0 +1,27 @@
+{
+  "phase": "10",
+  "artifact": "phase10-hg1223-audit",
+  "candidate": "HgBa2Ca2Cu3O8+delta",
+  "ambient_tc_k": 151,
+  "pressure_history": "pressure-quench protocol followed by ambient operation",
+  "p_op_gpa": 0,
+  "roomtemp_gap_k": 149,
+  "comparison_set": [
+    "MgB2",
+    "SmNiO2-family thin films",
+    "CsInH3",
+    "RbPH3",
+    "KB3C3"
+  ],
+  "top_benchmark_status": true,
+  "why_it_wins": [
+    "Highest experimentally anchored ambient or retained-ambient Tc in the carried benchmark set",
+    "Stronger evidence class than theory-only hydride or framework routes",
+    "Closer to room temperature than MgB2 or SmNiO2 while still operating at ambient pressure after preparation"
+  ],
+  "not_yet_a_solution": [
+    "Still 149 K below room temperature",
+    "Requires pressure-quench preparation",
+    "Materials complexity and reproducibility remain serious constraints"
+  ]
+}

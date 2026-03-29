@@ -1,0 +1,253 @@
+{
+  "phase": "08",
+  "goal": "Freeze a contradiction-aware ambient-leaning candidate set after the negative CsInH3-class verdict.",
+  "guardrails": {
+    "no_plain_mxh3_restart": true,
+    "separate_p_synth_and_p_op_target": true,
+    "consumer_language_requires_ambient_evidence": true
+  },
+  "family_buckets": [
+    "perovskite-side bridge",
+    "ambient hydride",
+    "framework / clathrate"
+  ],
+  "core_shortlist": [
+    "RbPH3",
+    "SrAuH3",
+    "CsIn0.5Sn0.5H3",
+    "Mg2IrH6",
+    "Mg2RhH6",
+    "Mg2CoH6",
+    "KB3C3",
+    "KRbB6C6"
+  ],
+  "reserve_only": [
+    "PbNH4B6C6",
+    "SrNH4B6C6",
+    "BaRhH8"
+  ],
+  "candidates": [
+    {
+      "name": "RbPH3",
+      "family": "perovskite-side bridge",
+      "phase08_bucket": "core_shortlist",
+      "role": "core",
+      "source_class": "literature_anchor",
+      "tc_anchor_k": {
+        "min": 87,
+        "max": 103
+      },
+      "p_synth_gpa": 30.0,
+      "p_op_target_gpa": 0.0,
+      "contradiction_flags": [],
+      "prior_negative_evidence": [],
+      "practical_penalties": [
+        "theory_only",
+        "no_experimental_retention"
+      ],
+      "initial_priority": 1
+    },
+    {
+      "name": "SrAuH3",
+      "family": "perovskite-side bridge",
+      "phase08_bucket": "core_shortlist",
+      "role": "core",
+      "source_class": "literature_anchor",
+      "tc_anchor_k": {
+        "reported": 132
+      },
+      "p_synth_gpa": 7.0,
+      "p_op_target_gpa": 0.0,
+      "contradiction_flags": [
+        "preprint_unconfirmed"
+      ],
+      "prior_negative_evidence": [],
+      "practical_penalties": [
+        "no_repo_local_screen"
+      ],
+      "initial_priority": 2
+    },
+    {
+      "name": "CsIn0.5Sn0.5H3",
+      "family": "perovskite-side bridge",
+      "phase08_bucket": "core_shortlist",
+      "role": "core",
+      "source_class": "repo_generated_hypothesis",
+      "tc_anchor_k": null,
+      "p_synth_gpa": null,
+      "p_op_target_gpa": 0.0,
+      "contradiction_flags": [
+        "hypothesis_only"
+      ],
+      "prior_negative_evidence": [
+        "plain_CsInH3_class_failed_ambient_retention_in_phase07"
+      ],
+      "practical_penalties": [
+        "no_direct_literature_anchor"
+      ],
+      "initial_priority": 3
+    },
+    {
+      "name": "Mg2IrH6",
+      "family": "ambient hydride",
+      "phase08_bucket": "core_shortlist",
+      "role": "contradiction-tracked",
+      "source_class": "literature_anchor",
+      "tc_anchor_k": {
+        "min": 66,
+        "max": 160
+      },
+      "p_synth_gpa": 15.0,
+      "p_op_target_gpa": 0.0,
+      "contradiction_flags": [
+        "tc_disagreement",
+        "ambient_metastability_unverified"
+      ],
+      "prior_negative_evidence": [
+        "repo_local_e_hull_0gpa_123_3_mev_atom"
+      ],
+      "practical_penalties": [
+        "contradiction_sensitive"
+      ],
+      "initial_priority": 4
+    },
+    {
+      "name": "Mg2RhH6",
+      "family": "ambient hydride",
+      "phase08_bucket": "core_shortlist",
+      "role": "core",
+      "source_class": "literature_anchor",
+      "tc_anchor_k": {
+        "family_level_claim_min": 100
+      },
+      "p_synth_gpa": null,
+      "p_op_target_gpa": 0.0,
+      "contradiction_flags": [
+        "family_level_route_ambiguity"
+      ],
+      "prior_negative_evidence": [],
+      "practical_penalties": [
+        "no_repo_local_screen"
+      ],
+      "initial_priority": 5
+    },
+    {
+      "name": "Mg2CoH6",
+      "family": "ambient hydride",
+      "phase08_bucket": "core_shortlist",
+      "role": "validation-only",
+      "source_class": "literature_anchor",
+      "tc_anchor_k": {
+        "family_level_claim_min": 100
+      },
+      "p_synth_gpa": 0.0,
+      "p_op_target_gpa": 0.0,
+      "contradiction_flags": [
+        "superconductivity_route_not_locally_validated"
+      ],
+      "prior_negative_evidence": [],
+      "practical_penalties": [
+        "family_sanity_anchor_not_positive_winner"
+      ],
+      "initial_priority": 6
+    },
+    {
+      "name": "KB3C3",
+      "family": "framework / clathrate",
+      "phase08_bucket": "core_shortlist",
+      "role": "core",
+      "source_class": "literature_anchor",
+      "tc_anchor_k": {
+        "reported": 102.5
+      },
+      "p_synth_gpa": null,
+      "p_op_target_gpa": 0.0,
+      "contradiction_flags": [],
+      "prior_negative_evidence": [],
+      "practical_penalties": [
+        "framework_analog",
+        "no_repo_local_hull_checkpoint"
+      ],
+      "initial_priority": 7
+    },
+    {
+      "name": "KRbB6C6",
+      "family": "framework / clathrate",
+      "phase08_bucket": "core_shortlist",
+      "role": "core",
+      "source_class": "literature_anchor",
+      "tc_anchor_k": {
+        "reported": 102
+      },
+      "p_synth_gpa": null,
+      "p_op_target_gpa": 0.0,
+      "contradiction_flags": [],
+      "prior_negative_evidence": [],
+      "practical_penalties": [
+        "no_demonstrated_synthesis_pressure",
+        "no_repo_local_hull_checkpoint"
+      ],
+      "initial_priority": 8
+    },
+    {
+      "name": "PbNH4B6C6",
+      "family": "framework / clathrate",
+      "phase08_bucket": "reserve_only",
+      "role": "reserve",
+      "source_class": "literature_anchor",
+      "tc_anchor_k": {
+        "reported": 115
+      },
+      "p_synth_gpa": null,
+      "p_op_target_gpa": 0.0,
+      "contradiction_flags": [
+        "repo_local_hull_failure"
+      ],
+      "prior_negative_evidence": [
+        "repo_local_e_hull_0gpa_186_1_mev_atom"
+      ],
+      "practical_penalties": [
+        "lead_toxicity"
+      ],
+      "initial_priority": 9
+    },
+    {
+      "name": "SrNH4B6C6",
+      "family": "framework / clathrate",
+      "phase08_bucket": "reserve_only",
+      "role": "reserve",
+      "source_class": "literature_anchor",
+      "tc_anchor_k": {
+        "reported": 85
+      },
+      "p_synth_gpa": null,
+      "p_op_target_gpa": 0.0,
+      "contradiction_flags": [
+        "repo_local_hull_failure"
+      ],
+      "prior_negative_evidence": [
+        "repo_local_e_hull_0gpa_244_1_mev_atom"
+      ],
+      "practical_penalties": [],
+      "initial_priority": 10
+    },
+    {
+      "name": "BaRhH8",
+      "family": "ambient hydride",
+      "phase08_bucket": "reserve_only",
+      "role": "reserve",
+      "source_class": "literature_anchor",
+      "tc_anchor_k": {
+        "reported": 78
+      },
+      "p_synth_gpa": 0.0,
+      "p_op_target_gpa": 0.0,
+      "contradiction_flags": [],
+      "prior_negative_evidence": [],
+      "practical_penalties": [
+        "below_phase08_practical_floor"
+      ],
+      "initial_priority": 11
+    }
+  ]
+}

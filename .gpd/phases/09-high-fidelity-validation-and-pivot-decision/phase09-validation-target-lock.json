@@ -1,0 +1,125 @@
+{
+  "phase": "09",
+  "artifact": "phase09-validation-target-lock",
+  "targets": [
+    {
+      "name": "CsInH3",
+      "role": "baseline",
+      "route_class": "pressure-supported hydride benchmark",
+      "p_synth_gpa": "3-5 proposed in repo guidance; not experimentally demonstrated",
+      "p_op_gpa": "3",
+      "existing_evidence": [
+        "Repo-local benchmark result: Tc = 214 K at 3 GPa after SSCHA",
+        "Synthetic alpha^2F only; real EPW is missing",
+        "Phase 07 ambient-retention analysis finds barrierless or near-zero-collapse logic at ambient pressure"
+      ],
+      "required_evidence": [
+        "Real DFPT + EPW baseline at the operating pressure",
+        "Direct synthesis evidence if elevated beyond benchmark use",
+        "Retained ambient superconductivity after pressure release, which is currently absent"
+      ],
+      "positive_claim_gate": "Cannot pass the practical gate without P_op = 0 GPa or a retained >150 K quench route; current evidence does not support either branch",
+      "current_use": "baseline-only"
+    },
+    {
+      "name": "RbPH3",
+      "role": "phase09-primary",
+      "route_class": "metastable ambient hydride",
+      "p_synth_gpa": "30 predicted",
+      "p_op_gpa": "0 predicted",
+      "existing_evidence": [
+        "Primary-source theory predicts about 100 K at ambient pressure",
+        "Ambient stabilization is attributed to ionic quantum anharmonicity",
+        "Phase 08 leaves the route unresolved because the repo has no local mixed-evidence screen in the shared 0-5 GPa band"
+      ],
+      "required_evidence": [
+        "Repo-local 0-5 GPa thermodynamic and dynamic checkpoints",
+        "Real DFPT + EPW + Eliashberg",
+        "Full anharmonic stability at the claimed operating pressure",
+        "Evidence strong enough to separate synthesis pressure from operating pressure in practice"
+      ],
+      "positive_claim_gate": "Must satisfy the shared Phase 09 gate and a clean VALD-02 ambient-branch pass without relying on literature-only claims",
+      "current_use": "negative-validation primary"
+    },
+    {
+      "name": "KB3C3",
+      "role": "phase09-benchmark",
+      "route_class": "hydride-adjacent clathrate / framework analog",
+      "p_synth_gpa": "high-pressure route proposed; exact threshold unresolved in repo",
+      "p_op_gpa": "0 predicted",
+      "existing_evidence": [
+        "Carried literature benchmark around 102.5 K at ambient pressure",
+        "Useful as a pressure-history and framework-stability analog",
+        "No repo-local hull or phonon checkpoint in the shared screen"
+      ],
+      "required_evidence": [
+        "Repo-local mixed-evidence screen",
+        "Clearer synthesis bookkeeping",
+        "Direct experiment or local high-fidelity validation before any practical promotion"
+      ],
+      "positive_claim_gate": "May remain benchmark-only even if it looks strong; non-hydride analog success does not count as hydride proof",
+      "current_use": "benchmark-only comparator"
+    },
+    {
+      "name": "KRbB6C6",
+      "role": "reserve",
+      "route_class": "ambient clathrate comparator",
+      "p_synth_gpa": "not demonstrated",
+      "p_op_gpa": "0 predicted",
+      "existing_evidence": [
+        "Carried ambient framework theory around 102 K",
+        "No repo-local mixed-evidence screen"
+      ],
+      "required_evidence": [
+        "Local thermodynamic and dynamic validation",
+        "Synthesis route logic"
+      ],
+      "positive_claim_gate": "Reserve only until the shared gate is met",
+      "current_use": "reserve"
+    },
+    {
+      "name": "Mg2CoH6",
+      "role": "reserve",
+      "route_class": "ambient-hydride sanity anchor",
+      "p_synth_gpa": "ambient-known compound; superconducting route unresolved",
+      "p_op_gpa": "0 target",
+      "existing_evidence": [
+        "Useful family-level sanity anchor",
+        "No local hull or phonon checkpoint for the claimed superconducting route"
+      ],
+      "required_evidence": [
+        "Local hull, phonons, and superconductivity validation"
+      ],
+      "positive_claim_gate": "Reserve only until direct evidence exists",
+      "current_use": "reserve"
+    }
+  ],
+  "evidence_gate": {
+    "requires_separate_pressure_fields": true,
+    "requires_real_dfpt_epw_or_experiment": true,
+    "requires_full_anharmonic_stability_for_positive_claim": true,
+    "requires_vald02_pass": true,
+    "vald02_ambient_branch": {
+      "p_op_gpa": 0,
+      "tc_min_k": 77
+    },
+    "vald02_quench_branch": {
+      "retained_tc_min_k": 150,
+      "final_pressure_gpa": 0
+    },
+    "automatic_exclusions": [
+      "synthetic alpha2F without real EPW",
+      "literature-only ambient headlines",
+      "loaded-pressure Tc counted as ambient operation",
+      "non-hydride analog success counted as hydride proof"
+    ]
+  },
+  "handoff": {
+    "next_plan": "09-02",
+    "required_actions": [
+      "Assign explicit verdicts to the baseline, primary, and benchmark routes",
+      "Run the exact VALD-02 threshold test",
+      "Keep benchmark and baseline roles distinct from a practical winner"
+    ]
+  }
+}

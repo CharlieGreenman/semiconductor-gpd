@@ -1,0 +1,113 @@
+{
+  "material": "CsInH3",
+  "space_group": "Pm-3m",
+  "path_basis": "repo-local anchors with explicit missing-data flags",
+  "checkpoints": [
+    {
+      "pressure_gpa": 5.0,
+      "e_hull_mev_atom": 44.3,
+      "omega_min_harmonic_cm-1": 18.4,
+      "omega_min_sscha_cm-1": null,
+      "data_status": "direct_repo_anchor",
+      "structural_status": "cubic_retained",
+      "stability_class": "stable",
+      "note": "Phase 2 direct screening anchor; harmonic phonons stable."
+    },
+    {
+      "pressure_gpa": 4.0,
+      "e_hull_mev_atom": null,
+      "omega_min_harmonic_cm-1": null,
+      "omega_min_sscha_cm-1": null,
+      "data_status": "missing_direct_calculation",
+      "structural_status": "unverified_cubic_continuation",
+      "stability_class": "unresolved",
+      "note": "Intermediate checkpoint required by the pressure grid but not yet computed directly."
+    },
+    {
+      "pressure_gpa": 3.0,
+      "e_hull_mev_atom": null,
+      "omega_min_harmonic_cm-1": -3.6,
+      "omega_min_sscha_cm-1": 11.322871379802951,
+      "omega_min_sscha_error_cm-1": 2.1256862017637173,
+      "data_status": "direct_repo_anchor",
+      "structural_status": "cubic_only_after_anharmonic_stabilization",
+      "stability_class": "marginal",
+      "note": "Minimum-pressure boundary point; harmonic instability is removed only after SSCHA."
+    },
+    {
+      "pressure_gpa": 2.0,
+      "e_hull_mev_atom": null,
+      "omega_min_harmonic_cm-1": null,
+      "omega_min_sscha_cm-1": null,
+      "data_status": "inferred_from_repo_conclusion",
+      "structural_status": "likely_symmetry_lowered",
+      "stability_class": "unstable",
+      "note": "Best-supported repo inference: cubic CsInH3 requires about 3 GPa minimum pressure."
+    },
+    {
+      "pressure_gpa": 1.0,
+      "e_hull_mev_atom": null,
+      "omega_min_harmonic_cm-1": null,
+      "omega_min_sscha_cm-1": null,
+      "data_status": "inferred_from_endpoint_trend",
+      "structural_status": "likely_symmetry_lowered_or_decomposing",
+      "stability_class": "unstable",
+      "note": "No ambient-side stabilization evidence exists between 2 and 0 GPa."
+    },
+    {
+      "pressure_gpa": 0.0,
+      "e_hull_mev_atom": 82.0,
+      "omega_min_harmonic_cm-1": null,
+      "omega_min_sscha_cm-1": null,
+      "dynamic_status": "imaginary_mode_present_at_R",
+      "data_status": "direct_repo_anchor",
+      "structural_status": "cubic_endpoint_unstable_to_framework_tilting",
+      "stability_class": "unstable",
+      "note": "Ambient endpoint fails both thermodynamic and dynamic checks."
+    }
+  ],
+  "first_failure_interval": {
+    "pressure_window_gpa": [
+      2.0,
+      3.0
+    ],
+    "classification": "dynamic",
+    "confidence": "medium",
+    "basis": [
+      "3 GPa direct SSCHA stabilization anchor",
+      "project conclusion: minimum pressure of about 3 GPa required",
+      "0 GPa direct dynamic instability endpoint"
+    ],
+    "requires_refinement": true,
+    "recommended_followup_pressures_gpa": [
+      2.5,
+      2.0
+    ]
+  },
+  "thermodynamic_context": {
+    "ehull_threshold_mev_atom": 50.0,
+    "known_points": [
+      {
+        "pressure_gpa": 5.0,
+        "e_hull_mev_atom": 44.3
+      },
+      {
+        "pressure_gpa": 0.0,
+        "e_hull_mev_atom": 82.0
+      }
+    ],
+    "crossing_pressure_gpa": "unresolved_between_5_and_0",
+    "note": "Thermodynamic margin worsens strongly during decompression, but the first supported practical failure is dynamic."
+  },
+  "barrier_branch_handoff": {
+    "dominant_route_type": "soft-mode distortion",
+    "dominant_mode": "R-point framework or octahedral tilting",
+    "secondary_route": "decomposition after hull penalty grows toward ambient pressure",
+    "plan02_focus": "follow the symmetry-lowering branch first"
+  },
+  "practical_verdict": {
+    "pathway_label": "low-pressure-only",
+    "supports_ambient_retention": false,
+    "supports_consumer_hardware_language": false
+  }
+}

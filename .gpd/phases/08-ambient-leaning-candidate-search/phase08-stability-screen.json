@@ -1,0 +1,344 @@
+{
+  "phase": "08",
+  "pressure_grid_gpa": [
+    0.0,
+    5.0
+  ],
+  "screen_rules": {
+    "mixed_evidence_required_for_decisive_verdict": true,
+    "loaded_pressure_tc_cannot_advance_candidate": true,
+    "evidence_sources": [
+      "reused",
+      "literature-only",
+      "newly_required"
+    ]
+  },
+  "survivor_set": [],
+  "reserve_set": [
+    "Mg2IrH6",
+    "Mg2CoH6",
+    "KB3C3",
+    "KRbB6C6",
+    "BaRhH8"
+  ],
+  "reject_set": [
+    "PbNH4B6C6",
+    "SrNH4B6C6"
+  ],
+  "unresolved_set": [
+    "RbPH3",
+    "SrAuH3",
+    "CsIn0.5Sn0.5H3",
+    "Mg2RhH6"
+  ],
+  "candidates": [
+    {
+      "name": "RbPH3",
+      "checkpoints": [
+        {
+          "pressure_gpa": 0.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "literature-only",
+            "phonons": "literature-only"
+          },
+          "notes": "Predicted ambient metastable route only; no repo-local 0 GPa hull or phonon checkpoint."
+        },
+        {
+          "pressure_gpa": 5.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "newly_required",
+            "phonons": "newly_required"
+          },
+          "notes": "Common 5 GPa checkpoint not yet computed."
+        }
+      ],
+      "mixed_evidence_status": "incomplete",
+      "screen_verdict": "unresolved",
+      "reason": "Ambient-target claim exists, but the common 0-5 GPa screen is not yet populated by mixed evidence."
+    },
+    {
+      "name": "SrAuH3",
+      "checkpoints": [
+        {
+          "pressure_gpa": 0.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "literature-only",
+            "phonons": "literature-only"
+          },
+          "notes": "Ambient claim remains literature-only in the repo."
+        },
+        {
+          "pressure_gpa": 5.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "newly_required",
+            "phonons": "newly_required"
+          },
+          "notes": "5 GPa bridge checkpoint not yet computed."
+        }
+      ],
+      "mixed_evidence_status": "incomplete",
+      "screen_verdict": "unresolved",
+      "reason": "Still useful as an ambient perovskite comparator, but not screened locally."
+    },
+    {
+      "name": "CsIn0.5Sn0.5H3",
+      "checkpoints": [
+        {
+          "pressure_gpa": 0.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "newly_required",
+            "phonons": "newly_required"
+          },
+          "notes": "Hypothesis-only bridge candidate."
+        },
+        {
+          "pressure_gpa": 5.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "newly_required",
+            "phonons": "newly_required"
+          },
+          "notes": "No direct screen exists yet."
+        }
+      ],
+      "mixed_evidence_status": "incomplete",
+      "screen_verdict": "unresolved",
+      "reason": "Cannot advance beyond bridge-hypothesis status without first-principles screening."
+    },
+    {
+      "name": "Mg2IrH6",
+      "checkpoints": [
+        {
+          "pressure_gpa": 0.0,
+          "e_hull_mev_atom": 123.3,
+          "omega_min_cm-1": 0.0,
+          "evidence_source": {
+            "e_hull": "reused",
+            "phonons": "literature-only"
+          },
+          "notes": "Dynamic stability does not rescue the large 0 GPa hull penalty."
+        },
+        {
+          "pressure_gpa": 5.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "newly_required",
+            "phonons": "newly_required"
+          },
+          "notes": "5 GPa bridge checkpoint not yet computed."
+        }
+      ],
+      "mixed_evidence_status": "partial_mixed_evidence",
+      "screen_verdict": "reserve",
+      "reason": "Keep only as a contradiction-tracked benchmark because the 0 GPa evidence already shows thermo-dynamic disagreement."
+    },
+    {
+      "name": "Mg2RhH6",
+      "checkpoints": [
+        {
+          "pressure_gpa": 0.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "literature-only",
+            "phonons": "literature-only"
+          },
+          "notes": "Family-level ambient claim only."
+        },
+        {
+          "pressure_gpa": 5.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "newly_required",
+            "phonons": "newly_required"
+          },
+          "notes": "Common 5 GPa checkpoint not yet computed."
+        }
+      ],
+      "mixed_evidence_status": "incomplete",
+      "screen_verdict": "unresolved",
+      "reason": "Live family comparator, but not yet screened under the common protocol."
+    },
+    {
+      "name": "Mg2CoH6",
+      "checkpoints": [
+        {
+          "pressure_gpa": 0.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "literature-only",
+            "phonons": "literature-only"
+          },
+          "notes": "Known compound, but the superconducting route is not locally screened in this repo."
+        },
+        {
+          "pressure_gpa": 5.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "newly_required",
+            "phonons": "newly_required"
+          },
+          "notes": "Common 5 GPa checkpoint not yet computed."
+        }
+      ],
+      "mixed_evidence_status": "incomplete",
+      "screen_verdict": "reserve",
+      "reason": "Useful family sanity anchor, but not a screened survivor."
+    },
+    {
+      "name": "KB3C3",
+      "checkpoints": [
+        {
+          "pressure_gpa": 0.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "literature-only",
+            "phonons": "literature-only"
+          },
+          "notes": "Ambient framework benchmark remains literature-only in this repo."
+        },
+        {
+          "pressure_gpa": 5.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "newly_required",
+            "phonons": "newly_required"
+          },
+          "notes": "5 GPa bridge checkpoint not yet computed."
+        }
+      ],
+      "mixed_evidence_status": "incomplete",
+      "screen_verdict": "reserve",
+      "reason": "Strongest framework benchmark, but not a local mixed-evidence success."
+    },
+    {
+      "name": "KRbB6C6",
+      "checkpoints": [
+        {
+          "pressure_gpa": 0.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "literature-only",
+            "phonons": "literature-only"
+          },
+          "notes": "Ambient clathrate benchmark remains literature-only in this repo."
+        },
+        {
+          "pressure_gpa": 5.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "newly_required",
+            "phonons": "newly_required"
+          },
+          "notes": "5 GPa bridge checkpoint not yet computed."
+        }
+      ],
+      "mixed_evidence_status": "incomplete",
+      "screen_verdict": "reserve",
+      "reason": "Ambient framework benchmark stays live only as reserve."
+    },
+    {
+      "name": "PbNH4B6C6",
+      "checkpoints": [
+        {
+          "pressure_gpa": 0.0,
+          "e_hull_mev_atom": 186.1,
+          "omega_min_cm-1": 0.0,
+          "evidence_source": {
+            "e_hull": "reused",
+            "phonons": "literature-only"
+          },
+          "notes": "Dynamic stability does not overcome the large 0 GPa hull penalty."
+        },
+        {
+          "pressure_gpa": 5.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "newly_required",
+            "phonons": "newly_required"
+          },
+          "notes": "5 GPa bridge checkpoint not yet computed."
+        }
+      ],
+      "mixed_evidence_status": "partial_mixed_evidence",
+      "screen_verdict": "reject",
+      "reason": "Repo-local thermodynamic failure plus toxicity make this unfit as a live practical candidate."
+    },
+    {
+      "name": "SrNH4B6C6",
+      "checkpoints": [
+        {
+          "pressure_gpa": 0.0,
+          "e_hull_mev_atom": 244.1,
+          "omega_min_cm-1": 0.0,
+          "evidence_source": {
+            "e_hull": "reused",
+            "phonons": "literature-only"
+          },
+          "notes": "Dynamic stability does not overcome the very large 0 GPa hull penalty."
+        },
+        {
+          "pressure_gpa": 5.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "newly_required",
+            "phonons": "newly_required"
+          },
+          "notes": "5 GPa bridge checkpoint not yet computed."
+        }
+      ],
+      "mixed_evidence_status": "partial_mixed_evidence",
+      "screen_verdict": "reject",
+      "reason": "Worst framework-side local hull failure in the carried source set."
+    },
+    {
+      "name": "BaRhH8",
+      "checkpoints": [
+        {
+          "pressure_gpa": 0.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "literature-only",
+            "phonons": "literature-only"
+          },
+          "notes": "Reserve family only; no repo-local screen yet."
+        },
+        {
+          "pressure_gpa": 5.0,
+          "e_hull_mev_atom": null,
+          "omega_min_cm-1": null,
+          "evidence_source": {
+            "e_hull": "newly_required",
+            "phonons": "newly_required"
+          },
+          "notes": "Common 5 GPa checkpoint not yet computed."
+        }
+      ],
+      "mixed_evidence_status": "incomplete",
+      "screen_verdict": "reserve",
+      "reason": "Reserve family that sits below the practical floor anyway."
+    }
+  ]
+}

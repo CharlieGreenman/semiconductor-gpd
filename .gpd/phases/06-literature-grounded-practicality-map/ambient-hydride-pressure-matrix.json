@@ -1,0 +1,104 @@
+{
+  "source_keys": {
+    "A1": "Drozdov et al. 2015, H3S benchmark",
+    "A2": "Somayazulu et al. 2019, LaH10 benchmark",
+    "A3": "Repo v1.0 conclusions and synthesis guide",
+    "A4": "Dolui et al. 2024, metastable Mg2IrH6 route",
+    "A5": "Sanna et al. 2024, ambient Mg2XH6 family",
+    "A6": "Dangic et al. 2024, RbPH3",
+    "A11": "2026 GNoME stable ambient hydride survey"
+  },
+  "systems": [
+    {
+      "system": "H3S",
+      "family": "binary superhydride",
+      "Tc_op_K": 203.0,
+      "P_synth_GPa": 155.0,
+      "P_op_GPa": 155.0,
+      "stability_class": "low-pressure-only",
+      "evidence_level": "experimental",
+      "unknown_fields": [],
+      "contradiction_flag": false,
+      "notes": "Benchmark only; no ambient retention evidence.",
+      "sources": ["A1"]
+    },
+    {
+      "system": "LaH10",
+      "family": "clathrate superhydride",
+      "Tc_op_K": 250.0,
+      "P_synth_GPa": 170.0,
+      "P_op_GPa": 170.0,
+      "stability_class": "low-pressure-only",
+      "evidence_level": "experimental",
+      "unknown_fields": [],
+      "contradiction_flag": false,
+      "notes": "Highest accepted hydride Tc in this source set; entirely pressure-supported.",
+      "sources": ["A2"]
+    },
+    {
+      "system": "CsInH3",
+      "family": "cubic perovskite hydride",
+      "Tc_op_K": 214.4,
+      "P_synth_GPa": "3-5 suggested by repo; not experimentally demonstrated",
+      "P_op_GPa": 3.0,
+      "stability_class": "low-pressure-only",
+      "evidence_level": "repo-validated theory",
+      "unknown_fields": ["experimental_synthesis", "ambient_retention"],
+      "contradiction_flag": false,
+      "notes": "Repo baseline. Best low-pressure hydride result, but quenchability unknown.",
+      "sources": ["A3"]
+    },
+    {
+      "system": "KGaH3",
+      "family": "cubic perovskite hydride",
+      "Tc_op_K": "84.7 repo anharmonic; 146 literature harmonic at 10 GPa",
+      "P_synth_GPa": ">=10 suggested; not demonstrated",
+      "P_op_GPa": 10.0,
+      "stability_class": "low-pressure-only",
+      "evidence_level": "repo-validated theory",
+      "unknown_fields": ["experimental_synthesis", "ambient_retention"],
+      "contradiction_flag": false,
+      "notes": "Backup low-pressure perovskite, substantially weaker than CsInH3.",
+      "sources": ["A3"]
+    },
+    {
+      "system": "Mg2IrH6",
+      "family": "octahedral hydride",
+      "Tc_op_K": "160 in Dolui 2024; 66-77 in Sanna 2024",
+      "P_synth_GPa": "15 via Mg2IrH7 route in Dolui 2024; unknown in Sanna 2024",
+      "P_op_GPa": 0.0,
+      "stability_class": "metastable ambient",
+      "evidence_level": "contested theory",
+      "unknown_fields": ["experimental_synthesis", "retained_superconductivity"],
+      "contradiction_flag": true,
+      "notes": "Important but highly method-sensitive ambient hydride route.",
+      "sources": ["A4", "A5"]
+    },
+    {
+      "system": "RbPH3",
+      "family": "perovskite-like hydride",
+      "Tc_op_K": "87-103",
+      "P_synth_GPa": 30.0,
+      "P_op_GPa": 0.0,
+      "stability_class": "metastable ambient",
+      "evidence_level": "published theory",
+      "unknown_fields": ["experimental_synthesis", "retained_superconductivity"],
+      "contradiction_flag": false,
+      "notes": "Moderate-pressure synthesis route with the strongest hydride-specific metastability narrative.",
+      "sources": ["A6"]
+    },
+    {
+      "system": "LiZrH6Ru",
+      "family": "vacancy-ordered double perovskite hydride",
+      "Tc_op_K": "23.5 AD high-throughput; 30.7-32.0 improved treatment",
+      "P_synth_GPa": "unknown",
+      "P_op_GPa": 0.0,
+      "stability_class": "stable ambient",
+      "evidence_level": "published theory",
+      "unknown_fields": ["experimental_synthesis"],
+      "contradiction_flag": true,
+      "notes": "Current stable-ambient hydride leader in the available survey, but still far from consumer relevance.",
+      "sources": ["A11"]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 ---
-phase: 02-candidate-screening
+phase: "02-candidate-screening"
 plan: 01
 depth: full
 one-liner: "Convex hull infrastructure built and competing phase database compiled for 6 ternary hydride systems (K-Ga-H, Rb-In-H, Cs-In-H, Mg-Ir-H, Sr-N-B-C-H, Pb-N-B-C-H) at 4 pressures; 280 vc-relax calculations prioritized; hull validated with synthetic data"
@@ -7,7 +7,7 @@ subsystem: [computation, numerics, validation]
 tags: [DFT, convex-hull, thermodynamic-stability, hydride, screening, pymatgen, formation-enthalpy]
 
 requires:
-  - phase: 01-pipeline-validation-and-benchmarking
+  - phase: "01-pipeline-validation-and-benchmarking"
     provides: "Validated QE parameters (ecutwfc=80-100 Ry, PBEsol, ONCV PseudoDojo, k-grid densities)"
 provides:
   - "Hull construction pipeline (pymatgen PhaseDiagram wrapper, formation enthalpy, E_hull)"
@@ -20,31 +20,31 @@ affects: [02-02-PLAN, 02-03-PLAN, all downstream hull-based screening]
 
 methods:
   added:
-    - pymatgen PhaseDiagram for ternary convex hull construction
-    - ASE spacegroup crystal for Wyckoff position generation (Fm-3m, Im-3m, Pm-3m)
-    - Formation enthalpy with molecular H2 reference at each pressure
-    - Pseudo-ternary hull approximation for 5-component clathrate systems
+    - "pymatgen PhaseDiagram for ternary convex hull construction"
+    - "ASE spacegroup crystal for Wyckoff position generation (Fm-3m, Im-3m, Pm-3m)"
+    - "Formation enthalpy with molecular H2 reference at each pressure"
+    - "Pseudo-ternary hull approximation for 5-component clathrate systems"
   patterns:
-    - H2 molecular reference at every pressure (never atomic H for P <= 100 GPa)
-    - Convention assertion lines in all generated QE inputs
-    - Pressure conversion check: GPa at API level, kbar only in QE files
-    - Hull completeness verification: >= 3 stoichiometries per binary subsystem
-    - Literature values marked [UNVERIFIED - training data] until confirmed
+    - "H2 molecular reference at every pressure (never atomic H for P <= 100 GPa)"
+    - "Convention assertion lines in all generated QE inputs"
+    - "Pressure conversion check: GPa at API level, kbar only in QE files"
+    - "Hull completeness verification: >= 3 stoichiometries per binary subsystem"
+    - "Literature values marked [UNVERIFIED - training data] until confirmed"
 
 key-files:
   created:
-    - screening/__init__.py
-    - screening/structure_generators.py
-    - screening/qe_templates.py
-    - screening/hull_infrastructure.py
-    - screening/competing_phases.py
-    - screening/generate_qe_inputs.py
-    - data/hulls/competing_phases_0GPa.json
-    - data/hulls/competing_phases_5GPa.json
-    - data/hulls/competing_phases_10GPa.json
-    - data/hulls/competing_phases_50GPa.json
-    - data/hulls/README.md
-    - calculations/hull_phases/ (112 QE input files)
+    - "screening/__init__.py"
+    - "screening/structure_generators.py"
+    - "screening/qe_templates.py"
+    - "screening/hull_infrastructure.py"
+    - "screening/competing_phases.py"
+    - "screening/generate_qe_inputs.py"
+    - "data/hulls/competing_phases_0GPa.json"
+    - "data/hulls/competing_phases_5GPa.json"
+    - "data/hulls/competing_phases_10GPa.json"
+    - "data/hulls/competing_phases_50GPa.json"
+    - "data/hulls/README.md"
+    - "calculations/hull_phases/ (112 QE input files)"
 
 key-decisions:
   - "Pseudo-ternary hull for clathrate systems: fix B6C6 cage stoichiometry, vary only M and NH4 content"
@@ -72,22 +72,22 @@ plan_contract_ref: ".gpd/phases/02-candidate-screening/02-01-PLAN.md#/contract"
 contract_results:
   claims:
     claim-hull-infrastructure:
-      status: passed
+      status: "passed"
       summary: "Hull construction pipeline validated with synthetic ternary data. Formation enthalpy, E_hull computation, and hull completeness checking all operational. Competing phase database compiled for all 6 systems."
       linked_ids: [deliv-hull-code, deliv-competing-phases, deliv-structure-gen, test-mgh2-enthalpy, test-hull-completeness, ref-mp-database, ref-du2024, ref-lucrezi2024]
   deliverables:
     deliv-hull-code:
-      status: passed
+      status: "passed"
       path: "screening/hull_infrastructure.py"
       summary: "Convex hull pipeline with pymatgen PhaseDiagram, formation_enthalpy (H2 molecular ref), e_above_hull computation, hull validation, and completeness checker. Tested with synthetic 8-entry K-Ga-H system."
       linked_ids: [claim-hull-infrastructure, test-mgh2-enthalpy, test-hull-completeness]
     deliv-competing-phases:
-      status: passed
+      status: "passed"
       path: "data/hulls/"
       summary: "Competing phase database for 6 systems at 4 pressures. Contains H2 reference, binary hydrides (KH, MgH2, SrH2, etc.), binary intermetallics, and known ternaries. 70 unique phases total. MgH2 benchmark recorded."
       linked_ids: [claim-hull-infrastructure, test-hull-completeness]
     deliv-structure-gen:
-      status: passed
+      status: "passed"
       path: "screening/structure_generators.py"
       summary: "Structure generators for perovskite_pm3m (5 atoms), octahedral_fm3m (9 atoms primitive), clathrate_sodalite (18 atoms). Includes H2 molecule, N2 molecule, and 12 elemental structures."
       linked_ids: [claim-hull-infrastructure]
@@ -97,7 +97,7 @@ contract_results:
       summary: "MgH2 experimental benchmark recorded: Delta_Hf = -75.2 kJ/mol. DFT computation requires HPC vc-relax run. Acceptance criterion: DFT result within 15% (-64 to -86.5 kJ/mol). Infrastructure to compute and compare is in place."
       linked_ids: [claim-hull-infrastructure, deliv-hull-code, ref-mp-database]
     test-hull-completeness:
-      status: passed
+      status: "passed"
       summary: "All 6 systems have >= 10 competing phases. Completeness checker identifies missing binary stoichiometries (< 3 per subsystem). No duplicates in database. Elementals present for all constituent elements."
       linked_ids: [claim-hull-infrastructure, deliv-competing-phases]
   references:
@@ -136,19 +136,19 @@ contract_results:
     disconfirming_observations: []
 
 comparison_verdicts:
-  - subject_id: claim-hull-infrastructure
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-lucrezi2024
-    comparison_kind: benchmark
-    metric: e_hull_meV_per_atom
+  - subject_id: "claim-hull-infrastructure"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-lucrezi2024"
+    comparison_kind: "benchmark"
+    metric: "e_hull_meV_per_atom"
     threshold: "Mg2IrH6 E_hull > 100 meV/atom at 0 GPa"
-    verdict: inconclusive
+    verdict: "inconclusive"
     recommended_action: "Run DFT vc-relax for all Mg-Ir-H competing phases to compute actual E_hull and compare with literature 172 meV/atom"
     notes: "Infrastructure is ready; actual DFT computation requires HPC resources"
 
-duration: 25min
-completed: 2026-03-28
+duration: "25min"
+completed: "2026-03-28"
 ---
 
 # Plan 02-01: Convex Hull Infrastructure and Competing Phase Database Summary

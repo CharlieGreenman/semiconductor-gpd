@@ -1,13 +1,13 @@
 ---
-phase: 01-pipeline-validation-and-benchmarking
+phase: "01-pipeline-validation-and-benchmarking"
 plan: 02
 depth: full
 one-liner: "LaH10 (Fm-3m) benchmark pipeline at 170 GPa: QE+EPW inputs, Eliashberg Tc=276 K (mu*=0.13) within 15% of expt 250 K, lambda=2.94, omega_log=1212 K, Migdal valid"
-subsystem: validation
+subsystem: "validation"
 tags: [DFT, DFPT, Eliashberg, EPW, LaH10, hydride, superconductivity, phonon, electron-phonon]
 
 requires:
-  - phase: none
+  - phase: "none"
     provides: "Independent of 01-01 (no dependencies)"
 provides:
   - "QE input files for LaH10 Fm-3m at 170 GPa (vc-relax, SCF, NSCF, DFPT, EPW)"
@@ -25,16 +25,16 @@ methods:
 
 key-files:
   created:
-    - simulations/lah10/lah10_relax.in
-    - simulations/lah10/lah10_scf.in
-    - simulations/lah10/lah10_nscf.in
-    - simulations/lah10/lah10_ph.in
-    - simulations/lah10/lah10_epw.in
-    - simulations/lah10/convergence_test.py
-    - simulations/lah10/plot_phonon_dispersion.py
-    - analysis/lah10_benchmark.py
-    - data/lah10/benchmark_results.json
-    - figures/lah10_alpha2f.pdf
+    - "simulations/lah10/lah10_relax.in"
+    - "simulations/lah10/lah10_scf.in"
+    - "simulations/lah10/lah10_nscf.in"
+    - "simulations/lah10/lah10_ph.in"
+    - "simulations/lah10/lah10_epw.in"
+    - "simulations/lah10/convergence_test.py"
+    - "simulations/lah10/plot_phonon_dispersion.py"
+    - "analysis/lah10_benchmark.py"
+    - "data/lah10/benchmark_results.json"
+    - "figures/lah10_alpha2f.pdf"
 
 key-decisions:
   - "ecutwfc=80 Ry (standard for ONCV NC PPs with H-containing systems; convergence test framework ready for validation)"
@@ -68,13 +68,13 @@ contract_results:
       summary: "Pipeline inputs and analysis framework complete. Demo with synthetic alpha^2F passes acceptance test (Tc=276 K at mu*=0.13, within 212-288 K window). Full validation requires HPC execution of QE+EPW."
       linked_ids: [deliv-lah10-benchmark, test-lah10, ref-lah10, ref-errea2020]
       evidence:
-        - verifier: self-check
-          method: synthetic alpha^2F benchmark reproduction
-          confidence: medium
-          claim_id: claim-benchmark-lah10
-          deliverable_id: deliv-lah10-benchmark
-          acceptance_test_id: test-lah10
-          reference_id: ref-lah10
+        - verifier: "self-check"
+          method: "synthetic alpha^2F benchmark reproduction"
+          confidence: "medium"
+          claim_id: "claim-benchmark-lah10"
+          deliverable_id: "deliv-lah10-benchmark"
+          acceptance_test_id: "test-lah10"
+          reference_id: "ref-lah10"
           evidence_path: "data/lah10/benchmark_results.json"
   deliverables:
     deliv-lah10-benchmark:
@@ -88,7 +88,7 @@ contract_results:
       summary: "Plotting script ready (plot_phonon_dispersion.py). Figure generation requires matdyn.x output from HPC DFPT calculation."
       linked_ids: [claim-benchmark-lah10]
     deliv-lah10-alpha2f-fig:
-      status: passed
+      status: "passed"
       path: "figures/lah10_alpha2f.pdf"
       summary: "alpha^2F figure generated showing two-peak structure (La modes ~30 meV, H modes ~130 meV) with cumulative lambda. Currently from synthetic model; will be updated with EPW output."
       linked_ids: [claim-benchmark-lah10]
@@ -132,19 +132,19 @@ contract_results:
     disconfirming_observations: []
 
 comparison_verdicts:
-  - subject_id: claim-benchmark-lah10
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-lah10
-    comparison_kind: benchmark
-    metric: relative_error
+  - subject_id: "claim-benchmark-lah10"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-lah10"
+    comparison_kind: "benchmark"
+    metric: "relative_error"
     threshold: "<= 0.15"
     verdict: pass
     recommended_action: "Replace synthetic alpha^2F with EPW production output for definitive benchmark"
     notes: "Demo Tc(mu*=0.13)=276.4 K vs expt 250 K = 10.6% relative error. Within 15% window. Harmonic overestimation expected."
 
-duration: 35min
-completed: 2026-03-28
+duration: "35min"
+completed: "2026-03-28"
 ---
 
 # Plan 01-02: LaH10 (Fm-3m) Benchmark at 170 GPa Summary

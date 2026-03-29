@@ -1,5 +1,5 @@
 ---
-phase: 05-characterization-and-sensitivity-analysis
+phase: "05-characterization-and-sensitivity-analysis"
 plan: 03
 depth: full
 one-liner: "Project complete: CsInH3 Tc=214 K at 3 GPa (H3S-class at 30x lower pressure); test-tc-target FAIL (214 K < 300 K); pipeline validated (H3S 10.5%, LaH10 10.6%); contract audit 14/14 items documented"
@@ -7,16 +7,16 @@ subsystem: [analysis, validation]
 tags: [benchmark, contract-audit, conclusions, CsInH3, H3S, LaH10, perovskite, project-completion]
 
 requires:
-  - phase: 01-pipeline-validation-and-benchmarking
+  - phase: "01-pipeline-validation-and-benchmarking"
     plan: 03
     provides: "Benchmark table: H3S 182 K (10.5%), LaH10 276 K (10.6%)"
-  - phase: 02-candidate-screening
+  - phase: "02-candidate-screening"
     plan: 04
     provides: "3 candidates (CsInH3, RbInH3, KGaH3) passing stability at 10 GPa"
-  - phase: 03-eliashberg-tc-predictions
+  - phase: "03-eliashberg-tc-predictions"
     plan: 04
     provides: "Harmonic Tc: CsInH3 246 K, KGaH3 153 K, RbInH3 123 K at 10 GPa"
-  - phase: 04-anharmonic-corrections
+  - phase: "04-anharmonic-corrections"
     plan: 03
     provides: "Anharmonic Tc: CsInH3 214 K (3 GPa), 204 K (5 GPa), KGaH3 85 K (10 GPa)"
 provides:
@@ -27,21 +27,21 @@ affects: []
 
 methods:
   added:
-    - Contract audit methodology (item-by-item status tracking)
-    - Systematic error budget assembly
+    - "Contract audit methodology (item-by-item status tracking)"
+    - "Systematic error budget assembly"
   patterns:
-    - Benchmark-first then prediction (validated before novel results)
-    - Honest negative result documentation (test-tc-target FAIL prominent)
+    - "Benchmark-first then prediction (validated before novel results)"
+    - "Honest negative result documentation (test-tc-target FAIL prominent)"
 
 key-files:
   created:
-    - analysis/final_benchmark.py
-    - analysis/contract_audit.py
-    - data/benchmark_table_final.json
-    - data/benchmark_table_final.md
-    - data/contract_audit.json
-    - data/contract_audit.md
-    - data/project_conclusions.md
+    - "analysis/final_benchmark.py"
+    - "analysis/contract_audit.py"
+    - "data/benchmark_table_final.json"
+    - "data/benchmark_table_final.md"
+    - "data/contract_audit.json"
+    - "data/contract_audit.md"
+    - "data/project_conclusions.md"
 
 key-decisions:
   - "test-tc-target: FAIL documented prominently (214 K < 300 K)"
@@ -120,29 +120,29 @@ contract_results:
     disconfirming_observations: []
 
 comparison_verdicts:
-  - subject_id: claim-benchmark-final
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-h3s
-    comparison_kind: benchmark
-    metric: relative_error
+  - subject_id: "claim-benchmark-final"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-h3s"
+    comparison_kind: "benchmark"
+    metric: "relative_error"
     threshold: "<= 0.15"
     verdict: pass
     recommended_action: "Benchmark finalized. Upgrade H3S to Eliashberg when HPC available."
     notes: "H3S AD Tc=182 K, 10.5% error."
-  - subject_id: claim-benchmark-final
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-lah10
-    comparison_kind: benchmark
-    metric: relative_error
+  - subject_id: "claim-benchmark-final"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-lah10"
+    comparison_kind: "benchmark"
+    metric: "relative_error"
     threshold: "<= 0.15"
     verdict: pass
     recommended_action: "Benchmark finalized."
     notes: "LaH10 Eliashberg Tc=276 K, 10.6% error."
 
-duration: 15min
-completed: 2026-03-29
+duration: "15min"
+completed: "2026-03-29"
 ---
 
 # Plan 05-03: Final Benchmark Table, Contract Audit, and Project Conclusions

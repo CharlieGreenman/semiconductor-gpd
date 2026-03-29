@@ -1,0 +1,113 @@
+{
+  "axes": ["Tc", "P_op", "retention_confidence", "synthesis_accessibility", "materials_practicality"],
+  "scores": [
+    {
+      "entry": "Hg1223",
+      "pathway_label": "pressure-quenched",
+      "axis_scores": {
+        "Tc": 3,
+        "P_op": 4,
+        "retention_confidence": 4,
+        "synthesis_accessibility": 4,
+        "materials_practicality": 0
+      },
+      "total": 15,
+      "note": "Route-class benchmark only; not a hydride target."
+    },
+    {
+      "entry": "RbPH3",
+      "pathway_label": "metastable ambient",
+      "axis_scores": {
+        "Tc": 2,
+        "P_op": 4,
+        "retention_confidence": 2,
+        "synthesis_accessibility": 2,
+        "materials_practicality": 2
+      },
+      "total": 12,
+      "note": "Best hydride-side ambient target in the current source set."
+    },
+    {
+      "entry": "CsInH3",
+      "pathway_label": "low-pressure-only",
+      "axis_scores": {
+        "Tc": 4,
+        "P_op": 3,
+        "retention_confidence": 0,
+        "synthesis_accessibility": 3,
+        "materials_practicality": 2
+      },
+      "total": 12,
+      "note": "Best low-pressure hydride benchmark; retention remains unproven."
+    },
+    {
+      "entry": "KB3C3",
+      "pathway_label": "metastable ambient",
+      "axis_scores": {
+        "Tc": 2,
+        "P_op": 4,
+        "retention_confidence": 1,
+        "synthesis_accessibility": 1,
+        "materials_practicality": 3
+      },
+      "total": 11,
+      "note": "Best framework analog for ambient-retention logic."
+    },
+    {
+      "entry": "Mg2IrH6",
+      "pathway_label": "metastable ambient",
+      "axis_scores": {
+        "Tc": 2,
+        "P_op": 4,
+        "retention_confidence": 1,
+        "synthesis_accessibility": 2,
+        "materials_practicality": 1
+      },
+      "total": 10,
+      "note": "High-upside hydride route with a serious contradiction penalty."
+    },
+    {
+      "entry": "KRbB6C6",
+      "pathway_label": "stable ambient",
+      "axis_scores": {
+        "Tc": 2,
+        "P_op": 4,
+        "retention_confidence": 1,
+        "synthesis_accessibility": 0,
+        "materials_practicality": 2
+      },
+      "total": 9,
+      "note": "Useful framework benchmark for Phase 08."
+    },
+    {
+      "entry": "PbNH4B6C6",
+      "pathway_label": "stable ambient",
+      "axis_scores": {
+        "Tc": 2,
+        "P_op": 4,
+        "retention_confidence": 1,
+        "synthesis_accessibility": 0,
+        "materials_practicality": 0
+      },
+      "total": 7,
+      "note": "Ambient framework ceiling-setter with major toxicity cost."
+    },
+    {
+      "entry": "LiZrH6Ru",
+      "pathway_label": "stable ambient",
+      "axis_scores": {
+        "Tc": 0,
+        "P_op": 4,
+        "retention_confidence": 1,
+        "synthesis_accessibility": 0,
+        "materials_practicality": 1
+      },
+      "total": 6,
+      "note": "Stable-ambient hydride reality check."
+    }
+  ],
+  "rank_order": ["Hg1223", "RbPH3", "CsInH3", "KB3C3", "Mg2IrH6", "KRbB6C6", "PbNH4B6C6", "LiZrH6Ru"],
+  "phase07_targets": ["CsInH3", "RbPH3", "Hg1223", "Mg2IrH6"],
+  "phase08_targets": ["RbPH3-like perovskite hydrides", "Mg2XH6-like octahedral hydrides", "KB3C3 / KRbB6C6 / PbNH4B6C6 framework routes"],
+  "pivot_rule": "Pivot away from consumer-hardware framing if no route survives with P_op = 0 GPa, Tc >= 100 K, and retention confidence above pure speculation."
+}

@@ -2,7 +2,18 @@
 
 **Status:** Computational prediction — not yet experimentally confirmed.
 
-CsInH₃ is predicted to be a **superconductor** (zero electrical resistance) at ~200 K (-73°C) at 3 GPa pressure. This is the same class of superconducting temperature as H₃S, but at 30× lower pressure — making it experimentally accessible.
+**Current practical status (Phase 09, 2026-03-29):** `CsInH3` remains a low-pressure scientific benchmark, not a validated ambient-pressure or consumer-hardware path. The repo currently supports superconductivity only around `3 GPa`, and ambient retention after pressure release remains unestablished. The absolute `Tc` value also still depends on synthetic `alpha^2F` pending real `DFPT + EPW`.
+
+CsInH₃ is predicted to be a **superconductor** (zero electrical resistance) at ~200 K (-73°C) at 3 GPa pressure. This is the same class of superconducting temperature as H₃S, but at 30× lower pressure. That makes it materially easier to study than megabar hydrides, but it does **not** make it an ambient-pressure or device-ready material.
+
+## Pressure Bookkeeping
+
+| Quantity | Current repo support |
+|----------|----------------------|
+| Proposed synthesis pressure | `3-5 GPa` |
+| Supported superconducting operating pressure | about `3 GPa` |
+| Ambient-pressure superconducting operation | not supported |
+| Ambient retention after decompression | unknown / currently disfavored by the Phase 07 decompression verdict |
 
 ## Ingredients
 
@@ -64,7 +75,7 @@ CsInH₃ is predicted to be a **superconductor** (zero electrical resistance) at
 | 155 GPa (H₃S) | Diamond anvil cell only — pinhead-sized samples, no applications | DAC ($50K+) |
 | 3-5 GPa (CsInH₃) | Multi-anvil press — mm-to-cm scale samples, bulk measurements possible | Multi-anvil ($100K-500K) |
 
-3 GPa is comparable to the pressure at the bottom of Earth's crust. Industrial high-pressure synthesis (synthetic diamonds, cubic boron nitride) routinely operates in this range. There is existing manufacturing infrastructure.
+3 GPa is comparable to the pressure at the bottom of Earth's crust. Industrial high-pressure synthesis (synthetic diamonds, cubic boron nitride) routinely operates in this range. That matters for research accessibility and sample size, not for consumer electronics.
 
 ## Who Could Do This
 
@@ -98,7 +109,7 @@ simulations/csinh3/
 
 ## How to Get Involved
 
-If you're an experimentalist with access to a multi-anvil press, the prediction is ready for testing. The computational data and analysis scripts in this repository provide everything needed to guide a synthesis attempt.
+If you're an experimentalist with access to a multi-anvil press, this remains a worthwhile benchmark to test. The computational data and analysis scripts in this repository can guide a synthesis attempt, but the current practical claim should stay narrow: low-pressure hydride benchmark, not ambient-retained device path.
 
 Contact the authors or open an issue on this repository.
 

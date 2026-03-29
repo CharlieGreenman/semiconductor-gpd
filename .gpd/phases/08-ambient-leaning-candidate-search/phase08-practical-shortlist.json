@@ -1,0 +1,255 @@
+{
+  "phase": "08",
+  "score_axes": {
+    "tc": "0=<50 K, 1=50-99 K, 2=100-149 K, 3=150-199 K, 4=>=200 K",
+    "p_op": "0=>100 GPa, 1=30-100 GPa, 2=5-30 GPa, 3=0<P<=5 GPa, 4=0 GPa",
+    "retention_confidence": "0=none, 1=theory only, 2=published metastability or SSCHA logic, 3=near-ambient evidence, 4=ambient superconductivity demonstrated",
+    "synthesis_accessibility": "0=not demonstrated, 1=>50 GPa, 2=15-50 GPa, 3=1-15 GPa, 4=ambient or standard",
+    "materials_practicality": "0=toxic or very scarce, 1=expensive or reactive, 2=moderate, 3=common or benign, 4=scalable"
+  },
+  "practical_gate": {
+    "requires_supported_p_op_zero": true,
+    "minimum_tc_k": 100,
+    "requires_nontrivial_retention_confidence": true,
+    "consumer_language_blocked_without_gate": true
+  },
+  "ranked_entries": [
+    {
+      "rank": 1,
+      "name": "RbPH3",
+      "screen_verdict": "unresolved",
+      "scores": {
+        "tc": 2,
+        "p_op": 4,
+        "retention_confidence": 2,
+        "synthesis_accessibility": 2,
+        "materials_practicality": 2
+      },
+      "evidence_penalty": -1,
+      "adjusted_total": 11,
+      "tc_k": {
+        "min": 87,
+        "max": 103
+      },
+      "p_synth_gpa": 30.0,
+      "p_op_gpa": 0.0,
+      "retention_note": "Published theory with ionic-anharmonic metastability, but no direct mixed-evidence validation.",
+      "materials_note": "Reactive chemistry but no extreme toxicity penalty.",
+      "advancement_class": "phase09-primary",
+      "phase09_mode": "negative_validation"
+    },
+    {
+      "rank": 2,
+      "name": "KB3C3",
+      "screen_verdict": "reserve",
+      "scores": {
+        "tc": 2,
+        "p_op": 4,
+        "retention_confidence": 1,
+        "synthesis_accessibility": 1,
+        "materials_practicality": 3
+      },
+      "evidence_penalty": -1,
+      "adjusted_total": 10,
+      "tc_k": {
+        "reported": 102.5
+      },
+      "p_synth_gpa": null,
+      "p_op_gpa": 0.0,
+      "retention_note": "Framework benchmark only; ambient story is still literature-led.",
+      "materials_note": "Better materials profile than heavy-metal clathrates.",
+      "advancement_class": "phase09-benchmark"
+    },
+    {
+      "rank": 3,
+      "name": "KRbB6C6",
+      "screen_verdict": "reserve",
+      "scores": {
+        "tc": 2,
+        "p_op": 4,
+        "retention_confidence": 1,
+        "synthesis_accessibility": 0,
+        "materials_practicality": 2
+      },
+      "evidence_penalty": 0,
+      "adjusted_total": 9,
+      "tc_k": {
+        "reported": 102
+      },
+      "p_synth_gpa": null,
+      "p_op_gpa": 0.0,
+      "retention_note": "Ambient clathrate benchmark with weaker synthesis grounding.",
+      "materials_note": "Moderate practicality; not a toxicity outlier.",
+      "advancement_class": "reserve"
+    },
+    {
+      "rank": 4,
+      "name": "SrAuH3",
+      "screen_verdict": "unresolved",
+      "scores": {
+        "tc": 2,
+        "p_op": 4,
+        "retention_confidence": 1,
+        "synthesis_accessibility": 3,
+        "materials_practicality": 1
+      },
+      "evidence_penalty": -3,
+      "adjusted_total": 8,
+      "tc_k": {
+        "reported": 132
+      },
+      "p_synth_gpa": 7.0,
+      "p_op_gpa": 0.0,
+      "retention_note": "Interesting ambient comparator, but preprint-level and locally unscreened.",
+      "materials_note": "Gold chemistry limits practicality.",
+      "advancement_class": "reserve"
+    },
+    {
+      "rank": 5,
+      "name": "Mg2CoH6",
+      "screen_verdict": "reserve",
+      "scores": {
+        "tc": 2,
+        "p_op": 4,
+        "retention_confidence": 0,
+        "synthesis_accessibility": 4,
+        "materials_practicality": 2
+      },
+      "evidence_penalty": -4,
+      "adjusted_total": 8,
+      "tc_k": {
+        "family_level_claim_min": 100
+      },
+      "p_synth_gpa": 0.0,
+      "p_op_gpa": 0.0,
+      "retention_note": "Known compound, but the superconductivity route is not yet validated inside the shared screen.",
+      "materials_note": "Better practical profile than Ir-heavy analogs.",
+      "advancement_class": "reserve"
+    },
+    {
+      "rank": 6,
+      "name": "Mg2IrH6",
+      "screen_verdict": "reserve",
+      "scores": {
+        "tc": 2,
+        "p_op": 4,
+        "retention_confidence": 1,
+        "synthesis_accessibility": 2,
+        "materials_practicality": 1
+      },
+      "evidence_penalty": -3,
+      "adjusted_total": 7,
+      "tc_k": {
+        "min": 66,
+        "max": 160
+      },
+      "p_synth_gpa": 15.0,
+      "p_op_gpa": 0.0,
+      "retention_note": "Contradiction-tracked and penalized by the local 0 GPa hull failure.",
+      "materials_note": "Ir scarcity is a real penalty.",
+      "advancement_class": "reserve"
+    },
+    {
+      "rank": 7,
+      "name": "Mg2RhH6",
+      "screen_verdict": "unresolved",
+      "scores": {
+        "tc": 2,
+        "p_op": 4,
+        "retention_confidence": 0,
+        "synthesis_accessibility": 1,
+        "materials_practicality": 2
+      },
+      "evidence_penalty": -4,
+      "adjusted_total": 5,
+      "tc_k": {
+        "family_level_claim_min": 100
+      },
+      "p_synth_gpa": null,
+      "p_op_gpa": 0.0,
+      "retention_note": "Still waiting on basic mixed evidence.",
+      "materials_note": "Better than Ir but still expensive.",
+      "advancement_class": "reserve"
+    },
+    {
+      "rank": 8,
+      "name": "CsIn0.5Sn0.5H3",
+      "screen_verdict": "unresolved",
+      "scores": {
+        "tc": 0,
+        "p_op": 4,
+        "retention_confidence": 0,
+        "synthesis_accessibility": 0,
+        "materials_practicality": 2
+      },
+      "evidence_penalty": -3,
+      "adjusted_total": 3,
+      "tc_k": null,
+      "p_synth_gpa": null,
+      "p_op_gpa": 0.0,
+      "retention_note": "Bridge hypothesis only.",
+      "materials_note": "Moderate chemistry, but no direct evidence.",
+      "advancement_class": "reserve"
+    },
+    {
+      "rank": 9,
+      "name": "PbNH4B6C6",
+      "screen_verdict": "reject",
+      "scores": {
+        "tc": 2,
+        "p_op": 4,
+        "retention_confidence": 1,
+        "synthesis_accessibility": 0,
+        "materials_practicality": 0
+      },
+      "evidence_penalty": -8,
+      "adjusted_total": -1,
+      "tc_k": {
+        "reported": 115
+      },
+      "p_synth_gpa": null,
+      "p_op_gpa": 0.0,
+      "retention_note": "Rejected after local hull failure.",
+      "materials_note": "Lead toxicity is a hard penalty.",
+      "advancement_class": "reject"
+    },
+    {
+      "rank": 10,
+      "name": "SrNH4B6C6",
+      "screen_verdict": "reject",
+      "scores": {
+        "tc": 1,
+        "p_op": 4,
+        "retention_confidence": 1,
+        "synthesis_accessibility": 0,
+        "materials_practicality": 2
+      },
+      "evidence_penalty": -8,
+      "adjusted_total": 0,
+      "tc_k": {
+        "reported": 85
+      },
+      "p_synth_gpa": null,
+      "p_op_gpa": 0.0,
+      "retention_note": "Rejected after the worst local hull failure in the framework set.",
+      "materials_note": "Less toxic than Pb, but still not competitive.",
+      "advancement_class": "reject"
+    }
+  ],
+  "phase09_primary": {
+    "name": "RbPH3",
+    "mode": "negative_validation",
+    "reason": "Best remaining hydride-side ambient target even after the conservative screen."
+  },
+  "phase09_benchmark": {
+    "name": "KB3C3",
+    "reason": "Best framework-side ambient benchmark for comparison if the hydride path collapses."
+  },
+  "phase09_reserves": [
+    "KRbB6C6",
+    "Mg2CoH6"
+  ],
+  "no_go_triggered": true,
+  "no_go_reason": "No Phase 08 entry has a decisive mixed-evidence ambient success inside the shared 0-5 GPa screen.",
+  "consumer_guardrail": "Do not use consumer-hardware language unless P_op = 0 GPa and nontrivial retention confidence are both supported by mixed evidence. No Phase 08 entry clears that bar."
+}

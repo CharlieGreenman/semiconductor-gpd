@@ -1,5 +1,5 @@
 ---
-phase: 02-candidate-screening
+phase: "02-candidate-screening"
 plan: 02
 depth: full
 one-liner: "MXH3 perovskite hydrides (KGaH3, RbInH3, CsInH3) screened for thermodynamic and dynamic stability; all three pass E_hull < 50 meV/atom and phonon stability at 10 GPa, advancing to Phase 3 Eliashberg calculations"
@@ -7,10 +7,10 @@ subsystem: [computation, numerics, validation]
 tags: [DFT, convex-hull, phonon, DFPT, thermodynamic-stability, dynamic-stability, hydride, perovskite, screening]
 
 requires:
-  - phase: 02-candidate-screening
+  - phase: "02-candidate-screening"
     plan: 01
     provides: "Hull infrastructure, structure generators, competing phase database, QE templates"
-  - phase: 01-pipeline-validation-and-benchmarking
+  - phase: "01-pipeline-validation-and-benchmarking"
     provides: "Validated QE parameters (ecutwfc=80-100 Ry, PBEsol, ONCV PseudoDojo, k-grid densities)"
 provides:
   - "Formation enthalpies and E_hull for KGaH3, RbInH3, CsInH3 at P = 0, 5, 10, 50 GPa"
@@ -23,29 +23,29 @@ affects: [02-04-PLAN, 03-eliashberg]
 
 methods:
   added:
-    - Synthetic enthalpy model calibrated to Du et al. 2024 for E_hull prediction
-    - Synthetic phonon stability model with q-grid convergence protocol
-    - ZPE estimation from phonon DOS average frequency
-    - PBE functional cross-check for assessing functional sensitivity
+    - "Synthetic enthalpy model calibrated to Du et al. 2024 for E_hull prediction"
+    - "Synthetic phonon stability model with q-grid convergence protocol"
+    - "ZPE estimation from phonon DOS average frequency"
+    - "PBE functional cross-check for assessing functional sensitivity"
   patterns:
-    - fp-above-hull filter: E_hull < 50 meV/atom required at any P <= 10 GPa to proceed
-    - fp-unstable-tc filter: persistent imaginary modes (> -5 cm^-1 at converged q-grid) = disqualified
-    - q-grid convergence protocol: 4x4x4 -> 6x6x6; 8x8x8 triggered if diff > 5 cm^-1
-    - Phonon branch count check: 15 branches for 5-atom Pm-3m (3 acoustic + 12 optical)
-    - Acoustic mode check at Gamma: must be < 2 cm^-1 (ASR enforcement)
+    - "fp-above-hull filter: E_hull < 50 meV/atom required at any P <= 10 GPa to proceed"
+    - "fp-unstable-tc filter: persistent imaginary modes (> -5 cm^-1 at converged q-grid) = disqualified"
+    - "q-grid convergence protocol: 4x4x4 -> 6x6x6; 8x8x8 triggered if diff > 5 cm^-1"
+    - "Phonon branch count check: 15 branches for 5-atom Pm-3m (3 acoustic + 12 optical)"
+    - "Acoustic mode check at Gamma: must be < 2 cm^-1 (ASR enforcement)"
 
 key-files:
   created:
-    - screening/perovskite_screening.py
-    - data/candidates/perovskite_results.json
-    - data/candidates/perovskite_phonons.json
-    - figures/hull_perovskite_KGaH.pdf
-    - figures/hull_perovskite_RbInH.pdf
-    - figures/hull_perovskite_CsInH.pdf
-    - figures/phonon_KGaH3_10GPa.pdf
-    - figures/phonon_RbInH3_10GPa.pdf
-    - figures/phonon_CsInH3_5GPa.pdf
-    - figures/phonon_CsInH3_10GPa.pdf
+    - "screening/perovskite_screening.py"
+    - "data/candidates/perovskite_results.json"
+    - "data/candidates/perovskite_phonons.json"
+    - "figures/hull_perovskite_KGaH.pdf"
+    - "figures/hull_perovskite_RbInH.pdf"
+    - "figures/hull_perovskite_CsInH.pdf"
+    - "figures/phonon_KGaH3_10GPa.pdf"
+    - "figures/phonon_RbInH3_10GPa.pdf"
+    - "figures/phonon_CsInH3_5GPa.pdf"
+    - "figures/phonon_CsInH3_10GPa.pdf"
 
 key-decisions:
   - "All results are SYNTHETIC (literature-calibrated) since HPC/QE is not available; real DFT validation required before Phase 3 execution"
@@ -75,41 +75,41 @@ plan_contract_ref: ".gpd/phases/02-candidate-screening/02-02-PLAN.md#/contract"
 contract_results:
   claims:
     claim-perovskite-stability:
-      status: passed
+      status: "passed"
       summary: "Thermodynamic and dynamic stability determined for all 3 MXH3 perovskites at 4 pressures. KGaH3 (E_hull=38 meV/atom, phonon stable at 10 GPa), RbInH3 (E_hull=22, stable at 10 GPa), CsInH3 (E_hull=6, stable at 5-10 GPa) all pass both filters. Results are SYNTHETIC, calibrated to Du et al. 2024."
       linked_ids: [deliv-perovskite-hulls, deliv-perovskite-phonons, test-enthalpy-convergence, test-phonon-convergence, test-ehull-filter, ref-du2024-perovskite, ref-phase1-params]
   deliverables:
     deliv-perovskite-hulls:
-      status: passed
+      status: "passed"
       path: "data/candidates/perovskite_results.json"
       summary: "Formation enthalpies and E_hull for all 3 candidates at 4 pressures. Contains E_hull, Delta_Hf, lattice parameters, hull entries, convergence check, and PBE cross-check."
       linked_ids: [claim-perovskite-stability, test-enthalpy-convergence, test-ehull-filter]
     deliv-perovskite-phonons:
-      status: passed
+      status: "passed"
       path: "data/candidates/perovskite_phonons.json"
       summary: "Phonon stability results for all near-hull candidates. Contains min_frequency, q-grid convergence, stability verdict, mode character, ZPE estimates."
       linked_ids: [claim-perovskite-stability, test-phonon-convergence]
     deliv-hull-figures:
-      status: passed
+      status: "passed"
       path: "figures/hull_perovskite_*.pdf"
       summary: "E_hull vs pressure plots and hull bar charts for K-Ga-H, Rb-In-H, Cs-In-H systems."
       linked_ids: [claim-perovskite-stability]
     deliv-phonon-figures:
-      status: passed
+      status: "passed"
       path: "figures/phonon_*.pdf"
       summary: "Phonon dispersion plots for all candidates at stable pressures, plus 0 GPa unstable dispersions."
       linked_ids: [claim-perovskite-stability]
   acceptance_tests:
     test-enthalpy-convergence:
-      status: passed
+      status: "passed"
       summary: "KGaH3 at 10 GPa: ecutwfc=80 vs 100 Ry difference = 1.8 meV/atom < 5.0 meV/atom threshold. [SYNTHETIC convergence test]"
       linked_ids: [claim-perovskite-stability, deliv-perovskite-hulls]
     test-phonon-convergence:
-      status: passed
+      status: "passed"
       summary: "All stable candidates: 4x4x4 vs 6x6x6 q-grid difference < 5 cm^-1 for min frequencies. RbInH3 at 5 GPa required 8x8x8 (converged at 2.1 cm^-1). [SYNTHETIC phonon convergence]"
       linked_ids: [claim-perovskite-stability, deliv-perovskite-phonons]
     test-ehull-filter:
-      status: passed
+      status: "passed"
       summary: "fp-above-hull filter applied: KGaH3 passes at 10 GPa (38 meV/atom), RbInH3 at 10 GPa (22), CsInH3 at 5 GPa (44) and 10 GPa (6). All candidates fail at 0 GPa (82-122 meV/atom)."
       linked_ids: [claim-perovskite-stability, deliv-perovskite-hulls]
   references:
@@ -146,19 +146,19 @@ contract_results:
       - "ZPE corrections (50-93 meV/atom Delta_ZPE) could shift candidates above the 50 meV/atom threshold. This is a real concern for H-rich perovskites."
 
 comparison_verdicts:
-  - subject_id: claim-perovskite-stability
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-du2024-perovskite
-    comparison_kind: benchmark
-    metric: e_hull_meV_per_atom_qualitative_agreement
+  - subject_id: "claim-perovskite-stability"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-du2024-perovskite"
+    comparison_kind: "benchmark"
+    metric: "e_hull_meV_per_atom_qualitative_agreement"
     threshold: "Same qualitative stability verdict at 10 GPa (E_hull < 50 meV/atom)"
     verdict: pass
     recommended_action: "Confirm with real DFT on HPC. Quantitative comparison requires actual QE vc-relax + ph.x calculations."
     notes: "SYNTHETIC results. Du et al. predict KGaH3 near-hull at 10 GPa; our model gives 38 meV/atom. CsInH3 stable below 20 GPa; our model gives 6 meV/atom at 10 GPa. Qualitative agreement."
 
-duration: 35min
-completed: 2026-03-28
+duration: "35min"
+completed: "2026-03-28"
 ---
 
 # Plan 02-02: MXH3 Perovskite Hydride Screening Summary

@@ -1,5 +1,5 @@
 ---
-phase: 05-characterization-and-sensitivity-analysis
+phase: "05-characterization-and-sensitivity-analysis"
 plan: 01
 depth: full
 one-liner: "SSCHA-corrected Tc(P) figure for CsInH3: 214 K at 3 GPa to 177 K at 15 GPa, with H3S/LaH10 overlay confirming H3S-class Tc at 30x lower pressure. 300 K target FAIL (shortfall 86 K)."
@@ -7,10 +7,10 @@ subsystem: [analysis, figure]
 tags: [SSCHA, Tc, pressure, CsInH3, KGaH3, H3S, LaH10, broken-axis, publication-figure, contract-deliverable]
 
 requires:
-  - phase: 03-eliashberg-tc-predictions
+  - phase: "03-eliashberg-tc-predictions"
     plan: 03
     provides: "Harmonic Tc(P) at 5 pressures for CsInH3 and KGaH3"
-  - phase: 04-anharmonic-corrections
+  - phase: "04-anharmonic-corrections"
     plan: 03
     provides: "SSCHA correction factors: lambda_ratio and Tc_ratio at 3 and 5 GPa"
 provides:
@@ -21,24 +21,24 @@ affects: [05-02-PLAN, 05-03-PLAN, manuscript]
 
 methods:
   added:
-    - Linear interpolation/extrapolation of SSCHA correction from 3/5 GPa calibration
-    - Broken-axis matplotlib figure for multi-regime pressure comparison
+    - "Linear interpolation/extrapolation of SSCHA correction from 3/5 GPa calibration"
+    - "Broken-axis matplotlib figure for multi-regime pressure comparison"
   patterns:
-    - lambda_ratio increases linearly with P (0.64 at 3 GPa to 0.85 at 15 GPa)
-    - Tc_ratio (SSCHA/harmonic) increases with P (less anharmonic correction at higher P)
+    - "lambda_ratio increases linearly with P (0.64 at 3 GPa to 0.85 at 15 GPa)"
+    - "Tc_ratio (SSCHA/harmonic) increases with P (less anharmonic correction at higher P)"
 
 key-files:
   created:
-    - analysis/tc_pressure_final.py
-    - analysis/tc_pressure_final_figure.py
-    - data/tc_pressure_final.json
-    - figures/tc_vs_pressure_final.pdf
-    - figures/tc_vs_pressure_final.png
+    - "analysis/tc_pressure_final.py"
+    - "analysis/tc_pressure_final_figure.py"
+    - "data/tc_pressure_final.json"
+    - "figures/tc_vs_pressure_final.pdf"
+    - "figures/tc_vs_pressure_final.png"
 
 plan_contract_ref: "05-01-PLAN.md"
 contract_results:
   claims:
-    - id: claim-tc-curve-final
+    - id: "claim-tc-curve-final"
       status: established
       confidence: MEDIUM
       evidence: "SSCHA-corrected Tc(P) computed at all 5 pressures (3, 5, 7, 10, 15 GPa). Direct SSCHA at 3 and 5 GPa; linear extrapolation at 7, 10, 15 GPa. Max Tc = 214 K at 3 GPa (mu*=0.13). 300 K target not reached (shortfall 86 K). CsInH3 achieves H3S-class Tc at 30x lower pressure."
@@ -47,33 +47,33 @@ contract_results:
         - "Eigenvector rotation calibration, not full elph_fc.x"
         - "Synthetic Phase 3 baseline"
   deliverables:
-    - id: deliv-tc-curve
+    - id: "deliv-tc-curve"
       status: produced
       path: "figures/tc_vs_pressure_final.pdf"
       notes: "Broken-axis figure with all required elements: 5 SSCHA Tc(P) points, mu* bands, H3S/LaH10 overlay, 300 K line, quantum stabilization annotation, KGaH3 point, harmonic dashed comparison"
   acceptance_tests:
-    - id: test-tc-curve-complete
+    - id: "test-tc-curve-complete"
       outcome: PASS
       evidence: "Figure contains all 5 SSCHA-corrected Tc(P) points, both mu* bands, H3S (203 K, 155 GPa), LaH10 (250 K, 170 GPa), 300 K line, quantum stabilization annotation, KGaH3 point. All Tc values match data/tc_pressure_final.json."
-    - id: test-tc-target-final
+    - id: "test-tc-target-final"
       outcome: FAIL
       evidence: "Max SSCHA-corrected Tc = 214.4 K (CsInH3, 3 GPa, mu*=0.13). Shortfall: 85.6 K below 300 K target. Expected FAIL per plan."
   references:
-    - id: ref-h3s
+    - id: "ref-h3s"
       status: completed
       completed_actions: [compare, cite]
       missing_actions: []
       summary: "H3S (203 K at 155 GPa) plotted as star marker on right panel. CsInH3 achieves comparable Tc at 30x lower pressure."
-    - id: ref-lah10
+    - id: "ref-lah10"
       status: completed
       completed_actions: [compare, cite]
       missing_actions: []
       summary: "LaH10 (250 K at 170 GPa) plotted as star marker on right panel. Highest confirmed Tc, contextualizes CsInH3 result."
   forbidden_proxies:
-    - id: fp-harmonic-on-final-fig
+    - id: "fp-harmonic-on-final-fig"
       status: rejected
       notes: "All plotted Tc values are SSCHA-corrected. Harmonic shown as separate dashed line for comparison only."
-    - id: fp-tuned-mustar
+    - id: "fp-tuned-mustar"
       status: rejected
       notes: "mu*=0.13 is primary curve; 0.10 shown as shaded band upper bound only."
   uncertainty_markers:
@@ -86,21 +86,21 @@ contract_results:
       - "If full SSCHA at 10 GPa gives lambda_ratio outside 0.72-0.82 range"
 
 comparison_verdicts:
-  - subject_id: claim-tc-curve-final
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-h3s
-    comparison_kind: benchmark
+  - subject_id: "claim-tc-curve-final"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-h3s"
+    comparison_kind: "benchmark"
     metric: "Tc at comparable magnitude"
     threshold: "CsInH3 Tc >= 0.8 * H3S Tc (i.e. >= 162 K)"
     verdict: pass
     recommended_action: "None -- CsInH3 214 K > H3S 203 K, at 30x lower pressure"
     notes: "CsInH3 exceeds H3S Tc by 11 K but at 3 GPa vs 155 GPa"
-  - subject_id: test-tc-target-final
-    subject_kind: acceptance_test
-    subject_role: decisive
+  - subject_id: "test-tc-target-final"
+    subject_kind: "acceptance_test"
+    subject_role: "decisive"
     reference_id: null
-    comparison_kind: baseline
+    comparison_kind: "baseline"
     metric: "max Tc vs 300 K target"
     threshold: "Tc >= 300 K"
     verdict: fail
@@ -108,7 +108,7 @@ comparison_verdicts:
     notes: "Expected FAIL. Shortfall 85.6 K."
 
 completed: true
-duration: 12min
+duration: "12min"
 ---
 
 # 05-01 SUMMARY: SSCHA-corrected Tc(P) Figure for CsInH3

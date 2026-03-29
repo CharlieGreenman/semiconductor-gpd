@@ -1,0 +1,80 @@
+{
+  "family": "CsInH3-class perovskites",
+  "entries": [
+    {
+      "material": "CsInH3",
+      "best_sc_anchor": {
+        "pressure_gpa": 3.0,
+        "tc_k": 214,
+        "method": "SSCHA-corrected isotropic Eliashberg"
+      },
+      "lowest_credible_supported_p_op_gpa": 3.0,
+      "ambient_thermodynamic_margin": {
+        "e_hull_mev_atom": 82.0,
+        "score": 0
+      },
+      "ambient_dynamic_margin": {
+        "status": "unstable",
+        "score": 0
+      },
+      "barrier_support": {
+        "status": "barrierless_or_near_zero_local_ambient_collapse",
+        "score": 0
+      },
+      "retained_sc_plausibility": {
+        "label": "unlikely",
+        "score": 1
+      },
+      "operating_pressure_score": 2,
+      "practical_role": "low_pressure_scientific_benchmark"
+    },
+    {
+      "material": "RbInH3",
+      "best_sc_anchor": {
+        "repo_direct_pressure_gpa": 10.0,
+        "repo_tc_k_mu010": 132.5,
+        "repo_tc_k_mu013": 122.5,
+        "literature_pressure_gpa": 6.0,
+        "literature_tc_k": 130
+      },
+      "starting_pressure_gpa": {
+        "scorecard_anchor": 10.0,
+        "literature_supported_family_window": 6.0
+      },
+      "low_pressure_warning": {
+        "pressure_gpa": 5.0,
+        "e_hull_mev_atom": 57.5,
+        "phonon_note": "borderline-SSCHA candidate with -6.1 cm^-1 imaginary mode in prior summary"
+      },
+      "ambient_thermodynamic_margin": {
+        "e_hull_mev_atom": 92.0,
+        "score": 0
+      },
+      "ambient_dynamic_margin": {
+        "status": "unstable",
+        "score": 0
+      },
+      "barrier_support": {
+        "status": "not_computed_no_positive_evidence",
+        "score": 1
+      },
+      "retained_sc_plausibility": {
+        "label": "very_low",
+        "score": 0
+      },
+      "operating_pressure_score": 1,
+      "practical_role": "negative_same_family_derivative_control"
+    }
+  ],
+  "score_axes": {
+    "lowest_credible_supported_p_op": "0=>10 GPa or none, 1=6-10 GPa, 2=3-5 GPa, 3=1-2.9 GPa, 4=0 GPa",
+    "ambient_thermodynamic_margin": "0=>75 meV/atom above hull, 1=50-75, 2=25-50, 3=0-25, 4=stable on hull",
+    "ambient_dynamic_margin": "0=clear 0 GPa instability, 1=borderline or unresolved, 2=narrow or strongly anharmonic margin, 3=direct stable, 4=direct stable with margin",
+    "barrier_support": "0=barrierless or none, 1=proxy only, 2=low, 3=moderate, 4=high",
+    "retained_sc_plausibility": "0=no support, 1=unlikely, 2=uncertain, 3=plausible, 4=supported"
+  },
+  "verdict": "unlikely",
+  "phase08_implication": "Move candidate search away from plain MXH3 ambient-retention optimism; prioritize RbPH3, contradiction-tracked Mg2IrH6, and hydride-derived clathrate or framework routes.",
+  "phase09_implication": "Keep CsInH3 only as a low-pressure benchmark or validation reference, not as the primary practical-route candidate.",
+  "supports_consumer_hardware_language": false
+}

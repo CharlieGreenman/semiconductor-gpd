@@ -1,0 +1,46 @@
+{
+  "material": "CsInH3",
+  "representative_route": {
+    "pressure_gpa": 0.0,
+    "route_type": "soft-mode distortion",
+    "initial_state": {
+      "label": "cubic Pm-3m CsInH3 ambient endpoint",
+      "dynamic_status": "unstable",
+      "role": "first fully failed endpoint in repo-local decompression map"
+    },
+    "final_state": {
+      "label": "lower-symmetry framework-tilted CsInH3-like endpoint",
+      "character": "R-point octahedral or framework tilting distortion",
+      "superconducting_status": "unsupported"
+    }
+  },
+  "barrier": {
+    "barrier_eV_fu": 0.0,
+    "barrier_kind": "local barrierless descent from unstable cubic endpoint",
+    "pressure_window_represented": "ambient endpoint after full pressure release",
+    "not_equal_to": "full 3 GPa to 0 GPa kinetic barrier"
+  },
+  "method": {
+    "primary": "soft-mode proxy from direct dynamic-instability evidence",
+    "full_neb_status": "not yet run",
+    "qe_neb_relevance": "useful only after defining compatible endpoints above the spinodal",
+    "cell_coupling_limitation": "full strain-coupled pre-spinodal kinetics remain unresolved"
+  },
+  "competing_routes": [
+    {
+      "route_type": "decomposition",
+      "status": "secondary",
+      "reason": "thermodynamic penalty at 0 GPa is large, but dynamic symmetry lowering fails first"
+    }
+  ],
+  "interpretation": {
+    "barrier_bin": "barrierless or near-zero",
+    "quenchability_signal": "poor",
+    "supports_ambient_cubic_retention": false,
+    "supports_hydride_pressure_quench_claim": false
+  },
+  "analog_limit": {
+    "hg1223_route_class_use": "background_only",
+    "statement": "Pressure-quench success in Hg1223 motivates the route class but does not transfer to CsInH3 without direct barrier evidence."
+  }
+}

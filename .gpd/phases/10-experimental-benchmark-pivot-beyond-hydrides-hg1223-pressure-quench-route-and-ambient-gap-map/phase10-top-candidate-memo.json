@@ -1,0 +1,20 @@
+{
+  "phase": "10",
+  "artifact": "phase10-top-candidate-memo",
+  "top_candidate": "HgBa2Ca2Cu3O8+delta",
+  "confidence_class": "high-confidence benchmark",
+  "supports_roomtemp_consumer_hardware": false,
+  "why_it_wins": [
+    "Experimental ambient-pressure superconductivity after preparation",
+    "Highest Tc in the carried experimentally anchored ambient or retained-ambient set",
+    "Much stronger evidence than theory-only hydride or framework routes"
+  ],
+  "next_route": {
+    "primary": "pressure-quench and ambient-retention benchmark study centered on Hg1223",
+    "comparators": [
+      "SmNiO2-family thin films",
+      "MgB2",
+      "CsInH3"
+    ]
+  }
+}

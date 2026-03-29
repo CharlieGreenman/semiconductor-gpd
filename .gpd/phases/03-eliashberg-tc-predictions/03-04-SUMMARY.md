@@ -1,5 +1,5 @@
 ---
-phase: 03-eliashberg-tc-predictions
+phase: "03-eliashberg-tc-predictions"
 plan: 04
 depth: full
 one-liner: "mu* sensitivity analysis shows 19-22% Tc variation across mu*=0.08-0.15 for all candidates; test-tc-target FAIL: max SSCHA-corrected Tc ~215-260 K for CsInH3, well below 300 K; all 6 Phase 3 contract requirements satisfied"
@@ -7,13 +7,13 @@ subsystem: [analysis, validation, synthesis]
 tags: [mustar, sensitivity, Eliashberg, Allen-Dynes, Tc, contract, synthesis, hydride, perovskite, CsInH3, KGaH3, RbInH3]
 
 requires:
-  - phase: 03-eliashberg-tc-predictions
+  - phase: "03-eliashberg-tc-predictions"
     plan: 01
     provides: "CsInH3 Eliashberg at 10 GPa: lambda=2.35, Tc(0.10)=267 K, Tc(0.13)=246 K"
-  - phase: 03-eliashberg-tc-predictions
+  - phase: "03-eliashberg-tc-predictions"
     plan: 02
     provides: "KGaH3 Tc=163 K, RbInH3 Tc=133 K at 10 GPa; Du et al. 11.3% benchmark"
-  - phase: 03-eliashberg-tc-predictions
+  - phase: "03-eliashberg-tc-predictions"
     plan: 03
     provides: "Tc(P) curves: CsInH3 peaks at 315 K (3 GPa harmonic), KGaH3 at 215 K"
 provides:
@@ -25,11 +25,11 @@ affects: [04-sscha-anharmonic, 05-final-assessment]
 
 methods:
   added:
-    - Allen-Dynes Tc at 4 mu* values (exact formula; fast and precise)
-    - Eliashberg Tc estimation via mu*-independent AD ratio (R = Tc_Eliash/Tc_AD from Plans 01-02)
+    - "Allen-Dynes Tc at 4 mu* values (exact formula; fast and precise)"
+    - "Eliashberg Tc estimation via mu*-independent AD ratio (R = Tc_Eliash/Tc_AD from Plans 01-02)"
   patterns:
-    - mu* sensitivity ~19-22% for all candidates (below 30% threshold)
-    - Eliashberg/AD ratio is nearly mu*-independent (R varies < 3% across mu*)
+    - "mu* sensitivity ~19-22% for all candidates (below 30% threshold)"
+    - "Eliashberg/AD ratio is nearly mu*-independent (R varies < 3% across mu*)"
 
 conventions:
   - "unit_system_reporting=SI_derived (K, GPa, meV)"
@@ -42,11 +42,11 @@ plan_contract_ref: ".gpd/phases/03-eliashberg-tc-predictions/03-04-PLAN.md#/cont
 contract_results:
   claims:
     claim-mustar-sensitivity:
-      status: passed
+      status: "passed"
       summary: "Tc reported at mu*=0.08, 0.10, 0.13, 0.15 for all 3 candidates. Sensitivity: CsInH3 18.8%, KGaH3 22.0%, RbInH3 22.4%. All below 30% threshold. Results NOT driven by mu* choice."
       linked_ids: [deliv-mustar-data, deliv-mustar-fig, test-mustar-range, test-mustar-not-tuned, ref-du2024-mustar]
     claim-phase3-complete:
-      status: passed
+      status: "passed"
       summary: "All 6 Phase 3 contract requirements (ELIAS-01/02/03, VALD-01/02/03) satisfied. test-tc-target: FAIL (300 K not reached). Complete ranked candidate report produced."
       linked_ids: [deliv-candidate-report, test-tc-target, test-contract-coverage, ref-du2024-mustar, ref-phase1-benchmark]
   deliverables:
@@ -67,19 +67,19 @@ contract_results:
       linked_ids: [claim-phase3-complete, test-tc-target, test-contract-coverage]
   acceptance_tests:
     test-mustar-range:
-      status: passed
+      status: "passed"
       summary: "Delta_Tc < 30% of Tc(0.10) for all candidates: CsInH3 18.8%, KGaH3 22.0%, RbInH3 22.4%."
       linked_ids: [claim-mustar-sensitivity, deliv-mustar-data]
     test-mustar-not-tuned:
-      status: passed
+      status: "passed"
       summary: "All 4 mu* values (0.08, 0.10, 0.13, 0.15) reported for all candidates. No post-hoc selection of 'best' mu*."
       linked_ids: [claim-mustar-sensitivity, deliv-mustar-data]
     test-tc-target:
-      status: failed
+      status: "failed"
       summary: "No candidate achieves Tc >= 300 K at P <= 10 GPa after accounting for SSCHA corrections. Max harmonic Tc = 315 K (CsInH3, 3 GPa, marginally stable). SSCHA-corrected estimate: 215-260 K. At clearly stable 10 GPa: max Tc = 267 K (CsInH3, harmonic upper bound)."
       linked_ids: [claim-phase3-complete, deliv-candidate-report]
     test-contract-coverage:
-      status: passed
+      status: "passed"
       summary: "All 6 contract requirements documented: ELIAS-01 (PASS), ELIAS-02 (PASS), ELIAS-03 (PASS), VALD-01 (PASS), VALD-02 (PASS), VALD-03 (PASS)."
       linked_ids: [claim-phase3-complete, deliv-candidate-report]
   references:
@@ -110,19 +110,19 @@ contract_results:
       - "Even the most optimistic scenario (CsInH3, mu*=0.08, 3 GPa, harmonic) gives 315 K -- but SSCHA correction reduces this below 260 K."
 
 comparison_verdicts:
-  - subject_id: claim-mustar-sensitivity
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-du2024-mustar
-    comparison_kind: enhancement
-    metric: mustar_coverage
+  - subject_id: "claim-mustar-sensitivity"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-du2024-mustar"
+    comparison_kind: "enhancement"
+    metric: "mustar_coverage"
     threshold: "Du et al. reports only mu*=0.10; we report 4 values"
     verdict: pass
     recommended_action: "Our mu* sensitivity analysis is more comprehensive than Du et al."
     notes: "19-22% sensitivity confirms Tc predictions are robust against mu* choice."
 
-duration: 30min
-completed: 2026-03-29
+duration: "30min"
+completed: "2026-03-29"
 ---
 
 # Plan 03-04: mu* Sensitivity Analysis and Phase 3 Synthesis

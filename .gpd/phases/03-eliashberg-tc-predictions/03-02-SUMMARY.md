@@ -1,5 +1,5 @@
 ---
-phase: 03-eliashberg-tc-predictions
+phase: "03-eliashberg-tc-predictions"
 plan: 02
 depth: full
 one-liner: "RbInH3 Tc=133 K and KGaH3 Tc=163 K at 10 GPa from isotropic Eliashberg on Matsubara axis; KGaH3 within 11% of Du et al. direct benchmark at same pressure; both Migdal-valid with bimodal alpha^2F"
@@ -7,9 +7,9 @@ subsystem: [computation, numerics, validation]
 tags: [Eliashberg, electron-phonon, EPW, Tc, hydride, perovskite, Matsubara, alpha2F, lambda, Allen-Dynes, Migdal]
 
 requires:
-  - phase: 01-pipeline-validation-and-benchmarking
+  - phase: "01-pipeline-validation-and-benchmarking"
     provides: "Validated QE+EPW pipeline template (ecutwfc=90 Ry, PBEsol+ONCV, k/q grids, Eliashberg solver)"
-  - phase: 02-candidate-screening
+  - phase: "02-candidate-screening"
     plan: 02
     provides: "Phonon stability at 10 GPa for RbInH3 (min 55.3 cm^-1) and KGaH3 (min 42.8 cm^-1); E_hull values"
 provides:
@@ -35,24 +35,24 @@ methods:
 
 key-files:
   created:
-    - simulations/rbinh3/rbinh3_relax_10gpa.in
-    - simulations/rbinh3/rbinh3_scf.in
-    - simulations/rbinh3/rbinh3_nscf.in
-    - simulations/rbinh3/rbinh3_ph.in
-    - simulations/rbinh3/rbinh3_epw.in
-    - simulations/rbinh3/rbinh3_q2r_matdyn.sh
-    - simulations/kgah3/kgah3_relax_10gpa.in
-    - simulations/kgah3/kgah3_scf.in
-    - simulations/kgah3/kgah3_nscf.in
-    - simulations/kgah3/kgah3_ph.in
-    - simulations/kgah3/kgah3_epw.in
-    - simulations/kgah3/kgah3_q2r_matdyn.sh
-    - analysis/rbinh3_eliashberg.py
-    - analysis/kgah3_eliashberg.py
-    - data/rbinh3/eliashberg_results.json
-    - data/kgah3/eliashberg_results.json
-    - figures/rbinh3_alpha2f.pdf
-    - figures/kgah3_alpha2f.pdf
+    - "simulations/rbinh3/rbinh3_relax_10gpa.in"
+    - "simulations/rbinh3/rbinh3_scf.in"
+    - "simulations/rbinh3/rbinh3_nscf.in"
+    - "simulations/rbinh3/rbinh3_ph.in"
+    - "simulations/rbinh3/rbinh3_epw.in"
+    - "simulations/rbinh3/rbinh3_q2r_matdyn.sh"
+    - "simulations/kgah3/kgah3_relax_10gpa.in"
+    - "simulations/kgah3/kgah3_scf.in"
+    - "simulations/kgah3/kgah3_nscf.in"
+    - "simulations/kgah3/kgah3_ph.in"
+    - "simulations/kgah3/kgah3_epw.in"
+    - "simulations/kgah3/kgah3_q2r_matdyn.sh"
+    - "analysis/rbinh3_eliashberg.py"
+    - "analysis/kgah3_eliashberg.py"
+    - "data/rbinh3/eliashberg_results.json"
+    - "data/kgah3/eliashberg_results.json"
+    - "figures/rbinh3_alpha2f.pdf"
+    - "figures/kgah3_alpha2f.pdf"
 
 key-decisions:
   - "Eliashberg solver implemented with positive Matsubara reduction: Z kernel uses lambda_diff - lambda_sum, gap kernel uses lambda_diff + lambda_sum. Initial implementation had wrong Z kernel sign, producing Z~26 at 40K; corrected to give Z~3 (= 1+lambda)."
@@ -81,39 +81,39 @@ plan_contract_ref: ".gpd/phases/03-eliashberg-tc-predictions/03-02-PLAN.md#/cont
 contract_results:
   claims:
     claim-rbinh3-tc:
-      status: passed
+      status: "passed"
       summary: "RbInH3 Eliashberg Tc computed at 10 GPa: Tc(mu*=0.10)=132.5 K, Tc(mu*=0.13)=122.5 K. lambda=1.895, omega_log=511 K. All validation checks pass. SYNTHETIC alpha^2F."
       linked_ids: [deliv-rbinh3-eliashberg, test-rbinh3-tc-benchmark, test-rbinh3-convergence, ref-du2024]
     claim-kgah3-tc:
-      status: passed
+      status: "passed"
       summary: "KGaH3 Eliashberg Tc computed at 10 GPa: Tc(mu*=0.10)=162.5 K, Tc(mu*=0.13)=152.5 K. lambda=2.115, omega_log=554 K. All checks pass including 11.3% Du et al. benchmark. SYNTHETIC."
       linked_ids: [deliv-kgah3-eliashberg, test-kgah3-tc-benchmark, test-kgah3-convergence, ref-du2024]
   deliverables:
     deliv-rbinh3-eliashberg:
-      status: passed
+      status: "passed"
       path: "data/rbinh3/eliashberg_results.json"
       summary: "Complete RbInH3 Eliashberg results JSON: lambda, omega_log, Tc at both mu*, Allen-Dynes, Migdal ratio, validation checks, Du et al. comparison"
       linked_ids: [claim-rbinh3-tc, test-rbinh3-tc-benchmark, test-rbinh3-convergence]
     deliv-kgah3-eliashberg:
-      status: passed
+      status: "passed"
       path: "data/kgah3/eliashberg_results.json"
       summary: "Complete KGaH3 Eliashberg results JSON with DIRECT Du et al. benchmark at 10 GPa"
       linked_ids: [claim-kgah3-tc, test-kgah3-tc-benchmark, test-kgah3-convergence]
   acceptance_tests:
     test-rbinh3-tc-benchmark:
-      status: passed
+      status: "passed"
       summary: "RbInH3 Tc(mu*=0.10)=132.5 K in range 80-200 K. Du et al. comparison qualitative only (6 vs 10 GPa): 132.5 vs 130 K (1.9% diff at different pressures)."
       linked_ids: [claim-rbinh3-tc, deliv-rbinh3-eliashberg, ref-du2024]
     test-rbinh3-convergence:
-      status: passed
+      status: "passed"
       summary: "Lambda trapezoid vs Simpson: 0.37% relative diff < 5%. Tc temperature grid resolution: 5 K steps near Tc -> Tc uncertainty +/-2.5 K."
       linked_ids: [claim-rbinh3-tc, deliv-rbinh3-eliashberg]
     test-kgah3-tc-benchmark:
-      status: passed
+      status: "passed"
       summary: "KGaH3 Tc(mu*=0.10)=162.5 K within 30% of Du et al. 146 K at SAME pressure (11.3% diff). PBEsol vs PBE systematic accounts for offset."
       linked_ids: [claim-kgah3-tc, deliv-kgah3-eliashberg, ref-du2024]
     test-kgah3-convergence:
-      status: passed
+      status: "passed"
       summary: "Lambda trapezoid vs Simpson: 0.36% relative diff < 5%. Tc temperature resolution: 5 K steps -> Tc uncertainty +/-2.5 K."
       linked_ids: [claim-kgah3-tc, deliv-kgah3-eliashberg]
   references:
@@ -143,29 +143,29 @@ contract_results:
       - "AD/Eliashberg ratio ~0.65 is larger underestimate than typical for lambda~2. Could indicate Eliashberg solver produces somewhat high Tc."
 
 comparison_verdicts:
-  - subject_id: claim-rbinh3-tc
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-du2024
-    comparison_kind: benchmark
-    metric: Tc_qualitative_agreement_different_pressure
+  - subject_id: "claim-rbinh3-tc"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-du2024"
+    comparison_kind: "benchmark"
+    metric: "Tc_qualitative_agreement_different_pressure"
     threshold: "Tc in 80-200 K range (qualitative; pressure mismatch)"
     verdict: pass
     recommended_action: "Confirm with real DFT at 10 GPa on HPC. Repeat at 6 GPa for direct Du et al. comparison."
     notes: "132.5 K at 10 GPa vs Du et al. 130 K at 6 GPa. Different pressures, functionals, and PPs."
-  - subject_id: claim-kgah3-tc
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-du2024
-    comparison_kind: benchmark
-    metric: Tc_relative_error_same_pressure
+  - subject_id: "claim-kgah3-tc"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-du2024"
+    comparison_kind: "benchmark"
+    metric: "Tc_relative_error_same_pressure"
     threshold: "<= 0.30 (30%)"
     verdict: pass
     recommended_action: "11.3% offset within PBEsol/PBE systematics. Confirm with real DFT. PBE cross-check would reduce this to ~5%."
     notes: "162.5 K vs 146 K at identical 10 GPa. PBEsol+ONCV vs PBE+PAW explains offset."
 
-duration: 40min
-completed: 2026-03-28
+duration: "40min"
+completed: "2026-03-28"
 ---
 
 # Plan 03-02: RbInH3 and KGaH3 Eliashberg Tc at 10 GPa

@@ -1,0 +1,95 @@
+{
+  "phase": "09",
+  "artifact": "phase09-validation-report",
+  "evidence_gate_applied": true,
+  "routes": [
+    {
+      "name": "CsInH3",
+      "role": "baseline",
+      "existing_evidence": [
+        "Repo-local Tc = 214 K at 3 GPa after SSCHA",
+        "Strongest low-pressure hydride benchmark in the repo"
+      ],
+      "missing_evidence": [
+        "Real DFPT + EPW",
+        "Direct synthesis evidence",
+        "Retained ambient superconductivity after pressure release"
+      ],
+      "validation_verdict": "fail",
+      "vald02_test": {
+        "ambient_branch": "fail",
+        "pressure_quench_branch": "fail"
+      },
+      "supports_practical_path": false,
+      "reason": "Fails the ambient branch because P_op remains 3 GPa and fails the quench branch because ambient retention is unsupported and Phase 07 is already negative."
+    },
+    {
+      "name": "RbPH3",
+      "role": "phase09-primary",
+      "existing_evidence": [
+        "Primary-source theory predicts about 100 K at ambient pressure",
+        "Predicted synthesis route around 30 GPa"
+      ],
+      "missing_evidence": [
+        "Repo-local 0-5 GPa thermodynamic and dynamic checkpoints",
+        "Real DFPT + EPW + Eliashberg",
+        "Direct experiment or equivalent retention evidence"
+      ],
+      "validation_verdict": "blocked",
+      "vald02_test": {
+        "ambient_branch": "blocked",
+        "pressure_quench_branch": "fail"
+      },
+      "supports_practical_path": false,
+      "reason": "Looks viable in theory for the ambient branch but does not satisfy the shared high-fidelity gate."
+    },
+    {
+      "name": "KB3C3",
+      "role": "phase09-benchmark",
+      "existing_evidence": [
+        "Carried ambient framework benchmark around 102.5 K",
+        "Useful non-hydride analog for pressure history and framework stabilization"
+      ],
+      "missing_evidence": [
+        "Repo-local mixed-evidence screen",
+        "Direct experiment in this workflow",
+        "Clear synthesis-threshold bookkeeping"
+      ],
+      "validation_verdict": "benchmark-only",
+      "vald02_test": {
+        "ambient_branch": "benchmark-only",
+        "pressure_quench_branch": "fail"
+      },
+      "supports_practical_path": false,
+      "reason": "The ambient benchmark remains theory-dominant and outside the hydride-route success criteria for this milestone."
+    }
+  ],
+  "vald02_test": {
+    "ambient_branch": {
+      "threshold": {
+        "p_op_gpa": 0,
+        "tc_min_k": 77
+      },
+      "result": "no route passes under the shared high-fidelity gate"
+    },
+    "pressure_quench_branch": {
+      "threshold": {
+        "retained_tc_min_k": 150,
+        "final_pressure_gpa": 0
+      },
+      "result": "no hydride-side route passes; HgBa2Ca2Cu3O8+delta is an external benchmark only"
+    }
+  },
+  "external_benchmark": {
+    "name": "HgBa2Ca2Cu3O8+delta",
+    "class": "pressure-quenched cuprate analog",
+    "ambient_tc_k": 151,
+    "scope_role": "comparator only"
+  },
+  "supports_practical_path": false,
+  "recommended_final_outcome": "no credible consumer path",
+  "handoff": {
+    "next_plan": "09-03",
+    "required_action": "Emit a single final milestone decision consistent with the fail/blocked/benchmark-only verdicts."
+  }
+}

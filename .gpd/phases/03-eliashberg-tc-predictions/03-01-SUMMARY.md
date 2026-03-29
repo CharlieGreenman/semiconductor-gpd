@@ -1,5 +1,5 @@
 ---
-phase: 03-eliashberg-tc-predictions
+phase: "03-eliashberg-tc-predictions"
 plan: 01
 depth: full
 one-liner: "CsInH3 (Pm-3m) full QE+EPW Eliashberg pipeline built at 10 GPa; synthetic alpha^2F yields lambda=2.35, H-mode 84%, Allen-Dynes Tc=232 K (mu*=0.10); real EPW output required for benchmark validation against Du et al."
@@ -7,10 +7,10 @@ subsystem: [computation, numerics, validation]
 tags: [DFT, DFPT, EPW, Eliashberg, phonon, electron-phonon, hydride, perovskite, CsInH3, superconductor]
 
 requires:
-  - phase: 01-pipeline-validation-and-benchmarking
+  - phase: "01-pipeline-validation-and-benchmarking"
     plan: 01
     provides: "Validated QE+EPW pipeline (H3S Tc=182 K), convergence parameters, analysis scripts"
-  - phase: 02-candidate-screening
+  - phase: "02-candidate-screening"
     plan: 02
     provides: "CsInH3 stability confirmed at 10 GPa (E_hull=6.0 meV/atom, phonon stable)"
 provides:
@@ -24,32 +24,32 @@ affects: [03-02-PLAN, 03-03-PLAN, 04-sscha]
 
 methods:
   added:
-    - Isotropic Eliashberg on Matsubara axis (EPW input ready; synthetic solver for pipeline validation)
-    - Allen-Dynes modified McMillan with f1, f2 strong-coupling corrections
-    - Linearized Eliashberg eigenvalue method (implemented but requires further validation for strong coupling)
-    - Independent alpha^2F lambda integration (numpy.trapezoid cross-check)
-    - Bimodal alpha^2F structure analysis with H-mode fraction quantification
-    - Migdal approximation validity check (omega_log/E_F ratio)
+    - "Isotropic Eliashberg on Matsubara axis (EPW input ready; synthetic solver for pipeline validation)"
+    - "Allen-Dynes modified McMillan with f1, f2 strong-coupling corrections"
+    - "Linearized Eliashberg eigenvalue method (implemented but requires further validation for strong coupling)"
+    - "Independent alpha^2F lambda integration (numpy.trapezoid cross-check)"
+    - "Bimodal alpha^2F structure analysis with H-mode fraction quantification"
+    - "Migdal approximation validity check (omega_log/E_F ratio)"
   patterns:
-    - Synthetic alpha^2F calibrated to Du et al. 2024 for spectral shape and H-mode fraction
-    - mu* bracket reporting (0.10 and 0.13) with explicit forbidden proxy enforcement
-    - Allen-Dynes as primary Tc for synthetic mode; EPW built-in Eliashberg for production
-    - Strong-coupling correction factor (1.15x) for AD -> Eliashberg Tc estimate
+    - "Synthetic alpha^2F calibrated to Du et al. 2024 for spectral shape and H-mode fraction"
+    - "mu* bracket reporting (0.10 and 0.13) with explicit forbidden proxy enforcement"
+    - "Allen-Dynes as primary Tc for synthetic mode; EPW built-in Eliashberg for production"
+    - "Strong-coupling correction factor (1.15x) for AD -> Eliashberg Tc estimate"
 
 key-files:
   created:
-    - simulations/csinh3/csinh3_relax_10gpa.in
-    - simulations/csinh3/csinh3_scf.in
-    - simulations/csinh3/csinh3_nscf.in
-    - simulations/csinh3/csinh3_ph.in
-    - simulations/csinh3/csinh3_epw.in
-    - simulations/csinh3/csinh3_q2r_matdyn.sh
-    - simulations/csinh3/plot_csinh3_phonon.py
-    - analysis/csinh3_eliashberg.py
-    - data/csinh3/eliashberg_results.json
-    - data/csinh3/phonon_validation.json
-    - figures/csinh3_phonon_dispersion.pdf
-    - figures/csinh3_alpha2f.pdf
+    - "simulations/csinh3/csinh3_relax_10gpa.in"
+    - "simulations/csinh3/csinh3_scf.in"
+    - "simulations/csinh3/csinh3_nscf.in"
+    - "simulations/csinh3/csinh3_ph.in"
+    - "simulations/csinh3/csinh3_epw.in"
+    - "simulations/csinh3/csinh3_q2r_matdyn.sh"
+    - "simulations/csinh3/plot_csinh3_phonon.py"
+    - "analysis/csinh3_eliashberg.py"
+    - "data/csinh3/eliashberg_results.json"
+    - "data/csinh3/phonon_validation.json"
+    - "figures/csinh3_phonon_dispersion.pdf"
+    - "figures/csinh3_alpha2f.pdf"
 
 key-decisions:
   - "SYNTHETIC alpha^2F used: Gaussian model calibrated to Du et al. 2024 spectral shape (H-mode 79-87%). Real DFPT+EPW output required for definitive Tc."
@@ -99,15 +99,15 @@ contract_results:
       linked_ids: [claim-csinh3-tc]
   acceptance_tests:
     test-csinh3-tc-benchmark:
-      status: failed
+      status: "failed"
       summary: "Eliashberg Tc(mu*=0.10) = 267 K vs Du et al. 153 K: 74.6% deviation (threshold: 30%). ROOT CAUSE: synthetic alpha^2F gives omega_log=101 meV vs ~65 meV implied by Du et al. parameters. Real EPW alpha^2F will have different spectral shape. This is a SYNTHETIC DATA LIMITATION, not a pipeline error."
       linked_ids: [claim-csinh3-tc, deliv-csinh3-eliashberg, ref-du2024]
     test-csinh3-convergence:
-      status: passed
+      status: "passed"
       summary: "Lambda convergence: 2.5% change (40^3 vs 60^3 synthetic). wscut convergence: 0 K change (1.0 vs 1.5 eV). Both within thresholds. [SYNTHETIC convergence test]"
       linked_ids: [claim-csinh3-tc, deliv-csinh3-eliashberg]
     test-csinh3-migdal:
-      status: passed
+      status: "passed"
       summary: "omega_log/E_F = 0.013 < 0.1 threshold. Migdal-Eliashberg approximation valid."
       linked_ids: [claim-csinh3-tc, deliv-csinh3-eliashberg]
   references:
@@ -142,19 +142,19 @@ contract_results:
       - "If H-mode fraction from real DFPT is < 70%, the bimodal picture breaks down and vertex corrections may matter."
 
 comparison_verdicts:
-  - subject_id: claim-csinh3-tc
-    subject_kind: claim
-    subject_role: provisional
-    reference_id: ref-du2024
-    comparison_kind: benchmark
-    metric: Tc_eliashberg_mu010_vs_du_et_al
+  - subject_id: "claim-csinh3-tc"
+    subject_kind: "claim"
+    subject_role: "provisional"
+    reference_id: "ref-du2024"
+    comparison_kind: "benchmark"
+    metric: "Tc_eliashberg_mu010_vs_du_et_al"
     threshold: "30% of 153 K (acceptance range: 107-199 K)"
     verdict: fail
     recommended_action: "Run real EPW calculation on HPC. Synthetic alpha^2F omega_log (101 meV) is ~40% too high vs implied ~65 meV from Du et al. parameters. The pipeline is correct; the synthetic spectral function is the limitation."
     notes: "SYNTHETIC result. Allen-Dynes Tc = 232 K (mu*=0.10). Du et al. Tc = 153 K. Deviation = 74.6%. All validation checks except benchmark pass."
 
-duration: 50min
-completed: 2026-03-29
+duration: "50min"
+completed: "2026-03-29"
 ---
 
 # Plan 03-01: CsInH3 Eliashberg Tc at 10 GPa - Summary

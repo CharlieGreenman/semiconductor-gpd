@@ -1,0 +1,74 @@
+{
+  "entries": [
+    {
+      "name": "RbPH3",
+      "route_class": "metastable ambient hydride",
+      "Tc_K": "87-103",
+      "pressure_trigger": "predicted synthesis at 30 GPa, ambient operation predicted",
+      "directness": "direct hydride target",
+      "transferability": "high",
+      "go_forward_recommendation": "Use as the primary hydride comparator for Phase 07 and an input family for Phase 08."
+    },
+    {
+      "name": "Mg2IrH6",
+      "route_class": "metastable ambient hydride",
+      "Tc_K": "160 in Dolui 2024; 66-77 in Sanna 2024",
+      "pressure_trigger": "Mg2IrH7 route above 15 GPa in Dolui 2024; ambient route disputed",
+      "directness": "direct hydride target",
+      "transferability": "medium",
+      "go_forward_recommendation": "Use only with contradiction tracking; do not treat as settled."
+    },
+    {
+      "name": "KB3C3",
+      "route_class": "hydride-adjacent clathrate analog",
+      "Tc_K": 102.5,
+      "pressure_trigger": "ambient operation predicted; high-pressure synthesis route proposed",
+      "directness": "analog framework",
+      "transferability": "medium",
+      "go_forward_recommendation": "Use as the strongest framework analog for ambient-retention logic."
+    },
+    {
+      "name": "KRbB6C6",
+      "route_class": "hydride-adjacent clathrate analog",
+      "Tc_K": 102.0,
+      "pressure_trigger": "ambient operation predicted",
+      "directness": "analog framework",
+      "transferability": "medium",
+      "go_forward_recommendation": "Use as an ambient framework benchmark for Phase 08."
+    },
+    {
+      "name": "PbNH4B6C6",
+      "route_class": "hydride-derived framework route",
+      "Tc_K": 115.0,
+      "pressure_trigger": "ambient operation predicted",
+      "directness": "analog framework",
+      "transferability": "medium",
+      "go_forward_recommendation": "Use as a ceiling-setting framework target, but penalize for toxicity."
+    },
+    {
+      "name": "SrB3C3",
+      "route_class": "pressure-synthesized clathrate analog",
+      "Tc_K": "about 22 at 23 GPa",
+      "pressure_trigger": "synthesized near 57 GPa; sample survival close to ambient discussed",
+      "directness": "analog framework",
+      "transferability": "medium",
+      "go_forward_recommendation": "Use as a cautionary analog showing that sample survival is not the same as ambient superconductivity."
+    },
+    {
+      "name": "Hg1223",
+      "route_class": "pressure-quenched analog",
+      "Tc_K": 151.0,
+      "pressure_trigger": "pressure-quench protocol; exact trigger pressure not extracted here",
+      "directness": "non-hydride analog",
+      "transferability": "medium",
+      "go_forward_recommendation": "Use as the best proof of route class, not as direct hydride evidence."
+    }
+  ],
+  "comparators": {
+    "primary_hydride": "RbPH3",
+    "secondary_hydride": "Mg2IrH6",
+    "pressure_quench_analog": "Hg1223",
+    "framework_analog": "KB3C3",
+    "candidate_search_frameworks": ["KRbB6C6", "PbNH4B6C6"]
+  }
+}

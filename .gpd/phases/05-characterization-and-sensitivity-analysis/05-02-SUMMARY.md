@@ -1,5 +1,5 @@
 ---
-phase: 05-characterization-and-sensitivity-analysis
+phase: "05-characterization-and-sensitivity-analysis"
 plan: 02
 depth: full
 one-liner: "CsInH3 (Pm-3m) candidate report complete: Tc = 204-214 K at 3-5 GPa (SSCHA), E_hull = 6 meV/atom, quantum stabilized at 3 GPa, test-tc-target FAIL (214 K < 300 K), 30x pressure reduction vs H3S"
@@ -7,25 +7,25 @@ subsystem: [analysis, documentation]
 tags: [CsInH3, perovskite, candidate-report, SSCHA, Tc, E_hull, quantum-stabilization, contract-deliverable]
 
 requires:
-  - phase: 02-candidate-screening
+  - phase: "02-candidate-screening"
     plan: 02
     provides: "E_hull, phonon stability, lattice parameters for CsInH3"
-  - phase: 03-eliashberg-tc-predictions
+  - phase: "03-eliashberg-tc-predictions"
     plan: 01
     provides: "alpha^2F, lambda, omega_log, harmonic Tc for CsInH3"
-  - phase: 03-eliashberg-tc-predictions
+  - phase: "03-eliashberg-tc-predictions"
     plan: 03
     provides: "Tc(P) pressure curves for CsInH3"
-  - phase: 03-eliashberg-tc-predictions
+  - phase: "03-eliashberg-tc-predictions"
     plan: 04
     provides: "mu* sensitivity analysis"
-  - phase: 04-anharmonic-corrections
+  - phase: "04-anharmonic-corrections"
     plan: 01
     provides: "SSCHA at 5 GPa"
-  - phase: 04-anharmonic-corrections
+  - phase: "04-anharmonic-corrections"
     plan: 02
     provides: "SSCHA quantum stabilization at 3 GPa"
-  - phase: 04-anharmonic-corrections
+  - phase: "04-anharmonic-corrections"
     plan: 03
     provides: "Anharmonic alpha^2F, Tc, Phase 4 synthesis"
 provides:
@@ -36,21 +36,21 @@ affects: [05-03-PLAN]
 
 methods:
   added:
-    - Data assembly from Phase 2-4 outputs into single structured JSON
-    - Formatted markdown report with 10 required sections
-    - 4-panel matplotlib summary figure
+    - "Data assembly from Phase 2-4 outputs into single structured JSON"
+    - "Formatted markdown report with 10 required sections"
+    - "4-panel matplotlib summary figure"
   patterns:
-    - All numerical values cross-checked against source phase data (12/12 validation checks pass)
-    - Forbidden proxy compliance verified (fp-tuned-mustar, fp-unstable-tc, fp-above-hull)
+    - "All numerical values cross-checked against source phase data (12/12 validation checks pass)"
+    - "Forbidden proxy compliance verified (fp-tuned-mustar, fp-unstable-tc, fp-above-hull)"
 
 key-files:
   created:
-    - analysis/candidate_report.py
-    - analysis/candidate_summary_figure.py
-    - data/candidate_report_csinh3.json
-    - data/candidate_report_csinh3.md
-    - figures/csinh3_candidate_summary.pdf
-    - figures/csinh3_candidate_summary.png
+    - "analysis/candidate_report.py"
+    - "analysis/candidate_summary_figure.py"
+    - "data/candidate_report_csinh3.json"
+    - "data/candidate_report_csinh3.md"
+    - "figures/csinh3_candidate_summary.pdf"
+    - "figures/csinh3_candidate_summary.png"
 
 key-decisions:
   - "No new physics computed -- this plan assembles existing Phase 2-4 results into a single report"
@@ -70,7 +70,7 @@ plan_contract_ref: ".gpd/phases/05-characterization-and-sensitivity-analysis/05-
 contract_results:
   claims:
     claim-candidate-complete:
-      status: passed
+      status: "passed"
       summary: "CsInH3 (Pm-3m) is fully characterized as a dynamically stable ternary hydride superconductor with Tc = 204-214 K at 3-5 GPa, E_hull = 6 meV/atom, and quantum stabilization at 3 GPa. All 10 required report sections populated with numerical values cross-checked against Phase 2-4 data."
       linked_ids: [deliv-candidate, test-report-complete, test-stability-final]
   deliverables:
@@ -81,11 +81,11 @@ contract_results:
       linked_ids: [claim-candidate-complete, test-report-complete, test-stability-final]
   acceptance_tests:
     test-report-complete:
-      status: passed
+      status: "passed"
       summary: "All 10 required sections present with numerical values: crystal structure (Pm-3m, a=4.12/4.07/3.98 A), electronic structure (metallic, N_F), phonon properties (harmonic + SSCHA), alpha^2F (bimodal, H=84%), Tc (harmonic + SSCHA at mu*=0.10/0.13), E_hull (6 meV/atom), anharmonic corrections (31-36% lambda reduction), Allen-Dynes cross-check, quantum stabilization, uncertainty budget (7 sources)."
       linked_ids: [claim-candidate-complete, deliv-candidate]
     test-stability-final:
-      status: passed
+      status: "passed"
       summary: "E_hull = 6 meV/atom at 10 GPa (PASS, well below 50 meV threshold). All SSCHA phonon frequencies real at 5 GPa (min 15.7 cm^-1, PASS). SSCHA min_freq = 9.8 cm^-1 at 3 GPa with quantum stabilization (omega_min - sigma = 9.2 cm^-1 > 0, PASS)."
       linked_ids: [claim-candidate-complete, deliv-candidate]
   references:
@@ -124,29 +124,29 @@ contract_results:
       - "If E_hull increases above 50 meV/atom under SSCHA ZPE corrections"
 
 comparison_verdicts:
-  - subject_id: claim-candidate-complete
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-h3s
-    comparison_kind: benchmark
-    metric: Tc_at_comparable_pressure_ratio
+  - subject_id: "claim-candidate-complete"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-h3s"
+    comparison_kind: "benchmark"
+    metric: "Tc_at_comparable_pressure_ratio"
     threshold: "CsInH3 Tc >= 0.5 * H3S Tc at 30x lower pressure"
     verdict: pass
     recommended_action: "Validate with real DFT+EPW on HPC"
     notes: "CsInH3 SSCHA Tc 204-214 K at 3-5 GPa; H3S Tc 203 K at 155 GPa. Comparable Tc at 30x lower pressure."
-  - subject_id: claim-candidate-complete
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-du2024
-    comparison_kind: benchmark
-    metric: lambda_agreement
+  - subject_id: "claim-candidate-complete"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-du2024"
+    comparison_kind: "benchmark"
+    metric: "lambda_agreement"
     threshold: "Lambda within 20% of Du et al."
     verdict: pass
     recommended_action: "Real EPW will resolve omega_log discrepancy"
     notes: "Lambda 2.35 vs Du ~2.4 (-2% deviation). omega_log discrepancy from synthetic spectral shape."
 
-duration: 18min
-completed: 2026-03-28
+duration: "18min"
+completed: "2026-03-28"
 ---
 
 # Plan 05-02: CsInH3 Candidate Material Report - Summary

@@ -1,0 +1,42 @@
+{
+  "phase": "09",
+  "artifact": "phase09-decision-memo",
+  "final_outcome": "no credible consumer path",
+  "supports_consumer_hardware": false,
+  "baseline_result": {
+    "name": "CsInH3",
+    "verdict": "fail",
+    "summary": "Strong low-pressure scientific benchmark, but not an ambient or retained-ambient practical route."
+  },
+  "phase09_primary_result": {
+    "name": "RbPH3",
+    "verdict": "blocked",
+    "summary": "Best remaining hydride-side ambient claim, but still lacks the local high-fidelity evidence required for a practical pass."
+  },
+  "phase09_benchmark_result": {
+    "name": "KB3C3",
+    "verdict": "benchmark-only",
+    "summary": "Strong ambient framework benchmark, but not a validated hydride-route success."
+  },
+  "pivot_recommendation": {
+    "direction": "broaden beyond the present conventional hydride route toward experimentally anchored ambient or pressure-quenched systems",
+    "keep_as_benchmark": [
+      "CsInH3"
+    ],
+    "blocked_but_useful_targets": [
+      "RbPH3"
+    ],
+    "strongest_confident_broader_candidate": {
+      "name": "HgBa2Ca2Cu3O8+delta",
+      "class": "pressure-quenched cuprate",
+      "ambient_tc_k": 151,
+      "evidence_level": "experimental",
+      "consumer_ready": false
+    },
+    "next_actions": [
+      "Stop consumer-language framing for the current hydride milestone",
+      "Preserve CsInH3 as the low-pressure hydride benchmark",
+      "Start a broader ambient and pressure-quench benchmark search with experimentally anchored routes"
+    ]
+  }
+}

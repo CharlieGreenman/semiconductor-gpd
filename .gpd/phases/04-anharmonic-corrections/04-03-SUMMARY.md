@@ -1,23 +1,23 @@
 ---
-phase: 04-anharmonic-corrections
+phase: "04-anharmonic-corrections"
 plan: 03
 depth: full
 one-liner: "Anharmonic alpha^2F via SSCHA eigenvector rotation: CsInH3 Tc = 214 K (3 GPa), 204 K (5 GPa); KGaH3 Tc = 85 K (10 GPa). test-tc-target FAIL (max 214 K << 300 K). MXH3 perovskite Tc ceiling established."
 subsystem: [analysis, validation, synthesis]
 tags: [SSCHA, anharmonic, alpha2F, eigenvector-rotation, Eliashberg, Tc, perovskite, CsInH3, KGaH3, contract-audit, synthesis]
 provides:
-  - anharmonic_alpha2f_csinh3_5gpa
-  - anharmonic_alpha2f_csinh3_3gpa
-  - anharmonic_alpha2f_kgah3
-  - anharmonic_tc_all_candidates
-  - phase4_synthesis
-  - test_tc_target_verdict
-  - test_stability_verdict
+  - "anharmonic_alpha2f_csinh3_5gpa"
+  - "anharmonic_alpha2f_csinh3_3gpa"
+  - "anharmonic_alpha2f_kgah3"
+  - "anharmonic_tc_all_candidates"
+  - "phase4_synthesis"
+  - "test_tc_target_verdict"
+  - "test_stability_verdict"
 completed: true
-plan_contract_ref: 04-03-PLAN.md
+plan_contract_ref: "04-03-PLAN.md"
 contract_results:
   claims:
-    - id: claim-anharmonic-tc
+    - id: "claim-anharmonic-tc"
       status: established
       confidence: MEDIUM
       evidence: "Anharmonic Tc computed for 3 candidate-pressure points using SSCHA-renormalized alpha^2F with eigenvector rotation. Lambda reductions: CsInH3 5GPa 31.8%, CsInH3 3GPa 35.7%, KGaH3 10GPa 29.8%. Consistent with H3S (30%) and YH6 (30%) benchmarks. Tc values at mu*=0.13: CsInH3 3GPa 214 K, CsInH3 5GPa 204 K, KGaH3 10GPa 85 K."
@@ -26,54 +26,54 @@ contract_results:
         - "Phase 3 baseline is synthetic (no HPC/QE); relative corrections (ratios) are robust"
         - "Eliashberg Tc via semi-analytical AD*ratio, not full Matsubara solver"
         - "Isotropic approximation: multi-gap effects could change Tc by 5-15%"
-    - id: claim-test-stability-sscha
+    - id: "claim-test-stability-sscha"
       status: established
       confidence: MEDIUM
       evidence: "All SSCHA frequencies real at all reported-Tc pressures: CsInH3 5GPa (min 15.7 cm^-1), CsInH3 3GPa (min 9.8 cm^-1, quantum stabilized +/- 2.1 cm^-1), KGaH3 10GPa (min 37.9 cm^-1). No Tc reported for any unstable structure."
   deliverables:
-    - id: deliv-anh-alpha2f
+    - id: "deliv-anh-alpha2f"
       status: produced
       path: "data/anharmonic_alpha2f_csinh3_5gpa.json, data/anharmonic_alpha2f_csinh3_3gpa.json, data/anharmonic_alpha2f_kgah3.json"
       notes: "Contains alpha2f_omega, alpha2f_values, lambda_anharmonic, omega_log_anharmonic, correction_factors, validation"
-    - id: deliv-anh-tc
+    - id: "deliv-anh-tc"
       status: produced
-      path: data/anharmonic_tc_results.json
+      path: "data/anharmonic_tc_results.json"
       notes: "Contains Tc_mu010, Tc_mu013, Tc_harmonic_phase3, delta_Tc_percent, lambda_ratio for all candidates"
-    - id: deliv-phase4-synthesis
+    - id: "deliv-phase4-synthesis"
       status: produced
-      path: data/phase4_synthesis.json
+      path: "data/phase4_synthesis.json"
       notes: "Contains ranked_candidates, contract_coverage, test_stability_verdict, test_tc_target_verdict, phase5_recommendations, benchmark_comparison, uncertainty_markers"
   acceptance_tests:
-    - id: test-lambda-reduction
+    - id: "test-lambda-reduction"
       outcome: PASS
       evidence: "Lambda ratios: CsInH3 5GPa 0.681, CsInH3 3GPa 0.643, KGaH3 10GPa 0.702. All in range 0.60-0.85."
-    - id: test-tc-reduction
-      outcome: PASS_WITH_NOTE
+    - id: "test-tc-reduction"
+      outcome: "PASS_WITH_NOTE"
       evidence: "Tc ratios: CsInH3 5GPa 0.72, CsInH3 3GPa 0.70, KGaH3 10GPa 0.56. CsInH3 values in expected range. KGaH3 below 0.65 floor -- physical: lower starting lambda (2.12) crosses Tc cliff after 30% reduction."
-    - id: test-alpha2f-positive
+    - id: "test-alpha2f-positive"
       outcome: PASS
       evidence: "All anharmonic alpha^2F positive-definite."
-    - id: test-sscha-all-stable
+    - id: "test-sscha-all-stable"
       outcome: PASS
       evidence: "All SSCHA frequencies > 0 cm^-1 at every pressure point with reported Tc."
   references:
-    - id: ref-errea2015-h3s
+    - id: "ref-errea2015-h3s"
       status: compared
       notes: "H3S lambda 2.64->1.84 (30%), Tc 250->200 K (20% reduction). Our CsInH3 lambda reduction (32-36%) is slightly larger, Tc reduction (28-30%) is moderately larger. Consistent: CsInH3 has larger anharmonicity (lower pressure, softer H potential)."
-    - id: ref-belli2025-yh6
+    - id: "ref-belli2025-yh6"
       status: compared
       notes: "YH6 lambda 2.53->1.78 (30%), Tc 270->218 K (19% reduction). Our lambda reductions (30-36%) consistent. Tc reductions slightly larger due to different lambda regime."
-    - id: ref-phase3-harmonic
+    - id: "ref-phase3-harmonic"
       status: compared
       notes: "Phase 3 harmonic Tc used as reference: CsInH3 285/305 K (5/3 GPa), KGaH3 152.5 K (10 GPa). Anharmonic corrections reduce these by 28-30% (CsInH3) and 44% (KGaH3)."
   forbidden_proxies:
-    - id: fp-unstable-tc
+    - id: "fp-unstable-tc"
       status: rejected
       notes: "All 3 candidate-pressure points are SSCHA-stable. No Tc from unstable structure."
-    - id: fp-ad-only-sscha
+    - id: "fp-ad-only-sscha"
       status: rejected
       notes: "Full alpha^2F recomputed via eigenvector rotation (R_freq * R_rotation). NOT just omega_log substitution."
-    - id: fp-tuned-mustar
+    - id: "fp-tuned-mustar"
       status: rejected
       notes: "mu* = 0.10 and 0.13 only, both reported for all candidates. No post-hoc selection."
   comparison_verdicts:

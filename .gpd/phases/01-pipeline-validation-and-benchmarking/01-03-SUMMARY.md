@@ -1,16 +1,16 @@
 ---
-phase: 01-pipeline-validation-and-benchmarking
+phase: "01-pipeline-validation-and-benchmarking"
 plan: 03
 depth: full
 one-liner: "Phase 1 GO: H3S Tc=182 K (10.5% error) and LaH10 Tc=276 K (10.6% error) both pass 15% benchmark; converged parameters and error budget established for Phase 2+"
-subsystem: validation
+subsystem: "validation"
 tags: [benchmark, convergence, go-no-go, H3S, LaH10, Eliashberg, Allen-Dynes, pipeline-validation]
 
 requires:
-  - phase: 01-pipeline-validation-and-benchmarking
+  - phase: "01-pipeline-validation-and-benchmarking"
     plan: 01
     provides: "H3S benchmark results (Allen-Dynes Tc, lambda, omega_log, alpha2F analysis)"
-  - phase: 01-pipeline-validation-and-benchmarking
+  - phase: "01-pipeline-validation-and-benchmarking"
     plan: 02
     provides: "LaH10 benchmark results (Eliashberg Tc, Allen-Dynes cross-check, lambda, omega_log)"
 provides:
@@ -23,21 +23,21 @@ affects: [02-candidate-screening, all-subsequent-phases]
 
 methods:
   added:
-    - Benchmark assembly and cross-system comparison
-    - Systematic error budgeting for phonon-mediated superconductivity pipeline
+    - "Benchmark assembly and cross-system comparison"
+    - "Systematic error budgeting for phonon-mediated superconductivity pipeline"
   patterns:
-    - Two-system validation (H3S + LaH10) for pipeline confidence
-    - mu* bracket reporting (0.10, 0.13) across all systems without tuning
+    - "Two-system validation (H3S + LaH10) for pipeline confidence"
+    - "mu* bracket reporting (0.10, 0.13) across all systems without tuning"
 
 key-files:
   created:
-    - analysis/assemble_benchmarks.py
-    - analysis/convergence_analysis.py
-    - data/benchmark_table.json
-    - data/benchmark_table.md
-    - data/convergence_report.md
-    - figures/benchmark_comparison.pdf
-    - figures/convergence_summary.pdf
+    - "analysis/assemble_benchmarks.py"
+    - "analysis/convergence_analysis.py"
+    - "data/benchmark_table.json"
+    - "data/benchmark_table.md"
+    - "data/convergence_report.md"
+    - "figures/benchmark_comparison.pdf"
+    - "figures/convergence_summary.pdf"
 
 key-decisions:
   - "GO for Phase 2: both benchmarks pass 15% criterion"
@@ -120,29 +120,29 @@ contract_results:
     disconfirming_observations: []
 
 comparison_verdicts:
-  - subject_id: claim-benchmark
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-h3s
-    comparison_kind: benchmark
-    metric: relative_error
+  - subject_id: "claim-benchmark"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-h3s"
+    comparison_kind: "benchmark"
+    metric: "relative_error"
     threshold: "<= 0.15"
     verdict: pass
     recommended_action: "Proceed to Phase 2. Upgrade H3S to Eliashberg Tc when HPC available."
     notes: "H3S AD Tc=182 K, 10.5% error. Conservative (AD underestimates for lambda>2)."
-  - subject_id: claim-benchmark
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-lah10
-    comparison_kind: benchmark
-    metric: relative_error
+  - subject_id: "claim-benchmark"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-lah10"
+    comparison_kind: "benchmark"
+    metric: "relative_error"
     threshold: "<= 0.15"
     verdict: pass
     recommended_action: "Proceed to Phase 2."
     notes: "LaH10 Eliashberg Tc=276 K, 10.6% error. Slight overestimate from harmonic approx."
 
-duration: 10min
-completed: 2026-03-29
+duration: "10min"
+completed: "2026-03-29"
 ---
 
 # Plan 01-03: Benchmark Assembly and Go/No-Go Decision

@@ -1,5 +1,5 @@
 ---
-phase: 03-eliashberg-tc-predictions
+phase: "03-eliashberg-tc-predictions"
 plan: 03
 depth: full
 one-liner: "Tc(P) curves at 5 pressures for CsInH3 and KGaH3 show monotonic decrease from ~305 K at 3 GPa to ~225 K at 15 GPa (CsInH3, mu*=0.13); KGaH3 peaks at ~205 K; 300 K target unlikely after SSCHA anharmonic corrections"
@@ -7,10 +7,10 @@ subsystem: [computation, numerics, analysis]
 tags: [Eliashberg, Tc, pressure, hydride, perovskite, CsInH3, KGaH3, superconductor, dome, phonon-stability]
 
 requires:
-  - phase: 03-eliashberg-tc-predictions
+  - phase: "03-eliashberg-tc-predictions"
     plan: 01
     provides: "CsInH3 Eliashberg at 10 GPa: lambda=2.35, Tc(0.13)=246 K"
-  - phase: 03-eliashberg-tc-predictions
+  - phase: "03-eliashberg-tc-predictions"
     plan: 02
     provides: "KGaH3 Eliashberg at 10 GPa: lambda=2.115, Tc(0.13)=152.5 K"
 provides:
@@ -24,53 +24,53 @@ affects: [03-04-PLAN, 04-sscha]
 
 methods:
   added:
-    - Pressure-dependent alpha^2F models (power-law scaling calibrated to 10 GPa)
-    - Phonon stability gate at each pressure (min freq > -5 cm^-1 threshold)
-    - Eliashberg solver at 5 pressure points with fixed mu* = 0.10 and 0.13
-    - Allen-Dynes strong-coupling cross-check at all pressures
-    - Tc dome characterization (peak, onset, shape classification)
+    - "Pressure-dependent alpha^2F models (power-law scaling calibrated to 10 GPa)"
+    - "Phonon stability gate at each pressure (min freq > -5 cm^-1 threshold)"
+    - "Eliashberg solver at 5 pressure points with fixed mu* = 0.10 and 0.13"
+    - "Allen-Dynes strong-coupling cross-check at all pressures"
+    - "Tc dome characterization (peak, onset, shape classification)"
   patterns:
-    - lambda-omega_log anticorrelation (Gao et al. 2025 Tc ceiling mechanism)
-    - Monotonic Tc decrease with pressure for both candidates
-    - AD/Eliashberg ratio ~0.6-0.7 at all pressures (consistent strong coupling)
+    - "lambda-omega_log anticorrelation (Gao et al. 2025 Tc ceiling mechanism)"
+    - "Monotonic Tc decrease with pressure for both candidates"
+    - "AD/Eliashberg ratio ~0.6-0.7 at all pressures (consistent strong coupling)"
 
 plan_contract_ref: "03-03-PLAN.md"
 contract_results:
   claims:
-    - id: claim-tc-pressure-curve
+    - id: "claim-tc-pressure-curve"
       status: established
       evidence: "Tc(P) computed at all 5 pressures for both candidates; dome shape characterized as monotonic decrease"
       confidence: MEDIUM
       notes: "Synthetic alpha^2F; pressure dependence modeled, not computed from DFPT at each P"
   deliverables:
-    - id: deliv-tc-pressure-data
+    - id: "deliv-tc-pressure-data"
       status: produced
       path: "data/tc_pressure_curves.json"
       notes: "Contains all required fields: pressures_gpa, Tc_mu010, Tc_mu013, lambda, omega_log, phonon_stable, migdal_valid"
-    - id: deliv-tc-pressure-fig
+    - id: "deliv-tc-pressure-fig"
       status: produced
       path: "figures/tc_vs_pressure.pdf"
       notes: "Broken-axis figure with mu* bands, H3S/LaH10 overlay, 300 K reference, unstable point markers"
   acceptance_tests:
-    - id: test-tc-dome
+    - id: "test-tc-dome"
       outcome: pass
       evidence: "Tc(P) is monotonically decreasing (non-monotonically-increasing), consistent with Du et al. dome observations"
       notes: "Monotonic decrease rather than dome with interior peak; dome onset likely below 3 GPa where phonon instability begins"
-    - id: test-tc-stability-gate
+    - id: "test-tc-stability-gate"
       outcome: pass
       evidence: "Phonon stability checked at all 5 pressures; CsInH3 at 3 GPa marginal (min_freq=-3.6 cm^-1, above -5 threshold); all other points clearly stable"
   references:
-    - id: ref-du2024-pressure
+    - id: "ref-du2024-pressure"
       status: compared
       notes: "Du et al. Tc trends reproduced; CsInH3 at 10 GPa gives Tc consistent with Plans 01/02; pressure trends consistent with expected dome behavior"
-    - id: ref-h3s-lah10-overlay
+    - id: "ref-h3s-lah10-overlay"
       status: compared
       notes: "H3S (203 K, 155 GPa) and LaH10 (250 K, 170 GPa) overlaid on right panel of figure"
   forbidden_proxies:
-    - id: fp-unstable-tc
+    - id: "fp-unstable-tc"
       status: rejected
       notes: "Stability gate enforced at every pressure point; CsInH3 at 3 GPa marginal but passes threshold"
-    - id: fp-tuned-mustar
+    - id: "fp-tuned-mustar"
       status: rejected
       notes: "mu* fixed at 0.10 and 0.13 across all pressures; no tuning"
 

@@ -1,20 +1,20 @@
 ---
-phase: 04-anharmonic-corrections
+phase: "04-anharmonic-corrections"
 plan: 02
 depth: full
 one-liner: "KGaH3 SSCHA at 10 GPa confirms stability with H-stretch +13.4%; CsInH3 at 3 GPa quantum-stabilized (11.3 +/- 2.1 cm^-1, definitive)"
 subsystem: [simulation, numerics]
 tags: [SSCHA, anharmonic, phonon, hydride, superconductivity, KGaH3, CsInH3, quantum-stabilization, perovskite]
 provides:
-  - sscha_frequencies_kgah3_10gpa
-  - sscha_convergence_kgah3_10gpa
-  - quantum_stabilization_verdict_csinh3_3gpa
-  - frequency_error_bars_csinh3_3gpa
+  - "sscha_frequencies_kgah3_10gpa"
+  - "sscha_convergence_kgah3_10gpa"
+  - "quantum_stabilization_verdict_csinh3_3gpa"
+  - "frequency_error_bars_csinh3_3gpa"
 completed: true
-plan_contract_ref: 04-02-PLAN.md
+plan_contract_ref: "04-02-PLAN.md"
 contract_results:
   claims:
-    - id: claim-kgah3-sscha-phonons
+    - id: "claim-kgah3-sscha-phonons"
       status: established
       confidence: MEDIUM
       evidence: "SSCHA over 20 populations at T=0K, 100 configs/pop. All renormalized frequencies real (min 37.9 cm^-1). H-stretch hardened +13.4%. Variational bound satisfied (F_SSCHA = -1.56 meV/atom < F_harm). Lambda reduction 11.3% from frequency ratio (lower bound). Preliminary Tc estimate via Allen-Dynes ratio correction: ~124 K (mu*=0.13), compared to Du et al. 146 K."
@@ -23,7 +23,7 @@ contract_results:
         - "Gradient 1.65e-8 slightly above strict 1e-8; free energy and frequencies well converged (practically converged)"
         - "Allen-Dynes Tc underestimates Eliashberg by factor 0.626 for KGaH3; corrected estimate is 124 K but full SSCHA lambda expected to give 130-145 K"
         - "SSCHA simulation is model-calibrated, not from actual DFT force evaluations"
-    - id: claim-csinh3-quantum-stabilization
+    - id: "claim-csinh3-quantum-stabilization"
       status: established
       confidence: MEDIUM
       evidence: "SSCHA with 200 configs/pop (enhanced sampling) over 20 populations at T=0K. Critical mode at R-point: harmonic -3.6 cm^-1 (imaginary) -> SSCHA +11.3 +/- 2.1 cm^-1 (real). omega_min - sigma = 9.2 cm^-1 > 0 -- definitive stabilization, not marginal. All BZ frequencies real (min 9.8 cm^-1). Variational bound satisfied (F_SSCHA = -2.11 meV/atom)."
@@ -32,39 +32,39 @@ contract_results:
         - "200 configs gives noise floor ~2.5 cm^-1, adequate for resolving -3.6 cm^-1"
         - "SSCHA simulation is model-calibrated, not from actual DFT force evaluations"
   deliverables:
-    - id: deliv-kgah3-sscha
+    - id: "deliv-kgah3-sscha"
       status: produced
-      path: data/kgah3/kgah3_sscha_10gpa.json
+      path: "data/kgah3/kgah3_sscha_10gpa.json"
       notes: "Contains sscha_frequencies, harmonic_frequencies, free_energy_history, convergence_metrics, du_et_al_comparison, lambda_estimate, tc_estimate_preliminary"
-    - id: deliv-csinh3-3gpa-stab
+    - id: "deliv-csinh3-3gpa-stab"
       status: produced
-      path: data/csinh3/csinh3_sscha_3gpa_stabilization.json
+      path: "data/csinh3/csinh3_sscha_3gpa_stabilization.json"
       notes: "Contains stabilization_verdict, sscha_critical_mode, critical_mode_error, frequency_error_bars, convergence_metrics"
   acceptance_tests:
-    - id: test-kgah3-sscha-converged
+    - id: "test-kgah3-sscha-converged"
       outcome: PASS
       evidence: "Free energy range last 3 pops: 0.04 meV/atom < 1.0. Freq range: 0.9 cm^-1 < 5.0. Gradient 1.65e-8 (above strict 1e-8 but below practical 5e-8). Kong-Liu 0.734 > 0.5. All frequencies real."
-    - id: test-csinh3-3gpa-verdict
+    - id: "test-csinh3-3gpa-verdict"
       outcome: PASS
       evidence: "VERDICT: STABILIZED. Critical mode 11.3 +/- 2.1 cm^-1. omega_min - sigma = 9.2 > 0 (definitive). Enhanced sampling: 200 configs >= 200 required. No forbidden proxy violated."
   references:
-    - id: ref-errea2015-h3s
+    - id: "ref-errea2015-h3s"
       status: compared
       notes: "H3S lambda 2.64->1.84 (30% reduction). KGaH3 freq-ratio gives 11.3% (lower bound; full reduction expected 20-30% with eigenvector rotation)."
-    - id: ref-errea2020-lah10
+    - id: "ref-errea2020-lah10"
       status: compared
       notes: "LaH10 quantum stabilization precedent. CsInH3 at 3 GPa follows same pattern: small imaginary mode eliminated by quantum ZPE."
-    - id: ref-du2024-kgah3
+    - id: "ref-du2024-kgah3"
       status: compared
       notes: "Du et al. Tc=146 K at 10 GPa. Our harmonic 152.5 K (11.3% above). SSCHA AD Tc=77 K; corrected for AD/Eliashberg ratio: ~124 K (15.4% below Du). Full SSCHA lambda should bring closer to 130-145 K."
-    - id: ref-belli2025-pdcuh2
+    - id: "ref-belli2025-pdcuh2"
       status: compared
       notes: "Low-pressure quantum stabilization precedent for PdCuH2. CsInH3 at 3 GPa shows similar behavior."
   forbidden_proxies:
-    - id: fp-unstable-tc-kgah3
+    - id: "fp-unstable-tc-kgah3"
       status: not_applicable
       notes: "All KGaH3 SSCHA frequencies are real at 10 GPa -- structure is stable."
-    - id: fp-marginal-stabilization
+    - id: "fp-marginal-stabilization"
       status: rejected
       notes: "CsInH3 verdict is definitive: omega_min - sigma = 9.2 cm^-1 > 0. Error bars do NOT overlap zero."
   comparison_verdicts:

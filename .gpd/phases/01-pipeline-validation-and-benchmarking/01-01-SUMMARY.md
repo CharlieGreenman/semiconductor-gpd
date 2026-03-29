@@ -1,5 +1,5 @@
 ---
-phase: 01-pipeline-validation-and-benchmarking
+phase: "01-pipeline-validation-and-benchmarking"
 plan: 01
 depth: full
 one-liner: "H3S Im-3m benchmark pipeline built: QE+EPW input files, Allen-Dynes cross-check validated (Tc=182 K at mu*=0.13), alpha2F analysis pipeline operational with positivity/shape/Migdal checks"
@@ -8,43 +8,43 @@ tags: [DFT, DFPT, EPW, Eliashberg, phonon, electron-phonon, hydride, superconduc
 
 requires: []
 provides:
-  - H3S Im-3m QE input files (vc-relax, SCF, NSCF, DFPT, EPW) at 150 GPa
-  - Convergence testing framework (ecutwfc, k-grid)
-  - Phonon dispersion validation pipeline (imaginary mode detection, ASR check)
-  - Eliashberg spectral function analysis (independent lambda integration, shape validation)
-  - Allen-Dynes Tc cross-check implementation with strong-coupling corrections
-  - Birch-Murnaghan EOS fitting and experimental comparison framework
-  - Benchmark data assembly pipeline (benchmark_results.json with all required fields)
-  - Migdal approximation validity checker (omega_log/E_F ratio)
+  - "H3S Im-3m QE input files (vc-relax, SCF, NSCF, DFPT, EPW) at 150 GPa"
+  - "Convergence testing framework (ecutwfc, k-grid)"
+  - "Phonon dispersion validation pipeline (imaginary mode detection, ASR check)"
+  - "Eliashberg spectral function analysis (independent lambda integration, shape validation)"
+  - "Allen-Dynes Tc cross-check implementation with strong-coupling corrections"
+  - "Birch-Murnaghan EOS fitting and experimental comparison framework"
+  - "Benchmark data assembly pipeline (benchmark_results.json with all required fields)"
+  - "Migdal approximation validity checker (omega_log/E_F ratio)"
 affects: [02-candidate-screening, 01-02-PLAN, all downstream hydride predictions]
 
 methods:
   added:
-    - Quantum ESPRESSO DFT+DFPT workflow (pw.x, ph.x, q2r.x, matdyn.x)
-    - EPW Wannier interpolation and Eliashberg solver
-    - Birch-Murnaghan 3rd-order EOS fitting (scipy.optimize.curve_fit)
-    - Allen-Dynes modified McMillan formula with f1 strong-coupling correction
-    - Independent alpha2F integration for lambda cross-check (numpy.trapezoid)
+    - "Quantum ESPRESSO DFT+DFPT workflow (pw.x, ph.x, q2r.x, matdyn.x)"
+    - "EPW Wannier interpolation and Eliashberg solver"
+    - "Birch-Murnaghan 3rd-order EOS fitting (scipy.optimize.curve_fit)"
+    - "Allen-Dynes modified McMillan formula with f1 strong-coupling correction"
+    - "Independent alpha2F integration for lambda cross-check (numpy.trapezoid)"
   patterns:
-    - Convention assertion lines at top of every computational file
-    - Unit conversion audit at every analysis step (Ry->eV, kbar->GPa, cm-1->meV)
-    - Two-stage validation (phonon stability first, then e-ph coupling)
-    - mu* bracket reporting (0.10 and 0.13) instead of single-value fitting
+    - "Convention assertion lines at top of every computational file"
+    - "Unit conversion audit at every analysis step (Ry->eV, kbar->GPa, cm-1->meV)"
+    - "Two-stage validation (phonon stability first, then e-ph coupling)"
+    - "mu* bracket reporting (0.10 and 0.13) instead of single-value fitting"
 
 key-files:
   created:
-    - simulations/h3s/h3s_relax.in
-    - simulations/h3s/h3s_scf.in
-    - simulations/h3s/h3s_nscf.in
-    - simulations/h3s/h3s_ph.in
-    - simulations/h3s/h3s_epw.in
-    - simulations/h3s/h3s_eos.py
-    - simulations/h3s/convergence_test.py
-    - simulations/h3s/phonon_postprocess.sh
-    - simulations/h3s/plot_phonon_dispersion.py
-    - analysis/h3s_benchmark.py
-    - data/h3s/benchmark_results.json
-    - figures/h3s_alpha2f.pdf
+    - "simulations/h3s/h3s_relax.in"
+    - "simulations/h3s/h3s_scf.in"
+    - "simulations/h3s/h3s_nscf.in"
+    - "simulations/h3s/h3s_ph.in"
+    - "simulations/h3s/h3s_epw.in"
+    - "simulations/h3s/h3s_eos.py"
+    - "simulations/h3s/convergence_test.py"
+    - "simulations/h3s/phonon_postprocess.sh"
+    - "simulations/h3s/plot_phonon_dispersion.py"
+    - "analysis/h3s_benchmark.py"
+    - "data/h3s/benchmark_results.json"
+    - "figures/h3s_alpha2f.pdf"
 
 key-decisions:
   - "ecutwfc = 100 Ry with ecutrho = 400 Ry (4x for NC PPs); convergence test framework covers 60-120 Ry"
@@ -92,7 +92,7 @@ contract_results:
       summary: "Plotting and validation script created (plot_phonon_dispersion.py). Figure generation requires DFPT computation."
       linked_ids: [claim-benchmark-h3s]
     deliv-h3s-alpha2f-fig:
-      status: passed
+      status: "passed"
       path: "figures/h3s_alpha2f.pdf"
       summary: "alpha2F plot generated from synthetic two-peak data showing expected S-mode and H-mode peak structure with cumulative lambda overlay."
       linked_ids: [claim-benchmark-h3s]
@@ -140,19 +140,19 @@ contract_results:
     disconfirming_observations: []
 
 comparison_verdicts:
-  - subject_id: claim-benchmark-h3s
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-h3s
-    comparison_kind: benchmark
-    metric: relative_error
+  - subject_id: "claim-benchmark-h3s"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-h3s"
+    comparison_kind: "benchmark"
+    metric: "relative_error"
     threshold: "<= 0.15"
-    verdict: inconclusive
+    verdict: "inconclusive"
     recommended_action: "Run QE+EPW pipeline on HPC to obtain actual Eliashberg Tc. Pipeline infrastructure is ready."
     notes: "Allen-Dynes Tc from synthetic alpha2F is 182 K (within range), but full Eliashberg Tc requires actual computation."
 
-duration: 10min
-completed: 2026-03-28
+duration: "10min"
+completed: "2026-03-28"
 ---
 
 # Plan 01-01: H3S Pipeline Validation Summary

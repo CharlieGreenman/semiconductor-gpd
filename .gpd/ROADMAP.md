@@ -1,222 +1,206 @@
-# Roadmap: Room-Temperature Superconductor Discovery via First-Principles Hydride Design
+# Roadmap: v2.0 Ambient Retention and Practical Viability
 
 ## Overview
 
-This roadmap guides a first-principles computational search for room-temperature superconductors in ternary hydrogen-rich compounds. The research proceeds from pipeline validation on known hydride superconductors (H3S, LaH10), through systematic screening of ternary hydride families at near-ambient pressure, to full Eliashberg Tc predictions with anharmonic corrections. The decisive question is whether any ternary hydride achieves Tc >= 300 K at P <= 10 GPa via chemical pre-compression.
+Milestone `v1.0` has been archived to `.gpd/milestones/v1.0-ROADMAP.md` after establishing that MXH3 perovskites do not deliver `Tc >= 300 K` below `10 GPa`, and that CsInH3 remains scientifically interesting but not yet practical. This milestone asks the next decisive question: is there any credible path from that result to ambient-pressure or pressure-quenched superconductivity relevant to consumer hardware, or does the conventional hydride route close before room temperature becomes realistic?
 
 ## Contract Overview
 
 | Contract Item | Type | Advanced By Phase(s) | Status |
 | --- | --- | --- | --- |
-| claim-benchmark | claim | Phase 1 | Planned |
-| claim-candidate | claim | Phase 2, 3, 4, 5 | Planned |
-| deliv-benchmark | deliverable | Phase 1 | Planned |
-| deliv-candidate | deliverable | Phase 3, 4, 5 | Planned |
-| deliv-tc-curve | deliverable | Phase 3, 5 | Planned |
-| test-h3s | acceptance test | Phase 1 | Planned |
-| test-lah10 | acceptance test | Phase 1 | Planned |
-| test-tc-target | acceptance test | Phase 3, 5 | Planned |
-| test-stability | acceptance test | Phase 2, 4 | Planned |
-| ref-h3s | anchor | Phase 1, 5 | Planned |
-| ref-lah10 | anchor | Phase 1, 5 | Planned |
-| fp-unstable-tc | forbidden proxy | Phase 2, 3 | Active |
-| fp-above-hull | forbidden proxy | Phase 2 | Active |
-| fp-tuned-mustar | forbidden proxy | Phase 1, 3, 5 | Active |
+| claim-practical-map | claim | Phase 6 | Executed |
+| claim-quenchability | claim | Phase 7 | Executed |
+| claim-practical-candidate | claim | Phase 8, 9 | Executed |
+| deliv-viability-matrix | deliverable | Phase 6 | Executed |
+| deliv-quench-scorecard | deliverable | Phase 7 | Executed |
+| deliv-shortlist | deliverable | Phase 8 | Executed |
+| deliv-validation-report | deliverable | Phase 9 | Executed |
+| deliv-decision-memo | deliverable | Phase 9 | Executed |
+| test-pressure-separation | acceptance test | Phase 6 | Executed |
+| test-quenchability | acceptance test | Phase 7 | Executed |
+| test-practical-threshold | acceptance test | Phase 9 | Executed |
+| fp-synthesis-equals-operation | forbidden proxy | Phase 6, 8, 9 | Active |
+| fp-synthetic-alpha2f-final | forbidden proxy | Phase 9 | Active |
+| fp-unstable-ambient | forbidden proxy | Phase 7, 8, 9 | Active |
+| fp-roomtemp-extrapolation | forbidden proxy | Phase 6, 9 | Active |
 
 ## Phases
 
-- [ ] **Phase 1: Pipeline Validation** - Benchmark DFT+DFPT+Eliashberg on H3S and LaH10; establish converged parameters
-- [ ] **Phase 2: Candidate Screening** - Convex hulls + phonon stability for ternary hydrides at 0-10 GPa
-- [ ] **Phase 3: Eliashberg Tc Predictions** - Full electron-phonon coupling and Tc for dynamically stable candidates
-- [ ] **Phase 4: Anharmonic Corrections** - SSCHA for top candidates; reassess stability and Tc
-- [ ] **Phase 5: Characterization and Sensitivity Analysis** - mu* sensitivity, Tc(P) curves, final candidate report
+- [x] **Phase 6: Literature-Grounded Practicality Map** - Build the decision-grade map of stable ambient, metastable ambient, pressure-quenched, and low-pressure-only pathways
+- [x] **Phase 7: Ambient Retention of CsInH3-Class Phases** - Determine whether the repo's best candidate or one close derivative can survive pressure release
+- [x] **Phase 8: Ambient-Leaning Candidate Search** - Screen new families that trade off `Tc`, stability, quenchability, and practicality more honestly than v1.0
+- [x] **Phase 9: High-Fidelity Validation and Pivot Decision** - Replace synthetic proxies on the best pathway and decide whether conventional hydrides still support a consumer-hardware story
+- [x] **Phase 10: Experimental Benchmark Pivot Beyond Hydrides** - Name the strongest confidence-ranked benchmark after the hydride no-go and quantify the remaining room-temperature gap
 
 ## Phase Dependencies
 
 | Phase | Depends On | Enables | Critical Path? |
 | --- | --- | --- | :---: |
-| 1 - Pipeline Validation | -- | 2 | Yes |
-| 2 - Candidate Screening | 1 | 3 | Yes |
-| 3 - Eliashberg Tc Predictions | 2 | 4, 5 | Yes |
-| 4 - Anharmonic Corrections | 3 | 5 | Yes |
-| 5 - Characterization | 3, 4 | -- | Yes |
+| 6 - Practicality Map | v1.0 archived results | 7, 8, 9 | Yes |
+| 7 - Ambient Retention | 6 | 9 | Yes |
+| 8 - Candidate Search | 6 | 9 | Yes |
+| 9 - Validation and Pivot | 7, 8 | 10 | Yes |
+| 10 - Experimental Benchmark Pivot | 9 | -- | Yes |
 
-**Critical path:** 1 -> 2 -> 3 -> 4 -> 5 (strictly sequential -- each phase filters or refines candidates for the next)
-**Partial overlap:** Phase 3 can begin for the first candidate while Phase 2 continues screening later families.
+**Critical path:** `6 -> (7 and 8) -> 9 -> 10`
 
 ## Phase Details
 
-### Phase 1: Pipeline Validation and Benchmarking
+### Phase 6: Literature-Grounded Practicality Map
 
-**Goal:** The DFT+DFPT+Eliashberg computational pipeline is validated against experiment, with converged parameters established for hydride systems.
-**Depends on:** Nothing (entry phase)
-**Requirements:** BENCH-01, BENCH-02, BENCH-03, VALD-04
+**Goal:** The repo has a decision-grade map of what "practical" means for superconductivity here: exact separation of synthesis pressure vs operating pressure, explicit classes of ambient stability, and a ranked pathway picture grounded in 2024-2026 primary literature.
+**Depends on:** Archived v1.0 results and conclusions
+**Requirements:** LITR-01, LITR-02, LITR-03, VALD-01
 **Contract Coverage:**
-- Advances: claim-benchmark
-- Deliverables: deliv-benchmark (benchmark table: computed vs experimental Tc for H3S and LaH10)
-- Acceptance tests: test-h3s (H3S Tc within 15% of 203 K), test-lah10 (LaH10 Tc within 15% of 250 K)
-- Anchor coverage: ref-h3s (Drozdov et al. 2015 -- compare Tc, read, cite), ref-lah10 (Somayazulu et al. 2019 -- compare Tc, read, cite)
-- Forbidden proxies: fp-tuned-mustar -- Tc must come from computed alpha^2F(omega) with fixed mu* = 0.10-0.13, NOT by adjusting mu* to match experiment
-- User-stated anchors: "Reproduce H3S Tc ~ 200 K at 150 GPa before trusting new predictions"; "Reproduce LaH10 Tc ~ 250 K at 170 GPa before trusting new predictions"
+- Advances: claim-practical-map
+- Deliverables: deliv-viability-matrix
+- Acceptance tests: test-pressure-separation
+- Anchor coverage: `ref-v1-conclusions`, `ref-ambient-ceiling`, `ref-stable-ambient-hydrides`, `ref-kb3c3`, `ref-hg1223-quench`
+- Forbidden proxies: fp-synthesis-equals-operation, fp-roomtemp-extrapolation
 
-**Success Criteria** (what must be TRUE):
+**Success Criteria**
 
-1. H3S (Im-3m at 150 GPa): Eliashberg Tc is within 15% of 203 K (i.e., 170-230 K) at mu* = 0.13
-2. LaH10 (Fm-3m at 170 GPa): Eliashberg Tc is within 15% of 250 K (i.e., 212-288 K) at mu* = 0.13
-3. Phonon dispersions for both systems show no imaginary frequencies and agree with published ab initio results within 10%
-4. Electron-phonon coupling lambda is converged to < 5% with respect to k-point and q-point grids (systematic convergence test documented)
-5. DFT equation of state (PBEsol) for at least one benchmark agrees with experiment or published higher-level theory
+1. At least 8 primary-source systems are cataloged with exact `Tc`, synthesis pressure, operating pressure, and stability class
+2. Every cited pathway is labeled as one of: stable ambient, metastable ambient, pressure-quenched, or low-pressure-only
+3. The repo defines a practical-viability scorecard that includes pressure, `Tc`, quenchability confidence, cost, and toxicity
+4. Room-temperature consumer claims are explicitly tested against the 2025 ambient conventional ceiling and the 2026 stable-ambient hydride survey
 
-**Backtracking trigger:** Benchmark Tc off by > 30% -- stop and rethink entire pipeline (pseudopotentials, convergence, functional choice). This is a project-level stop condition.
+**Backtracking trigger:** If the literature scan itself already rules out room-temperature consumer viability for all conventional ambient or quench paths under consideration, Phase 9 becomes a pivot memo rather than a positive-candidate validation phase.
 
 **Plans:** 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- H3S (Im-3m) benchmark: structure, phonons, e-ph coupling, Eliashberg Tc at 150 GPa
-- [ ] 01-02-PLAN.md -- LaH10 (Fm-3m) benchmark: structure, phonons, e-ph coupling, Eliashberg Tc at 170 GPa
-- [ ] 01-03-PLAN.md -- Benchmark table assembly, convergence report, EOS validation, go/no-go decision
+- [x] `06-01-PLAN.md` -- Stable ambient and near-ambient hydride literature matrix with exact pressure accounting
+- [x] `06-02-PLAN.md` -- Pressure-quench and metastability literature, including hydride-adjacent analog systems
+- [x] `06-03-PLAN.md` -- Practical viability scorecard and go/no-go criteria for Phases 7-9
 
-### Phase 2: Candidate Screening
+### Phase 7: Ambient Retention of CsInH3-Class Phases
 
-**Goal:** A ranked shortlist of thermodynamically and dynamically stable ternary hydrides at P <= 10 GPa is produced, with all unstable and above-hull compositions eliminated.
-**Depends on:** Phase 1 (validated convergence parameters and DFT settings)
-**Requirements:** SCREEN-01, SCREEN-02, SCREEN-03, STAB-01, STAB-02
+**Goal:** The best v1.0 candidate, or a close derivative, receives an explicit decompression verdict rather than a hand-wavy "maybe quenchable" label.
+**Depends on:** Phase 6
+**Requirements:** META-01, META-02, META-03
 **Contract Coverage:**
-- Advances: claim-candidate (stability prerequisite)
-- Deliverables: Convex hull diagrams at 4 pressure points; phonon dispersion plots for candidates; ranked candidate list
-- Acceptance tests: test-stability (no imaginary phonon frequencies AND convex hull distance <= 50 meV/atom)
-- Anchor coverage: Materials Project convex hull data as baseline; Phase 1 validated parameters
-- Forbidden proxies: fp-unstable-tc -- no candidate advances past screening with imaginary phonon modes; fp-above-hull -- no candidate advances with E_hull > 50 meV/atom
-- Crucial inputs: Convex hull data from Materials Project for stability assessment
+- Advances: claim-quenchability
+- Deliverables: deliv-quench-scorecard
+- Acceptance tests: test-quenchability
+- Anchor coverage: `ref-v1-conclusions`, `ref-synthesis-guide`, pressure-quench literature from Phase 6
+- Forbidden proxies: fp-unstable-ambient
 
-**Success Criteria** (what must be TRUE):
+**Success Criteria**
 
-1. Pressure-dependent convex hulls constructed for at least 3 ternary A-B-H systems (e.g., La-Be-H, Mg-Ir-H, Sr-Au-H) at P = 0, 5, 10, 50 GPa, including ALL known competing binary and elemental phases
-2. At least 2 ternary hydride compositions identified within 50 meV/atom of the convex hull at P <= 10 GPa (or the stop condition is triggered)
-3. Phonon dispersions converged (q-grid: 4x4x4 -> 6x6x6 -> 8x8x8; frequencies stable to < 5 cm^-1) for all near-hull candidates, with no imaginary modes after convergence
-4. Formation enthalpies converged to < 5 meV/atom with respect to plane-wave cutoff and k-point grid
-5. All candidates verified for both thermodynamic stability (formation enthalpy vs competing phases) and dynamic stability (real phonon frequencies)
+1. The pressure-release path of CsInH3 from `5 GPa` to `0 GPa` is mapped with enthalpy and phonon checkpoints
+2. At least one explicit decomposition or symmetry-lowering barrier is estimated for CsInH3
+3. One derivative or alloyed analog is analyzed under the same decompression logic
+4. The repo emits a clear quenchability verdict: plausible, unlikely, or ruled out
 
-**Backtracking trigger:** All explored ternary hydrides require P > 50 GPa for dynamic stability -- chemical pre-compression strategy has failed; reassess scope per stop/rethink contract condition.
-
-**Stop condition from contract:** If all candidates are > 50 meV/atom above hull at target pressures, trigger rethink.
-
-**Plans:** 4 plans
-
-Plans:
-- [ ] 02-01-PLAN.md -- Hull infrastructure and competing phase database for 3 ternary systems at 4 pressures
-- [ ] 02-02-PLAN.md -- MXH3 perovskite screening (KGaH3, RbInH3, CsInH3): hulls + phonon stability
-- [ ] 02-03-PLAN.md -- B-C clathrate and Mg2XH6 screening + hull validation via Mg2IrH6
-- [ ] 02-04-PLAN.md -- Stability synthesis: ranked candidate list and go/no-go for Phase 3
-
-### Phase 3: Eliashberg Tc Predictions
-
-**Goal:** Publication-quality Tc values are obtained for all surviving candidates using full Eliashberg equations, with mu* sensitivity brackets and Allen-Dynes cross-checks.
-**Depends on:** Phase 2 (dynamically stable candidates with converged structures)
-**Requirements:** ELIAS-01, ELIAS-02, ELIAS-03, VALD-01, VALD-02, VALD-03
-**Contract Coverage:**
-- Advances: claim-candidate (Tc computation); claim-benchmark (Allen-Dynes cross-check validates pipeline consistency)
-- Deliverables: deliv-candidate (alpha^2F, lambda, Tc for each candidate); deliv-tc-curve (Tc(P) at 5 pressure points for top 2-3 candidates)
-- Acceptance tests: test-tc-target (Tc >= 300 K at P <= 10 GPa from converged Eliashberg)
-- Anchor coverage: Phase 1 benchmark Tc values establish pipeline trust; ref-h3s and ref-lah10 Tc(P) for comparison on Tc(P) figure
-- Forbidden proxies: fp-tuned-mustar -- report Tc at fixed mu* = 0.10, 0.13 (and 0.08, 0.15 for sensitivity); fp-unstable-tc -- only compute Tc for structures confirmed stable in Phase 2
-- User-stated observables: Tc(P) curve for candidate material; phonon dispersion; electron-phonon coupling lambda
-
-**Success Criteria** (what must be TRUE):
-
-1. alpha^2F(omega) and lambda computed via EPW Wannier interpolation for all Phase 2 survivors, with lambda converged to < 5% (fine grids >= 40^3)
-2. Isotropic Eliashberg Tc reported at mu* = 0.10, 0.13 for each candidate, with Tc converged to +/- 5 K (Matsubara frequency cutoff convergence)
-3. Allen-Dynes Tc agrees with Eliashberg Tc within 20% for candidates with lambda < 2.5 (cross-check validation -- VALD-01)
-4. Tc(P) curves computed at 5 pressure points for the top 2-3 candidates, identifying the lowest pressure achieving Tc >= 300 K (or documenting that no candidate reaches this target)
-5. mu* sensitivity analysis: Tc(mu*) reported for mu* = 0.08, 0.10, 0.13, 0.15 for top candidates, demonstrating that results are NOT driven by mu* choice
-
-**Backtracking trigger:** lambda systematically > 3.0 for all candidates -- Migdal approximation questionable; flag as uncertainty and document adiabatic ratio omega_log/E_F. If omega_log/E_F > 0.1, Tc predictions carry large uncontrolled error.
-
-**Plans:** 4 plans
-
-Plans:
-- [ ] 03-01-PLAN.md -- CsInH3 full Eliashberg at 10 GPa: QE+DFPT+EPW pipeline, alpha^2F, lambda, Tc, Allen-Dynes cross-check
-- [ ] 03-02-PLAN.md -- RbInH3 + KGaH3 Eliashberg at 10 GPa: same pipeline for remaining 2 candidates
-- [ ] 03-03-PLAN.md -- Tc(P) curves at 5 pressures (3,5,7,10,15 GPa) for top 2 candidates
-- [ ] 03-04-PLAN.md -- mu* sensitivity (0.08,0.10,0.13,0.15), Phase 3 synthesis, contract deliverable assembly
-
-### Phase 4: Anharmonic Corrections
-
-**Goal:** The harmonic approximation bias is removed for top candidates via SSCHA, yielding corrected phonon spectra, lambda, and Tc that can be trusted for hydrogen-rich systems.
-**Depends on:** Phase 3 (harmonic Tc values identifying top 1-2 candidates worthy of expensive SSCHA)
-**Requirements:** STAB-03
-**Contract Coverage:**
-- Advances: claim-candidate (anharmonic-corrected Tc is the trustworthy prediction)
-- Deliverables: deliv-candidate (anharmonic phonon dispersion, corrected alpha^2F, corrected Tc)
-- Acceptance tests: test-stability (SSCHA-renormalized phonons still show no imaginary frequencies -- quantum stabilization or confirmation of instability)
-- Anchor coverage: Phase 3 harmonic Tc as upper bound (literature shows harmonic overpredicts by ~20-100 K for hydrides); Errea et al. PRL 2015 H3S anharmonic correction as methodological reference
-- Forbidden proxies: fp-unstable-tc -- if SSCHA reveals imaginary modes not present harmonically, candidate is disqualified despite harmonic Tc
-- Uncertainty markers: Harmonic lambda overestimates by ~30% for H3S (Errea et al.); anharmonic corrections are mandatory for final Tc
-
-**Success Criteria** (what must be TRUE):
-
-1. SSCHA phonon renormalization completed for at least 1 top candidate (100+ configurations, 20+ iterations, free energy converged)
-2. Anharmonic-corrected lambda and Tc obtained; the correction magnitude (harmonic vs SSCHA) is documented and compared to the known ~30% lambda reduction in H3S
-3. Dynamic stability reassessed: SSCHA phonons confirm whether the candidate remains dynamically stable (all frequencies real) or is quantum-destabilized
-4. If anharmonic Tc drops below 200 K for all candidates, this is documented as evidence that the ambient-pressure Tc ceiling (~100-120 K from Gao et al. 2025) applies
-
-**Backtracking trigger:** If SSCHA reveals that the Phase 2 "stable" candidates are actually unstable (imaginary SSCHA phonon frequencies), return to Phase 2 to screen additional families. If anharmonic corrections reduce ALL Tc below 150 K, document as negative result and assess whether the 300 K target is achievable within the phonon-mediated framework.
+**Backtracking trigger:** If all decompression paths fail before `0 GPa` with strong instability or barrierless decomposition, CsInH3 is demoted from "practical candidate" to "scientific low-pressure benchmark only."
 
 **Plans:** 3 plans
 
 Plans:
-- [ ] 04-01-PLAN.md -- CsInH3 SSCHA at 5 GPa: supercell setup, minimization, renormalized phonons
-- [ ] 04-02-PLAN.md -- KGaH3 SSCHA at 10 GPa + CsInH3 3 GPa quantum stabilization assessment
-- [ ] 04-03-PLAN.md -- Anharmonic alpha^2F, corrected Tc, Phase 4 synthesis and contract audit
+- [x] `07-01-PLAN.md` -- CsInH3 decompression enthalpy and phonon path from 5 GPa to 0 GPa
+- [x] `07-02-PLAN.md` -- Barrier estimation for CsInH3 decomposition / symmetry lowering under pressure release
+- [x] `07-03-PLAN.md` -- Derivative comparison and final quenchability scorecard
 
-### Phase 5: Characterization and Sensitivity Analysis
+### Phase 8: Ambient-Leaning Candidate Search
 
-**Goal:** The best candidate(s) are fully characterized with controlled error bars, sensitivity analysis, and all contract deliverables assembled.
-**Depends on:** Phase 3 (Tc values), Phase 4 (anharmonic corrections)
-**Requirements:** (draws on validation and characterization needs across all prior phases; no additional primary requirements -- this phase assembles and stress-tests)
+**Goal:** The repo moves beyond plain MXH3 perovskites and tests whether other families offer a better balance of ambient stability, quenchability, and `Tc`.
+**Depends on:** Phase 6
+**Requirements:** SCREEN-01, SCREEN-02, SCREEN-03
 **Contract Coverage:**
-- Advances: claim-candidate (final characterization); claim-benchmark (final benchmark table with all corrections)
-- Deliverables: deliv-benchmark (final benchmark table with harmonic and anharmonic Tc), deliv-candidate (complete candidate report: crystal structure, band structure, phonon dispersion, alpha^2F, Tc, convex hull distance, anharmonic corrections), deliv-tc-curve (Tc(P) figure with 300 K reference line and H3S/LaH10 comparison)
-- Acceptance tests: test-tc-target (final verdict: does any candidate achieve Tc >= 300 K at P <= 10 GPa?), test-stability (final stability confirmation)
-- Anchor coverage: ref-h3s and ref-lah10 appear on Tc(P) comparison figure; all must-read refs cited
-- Forbidden proxies: fp-tuned-mustar -- final Tc reported at standard mu* values, sensitivity analysis shows robustness
-- User-stated deliverables: Benchmark table (H3S, LaH10); candidate material report; Tc(P) figure
-- User-stated observables: Tc(P) curve for candidate material; phonon dispersion; convex hull distance
+- Advances: claim-practical-candidate
+- Deliverables: deliv-shortlist
+- Acceptance tests: test-pressure-separation
+- Anchor coverage: `ref-mg2xh6`, `ref-clathrate-units`, v1.0 perovskite baseline
+- Forbidden proxies: fp-synthesis-equals-operation, fp-unstable-ambient
 
-**Success Criteria** (what must be TRUE):
+**Success Criteria**
 
-1. mu* sensitivity fully characterized: Tc(mu*) for mu* = 0.08, 0.10, 0.13, 0.15 for the best candidate, with variation documented (expected ~40-60 K swing)
-2. Tc(P) curve at >= 5 pressure points for the best candidate, with H3S and LaH10 Tc(P) overlaid for context and a 300 K reference line
-3. All contract deliverables assembled: deliv-benchmark table complete (computed vs experimental Tc, lambda, omega_log, relative error); deliv-candidate report complete (crystal structure, band structure, phonon dispersion, alpha^2F, Tc, E_hull); deliv-tc-curve figure complete
-4. Uncertainty budget documented: functional sensitivity (PBE vs PBEsol), anharmonic correction magnitude, mu* dependence, k/q-grid convergence error, and Migdal-Eliashberg validity assessment (omega_log/E_F ratio)
+1. At least 6 concrete compositions across at least 3 families are screened
+2. At least 2 compositions survive as either stable-ambient candidates or plausible synthesis-plus-quench candidates
+3. Ranking includes practical metadata: `P_op`, `P_syn`, quenchability confidence, toxicity, and cost
+4. No candidate advances on the basis of loaded-pressure `Tc` alone
 
-**Backtracking trigger:** If final assembly reveals inconsistencies between phases (e.g., Phase 3 Tc and Phase 4 corrected Tc cannot be reconciled, or stability status is ambiguous), return to the relevant phase for resolution.
+**Backtracking trigger:** If all new families still require large operating pressure or collapse below `77 K` at ambient conditions, Phase 9 shifts toward a negative practical-viability conclusion.
 
 **Plans:** 3 plans
 
 Plans:
-- [ ] 05-01-PLAN.md -- SSCHA-corrected Tc(P) figure for CsInH3 with H3S/LaH10 comparison and 300 K line (deliv-tc-curve)
-- [ ] 05-02-PLAN.md -- Complete CsInH3 candidate report: structure, phonons, alpha^2F, Tc, E_hull, anharmonic corrections, uncertainty budget (deliv-candidate)
-- [ ] 05-03-PLAN.md -- Final benchmark table with error budget, full contract audit, and project conclusions (deliv-benchmark + synthesis)
+- [x] `08-01-PLAN.md` -- Family definition and prototype generation for alloyed MXH3, ambient hydrides, and clathrate-derived systems
+- [x] `08-02-PLAN.md` -- Ambient and 0-5 GPa stability screening of the new shortlist
+- [x] `08-03-PLAN.md` -- Practical ranking and Phase 9 shortlist handoff
+
+**Executed outcome (2026-03-29):** no candidate survived as a decisive mixed-evidence ambient winner. `RbPH3` remains the best hydride-side negative-validation target, `KB3C3` remains the best framework benchmark, and Phase `09` should validate a likely negative practical conclusion rather than force a positive consumer-hardware narrative.
+
+### Phase 9: High-Fidelity Validation and Pivot Decision
+
+**Goal:** The top pathway survives or fails under real superconductivity validation, not synthetic placeholders, and the project ends with a clear practical decision.
+**Depends on:** Phase 7 and Phase 8
+**Requirements:** EPW-01, EPW-02, EPW-03, VALD-02, VALD-03
+**Contract Coverage:**
+- Advances: claim-practical-candidate
+- Deliverables: deliv-validation-report, deliv-decision-memo
+- Acceptance tests: test-practical-threshold
+- Anchor coverage: v1.0 benchmark pipeline, Phase 6 practical map, Phase 7 quenchability verdict, Phase 8 shortlist
+- Forbidden proxies: fp-synthetic-alpha2f-final, fp-roomtemp-extrapolation, fp-unstable-ambient
+
+**Success Criteria**
+
+1. The best pathway receives real DFPT+EPW validation, not only synthetic `alpha^2F`
+2. Any ambient or quench-retained claim is backed by full anharmonic stability analysis
+3. The final repo output states one of three outcomes: credible ambient path, credible pressure-quench path, or no credible consumer path within conventional hydrides
+4. If no pathway passes, the pivot recommendation says exactly why and where the conventional route fails
+
+**Backtracking trigger:** If real EPW/SSCHA invalidates the top candidate's practical promise, return to Phase 8 for one more family only; otherwise close the milestone with a negative decision.
+
+**Plans:** 3 plans
+
+Plans:
+- [x] `09-01-PLAN.md` -- Target lock and explicit high-fidelity evidence gate for baseline, primary, benchmark, and reserves
+- [x] `09-02-PLAN.md` -- Route-by-route validation report under the no-synthetic-final gate and exact `VALD-02` threshold test
+- [x] `09-03-PLAN.md` -- Final decision memo, synthesis guide update, and pivot recommendation
+
+**Executed outcome (2026-03-29):** no route passes the shared high-fidelity practical gate. `CsInH3` remains a low-pressure scientific benchmark, `RbPH3` is blocked as a theory-only hydride-side ambient claim, `KB3C3` remains benchmark-only, and the milestone closes with no credible consumer path inside the present conventional hydride route.
+
+### Phase 10: Experimental Benchmark Pivot Beyond Hydrides
+
+**Goal:** After the hydride no-go, identify the strongest confidence-ranked ambient or pressure-quench benchmark candidate and state clearly how far it still remains from room-temperature consumer hardware.
+**Depends on:** Phase 9
+
+**Success Criteria**
+
+1. The repo compares experimental ambient or pressure-quench routes against the best hydride and framework theory routes in one confidence-weighted map
+2. `HgBa2Ca2Cu3O8+delta`, `MgB2`, and `SmNiO2` appear as explicit experimental anchors
+3. One top benchmark candidate is named without overstating it as a finished room-temperature solution
+4. The next route after the hydride no-go is stated explicitly
+
+**Plans:** 3 plans
+
+Plans:
+- [x] `10-01-PLAN.md` -- Experimental benchmark map and confidence ledger
+- [x] `10-02-PLAN.md` -- Hg1223 pressure-quench audit and room-temperature gap analysis
+- [x] `10-03-PLAN.md` -- Top-candidate memo and next-route recommendation
+
+**Executed outcome (2026-03-29):** `HgBa2Ca2Cu3O8+delta` via pressure quench is now the repo's strongest confidence-ranked benchmark candidate. It is experimentally anchored and operates at ambient pressure after preparation, but it remains `149 K` below room temperature and is not yet a consumer-hardware solution.
 
 ## Risk Register
 
 | Phase | Top Risk | Probability | Impact | Mitigation |
 | --- | --- | --- | :---: | --- |
-| 1 | Benchmark Tc off by > 30% | LOW | HIGH | Stop condition: debug pseudopotentials, functional, convergence before proceeding |
-| 2 | All ternary hydrides need P > 50 GPa for stability | MEDIUM | HIGH | Stop/rethink condition from contract; document negative result if triggered |
-| 3 | lambda > 3.0 for all candidates (Migdal breakdown) | LOW | MEDIUM | Report omega_log/E_F; flag as uncontrolled uncertainty; proceed with caveat |
-| 4 | SSCHA reduces Tc below 150 K for all candidates | HIGH | HIGH | Document as evidence for ambient-pressure Tc ceiling; reframe deliverables as negative-result characterization |
-| 5 | Inconsistencies across phases | LOW | MEDIUM | Systematic audit of all results; return to source phase for resolution |
+| 6 | Literature already closes the room-temperature conventional path | HIGH | HIGH | Turn milestone into a decisive negative practical-viability study rather than force a positive candidate |
+| 7 | CsInH3 decompression is barrierless or strongly unstable | HIGH | HIGH | Treat it as scientific benchmark only and move the practical search elsewhere |
+| 8 | New families trade pressure away but lose too much `Tc` | HIGH | HIGH | Rank honestly against ambient benchmarks and retain only pathways with practical logic |
+| 9 | Synthetic baseline optimism collapses under real EPW/SSCHA | HIGH | HIGH | Require real validation before any final practical claim |
+| 10 | Benchmark winner is misread as room-temperature solution | HIGH | HIGH | Keep the room-temperature gap explicit and separate benchmark choice from consumer readiness |
 
 ## Progress
 
-**Execution Order:** 1 -> 2 -> 3 -> 4 -> 5
+**Execution Order:** `6 -> (7 and 8) -> 9 -> 10`
 
 | Phase | Plans Complete | Status | Completed |
 | --- | --- | --- | --- |
-| 1. Pipeline Validation | 0/3 | Plans created | - |
-| 2. Candidate Screening | 0/4 | Plans created | - |
-| 3. Eliashberg Tc Predictions | 0/4 | Plans created | - |
-| 4. Anharmonic Corrections | 0/TBD | Not started | - |
-| 5. Characterization | 0/3 | Plans created | - |
+| 6. Literature-Grounded Practicality Map | 3/3 | Executed | 2026-03-29 |
+| 7. Ambient Retention of CsInH3-Class Phases | 3/3 | Executed | 2026-03-29 |
+| 8. Ambient-Leaning Candidate Search | 3/3 | Executed | 2026-03-29 |
+| 9. High-Fidelity Validation and Pivot Decision | 3/3 | Executed | 2026-03-29 |
+| 10. Experimental Benchmark Pivot Beyond Hydrides | 3/3 | Executed | 2026-03-29 |

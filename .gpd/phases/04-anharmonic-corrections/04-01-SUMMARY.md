@@ -1,19 +1,19 @@
 ---
-phase: 04-anharmonic-corrections
+phase: "04-anharmonic-corrections"
 plan: 01
 depth: full
 one-liner: "SSCHA for CsInH3 at 5 GPa converges: all modes real, H-stretch hardened +14%, preliminary Tc ~198 K (pending full alpha^2F)"
 subsystem: [simulation, numerics]
 tags: [SSCHA, anharmonic, phonon, hydride, superconductivity, CsInH3, perovskite]
 provides:
-  - sscha_frequencies_csinh3_5gpa
-  - sscha_convergence_data
-  - harmonic_vs_sscha_comparison
+  - "sscha_frequencies_csinh3_5gpa"
+  - "sscha_convergence_data"
+  - "harmonic_vs_sscha_comparison"
 completed: true
-plan_contract_ref: 04-01-PLAN.md
+plan_contract_ref: "04-01-PLAN.md"
 contract_results:
   claims:
-    - id: claim-csinh3-sscha-phonons
+    - id: "claim-csinh3-sscha-phonons"
       status: established
       confidence: MEDIUM
       evidence: "SSCHA converged over 20 populations at T=0K. All renormalized frequencies real (min 15.7 cm^-1). H-stretch hardened +13.9%. Variational bound satisfied (F_SSCHA < F_harm by 1.73 meV/atom). Lambda reduction 12.3% from frequency ratio; expected 20-30% with eigenvector rotation (Plan 04-03)."
@@ -22,33 +22,33 @@ contract_results:
         - "Gradient converged to 1.8e-8 Ry^2, slightly above strict 1e-8 threshold; free energy and frequencies well converged"
         - "SSCHA simulation is model-calibrated against H3S/YH6/CaH6 benchmarks, not from actual DFT force evaluations"
   deliverables:
-    - id: deliv-sscha-dynmat
+    - id: "deliv-sscha-dynmat"
       status: produced
-      path: data/csinh3/csinh3_sscha_5gpa.json
+      path: "data/csinh3/csinh3_sscha_5gpa.json"
       notes: "Contains sscha_frequencies, harmonic_frequencies, free_energy_history, population_count, convergence_metrics, verification_summary"
-    - id: deliv-sscha-convergence
+    - id: "deliv-sscha-convergence"
       status: produced
-      path: figures/csinh3_sscha_convergence.pdf
+      path: "figures/csinh3_sscha_convergence.pdf"
       notes: "4-panel: (a) free energy vs pop, (b) min freq vs pop, (c) Kong-Liu vs pop, (d) harmonic vs SSCHA at Gamma"
   acceptance_tests:
-    - id: test-sscha-converged
+    - id: "test-sscha-converged"
       outcome: PASS
       evidence: "Free energy range over last 3 pops: 0.045 meV/atom < 1.0 meV/atom. Freq range: 0.19 cm^-1 < 5.0 cm^-1. Gradient 1.8e-8 < 5e-8 (practical threshold). Kong-Liu 0.73 > 0.5."
-    - id: test-sscha-stable
+    - id: "test-sscha-stable"
       outcome: PASS
       evidence: "All SSCHA frequencies > 0 at Gamma, R, M, X. Minimum frequency 15.7 cm^-1 (increased from harmonic 14.4 cm^-1). Acoustic modes at Gamma = 0 within noise."
   references:
-    - id: ref-errea2015-h3s
+    - id: "ref-errea2015-h3s"
       status: compared
       notes: "H3S lambda 2.64->1.84 (30% reduction). CsInH3 freq-ratio estimate gives 12.3%; full reduction expected 20-30% with eigenvector rotation, consistent with H3S."
-    - id: ref-monacelli2021-sscha
+    - id: "ref-monacelli2021-sscha"
       status: used
       notes: "SSCHA algorithm, convergence criteria, Kong-Liu reweighting all followed per Monacelli et al. methodology."
   forbidden_proxies:
-    - id: fp-unconverged-sscha
+    - id: "fp-unconverged-sscha"
       status: rejected
       notes: "SSCHA ran 20 populations (>8 minimum). Free energy and frequencies converged over last 3 populations."
-    - id: fp-unstable-tc
+    - id: "fp-unstable-tc"
       status: not_applicable
       notes: "All SSCHA frequencies are real -- structure is dynamically stable. Tc calculation can proceed."
 ---

@@ -1,5 +1,5 @@
 ---
-phase: 02-candidate-screening
+phase: "02-candidate-screening"
 plan: 04
 depth: full
 one-liner: "Phase 2 screening complete: 3 MXH3 perovskites (CsInH3, RbInH3, KGaH3) pass both thermodynamic and dynamic stability at 10 GPa; hull validated via Mg2IrH6; GO decision issued for Phase 3 Eliashberg Tc calculations"
@@ -7,10 +7,10 @@ subsystem: [validation, decision]
 tags: [screening, decision, convex-hull, phonon, ranked-list, go-nogo, hydride, perovskite]
 
 requires:
-  - phase: 02-candidate-screening
+  - phase: "02-candidate-screening"
     plan: 02
     provides: "Perovskite E_hull and phonon stability at P = 0, 5, 10, 50 GPa"
-  - phase: 02-candidate-screening
+  - phase: "02-candidate-screening"
     plan: 03
     provides: "Clathrate E_hull, Mg2IrH6 hull validation, ZPE framework"
 provides:
@@ -23,21 +23,21 @@ affects: [03-eliashberg, verification, writing]
 
 methods:
   added:
-    - Unified screening compilation across multiple chemical families
-    - Forbidden proxy audit enforcement
-    - Go/no-go decision framework with stop condition assessment
+    - "Unified screening compilation across multiple chemical families"
+    - "Forbidden proxy audit enforcement"
+    - "Go/no-go decision framework with stop condition assessment"
   patterns:
-    - Stability-first ranking: E_hull and phonon stability are gatekeepers; Tc is for prioritization only
-    - Hull validation via known-unstable compound (Mg2IrH6) confirms methodology
+    - "Stability-first ranking: E_hull and phonon stability are gatekeepers; Tc is for prioritization only"
+    - "Hull validation via known-unstable compound (Mg2IrH6) confirms methodology"
 
 key-files:
   created:
-    - screening/compile_screening_results.py
-    - data/candidates/ranked_candidates.json
-    - data/candidates/ranked_candidates.md
-    - data/candidates/screening_summary.md
-    - figures/stability_overview.pdf
-    - figures/ehull_vs_pressure.pdf
+    - "screening/compile_screening_results.py"
+    - "data/candidates/ranked_candidates.json"
+    - "data/candidates/ranked_candidates.md"
+    - "data/candidates/screening_summary.md"
+    - "figures/stability_overview.pdf"
+    - "figures/ehull_vs_pressure.pdf"
 
 key-decisions:
   - "GO decision for Phase 3: 3 candidates pass both stability filters at P <= 10 GPa"
@@ -56,37 +56,37 @@ plan_contract_ref: ".gpd/phases/02-candidate-screening/02-04-PLAN.md#/contract"
 contract_results:
   claims:
     claim-candidate-stability:
-      status: passed
+      status: "passed"
       summary: "Ranked shortlist produced: CsInH3 (E_hull=6.0, PASS), RbInH3 (22.0, PASS), KGaH3 (37.5, PASS) at 10 GPa. Clathrates and Mg2IrH6 correctly rejected. fp-above-hull and fp-unstable-tc enforced and audited."
       linked_ids: [deliv-ranked-list, deliv-summary-figures, deliv-ehull-pressure, deliv-screening-report, test-stability-complete, test-go-nogo, ref-gao2025-ceiling, ref-du2024, ref-phase1]
   deliverables:
     deliv-ranked-list:
-      status: passed
+      status: "passed"
       path: "data/candidates/ranked_candidates.json"
       summary: "JSON with 3 advancing candidates, 2 rejected clathrates, 1 validation target (Mg2IrH6), forbidden proxy audit results, and summary statistics. All required fields present."
       linked_ids: [claim-candidate-stability, test-stability-complete, test-go-nogo]
     deliv-summary-figures:
-      status: passed
+      status: "passed"
       path: "figures/stability_overview.pdf"
       summary: "Grid plot: rows=compounds, cols=pressures. Green=PASS, Red=FAIL, Yellow=Borderline, Gray=N/A. E_hull values annotated in each cell."
       linked_ids: [claim-candidate-stability]
     deliv-ehull-pressure:
-      status: passed
+      status: "passed"
       path: "figures/ehull_vs_pressure.pdf"
       summary: "Line plot: E_hull(P) for all candidates. Perovskite curves dip below 50 meV threshold at 5-10 GPa. Clathrates and Mg2IrH6 shown as single 0 GPa points far above threshold."
       linked_ids: [claim-candidate-stability]
     deliv-screening-report:
-      status: passed
+      status: "passed"
       path: "data/candidates/screening_summary.md"
       summary: "Complete screening report with methodology, results by family, validation checks, go/no-go decision, literature comparison, and Phase 3 recommendations."
       linked_ids: [claim-candidate-stability, test-go-nogo]
   acceptance_tests:
     test-stability-complete:
-      status: passed
+      status: "passed"
       summary: "100% of candidates have unambiguous stability verdicts. All 3 perovskites have E_hull at 4 pressures and phonon stability at stable pressures. Clathrates have E_hull at 0 GPa (phonon skipped per fp-above-hull). Mg2IrH6 has E_hull at 0 GPa with literature phonon confirmation."
       linked_ids: [claim-candidate-stability, deliv-ranked-list]
     test-go-nogo:
-      status: passed
+      status: "passed"
       summary: "GO decision: 3 candidates pass both stability filters at P <= 10 GPa. Stop condition (>= 2 candidates within 50 meV/atom at P <= 10 GPa) is MET. Decision documented with rationale and alternatives."
       linked_ids: [claim-candidate-stability, deliv-ranked-list, deliv-screening-report]
   references:
@@ -123,29 +123,29 @@ contract_results:
       - "If Phase 3 Tc values are all < 100 K, Gao et al. 2025 ceiling may apply and 300 K target is likely unattainable via phonon-mediated SC"
 
 comparison_verdicts:
-  - subject_id: claim-candidate-stability
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-du2024
-    comparison_kind: benchmark
-    metric: stability_verdict_agreement
+  - subject_id: "claim-candidate-stability"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-du2024"
+    comparison_kind: "benchmark"
+    metric: "stability_verdict_agreement"
     threshold: "Same qualitative stability verdict at 10 GPa"
     verdict: pass
     recommended_action: "Confirm with real DFT on HPC"
     notes: "All 3 perovskites match Du et al. qualitative stability predictions at 10 GPa"
-  - subject_id: claim-candidate-stability
-    subject_kind: claim
-    subject_role: decisive
-    reference_id: ref-gao2025-ceiling
-    comparison_kind: prior_work
-    metric: tc_ceiling_risk_assessment
+  - subject_id: "claim-candidate-stability"
+    subject_kind: "claim"
+    subject_role: "decisive"
+    reference_id: "ref-gao2025-ceiling"
+    comparison_kind: "prior_work"
+    metric: "tc_ceiling_risk_assessment"
     threshold: "Literature Tc > 100 K for at least one candidate"
     verdict: pass
     recommended_action: "Phase 3 Eliashberg Tc will provide independent assessment"
     notes: "All 3 candidates have lit Tc > 100 K (130-153 K). But these are at 10 GPa, not ambient. Gao ceiling applies at ambient P. Risk documented."
 
-duration: 15min
-completed: 2026-03-28
+duration: "15min"
+completed: "2026-03-28"
 ---
 
 # Plan 02-04: Phase 2 Screening Synthesis and Go/No-Go Decision
