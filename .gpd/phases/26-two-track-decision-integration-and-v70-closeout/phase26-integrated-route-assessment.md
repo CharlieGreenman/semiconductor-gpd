@@ -172,9 +172,76 @@ No Tc value appears without all three labels.
 - v7.0 designed protocols, not ran experiments. The 149 K gap is unchanged. No Tc improvement occurred during this milestone.
 - **Protocol readiness is not experimental success.**
 
-## 7. VALD-03 Compliance
+## 7. VALD-03 Traceability Matrix
 
-See the VALD-03 traceability matrix appended below (added during Task 2).
+**VALD-03 requirement:** Every route decision in the Phase 26 deliverables traces to a specific Phase 24 outcome class or Phase 25 gate evaluation, not general optimism.
+
+### Route Decision Traceability
+
+| # | Route Decision | Document | Section | Traces To (Phase 24) | Traces To (Phase 25) | Traces To (Phase 23) | Specific Outcome Reference |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | Hg1223 keep-primary (Rule A) | Assessment | Sec 3, Rule A | Rule A (>= 1 node at 131 K, T1+) | NIC-04 Sec 3: watch status (no gate triggered) | -- | Phase 24 map Sec 3 Rule A |
+| 2 | Nickelates stay-secondary (Rule A) | Assessment | Sec 3, Rule A | -- | NIC-04 Sec 3: current status WATCH, below invest | -- | Phase 25 NIC-04 Sec 3 |
+| 3 | Activate pivot trigger (Rule B) | Assessment | Sec 3, Rule B | Rule B (all clean misses, no node at 131 K) | NIC-04 Sec 1: all 5 gates evaluated | Memo Sec 2: pivot trigger | Phase 24 map Sec 3 Rule B |
+| 4 | Hg1223 fallback to 134 K (Rule B) | Assessment | Sec 3, Rule B | Rule B (PQP non-reproducible) | -- | Memo Sec 2: fallback to ~134 K | Phase 24 map Sec 4 |
+| 5 | Nickelates increased investment (Rule B) | Assessment | Sec 3, Rule B | Rule B triggers pivot | NIC-04 Sec 1: invest gate NOT met (40 K < 50 K) | Memo Sec 2: evaluate nickelate promotion | Phase 25 NIC-04 Sec 3 |
+| 6 | Nickelates CANNOT be promoted (Rule B) | Assessment | Sec 3, Rule B | -- | NIC-04 Sec 1: promote gate NOT met (40 K < 100 K); NIC-04 Sec 3: below invest | Memo Sec 2: promotion triggers | Phase 25 NIC-04 Sec 4 |
+| 7 | No route update (Rule C) | Assessment | Sec 3, Rule C | Rule C (all T0, uninformative) | No gate evaluation (T0 is uninformative) | -- | Phase 24 map Sec 3 Rule C |
+| 8 | Hg1223 hold-pending-diagnostic (Rule D) | Assessment | Sec 3, Rule D | Rule D (mixed results) | -- | -- | Phase 24 map Sec 3 Rule D |
+| 9 | Nickelates stay-secondary (Rule D) | Assessment | Sec 3, Rule D | Rule D: no pivot triggered | No gate evaluation (no pivot) | -- | Phase 24 map Sec 3 Rule D |
+| 10 | Hg1223 hold-pending-replication (Rule E) | Assessment | Sec 3, Rule E | Rule E (exceedance > 151 K) | -- | -- | Phase 24 map Sec 3 Rule E, S2 |
+| 11 | Nickelates stay-secondary (Rule E) | Assessment | Sec 3, Rule E | Rule E: Hg1223 strengthens | No gate evaluation (exceedance) | -- | Phase 24 map Sec 2 S2 |
+| 12 | Pivot trigger condition 1 | Pivot (DEC-02) | Sec 1 | Rule B (all clean misses at all 6 nodes) | -- | Memo Sec 2: pivot trigger | Phase 24 map Sec 3 Rule B |
+| 13 | Pivot trigger condition 2 | Pivot (DEC-02) | Sec 1 | Rule D resolving to no gate-passing node | -- | -- | Phase 24 map Sec 3 Rule D + Sec 2 per-outcome |
+| 14 | Hg1223 fallback to 134 K (pivot) | Pivot (DEC-02) | Sec 2 | Rule B: PQP non-reproducible | -- | Memo Sec 2: fallback | Phase 24 map Sec 4 |
+| 15 | Nickelate watch gate MET | Pivot (DEC-02) | Sec 3 | -- | NIC-04 Sec 1: watch (onset > 50 K); NIC-04 Sec 3: 63 K onset | -- | Phase 25 NIC-04 Sec 3 |
+| 16 | Nickelate invest gate NOT MET | Pivot (DEC-02) | Sec 3 | -- | NIC-04 Sec 1: invest (zero-resist > 50 K); NIC-04 Sec 3: 40 K best | -- | Phase 25 NIC-04 Sec 3 |
+| 17 | Nickelate evaluate gate NOT MET | Pivot (DEC-02) | Sec 3 | -- | NIC-04 Sec 1: evaluate (zero-resist > 80 K); NIC-04 Sec 3: 40 K best | -- | Phase 25 NIC-04 Sec 3 |
+| 18 | Nickelate promote gate NOT MET | Pivot (DEC-02) | Sec 3 | -- | NIC-04 Sec 1: promote (zero-resist >= 100 K); NIC-04 Sec 3: 40 K best | -- | Phase 25 NIC-04 Sec 3 |
+| 19 | Nickelate promotion NOT warranted | Pivot (DEC-02) | Sec 3 | -- | NIC-04 Sec 4: 60 K gap to promote (SmNiO2), 97 K gap (bilayer films) | Memo Sec 2: promotion triggers | Phase 25 NIC-04 Sec 4 |
+| 20 | Track A stall = Rule B + no diagnostic lever | Stall (DEC-03) | Sec 1 | Rule B (all clean misses) + no optimizable parameter | -- | -- | Phase 24 map Sec 3 Rule B + Sec 2 per-outcome diagnostic actions |
+| 21 | Track B stall = no film > 50 K + GAE fails | Stall (DEC-03) | Sec 1 | -- | NIC-04 Sec 1: invest gate (50 K); NIC-01/02: substrate series + GAE | -- | Phase 25 NIC-04 Sec 1; Phase 25 protocol Sec 9 |
+| 22 | Track A restart: 120 K independent | Stall (DEC-03) | Sec 2 | Lowered from 131 K success gate for partial re-engagement | -- | Memo Sec 2: 131 K success gate origin | Phase 24 protocol Sec 3 |
+| 23 | Track B restart: 50 K zero-resist + Meissner | Stall (DEC-03) | Sec 2 | -- | NIC-04 Sec 1: invest gate (50 K zero-resist) | Memo Sec 3: promotion trigger (50 K) | Phase 25 NIC-04 Sec 1 |
+| 24 | Reject further planning as stall response | Stall (DEC-03) | Sec 3 | -- | -- | Memo Sec 5: guardrail | ROADMAP.md backtracking trigger |
+
+**Traceability result: 24/24 route decisions traced (100%).** Every route decision in all Phase 26 Plan 01 documents references a specific Phase 24 outcome class (Rule A-E or F1-F8/S1-S3/D1), Phase 25 gate evaluation (watch/invest/evaluate/promote/demote), or Phase 23 trigger. No route decision is based on general optimism.
+
+### Arithmetic Cross-Check
+
+| # | Value | Expected | Assessment (md) | Pivot (DEC-02) | Stall (DEC-03) | JSON | Result |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | Best benchmark Tc | 151 K | 151 K | 151 K | 151 K | 151 | **PASS** |
+| 2 | Success gate | 131 K | 131 K | 131 K | 131 K | 131 | **PASS** |
+| 3 | Fallback baseline | ~134 K | ~134 K | ~134 K | ~134 K | 134 | **PASS** |
+| 4 | Room-temperature gap | 149 K (300-151) | 149 K | 149 K | 149 K | 149 | **PASS** |
+| 5 | Fallback gap | 166 K (300-134) | 166 K | 166 K | 166 K | 166 | **PASS** |
+| 6 | Nickelate invest gate | 50 K | 50 K | 50 K | 50 K | 50 | **PASS** |
+| 7 | Nickelate evaluate gate | 80 K | 80 K | 80 K | -- | 80 | **PASS** |
+| 8 | Nickelate promote gate | 100 K | 100 K | 100 K | -- | 100 | **PASS** |
+| 9 | Nickelate best zero-resist | 40 K (SmNiO2) | 40 K | 40 K | 40 K | 40 | **PASS** |
+| 10 | Room temperature | 300 K | 300 K | 300 K | 300 K | 300 | **PASS** |
+
+**Arithmetic result: 10/10 cross-checks passed.**
+
+### Forbidden Proxy Compliance
+
+| # | Forbidden Proxy | Assessment | Pivot | Stall | Result |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Protocol design treated as experimental result | No: "v7.0 designed protocols, not ran experiments" explicit | No: "No experiments were run. No Tc measurements were produced." | No: "v7.0 designed protocols, not ran experiments." | **REJECTED** |
+| 2 | Planning counted as Tc progress | No: "Protocol readiness is not experimental success" | No: "This document describes what would happen IF..." | No: "Neither planning milestones nor protocol design can change these numbers" | **REJECTED** |
+| 3 | Onset Tc used for route decisions | No: all decisions use zero-resistance; onset labeled explicitly when mentioned | No: gates specify zero-resist; onset only for watch | No: restart criteria specify zero-resist | **REJECTED** |
+| 4 | 149 K gap hidden or obscured | No: 11 occurrences in assessment, 4 in pivot, 5 in stall | No: gap table in Sec 4 | No: gap table in Sec 4 | **REJECTED** |
+| 5 | Route decisions based on general optimism | No: all decisions trace to Phase 24 rules or Phase 25 gates | No: all pivot conditions name Phase 24 outcome classes | No: all restart criteria are specific Tc thresholds | **REJECTED** |
+
+**Forbidden proxy result: 5/5 proxies rejected across all documents.**
+
+### Summary
+
+- **Route decision traceability:** 24/24 (100%)
+- **Arithmetic cross-checks:** 10/10 passed
+- **Forbidden proxies:** 5/5 rejected
+- **VALD-03 compliance: PASSED**
 
 ---
 
