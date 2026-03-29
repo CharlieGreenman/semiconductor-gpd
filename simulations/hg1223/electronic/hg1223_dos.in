@@ -1,0 +1,31 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! HgBa2Ca2Cu3O8+delta (Hg1223) -- DOS post-processing
+! Run AFTER hg1223_nscf.in completes.
+!
+! Input for dos.x (total DOS) and projwfc.x (orbital-projected DOS).
+!
+! Expected output:
+!   - N(E_F) ~ 3-5 states/eV/cell (both spins) for optimally doped Hg1223
+!   - Cu-3d(x2-y2) and O-2p(x,y) dominate at E_F
+!   - Small contributions from Ba-5d, Hg-6s, Ca states at E_F
+
+! --- dos.x input ---
+&DOS
+  outdir  = './tmp/'
+  prefix  = 'hg1223'
+  fildos  = 'hg1223_dos.dat'
+  Emin    = -10.0
+  Emax    =   5.0
+  DeltaE  =  0.01
+/
+
+! --- projwfc.x input (save as hg1223_projwfc.in) ---
+! &PROJWFC
+!   outdir  = './tmp/'
+!   prefix  = 'hg1223'
+!   filpdos = 'hg1223_pdos'
+!   Emin    = -10.0
+!   Emax    =   5.0
+!   DeltaE  =  0.01
+! /

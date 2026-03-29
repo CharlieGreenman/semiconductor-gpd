@@ -1,0 +1,67 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! HgBa2Ca2Cu3O8+delta (Hg1223) -- NSCF calculation for DOS
+! Run AFTER hg1223_scf.in converges.
+! Dense uniform k-grid for accurate DOS and orbital projections.
+!
+! This provides input to:
+!   - dos.x (total DOS)
+!   - projwfc.x (orbital-projected DOS: Cu-3d, O-2p, Ba-5d, Hg-6s, Ca-3d)
+
+&CONTROL
+  calculation  = 'nscf'
+  prefix       = 'hg1223'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  verbosity    = 'high'
+/
+
+&SYSTEM
+  ibrav        = 0
+  nat          = 16
+  ntyp         = 5
+  ecutwfc      = 80.0
+  ecutrho      = 320.0
+  input_dft    = 'pbesol'
+  occupations  = 'tetrahedra_opt'
+  nspin        = 1
+  nbnd         = 60
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10
+  diagonalization = 'david'
+/
+
+ATOMIC_SPECIES
+  Hg  200.59   Hg_ONCV_PBEsol-1.2.upf
+  Ba  137.327  Ba_ONCV_PBEsol-1.2.upf
+  Ca   40.078  Ca_ONCV_PBEsol-1.2.upf
+  Cu   63.546  Cu_ONCV_PBEsol-1.2.upf
+  O    15.999  O_ONCV_PBEsol-1.2.upf
+
+CELL_PARAMETERS {angstrom}
+  3.845000  0.000000  0.000000
+  0.000000  3.845000  0.000000
+  0.000000  0.000000 15.780000
+
+ATOMIC_POSITIONS {crystal}
+  Hg   0.000000  0.000000  0.000000
+  Ba   0.500000  0.500000  0.178000
+  Ba   0.500000  0.500000  0.822000
+  Ca   0.000000  0.000000  0.354000
+  Ca   0.000000  0.000000  0.646000
+  Cu   0.000000  0.000000  0.282000
+  Cu   0.000000  0.000000  0.718000
+  Cu   0.000000  0.000000  0.500000
+  O    0.000000  0.000000  0.141000
+  O    0.000000  0.000000  0.859000
+  O    0.000000  0.500000  0.282000
+  O    0.500000  0.000000  0.282000
+  O    0.000000  0.500000  0.718000
+  O    0.500000  0.000000  0.718000
+  O    0.000000  0.500000  0.500000
+  O    0.500000  0.000000  0.500000
+
+K_POINTS {automatic}
+  16 16 8  0 0 0

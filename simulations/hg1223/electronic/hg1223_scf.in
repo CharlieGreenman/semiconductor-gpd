@@ -1,0 +1,73 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! HgBa2Ca2Cu3O8+delta (Hg1223) -- SCF calculation
+! Uses relaxed structure from vc-relax (Task 1).
+! Denser k-grid for accurate Fermi level and charge density.
+!
+! This input should be updated with the actual relaxed CELL_PARAMETERS
+! and ATOMIC_POSITIONS from the vc-relax output. The values below are
+! the literature-expected PBEsol relaxed structure.
+
+&CONTROL
+  calculation  = 'scf'
+  prefix       = 'hg1223'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  verbosity    = 'high'
+/
+
+&SYSTEM
+  ibrav        = 0
+  nat          = 16
+  ntyp         = 5
+  ecutwfc      = 80.0
+  ecutrho      = 320.0
+  input_dft    = 'pbesol'
+  occupations  = 'smearing'
+  smearing     = 'cold'
+  degauss      = 0.02
+  nspin        = 1
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10
+  mixing_beta  = 0.3
+  mixing_mode  = 'plain'
+  diagonalization = 'david'
+  electron_maxstep = 200
+/
+
+ATOMIC_SPECIES
+  Hg  200.59   Hg_ONCV_PBEsol-1.2.upf
+  Ba  137.327  Ba_ONCV_PBEsol-1.2.upf
+  Ca   40.078  Ca_ONCV_PBEsol-1.2.upf
+  Cu   63.546  Cu_ONCV_PBEsol-1.2.upf
+  O    15.999  O_ONCV_PBEsol-1.2.upf
+
+! Use relaxed cell from vc-relax output.
+! Placeholder: literature-expected PBEsol values.
+CELL_PARAMETERS {angstrom}
+  3.845000  0.000000  0.000000
+  0.000000  3.845000  0.000000
+  0.000000  0.000000 15.780000
+
+ATOMIC_POSITIONS {crystal}
+  Hg   0.000000  0.000000  0.000000
+  Ba   0.500000  0.500000  0.178000
+  Ba   0.500000  0.500000  0.822000
+  Ca   0.000000  0.000000  0.354000
+  Ca   0.000000  0.000000  0.646000
+  Cu   0.000000  0.000000  0.282000
+  Cu   0.000000  0.000000  0.718000
+  Cu   0.000000  0.000000  0.500000
+  O    0.000000  0.000000  0.141000
+  O    0.000000  0.000000  0.859000
+  O    0.000000  0.500000  0.282000
+  O    0.500000  0.000000  0.282000
+  O    0.000000  0.500000  0.718000
+  O    0.500000  0.000000  0.718000
+  O    0.000000  0.500000  0.500000
+  O    0.500000  0.000000  0.500000
+
+K_POINTS {automatic}
+  12 12 6  0 0 0

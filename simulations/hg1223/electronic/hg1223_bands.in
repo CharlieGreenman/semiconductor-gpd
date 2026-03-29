@@ -1,0 +1,99 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! HgBa2Ca2Cu3O8+delta (Hg1223) -- Band structure calculation
+! Run AFTER hg1223_scf.in converges.
+!
+! High-symmetry path for tetragonal P4/mmm (Brillouin zone: body-centered
+! tetragonal with c > a, i.e., simple tetragonal BZ):
+!
+!   Gamma(0,0,0) - X(1/2,0,0) - M(1/2,1/2,0) - Gamma(0,0,0)
+!   - Z(0,0,1/2) - R(1/2,0,1/2) - A(1/2,1/2,1/2) - Z(0,0,1/2)
+!   | X(1/2,0,0) - R(1/2,0,1/2)
+!   | M(1/2,1/2,0) - A(1/2,1/2,1/2)
+!
+! The path samples both in-plane (Gamma-X-M) and out-of-plane (Gamma-Z)
+! dispersion, plus the connecting paths (X-R, M-A) that reveal c-axis
+! warping of the Fermi surface cylinders.
+!
+! Expected: Quasi-2D band structure with:
+!   - Cu-d_{x2-y2} / O-2p antibonding bands crossing E_F
+!   - Weak dispersion along Gamma-Z (c-axis)
+!   - Strong dispersion along Gamma-X and Gamma-M (in-plane)
+!   - Multiple Fermi surface sheets from 3 CuO2 layers (bonding,
+!     nonbonding, antibonding combinations)
+!
+! nbnd set to capture ~30% more bands than occupied for DOS context.
+! Hg1223 has ~68 valence electrons (16 atoms); ~34 occupied bands.
+! Set nbnd = 60 to capture key unoccupied states.
+
+&CONTROL
+  calculation  = 'bands'
+  prefix       = 'hg1223'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  verbosity    = 'high'
+/
+
+&SYSTEM
+  ibrav        = 0
+  nat          = 16
+  ntyp         = 5
+  ecutwfc      = 80.0
+  ecutrho      = 320.0
+  input_dft    = 'pbesol'
+  occupations  = 'smearing'
+  smearing     = 'cold'
+  degauss      = 0.02
+  nspin        = 1
+  nbnd         = 60
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10
+  diagonalization = 'david'
+/
+
+ATOMIC_SPECIES
+  Hg  200.59   Hg_ONCV_PBEsol-1.2.upf
+  Ba  137.327  Ba_ONCV_PBEsol-1.2.upf
+  Ca   40.078  Ca_ONCV_PBEsol-1.2.upf
+  Cu   63.546  Cu_ONCV_PBEsol-1.2.upf
+  O    15.999  O_ONCV_PBEsol-1.2.upf
+
+CELL_PARAMETERS {angstrom}
+  3.845000  0.000000  0.000000
+  0.000000  3.845000  0.000000
+  0.000000  0.000000 15.780000
+
+ATOMIC_POSITIONS {crystal}
+  Hg   0.000000  0.000000  0.000000
+  Ba   0.500000  0.500000  0.178000
+  Ba   0.500000  0.500000  0.822000
+  Ca   0.000000  0.000000  0.354000
+  Ca   0.000000  0.000000  0.646000
+  Cu   0.000000  0.000000  0.282000
+  Cu   0.000000  0.000000  0.718000
+  Cu   0.000000  0.000000  0.500000
+  O    0.000000  0.000000  0.141000
+  O    0.000000  0.000000  0.859000
+  O    0.000000  0.500000  0.282000
+  O    0.500000  0.000000  0.282000
+  O    0.000000  0.500000  0.718000
+  O    0.500000  0.000000  0.718000
+  O    0.000000  0.500000  0.500000
+  O    0.500000  0.000000  0.500000
+
+! High-symmetry k-path: Gamma-X-M-Gamma-Z-R-A-Z | X-R | M-A
+! 20 points per segment (total ~200 k-points along path)
+K_POINTS {crystal_b}
+10
+  0.0000 0.0000 0.0000  20  ! Gamma
+  0.5000 0.0000 0.0000  20  ! X
+  0.5000 0.5000 0.0000  20  ! M
+  0.0000 0.0000 0.0000  20  ! Gamma
+  0.0000 0.0000 0.5000  20  ! Z
+  0.5000 0.0000 0.5000  20  ! R
+  0.5000 0.5000 0.5000  20  ! A
+  0.0000 0.0000 0.5000  20  ! Z (end of main path)
+  0.5000 0.0000 0.0000  20  ! X (start X-R branch)
+  0.5000 0.0000 0.5000   0  ! R (end X-R branch)

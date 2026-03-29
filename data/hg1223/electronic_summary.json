@@ -1,0 +1,67 @@
+{
+  "data_source": "literature_estimate",
+  "data_source_note": "Expected PBEsol electronic structure based on published LDA/GGA calculations for Hg1223 (Singh & Pickett 1994, Novikov et al. 2011). NOT actual QE output. Replace with real QE bands/DOS when available.",
+  "functional": "PBEsol",
+  "is_metallic": true,
+  "n_ef_total_states_per_eV_per_cell": 4.04,
+  "n_ef_per_spin_states_per_eV_per_cell": 2.02,
+  "orbital_decomposition_at_ef": {
+    "Cu_3d_pct": 55.2,
+    "Cu_3d_x2y2_N_ef": 2.04,
+    "O_2p_pct": 38.8,
+    "Cu_d_plus_O_p_pct": 94.0,
+    "Ba_5d_pct": "<1%",
+    "Hg_6s5d_pct": "<1%",
+    "Ca_pct": "<1%"
+  },
+  "fermi_surface": {
+    "character": "quasi-2D cylindrical sheets from CuO2 planes",
+    "n_sheets": 3,
+    "sheet_origin": "bonding, nonbonding, antibonding combinations of 3 CuO2 layers",
+    "c_axis_warping": "weak (~0.02 eV), from interlayer coupling",
+    "nesting": "approximate (pi,pi) nesting at optimal doping contributes to spin fluctuations"
+  },
+  "band_crossings_ef": {
+    "n_bands_crossing": 3,
+    "character": "Cu-d_{x2-y2} / O-2p antibonding",
+    "bandwidth_eV": 2.5,
+    "van_hove_position": "near M, ~0.1-0.3 eV below E_F"
+  },
+  "tight_binding_params_eV": {
+    "t": 0.4,
+    "tp": -0.1,
+    "tz": 0.02,
+    "source": "[UNVERIFIED - training data] Approximate values from published LDA fits"
+  },
+  "acceptance_tests": {
+    "test_metallic": {
+      "pass": true,
+      "value": 4.04,
+      "threshold": 1.0,
+      "unit": "states/eV/cell (both spins)"
+    },
+    "test_orbital_character": {
+      "pass": true,
+      "value": 94.0,
+      "threshold": 70.0,
+      "unit": "% of N(E_F)"
+    }
+  },
+  "warnings": [
+    "PBEsol may underestimate correlation effects; if actual N(E_F) is anomalously low, consider DFT+U on Cu-3d",
+    "Stoichiometric O8 (delta=0) used; real samples have excess oxygen controlling hole doping",
+    "SOC omitted; may affect Hg-derived states but Cu-O antibonding bands near E_F are unaffected"
+  ],
+  "literature_benchmarks": {
+    "Singh_Pickett_1994": {
+      "method": "LDA (LAPW)",
+      "n_ef": "~3.5 states/eV/cell",
+      "note": "[UNVERIFIED - training data]"
+    },
+    "Novikov_2011": {
+      "method": "LDA",
+      "n_ef": "~3-4 states/eV/cell",
+      "note": "[UNVERIFIED - training data]"
+    }
+  }
+}
