@@ -4,25 +4,27 @@
 
 This project started as a first-principles search for room-temperature superconductivity in lower-pressure hydrides. Milestone `v1.0` closed that route negatively for the `MXH3` perovskite family: the best repo result remains `CsInH3` at about `214 K` and `3 GPa`, with no evidence for ambient retention. Milestone `v2.0` tested whether ambient stability, pressure quenchability, or hydride-derived chemistry could rescue a consumer-relevant path; that route also closed negatively. Milestone `v3.0` widened the scope to experimentally anchored metastability and route ranking, ending with `Hg1223`-class pressure-quenched multilayer cuprates as the primary route and bilayer nickelate films as the backup. Milestone `v4.0` made the `Hg1223` route protocol-specified, control-mapped, and campaign-defined. Milestone `v5.0` then converted that route into a collaborator-facing Stage `A` runbook plus a clean evidence ladder and route-gate package.
 
-The active program now shifts again, from campaign packaging back to route expansion. The repo now asks which current route family has the best chance of shrinking the remaining `149 K` gap to room temperature: `Hg`-family multilayer cuprates with higher known pressure headroom, or the fast-moving nickelate frontier with stronger ambient and chemical-pressure control.
+The active program now shifts from route ranking to route testing. Milestone `v6.0` answered the route-expansion question: `Hg`-family cuprates are the primary gap-closing route (weighted score `4.15/5.00`) and nickelates are secondary (`2.90/5.00`). The repo now moves to two-track experimental-facing work: reproduce the `Hg1223` `151 K` PQP benchmark independently, and map the strain-`Tc` response in bilayer `La3Ni2O7`-class nickelate films. The `149 K` gap to room temperature remains unchanged.
 
-## Current State (after v6.0)
+## Current Milestone: v7.0 Two-Track Route Testing
 
-Milestone `v6.0` completed 2026-03-29. The route-expansion question is answered: `Hg`-family cuprates confirmed as the **primary gap-closing route** (weighted score `4.15/5.00`) and nickelates confirmed as **secondary** (`2.90/5.00`). The ranking is robust to `+/-20%` weight perturbation. Named candidates: `Hg1223` (primary), bilayer `La3Ni2O7`-class (secondary lead), infinite-layer `SmNiO2`-class (secondary backup). No room-temperature superconductor has been found. The best carried retained benchmark remains `Hg1223` at `151 K`, still `149 K` below `300 K`.
+**Goal:** Test the two ranked routes from `v6.0` with experiment-facing protocols: reproduce the `Hg1223` PQP benchmark independently and map strain-`Tc` in bilayer nickelate films.
 
-## Next Milestone Goals (v7.0)
+**Target results:**
 
-The next milestone should start with two parallel tracks:
+- Independent PQP reproduction protocol for `Hg1223` with success gate at retained `Tc >= 131 K`
+- Strain-`Tc` map for bilayer `La3Ni2O7`-class films with success gate at ambient zero-resist `Tc > 80 K`
+- Route-confidence update based on reproduction and strain results
+- Decision on whether nickelates should be promoted from secondary to co-primary
 
-1. **Primary route: Hg1223 PQP reproducibility campaign** — independent reproduction of the `151 K` retained benchmark; success gate = retained ambient zero-resist `Tc >= 131 K`
-2. **Secondary route: Bilayer nickelate strain-Tc mapping** — epitaxial strain engineering in `La3Ni2O7`-class films; success gate = ambient zero-resist `Tc > 80 K`
+**Milestone status:** `v7.0` is active. No room-temperature superconductor has been found. The best carried retained benchmark remains `Hg1223` at `151 K`, still `149 K` below room temperature.
 
-**Pivot trigger:** If PQP reproduction fails below `131 K`, reassess whether `Hg1223` should remain primary.
+**Pivot trigger:** If PQP reproduction fails below `131 K`, reassess `Hg1223` primary status.
 **Promotion trigger:** If nickelate ambient zero-resist reaches `100 K`, promote to co-primary.
 
 ## Core Research Question
 
-After `v5.0`, which route family gives the best chance of actually shrinking the remaining `149 K` gap: `Hg`-family uplift around the `Hg1223` benchmark, nickelate escalation via pressure, strain, and chemical pressure, or neither?
+Can independent reproduction of the `Hg1223` PQP benchmark confirm retained `Tc >= 131 K`, and can epitaxial strain engineering push bilayer `La3Ni2O7`-class nickelate films to ambient zero-resist `Tc > 80 K`?
 
 ## Scoping Contract Summary
 

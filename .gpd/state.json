@@ -1,320 +1,285 @@
 {
   "project_reference": {
     "project_md_updated": "2026-03-29",
-    "core_research_question": "Can any hydride or hydride-derived pathway supported by first-principles evidence retain superconductivity at ambient pressure, or after pressure quench, and if not, which experimentally anchored broader benchmark route should replace that search as the repo's next high-confidence candidate?",
-    "current_focus": "Phase 10 - Experimental Benchmark Pivot Beyond Hydrides"
+    "core_research_question": "After `v5.0`, which route family gives the best chance of actually shrinking the remaining `149 K` gap: `Hg`-family uplift around the `Hg1223` benchmark, nickelate escalation via pressure, strain, and chemical pressure, or neither?",
+    "current_focus": "Milestone `v6.0` complete \u2014 Phase `23` executed, producing a ranked two-route program: `Hg1223` primary, bilayer nickelates secondary"
   },
   "project_contract": {
     "schema_version": 1,
     "scope": {
-      "question": "Can any hydride or hydride-derived pathway supported by first-principles evidence retain superconductivity at ambient pressure, or after pressure quench, and if not, do current constraints rule out room-temperature consumer viability within this conventional materials route?",
+      "question": "After v5.0, which route family gives the best chance of actually shrinking the remaining 149 K gap: Hg-family uplift around the Hg1223 benchmark, nickelate escalation via pressure, strain, and chemical pressure, or neither?",
       "in_scope": [
-        "Pressure release, metastability, and quenchability of CsInH3-class phases",
-        "Ambient-pressure and near-ambient hydrides or hydride-derived frameworks",
-        "Alloying and structural redesign around MXH3, Mg2XH6-like, and hydride-unit/clathrate families",
-        "Practical viability metrics: operating pressure, synthesis pressure, ambient stability, barriers, cost, toxicity",
-        "Real DFPT/EPW/SSCHA validation targets for any candidate advanced as practically relevant"
+        "Current primary-source route comparison across Hg-family cuprates, nickelates, and conventional near-ambient controls",
+        "Explicit comparison of Tc headroom, operating pressure, retention status, and controllable uplift levers",
+        "Ranking the next route-expansion target for post-v5.0 work"
       ],
       "out_of_scope": [
-        "Device engineering, interconnect design, or packaging workflows",
-        "Experimental synthesis claims not backed by direct evidence",
-        "Exhaustive AIRSS/CALYPSO searches beyond current compute scope",
-        "Unconventional pairing as the main program for this milestone"
+        "Claiming a room-temperature finished material before decisive evidence exists",
+        "Treating a pressure-only or onset-only signal as an ambient practical route",
+        "Device engineering or consumer hardware design",
+        "Reopening blind hydride screening"
       ],
       "unresolved_questions": [
-        "Which ambient-leaning or hydride-derived family can replace the failed `CsInH3`-class decompression route?",
-        "Which candidate families best balance Tc, operating pressure, synthesis pressure, quenchability, and materials practicality?",
-        "Does the 2025-2026 literature already force a pivot away from room-temperature consumer claims in conventional hydrides?",
-        "Is any pressure-quench route more credible than a fully stable ambient hydride route after the negative `CsInH3`-class verdict?"
+        "Does the Hg cuprate family still offer the best absolute Tc headroom after v5.0 once pressure and multilayer physics are taken seriously together?",
+        "Are nickelates now improving fast enough to justify promotion from backup to a more active route-expansion target?",
+        "Which route class should the repo pursue next if the goal is to shrink the remaining 149 K gap rather than only improve execution discipline?"
       ]
     },
     "context_intake": {
       "must_read_refs": [
         "ref-v1-conclusions",
         "ref-synthesis-guide",
-        "ref-ambient-ceiling",
-        "ref-stable-ambient-hydrides",
-        "ref-kb3c3",
-        "ref-hg1223-quench"
+        "ref-v5-final",
+        "ref-hg1223-quench",
+        "ref-hg-family-pressure",
+        "ref-lapr327-ambient",
+        "ref-nickelate-96k"
       ],
       "must_include_prior_outputs": [
         "data/project_conclusions.md",
         "SYNTHESIS-GUIDE.md",
-        ".gpd/milestones/v1.0-ROADMAP.md",
-        ".gpd/research/PRACTICAL-PATHWAYS.md"
+        ".gpd/phases/21-first-campaign-route-gates-and-backup-trigger-memo/phase21-final-memo.md",
+        ".gpd/phases/21-first-campaign-route-gates-and-backup-trigger-memo/phase21-backup-trigger-memo.md"
       ],
       "user_asserted_anchors": [
-        "Do not treat synthesis pressure as operating pressure",
-        "Room-temperature consumer viability requires ambient retention, not just lower pressure synthesis"
+        "Do not confuse a benchmark or research platform with a consumer-ready room-temperature material",
+        "The best carried retained benchmark remains 149 K below room temperature"
       ],
       "known_good_baselines": [
-        "v1.0 benchmark pipeline: H3S error 10.5%, LaH10 error 10.6%",
-        "CsInH3 SSCHA result: Tc = 214 K at 3 GPa, E_hull = 6 meV/atom"
+        "Hydride negative baseline: CsInH3 reaches 214 K at 3 GPa but ambient retention is unsupported",
+        "Current retained benchmark baseline: Hg1223 reaches up to 151 K after pressure quench",
+        "Nickelate frontier baseline: ambient film onset near 63 K, ambient bulk around 40 K, and pressurized single-crystal reports up to 96 K"
       ],
       "context_gaps": [
-        "Ambient-pressure quenchability of CsInH3 is unknown",
-        "Real DFPT+EPW alpha^2F for CsInH3 is still missing",
-        "Kinetic decomposition barriers during decompression are still missing"
+        "No current route is close to room-temperature ambient operation",
+        "The transfer from higher-pressure Hg-family headroom to retained ambient operation is unproven",
+        "The best next route program after v5.0 is not yet fixed"
       ],
       "crucial_inputs": [
-        "Exact separation of operating pressure vs synthesis pressure for all cited systems",
-        "Barrier-aware decompression analysis for CsInH3-class phases",
-        "Real EPW/SSCHA validation for any candidate advanced as practical"
+        "Keep pressure-history and operating-pressure language separate in every claim",
+        "Reject route promotion based only on onset-only or pressure-only evidence",
+        "Keep the room-temperature gap explicit in all route updates"
       ]
     },
     "approach_policy": {
       "formulations": [
-        "DFT/DFPT/EPW/SSCHA for conventional superconductivity in candidate materials",
-        "Decompression phonon and enthalpy path analysis for pressure release",
-        "Barrier and metastability analysis for quenchability",
-        "Literature-grounded practical viability ranking with explicit pressure accounting"
+        "Common-basis route comparison instead of isolated Tc headlines",
+        "Named control-lever mapping rather than vague route enthusiasm",
+        "Explicit survivor-set screening before the next route program is chosen"
       ],
       "allowed_estimator_families": [
-        "Eliashberg spectral function",
-        "Allen-Dynes-McMillan as cross-check",
-        "Barrier estimates for metastability",
-        "Thermodynamic and dynamic stability analysis"
+        "Route headroom maps",
+        "Control-ledger matrices",
+        "Negative-control screening notes",
+        "Shortlist and next-step memos"
       ],
       "forbidden_estimator_families": [
-        "Ambient Tc extrapolated from high-pressure Tc without stability evidence",
-        "Treating synthesis pressure as operating pressure"
+        "Treating pressure-only records as ambient-ready routes",
+        "Promoting theory-only near-ambient optimism as if it were benchmark-level evidence",
+        "Calling route expansion a room-temperature breakthrough"
       ],
       "allowed_fit_families": [
-        "Fixed mu* = 0.10-0.13 for conventional hydrides",
-        "Explicit pressure-dependent fits only when anchored by computed stable points"
+        "Route ranking tied to headroom, operating state, evidence depth, and control richness",
+        "Shortlists that name one primary and one secondary route"
       ],
       "forbidden_fit_families": [
-        "Post-hoc mu* tuning to hit target Tc",
-        "Free extrapolation of Tc(P) beyond the stable pressure window"
+        "Diffuse route watchlists with no priority order",
+        "Room-temperature extrapolation from the carried frontier values"
       ],
       "stop_and_rethink_conditions": [
-        "Stable ambient hydride routes remain near or below the known conventional ambient ceiling and no credible quench path survives decompression",
-        "All decompression paths for CsInH3-class phases develop strong instability or barrierless decomposition before ambient pressure",
-        "Any consumer-viability claim depends on synthetic alpha^2F or unverified extrapolation"
+        "The frontier map cannot identify a route with meaningfully better upside than the carried v5.0 baseline",
+        "Phase 23 still cannot choose one primary and one secondary route",
+        "Any route update hides the 149 K room-temperature gap"
       ]
     },
     "observables": [
       {
-        "id": "obs-tc",
-        "name": "Superconducting critical temperature Tc",
+        "id": "obs-tc-route",
+        "name": "Route benchmark Tc",
         "kind": "scalar",
-        "definition": "Tc from converged Eliashberg calculations or directly cited primary-source measurements",
+        "definition": "Best current benchmark temperature associated with a route family",
         "regime": null,
         "units": "K"
       },
       {
-        "id": "obs-operating-pressure",
-        "name": "Operating pressure",
-        "kind": "scalar",
-        "definition": "Pressure required for the superconducting phase to exist during operation",
-        "regime": null,
-        "units": "GPa"
-      },
-      {
-        "id": "obs-synthesis-pressure",
-        "name": "Synthesis pressure",
-        "kind": "scalar",
-        "definition": "Pressure used during synthesis or preparation before any decompression or quench step",
-        "regime": null,
-        "units": "GPa"
-      },
-      {
-        "id": "obs-quenchability",
-        "name": "Quenchability / ambient retention verdict",
+        "id": "obs-operating-state",
+        "name": "Operating state",
         "kind": "other",
-        "definition": "Barrier-aware assessment of whether a phase can survive pressure release to ambient conditions",
+        "definition": "Whether the benchmark route is retained ambient, ambient-native, or pressure-only",
         "regime": null,
         "units": null
       },
       {
-        "id": "obs-barrier",
-        "name": "Barrier against decomposition or symmetry lowering",
-        "kind": "scalar",
-        "definition": "Representative kinetic barrier for a pressure-release pathway",
-        "regime": null,
-        "units": "eV/f.u."
-      },
-      {
-        "id": "obs-ambient-stability",
-        "name": "Ambient thermodynamic and dynamic stability",
+        "id": "obs-evidence-depth",
+        "name": "Evidence depth",
         "kind": "other",
-        "definition": "Combined hull and phonon verdict at or near 0 GPa",
+        "definition": "How strong the current evidence is for the benchmark route",
         "regime": null,
         "units": null
+      },
+      {
+        "id": "obs-control-richness",
+        "name": "Control richness",
+        "kind": "other",
+        "definition": "Number and quality of named knobs that can plausibly move the route frontier",
+        "regime": null,
+        "units": null
+      },
+      {
+        "id": "obs-roomtemp-gap",
+        "name": "Room-temperature gap",
+        "kind": "scalar",
+        "definition": "Difference between 300 K and the best carried retained Tc benchmark",
+        "regime": null,
+        "units": "K"
       }
     ],
     "claims": [
       {
-        "id": "claim-practical-map",
-        "statement": "The project cleanly distinguishes stable ambient, metastable ambient, pressure-quenched, and low-pressure-only pathways relevant to practical superconductivity.",
+        "id": "claim-frontier-headroom-map",
+        "statement": "The project can define a current frontier headroom map that compares Hg-family cuprates, nickelates, and conventional near-ambient controls on one honest basis.",
         "observables": [
-          "obs-tc",
-          "obs-operating-pressure",
-          "obs-synthesis-pressure",
-          "obs-quenchability",
-          "obs-ambient-stability"
+          "obs-tc-route",
+          "obs-operating-state",
+          "obs-evidence-depth",
+          "obs-roomtemp-gap"
         ],
         "deliverables": [
-          "deliv-viability-matrix"
+          "deliv-phase22-headroom-map",
+          "deliv-phase22-control-ledger",
+          "deliv-phase22-negative-controls"
         ],
         "acceptance_tests": [
-          "test-pressure-separation"
+          "test-headroom-map-honest"
         ],
         "references": [
-          "ref-v1-conclusions",
-          "ref-ambient-ceiling",
-          "ref-stable-ambient-hydrides",
-          "ref-kb3c3",
-          "ref-hg1223-quench"
+          "ref-v5-final",
+          "ref-hg1223-quench",
+          "ref-hg-family-pressure",
+          "ref-lapr327-ambient",
+          "ref-nickelate-96k",
+          "ref-conventional-ceiling"
         ]
       },
       {
-        "id": "claim-quenchability",
-        "statement": "At least one CsInH3-class phase receives an explicit evidence-based quenchability verdict under decompression.",
+        "id": "claim-route-expansion-program",
+        "statement": "The project can convert the Phase 22 frontier map into a route-expansion program with one primary route and one secondary route.",
         "observables": [
-          "obs-operating-pressure",
-          "obs-quenchability",
-          "obs-barrier",
-          "obs-ambient-stability"
+          "obs-tc-route",
+          "obs-control-richness",
+          "obs-roomtemp-gap"
         ],
         "deliverables": [
-          "deliv-quench-scorecard"
+          "deliv-phase23-shortlist",
+          "deliv-phase23-next-step-memo",
+          "deliv-phase23-final-memo"
         ],
         "acceptance_tests": [
-          "test-quenchability"
+          "test-next-route-program-explicit"
         ],
         "references": [
-          "ref-v1-conclusions",
-          "ref-synthesis-guide",
-          "ref-hg1223-quench"
-        ]
-      },
-      {
-        "id": "claim-practical-candidate",
-        "statement": "At least one pathway reaches either ambient pressure with Tc >= 77 K or a credible pressure-quench route retaining superconductivity above 150 K.",
-        "observables": [
-          "obs-tc",
-          "obs-operating-pressure",
-          "obs-synthesis-pressure",
-          "obs-quenchability",
-          "obs-ambient-stability"
-        ],
-        "deliverables": [
-          "deliv-shortlist",
-          "deliv-validation-report",
-          "deliv-decision-memo"
-        ],
-        "acceptance_tests": [
-          "test-practical-threshold"
-        ],
-        "references": [
-          "ref-ambient-ceiling",
-          "ref-stable-ambient-hydrides",
-          "ref-kb3c3",
-          "ref-mg2xh6",
-          "ref-clathrate-units"
+          "ref-v5-final",
+          "ref-hg1223-quench",
+          "ref-hg-family-pressure",
+          "ref-lapr327-ambient",
+          "ref-nickelate-96k"
         ]
       }
     ],
     "deliverables": [
       {
-        "id": "deliv-viability-matrix",
-        "kind": "table",
-        "path": ".gpd/research/PRACTICAL-PATHWAYS.md",
-        "description": "Matrix of candidate pathways with explicit synthesis pressure, operating pressure, Tc, stability class, and evidence quality",
-        "must_contain": [
-          "Tc",
-          "synthesis pressure",
-          "operating pressure",
-          "stability class",
-          "evidence quality"
-        ]
-      },
-      {
-        "id": "deliv-quench-scorecard",
+        "id": "deliv-phase22-headroom-map",
         "kind": "report",
-        "path": null,
-        "description": "Barrier-aware decompression verdict for CsInH3 and one derivative",
+        "path": ".gpd/phases/22-gap-closing-frontier-map-and-control-ledger/phase22-frontier-headroom-map.md",
+        "description": "Frontier headroom map for the surviving route families",
         "must_contain": [
-          "release path",
-          "first instability",
-          "barrier estimate",
-          "ambient verdict"
+          "Hg-family cuprates",
+          "151 K",
+          "96 K",
+          "63 K",
+          "room-temperature gap"
         ]
       },
       {
-        "id": "deliv-shortlist",
+        "id": "deliv-phase22-control-ledger",
         "kind": "report",
-        "path": null,
-        "description": "Ranked shortlist of ambient-leaning or quenchable candidate families and compositions",
+        "path": ".gpd/phases/22-gap-closing-frontier-map-and-control-ledger/phase22-control-knob-matrix.md",
+        "description": "Control-ledger for the serious route families",
         "must_contain": [
-          "family",
-          "composition",
-          "Tc",
-          "operating pressure",
-          "synthesis pressure",
-          "practicality score"
+          "pressure-quench transfer",
+          "multilayer",
+          "compressive strain",
+          "chemical pressure",
+          "oxygen"
         ]
       },
       {
-        "id": "deliv-validation-report",
+        "id": "deliv-phase22-negative-controls",
         "kind": "report",
-        "path": null,
-        "description": "Real EPW / SSCHA validation package for the top practical pathway",
+        "path": ".gpd/phases/22-gap-closing-frontier-map-and-control-ledger/phase22-negative-control-note.md",
+        "description": "Negative-control screening note for weak route classes",
         "must_contain": [
-          "alpha^2F",
-          "lambda",
-          "Tc",
-          "anharmonic stability",
-          "final practical verdict"
+          "pressure-only",
+          "onset-only",
+          "theory-only",
+          "survivors"
         ]
       },
       {
-        "id": "deliv-decision-memo",
-        "kind": "other",
-        "path": null,
-        "description": "Final statement on whether conventional hydrides still support a consumer-hardware path",
+        "id": "deliv-phase23-shortlist",
+        "kind": "report",
+        "path": ".gpd/phases/23-route-expansion-shortlist-and-next-step-memo/phase23-route-shortlist.md",
+        "description": "Shortlist of the next route classes and candidate families",
         "must_contain": [
-          "ambient verdict",
-          "quench verdict",
-          "practical threshold test",
-          "pivot recommendation"
+          "primary route",
+          "secondary route"
+        ]
+      },
+      {
+        "id": "deliv-phase23-next-step-memo",
+        "kind": "report",
+        "path": ".gpd/phases/23-route-expansion-shortlist-and-next-step-memo/phase23-next-step-program.md",
+        "description": "Next-step route program memo",
+        "must_contain": [
+          "next milestone",
+          "first action"
+        ]
+      },
+      {
+        "id": "deliv-phase23-final-memo",
+        "kind": "report",
+        "path": ".gpd/phases/23-route-expansion-shortlist-and-next-step-memo/phase23-final-memo.md",
+        "description": "v6.0 closeout memo",
+        "must_contain": [
+          "149 K",
+          "room temperature"
         ]
       }
     ],
     "acceptance_tests": [
       {
-        "id": "test-pressure-separation",
-        "subject": "claim-practical-map",
-        "kind": "other",
-        "procedure": "Audit every cited pathway and repo candidate for separate synthesis-pressure and operating-pressure fields",
-        "pass_condition": "No pathway merges synthesis pressure and operating pressure into a single practicality claim",
+        "id": "test-headroom-map-honest",
+        "subject": "claim-frontier-headroom-map",
+        "kind": "consistency",
+        "procedure": "Inspect the Phase 22 route comparison outputs.",
+        "pass_condition": "Routes are compared on headroom, operating state, and evidence depth together, and weak classes are screened explicitly.",
         "evidence_required": [
-          "deliv-viability-matrix"
+          "deliv-phase22-headroom-map",
+          "deliv-phase22-control-ledger",
+          "deliv-phase22-negative-controls"
         ],
         "automation": "hybrid"
       },
       {
-        "id": "test-quenchability",
-        "subject": "claim-quenchability",
-        "kind": "other",
-        "procedure": "Use decompression energetics, phonons, and barriers to determine whether the phase can plausibly survive to ambient pressure",
-        "pass_condition": "The project produces an explicit quenchability verdict with barrier-aware evidence",
+        "id": "test-next-route-program-explicit",
+        "subject": "claim-route-expansion-program",
+        "kind": "consistency",
+        "procedure": "Inspect the Phase 23 route-program outputs.",
+        "pass_condition": "The repo ends with one primary and one secondary route while keeping the room-temperature gap explicit.",
         "evidence_required": [
-          "deliv-quench-scorecard"
-        ],
-        "automation": "hybrid"
-      },
-      {
-        "id": "test-practical-threshold",
-        "subject": "claim-practical-candidate",
-        "kind": "other",
-        "procedure": "Check whether any validated pathway reaches ambient pressure with Tc >= 77 K or a credible quench-retained route above 150 K",
-        "pass_condition": "At least one pathway satisfies one of the two practical thresholds without relying on forbidden proxies",
-        "evidence_required": [
-          "deliv-shortlist",
-          "deliv-validation-report",
-          "deliv-decision-memo"
+          "deliv-phase23-shortlist",
+          "deliv-phase23-next-step-memo",
+          "deliv-phase23-final-memo"
         ],
         "automation": "hybrid"
       }
@@ -322,16 +287,15 @@
     "references": [
       {
         "id": "ref-v1-conclusions",
-        "kind": "other",
+        "kind": "prior_artifact",
         "locator": "data/project_conclusions.md",
         "aliases": [
-          "v1.0-conclusions"
+          "project-conclusions"
         ],
-        "role": "other",
-        "why_it_matters": "Defines the current best result and explicitly states that ambient pressure and room-temperature operation are unproven",
+        "role": "benchmark",
+        "why_it_matters": "Preserves the hydride negative baseline.",
         "applies_to": [
-          "claim-practical-map",
-          "claim-quenchability"
+          "claim-frontier-headroom-map"
         ],
         "carry_forward_to": [
           "planning",
@@ -348,20 +312,21 @@
       },
       {
         "id": "ref-synthesis-guide",
-        "kind": "other",
+        "kind": "prior_artifact",
         "locator": "SYNTHESIS-GUIDE.md",
         "aliases": [
-          "csinh3-synthesis-guide"
+          "synthesis-guide"
         ],
-        "role": "other",
-        "why_it_matters": "Makes the synthesis-pressure vs operating-pressure distinction concrete for the current top candidate",
+        "role": "definition",
+        "why_it_matters": "Keeps pressure-history and operating-pressure language separate.",
         "applies_to": [
-          "claim-practical-map",
-          "claim-quenchability"
+          "claim-frontier-headroom-map",
+          "claim-route-expansion-program"
         ],
         "carry_forward_to": [
           "planning",
           "execution",
+          "verification",
           "writing"
         ],
         "must_surface": true,
@@ -372,70 +337,21 @@
         ]
       },
       {
-        "id": "ref-ambient-ceiling",
-        "kind": "paper",
-        "locator": "Gao et al., The maximum Tc of conventional superconductors at ambient pressure (2025)",
+        "id": "ref-v5-final",
+        "kind": "prior_artifact",
+        "locator": ".gpd/phases/21-first-campaign-route-gates-and-backup-trigger-memo/phase21-final-memo.md",
         "aliases": [
-          "ambient-conventional-ceiling"
+          "phase21-final"
         ],
-        "role": "other",
-        "why_it_matters": "Provides the strongest current skepticism prior against room-temperature conventional superconductivity at ambient pressure",
+        "role": "background",
+        "why_it_matters": "Provides the post-v5 route baseline.",
         "applies_to": [
-          "claim-practical-map",
-          "claim-practical-candidate"
+          "claim-frontier-headroom-map",
+          "claim-route-expansion-program"
         ],
         "carry_forward_to": [
           "planning",
-          "verification",
-          "writing"
-        ],
-        "must_surface": true,
-        "required_actions": [
-          "read",
-          "compare",
-          "cite"
-        ]
-      },
-      {
-        "id": "ref-stable-ambient-hydrides",
-        "kind": "paper",
-        "locator": "Yanagizawa et al., stable ambient-pressure superconducting hydrides in GNoME (2026)",
-        "aliases": [
-          "gnome-ambient-hydrides"
-        ],
-        "role": "other",
-        "why_it_matters": "Defines the current stable-ambient hydride baseline and shows how far the field remains from room temperature",
-        "applies_to": [
-          "claim-practical-map",
-          "claim-practical-candidate"
-        ],
-        "carry_forward_to": [
-          "planning",
-          "verification",
-          "writing"
-        ],
-        "must_surface": true,
-        "required_actions": [
-          "read",
-          "compare",
-          "cite"
-        ]
-      },
-      {
-        "id": "ref-kb3c3",
-        "kind": "paper",
-        "locator": "Guo et al., Dynamic high-temperature superconductor at ambient pressure (2025)",
-        "aliases": [
-          "kb3c3-dynamic"
-        ],
-        "role": "other",
-        "why_it_matters": "Shows that non-equilibrium pressure history can produce ambient superconductivity in a hydride-derived framework",
-        "applies_to": [
-          "claim-practical-map",
-          "claim-practical-candidate"
-        ],
-        "carry_forward_to": [
-          "planning",
+          "execution",
           "verification",
           "writing"
         ],
@@ -449,39 +365,15 @@
       {
         "id": "ref-hg1223-quench",
         "kind": "paper",
-        "locator": "Ambient-pressure 151-K superconductivity in HgBa2Ca2Cu3O8+\u03b4 via pressure quench (2026)",
+        "locator": "https://arxiv.org/abs/2603.12437",
         "aliases": [
           "hg1223-pressure-quench"
         ],
-        "role": "other",
-        "why_it_matters": "Demonstrates that pressure-quench metastability can retain very high Tc at ambient pressure in a nearby materials context",
+        "role": "benchmark",
+        "why_it_matters": "Anchors the strongest retained benchmark.",
         "applies_to": [
-          "claim-practical-map",
-          "claim-quenchability"
-        ],
-        "carry_forward_to": [
-          "planning",
-          "verification",
-          "writing"
-        ],
-        "must_surface": true,
-        "required_actions": [
-          "read",
-          "compare",
-          "cite"
-        ]
-      },
-      {
-        "id": "ref-mg2xh6",
-        "kind": "paper",
-        "locator": "Ambient-pressure hydride family predictions above 80 K in Mg2XH6-like systems (2024)",
-        "aliases": [
-          "mg2xh6-ambient"
-        ],
-        "role": "other",
-        "why_it_matters": "Best-known stable-ambient conventional hydride direction still falls well below room temperature",
-        "applies_to": [
-          "claim-practical-candidate"
+          "claim-frontier-headroom-map",
+          "claim-route-expansion-program"
         ],
         "carry_forward_to": [
           "planning",
@@ -497,16 +389,94 @@
         ]
       },
       {
-        "id": "ref-clathrate-units",
+        "id": "ref-hg-family-pressure",
         "kind": "paper",
-        "locator": "Hydride-unit filled B-C clathrate design strategy for ambient-pressure high-temperature superconductors (2024)",
+        "locator": "https://doi.org/10.1038/ncomms9990",
         "aliases": [
-          "hydride-unit-clathrate"
+          "hg-family-pressure"
+        ],
+        "role": "benchmark",
+        "why_it_matters": "Anchors the higher-pressure headroom of the Hg family.",
+        "applies_to": [
+          "claim-frontier-headroom-map",
+          "claim-route-expansion-program"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare",
+          "cite"
+        ]
+      },
+      {
+        "id": "ref-lapr327-ambient",
+        "kind": "paper",
+        "locator": "https://arxiv.org/abs/2512.04708",
+        "aliases": [
+          "lapr327-ambient"
+        ],
+        "role": "benchmark",
+        "why_it_matters": "Anchors the ambient nickelate film frontier.",
+        "applies_to": [
+          "claim-frontier-headroom-map",
+          "claim-route-expansion-program"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare",
+          "cite"
+        ]
+      },
+      {
+        "id": "ref-nickelate-96k",
+        "kind": "paper",
+        "locator": "https://www.nature.com/articles/s41586-025-09954-4",
+        "aliases": [
+          "nickelate-96k"
+        ],
+        "role": "benchmark",
+        "why_it_matters": "Anchors the current highest nickelate frontier.",
+        "applies_to": [
+          "claim-frontier-headroom-map",
+          "claim-route-expansion-program"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare",
+          "cite"
+        ]
+      },
+      {
+        "id": "ref-conventional-ceiling",
+        "kind": "paper",
+        "locator": "https://www.nature.com/articles/s41467-025-63702-w",
+        "aliases": [
+          "conventional-ceiling"
         ],
         "role": "other",
-        "why_it_matters": "Motivates moving beyond simple perovskites toward more complex chemically precompressed frameworks",
+        "why_it_matters": "Keeps conventional near-ambient optimism bounded.",
         "applies_to": [
-          "claim-practical-candidate"
+          "claim-frontier-headroom-map"
         ],
         "carry_forward_to": [
           "planning",
@@ -524,208 +494,159 @@
     ],
     "forbidden_proxies": [
       {
-        "id": "fp-synthesis-equals-operation",
-        "subject": "claim-practical-map",
-        "proxy": "Presenting a lower synthesis pressure as if it were the operating pressure of the superconducting phase",
-        "reason": "This is the central practical ambiguity that makes loaded-pressure results look more useful than they are"
+        "id": "fp-rank-pressure-only-as-ambient",
+        "subject": "claim-frontier-headroom-map",
+        "proxy": "Ranking a pressure-only route as if it already operated at ambient pressure",
+        "reason": "That would erase the distinction between headroom and practical operation."
       },
       {
-        "id": "fp-synthetic-alpha2f-final",
-        "subject": "claim-practical-candidate",
-        "proxy": "Final practical-path claims based only on synthetic alpha^2F or calibrated spectral models",
-        "reason": "Synthetic spectra are acceptable for scoping, not for a decisive practical viability claim"
-      },
-      {
-        "id": "fp-unstable-ambient",
-        "subject": "claim-quenchability",
-        "proxy": "Calling a decompressed phase ambient-viable when it shows unresolved imaginary modes or barrierless decomposition",
-        "reason": "Ambient utility requires survival after release, not just hope that release might work"
-      },
-      {
-        "id": "fp-roomtemp-extrapolation",
-        "subject": "claim-practical-candidate",
-        "proxy": "Extrapolating a room-temperature consumer path from low-pressure Tc without ambient evidence or without respecting known ambient ceilings",
-        "reason": "This turns a scientific low-pressure result into an unsupported product claim"
+        "id": "fp-route-program-without-primary",
+        "subject": "claim-route-expansion-program",
+        "proxy": "Ending the route-expansion pass with a diffuse watchlist and no primary route",
+        "reason": "That would fail to narrow the route problem after v5.0."
       }
     ],
-    "links": [
-      {
-        "id": "link-practical-map-to-quenchability",
-        "source": "claim-practical-map",
-        "target": "claim-quenchability",
-        "relation": "other",
-        "verified_by": [
-          "test-pressure-separation",
-          "test-quenchability"
-        ]
-      },
-      {
-        "id": "link-quenchability-to-practical-candidate",
-        "source": "claim-quenchability",
-        "target": "claim-practical-candidate",
-        "relation": "other",
-        "verified_by": [
-          "test-quenchability",
-          "test-practical-threshold"
-        ]
-      }
-    ],
+    "links": [],
     "uncertainty_markers": {
       "weakest_anchors": [
-        "Ambient retention in hydrides themselves remains largely unproven",
-        "Synthetic alpha^2F still underlies some legacy candidate rankings"
+        "No current route is close to room-temperature ambient operation.",
+        "Higher-pressure headroom may not transfer to retained ambient operation."
       ],
       "unvalidated_assumptions": [
-        "CsInH3 can survive decompression without catastrophic symmetry lowering",
-        "Alloying can improve ambient stability without destroying hydrogen-dominated modes",
-        "Non-equilibrium pressure history can be translated from adjacent systems to hydrides"
+        "The next milestone can exploit the identified headroom rather than only describe it."
       ],
       "competing_explanations": [
-        "Conventional hydrides may simply saturate far below room temperature at ambient pressure",
-        "The best practical route may require leaving the current material family altogether"
+        "The best route program may still be Hg1223 reproduction support rather than route expansion."
       ],
       "disconfirming_observations": [
-        "All decompression paths fail before ambient pressure",
-        "Stable ambient or quenchable candidates remain below the practical thresholds defined in VALD-02"
+        "If Phase 23 still cannot choose one primary and one secondary route, v6.0 has not narrowed the route problem enough."
       ]
     }
   },
   "position": {
-    "current_phase": "10",
-    "current_phase_name": "Experimental Benchmark Pivot Beyond Hydrides",
-    "total_phases": 10,
-    "current_plan": null,
+    "current_phase": "23",
+    "current_phase_name": "Route Expansion Shortlist and Next-Step Memo",
+    "total_phases": 23,
+    "current_plan": "03 (complete)",
     "total_plans_in_phase": 3,
-    "status": "Ready to plan",
+    "status": "Milestone complete",
     "last_activity": "2026-03-29",
-    "last_activity_desc": null,
+    "last_activity_desc": "Starting milestone v7.0: Two-Track Route Testing",
     "progress_percent": 100,
     "paused_at": null
   },
   "active_calculations": [],
   "intermediate_results": [
-    "v1.0 archived: CsInH3 remains the best repo result at `Tc = 214 K` and `3 GPa`",
-    "Ambient pressure after synthesis remains unestablished for CsInH3",
-    "Stable ambient conventional hydrides in the recent literature remain far below room temperature",
-    "Pressure-quench / metastability is now the main escape route worth testing",
-    "Phase 07 executed: the `CsInH3` class is unlikely to retain a superconducting ambient-pressure phase after decompression",
-    "`CsInH3` remains useful as a low-pressure benchmark, not as a practical ambient-route candidate",
-    "Phase 08 executed: no candidate survives as a decisive mixed-evidence ambient winner in the shared `0-5 GPa` screen",
-    "`RbPH3` is now the Phase 09 negative-validation primary and `KB3C3` is the framework benchmark",
-    "Phase 08 triggers a no-go on consumer-hardware framing unless Phase 09 overturns it with stronger evidence",
-    "Phase 09 planned: validation is now locked to `CsInH3` baseline, `RbPH3` primary, `KB3C3` benchmark, and an explicit no-synthetic-final evidence gate",
-    "Phase 09 executed: no route passes the shared high-fidelity gate, so v2.0 closes with no credible consumer path inside the present conventional hydride route",
-    "Phase 10 executed: `HgBa2Ca2Cu3O8+delta` via pressure quench is now the repo's strongest confidence-ranked benchmark candidate, but it remains 149 K below room temperature"
+    "`v5.0` closed without a room-temperature superconductor, but with a full Stage `A` decision package for `Hg1223`",
+    "The best carried retained benchmark remains `Hg1223` at `151 K`, still `149 K` below room temperature",
+    "Phase 22: `Hg`-family cuprates still lead on absolute `Tc` headroom; nickelates lead on tunable uplift levers and rate of frontier improvement",
+    "Phase 23, Plan 01: Weighted 5-axis ranking \u2014 `Hg`-family cuprates scored `4.15/5.00` (primary), nickelates scored `2.90/5.00` (secondary); ranking robust (0/10 perturbation flips)",
+    "Phase 23, Plan 02: Named shortlist \u2014 `Hg1223` primary, bilayer `La3Ni2O7`-class secondary lead, infinite-layer `SmNiO2`-class secondary backup; pivot trigger at `131 K` PQP reproduction, promotion trigger at `100 K` nickelate ambient",
+    "Phase 23, Plan 03: Next-step memo \u2014 primary route first action is independent PQP reproduction; secondary route first action is epitaxial strain-`Tc` mapping; 10/10 cross-artifact consistency checks passed"
   ],
   "open_questions": [
-    "What parameter window and reproducibility story actually govern the `Hg1223` pressure-quench route?",
-    "Which broader comparator should be treated as second priority after `Hg1223`: `SmNiO2` or a more practical ambient baseline such as `MgB2`?",
-    "Is any future route likely to close the remaining `149 K` room-temperature gap without abandoning experimental credibility?"
+    "Can the `Hg1223` `151 K` PQP benchmark be independently reproduced? (single-group result, fragile)",
+    "Can bilayer `La3Ni2O7`-class nickelate films reach ambient zero-resist `Tc` above `80 K` via strain engineering?",
+    "Should the next milestone run both route tracks in parallel or sequence the PQP campaign first?"
   ],
   "performance_metrics": {
     "rows": [
       {
-        "label": "v1.0 archive",
+        "label": "Phase 22 execution",
         "duration": "\u2014",
-        "tasks": "17 plans archived",
-        "files": "`.gpd/milestones/`, `.gpd/MILESTONES.md`"
+        "tasks": "3 plans, 3 tasks each",
+        "files": "`.gpd/phases/22-*`"
       },
       {
-        "label": "Phase 07 execution",
-        "duration": "\u2014",
-        "tasks": "3 plans executed",
-        "files": "`.gpd/phases/07-ambient-retention-of-csinh3-class-phases/`"
+        "label": "Phase 23 Plan 01",
+        "duration": "~20 min",
+        "tasks": "2",
+        "files": "ranking `.md` + `.json`"
       },
       {
-        "label": "Phase 08 execution",
-        "duration": "\u2014",
-        "tasks": "3 plans executed",
-        "files": "`.gpd/phases/08-ambient-leaning-candidate-search/`"
+        "label": "Phase 23 Plan 02",
+        "duration": "~15 min",
+        "tasks": "1",
+        "files": "shortlist `.md` + `.json`"
       },
       {
-        "label": "Phase 09 execution",
-        "duration": "\u2014",
-        "tasks": "3 plans executed",
-        "files": "`.gpd/phases/09-high-fidelity-validation-and-pivot-decision/`"
-      },
-      {
-        "label": "Phase 10 execution",
-        "duration": "\u2014",
-        "tasks": "3 plans executed",
-        "files": "`.gpd/phases/10-experimental-benchmark-pivot-beyond-hydrides-hg1223-pressure-quench-route-and-ambient-gap-map/`"
+        "label": "Phase 23 Plan 03",
+        "duration": "~25 min",
+        "tasks": "2",
+        "files": "next-step memo `.md` + `.json`"
       }
     ]
   },
   "decisions": [
     {
-      "phase": null,
-      "summary": "Start milestone `v2.0 Ambient Retention and Practical Viability`",
+      "phase": "0",
+      "summary": "Started milestone `v2.0` and separated synthesis pressure from operating pressure in all future claims",
       "rationale": null
     },
     {
-      "phase": null,
-      "summary": "Separate synthesis pressure from operating pressure in every future claim",
+      "phase": "07",
+      "summary": "`CsInH3`-class ambient retention is unlikely; keep `CsInH3` as a low-pressure benchmark only",
       "rationale": null
     },
     {
-      "phase": null,
-      "summary": "Treat quenchability and decompression stability as first-class requirements",
+      "phase": "09",
+      "summary": "No present hydride route passes the practical high-fidelity gate",
+      "rationale": null
+    },
+    {
+      "phase": "10",
+      "summary": "`HgBa2Ca2Cu3O8+delta` via pressure quench became the strongest confidence-ranked benchmark candidate",
+      "rationale": null
+    },
+    {
+      "phase": "14",
+      "summary": "Primary route became `Hg1223`-class pressure-quenched cuprates, backup route became bilayer nickelate films",
+      "rationale": null
+    },
+    {
+      "phase": "18",
+      "summary": "`v4.0` closed with `Hg1223` still primary, nickelates still backup, and the `149 K` room-temperature gap explicit",
+      "rationale": null
+    },
+    {
+      "phase": "21",
+      "summary": "`v5.0` closed with explicit Stage `A` evidence tiers and route gates for `Hg1223`",
       "rationale": null
     },
     {
       "phase": "0",
-      "summary": "Started milestone v2.0: Ambient Retention and Practical Viability",
-      "rationale": "Archived the v1.0 negative-result milestone and pivoted the live roadmap toward ambient retention, quenchability, and practical operating conditions"
+      "summary": "Started milestone `v6.0`: Gap-Closing Route Expansion Beyond `v5.0`",
+      "rationale": null
     },
     {
-      "phase": "06",
-      "summary": "Phase 06 research: prioritize ambient retention and metastability over further pressure-supported Tc optimization",
-      "rationale": "The 2024-2026 literature does not support room-temperature consumer viability for conventional ambient hydrides. CsInH3 remains the best low-pressure hydride result at 3 GPa, but ambient retention is unproven. The most credible next work is decompression/barrier analysis for CsInH3 plus targeted study of ambient-leaning families such as RbPH3, Mg2IrH6, and hydride-derived clathrates."
+      "phase": "22",
+      "summary": "`Hg`-family cuprates still lead on absolute `Tc` headroom, while nickelates now lead on tunable uplift levers and recent frontier improvement",
+      "rationale": null
     },
     {
-      "phase": "06",
-      "summary": "Phase 06 executed: CsInH3 remains Phase 07 priority, RbPH3 becomes top hydride ambient target, and consumer framing now requires >=100 K ambient-retained evidence",
-      "rationale": "Phase 06 artifacts now separate synthesis pressure from operating pressure, map metastability and quench routes, and rank pathways by practical viability. The immediate next work is decompression and barrier analysis for CsInH3, with RbPH3 as the leading ambient-leaning hydride comparator. If no path survives with P_op = 0 GPa, Tc >= 100 K, and nontrivial retention confidence, the milestone should pivot from consumer-hardware language to a low-pressure and quench-enabled superconductivity map."
+      "phase": "23",
+      "summary": "`Hg`-family cuprates confirmed as primary route (weighted score `4.15/5.00`), nickelates confirmed as secondary route (`2.90/5.00`); ranking robust to `+/-20%` weight perturbation",
+      "rationale": null
     },
     {
-      "phase": "07",
-      "summary": "Phase 07 planning: use RbInH3 as the same-family derivative and reserve RbPH3 for Phase 08 comparator work",
-      "rationale": "The decompression verdict should test the CsInH3 perovskite class under one coherent logic. RbInH3 shares the MXH3 Pm-3m design and already has repo-local stability and Tc anchors, so it is the right derivative for Phase 07. RbPH3 remains valuable, but as an ambient-leaning literature comparator for Phase 08 rather than as a same-family decompression control."
+      "phase": "23",
+      "summary": "Bilayer `La3Ni2O7`-class is the lead nickelate candidate; infinite-layer `SmNiO2`-class is the ambient-stability backup",
+      "rationale": null
     },
     {
-      "phase": "07",
-      "summary": "Phase 07 executed: CsInH3-class ambient retention is unlikely, so keep `CsInH3` as a low-pressure benchmark and move the practical search to Phase 08 families",
-      "rationale": "The decompression path fails before ambient pressure, the ambient cubic endpoint is not locally protected, and the same-family `RbInH3` comparison does not rescue the class. Practical follow-up should move toward ambient-leaning hydrides, contradiction-tracked `Mg2IrH6`, and hydride-derived clathrate/framework routes rather than plain `MXH3` retention optimism."
+      "phase": "23",
+      "summary": "Pivot trigger for `Hg1223` primary route set at `131 K`; promotion trigger for nickelate secondary route set at `100 K` ambient zero-resistance",
+      "rationale": null
     },
     {
-      "phase": "08",
-      "summary": "Phase 08 planning: shortlist `RbPH3`, a limited perovskite-side bridge bucket, contradiction-tracked `Mg2XH6` members, and `KB3C3` / `KRbB6C6` frameworks for a common `0-5 GPa` screen",
-      "rationale": "The next candidate search should stay downstream of the negative CsInH3-class verdict. `RbPH3` remains the primary hydride ambient target, `Mg2IrH6` must stay contradiction-tracked rather than headline-driven, and framework routes deserve direct comparison because they may offer a more honest ambient path even at lower `Tc`."
+      "phase": "23",
+      "summary": "`v6.0` closed with explicit two-route program: `Hg1223` PQP reproducibility campaign (primary), bilayer nickelate strain mapping (secondary), `149 K` gap unchanged",
+      "rationale": null
     },
     {
-      "phase": "08",
-      "summary": "Phase 08 executed: no decisive ambient survivor emerges, so Phase 09 should negatively validate `RbPH3` against a `KB3C3` benchmark rather than force a practical winner",
-      "rationale": "The shared `0-5 GPa` screen ends with zero survivors, `Mg2IrH6` stays contradiction-tracked, the NH4-filled clathrates are rejected on prior local hull failures, and the ranking triggers a no-go on consumer-hardware language."
-    },
-    {
-      "phase": "09",
-      "summary": "Phase 09 planning: lock negative-validation roles and require real EPW / anharmonic evidence before any practical pass",
-      "rationale": "`CsInH3` stays the baseline control, `RbPH3` is the hydride-side primary, `KB3C3` is the benchmark, and the phase must end in either a validated pass or an explicit no-go without consumer-language drift."
-    },
-    {
-      "phase": "09",
-      "summary": "Phase 09 executed: no route passes the shared high-fidelity practical gate, so v2.0 closes negatively and the next milestone should pivot to experimentally anchored ambient or pressure-quench benchmarks outside the current hydride-only frame",
-      "rationale": "`CsInH3` remains the low-pressure benchmark, `RbPH3` is blocked, `KB3C3` remains benchmark-only, and `HgBa2Ca2Cu3O8+delta` becomes the strongest broader benchmark candidate."
-    },
-    {
-      "phase": "10",
-      "summary": "Added Phase 10: Experimental benchmark pivot beyond hydrides",
-      "rationale": "Continue beyond the v2.0 hydride no-go by auditing the strongest experimentally anchored ambient or pressure-quench benchmark route"
-    },
-    {
-      "phase": "10",
-      "summary": "Phase 10 executed: `HgBa2Ca2Cu3O8+delta` is now the top confidence-ranked benchmark candidate, while `MgB2` is the practical ambient floor and `SmNiO2` the main ambient-oxide comparator",
-      "rationale": "The repo now has a candidate it can actually be confident in, but not a room-temperature consumer-hardware solution."
+      "phase": "0",
+      "summary": "Started milestone v7.0: Two-Track Route Testing",
+      "rationale": "v6.0 route-expansion program complete; next step is PQP reproduction (primary) and nickelate strain mapping (secondary)"
     }
   ],
   "approximations": [],
@@ -768,18 +689,19 @@
   },
   "propagated_uncertainties": [],
   "pending_todos": [
-    "Plan the next phase around `Hg1223` pressure-quench parameter windows and reproducibility",
-    "Compare `SmNiO2` against `MgB2` as the strongest secondary benchmark family"
+    "Close `v6.0` milestone formally",
+    "Scope `v7.0`: PQP reproducibility campaign + nickelate strain mapping"
   ],
   "blockers": [
-    "The top benchmark candidate is still 149 K below room temperature",
-    "Pressure-quench reproducibility and scale-up remain unclear even for the strongest benchmark route"
+    "No carried route is close to room-temperature operation",
+    "`Hg1223` PQP benchmark is single-group with limited thermal stability",
+    "The `149 K` gap requires fundamentally new uplift, not incremental optimization"
   ],
   "session": {
     "last_date": "2026-03-29",
-    "stopped_at": "Phase 10 executed; `HgBa2Ca2Cu3O8+delta` selected as the top confidence-ranked benchmark candidate",
-    "resume_file": "`.gpd/phases/10-experimental-benchmark-pivot-beyond-hydrides-hg1223-pressure-quench-route-and-ambient-gap-map/phase10-top-candidate-memo.md`"
+    "stopped_at": "Phase `23` complete; `v6.0` ready to close",
+    "resume_file": ".gpd/phases/23-route-expansion-shortlist-and-next-step-memo/phase23-next-step-memo.md"
   },
   "_version": 1,
-  "_synced_at": "2026-03-29T09:15:10.403532+00:00"
+  "_synced_at": "2026-03-29T21:49:17.954963+00:00"
 }

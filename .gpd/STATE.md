@@ -16,7 +16,7 @@ See: .gpd/PROJECT.md (updated 2026-03-29)
 **Total Plans in Phase:** 3
 **Status:** Milestone complete
 **Last Activity:** 2026-03-29
-**Last Activity Description:** v6.0 milestone completed and archived
+**Last Activity Description:** Starting milestone v7.0: Two-Track Route Testing
 
 **Progress:** [██████████] 100%
 
@@ -65,6 +65,7 @@ None.
 - [Phase 23]: Bilayer `La3Ni2O7`-class is the lead nickelate candidate; infinite-layer `SmNiO2`-class is the ambient-stability backup
 - [Phase 23]: Pivot trigger for `Hg1223` primary route set at `131 K`; promotion trigger for nickelate secondary route set at `100 K` ambient zero-resistance
 - [Phase 23]: `v6.0` closed with explicit two-route program: `Hg1223` PQP reproducibility campaign (primary), bilayer nickelate strain mapping (secondary), `149 K` gap unchanged
+- [Phase 0]: Started milestone v7.0: Two-Track Route Testing — v6.0 route-expansion program complete; next step is PQP reproduction (primary) and nickelate strain mapping (secondary)
 
 ### Active Approximations
 
