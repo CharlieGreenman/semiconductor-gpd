@@ -90,7 +90,11 @@ Milestone v7.0 tests the two routes ranked in v6.0 with experiment-facing protoc
 
 **Backtracking trigger:** If the Phase 19 runbook is found to be missing critical protocol variables that cannot be reconstructed from the literature, flag as a gap and include a "protocol uncertainty" section in the reproduction document.
 
-**Plans:** TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 24-01-PLAN.md -- Assemble layered PQP reproduction protocol and sample-state checklist
+- [ ] 24-02-PLAN.md -- Build route-confidence update map and cross-check all deliverables
 
 ### Phase 25: Bilayer Nickelate Strain-Tc Mapping Protocol and Promotion Assessment
 
@@ -159,6 +163,6 @@ Phase 24 and Phase 25 execute in parallel (no mutual dependency). Phase 26 execu
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 | --- | --- | --- | --- | --- |
-| 24. Hg1223 PQP Protocol | v7.0 | 0/TBD | Not started | - |
+| 24. Hg1223 PQP Protocol | v7.0 | 0/2 | Planned | - |
 | 25. Nickelate Strain Protocol | v7.0 | 0/TBD | Not started | - |
 | 26. Decision Integration | v7.0 | 0/TBD | Not started | - |
