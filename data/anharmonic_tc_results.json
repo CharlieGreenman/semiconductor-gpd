@@ -1,0 +1,105 @@
+{
+  "description": "Anharmonic Tc from SSCHA-corrected alpha^2F",
+  "method": "Isotropic Eliashberg (semi-analytical via calibrated AD ratio)",
+  "mustar_protocol": "FIXED at 0.10 and 0.13 (NOT tuned)",
+  "forbidden_proxy_check": {
+    "fp-tuned-mustar": "PASSED -- mu* fixed at 0.10 and 0.13",
+    "fp-unstable-tc": "PASSED -- all candidates SSCHA-stable",
+    "fp-ad-only-sscha": "PASSED -- full alpha^2F recomputed with eigenvector rotation"
+  },
+  "candidates": {
+    "CsInH3_5.0GPa": {
+      "material": "CsInH3",
+      "pressure_GPa": 5.0,
+      "dynamic_stability": true,
+      "mu010": {
+        "mustar": 0.1,
+        "Tc_eliashberg_K": 224.2,
+        "Tc_AD_K": 162.2,
+        "eliashberg_AD_ratio": 1.383,
+        "Tc_harmonic_phase3_K": 295.0,
+        "Tc_harmonic_AD_K": 219.4,
+        "Tc_reduction_pct": 24.0,
+        "Tc_ratio_anh_harm": 0.76
+      },
+      "mu013": {
+        "mustar": 0.13,
+        "Tc_eliashberg_K": 204.4,
+        "Tc_AD_K": 147.8,
+        "eliashberg_AD_ratio": 1.383,
+        "Tc_harmonic_phase3_K": 285.0,
+        "Tc_harmonic_AD_K": 202.2,
+        "Tc_reduction_pct": 28.3,
+        "Tc_ratio_anh_harm": 0.717
+      },
+      "lambda_harmonic": 2.8079,
+      "lambda_anharmonic": 1.9136,
+      "lambda_ratio": 0.6815,
+      "lambda_reduction_pct": 31.8,
+      "omega_log_harm_K": 944.3,
+      "omega_log_anh_K": 976.0
+    },
+    "CsInH3_3.0GPa": {
+      "material": "CsInH3",
+      "pressure_GPa": 3.0,
+      "dynamic_stability": true,
+      "mu010": {
+        "mustar": 0.1,
+        "Tc_eliashberg_K": 233.8,
+        "Tc_AD_K": 161.0,
+        "eliashberg_AD_ratio": 1.453,
+        "Tc_harmonic_phase3_K": 315.0,
+        "Tc_harmonic_AD_K": 221.0,
+        "Tc_reduction_pct": 25.8,
+        "Tc_ratio_anh_harm": 0.742
+      },
+      "mu013": {
+        "mustar": 0.13,
+        "Tc_eliashberg_K": 214.4,
+        "Tc_AD_K": 147.6,
+        "eliashberg_AD_ratio": 1.453,
+        "Tc_harmonic_phase3_K": 305.0,
+        "Tc_harmonic_AD_K": 204.2,
+        "Tc_reduction_pct": 29.7,
+        "Tc_ratio_anh_harm": 0.703
+      },
+      "lambda_harmonic": 3.5204,
+      "lambda_anharmonic": 2.2627,
+      "lambda_ratio": 0.6427,
+      "lambda_reduction_pct": 35.7,
+      "omega_log_harm_K": 796.8,
+      "omega_log_anh_K": 830.8
+    },
+    "KGaH3_10.0GPa": {
+      "material": "KGaH3",
+      "pressure_GPa": 10.0,
+      "dynamic_stability": true,
+      "mu010": {
+        "mustar": 0.1,
+        "Tc_eliashberg_K": 94.4,
+        "Tc_AD_K": 72.9,
+        "eliashberg_AD_ratio": 1.294,
+        "Tc_harmonic_phase3_K": 162.5,
+        "Tc_harmonic_AD_K": 101.1,
+        "Tc_reduction_pct": 41.9,
+        "Tc_ratio_anh_harm": 0.581
+      },
+      "mu013": {
+        "mustar": 0.13,
+        "Tc_eliashberg_K": 84.7,
+        "Tc_AD_K": 65.5,
+        "eliashberg_AD_ratio": 1.294,
+        "Tc_harmonic_phase3_K": 152.5,
+        "Tc_harmonic_AD_K": 92.5,
+        "Tc_reduction_pct": 44.5,
+        "Tc_ratio_anh_harm": 0.555
+      },
+      "lambda_harmonic": 2.115,
+      "lambda_anharmonic": 1.4855,
+      "lambda_ratio": 0.7024,
+      "lambda_reduction_pct": 29.8,
+      "omega_log_harm_K": 554.3,
+      "omega_log_anh_K": 571.2
+    }
+  }
+}
