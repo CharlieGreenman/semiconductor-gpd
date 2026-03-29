@@ -74,28 +74,28 @@
 
 | Requirement | Phase | Status |
 | --- | --- | --- |
-| PQP-01 | TBD | Pending |
-| PQP-02 | TBD | Pending |
-| PQP-03 | TBD | Pending |
-| PQP-04 | TBD | Pending |
-| NIC-01 | TBD | Pending |
-| NIC-02 | TBD | Pending |
-| NIC-03 | TBD | Pending |
-| NIC-04 | TBD | Pending |
-| VALD-01 | All | Pending |
-| VALD-02 | All | Pending |
-| VALD-03 | All | Pending |
-| DEC-01 | TBD | Pending |
-| DEC-02 | TBD | Pending |
-| DEC-03 | TBD | Pending |
+| PQP-01 | Phase 24 | Pending |
+| PQP-02 | Phase 24 | Pending |
+| PQP-03 | Phase 24 | Pending |
+| PQP-04 | Phase 24 | Pending |
+| NIC-01 | Phase 25 | Pending |
+| NIC-02 | Phase 25 | Pending |
+| NIC-03 | Phase 25 | Pending |
+| NIC-04 | Phase 25 | Pending |
+| VALD-01 | Phase 24, 25, 26 | Pending |
+| VALD-02 | Phase 24, 25, 26 | Pending |
+| VALD-03 | Phase 26 | Pending |
+| DEC-01 | Phase 26 | Pending |
+| DEC-02 | Phase 26 | Pending |
+| DEC-03 | Phase 26 | Pending |
 
 **Coverage:**
 
 - Primary requirements: 14 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 14
+- Mapped to phases: 14/14
+- Unmapped: 0
 
 ---
 
 _Requirements defined: 2026-03-29_
-_Last updated: 2026-03-29 after v7.0 milestone initialization_
+_Last updated: 2026-03-29 after v7.0 roadmap creation_
