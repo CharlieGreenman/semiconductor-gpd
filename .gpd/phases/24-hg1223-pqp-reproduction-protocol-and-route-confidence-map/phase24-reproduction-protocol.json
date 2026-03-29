@@ -1,0 +1,417 @@
+{
+  "protocol_version": "1.0",
+  "date": "2026-03-29",
+  "status": "ready_for_independent_execution",
+  "assert_convention": "units=SI-derived (K, GPa), room_temperature=300 K, tc_definition=zero-resistance unless onset explicitly labeled, gap_definition=300 K minus best retained ambient Tc, evidence_tiers=T0-T3 per Phase 20, handling_classes=H0-H3 per Phase 19",
+  "scope": {
+    "purpose": "Independent reproduction of Hg1223 PQP retained superconducting state",
+    "target_paper": "arXiv:2603.12437 (Deng, Chu et al., PNAS 2026)",
+    "benchmark_tc_k": 151,
+    "benchmark_tc_label": "zero-resistance, retained ambient, metastable, single-group",
+    "pqp_uplift_k": 18,
+    "stable_ambient_tc_k": 133,
+    "room_temperature_gap_k": 149,
+    "guardrail": "Nothing in this protocol counts as room-temperature progress"
+  },
+  "nodes": [
+    {
+      "condition_id": "A-01",
+      "pq_gpa": 10.1,
+      "pq_tolerance_gpa": 1.0,
+      "tq_k": 4.2,
+      "replicates": 2,
+      "expected_retained_tc_k": "147-151",
+      "tc_label": "zero-resistance, retained ambient, metastable",
+      "source": "arXiv:2603.12437"
+    },
+    {
+      "condition_id": "A-02",
+      "pq_gpa": 18.9,
+      "pq_tolerance_gpa": 1.0,
+      "tq_k": 4.2,
+      "replicates": 2,
+      "expected_retained_tc_k": "147-151",
+      "tc_label": "zero-resistance, retained ambient, metastable",
+      "source": "arXiv:2603.12437"
+    },
+    {
+      "condition_id": "A-03",
+      "pq_gpa": 28.4,
+      "pq_tolerance_gpa": 1.0,
+      "tq_k": 4.2,
+      "replicates": 2,
+      "expected_retained_tc_k": "147-151",
+      "tc_label": "zero-resistance, retained ambient, metastable",
+      "source": "arXiv:2603.12437"
+    },
+    {
+      "condition_id": "A-04",
+      "pq_gpa": 10.1,
+      "pq_tolerance_gpa": 1.0,
+      "tq_k": 77,
+      "replicates": 2,
+      "expected_retained_tc_k": "~139",
+      "tc_label": "zero-resistance, retained ambient, metastable",
+      "source": "arXiv:2603.12437 (extrapolated from PQ=26 GPa warm-quench data)"
+    },
+    {
+      "condition_id": "A-05",
+      "pq_gpa": 18.9,
+      "pq_tolerance_gpa": 1.0,
+      "tq_k": 77,
+      "replicates": 2,
+      "expected_retained_tc_k": "~139",
+      "tc_label": "zero-resistance, retained ambient, metastable",
+      "source": "arXiv:2603.12437 (extrapolated)"
+    },
+    {
+      "condition_id": "A-06",
+      "pq_gpa": 28.4,
+      "pq_tolerance_gpa": 1.0,
+      "tq_k": 77,
+      "replicates": 2,
+      "expected_retained_tc_k": "~139",
+      "tc_label": "zero-resistance, retained ambient, metastable",
+      "source": "arXiv:2603.12437 (warm-quench at PQ=26 GPa reported ~139 K)"
+    }
+  ],
+  "success_gate": {
+    "threshold_tc_k": 131,
+    "arithmetic": "151 - 20 = 131",
+    "tc_definition": "zero-resistance (R below measurement noise floor)",
+    "onset_excluded": true,
+    "operating_conditions": "ambient pressure, after complete decompression",
+    "measurement_method": "4-probe DC resistivity",
+    "room_temperature_gap_k": 149,
+    "gap_arithmetic": "300 - 151 = 149",
+    "guardrail": "Even a clean 151 K reproduction is still 149 K below room temperature"
+  },
+  "characterization": {
+    "resistivity": {
+      "required_for": "all runs reaching ambient",
+      "method": "4-probe DC resistivity",
+      "geometry": "standard bar or van der Pauw on ~50-80 micron crystal",
+      "current_density_a_per_cm2": "0.1-1.0",
+      "temperature_sweep_k": "4.2 to at least 200",
+      "zero_resistance_criterion": "R < noise floor (specify in run log)",
+      "onset_criterion": "R(T) departure from normal-state extrapolation (log for information only)",
+      "known_difficulty": "Electrical leads may break during pressure quench"
+    },
+    "meissner": {
+      "required_for": "runs reaching T1+ evidence tier",
+      "method": "DC magnetization or AC susceptibility",
+      "modes": ["field-cooled", "zero-field-cooled"],
+      "field_oe": "10-100",
+      "sc_volume_fraction_threshold_t1": 0.30,
+      "sc_volume_fraction_threshold_t2": 0.50,
+      "demagnetization_correction": "required for absolute volume fraction",
+      "benchmark_sc_fraction": 0.78
+    },
+    "structural": {
+      "required_for": "runs reaching T2+ evidence tier",
+      "method": "X-ray diffraction (XRD)",
+      "preferred_source": "synchrotron",
+      "acceptable_alternative": "lab-source XRD with caveats",
+      "target_confirmation": "tetragonal crystal structure retained post-PQP",
+      "diagnostic_indicator": "defect broadening in XRD peaks post-PQP"
+    }
+  },
+  "critical_gaps": [
+    {
+      "variable": "vQ",
+      "description": "Decompression rate (GPa/s)",
+      "status": "unpublished",
+      "importance": "single most important unknown in reproduction protocol",
+      "recommended_actions": [
+        "Request numerical vQ from Deng-Chu group",
+        "If unavailable: bracket with at least 2 decompression rates (fast membrane-DAC vs slow manual screw-DAC)",
+        "REQUIRED: record full pressure-release trace (P vs t) for every run"
+      ],
+      "escalation_rule": "If first 3 runs are all T0 with vQ-related issues, escalate to direct replication request"
+    },
+    {
+      "variable": "sample_preparation",
+      "description": "Exact Hg1223 preparation for PQP compatibility",
+      "status": "partially_published",
+      "importance": "sample-state dependence is a known failure mode (Phase 20)",
+      "recommended_actions": [
+        "Use standard Hg1223 synthesis (high-pressure sealed-tube method)",
+        "Log oxygen-history class (delta if measured, annealing history)",
+        "Log sample class for every run"
+      ]
+    },
+    {
+      "variable": "lead_survivability",
+      "description": "Electrical contact survival during pressure quench",
+      "status": "acknowledged_difficulty",
+      "importance": "practical barrier to resistivity measurement",
+      "recommended_actions": [
+        "Prepare backup contact method",
+        "Log contact material and configuration"
+      ]
+    }
+  ],
+  "preconditions": [
+    {
+      "number": 1,
+      "requirement": "Assign unique run ID, sample ID, and sample class",
+      "naming_convention": "[GROUP]-[DATE]-[CONDITION_ID]-[SEQ]",
+      "consequence_if_missing": "T0 (invalid)"
+    },
+    {
+      "number": 2,
+      "requirement": "Record oxygen or anneal history class and basic geometry",
+      "consequence_if_missing": "T0 (invalid)"
+    },
+    {
+      "number": 3,
+      "requirement": "Confirm intended high-Tc source state under pressure before release",
+      "method": "In-DAC transport measurement",
+      "consequence_if_missing": "T0 (invalid); cannot distinguish source-state failure from quench failure"
+    },
+    {
+      "number": 4,
+      "requirement": "Arm pressure-release trace capture for full vQ trajectory",
+      "consequence_if_missing": "T0 (invalid); vQ trace is REQUIRED"
+    },
+    {
+      "number": 5,
+      "requirement": "Prepare ambient-pressure cryogenic measurement path before quench begins",
+      "consequence_if_missing": "Run validity depends on handling class; unplanned warming above 200 K invalidates"
+    },
+    {
+      "number": 6,
+      "requirement": "Assign handling class before the run starts",
+      "consequence_if_missing": "T0 (invalid) if handling class is assigned post-hoc"
+    }
+  ],
+  "per_run_steps": [
+    {
+      "step": 1,
+      "name": "Sample intake",
+      "actions": ["Record sample metadata", "Assign condition ID (A-01 to A-06)", "Assign handling class (H0-H3)", "Log contact configuration", "Measure ambient Tc baseline (~133 K)"]
+    },
+    {
+      "step": 2,
+      "name": "In-DAC targeting",
+      "actions": ["Load sample in DAC", "Pressurize to assigned PQ (+/- 1 GPa)", "Cool to assigned TQ", "Confirm source state via in-DAC transport", "Record pressure calibration method"],
+      "stop_condition": "If source state not confirmed: STOP, log as target-state failure"
+    },
+    {
+      "step": 3,
+      "name": "Quench event",
+      "actions": ["Verify pressure-release trace capture is armed", "Execute rapid decompression from PQ to ambient at TQ", "Record full P vs t trace", "Log any anomalies", "Record quench timestamp (ISO 8601)"]
+    },
+    {
+      "step": 4,
+      "name": "Immediate retained-state check",
+      "actions": ["Perform first cryogenic transport at ambient pressure before unplanned warm excursion", "Record first measurement timestamp and thermal path", "Measure R(T) from base to at least 200 K", "Record retained Tc (zero-resistance)", "Record retained Tc (onset, for information only)"]
+    },
+    {
+      "step": 5,
+      "name": "Cryogenic hold",
+      "actions": ["Hold at 77 K", "R(T) checkpoints at ~24 h and ~72 h", "Log Tc stability during hold"],
+      "benchmark": "Hg1223 PQP stable >= 3 days at 77 K"
+    },
+    {
+      "step": 6,
+      "name": "Controlled intermediate warm hold",
+      "applies_to": "H1+ classes only",
+      "prerequisite": "Steps 4-5 complete and logged",
+      "actions": ["Warm to 160-170 K (controlled)", "Measure R(T) after warm excursion", "Record Tc post-warm-stress"],
+      "benchmark": "Hg1223 PQP begins degrading at ~170-200 K"
+    },
+    {
+      "step": 7,
+      "name": "Controlled high warm hold",
+      "applies_to": "H2+ classes only",
+      "prerequisite": "Step 6 complete or skipped per handling class",
+      "actions": ["Warm to 200 K (controlled)", "Measure R(T) after warm excursion", "Record Tc post-warm-stress"],
+      "benchmark": "Significant degradation expected above 200 K"
+    },
+    {
+      "step": 8,
+      "name": "Retrieval gate",
+      "conditions": ["Run survives to chosen handling-class stage", "Full thermal path logged", "Scientific justification for ex-DAC characterization"],
+      "actions": ["Log retrieval thermal path explicitly"],
+      "warning": "If retrieval thermal path not logged, ex-DAC results are T0"
+    },
+    {
+      "step": 9,
+      "name": "Ex-DAC follow-up",
+      "applies_to": "selected survivors only",
+      "actions": ["Ex-DAC 4-probe R(T)", "Meissner verification (FC/ZFC, SC volume fraction)", "XRD structural confirmation (synchrotron preferred)"],
+      "benchmark": "~78% SC volume fraction with partial annealing to ~140 K"
+    }
+  ],
+  "handling_classes": [
+    {
+      "class": "H0",
+      "name": "Cryogenic-first benchmark path",
+      "purpose": "Preserve closest post-quench state",
+      "thermal_path_rule": "No unplanned excursion above assigned cryogenic stage before first retained-state measurement and 77 K hold checkpoints",
+      "assignment": "Default for all Stage A runs; first runs at each node MUST be H0"
+    },
+    {
+      "class": "H1",
+      "name": "Controlled intermediate-warm path",
+      "purpose": "Probe early warm-side degradation",
+      "thermal_path_rule": "After H0 steps complete: one planned 160-170 K hold",
+      "assignment": "Selected follow-up within same-run logic"
+    },
+    {
+      "class": "H2",
+      "name": "Controlled high-warm path",
+      "purpose": "Probe stronger degradation zone",
+      "thermal_path_rule": "After H1 complete: one planned 200 K hold",
+      "assignment": "Later-stage stress within a surviving run"
+    },
+    {
+      "class": "H3",
+      "name": "Room-temperature stress path",
+      "purpose": "Test explicit room-temperature fragility",
+      "thermal_path_rule": "After all earlier evidence captured: one planned 293 K excursion",
+      "assignment": "Last step only; NEVER part of first success gate"
+    }
+  ],
+  "invalidation_rules": [
+    {
+      "rule": 1,
+      "trigger": "Source state not confirmed under pressure before release",
+      "checklist_fields": ["source_state_confirmed"],
+      "consequence": "T0; cannot distinguish source-state failure from quench failure"
+    },
+    {
+      "rule": 2,
+      "trigger": "Full vQ or pressure-release trace is missing or corrupted",
+      "checklist_fields": ["pressure_release_trace", "vq_estimate"],
+      "consequence": "T0; vQ is a REQUIRED control variable"
+    },
+    {
+      "rule": 3,
+      "trigger": "Sample class or oxygen-history class is missing",
+      "checklist_fields": ["sample_class", "oxygen_history_class"],
+      "consequence": "T0; cannot assess sample-state dependence"
+    },
+    {
+      "rule": 4,
+      "trigger": "Unplanned warm excursion before next scheduled retained-state checkpoint",
+      "checklist_fields": ["thermal_path_max_temp_k", "unplanned_excursion"],
+      "consequence": "T0; metastable phase may have annealed before measurement"
+    },
+    {
+      "rule": 5,
+      "trigger": "Retrieval occurs without logged thermal pathway",
+      "checklist_fields": ["retrieval_thermal_path"],
+      "consequence": "T0 for ex-DAC data only; in-DAC data may remain valid"
+    },
+    {
+      "rule": 6,
+      "trigger": "Stage tags incomplete enough that failure localization is impossible",
+      "checklist_fields": ["stage_tags"],
+      "consequence": "T0; cannot route through diagnostic tree"
+    }
+  ],
+  "evidence_tiers": [
+    {
+      "tier": "T0",
+      "label": "Invalid / non-countable",
+      "requirements": "Any invalidation rule triggered",
+      "allowed_claim": "Troubleshooting only; no route evidence"
+    },
+    {
+      "tier": "T1",
+      "label": "Headline reproduction candidate",
+      "requirements": "Full PQ/TQ/vQ trace, source state confirmed, first ambient cryogenic retained-state check, countable artifact bundle",
+      "allowed_claim": "Valid attempt reached headline gate; no basin language"
+    },
+    {
+      "tier": "T2",
+      "label": "Basin-candidate support",
+      "requirements": "T1 + replicate support at one fixed node + 24 h 77 K hold",
+      "allowed_claim": "Reproducibility window may exist; no strengthened-route language"
+    },
+    {
+      "tier": "T3",
+      "label": "Strengthened-route support",
+      "requirements": "T2 + ex-DAC follow-up with bulk support and controlled retrieval",
+      "allowed_claim": "Route improving beyond headline status; no room-temperature language"
+    }
+  ],
+  "pressure_calibration": {
+    "methods": [
+      {
+        "name": "Ruby fluorescence",
+        "specification": "Standard R1 line shift; calibrate against Mao 1986 or Dewaele 2008 scale",
+        "when_to_use": "Preferred for DACs with optical access at cryogenic temperatures"
+      },
+      {
+        "name": "Diamond Raman edge",
+        "specification": "Raman shift of diamond anvil; calibrate against known scale",
+        "when_to_use": "Alternative when ruby fluorescence is impractical"
+      }
+    ],
+    "requirement": "Method and scale must be recorded in run log for every run; pressure in GPa"
+  },
+  "timeline": {
+    "window_months": 6,
+    "minimum_runs": 12,
+    "recommended_pace": "2-3 runs per month",
+    "checkpoints": [
+      {
+        "month": 2,
+        "target": "First 3-4 runs complete",
+        "assessment": "Operational issues? All T0 -> escalate per vQ section"
+      },
+      {
+        "month": 4,
+        "target": "At least 6 runs complete (one per node)",
+        "assessment": "Any node showing retained signal?"
+      },
+      {
+        "month": 6,
+        "target": "All 12 runs complete",
+        "assessment": "Final assessment against 131 K success gate"
+      }
+    ]
+  },
+  "protocol_uncertainty": {
+    "known_high_confidence": [
+      "PQ window: 10.1-28.4 GPa",
+      "TQ: 4.2 K (low) and 77 K (warm)",
+      "Retained Tc at low TQ: 147-151 K (zero-resistance, retained ambient, metastable)",
+      "Retained Tc at warm TQ: ~139 K at PQ~26 GPa (zero-resistance, retained ambient, metastable)",
+      "Stability: >= 3 days at 77 K",
+      "Degradation onset: ~170-200 K",
+      "Crystal structure: tetragonal retained post-PQP",
+      "SC volume fraction: ~78% in retrieved samples"
+    ],
+    "inferred_medium_confidence": [
+      "General DAC quench procedure transferable across PQP material families",
+      "Rapid decompression sufficient (numerical vQ not published)",
+      "Cryogenic hold at 77 K is standard stability test",
+      "Membrane-DAC or equivalent rapid-release expected"
+    ],
+    "unknown_low_confidence": [
+      "vQ (decompression rate): not published for any PQP system",
+      "Exact Hg1223 sample preparation for PQP compatibility",
+      "Lead survivability during quench: no published mitigation",
+      "Meissner fraction reproducibility: single data point (~78%)",
+      "Sample-to-sample Tc variation under PQP"
+    ]
+  },
+  "vald_01_compliance": "Every Tc value specifies: definition (zero-resistance or onset), operating conditions (retained ambient, stable ambient, or under pressure), and phase state (metastable or stable)",
+  "vald_02_compliance": "Room-temperature gap = 300 - 151 = 149 K stated explicitly; no room-temperature progress language used",
+  "sources": [
+    "arXiv:2603.12437 (Deng, Chu et al., PNAS 2026) -- Hg1223 PQP",
+    "PNAS 118, e2108938118 (Deng et al., 2021) -- FeSe PQP",
+    "PNAS e2423102122 (Deng et al., 2025) -- BST PQP",
+    "Nature Commun. 6, 8990 (Gao et al., 2015) -- Hg-family pressure",
+    "Phase 19 Stage A runbook",
+    "Phase 19 handling spec",
+    "Phase 19 run-log schema",
+    "Phase 20 failure-mode map",
+    "Phase 20 minimum evidence package",
+    "Phase 23 next-step memo"
+  ]
+}
