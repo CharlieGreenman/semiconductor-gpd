@@ -1,0 +1,331 @@
+{
+  "version": "1.0",
+  "date": "2026-03-29",
+  "status": "pre-registered",
+  "conventions": {
+    "units": "SI-derived (K, GPa)",
+    "room_temperature_K": 300,
+    "tc_definition": "zero-resistance unless onset explicitly labeled",
+    "gap_definition": "300 K minus best retained ambient Tc",
+    "evidence_tiers": "T0-T3 per Phase 20",
+    "handling_classes": "H0-H3 per Phase 19"
+  },
+  "key_values": {
+    "benchmark_tc_K": 151,
+    "benchmark_tc_vald01": "zero-resistance, retained ambient, metastable, single-group",
+    "stable_ambient_tc_K": 134,
+    "stable_ambient_tc_vald01": "zero-resistance, thermodynamically stable, ambient",
+    "room_temperature_gap_K": 149,
+    "success_gate_tc_K": 131,
+    "success_gate_arithmetic": "151 - 20 = 131",
+    "fallback_gap_K": 166,
+    "fallback_gap_arithmetic": "300 - 134 = 166"
+  },
+  "route_decision_verbs": [
+    "keep-primary",
+    "hold-pending-replication",
+    "hold-pending-diagnostic",
+    "downgrade-to-secondary",
+    "activate-pivot-trigger",
+    "no-route-update"
+  ],
+  "outcome_classes": [
+    {
+      "id": "F1",
+      "name": "target-state failure",
+      "category": "failure",
+      "source": "Phase 20 failure-mode map",
+      "description": "In-DAC source state is absent, weak, or off-target before pressure release",
+      "tier_range": ["T0", "below-T1"],
+      "route_decisions": {
+        "at_T0": "no-route-update",
+        "at_below_T1": "hold-pending-diagnostic"
+      },
+      "gap_update": {
+        "arithmetic": "unchanged",
+        "gap_K": 149,
+        "reason": "No retained Tc measured; precursor state never established"
+      },
+      "next_action": "Fix source-state preparation before attempting another quench",
+      "does_not_mean": "Does not test whether PQP retention works; not negative route evidence"
+    },
+    {
+      "id": "F2",
+      "name": "quench-trajectory failure",
+      "category": "failure",
+      "source": "Phase 20 failure-mode map",
+      "description": "Source state confirmed, valid logs, no unplanned warm excursion, but first ambient cryogenic check shows weak or absent signal",
+      "tier_range": ["T1"],
+      "route_decisions": {
+        "at_T1_single": "hold-pending-diagnostic",
+        "at_T1_multiple": "hold-pending-diagnostic escalating toward activate-pivot-trigger per aggregate Rule B"
+      },
+      "gap_update": {
+        "arithmetic": "unchanged",
+        "gap_K": 149,
+        "reason": "No retained Tc achieved; benchmark unchanged but not confirmed"
+      },
+      "next_action": "Use recorded vQ trace to target decompression-rate follow-up",
+      "does_not_mean": "Does not by itself prove the route is impossible"
+    },
+    {
+      "id": "F3",
+      "name": "sample-state dependence",
+      "category": "failure",
+      "source": "Phase 20 failure-mode map",
+      "description": "Same node and handling class split by sample class or oxygen-history class",
+      "tier_range": ["T1", "T2"],
+      "route_decisions": {
+        "at_T1": "hold-pending-diagnostic",
+        "at_T2": "hold-pending-replication"
+      },
+      "gap_update": {
+        "arithmetic": "If successful split Tc >= 131 K: gap = 300 - Tc_retained; otherwise unchanged at 149 K",
+        "gap_K": null,
+        "reason": "Depends on whether a successful split exists"
+      },
+      "next_action": "Isolate sample-state classes before broadening route claims",
+      "does_not_mean": "Does not imply the route is purely stochastic"
+    },
+    {
+      "id": "F4",
+      "name": "cryogenic-retention weakness",
+      "category": "failure",
+      "source": "Phase 20 failure-mode map",
+      "description": "Initial retained signal exists but decays within the 77 K hold window",
+      "tier_range": ["T1"],
+      "route_decisions": {
+        "at_T1": "hold-pending-replication"
+      },
+      "gap_update": {
+        "arithmetic": "If initial Tc >= 131 K: gap = 300 - Tc_initial (transient); otherwise unchanged at 149 K",
+        "gap_K": null,
+        "reason": "Transient Tc may not be stable; gap figure is provisional"
+      },
+      "next_action": "Treat as fragile retained-state evidence, not basin evidence; investigate cryogenic stability",
+      "does_not_mean": "Does not mean no retained state existed; basin is narrow before warm-side stressing"
+    },
+    {
+      "id": "F5",
+      "name": "warm-side fragility",
+      "category": "failure",
+      "source": "Phase 20 failure-mode map",
+      "description": "Retained signal survives cryogenic checks but drops strongly at 160-170 K or 200 K",
+      "tier_range": ["T1", "T2"],
+      "route_decisions": {
+        "at_T1": "hold-pending-replication",
+        "at_T2": "keep-primary (cryogenic-only constraint)"
+      },
+      "gap_update": {
+        "arithmetic": "If Tc_retained (pre-warm) >= 131 K: gap = 300 - Tc_retained; warm-side loss does not change gap",
+        "gap_K": null,
+        "reason": "Gap measured against room temperature using cryogenic retained Tc"
+      },
+      "next_action": "Keep 149 K gap explicit; avoid room-temperature language; classify route as cryogenic-only",
+      "does_not_mean": "Does not mean route fails; warm-side fragility is expected for metastable PQP state"
+    },
+    {
+      "id": "F6",
+      "name": "retrieval-induced loss",
+      "category": "failure",
+      "source": "Phase 20 failure-mode map",
+      "description": "Pre-retrieval survival logged, but ex-DAC transport or bulk support drops after retrieval",
+      "tier_range": ["T1", "T2"],
+      "route_decisions": {
+        "at_T1_T2_solid": "keep-primary (retrieval flagged as separate control problem)",
+        "at_total_retrieval_loss": "hold-pending-diagnostic (on retrieval protocol)"
+      },
+      "gap_update": {
+        "arithmetic": "If in-DAC Tc >= 131 K: gap = 300 - Tc_retained (in-DAC); retrieval loss does not widen gap",
+        "gap_K": null,
+        "reason": "In-DAC measurement is the relevant gap figure"
+      },
+      "next_action": "Isolate retrieval as its own control problem",
+      "does_not_mean": "Does not downgrade the route; retained state existed, loss is mechanical not thermodynamic"
+    },
+    {
+      "id": "F7",
+      "name": "onset-only ambiguity",
+      "category": "failure",
+      "source": "Phase 20 failure-mode map",
+      "description": "Onset signal appears but no zero-resistance crossing observed, no replicate or bulk support",
+      "tier_range": ["T1"],
+      "route_decisions": {
+        "at_T1": "hold-pending-replication"
+      },
+      "gap_update": {
+        "arithmetic": "unchanged",
+        "gap_K": 149,
+        "reason": "Onset does not update the gap; zero-resistance only per VALD-01"
+      },
+      "next_action": "Repeat same fixed node under matched handling; demand higher evidence tier",
+      "does_not_mean": "Does not confirm PQP retention; onset is necessary but not sufficient; does not pass 131 K gate"
+    },
+    {
+      "id": "F8",
+      "name": "invalid / non-countable run",
+      "category": "failure",
+      "source": "Phase 20 failure-mode map",
+      "description": "Missing vQ trace, missing sample metadata, missing stage tags, or uncontrolled warm excursion",
+      "tier_range": ["T0"],
+      "route_decisions": {
+        "at_T0": "no-route-update"
+      },
+      "gap_update": {
+        "arithmetic": "unchanged",
+        "gap_K": 149,
+        "reason": "T0 runs are uninformative; no Tc measurement produced"
+      },
+      "next_action": "Troubleshoot operational issues before next run",
+      "does_not_mean": "Does not count as negative or positive route evidence"
+    },
+    {
+      "id": "S1",
+      "name": "headline reproduction match",
+      "category": "success",
+      "description": "Retained ambient zero-resistance Tc >= 131 K at any node, valid logs (T1+)",
+      "tier_range": ["T1", "T2", "T3"],
+      "route_decisions": {
+        "at_T1": "keep-primary",
+        "at_T2": "keep-primary (basin candidate)",
+        "at_T3": "keep-primary (strengthened route)"
+      },
+      "gap_update": {
+        "arithmetic": "gap = 300 - Tc_retained",
+        "gap_K": null,
+        "examples": [
+          {"tc_retained_K": 151, "gap_K": 149, "note": "benchmark confirmed"},
+          {"tc_retained_K": 140, "gap_K": 160, "note": "partial confirmation"},
+          {"tc_retained_K": 131, "gap_K": 169, "note": "gate threshold"}
+        ],
+        "reason": "Gap updated to confirmed retained Tc; guardrail: even at 151 K, gap is 149 K"
+      },
+      "next_action": {
+        "at_T1": "Proceed to T2 replication at successful node",
+        "at_T2": "Proceed to T3 (controlled retrieval + ex-DAC characterization)",
+        "at_T3": "Keep Hg1223 primary, route next work toward basin widening"
+      },
+      "does_not_mean": "Does not mean room-temperature superconductivity is closer; 149 K gap remains"
+    },
+    {
+      "id": "S2",
+      "name": "headline exceed",
+      "category": "success",
+      "description": "Retained ambient zero-resistance Tc > 151 K -- unexpected, requires verification",
+      "tier_range": ["T1", "T2", "T3"],
+      "route_decisions": {
+        "at_T1": "hold-pending-replication (unexpected results require extra scrutiny)",
+        "at_T2_plus": "keep-primary (if verified)"
+      },
+      "gap_update": {
+        "arithmetic": "gap = 300 - Tc_retained",
+        "gap_K": null,
+        "examples": [
+          {"tc_retained_K": 160, "gap_K": 140, "note": "still 140 K gap to RT"}
+        ],
+        "reason": "Gap updated only after exceedance is replicated"
+      },
+      "next_action": "Intensive verification: repeat at same node, add Meissner, add XRD",
+      "does_not_mean": "Does not mean room-temperature superconductivity is achievable"
+    },
+    {
+      "id": "S3",
+      "name": "partial retention",
+      "category": "success",
+      "description": "Retained ambient zero-resistance Tc between stable baseline (~134 K) and 131 K success gate",
+      "tier_range": ["T1"],
+      "route_decisions": {
+        "at_T1": "hold-pending-diagnostic"
+      },
+      "gap_update": {
+        "arithmetic": "gap = 300 - Tc_retained",
+        "gap_K": null,
+        "examples": [
+          {"tc_retained_K": 138, "gap_K": 162, "note": "PQP uplift confirmed but below gate"},
+          {"tc_retained_K": 125, "gap_K": 175, "note": "anomalous -- needs investigation"}
+        ],
+        "reason": "Partial retention updates gap but does not pass success gate"
+      },
+      "next_action": "Characterize partial retention; if no path to 131 K after multiple attempts, evidence for activate-pivot-trigger",
+      "does_not_mean": "Does not confirm 151 K benchmark; does not pass success gate; does not warrant route strengthening"
+    },
+    {
+      "id": "D1",
+      "name": "unknown / unclassified outcome",
+      "category": "default",
+      "description": "Any outcome not matching F1-F8 or S1-S3",
+      "tier_range": ["T0 provisionally"],
+      "route_decisions": {
+        "default": "no-route-update"
+      },
+      "gap_update": {
+        "arithmetic": "unchanged",
+        "gap_K": 149,
+        "reason": "Unclassified outcomes are uninformative until classified"
+      },
+      "next_action": "Escalate to researcher for classification before updating route confidence",
+      "does_not_mean": "Does not mean route is stronger or weaker"
+    }
+  ],
+  "aggregate_rules": {
+    "rule_A": {
+      "name": "at_least_one_headline_match",
+      "trigger": ">= 1 node achieves S1 at T1+",
+      "campaign_decision": "keep-primary",
+      "gap_update": "300 - Tc_retained (best confirmed node)",
+      "next_action": "Proceed to T2 replication at successful node(s)"
+    },
+    "rule_B": {
+      "name": "all_clean_misses",
+      "trigger": "All 6 nodes produce T1 runs with no retained signal above 131 K",
+      "campaign_decision": "activate-pivot-trigger",
+      "gap_update_K": 166,
+      "gap_update_arithmetic": "300 - 134 = 166",
+      "fallback_tc_K": 134,
+      "fallback_tc_vald01": "zero-resistance, thermodynamically stable, ambient",
+      "next_action": "Evaluate nickelate promotion per Phase 23 triggers"
+    },
+    "rule_C": {
+      "name": "all_T0_operational_failure",
+      "trigger": "First 3+ runs are all T0",
+      "campaign_decision": "no-route-update",
+      "gap_update": "unchanged at 149 K",
+      "next_action": "Troubleshoot; if vQ-related, escalate to Deng-Chu group"
+    },
+    "rule_D": {
+      "name": "mixed_results",
+      "trigger": "Some positive, some negative, no uniform pattern",
+      "campaign_decision": "hold-pending-diagnostic",
+      "gap_update": "300 - Tc_retained (best confirmed node if any pass 131 K) or unchanged",
+      "next_action": "Classify each node individually; look for PQ/TQ/sample-state patterns"
+    },
+    "rule_E": {
+      "name": "headline_exceedance",
+      "trigger": "Any node produces S2 (Tc > 151 K)",
+      "campaign_decision": "hold-pending-replication",
+      "gap_update": "Do not update benchmark until exceedance replicated",
+      "next_action": "Intensive verification at same node"
+    }
+  },
+  "pivot_trigger": {
+    "source": "Phase 23 next-step memo Section 2",
+    "trigger_condition": "PQP reproduction fails: retained Tc below 131 K across all 6 Stage A nodes or retention not achieved at all (aggregate Rule B)",
+    "consequences": [
+      "Fall back to stable ~134 K ambient Tc baseline",
+      "Gap widens to 300 - 134 = 166 K",
+      "Evaluate nickelate promotion to co-primary",
+      "If PQP fundamentally non-reproducible: escalate to co-primary with nickelates"
+    ],
+    "nickelate_promotion_thresholds": {
+      "co_primary_K": 100,
+      "evaluate_K": 80,
+      "demote_K": 50,
+      "tc_definition": "ambient zero-resistance"
+    },
+    "does_not_trigger_if": [
+      "Only T0 runs produced (operational failures, not route evidence)",
+      "Mixed results with at least one node passing 131 K gate",
+      "Only onset signals without zero-resistance"
+    ]
+  }
+}
