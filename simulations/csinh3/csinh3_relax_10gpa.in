@@ -1,0 +1,79 @@
+! CsInH3 Pm-3m variable-cell relaxation at 10 GPa
+! ASSERT_CONVENTION: natural_units=NOT_used, fourier_convention=QE_plane_wave,
+!   unit_system_internal=Rydberg_atomic, pressure_unit_qe=kbar,
+!   xc_functional=PBEsol, pseudopotential=ONCV_norm_conserving, asr=crystal,
+!   phonon_stability_threshold=-5cm-1
+!
+! Structure: Pm-3m (space group #221), simple cubic, 5 atoms/cell
+!   Cs at 1a: (0, 0, 0)
+!   In at 1b: (0.5, 0.5, 0.5)
+!   H  at 3d: (0.5, 0.5, 0), (0.5, 0, 0.5), (0, 0.5, 0.5)
+!
+! Target pressure: 10 GPa = 100 kbar
+! Initial lattice parameter: a ~ 3.96 A (Du et al. 2024 estimate)
+!   a ~ 3.96 A = 7.48278 Bohr
+!
+! Pseudopotentials: ONCV PseudoDojo PBEsol stringent
+! Reference: Du et al., Advanced Science 11, 2408370 (2024) -- Tc = 153 K at 9 GPa
+!
+! Dimensional check: ecutwfc = 90 Ry = 90 * 13.6057 eV = 1224.5 eV
+! Pressure check: 10 GPa = 100 kbar
+
+&CONTROL
+  calculation  = 'vc-relax'
+  prefix       = 'csinh3'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  tprnfor      = .true.
+  tstress      = .true.
+  forc_conv_thr = 1.0d-4
+  etot_conv_thr = 1.0d-6
+  nstep        = 200
+/
+
+&SYSTEM
+  ibrav        = 1             ! Simple cubic (Pm-3m)
+  celldm(1)    = 7.48278       ! a = 3.96 A = 7.48278 Bohr (initial guess)
+  nat          = 5
+  ntyp         = 3
+  ecutwfc      = 90.0          ! Ry (90 Ry = 1224.5 eV; NC PPs for Cs need >= 80 Ry)
+  ecutrho      = 360.0         ! Ry (4x ecutwfc for NC PPs)
+  occupations  = 'smearing'
+  smearing     = 'mp'          ! Methfessel-Paxton order 1
+  degauss      = 0.02          ! Ry (~0.27 eV; appropriate for metallic system)
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10       ! Tight convergence for phonon-quality wavefunctions
+  mixing_beta  = 0.3           ! Conservative mixing for metallic system
+  mixing_mode  = 'plain'
+  diagonalization = 'david'
+/
+
+&IONS
+  ion_dynamics = 'bfgs'
+/
+
+&CELL
+  cell_dynamics = 'bfgs'
+  press        = 100.0         ! Target pressure in kbar (10 GPa = 100 kbar)
+  press_conv_thr = 0.5         ! kbar convergence threshold (0.05 GPa)
+  cell_dofree  = 'ibrav'       ! Preserve cubic symmetry during relaxation
+/
+
+ATOMIC_SPECIES
+  Cs  132.905  Cs.upf         ! PseudoDojo PBEsol ONCV NC
+  In  114.818  In.upf         ! PseudoDojo PBEsol ONCV NC
+  H     1.008  H.upf          ! PseudoDojo PBEsol ONCV NC
+
+! Atomic positions in crystal (fractional) coordinates
+ATOMIC_POSITIONS {crystal}
+  Cs  0.000000  0.000000  0.000000   ! Wyckoff 1a
+  In  0.500000  0.500000  0.500000   ! Wyckoff 1b
+  H   0.500000  0.500000  0.000000   ! Wyckoff 3d
+  H   0.500000  0.000000  0.500000   ! Wyckoff 3d
+  H   0.000000  0.500000  0.500000   ! Wyckoff 3d
+
+! 12x12x12 Monkhorst-Pack k-grid, Gamma-centered
+K_POINTS {automatic}
+  12  12  12  0  0  0

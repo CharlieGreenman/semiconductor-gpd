@@ -1,0 +1,19 @@
+{
+  "min_frequency_meV": 0.0,
+  "min_frequency_cm1": 0.0,
+  "dynamically_stable": true,
+  "acoustic_at_gamma_meV": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "asr_satisfied": true,
+  "n_branches": 15,
+  "expected_branches": 15,
+  "branch_count_correct": true,
+  "max_frequency_meV": 191.88552338794466,
+  "max_frequency_cm1": 1547.6603643064032,
+  "h_modes_in_range": true,
+  "min_positive_frequency_meV": 0.885850682407133,
+  "all_checks_passed": true
+}

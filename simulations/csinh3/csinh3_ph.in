@@ -1,0 +1,26 @@
+! CsInH3 Pm-3m DFPT phonon calculation at 10 GPa
+! ASSERT_CONVENTION: natural_units=NOT_used, unit_system_internal=Rydberg_atomic,
+!   xc_functional=PBEsol, pseudopotential=ONCV_norm_conserving, asr=crystal
+!
+! 6x6x6 q-grid for Pm-3m cubic perovskite
+! For Pm-3m with Oh symmetry, this gives ~4-6 irreducible q-points
+!
+! IMPORTANT: fildvscf = 'dvscf' is REQUIRED for EPW
+! tr2_ph = 1.0d-14 for tight phonon convergence
+!
+! Expected: 15 phonon branches (3*5 atoms = 15)
+!   3 acoustic (1 LA + 2 TA)
+!   12 optical (Cs/In-dominated low-freq + H-dominated high-freq)
+
+phonons of CsInH3 at 10 GPa
+&INPUTPH
+  prefix       = 'csinh3'
+  outdir       = './tmp/'
+  tr2_ph       = 1.0d-14       ! Tight convergence for DFPT
+  fildvscf     = 'dvscf'       ! REQUIRED for EPW
+  fildyn       = 'csinh3.dyn'  ! Dynamical matrix output
+  ldisp        = .true.        ! Phonon dispersion (grid calculation)
+  nq1          = 6             ! q-grid dimensions
+  nq2          = 6
+  nq3          = 6
+/

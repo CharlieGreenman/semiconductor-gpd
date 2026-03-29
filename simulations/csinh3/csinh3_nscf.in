@@ -1,0 +1,52 @@
+! CsInH3 Pm-3m NSCF on dense k-grid for Wannier/EPW
+! ASSERT_CONVENTION: natural_units=NOT_used, fourier_convention=QE_plane_wave,
+!   unit_system_internal=Rydberg_atomic, xc_functional=PBEsol,
+!   pseudopotential=ONCV_norm_conserving
+!
+! Dense uniform k-grid for Wannier90 fitting
+! nosym = .true., noinv = .true. are REQUIRED for EPW
+! nbnd = 30 provides enough bands for disentanglement window
+
+&CONTROL
+  calculation  = 'nscf'
+  prefix       = 'csinh3'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+/
+
+&SYSTEM
+  ibrav        = 1
+  celldm(1)    = 7.48278       ! UPDATE from vc-relax output
+  nat          = 5
+  ntyp         = 3
+  ecutwfc      = 90.0
+  ecutrho      = 360.0
+  occupations  = 'smearing'
+  smearing     = 'mp'
+  degauss      = 0.02
+  nosym        = .true.        ! Required for EPW
+  noinv        = .true.        ! Required for EPW
+  nbnd         = 30            ! Extra bands for disentanglement
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10
+  mixing_beta  = 0.3
+  diagonalization = 'david'
+/
+
+ATOMIC_SPECIES
+  Cs  132.905  Cs.upf
+  In  114.818  In.upf
+  H     1.008  H.upf
+
+ATOMIC_POSITIONS {crystal}
+  Cs  0.000000  0.000000  0.000000
+  In  0.500000  0.500000  0.500000
+  H   0.500000  0.500000  0.000000
+  H   0.500000  0.000000  0.500000
+  H   0.000000  0.500000  0.500000
+
+! 24x24x24 uniform k-grid for Wannier interpolation
+K_POINTS {automatic}
+  24  24  24  0  0  0

@@ -1,0 +1,53 @@
+! CsInH3 Pm-3m SCF at relaxed 10 GPa structure
+! ASSERT_CONVENTION: natural_units=NOT_used, fourier_convention=QE_plane_wave,
+!   unit_system_internal=Rydberg_atomic, pressure_unit_qe=kbar,
+!   xc_functional=PBEsol, pseudopotential=ONCV_norm_conserving
+!
+! Structure: Pm-3m (space group #221), simple cubic, 5 atoms/cell
+! Uses relaxed lattice parameter from vc-relax at 10 GPa
+!
+! NOTE: Replace celldm(1) with value from vc-relax output
+!       Expected: a ~ 3.93-3.98 A at 10 GPa (Du et al.: ~3.96 A at 9 GPa)
+
+&CONTROL
+  calculation  = 'scf'
+  prefix       = 'csinh3'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  tprnfor      = .true.
+  tstress      = .true.
+/
+
+&SYSTEM
+  ibrav        = 1             ! Simple cubic (Pm-3m)
+  celldm(1)    = 7.48278       ! UPDATE from vc-relax output (a in Bohr)
+  nat          = 5
+  ntyp         = 3
+  ecutwfc      = 90.0          ! Ry
+  ecutrho      = 360.0         ! Ry (4x for NC PPs)
+  occupations  = 'smearing'
+  smearing     = 'mp'
+  degauss      = 0.02          ! Ry
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10       ! Tight convergence for phonons
+  mixing_beta  = 0.3
+  mixing_mode  = 'plain'
+  diagonalization = 'david'
+/
+
+ATOMIC_SPECIES
+  Cs  132.905  Cs.upf
+  In  114.818  In.upf
+  H     1.008  H.upf
+
+ATOMIC_POSITIONS {crystal}
+  Cs  0.000000  0.000000  0.000000
+  In  0.500000  0.500000  0.500000
+  H   0.500000  0.500000  0.000000
+  H   0.500000  0.000000  0.500000
+  H   0.000000  0.500000  0.500000
+
+K_POINTS {automatic}
+  12  12  12  0  0  0
