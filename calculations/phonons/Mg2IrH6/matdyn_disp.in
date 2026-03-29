@@ -1,0 +1,14 @@
+&INPUT
+  asr = 'crystal',
+  flfrc = 'Mg2IrH6.fc',
+  flfrq = 'Mg2IrH6.freq',
+  flvec = 'Mg2IrH6.modes',
+  q_in_band_form = .true.,
+/
+6
+  0.0000  0.0000  0.0000  40  ! Gamma
+  0.5000  0.0000  0.5000  20  ! X
+  0.5000  0.2500  0.7500  20  ! W
+  0.5000  0.5000  0.5000  40  ! L
+  0.0000  0.0000  0.0000  30  ! Gamma
+  0.3750  0.3750  0.7500   1  ! K

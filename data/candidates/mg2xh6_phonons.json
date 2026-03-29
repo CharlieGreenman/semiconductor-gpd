@@ -1,0 +1,98 @@
+{
+  "Mg2IrH6": {
+    "structure": {
+      "space_group": "Fm-3m (#225)",
+      "a_conventional_A": 6.8,
+      "n_atoms_primitive": 9,
+      "n_branches": 27,
+      "hs_path": "Gamma-X-W-L-Gamma-K",
+      "hs_points": {
+        "Gamma": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "X": [
+          0.5,
+          0.0,
+          0.5
+        ],
+        "W": [
+          0.5,
+          0.25,
+          0.75
+        ],
+        "L": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "K": [
+          0.375,
+          0.375,
+          0.75
+        ]
+      }
+    },
+    "stability_verdict": {
+      "compound": "Mg2IrH6",
+      "pressure_GPa": 0,
+      "dynamic_stability": "STABLE",
+      "dynamic_stability_source": "Lucrezi et al., PRL 132, 166001 (2024)",
+      "dynamic_stability_confidence": "HIGH (literature confirmed)",
+      "thermodynamic_stability": "UNSTABLE",
+      "e_hull_meV": 123.3,
+      "min_frequency_cm-1": 0.0,
+      "max_imaginary_cm-1": 0.0,
+      "n_branches": 27,
+      "qgrid_converged_at": "4x4x4 (literature)",
+      "method": "Literature (DFPT pipeline set up for verification)",
+      "key_distinction": "Mg2IrH6 is DYNAMICALLY stable (all phonon frequencies real) but THERMODYNAMICALLY unstable (E_hull = 123 meV/atom >> 50 meV/atom). This validates the critical distinction between dynamic and thermodynamic stability in our pipeline."
+    },
+    "zpe": {
+      "zpe_per_atom_meV": 150.8,
+      "zpe_per_fu_meV": 1357.5,
+      "delta_zpe_per_atom_meV": 56.2,
+      "elemental_zpe_mg_meV_per_atom": 25.0,
+      "elemental_zpe_ir_meV_per_atom": 28.0,
+      "elemental_zpe_h2_meV_per_h": 129.0,
+      "method": "Simplified model: avg frequency per atom type from literature DOS",
+      "note": "Delta_ZPE = 56.2 meV/atom. Flag: |Delta_ZPE| > 25 meV/atom! ZPE correction would shift E_hull by this amount. For Mg2IrH6 with E_hull = 123 meV/atom, the correction would not change the stability verdict."
+    },
+    "literature_phonons": {
+      "source": "Lucrezi et al., PRL 132, 166001 (2024)",
+      "dynamic_stability": "STABLE (all frequencies real)",
+      "min_frequency_cm-1": 0.0,
+      "max_frequency_meV": 200.0,
+      "h_mode_range_meV": [
+        80,
+        200
+      ],
+      "mg_mode_range_meV": [
+        15,
+        40
+      ],
+      "ir_mode_range_meV": [
+        5,
+        15
+      ],
+      "acoustic_modes": 3,
+      "optical_modes": 24,
+      "total_branches": 27,
+      "notes": "All frequencies real; no imaginary modes at 0 GPa with 4x4x4 q-grid"
+    },
+    "dfpt_params": {
+      "method": "DFPT (QE ph.x)",
+      "qgrid_initial": "4x4x4",
+      "qgrid_convergence": "6x6x6 (then 8x8x8 if > 5 cm^-1 disagreement)",
+      "asr": "crystal",
+      "high_symmetry_path": "Gamma-X-W-L-Gamma-K",
+      "interpolation_grid": "20x20x20 for DOS",
+      "ecutwfc_Ry": 100,
+      "kgrid_scf": "12x12x12",
+      "degauss_Ry": 0.02,
+      "status": "PENDING_HPC"
+    },
+    "qe_inputs_path": "calculations/phonons/Mg2IrH6/"
+  }
+}

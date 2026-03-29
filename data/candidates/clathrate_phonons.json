@@ -1,0 +1,106 @@
+{
+  "SrNH4B6C6": {
+    "compound": "SrNH4B6C6",
+    "pressure_GPa": 0,
+    "n_atoms": 18,
+    "n_branches": 54,
+    "phonon_check": "SKIPPED",
+    "reason": "SrNH4B6C6 is 244.1 meV/atom above hull at 0 GPa. Per fp-above-hull policy and project convention (E_hull threshold = 50 meV/atom), phonon stability check is skipped.",
+    "literature_dynamic_stability": {
+      "verdict": "STABLE (Wang et al. 2024)",
+      "source": "Wang et al., Commun. Phys. 2024 (arXiv:2311.01656)",
+      "note": "Wang et al. reported dynamic stability for 24 MNH4B6C6 compounds at 0 GPa, including this one. However, they did NOT assess thermodynamic stability. Our hull analysis shows these compounds are far above the convex hull, meaning they are thermodynamically unstable despite being dynamically stable."
+    },
+    "dfpt_cost_estimate": {
+      "method": "DFPT (ph.x) on 4x4x4 q-grid",
+      "estimated_cpu_hours": 3500,
+      "exceeds_threshold": true,
+      "threshold_cpu_hours": 50,
+      "phonopy_fallback": {
+        "supercell": "2x2x2 (144 atoms)",
+        "n_displacements": 108,
+        "estimated_cpu_hours": 216
+      },
+      "phonopy_minimal": {
+        "supercell": "1x1x1 (18 atoms, Gamma-only)",
+        "n_displacements": 36,
+        "estimated_cpu_hours": 18
+      }
+    },
+    "expected_phonon_ranges_meV": {
+      "metal_rattling": [
+        5,
+        20
+      ],
+      "nh4_libration": [
+        15,
+        40
+      ],
+      "bc_cage": [
+        40,
+        100
+      ],
+      "nh4_stretching": [
+        200,
+        400
+      ]
+    },
+    "zpe_estimate": {
+      "note": "ZPE not computed (phonon check skipped due to fp-above-hull)",
+      "rough_estimate_meV_per_atom": 80,
+      "method": "Estimated from mode frequency ranges"
+    }
+  },
+  "PbNH4B6C6": {
+    "compound": "PbNH4B6C6",
+    "pressure_GPa": 0,
+    "n_atoms": 18,
+    "n_branches": 54,
+    "phonon_check": "SKIPPED",
+    "reason": "PbNH4B6C6 is 186.1 meV/atom above hull at 0 GPa. Per fp-above-hull policy and project convention (E_hull threshold = 50 meV/atom), phonon stability check is skipped.",
+    "literature_dynamic_stability": {
+      "verdict": "STABLE (Wang et al. 2024)",
+      "source": "Wang et al., Commun. Phys. 2024 (arXiv:2311.01656)",
+      "note": "Wang et al. reported dynamic stability for 24 MNH4B6C6 compounds at 0 GPa, including this one. However, they did NOT assess thermodynamic stability. Our hull analysis shows these compounds are far above the convex hull, meaning they are thermodynamically unstable despite being dynamically stable."
+    },
+    "dfpt_cost_estimate": {
+      "method": "DFPT (ph.x) on 4x4x4 q-grid",
+      "estimated_cpu_hours": 3500,
+      "exceeds_threshold": true,
+      "threshold_cpu_hours": 50,
+      "phonopy_fallback": {
+        "supercell": "2x2x2 (144 atoms)",
+        "n_displacements": 108,
+        "estimated_cpu_hours": 216
+      },
+      "phonopy_minimal": {
+        "supercell": "1x1x1 (18 atoms, Gamma-only)",
+        "n_displacements": 36,
+        "estimated_cpu_hours": 18
+      }
+    },
+    "expected_phonon_ranges_meV": {
+      "metal_rattling": [
+        5,
+        20
+      ],
+      "nh4_libration": [
+        15,
+        40
+      ],
+      "bc_cage": [
+        40,
+        100
+      ],
+      "nh4_stretching": [
+        200,
+        400
+      ]
+    },
+    "zpe_estimate": {
+      "note": "ZPE not computed (phonon check skipped due to fp-above-hull)",
+      "rough_estimate_meV_per_atom": 80,
+      "method": "Estimated from mode frequency ranges"
+    }
+  }
+}

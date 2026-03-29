@@ -1,0 +1,5 @@
+&INPUT
+  fildyn = 'Mg2IrH6.dyn',
+  zasr = 'crystal',
+  flfrc = 'Mg2IrH6.fc',
+/

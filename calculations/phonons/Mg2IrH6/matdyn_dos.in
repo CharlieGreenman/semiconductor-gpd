@@ -1,0 +1,8 @@
+&INPUT
+  asr = 'crystal',
+  flfrc = 'Mg2IrH6.fc',
+  fldos = 'Mg2IrH6.phdos',
+  dos = .true.,
+  nk1 = 20, nk2 = 20, nk3 = 20,
+  deltaE = 0.5,
+/
