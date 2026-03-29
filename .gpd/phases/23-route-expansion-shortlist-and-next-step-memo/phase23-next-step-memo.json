@@ -1,0 +1,91 @@
+{
+  "phase": "23-route-expansion-shortlist-and-next-step-memo",
+  "plan": "03",
+  "document_type": "next-step-memo",
+  "room_temperature_k": 300,
+  "room_temperature_gap_k": 149,
+  "gap_arithmetic": "300 - 151 = 149",
+  "best_retained_benchmark": {
+    "material": "HgBa2Ca2Cu3O8+delta (Hg1223)",
+    "tc_k": 151,
+    "tc_definition": "zero-resistance",
+    "operating_state": "retained ambient after pressure-quench synthesis",
+    "source": "Deng, Chu et al., PNAS 2026 (arXiv:2603.12437)",
+    "caveat": "single-group, metastable, 3-day stability at 77 K, deterioration at 200 K"
+  },
+  "primary_route": {
+    "name": "Hg-family cuprates",
+    "lead_candidate": "HgBa2Ca2Cu3O8+delta (Hg1223)",
+    "weighted_score": 4.15,
+    "gap_k": 149,
+    "ranking_source": "phase23-weighted-ranking.md"
+  },
+  "secondary_route": {
+    "name": "Nickelates",
+    "lead_candidate": "Bilayer La3Ni2O7-class",
+    "backup_candidate": "Infinite-layer SmNiO2-class",
+    "weighted_score": 2.90,
+    "gap_k_ambient_onset": 237,
+    "gap_k_ambient_bulk_zero_resist": 260,
+    "ranking_source": "phase23-weighted-ranking.md"
+  },
+  "primary_route_next_step": {
+    "action": "Design and launch an independent PQP reproducibility campaign targeting Hg1223",
+    "rationale": "The 151 K retained-ambient benchmark is single-group; independent confirmation is the most urgent need before lever optimization",
+    "campaign_elements": [
+      "Identify 1-2 independent groups with cuprate high-pressure synthesis capability",
+      "Provide the Deng-Chu PQP protocol as a reproducibility package",
+      "Define countable evidence requirements: zero-resistance, Meissner, sample-state logging",
+      "Set 6-month timeline for first independent attempt"
+    ]
+  },
+  "secondary_route_next_step": {
+    "action": "Map the Tc response to epitaxial compressive strain in bilayer La3Ni2O7-class nickelate films at ambient pressure",
+    "rationale": "Compressive strain is the most accessible and scalable uplift lever; the ambient-pressure strain response curve is unmapped",
+    "campaign_elements": [
+      "Grow bilayer La3Ni2O7-class films on substrates with varying lattice mismatch",
+      "Measure zero-resistance Tc at each strain point",
+      "Establish whether Tc-strain relationship is monotonic or has an optimum",
+      "Cross-check with SmNiO2 ambient-stability baseline"
+    ]
+  },
+  "success_gates": {
+    "primary": {
+      "criterion": "Independent group confirms retained ambient zero-resistance Tc >= 131 K in Hg1223 after PQP, with Meissner verification and sample-state logging",
+      "threshold_k": 131,
+      "threshold_derivation": "151 - 20 = 131 (20 K tolerance for sample-to-sample variability)"
+    },
+    "secondary": {
+      "criterion": "Bilayer La3Ni2O7-class film demonstrates ambient zero-resistance Tc > 80 K under optimized epitaxial strain",
+      "threshold_k": 80
+    }
+  },
+  "pivot_triggers": {
+    "primary_pivot": {
+      "trigger": "PQP reproduction fails: retained Tc below 131 K or retention not achieved",
+      "action": "Fall back to stable 134 K ambient baseline; gap widens to 166 K; evaluate nickelate promotion to co-primary"
+    },
+    "secondary_promotion": {
+      "trigger": "Any nickelate sub-family demonstrates ambient zero-resistance Tc above 100 K",
+      "action": "Promote nickelates to co-primary with Hg1223"
+    },
+    "secondary_demotion": {
+      "trigger": "Ambient nickelate Tc improvement stalls below 50 K for more than 6 months",
+      "action": "Demote nickelates to watch-only; operate with Hg-family as sole active route"
+    }
+  },
+  "v6_closeout": {
+    "milestone": "v6.0",
+    "phases_executed": ["22", "23"],
+    "outcome": "Explicit primary + secondary route program with named candidates, fragility caveats, pivot triggers, and concrete next-step actions",
+    "gap_status": "149 K gap unchanged since v4.0",
+    "experimental_data_generated": false
+  },
+  "sources": {
+    "phase23_ranking": ".gpd/phases/23-route-expansion-shortlist-and-next-step-memo/phase23-weighted-ranking.md",
+    "phase23_shortlist": ".gpd/phases/23-route-expansion-shortlist-and-next-step-memo/phase23-route-shortlist.md",
+    "phase22_headroom_map": ".gpd/phases/22-gap-closing-frontier-map-and-control-ledger/phase22-frontier-headroom-map.md",
+    "phase22_control_matrix": ".gpd/phases/22-gap-closing-frontier-map-and-control-ledger/phase22-control-knob-matrix.md",
+    "v5_closeout": ".gpd/phases/21-first-campaign-route-gates-and-backup-trigger-memo/phase21-final-memo.md"
+  }
+}
