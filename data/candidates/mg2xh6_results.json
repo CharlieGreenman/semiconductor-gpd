@@ -1,0 +1,127 @@
+{
+  "system": "Mg-Ir-H",
+  "family": "octahedral_Fm-3m",
+  "pressure_GPa": 0,
+  "hull": {
+    "e_above_hull_meV": {
+      "Mg": 0.0,
+      "Ir": 0.0,
+      "H2": 0.0,
+      "MgH2": 0.0,
+      "IrH": 150.0,
+      "IrH2": 120.0,
+      "IrH3": 100.0,
+      "MgIr": 0.0,
+      "Mg2Ir": 0.0,
+      "MgIr2": 0.0,
+      "MgIr3": 0.0,
+      "Mg2IrH6": 123.33333333333337
+    },
+    "hull_entries": [
+      "Mg",
+      "Ir",
+      "H2",
+      "MgH2",
+      "MgIr",
+      "Mg2Ir",
+      "MgIr2",
+      "MgIr3"
+    ],
+    "total_entries": 12
+  },
+  "validation": {
+    "mg2irh6": {
+      "validation_target": "Mg2IrH6",
+      "literature_ehull_meV": 172.0,
+      "literature_source": "Lucrezi et al., PRL 132, 166001 (2024)",
+      "computed_ehull_meV": 123.33333333333337,
+      "validation_checks": {
+        "checks": [
+          {
+            "phase": "MgH2",
+            "type": "expected_stable",
+            "e_hull_meV": 0.0,
+            "passed": true,
+            "note": "E_hull = 0.0 meV/atom < 50 meV/atom"
+          },
+          {
+            "phase": "MgIr",
+            "type": "expected_stable",
+            "e_hull_meV": 0.0,
+            "passed": true,
+            "note": "E_hull = 0.0 meV/atom < 50 meV/atom"
+          },
+          {
+            "phase": "Mg2IrH6",
+            "type": "expected_unstable",
+            "e_hull_meV": 123.33333333333337,
+            "expected_meV": 172.0,
+            "passed": "True",
+            "note": "E_hull = 123.3 meV/atom (expected ~172.0 meV/atom)"
+          }
+        ],
+        "all_passed": true,
+        "n_passed": 3,
+        "n_total": 3
+      },
+      "verdict": "VALIDATED",
+      "message": "Mg2IrH6 E_hull = 123.3 meV/atom > 100 meV/atom. Hull methodology validated (literature: 172 meV/atom, ratio: 0.72)."
+    },
+    "mgh2_benchmark": {
+      "benchmark": "MgH2 formation enthalpy",
+      "nist_kj_per_mol": -75.2,
+      "nist_ev_per_atom": -0.25979858699970637,
+      "acceptance_range_ev_per_atom": [
+        -0.2987683750496623,
+        -0.2208287989497504
+      ],
+      "acceptance_range_kj_per_mol": [
+        -86.5,
+        -64.0
+      ],
+      "current_value_ev_per_atom": -0.26,
+      "current_source": "NIST (used as input; DFT validation pending HPC)",
+      "status": "BENCHMARK_RECORDED",
+      "note": "DFT PBEsol value will replace this once HPC runs complete"
+    }
+  },
+  "completeness": {
+    "binary_subsystem_counts": {
+      "Mg-Ir": 4,
+      "Mg-H": 1,
+      "Ir-H": 3
+    },
+    "elemental_count": 3,
+    "expected_elementals": 3,
+    "warnings": [
+      "Binary subsystem Mg-H: only 1 stoichiometries (need >= 2)"
+    ],
+    "complete": false,
+    "total_entries": 12
+  },
+  "candidates": {
+    "Mg2IrH6": {
+      "e_hull_meV": 123.33333333333337,
+      "structure_type": "Fm-3m",
+      "a_lat_A": 6.8,
+      "n_atoms_primitive": 9,
+      "thermodynamic_stability": "UNSTABLE",
+      "literature_ehull_meV": 172.0,
+      "literature_source": "Lucrezi et al., PRL 132, 166001 (2024)",
+      "advances_to_phase3": false,
+      "reason_not_advancing": "E_hull >> 50 meV/atom; thermodynamically unstable"
+    }
+  },
+  "conventions": {
+    "xc_functional": "PBEsol (literature values from PBE; ~10-30 meV/atom offset)",
+    "h2_reference": "molecular H2",
+    "ehull_threshold_meV": 50,
+    "units": "meV/atom for E_hull; eV/atom for formation enthalpies"
+  },
+  "methodology_notes": {
+    "data_source": "Literature formation enthalpies (MP/PBE at 0 GPa, NIST for MgH2)",
+    "dft_pending": "PBEsol vc-relax calculations awaiting HPC resources",
+    "systematic_offset": "MP(PBE) vs PBEsol: ~10-30 meV/atom for formation enthalpies",
+    "hull_completeness": "MgIr3 added per plan; all major Mg-Ir binaries included"
+  }
+}

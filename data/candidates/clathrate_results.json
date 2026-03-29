@@ -1,0 +1,148 @@
+{
+  "family": "clathrate_sodalite",
+  "reference": "Wang et al., Commun. Phys. 2024 (arXiv:2311.01656)",
+  "candidates": {
+    "SrNH4B6C6": {
+      "metal": "Sr",
+      "formula": "SrNH4B6C6",
+      "n_atoms": 18,
+      "structure_type": "sodalite clathrate (Im-3m approximate)",
+      "pressures_screened_GPa": [
+        0
+      ],
+      "e_hull_0GPa_meV": 244.14814814814815,
+      "e_hull_10GPa_meV": null,
+      "thermodynamic_stability": "ABOVE_HULL",
+      "dynamic_stability_literature": "STABLE (Wang et al. 2024)",
+      "advances_to_phase3": false,
+      "phonon_check_needed": "SKIPPED (fp-above-hull)",
+      "hull_completeness": {
+        "on_hull": [
+          "Sr",
+          "N2",
+          "B",
+          "C",
+          "H2",
+          "SrH2",
+          "B2H6",
+          "NH3",
+          "BN",
+          "B4C",
+          "SrB6",
+          "Sr3N2",
+          "SrC2"
+        ],
+        "total_entries": 15
+      },
+      "metadata": {
+        "pseudo_ternary_approximation": true,
+        "effective_components": [
+          "Sr",
+          "NH4",
+          "B6C6"
+        ],
+        "actual_elements": [
+          "Sr",
+          "N",
+          "B",
+          "C",
+          "H"
+        ],
+        "candidate": "SrNH4B6C6",
+        "n_atoms_per_cell": 18,
+        "caveat": "Pseudo-ternary hull: B6C6 cage stoichiometry fixed. True hull in 5D composition space may have additional decomposition pathways not captured here.",
+        "wang_et_al_note": "Wang et al. 2024 reported only DYNAMIC stability for these compounds. THERMODYNAMIC stability (E_hull position) was NOT assessed in their work. Our hull results may show thermodynamic instability even for dynamically stable structures. This is a valid and expected outcome (cf. Mg2IrH6: dynamically stable but 172 meV/atom above hull)."
+      },
+      "hull_e_above": {
+        "Sr": 0.0,
+        "N2": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "H2": 0.0,
+        "SrH2": 0.0,
+        "BH3": 95.0,
+        "B2H6": 0.0,
+        "NH3": 0.0,
+        "BN": 0.0,
+        "B4C": 0.0,
+        "SrB6": 0.0,
+        "Sr3N2": 0.0,
+        "SrC2": 0.0,
+        "SrNH4B6C6": 244.14814814814815
+      }
+    },
+    "PbNH4B6C6": {
+      "metal": "Pb",
+      "formula": "PbNH4B6C6",
+      "n_atoms": 18,
+      "structure_type": "sodalite clathrate (Im-3m approximate)",
+      "pressures_screened_GPa": [
+        0
+      ],
+      "e_hull_0GPa_meV": 186.11111111111111,
+      "e_hull_10GPa_meV": null,
+      "thermodynamic_stability": "ABOVE_HULL",
+      "dynamic_stability_literature": "STABLE (Wang et al. 2024)",
+      "advances_to_phase3": false,
+      "phonon_check_needed": "SKIPPED (fp-above-hull)",
+      "hull_completeness": {
+        "on_hull": [
+          "Pb",
+          "N2",
+          "B",
+          "C",
+          "H2",
+          "B2H6",
+          "NH3",
+          "BN",
+          "B4C",
+          "Pb3N2"
+        ],
+        "total_entries": 15
+      },
+      "metadata": {
+        "pseudo_ternary_approximation": true,
+        "effective_components": [
+          "Pb",
+          "NH4",
+          "B6C6"
+        ],
+        "actual_elements": [
+          "Pb",
+          "N",
+          "B",
+          "C",
+          "H"
+        ],
+        "candidate": "PbNH4B6C6",
+        "n_atoms_per_cell": 18,
+        "caveat": "Pseudo-ternary hull: B6C6 cage stoichiometry fixed. True hull in 5D composition space may have additional decomposition pathways not captured here.",
+        "wang_et_al_note": "Wang et al. 2024 reported only DYNAMIC stability for these compounds. THERMODYNAMIC stability (E_hull position) was NOT assessed in their work. Our hull results may show thermodynamic instability even for dynamically stable structures. This is a valid and expected outcome (cf. Mg2IrH6: dynamically stable but 172 meV/atom above hull)."
+      },
+      "hull_e_above": {
+        "Pb": 0.0,
+        "N2": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "H2": 0.0,
+        "PbH2": 50.00000000000001,
+        "PbH4": 100.0,
+        "BH3": 95.0,
+        "B2H6": 0.0,
+        "NH3": 0.0,
+        "BN": 0.0,
+        "B4C": 0.0,
+        "PbB": 20.0,
+        "Pb3N2": 0.0,
+        "PbNH4B6C6": 186.11111111111111
+      }
+    }
+  },
+  "pseudo_ternary_approximation": true,
+  "conventions": {
+    "xc_functional": "PBEsol (literature values from PBE; ~10-30 meV/atom offset)",
+    "h2_reference": "molecular H2",
+    "ehull_threshold_meV": 50,
+    "hull_type": "pseudo-ternary (B6C6 cage fixed)"
+  }
+}

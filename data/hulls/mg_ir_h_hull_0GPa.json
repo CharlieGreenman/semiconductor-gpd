@@ -1,0 +1,28 @@
+{
+  "system_name": "Mg-Ir-H",
+  "hull_entries": [
+    "Mg",
+    "Ir",
+    "H2",
+    "MgH2",
+    "MgIr",
+    "Mg2Ir",
+    "MgIr2",
+    "MgIr3"
+  ],
+  "e_above_hull": {
+    "Mg": 0.0,
+    "Ir": 0.0,
+    "H2": 0.0,
+    "MgH2": 0.0,
+    "IrH": 150.0,
+    "IrH2": 120.0,
+    "IrH3": 100.0,
+    "MgIr": 0.0,
+    "Mg2Ir": 0.0,
+    "MgIr2": 0.0,
+    "MgIr3": 0.0,
+    "Mg2IrH6": 123.33333333333337
+  },
+  "total_entries": 12
+}
