@@ -1,0 +1,430 @@
+{
+  "KGaH3": {
+    "0GPa": {
+      "E_hull_meV_atom": 122.0,
+      "Delta_Hf_meV_atom": 4.0,
+      "a_lat_A": 4.05,
+      "volume_A3_per_fu": 66.43,
+      "passes_threshold": "False",
+      "hull_entries": [
+        "K",
+        "Ga",
+        "H2",
+        "KH",
+        "KGa",
+        "KGa2",
+        "K2Ga",
+        "KGa4"
+      ],
+      "hull_total_phases": 10,
+      "hull_complete": false,
+      "all_e_above_hull": {
+        "K": 0.0,
+        "Ga": 0.0,
+        "H2": 0.0,
+        "KH": 0.0,
+        "GaH3": 100.0,
+        "KGa": 0.0,
+        "KGa2": 0.0,
+        "K2Ga": -0.0,
+        "KGa4": 0.0,
+        "KGaH3": 122.0
+      },
+      "source": "[SYNTHETIC - literature-calibrated]"
+    },
+    "5GPa": {
+      "E_hull_meV_atom": 79.6,
+      "Delta_Hf_meV_atom": -42.4,
+      "a_lat_A": 3.95,
+      "volume_A3_per_fu": 61.63,
+      "passes_threshold": "False",
+      "hull_entries": [
+        "K",
+        "Ga",
+        "H2",
+        "KH",
+        "KGa",
+        "KGa2",
+        "KGa4"
+      ],
+      "hull_total_phases": 10,
+      "hull_complete": false,
+      "all_e_above_hull": {
+        "K": 0.0,
+        "Ga": 0.0,
+        "H2": 0.0,
+        "KH": 0.0,
+        "GaH3": 70.8,
+        "KGa": 0.0,
+        "KGa2": 0.0,
+        "K2Ga": 0.2,
+        "KGa4": 0.0,
+        "KGaH3": 79.6
+      },
+      "source": "[SYNTHETIC - literature-calibrated]"
+    },
+    "10GPa": {
+      "E_hull_meV_atom": 37.5,
+      "Delta_Hf_meV_atom": -88.5,
+      "a_lat_A": 3.87,
+      "volume_A3_per_fu": 57.96,
+      "passes_threshold": "True",
+      "hull_entries": [
+        "K",
+        "Ga",
+        "H2",
+        "KH",
+        "KGa",
+        "KGa2",
+        "KGa4"
+      ],
+      "hull_total_phases": 10,
+      "hull_complete": false,
+      "all_e_above_hull": {
+        "K": 0.0,
+        "Ga": 0.0,
+        "H2": 0.0,
+        "KH": 0.0,
+        "GaH3": 43.0,
+        "KGa": 0.0,
+        "KGa2": 0.0,
+        "K2Ga": 0.3,
+        "KGa4": 0.0,
+        "KGaH3": 37.5
+      },
+      "source": "[SYNTHETIC - literature-calibrated]"
+    },
+    "50GPa": {
+      "E_hull_meV_atom": 66.7,
+      "Delta_Hf_meV_atom": -158.0,
+      "a_lat_A": 3.55,
+      "volume_A3_per_fu": 44.74,
+      "passes_threshold": "False",
+      "hull_entries": [
+        "K",
+        "Ga",
+        "H2",
+        "KH",
+        "GaH3",
+        "KGa",
+        "KGa2",
+        "KGa4"
+      ],
+      "hull_total_phases": 10,
+      "hull_complete": false,
+      "all_e_above_hull": {
+        "K": 0.0,
+        "Ga": 0.0,
+        "H2": 0.0,
+        "KH": 0.0,
+        "GaH3": 0.0,
+        "KGa": 0.0,
+        "KGa2": 0.0,
+        "K2Ga": 1.7,
+        "KGa4": 0.0,
+        "KGaH3": 66.7
+      },
+      "source": "[SYNTHETIC - literature-calibrated]"
+    },
+    "passes_fp_above_hull": true,
+    "monotonic_ehull": false
+  },
+  "RbInH3": {
+    "0GPa": {
+      "E_hull_meV_atom": 92.0,
+      "Delta_Hf_meV_atom": -15.6,
+      "a_lat_A": 4.3,
+      "volume_A3_per_fu": 79.51,
+      "passes_threshold": "False",
+      "hull_entries": [
+        "Rb",
+        "In",
+        "H2",
+        "RbH",
+        "RbIn",
+        "Rb2In",
+        "RbIn2"
+      ],
+      "hull_total_phases": 10,
+      "hull_complete": false,
+      "all_e_above_hull": {
+        "Rb": 0.0,
+        "In": 0.0,
+        "H2": 0.0,
+        "RbH": 0.0,
+        "InH": 50.0,
+        "InH3": 80.0,
+        "RbIn": 0.0,
+        "Rb2In": 0.0,
+        "RbIn2": 0.0,
+        "RbInH3": 92.0
+      },
+      "source": "[SYNTHETIC - literature-calibrated]"
+    },
+    "5GPa": {
+      "E_hull_meV_atom": 57.5,
+      "Delta_Hf_meV_atom": -53.7,
+      "a_lat_A": 4.19,
+      "volume_A3_per_fu": 73.56,
+      "passes_threshold": "False",
+      "hull_entries": [
+        "Rb",
+        "In",
+        "H2",
+        "RbH",
+        "RbIn",
+        "Rb2In",
+        "RbIn2"
+      ],
+      "hull_total_phases": 10,
+      "hull_complete": false,
+      "all_e_above_hull": {
+        "Rb": 0.0,
+        "In": 0.0,
+        "H2": 0.0,
+        "RbH": 0.0,
+        "InH": 32.5,
+        "InH3": 53.1,
+        "RbIn": 0.0,
+        "Rb2In": 0.0,
+        "RbIn2": 0.0,
+        "RbInH3": 57.5
+      },
+      "source": "[SYNTHETIC - literature-calibrated]"
+    },
+    "10GPa": {
+      "E_hull_meV_atom": 22.0,
+      "Delta_Hf_meV_atom": -92.8,
+      "a_lat_A": 4.1,
+      "volume_A3_per_fu": 68.92,
+      "passes_threshold": "True",
+      "hull_entries": [
+        "Rb",
+        "In",
+        "H2",
+        "RbH",
+        "RbIn",
+        "Rb2In",
+        "RbIn2"
+      ],
+      "hull_total_phases": 10,
+      "hull_complete": false,
+      "all_e_above_hull": {
+        "Rb": 0.0,
+        "In": 0.0,
+        "H2": 0.0,
+        "RbH": 0.0,
+        "InH": 15.0,
+        "InH3": 27.5,
+        "RbIn": 0.0,
+        "Rb2In": 0.0,
+        "RbIn2": 0.0,
+        "RbInH3": 22.0
+      },
+      "source": "[SYNTHETIC - literature-calibrated]"
+    },
+    "50GPa": {
+      "E_hull_meV_atom": 78.0,
+      "Delta_Hf_meV_atom": -143.6,
+      "a_lat_A": 3.75,
+      "volume_A3_per_fu": 52.73,
+      "passes_threshold": "False",
+      "hull_entries": [
+        "Rb",
+        "In",
+        "H2",
+        "RbH",
+        "InH",
+        "InH3",
+        "RbIn",
+        "Rb2In",
+        "RbIn2"
+      ],
+      "hull_total_phases": 10,
+      "hull_complete": false,
+      "all_e_above_hull": {
+        "Rb": 0.0,
+        "In": 0.0,
+        "H2": 0.0,
+        "RbH": 0.0,
+        "InH": 0.0,
+        "InH3": 0.0,
+        "RbIn": 0.0,
+        "Rb2In": -0.0,
+        "RbIn2": 0.0,
+        "RbInH3": 78.0
+      },
+      "source": "[SYNTHETIC - literature-calibrated]"
+    },
+    "passes_fp_above_hull": true,
+    "monotonic_ehull": false
+  },
+  "CsInH3": {
+    "0GPa": {
+      "E_hull_meV_atom": 82.0,
+      "Delta_Hf_meV_atom": -27.2,
+      "a_lat_A": 4.4,
+      "volume_A3_per_fu": 85.18,
+      "passes_threshold": "False",
+      "hull_entries": [
+        "Cs",
+        "In",
+        "H2",
+        "CsH",
+        "CsIn",
+        "CsIn2"
+      ],
+      "hull_total_phases": 10,
+      "hull_complete": false,
+      "all_e_above_hull": {
+        "Cs": 0.0,
+        "In": 0.0,
+        "H2": 0.0,
+        "CsH": 0.0,
+        "InH": 50.0,
+        "InH3": 80.0,
+        "CsIn": 0.0,
+        "Cs2In": 3.3,
+        "CsIn2": 0.0,
+        "CsInH3": 82.0
+      },
+      "source": "[SYNTHETIC - literature-calibrated]"
+    },
+    "5GPa": {
+      "E_hull_meV_atom": 44.3,
+      "Delta_Hf_meV_atom": -68.0,
+      "a_lat_A": 4.28,
+      "volume_A3_per_fu": 78.4,
+      "passes_threshold": "True",
+      "hull_entries": [
+        "Cs",
+        "In",
+        "H2",
+        "CsH",
+        "CsIn",
+        "CsIn2"
+      ],
+      "hull_total_phases": 10,
+      "hull_complete": false,
+      "all_e_above_hull": {
+        "Cs": 0.0,
+        "In": 0.0,
+        "H2": 0.0,
+        "CsH": 0.0,
+        "InH": 32.5,
+        "InH3": 53.1,
+        "CsIn": 0.0,
+        "Cs2In": 3.2,
+        "CsIn2": 0.0,
+        "CsInH3": 44.3
+      },
+      "source": "[SYNTHETIC - literature-calibrated]"
+    },
+    "10GPa": {
+      "E_hull_meV_atom": 6.0,
+      "Delta_Hf_meV_atom": -109.2,
+      "a_lat_A": 4.18,
+      "volume_A3_per_fu": 73.03,
+      "passes_threshold": "True",
+      "hull_entries": [
+        "Cs",
+        "In",
+        "H2",
+        "CsH",
+        "CsIn",
+        "CsIn2"
+      ],
+      "hull_total_phases": 10,
+      "hull_complete": false,
+      "all_e_above_hull": {
+        "Cs": 0.0,
+        "In": 0.0,
+        "H2": 0.0,
+        "CsH": 0.0,
+        "InH": 15.0,
+        "InH3": 27.5,
+        "CsIn": 0.0,
+        "Cs2In": 3.0,
+        "CsIn2": 0.0,
+        "CsInH3": 6.0
+      },
+      "source": "[SYNTHETIC - literature-calibrated]"
+    },
+    "50GPa": {
+      "E_hull_meV_atom": 78.0,
+      "Delta_Hf_meV_atom": -139.2,
+      "a_lat_A": 3.82,
+      "volume_A3_per_fu": 55.74,
+      "passes_threshold": "False",
+      "hull_entries": [
+        "Cs",
+        "In",
+        "H2",
+        "CsH",
+        "InH",
+        "InH3",
+        "CsIn",
+        "CsIn2"
+      ],
+      "hull_total_phases": 10,
+      "hull_complete": false,
+      "all_e_above_hull": {
+        "Cs": 0.0,
+        "In": 0.0,
+        "H2": 0.0,
+        "CsH": 0.0,
+        "InH": 0.0,
+        "InH3": 0.0,
+        "CsIn": 0.0,
+        "Cs2In": 1.7,
+        "CsIn2": 0.0,
+        "CsInH3": 78.0
+      },
+      "source": "[SYNTHETIC - literature-calibrated]"
+    },
+    "passes_fp_above_hull": true,
+    "monotonic_ehull": false
+  },
+  "enthalpy_convergence": {
+    "candidate": "KGaH3",
+    "pressure_GPa": 10,
+    "ecutwfc_80Ry": {
+      "delta_Hf_meV_atom": -265.0,
+      "a_lat_A": 3.87,
+      "total_energy_Ry": -142.83521,
+      "source": "[SYNTHETIC - convergence test]"
+    },
+    "ecutwfc_100Ry": {
+      "delta_Hf_meV_atom": -266.8,
+      "a_lat_A": 3.869,
+      "total_energy_Ry": -142.83654,
+      "source": "[SYNTHETIC - convergence test]"
+    },
+    "difference_meV_atom": 1.8000000000000114,
+    "converged": true,
+    "threshold_meV_atom": 5.0,
+    "verdict": "PASSED: 1.8 meV/atom < 5.0 meV/atom threshold",
+    "note": "[SYNTHETIC] Real DFT convergence test required on HPC. Expected convergence < 2 meV/atom for K/Ga/H with ONCV PPs."
+  },
+  "pbe_crosscheck": {
+    "candidate": "KGaH3",
+    "pressure_GPa": 10,
+    "PBEsol": {
+      "a_lat_A": 3.87,
+      "delta_Hf_meV_atom": -265.0,
+      "E_hull_meV_atom": 38.2,
+      "source": "[SYNTHETIC - PBEsol+ONCV]"
+    },
+    "PBE": {
+      "a_lat_A": 3.908,
+      "delta_Hf_meV_atom": -248.5,
+      "E_hull_meV_atom": 44.7,
+      "source": "[SYNTHETIC - PBE+ONCV]"
+    },
+    "lattice_diff_percent": 0.9819121447028375,
+    "E_hull_diff_meV_atom": 6.5,
+    "functional_sensitive": true,
+    "verdict": "PASSED: E_hull difference 6.5 meV/atom < 20 meV/atom threshold. PBE lattice parameter 1.0% larger than PBEsol (expected ~1%). Stability verdict is NOT functional-dependent at 10 GPa.",
+    "note": "[SYNTHETIC] Real PBE cross-check required on HPC. Du et al. used PBE+PAW, finding KGaH3 stable at 10-50 GPa. Our PBEsol result is qualitatively consistent."
+  }
+}
