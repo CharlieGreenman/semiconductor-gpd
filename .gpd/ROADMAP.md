@@ -122,13 +122,13 @@ Seven milestones established that `Hg1223` at `151 K` retained ambient is the be
 
 **Backtracking trigger:** If Hg1223 Tc falls outside +/- 30% of 151 K, stop and diagnose (pseudopotential, Hubbard U correction, spin fluctuation contribution) before proceeding.
 
-**Plans:** TBD
+**Plans:** 3 plans in 3 waves (sequential pipeline: structure -> phonons -> Tc)
 
 Plans:
 
-- [ ] 27-01: Hg1223 structure relaxation and electronic structure (PBEsol, ONCV, band structure, DOS, Fermi surface)
-- [ ] 27-02: Phonon dispersion and electron-phonon coupling (DFPT, EPW Wannier interpolation, convergence tests)
-- [ ] 27-03: Eliashberg Tc calculation and pipeline validation verdict (alpha2F, lambda, omega_log, Tc at mu* = 0.10 and 0.13)
+- [ ] 27-01-PLAN.md -- Structure relaxation + electronic structure (PBEsol, ONCV, band structure, DOS, orbital character)
+- [ ] 27-02-PLAN.md -- Phonon dispersion + electron-phonon coupling (DFPT, EPW Wannier interpolation, lambda convergence)
+- [ ] 27-03-PLAN.md -- Eliashberg Tc + Allen-Dynes cross-check + pipeline validation verdict (GO/CONDITIONAL/NO-GO)
 
 ---
 
