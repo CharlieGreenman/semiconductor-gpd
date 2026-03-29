@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "phase": "23-route-expansion-shortlist-and-next-step-memo",
+  "plan": "02",
+  "created": "2026-03-29",
+  "conventions": {
+    "units": "SI-derived (K, GPa)",
+    "room_temperature_K": 300,
+    "tc_definition": "zero-resistance unless onset explicitly labeled",
+    "gap_definition": "300 K minus best retained ambient Tc"
+  },
+  "program_structure": "one_primary_one_secondary",
+  "primary_route": {
+    "name": "Hg-family cuprates",
+    "status": "primary",
+    "weighted_score": 4.15,
+    "lead_candidate": {
+      "formula": "HgBa2Ca2Cu3O8+delta",
+      "short_name": "Hg1223",
+      "material_class": "trilayer mercury-barium-calcium cuprate"
+    },
+    "benchmarks": [
+      {
+        "label": "retained_ambient_Tc",
+        "value_K": 151,
+        "tc_definition": "zero-resistance",
+        "operating_state": "retained ambient after pressure-quench synthesis (PQP)",
+        "source": "Deng, Chu et al., PNAS 2026 (arXiv:2603.12437)"
+      },
+      {
+        "label": "stable_ambient_Tc",
+        "value_K": 134,
+        "tc_definition": "zero-resistance",
+        "operating_state": "ambient (pre-quench baseline)",
+        "source": "established cuprate literature"
+      },
+      {
+        "label": "family_pressure_ceiling_zero_resist",
+        "value_K": 153,
+        "tc_definition": "zero-resistance",
+        "operating_state": "under ~23 GPa operating pressure",
+        "source": "Gao et al., Nature Commun. 2015 (doi:10.1038/ncomms9990)"
+      },
+      {
+        "label": "family_pressure_ceiling_onset",
+        "value_K": 166,
+        "tc_definition": "onset",
+        "operating_state": "under ~23 GPa operating pressure",
+        "source": "Gao et al., Nature Commun. 2015 (doi:10.1038/ncomms9990)"
+      }
+    ],
+    "room_temperature_gap_K": 149,
+    "gap_arithmetic": "300 - 151 = 149",
+    "fallback_gap_K": 166,
+    "fallback_gap_arithmetic": "300 - 134 = 166 (if PQP not confirmed)",
+    "named_uplift_levers": [
+      "pressure-quench transfer (PQP)",
+      "multilayer optimization",
+      "inner/outer CuO2 plane differentiation",
+      "oxygen stoichiometry tuning",
+      "reservoir-layer chemistry"
+    ],
+    "fragility_caveat": {
+      "single_group_PQP": true,
+      "stability_window": "3 days at 77 K",
+      "deterioration_temperature_K": 200,
+      "metastable_not_thermodynamic": true,
+      "summary": "PQP is single-group, metastable (3-day stability at 77 K), deteriorates at 200 K. Retained phase is kinetically trapped, not thermodynamically stable."
+    },
+    "pivot_trigger": {
+      "condition": "Independent PQP reproduction fails to confirm retained zero-resistance Tc within 20 K of 151 K (i.e., below 131 K)",
+      "actions": {
+        "reproduced_131_to_151_K": "maintain primary, update gap arithmetic",
+        "reproduced_below_131_K": "fall back to 134 K stable ambient; evaluate nickelate promotion to co-primary",
+        "PQP_non_reproducible": "escalate to co-primary with nickelates; shift priority to nickelate secondary route"
+      }
+    }
+  },
+  "secondary_route": {
+    "name": "Nickelates",
+    "status": "secondary",
+    "weighted_score": 2.90,
+    "lead_sub_family": "bilayer La3Ni2O7-class",
+    "backup_sub_family": "infinite-layer SmNiO2-class",
+    "named_candidates": [
+      {
+        "sub_family": "bilayer La3Ni2O7-class",
+        "role": "lead",
+        "structural_type": "Ruddlesden-Popper n=2",
+        "benchmarks": [
+          {
+            "label": "pressurized_single_crystal_onset",
+            "value_K": 96,
+            "tc_definition": "onset",
+            "operating_state": "under >20 GPa operating pressure",
+            "source": "Wang et al., Nature 2025 (s41586-025-09954-4)"
+          },
+          {
+            "label": "pressurized_single_crystal_zero_resist",
+            "value_K": 73,
+            "tc_definition": "zero-resistance",
+            "operating_state": "under 21.6 GPa operating pressure",
+            "source": "Wang et al., Nature 2025 (s41586-025-09954-4)"
+          },
+          {
+            "label": "ambient_film_onset",
+            "value_K": 63,
+            "tc_definition": "onset",
+            "operating_state": "ambient-pressure (La,Pr)3Ni2O7 bilayer film",
+            "source": "arXiv:2512.04708"
+          },
+          {
+            "label": "pressure_enhanced_strained_film",
+            "value_K": 48,
+            "tc_definition": "onset (estimated)",
+            "operating_state": "moderate pressure with compressive strain",
+            "source": "Nature Commun. 2026 (s41467-026-69660-1)"
+          }
+        ],
+        "room_temperature_gap_K": 237,
+        "gap_arithmetic": "300 - 63 = 237 (ambient film onset)"
+      },
+      {
+        "sub_family": "infinite-layer SmNiO2-class",
+        "role": "ambient-stability backup",
+        "structural_type": "infinite-layer perovskite",
+        "benchmarks": [
+          {
+            "label": "ambient_bulk_zero_resist",
+            "value_K": 40,
+            "tc_definition": "zero-resistance",
+            "operating_state": "ambient-pressure bulk SmNiO2",
+            "source": "Sun et al., Nature 2025 (s41586-025-08893-4)"
+          }
+        ],
+        "room_temperature_gap_K": 260,
+        "gap_arithmetic": "300 - 40 = 260 (ambient bulk zero-resist)"
+      },
+      {
+        "sub_family": "trilayer La4Ni3O10-class",
+        "role": "lowest priority",
+        "structural_type": "Ruddlesden-Popper n=3",
+        "benchmarks": [
+          {
+            "label": "pressurized_onset",
+            "value_K": 30,
+            "tc_definition": "onset",
+            "operating_state": "under 69 GPa operating pressure",
+            "source": "literature (various)"
+          }
+        ],
+        "room_temperature_gap_K": 270,
+        "gap_arithmetic": "300 - 30 = 270 (under extreme pressure)"
+      }
+    ],
+    "named_uplift_levers": [
+      "compressive strain",
+      "hydrostatic pressure",
+      "oxygen stoichiometry",
+      "rare-earth substitution (chemical pressure)",
+      "bilayer/trilayer structural choice"
+    ],
+    "lever_stacking_demonstrated": true,
+    "lever_stacking_detail": "strain + pressure synergy demonstrated in bilayer films (Nature Commun. 2026, s41467-026-69660-1)",
+    "fragility_caveat": {
+      "sub_family_fragmentation": true,
+      "ambient_Tc_range_K": "30-63 (onset)",
+      "ambient_far_from_room_temperature": true,
+      "onset_inflation_risk": "best ambient bilayer (63 K) is onset; zero-resist may be 5-20 K lower",
+      "no_retention_pathway_for_pressurized_Tc": true,
+      "summary": "Sub-family fragmentation; ambient Tc 237 K below room temperature; onset inflation risk; no retention pathway for pressurized 96 K."
+    },
+    "promotion_trigger": {
+      "maintain_secondary": "ambient film zero-resist Tc confirmed above 50 K",
+      "evaluate_for_promotion": "any sub-family ambient zero-resist Tc above 80 K",
+      "promote_to_co_primary": "any sub-family ambient zero-resist Tc above 100 K",
+      "demote_to_watch_only": "ambient Tc improvement stalls below 50 K for 6+ months"
+    }
+  },
+  "excluded_routes": [
+    {
+      "class": "pressure-only without retention",
+      "reason": "do not shrink practical operating-state gap"
+    },
+    {
+      "class": "onset-only without headroom",
+      "reason": "scientifically interesting but not the best next route"
+    },
+    {
+      "class": "theory-only conventional near-ambient",
+      "reason": "current ceiling and evidence do not beat unconventional frontier"
+    },
+    {
+      "class": "hydride routes",
+      "reason": "closed negatively in v1.0 and v2.0; ambient retention unsupported"
+    }
+  ],
+  "guardrail": {
+    "best_retained_benchmark": "Hg1223 at 151 K (zero-resistance, retained ambient)",
+    "room_temperature_gap_K": 149,
+    "statement": "Neither route is close to room-temperature practical operation."
+  },
+  "sources": {
+    "phase23_ranking": ".gpd/phases/23-route-expansion-shortlist-and-next-step-memo/phase23-weighted-ranking.md",
+    "phase22_headroom_map": ".gpd/phases/22-gap-closing-frontier-map-and-control-ledger/phase22-frontier-headroom-map.md",
+    "phase22_control_knob_matrix": ".gpd/phases/22-gap-closing-frontier-map-and-control-ledger/phase22-control-knob-matrix.md",
+    "phase22_negative_control_note": ".gpd/phases/22-gap-closing-frontier-map-and-control-ledger/phase22-negative-control-note.md",
+    "v5_closeout": ".gpd/phases/21-first-campaign-route-gates-and-backup-trigger-memo/phase21-final-memo.md",
+    "hg1223_pqp": "Deng, Chu et al., PNAS 2026 (arXiv:2603.12437)",
+    "hg_family_pressure": "Gao et al., Nature Commun. 2015 (doi:10.1038/ncomms9990)",
+    "nickelate_pressurized": "Wang et al., Nature 2025 (s41586-025-09954-4)",
+    "nickelate_ambient_bulk": "Sun et al., Nature 2025 (s41586-025-08893-4)",
+    "nickelate_ambient_film": "arXiv:2512.04708",
+    "nickelate_lever_stacking": "Nature Commun. 2026 (s41467-026-69660-1)"
+  }
+}
