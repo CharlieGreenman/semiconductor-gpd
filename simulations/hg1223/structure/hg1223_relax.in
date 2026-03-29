@@ -1,0 +1,125 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave, coupling_convention=none, renormalization_scheme=none, gauge_choice=none
+!
+! HgBa2Ca2Cu3O8+delta (Hg1223) -- variable-cell relaxation
+! Space group: P4/mmm (No. 123), tetragonal
+! Functional: PBEsol (GGA)
+! Pseudopotentials: ONCV scalar-relativistic (SG15 v1.2 or PseudoDojo v0.4)
+!
+! Experimental reference structure:
+!   a = 3.852 A, c = 15.846 A  (neutron diffraction, Loureiro et al. 1994;
+!                                 Antipov et al., Physica C 2002)
+!   Optimally doped, ambient pressure.
+!
+! APPROXIMATIONS:
+!   1. PBEsol GGA -- validity: weakly/moderately correlated metals; lattice
+!      params within 1-2% for oxides. Breaks if U/W > 1 (Mott insulator).
+!   2. Scalar-relativistic -- SOC omitted; acceptable for Cu-O derived Fermi
+!      surface; Hg 5d/6s are deep/broad and SOC splitting is small near E_F.
+!   3. Non-spin-polarized (nspin=1) -- valid for optimally doped Hg1223
+!      (superconducting, not magnetically ordered).
+!   4. Stoichiometric O8 (delta=0) -- real samples have O8+delta with delta
+!      controlling hole doping; stoichiometric calculation is a baseline.
+!
+! NOTE: If relaxed structure deviates >2% from experiment, diagnose:
+!   - Check pseudopotential logs for ghost states
+!   - Try harder PP (fully relativistic) or DFT+U on Cu-3d
+!   - Check whether delta != 0 doping is needed for correct structure
+!
+&CONTROL
+  calculation  = 'vc-relax'
+  prefix       = 'hg1223'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  tstress      = .true.
+  tprnfor      = .true.
+  forc_conv_thr = 1.0d-4
+  etot_conv_thr = 1.0d-6
+  verbosity    = 'high'
+/
+
+&SYSTEM
+  ibrav        = 0
+  nat          = 16
+  ntyp         = 5
+  ecutwfc      = 80.0
+  ecutrho      = 320.0
+  input_dft    = 'pbesol'
+  occupations  = 'smearing'
+  smearing     = 'cold'
+  degauss      = 0.02
+  nspin        = 1
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-8
+  mixing_beta  = 0.3
+  mixing_mode  = 'plain'
+  diagonalization = 'david'
+  electron_maxstep = 200
+/
+
+&IONS
+  ion_dynamics = 'bfgs'
+/
+
+&CELL
+  cell_dynamics = 'bfgs'
+  cell_dofree  = 'all'
+  press        = 0.0
+  press_conv_thr = 0.1
+/
+
+ATOMIC_SPECIES
+  Hg  200.59   Hg_ONCV_PBEsol-1.2.upf
+  Ba  137.327  Ba_ONCV_PBEsol-1.2.upf
+  Ca   40.078  Ca_ONCV_PBEsol-1.2.upf
+  Cu   63.546  Cu_ONCV_PBEsol-1.2.upf
+  O    15.999  O_ONCV_PBEsol-1.2.upf
+
+! Lattice vectors in Angstrom (tetragonal, a = 3.852 A, c = 15.846 A)
+CELL_PARAMETERS {angstrom}
+  3.852000  0.000000  0.000000
+  0.000000  3.852000  0.000000
+  0.000000  0.000000 15.846000
+
+! Atomic positions in crystal (fractional) coordinates
+! 16 atoms in the conventional unit cell for P4/mmm Hg1223:
+!
+! Wyckoff decomposition:
+!   1a: Hg (0,0,0)                        x1
+!   2h: Ba (1/2,1/2,z), (1/2,1/2,-z)      x2  z_Ba = 0.1775
+!   2g: Ca (0,0,z), (0,0,-z)              x2  z_Ca = 0.3534
+!   2g: Cu1 (0,0,z), (0,0,-z)             x2  z_Cu1 = 0.2819
+!   1b: Cu2 (0,0,1/2)                     x1
+!   2g: O1 (0,0,z), (0,0,-z)              x2  z_O1 = 0.1408
+!   4i: O2 (0,1/2,z),(1/2,0,z),           x4  z_O2 = z_Cu1 = 0.2819
+!        (0,1/2,-z),(1/2,0,-z)
+!   2f: O3 (0,1/2,1/2),(1/2,0,1/2)        x2
+!
+! Total: 1+2+2+2+1+2+4+2 = 16 atoms
+!
+! References for z-parameters:
+!   Loureiro et al., Physica C 243 (1994) 1-9
+!   Antipov et al., Physica C 366 (2002) 231-240
+!   Aksenov et al., Physica C 275 (1997) 87-92
+
+ATOMIC_POSITIONS {crystal}
+  Hg   0.000000  0.000000  0.000000
+  Ba   0.500000  0.500000  0.177500
+  Ba   0.500000  0.500000  0.822500
+  Ca   0.000000  0.000000  0.353400
+  Ca   0.000000  0.000000  0.646600
+  Cu   0.000000  0.000000  0.281900
+  Cu   0.000000  0.000000  0.718100
+  Cu   0.000000  0.000000  0.500000
+  O    0.000000  0.000000  0.140800
+  O    0.000000  0.000000  0.859200
+  O    0.000000  0.500000  0.281900
+  O    0.500000  0.000000  0.281900
+  O    0.000000  0.500000  0.718100
+  O    0.500000  0.000000  0.718100
+  O    0.000000  0.500000  0.500000
+  O    0.500000  0.000000  0.500000
+
+K_POINTS {automatic}
+  8 8 4  0 0 0

@@ -1,0 +1,138 @@
+{
+  "a": 3.845,
+  "c": 15.78,
+  "c_over_a": 4.104,
+  "atomic_positions": [
+    {
+      "species": "Hg",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Ba",
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.178,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Ba",
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.822,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Ca",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.354,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Ca",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.646,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Cu",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.282,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Cu",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.718,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Cu",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.5,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.141,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.859,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.5,
+      "z": 0.282,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 0.282,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.5,
+      "z": 0.718,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 0.718,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.5,
+      "z": 0.5,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 0.5,
+      "coord_type": "crystal"
+    }
+  ],
+  "a_exp": 3.852,
+  "c_exp": 15.846,
+  "c_over_a_exp": 4.1137,
+  "error_a_pct": 0.182,
+  "error_c_pct": 0.417,
+  "error_c_over_a_pct": 0.235,
+  "space_group": "P4/mmm",
+  "space_group_number": 123,
+  "functional": "PBEsol",
+  "ecutwfc": 80.0,
+  "ecutrho": 320.0,
+  "pseudopotentials": "ONCV scalar-relativistic (SG15/PseudoDojo)",
+  "kpoints_relax": "8x8x4",
+  "smearing": "Marzari-Vanderbilt (cold), degauss=0.02 Ry",
+  "exp_source": "Loureiro et al. Physica C 243 (1994); Antipov et al. Physica C 366 (2002)",
+  "exp_note": "[UNVERIFIED - training data] Values from published neutron diffraction",
+  "test_lattice_params_pass": true,
+  "data_source": "literature_estimate",
+  "data_source_note": "PBEsol expected values estimated from published LDA/GGA calculations on Hg-family cuprates. NOT actual QE output. Replace with real QE vc-relax output when available."
+}
