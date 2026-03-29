@@ -151,7 +151,11 @@ Plans:
 
 **Backtracking trigger:** If Phase 24 and Phase 25 together reveal that neither route has a realistic path to narrowing the 149 K gap within the next experimental cycle, the closeout must say so explicitly rather than deferring to yet another planning milestone.
 
-**Plans:** TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 26-01-PLAN.md -- Integrated two-track route-confidence assessment, pivot assessment (DEC-02), and route stall memo (DEC-03)
+- [ ] 26-02-PLAN.md -- v7.0 closeout memo (DEC-01) with cross-artifact consistency check
 
 ## Risk Register
 
@@ -170,4 +174,4 @@ Phase 24 and Phase 25 execute in parallel (no mutual dependency). Phase 26 execu
 | --- | --- | --- | --- | --- |
 | 24. Hg1223 PQP Protocol | v7.0 | 0/2 | Planned | - |
 | 25. Nickelate Strain Protocol | v7.0 | 0/TBD | Not started | - |
-| 26. Decision Integration | v7.0 | 0/TBD | Not started | - |
+| 26. Decision Integration | v7.0 | 0/2 | Planned | - |
