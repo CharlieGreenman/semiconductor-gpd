@@ -1,206 +1,103 @@
-# Roadmap: v2.0 Ambient Retention and Practical Viability
+# Roadmap: v6.0 Gap-Closing Route Expansion Beyond v5.0
 
 ## Overview
 
-Milestone `v1.0` has been archived to `.gpd/milestones/v1.0-ROADMAP.md` after establishing that MXH3 perovskites do not deliver `Tc >= 300 K` below `10 GPa`, and that CsInH3 remains scientifically interesting but not yet practical. This milestone asks the next decisive question: is there any credible path from that result to ambient-pressure or pressure-quenched superconductivity relevant to consumer hardware, or does the conventional hydride route close before room temperature becomes realistic?
+Milestone `v5.0` ended with a clean `Hg1223` decision package, but not with a route closer to room temperature. This milestone reopens the route question under stricter conditions: compare only those paths that still have meaningful `Tc` headroom, explicit control knobs, and at least a plausible path to ambient or retained operation.
 
 ## Contract Overview
 
 | Contract Item | Type | Advanced By Phase(s) | Status |
 | --- | --- | --- | --- |
-| claim-practical-map | claim | Phase 6 | Executed |
-| claim-quenchability | claim | Phase 7 | Executed |
-| claim-practical-candidate | claim | Phase 8, 9 | Executed |
-| deliv-viability-matrix | deliverable | Phase 6 | Executed |
-| deliv-quench-scorecard | deliverable | Phase 7 | Executed |
-| deliv-shortlist | deliverable | Phase 8 | Executed |
-| deliv-validation-report | deliverable | Phase 9 | Executed |
-| deliv-decision-memo | deliverable | Phase 9 | Executed |
-| test-pressure-separation | acceptance test | Phase 6 | Executed |
-| test-quenchability | acceptance test | Phase 7 | Executed |
-| test-practical-threshold | acceptance test | Phase 9 | Executed |
-| fp-synthesis-equals-operation | forbidden proxy | Phase 6, 8, 9 | Active |
-| fp-synthetic-alpha2f-final | forbidden proxy | Phase 9 | Active |
-| fp-unstable-ambient | forbidden proxy | Phase 7, 8, 9 | Active |
-| fp-roomtemp-extrapolation | forbidden proxy | Phase 6, 9 | Active |
+| claim-frontier-headroom-map | claim | Phase 22 | Executed |
+| claim-route-expansion-program | claim | Phase 23 | Planned |
+| deliv-phase22-headroom-map | deliverable | Phase 22 | Executed |
+| deliv-phase22-control-ledger | deliverable | Phase 22 | Executed |
+| deliv-phase22-negative-controls | deliverable | Phase 22 | Executed |
+| deliv-phase23-shortlist | deliverable | Phase 23 | Planned |
+| deliv-phase23-next-step-memo | deliverable | Phase 23 | Planned |
+| deliv-phase23-final-memo | deliverable | Phase 23 | Planned |
+| test-headroom-map-honest | acceptance test | Phase 22 | Executed |
+| test-next-route-program-explicit | acceptance test | Phase 23 | Planned |
+| fp-rank-pressure-only-as-ambient | forbidden proxy | Phase 22 | Active |
+| fp-route-program-without-primary | forbidden proxy | Phase 23 | Active |
 
 ## Phases
 
-- [x] **Phase 6: Literature-Grounded Practicality Map** - Build the decision-grade map of stable ambient, metastable ambient, pressure-quenched, and low-pressure-only pathways
-- [x] **Phase 7: Ambient Retention of CsInH3-Class Phases** - Determine whether the repo's best candidate or one close derivative can survive pressure release
-- [x] **Phase 8: Ambient-Leaning Candidate Search** - Screen new families that trade off `Tc`, stability, quenchability, and practicality more honestly than v1.0
-- [x] **Phase 9: High-Fidelity Validation and Pivot Decision** - Replace synthetic proxies on the best pathway and decide whether conventional hydrides still support a consumer-hardware story
-- [x] **Phase 10: Experimental Benchmark Pivot Beyond Hydrides** - Name the strongest confidence-ranked benchmark after the hydride no-go and quantify the remaining room-temperature gap
+- [x] **Phase 22: Gap-Closing Frontier Map and Control Ledger** - Compare the surviving post-`v5.0` routes by headroom, operating state, and controllable uplift levers instead of by isolated `Tc` headlines (completed 2026-03-29)
+- [ ] **Phase 23: Route Expansion Shortlist and Next-Step Memo** - Turn the frontier map into an explicit next route program with one primary path and one secondary path
 
 ## Phase Dependencies
 
 | Phase | Depends On | Enables | Critical Path? |
 | --- | --- | --- | :---: |
-| 6 - Practicality Map | v1.0 archived results | 7, 8, 9 | Yes |
-| 7 - Ambient Retention | 6 | 9 | Yes |
-| 8 - Candidate Search | 6 | 9 | Yes |
-| 9 - Validation and Pivot | 7, 8 | 10 | Yes |
-| 10 - Experimental Benchmark Pivot | 9 | -- | Yes |
+| 22 - Frontier Map and Control Ledger | v5.0 closeout | 23 | Yes |
+| 23 - Route Expansion Shortlist and Next-Step Memo | 22 | -- | Yes |
 
-**Critical path:** `6 -> (7 and 8) -> 9 -> 10`
+**Critical path:** `22 -> 23`
 
 ## Phase Details
 
-### Phase 6: Literature-Grounded Practicality Map
+### Phase 22: Gap-Closing Frontier Map and Control Ledger
 
-**Goal:** The repo has a decision-grade map of what "practical" means for superconductivity here: exact separation of synthesis pressure vs operating pressure, explicit classes of ambient stability, and a ranked pathway picture grounded in 2024-2026 primary literature.
-**Depends on:** Archived v1.0 results and conclusions
-**Requirements:** LITR-01, LITR-02, LITR-03, VALD-01
+**Goal:** Build a current route-comparison map across `Hg`-family cuprates, nickelates, and conventional near-ambient controls using one common standard for `Tc` headroom, operating state, and control richness.
+**Depends on:** Phase `21` outputs plus current primary literature
+**Requirements:** `MAP-01`, `MAP-02`, `MAP-03`, `VALD-01`, `VALD-02`
 **Contract Coverage:**
-- Advances: claim-practical-map
-- Deliverables: deliv-viability-matrix
-- Acceptance tests: test-pressure-separation
-- Anchor coverage: `ref-v1-conclusions`, `ref-ambient-ceiling`, `ref-stable-ambient-hydrides`, `ref-kb3c3`, `ref-hg1223-quench`
-- Forbidden proxies: fp-synthesis-equals-operation, fp-roomtemp-extrapolation
+- Advances: `claim-frontier-headroom-map`
+- Deliverables: `deliv-phase22-headroom-map`, `deliv-phase22-control-ledger`, `deliv-phase22-negative-controls`
+- Acceptance tests: `test-headroom-map-honest`
+- Anchor coverage: `ref-v5-final`, `ref-hg1223-quench`, `ref-hg-family-pressure`, `ref-hg1223-gap`, `ref-lapr327-ambient`, `ref-smnio2-40k`, `ref-nickelate-pressure-film`, `ref-nickelate-96k`, `ref-conventional-ceiling`
+- Forbidden proxies: `fp-rank-pressure-only-as-ambient`
 
 **Success Criteria**
 
-1. At least 8 primary-source systems are cataloged with exact `Tc`, synthesis pressure, operating pressure, and stability class
-2. Every cited pathway is labeled as one of: stable ambient, metastable ambient, pressure-quenched, or low-pressure-only
-3. The repo defines a practical-viability scorecard that includes pressure, `Tc`, quenchability confidence, cost, and toxicity
-4. Room-temperature consumer claims are explicitly tested against the 2025 ambient conventional ceiling and the 2026 stable-ambient hydride survey
+1. The map compares routes on the same headroom and operating-condition basis
+2. The control-ledger identifies named uplift levers rather than route slogans
+3. Low-headroom or low-evidence controls are screened out explicitly
+4. The output keeps the `149 K` room-temperature gap explicit
 
-**Backtracking trigger:** If the literature scan itself already rules out room-temperature consumer viability for all conventional ambient or quench paths under consideration, Phase 9 becomes a pivot memo rather than a positive-candidate validation phase.
+**Plans:** 3/3 plans complete
 
-**Plans:** 3 plans
+**Executed outcome (2026-03-29):** Phase `22` now gives the repo a route map that is harder to fool. `Hg`-family cuprates still lead on absolute `Tc` headroom and smallest known gap to room temperature, while nickelates now clearly lead on controllable uplift levers and recent improvement rate. Conventional near-ambient routes remain important controls, but they do not beat the unconventional routes on combined headroom plus evidence.
 
-Plans:
-- [x] `06-01-PLAN.md` -- Stable ambient and near-ambient hydride literature matrix with exact pressure accounting
-- [x] `06-02-PLAN.md` -- Pressure-quench and metastability literature, including hydride-adjacent analog systems
-- [x] `06-03-PLAN.md` -- Practical viability scorecard and go/no-go criteria for Phases 7-9
+### Phase 23: Route Expansion Shortlist and Next-Step Memo
 
-### Phase 7: Ambient Retention of CsInH3-Class Phases
-
-**Goal:** The best v1.0 candidate, or a close derivative, receives an explicit decompression verdict rather than a hand-wavy "maybe quenchable" label.
-**Depends on:** Phase 6
-**Requirements:** META-01, META-02, META-03
+**Goal:** Convert the Phase `22` map into an explicit next-step route program with one primary route and one secondary route.
+**Depends on:** Phase `22`
+**Requirements:** `DEC-01`, `DEC-02`, `DEC-03`, `VALD-01`, `VALD-03`
 **Contract Coverage:**
-- Advances: claim-quenchability
-- Deliverables: deliv-quench-scorecard
-- Acceptance tests: test-quenchability
-- Anchor coverage: `ref-v1-conclusions`, `ref-synthesis-guide`, pressure-quench literature from Phase 6
-- Forbidden proxies: fp-unstable-ambient
+- Advances: `claim-route-expansion-program`
+- Deliverables: `deliv-phase23-shortlist`, `deliv-phase23-next-step-memo`, `deliv-phase23-final-memo`
+- Acceptance tests: `test-next-route-program-explicit`
+- Anchor coverage: Phase `22` outputs plus `ref-v5-final`
+- Forbidden proxies: `fp-route-program-without-primary`
 
 **Success Criteria**
 
-1. The pressure-release path of CsInH3 from `5 GPa` to `0 GPa` is mapped with enthalpy and phonon checkpoints
-2. At least one explicit decomposition or symmetry-lowering barrier is estimated for CsInH3
-3. One derivative or alloyed analog is analyzed under the same decompression logic
-4. The repo emits a clear quenchability verdict: plausible, unlikely, or ruled out
+1. The repo ends with one primary route and one secondary route
+2. The shortlist names candidate families, not just broad materials genres
+3. The next-step memo says what the next milestone should do first
+4. The room-temperature gap stays explicit
 
-**Backtracking trigger:** If all decompression paths fail before `0 GPa` with strong instability or barrierless decomposition, CsInH3 is demoted from "practical candidate" to "scientific low-pressure benchmark only."
-
-**Plans:** 3 plans
+**Plans:** 0/3 plans complete
 
 Plans:
-- [x] `07-01-PLAN.md` -- CsInH3 decompression enthalpy and phonon path from 5 GPa to 0 GPa
-- [x] `07-02-PLAN.md` -- Barrier estimation for CsInH3 decomposition / symmetry lowering under pressure release
-- [x] `07-03-PLAN.md` -- Derivative comparison and final quenchability scorecard
-
-### Phase 8: Ambient-Leaning Candidate Search
-
-**Goal:** The repo moves beyond plain MXH3 perovskites and tests whether other families offer a better balance of ambient stability, quenchability, and `Tc`.
-**Depends on:** Phase 6
-**Requirements:** SCREEN-01, SCREEN-02, SCREEN-03
-**Contract Coverage:**
-- Advances: claim-practical-candidate
-- Deliverables: deliv-shortlist
-- Acceptance tests: test-pressure-separation
-- Anchor coverage: `ref-mg2xh6`, `ref-clathrate-units`, v1.0 perovskite baseline
-- Forbidden proxies: fp-synthesis-equals-operation, fp-unstable-ambient
-
-**Success Criteria**
-
-1. At least 6 concrete compositions across at least 3 families are screened
-2. At least 2 compositions survive as either stable-ambient candidates or plausible synthesis-plus-quench candidates
-3. Ranking includes practical metadata: `P_op`, `P_syn`, quenchability confidence, toxicity, and cost
-4. No candidate advances on the basis of loaded-pressure `Tc` alone
-
-**Backtracking trigger:** If all new families still require large operating pressure or collapse below `77 K` at ambient conditions, Phase 9 shifts toward a negative practical-viability conclusion.
-
-**Plans:** 3 plans
-
-Plans:
-- [x] `08-01-PLAN.md` -- Family definition and prototype generation for alloyed MXH3, ambient hydrides, and clathrate-derived systems
-- [x] `08-02-PLAN.md` -- Ambient and 0-5 GPa stability screening of the new shortlist
-- [x] `08-03-PLAN.md` -- Practical ranking and Phase 9 shortlist handoff
-
-**Executed outcome (2026-03-29):** no candidate survived as a decisive mixed-evidence ambient winner. `RbPH3` remains the best hydride-side negative-validation target, `KB3C3` remains the best framework benchmark, and Phase `09` should validate a likely negative practical conclusion rather than force a positive consumer-hardware narrative.
-
-### Phase 9: High-Fidelity Validation and Pivot Decision
-
-**Goal:** The top pathway survives or fails under real superconductivity validation, not synthetic placeholders, and the project ends with a clear practical decision.
-**Depends on:** Phase 7 and Phase 8
-**Requirements:** EPW-01, EPW-02, EPW-03, VALD-02, VALD-03
-**Contract Coverage:**
-- Advances: claim-practical-candidate
-- Deliverables: deliv-validation-report, deliv-decision-memo
-- Acceptance tests: test-practical-threshold
-- Anchor coverage: v1.0 benchmark pipeline, Phase 6 practical map, Phase 7 quenchability verdict, Phase 8 shortlist
-- Forbidden proxies: fp-synthetic-alpha2f-final, fp-roomtemp-extrapolation, fp-unstable-ambient
-
-**Success Criteria**
-
-1. The best pathway receives real DFPT+EPW validation, not only synthetic `alpha^2F`
-2. Any ambient or quench-retained claim is backed by full anharmonic stability analysis
-3. The final repo output states one of three outcomes: credible ambient path, credible pressure-quench path, or no credible consumer path within conventional hydrides
-4. If no pathway passes, the pivot recommendation says exactly why and where the conventional route fails
-
-**Backtracking trigger:** If real EPW/SSCHA invalidates the top candidate's practical promise, return to Phase 8 for one more family only; otherwise close the milestone with a negative decision.
-
-**Plans:** 3 plans
-
-Plans:
-- [x] `09-01-PLAN.md` -- Target lock and explicit high-fidelity evidence gate for baseline, primary, benchmark, and reserves
-- [x] `09-02-PLAN.md` -- Route-by-route validation report under the no-synthetic-final gate and exact `VALD-02` threshold test
-- [x] `09-03-PLAN.md` -- Final decision memo, synthesis guide update, and pivot recommendation
-
-**Executed outcome (2026-03-29):** no route passes the shared high-fidelity practical gate. `CsInH3` remains a low-pressure scientific benchmark, `RbPH3` is blocked as a theory-only hydride-side ambient claim, `KB3C3` remains benchmark-only, and the milestone closes with no credible consumer path inside the present conventional hydride route.
-
-### Phase 10: Experimental Benchmark Pivot Beyond Hydrides
-
-**Goal:** After the hydride no-go, identify the strongest confidence-ranked ambient or pressure-quench benchmark candidate and state clearly how far it still remains from room-temperature consumer hardware.
-**Depends on:** Phase 9
-
-**Success Criteria**
-
-1. The repo compares experimental ambient or pressure-quench routes against the best hydride and framework theory routes in one confidence-weighted map
-2. `HgBa2Ca2Cu3O8+delta`, `MgB2`, and `SmNiO2` appear as explicit experimental anchors
-3. One top benchmark candidate is named without overstating it as a finished room-temperature solution
-4. The next route after the hydride no-go is stated explicitly
-
-**Plans:** 3 plans
-
-Plans:
-- [x] `10-01-PLAN.md` -- Experimental benchmark map and confidence ledger
-- [x] `10-02-PLAN.md` -- Hg1223 pressure-quench audit and room-temperature gap analysis
-- [x] `10-03-PLAN.md` -- Top-candidate memo and next-route recommendation
-
-**Executed outcome (2026-03-29):** `HgBa2Ca2Cu3O8+delta` via pressure quench is now the repo's strongest confidence-ranked benchmark candidate. It is experimentally anchored and operates at ambient pressure after preparation, but it remains `149 K` below room temperature and is not yet a consumer-hardware solution.
+- [ ] 23-01-PLAN.md -- Weighted multi-criteria ranking with sensitivity analysis
+- [ ] 23-02-PLAN.md -- Route shortlist with named candidate families and pivot triggers
+- [ ] 23-03-PLAN.md -- Next-step memo and v6.0 closeout
 
 ## Risk Register
 
 | Phase | Top Risk | Probability | Impact | Mitigation |
 | --- | --- | --- | :---: | --- |
-| 6 | Literature already closes the room-temperature conventional path | HIGH | HIGH | Turn milestone into a decisive negative practical-viability study rather than force a positive candidate |
-| 7 | CsInH3 decompression is barrierless or strongly unstable | HIGH | HIGH | Treat it as scientific benchmark only and move the practical search elsewhere |
-| 8 | New families trade pressure away but lose too much `Tc` | HIGH | HIGH | Rank honestly against ambient benchmarks and retain only pathways with practical logic |
-| 9 | Synthetic baseline optimism collapses under real EPW/SSCHA | HIGH | HIGH | Require real validation before any final practical claim |
-| 10 | Benchmark winner is misread as room-temperature solution | HIGH | HIGH | Keep the room-temperature gap explicit and separate benchmark choice from consumer readiness |
+| 22 | Pressure-only or onset-only signals get over-promoted | MEDIUM | HIGH | compare operating state, retention, and evidence depth directly |
+| 23 | The repo ends with another diffuse watchlist | MEDIUM | HIGH | require one primary and one secondary route only |
 
 ## Progress
 
-**Execution Order:** `6 -> (7 and 8) -> 9 -> 10`
+**Execution Order:** `22 -> 23`
 
 | Phase | Plans Complete | Status | Completed |
 | --- | --- | --- | --- |
-| 6. Literature-Grounded Practicality Map | 3/3 | Executed | 2026-03-29 |
-| 7. Ambient Retention of CsInH3-Class Phases | 3/3 | Executed | 2026-03-29 |
-| 8. Ambient-Leaning Candidate Search | 3/3 | Executed | 2026-03-29 |
-| 9. High-Fidelity Validation and Pivot Decision | 3/3 | Executed | 2026-03-29 |
-| 10. Experimental Benchmark Pivot Beyond Hydrides | 3/3 | Executed | 2026-03-29 |
+| 22. Gap-Closing Frontier Map and Control Ledger | 3/3 | Complete | 2026-03-29 |
+| 23. Route Expansion Shortlist and Next-Step Memo | 0/3 | Not started | -- |
