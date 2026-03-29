@@ -1,0 +1,74 @@
+--
+&inputepw
+  prefix       = 'kgah3'
+  outdir       = './tmp/'
+  dvscf_dir    = './save/'
+
+  ! Electron-phonon calculation settings
+  ep_coupling  = .true.
+  elph         = .true.
+  epbwrite     = .true.
+  epbread      = .false.
+  epwwrite     = .true.
+  epwread      = .false.
+
+  ! Wannier90 settings
+  ! KGaH3 (Pm-3m, 5 atoms): K s,p (4); Ga s,p (4); H 3*s (3); + Ga-d? ~ 12-14
+  ! Ga is lighter than In; Ga-d states may be closer to valence
+  nbndsub      = 14
+  num_iter     = 500
+
+  ! Disentanglement window (eV relative to E_F)
+  ! KGaH3: Ga-p/H-s hybridization near E_F; Ga-d may need wider window
+  dis_win_min  = -15.0
+  dis_win_max  =  25.0
+  dis_froz_min = -5.0
+  dis_froz_max =  5.0
+
+  ! Coarse grids (MUST match DFPT)
+  nk1          = 12
+  nk2          = 12
+  nk3          = 12
+  nq1          = 6
+  nq2          = 6
+  nq3          = 6
+
+  ! Fine interpolation grids
+  nkf1         = 40
+  nkf2         = 40
+  nkf3         = 40
+  nqf1         = 20
+  nqf2         = 20
+  nqf3         = 20
+
+  ! Delta function smearing
+  degaussw     = 0.05
+  fsthick      = 2.0
+
+  ! Eliashberg solver settings
+  ! ASSERT_CONVENTION: eliashberg_method=isotropic_Matsubara, mustar_protocol=fixed_0.10_0.13
+  limag        = .true.
+  lpade        = .true.
+  liso         = .true.
+
+  ! Matsubara frequency cutoff
+  ! KGaH3 max phonon ~ 160-200 meV (Ga lighter -> higher H-modes) -> wscut >= 1.0 eV
+  wscut        = 1.0
+  nsiter       = 500
+  conv_thr_iaxis = 1.0d-4
+
+  ! Coulomb pseudopotential -- FIXED, NOT TUNED
+  muc          = 0.13
+  ! NOTE: Re-run with muc = 0.10 for bracketing
+
+  ! Temperature sweep for Tc determination (K)
+  ! Expected Tc ~ 120-170 K based on Du et al. (146 K at 10 GPa)
+  temps        = 220 200 190 180 175 170 165 160 155 150 145 140 135 130 120 110 100 80 60 40
+
+  ! Output settings
+  prtgkk       = .true.
+  a2f          = .true.
+  band_plot    = .true.
+  filkf        = 'kpath_sc.dat'
+  phonselfen   = .true.
+/

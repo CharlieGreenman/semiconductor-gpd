@@ -1,0 +1,52 @@
+! KGaH3 Pm-3m NSCF calculation for Wannier90/EPW at 10 GPa
+! ASSERT_CONVENTION: natural_units=NOT_used, fourier_convention=QE_plane_wave, unit_system_internal=Rydberg_atomic, xc_functional=PBEsol, pseudopotential=ONCV_norm_conserving
+!
+! Run AFTER SCF. Eigenvalues on uniform k-grid for Wannier interpolation.
+!
+! KGaH3 valence electrons:
+!   K:  9 (3s2 3p6 4s1) or 1 (4s1 only)
+!   Ga: 3 (4s2 4p1) or 13 (3d10 4s2 4p1)
+!   H:  1 each, x3 = 3
+!   Total: ~13-25 depending on PP semicore
+!   Need ~25-30 bands
+
+&CONTROL
+  calculation  = 'nscf'
+  prefix       = 'kgah3'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  verbosity    = 'high'
+/
+
+&SYSTEM
+  ibrav        = 1
+  celldm(1)    = 7.02724      ! UPDATE with relaxed value from vc-relax
+  nat          = 5
+  ntyp         = 3
+  ecutwfc      = 90.0
+  ecutrho      = 360.0
+  occupations  = 'smearing'
+  smearing     = 'mp'
+  degauss      = 0.02
+  nbnd         = 30
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10
+  diagonalization = 'david'
+/
+
+ATOMIC_SPECIES
+  K   39.0983  K.upf
+  Ga  69.723   Ga.upf
+  H    1.008   H.upf
+
+ATOMIC_POSITIONS {crystal}
+  K   0.000000  0.000000  0.000000
+  Ga  0.500000  0.500000  0.500000
+  H   0.500000  0.500000  0.000000
+  H   0.500000  0.000000  0.500000
+  H   0.000000  0.500000  0.500000
+
+K_POINTS {automatic}
+  24  24  24  0  0  0

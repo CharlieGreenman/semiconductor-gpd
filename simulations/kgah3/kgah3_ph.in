@@ -1,0 +1,26 @@
+! KGaH3 Pm-3m DFPT phonon calculation at 10 GPa
+! ASSERT_CONVENTION: natural_units=NOT_used, fourier_convention=QE_plane_wave, unit_system_internal=Rydberg_atomic, xc_functional=PBEsol, asr_enforcement=crystal
+!
+! Phonon frequency ranges expected for KGaH3 at 10 GPa:
+!   - K/Ga acoustic modes: 0-20 meV (0-161 cm^-1)
+!   - Ga-H bending optical: 20-70 meV (161-565 cm^-1)
+!   - H-stretching modes: 80-200 meV (645-1613 cm^-1)
+!   - Note: Ga lighter than In -> H-modes may shift to higher freq than RbInH3
+!   - 5 atoms => 15 phonon branches (3 acoustic + 12 optical)
+!   - All frequencies must be real at 10 GPa (Phase 2 confirmed stability)
+
+Phonon calculation for KGaH3 at 10 GPa
+&INPUTPH
+  prefix       = 'kgah3'
+  outdir       = './tmp/'
+  fildyn       = 'kgah3.dyn'
+  fildvscf     = 'dvscf'
+  ldisp        = .true.
+  nq1          = 6
+  nq2          = 6
+  nq3          = 6
+  tr2_ph       = 1.0d-14
+  alpha_mix(1) = 0.3
+  niter_ph     = 100
+  electron_phonon = 'interpolated'
+/

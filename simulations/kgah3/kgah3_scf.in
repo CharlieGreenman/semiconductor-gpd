@@ -1,0 +1,48 @@
+! KGaH3 Pm-3m SCF calculation at 10 GPa (using relaxed structure)
+! ASSERT_CONVENTION: natural_units=NOT_used, fourier_convention=QE_plane_wave, unit_system_internal=Rydberg_atomic, xc_functional=PBEsol, pseudopotential=ONCV_norm_conserving
+!
+! Run AFTER vc-relax: update celldm(1) with relaxed lattice parameter.
+! Purpose: Generate converged charge density for NSCF and DFPT.
+
+&CONTROL
+  calculation  = 'scf'
+  prefix       = 'kgah3'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  tprnfor      = .true.
+  tstress      = .true.
+  verbosity    = 'high'
+/
+
+&SYSTEM
+  ibrav        = 1
+  celldm(1)    = 7.02724      ! UPDATE with relaxed value from vc-relax
+  nat          = 5
+  ntyp         = 3
+  ecutwfc      = 90.0
+  ecutrho      = 360.0
+  occupations  = 'smearing'
+  smearing     = 'mp'
+  degauss      = 0.02
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10
+  mixing_beta  = 0.3
+  diagonalization = 'david'
+/
+
+ATOMIC_SPECIES
+  K   39.0983  K.upf
+  Ga  69.723   Ga.upf
+  H    1.008   H.upf
+
+ATOMIC_POSITIONS {crystal}
+  K   0.000000  0.000000  0.000000
+  Ga  0.500000  0.500000  0.500000
+  H   0.500000  0.500000  0.000000
+  H   0.500000  0.000000  0.500000
+  H   0.000000  0.500000  0.500000
+
+K_POINTS {automatic}
+  12  12  12  0  0  0
