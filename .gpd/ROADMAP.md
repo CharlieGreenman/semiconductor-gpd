@@ -132,7 +132,13 @@ Plans:
 
 **Backtracking trigger:** lambda systematically > 3.0 for all candidates -- Migdal approximation questionable; flag as uncertainty and document adiabatic ratio omega_log/E_F. If omega_log/E_F > 0.1, Tc predictions carry large uncontrolled error.
 
-**Plans:** TBD
+**Plans:** 4 plans
+
+Plans:
+- [ ] 03-01-PLAN.md -- CsInH3 full Eliashberg at 10 GPa: QE+DFPT+EPW pipeline, alpha^2F, lambda, Tc, Allen-Dynes cross-check
+- [ ] 03-02-PLAN.md -- RbInH3 + KGaH3 Eliashberg at 10 GPa: same pipeline for remaining 2 candidates
+- [ ] 03-03-PLAN.md -- Tc(P) curves at 5 pressures (3,5,7,10,15 GPa) for top 2 candidates
+- [ ] 03-04-PLAN.md -- mu* sensitivity (0.08,0.10,0.13,0.15), Phase 3 synthesis, contract deliverable assembly
 
 ### Phase 4: Anharmonic Corrections
 
@@ -201,6 +207,6 @@ Plans:
 | --- | --- | --- | --- |
 | 1. Pipeline Validation | 0/3 | Plans created | - |
 | 2. Candidate Screening | 0/4 | Plans created | - |
-| 3. Eliashberg Tc Predictions | 0/TBD | Not started | - |
+| 3. Eliashberg Tc Predictions | 0/4 | Plans created | - |
 | 4. Anharmonic Corrections | 0/TBD | Not started | - |
 | 5. Characterization | 0/TBD | Not started | - |
