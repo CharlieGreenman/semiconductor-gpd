@@ -101,7 +101,13 @@ Plans:
 
 **Stop condition from contract:** If all candidates are > 50 meV/atom above hull at target pressures, trigger rethink.
 
-**Plans:** TBD
+**Plans:** 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md -- Hull infrastructure and competing phase database for 3 ternary systems at 4 pressures
+- [ ] 02-02-PLAN.md -- MXH3 perovskite screening (KGaH3, RbInH3, CsInH3): hulls + phonon stability
+- [ ] 02-03-PLAN.md -- B-C clathrate and Mg2XH6 screening + hull validation via Mg2IrH6
+- [ ] 02-04-PLAN.md -- Stability synthesis: ranked candidate list and go/no-go for Phase 3
 
 ### Phase 3: Eliashberg Tc Predictions
 
@@ -194,7 +200,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 | --- | --- | --- | --- |
 | 1. Pipeline Validation | 0/3 | Plans created | - |
-| 2. Candidate Screening | 0/TBD | Not started | - |
+| 2. Candidate Screening | 0/4 | Plans created | - |
 | 3. Eliashberg Tc Predictions | 0/TBD | Not started | - |
 | 4. Anharmonic Corrections | 0/TBD | Not started | - |
 | 5. Characterization | 0/TBD | Not started | - |
