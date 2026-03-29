@@ -139,3 +139,24 @@ The next milestone must produce experimental evidence or fail cleanly against th
 - Nickelate ambient bulk: Sun et al., Nature 2025 (s41586-025-08893-4) -- ~40 K zero-resist SmNiO2
 - Nickelate ambient film onset: arXiv:2512.04708 -- ~63 K onset (La,Pr)3Ni2O7 bilayer film
 - Nickelate lever stacking: Nature Commun. 2026 (s41467-026-69660-1) -- strain + pressure in bilayer films
+
+---
+
+## Internal Consistency Check
+
+Cross-checked all three Phase 23 artifacts (weighted-ranking, route-shortlist, next-step-memo) on 10 dimensions:
+
+| # | Check | Result |
+| --- | --- | --- |
+| 1 | Primary/secondary assignment same across all three documents | PASS |
+| 2 | Named candidates same across shortlist and memo | PASS |
+| 3 | Hg1223 gap arithmetic: 300 - 151 = 149 K everywhere | PASS |
+| 4 | Nickelate gap arithmetic: 300 - 63 = 237 (onset), 300 - 40 = 260 (bulk) where relevant | PASS |
+| 5 | Shortlist fragility caveats referenced in memo next-step recommendations | PASS |
+| 6 | Shortlist pivot/promotion triggers referenced in memo | PASS |
+| 7 | VALD-01: every Tc claim labels operating state and Tc definition | PASS |
+| 8 | Phase 22 outputs cited in ranking and shortlist | PASS |
+| 9 | 149 K gap appears in all three documents | PASS |
+| 10 | No screened-out route class reappears in any document | PASS |
+
+**Verdict:** All Phase 23 artifacts are internally consistent. No fixes required.
