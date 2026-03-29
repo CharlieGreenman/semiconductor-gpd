@@ -1,8 +1,8 @@
 {
   "project_reference": {
     "project_md_updated": "2026-03-29",
-    "core_research_question": "After `v5.0`, which route family gives the best chance of actually shrinking the remaining `149 K` gap: `Hg`-family uplift around the `Hg1223` benchmark, nickelate escalation via pressure, strain, and chemical pressure, or neither?",
-    "current_focus": "Milestone `v6.0` complete \u2014 Phase `23` executed, producing a ranked two-route program: `Hg1223` primary, bilayer nickelates secondary"
+    "core_research_question": "Can independent reproduction of the `Hg1223` PQP benchmark confirm retained `Tc >= 131 K`, and can epitaxial strain engineering push bilayer `La3Ni2O7`-class nickelate films to ambient zero-resist `Tc > 80 K`?",
+    "current_focus": "Milestone `v7.0` complete \u2014 all three phases executed; route ranking confirmed unchanged; next milestone must execute protocols"
   },
   "project_contract": {
     "schema_version": 1,
@@ -524,14 +524,14 @@
     }
   },
   "position": {
-    "current_phase": "23",
-    "current_phase_name": "Route Expansion Shortlist and Next-Step Memo",
-    "total_phases": 23,
-    "current_plan": "03 (complete)",
-    "total_plans_in_phase": 3,
+    "current_phase": "26",
+    "current_phase_name": "Two-Track Decision Integration and v7.0 Closeout",
+    "total_phases": 26,
+    "current_plan": "02 (complete)",
+    "total_plans_in_phase": 2,
     "status": "Milestone complete",
     "last_activity": "2026-03-29",
-    "last_activity_desc": "Starting milestone v7.0: Two-Track Route Testing",
+    "last_activity_desc": "v7.0 milestone completed and archived",
     "progress_percent": 100,
     "paused_at": null
   },
@@ -540,20 +540,21 @@
     "`v5.0` closed without a room-temperature superconductor, but with a full Stage `A` decision package for `Hg1223`",
     "The best carried retained benchmark remains `Hg1223` at `151 K`, still `149 K` below room temperature",
     "Phase 22: `Hg`-family cuprates still lead on absolute `Tc` headroom; nickelates lead on tunable uplift levers and rate of frontier improvement",
-    "Phase 23, Plan 01: Weighted 5-axis ranking \u2014 `Hg`-family cuprates scored `4.15/5.00` (primary), nickelates scored `2.90/5.00` (secondary); ranking robust (0/10 perturbation flips)",
-    "Phase 23, Plan 02: Named shortlist \u2014 `Hg1223` primary, bilayer `La3Ni2O7`-class secondary lead, infinite-layer `SmNiO2`-class secondary backup; pivot trigger at `131 K` PQP reproduction, promotion trigger at `100 K` nickelate ambient",
-    "Phase 23, Plan 03: Next-step memo \u2014 primary route first action is independent PQP reproduction; secondary route first action is epitaxial strain-`Tc` mapping; 10/10 cross-artifact consistency checks passed"
+    "Phase 23, Plan 01: Weighted 5-axis ranking -- `Hg`-family cuprates scored `4.15/5.00` (primary), nickelates scored `2.90/5.00` (secondary); ranking robust (0/10 perturbation flips)",
+    "Phase 23, Plan 02: Named shortlist -- `Hg1223` primary, bilayer `La3Ni2O7`-class secondary lead, infinite-layer `SmNiO2`-class secondary backup; pivot trigger at `131 K` PQP reproduction, promotion trigger at `100 K` nickelate ambient",
+    "Phase 23, Plan 03: Next-step memo -- primary route first action is independent PQP reproduction; secondary route first action is epitaxial strain-`Tc` mapping; 10/10 cross-artifact consistency checks passed"
   ],
   "open_questions": [
     "Can the `Hg1223` `151 K` PQP benchmark be independently reproduced? (single-group result, fragile)",
     "Can bilayer `La3Ni2O7`-class nickelate films reach ambient zero-resist `Tc` above `80 K` via strain engineering?",
-    "Should the next milestone run both route tracks in parallel or sequence the PQP campaign first?"
+    "Is the 0-2% compressive strain range already well-mapped for bilayer nickelate films, or is there unexplored territory?",
+    "What protocol variables from the Phase 19 runbook are missing or underspecified for independent reproduction?"
   ],
   "performance_metrics": {
     "rows": [
       {
         "label": "Phase 22 execution",
-        "duration": "\u2014",
+        "duration": "--",
         "tasks": "3 plans, 3 tasks each",
         "files": "`.gpd/phases/22-*`"
       },
@@ -614,39 +615,14 @@
       "rationale": null
     },
     {
-      "phase": "0",
-      "summary": "Started milestone `v6.0`: Gap-Closing Route Expansion Beyond `v5.0`",
-      "rationale": null
-    },
-    {
-      "phase": "22",
-      "summary": "`Hg`-family cuprates still lead on absolute `Tc` headroom, while nickelates now lead on tunable uplift levers and recent frontier improvement",
-      "rationale": null
-    },
-    {
-      "phase": "23",
-      "summary": "`Hg`-family cuprates confirmed as primary route (weighted score `4.15/5.00`), nickelates confirmed as secondary route (`2.90/5.00`); ranking robust to `+/-20%` weight perturbation",
-      "rationale": null
-    },
-    {
-      "phase": "23",
-      "summary": "Bilayer `La3Ni2O7`-class is the lead nickelate candidate; infinite-layer `SmNiO2`-class is the ambient-stability backup",
-      "rationale": null
-    },
-    {
-      "phase": "23",
-      "summary": "Pivot trigger for `Hg1223` primary route set at `131 K`; promotion trigger for nickelate secondary route set at `100 K` ambient zero-resistance",
-      "rationale": null
-    },
-    {
       "phase": "23",
       "summary": "`v6.0` closed with explicit two-route program: `Hg1223` PQP reproducibility campaign (primary), bilayer nickelate strain mapping (secondary), `149 K` gap unchanged",
       "rationale": null
     },
     {
       "phase": "0",
-      "summary": "Started milestone v7.0: Two-Track Route Testing",
-      "rationale": "v6.0 route-expansion program complete; next step is PQP reproduction (primary) and nickelate strain mapping (secondary)"
+      "summary": "Started milestone v7.0: Two-Track Route Testing with phases 24-26",
+      "rationale": null
     }
   ],
   "approximations": [],
@@ -670,38 +646,24 @@
     "gamma_matrix_convention": null,
     "creation_annihilation_order": null,
     "custom_conventions": {
-      "unit_system_internal": "Rydberg atomic units (Ry, Bohr)",
       "unit_system_reporting": "SI-derived (K, GPa, eV, meV)",
-      "pressure_unit_qe": "kbar",
       "pressure_unit_report": "GPa (`1 GPa = 10 kbar`)",
-      "energy_conversion": "`1 Ry = 13.6057 eV = 157887 K`",
-      "lambda_definition": "`lambda = 2 * integral[alpha2F(omega)/omega d(omega)]`",
-      "mustar_protocol": "Fixed `0.10-0.13` bracket; NOT tuned",
-      "pseudopotential": "ONCV norm-conserving (SG15 or PseudoDojo)",
-      "xc_functional": "PBEsol primary; PBE cross-check",
-      "dos_convention": "`N_F` per spin per cell (EPW); QE `dos.x` gives total for both spins",
-      "phonon_imaginary": "Negative frequency = imaginary mode; threshold `-5 cm^-1`",
-      "ehull_threshold": "`50 meV/atom`",
-      "electron_charge": "`e > 0`; electron has charge `-e`",
-      "eliashberg_method": "Isotropic Eliashberg on Matsubara axis; Allen-Dynes cross-check only unless upgraded explicitly",
-      "asr_enforcement": "`asr=crystal` in QE `matdyn.x`"
+      "electron_charge": "`e > 0`; electron has charge `-e`"
     }
   },
   "propagated_uncertainties": [],
-  "pending_todos": [
-    "Close `v6.0` milestone formally",
-    "Scope `v7.0`: PQP reproducibility campaign + nickelate strain mapping"
-  ],
+  "pending_todos": [],
   "blockers": [
     "No carried route is close to room-temperature operation",
-    "`Hg1223` PQP benchmark is single-group with limited thermal stability",
-    "The `149 K` gap requires fundamentally new uplift, not incremental optimization"
+    "`Hg1223` PQP benchmark is single-group with limited thermal stability (3 days at 77 K, deterioration above ~200 K)",
+    "The `149 K` gap requires fundamentally new uplift, not incremental optimization",
+    "Nickelate ambient film onset (63 K) is onset-only; zero-resist may be 5-20 K lower"
   ],
   "session": {
     "last_date": "2026-03-29",
-    "stopped_at": "Phase `23` complete; `v6.0` ready to close",
-    "resume_file": ".gpd/phases/23-route-expansion-shortlist-and-next-step-memo/phase23-next-step-memo.md"
+    "stopped_at": "v7.0 roadmap created; Phase 24 and Phase 25 ready to plan in parallel",
+    "resume_file": ".gpd/ROADMAP.md"
   },
   "_version": 1,
-  "_synced_at": "2026-03-29T21:49:17.954963+00:00"
+  "_synced_at": "2026-03-29T23:24:23.892070+00:00"
 }

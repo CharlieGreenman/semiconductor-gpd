@@ -16,9 +16,9 @@ See: .gpd/PROJECT.md (updated 2026-03-29)
 **Total Phases:** 26
 **Current Plan:** 02 (complete)
 **Total Plans in Phase:** 2
-**Status:** v7.0 milestone complete; ready to close
+**Status:** Milestone complete
 **Last Activity:** 2026-03-29
-**Last Activity Description:** v7.0 closeout memo written; route ranking confirmed unchanged (Hg1223 primary, nickelates secondary watch); 149 K gap unchanged; 17/17 cross-artifact consistency
+**Last Activity Description:** v7.0 milestone completed and archived
 
 **Progress:** [██████████] 100%
 

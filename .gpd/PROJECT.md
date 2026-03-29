@@ -4,27 +4,23 @@
 
 This project started as a first-principles search for room-temperature superconductivity in lower-pressure hydrides. Milestone `v1.0` closed that route negatively for the `MXH3` perovskite family: the best repo result remains `CsInH3` at about `214 K` and `3 GPa`, with no evidence for ambient retention. Milestone `v2.0` tested whether ambient stability, pressure quenchability, or hydride-derived chemistry could rescue a consumer-relevant path; that route also closed negatively. Milestone `v3.0` widened the scope to experimentally anchored metastability and route ranking, ending with `Hg1223`-class pressure-quenched multilayer cuprates as the primary route and bilayer nickelate films as the backup. Milestone `v4.0` made the `Hg1223` route protocol-specified, control-mapped, and campaign-defined. Milestone `v5.0` then converted that route into a collaborator-facing Stage `A` runbook plus a clean evidence ladder and route-gate package.
 
-The active program now shifts from route ranking to route testing. Milestone `v6.0` answered the route-expansion question: `Hg`-family cuprates are the primary gap-closing route (weighted score `4.15/5.00`) and nickelates are secondary (`2.90/5.00`). The repo now moves to two-track experimental-facing work: reproduce the `Hg1223` `151 K` PQP benchmark independently, and map the strain-`Tc` response in bilayer `La3Ni2O7`-class nickelate films. The `149 K` gap to room temperature remains unchanged.
+The active program now shifts from protocol design to computational materials design. Seven milestones have established that `Hg1223` at `151 K` retained ambient is the best current benchmark (`149 K` gap), nickelates are secondary but far from action gates, and protocols for both routes are experiment-ready. The `149 K` gap has not changed since `v4.0`. No further planning-only milestones will shrink it. `v8.0` will use first-principles computation (DFT + Eliashberg) to design materials and conditions that could actually close the gap.
 
-## Current Milestone: v7.0 Two-Track Route Testing
+## Current State (after v7.0)
 
-**Goal:** Test the two ranked routes from `v6.0` with experiment-facing protocols: reproduce the `Hg1223` PQP benchmark independently and map strain-`Tc` in bilayer nickelate films.
+Milestone `v7.0` completed 2026-03-29. Both route protocols are experiment-ready. Route ranking confirmed unchanged: `Hg1223` primary (`4.15/5.00`), nickelates secondary watch (`2.90/5.00`). The `149 K` gap is unchanged — `v7.0` designed protocols, not ran experiments. The v7.0 closeout explicitly states that the next milestone must produce computed or measured `Tc` improvement, not more planning.
 
-**Target results:**
+## Next Milestone Goals (v8.0)
 
-- Independent PQP reproduction protocol for `Hg1223` with success gate at retained `Tc >= 131 K`
-- Strain-`Tc` map for bilayer `La3Ni2O7`-class films with success gate at ambient zero-resist `Tc > 80 K`
-- Route-confidence update based on reproduction and strain results
-- Decision on whether nickelates should be promoted from secondary to co-primary
+**Computational Materials Design for Room-Temperature Superconductivity:**
 
-**Milestone status:** `v7.0` is active. No room-temperature superconductor has been found. The best carried retained benchmark remains `Hg1223` at `151 K`, still `149 K` below room temperature.
-
-**Pivot trigger:** If PQP reproduction fails below `131 K`, reassess `Hg1223` primary status.
-**Promotion trigger:** If nickelate ambient zero-resist reaches `100 K`, promote to co-primary.
+1. **Hg-family multilayer engineering** — DFT + Eliashberg for `Hg1234` (4-layer) and `Hg1245` (5-layer) structures to computationally predict whether more `CuO2` layers push `Tc` above `151 K`
+2. **Nickelate lever-stacking optimization** — First-principles calculation of `La3Ni2O7` under optimized strain + oxygen stoichiometry + rare-earth substitution combinations
+3. **Hybrid cuprate-nickelate superlattice design** — Compute electronic structure and `Tc` for Ruddlesden-Popper superlattice structures combining cuprate-like planes with nickelate-like control surfaces
 
 ## Core Research Question
 
-Can independent reproduction of the `Hg1223` PQP benchmark confirm retained `Tc >= 131 K`, and can epitaxial strain engineering push bilayer `La3Ni2O7`-class nickelate films to ambient zero-resist `Tc > 80 K`?
+Can first-principles computation identify a specific material, structure, or condition that closes the `149 K` gap to room-temperature superconductivity — via multilayer cuprate engineering, nickelate lever-stacking, or hybrid superlattice design?
 
 ## Scoping Contract Summary
 
