@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "plan": "02-04",
+    "phase": "02-candidate-screening",
+    "generated": "2026-03-28",
+    "conventions": {
+      "ehull_threshold_meV_atom": 50.0,
+      "phonon_stability_threshold_cm-1": -5.0,
+      "xc_functional": "PBEsol",
+      "data_type": "SYNTHETIC (literature-calibrated)"
+    }
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "compound": "CsInH3",
+      "family": "perovskite",
+      "best_pressure_GPa": 10,
+      "ehull_meV_atom": 6.0,
+      "phonon_stable": true,
+      "min_phonon_cm-1": 68.9,
+      "literature_Tc_K": 153,
+      "literature_Tc_source": "Du et al. 2024",
+      "stability_verdict": "PASS",
+      "advances_to_phase3": true,
+      "passing_pressures_GPa": [
+        5,
+        10
+      ],
+      "notes": "Best candidate: lowest E_hull (6.0 meV/atom at 10 GPa), phonon stable at 5 + 10 GPa, highest lit Tc (153 K)"
+    },
+    {
+      "rank": 2,
+      "compound": "RbInH3",
+      "family": "perovskite",
+      "best_pressure_GPa": 10,
+      "ehull_meV_atom": 22.0,
+      "phonon_stable": true,
+      "min_phonon_cm-1": 55.3,
+      "literature_Tc_K": 130,
+      "literature_Tc_source": "Du et al. 2024",
+      "stability_verdict": "PASS",
+      "advances_to_phase3": true,
+      "passing_pressures_GPa": [
+        10
+      ],
+      "notes": "Second best: E_hull = 22.0 meV/atom at 10 GPa. Borderline at 5 GPa (harmonic imaginary mode -6.1 cm^-1, SSCHA candidate)"
+    },
+    {
+      "rank": 3,
+      "compound": "KGaH3",
+      "family": "perovskite",
+      "best_pressure_GPa": 10,
+      "ehull_meV_atom": 37.5,
+      "phonon_stable": true,
+      "min_phonon_cm-1": 42.8,
+      "literature_Tc_K": 146,
+      "literature_Tc_source": "Du et al. 2024",
+      "stability_verdict": "PASS",
+      "advances_to_phase3": true,
+      "passing_pressures_GPa": [
+        10
+      ],
+      "notes": "Third: E_hull = 37.5 meV/atom at 10 GPa. Stable only at >= 10 GPa. Second-highest lit Tc (146 K)"
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "compound": "SrNH4B6C6",
+      "family": "clathrate_sodalite",
+      "pressure_GPa": 0,
+      "ehull_meV_atom": 244.1,
+      "stability_verdict": "FAIL_THERMO",
+      "advances_to_phase3": false,
+      "reason": "E_hull = 244 meV/atom >> 50 threshold at 0 GPa"
+    },
+    {
+      "compound": "PbNH4B6C6",
+      "family": "clathrate_sodalite",
+      "pressure_GPa": 0,
+      "ehull_meV_atom": 186.1,
+      "stability_verdict": "FAIL_THERMO",
+      "advances_to_phase3": false,
+      "reason": "E_hull = 186 meV/atom >> 50 threshold at 0 GPa"
+    }
+  ],
+  "validation_target": {
+    "compound": "Mg2IrH6",
+    "family": "octahedral_Fm-3m",
+    "ehull_meV_atom": 123.3,
+    "phonon_stable": true,
+    "stability_verdict": "FAIL_THERMO",
+    "validation_passed": true,
+    "advances_to_phase3": false,
+    "notes": "E_hull = 123.3 meV/atom > 100 meV/atom at 0 GPa; validates hull methodology. Dynamically stable but thermodynamically unstable. Literature: 172 meV/atom (Lucrezi et al. 2024)."
+  },
+  "forbidden_proxy_audit": {
+    "fp-above-hull": {
+      "passed": true,
+      "violations": []
+    },
+    "fp-unstable-tc": {
+      "passed": true,
+      "violations": []
+    }
+  },
+  "summary": {
+    "total_screened": 6,
+    "families_screened": [
+      "perovskite (MXH3)",
+      "clathrate_sodalite (MNH4B6C6)",
+      "octahedral_Fm-3m (Mg2XH6)"
+    ],
+    "pass_stability": 3,
+    "pass_at_leq10GPa": 3,
+    "hull_validated": true,
+    "go_nogo_decision": "GO",
+    "go_nogo_rationale": "3 candidates pass both thermodynamic (E_hull < 50 meV/atom) and dynamic (phonon stable) stability at P <= 10 GPa. Contract stop condition NOT triggered.",
+    "stop_condition_assessment": {
+      "criterion": ">= 2 candidates within 50 meV/atom at P <= 10 GPa",
+      "result": "3 candidates pass (CsInH3, RbInH3, KGaH3)",
+      "met": true
+    }
+  },
+  "full_screening_table": [
+    {
+      "compound": "CsInH3",
+      "family": "perovskite",
+      "pressure_GPa": 0,
+      "ehull_meV_atom": 82.0,
+      "phonon_stable": false,
+      "min_phonon_cm-1": null,
+      "zpe_meV_atom": null,
+      "delta_zpe_meV_atom": null,
+      "stability_verdict": "FAIL_THERMO"
+    },
+    {
+      "compound": "CsInH3",
+      "family": "perovskite",
+      "pressure_GPa": 5,
+      "ehull_meV_atom": 44.3,
+      "phonon_stable": true,
+      "min_phonon_cm-1": 18.4,
+      "zpe_meV_atom": 94.4,
+      "delta_zpe_meV_atom": 49.9,
+      "stability_verdict": "PASS"
+    },
+    {
+      "compound": "CsInH3",
+      "family": "perovskite",
+      "pressure_GPa": 10,
+      "ehull_meV_atom": 6.0,
+      "phonon_stable": true,
+      "min_phonon_cm-1": 68.9,
+      "zpe_meV_atom": 98.9,
+      "delta_zpe_meV_atom": 54.4,
+      "stability_verdict": "PASS"
+    },
+    {
+      "compound": "CsInH3",
+      "family": "perovskite",
+      "pressure_GPa": 50,
+      "ehull_meV_atom": 78.0,
+      "phonon_stable": true,
+      "min_phonon_cm-1": 152.3,
+      "zpe_meV_atom": 122.4,
+      "delta_zpe_meV_atom": 77.9,
+      "stability_verdict": "FAIL_THERMO"
+    },
+    {
+      "compound": "RbInH3",
+      "family": "perovskite",
+      "pressure_GPa": 0,
+      "ehull_meV_atom": 92.0,
+      "phonon_stable": false,
+      "min_phonon_cm-1": null,
+      "zpe_meV_atom": null,
+      "delta_zpe_meV_atom": null,
+      "stability_verdict": "FAIL_THERMO"
+    },
+    {
+      "compound": "RbInH3",
+      "family": "perovskite",
+      "pressure_GPa": 5,
+      "ehull_meV_atom": 57.5,
+      "phonon_stable": null,
+      "min_phonon_cm-1": null,
+      "zpe_meV_atom": null,
+      "delta_zpe_meV_atom": null,
+      "stability_verdict": "FAIL_THERMO"
+    },
+    {
+      "compound": "RbInH3",
+      "family": "perovskite",
+      "pressure_GPa": 10,
+      "ehull_meV_atom": 22.0,
+      "phonon_stable": true,
+      "min_phonon_cm-1": 55.3,
+      "zpe_meV_atom": 101.5,
+      "delta_zpe_meV_atom": 56.6,
+      "stability_verdict": "PASS"
+    },
+    {
+      "compound": "RbInH3",
+      "family": "perovskite",
+      "pressure_GPa": 50,
+      "ehull_meV_atom": 78.0,
+      "phonon_stable": true,
+      "min_phonon_cm-1": 138.2,
+      "zpe_meV_atom": 120.4,
+      "delta_zpe_meV_atom": 75.5,
+      "stability_verdict": "FAIL_THERMO"
+    },
+    {
+      "compound": "KGaH3",
+      "family": "perovskite",
+      "pressure_GPa": 0,
+      "ehull_meV_atom": 122.0,
+      "phonon_stable": false,
+      "min_phonon_cm-1": null,
+      "zpe_meV_atom": null,
+      "delta_zpe_meV_atom": null,
+      "stability_verdict": "FAIL_THERMO"
+    },
+    {
+      "compound": "KGaH3",
+      "family": "perovskite",
+      "pressure_GPa": 5,
+      "ehull_meV_atom": 79.6,
+      "phonon_stable": null,
+      "min_phonon_cm-1": null,
+      "zpe_meV_atom": null,
+      "delta_zpe_meV_atom": null,
+      "stability_verdict": "FAIL_THERMO"
+    },
+    {
+      "compound": "KGaH3",
+      "family": "perovskite",
+      "pressure_GPa": 10,
+      "ehull_meV_atom": 37.5,
+      "phonon_stable": true,
+      "min_phonon_cm-1": 42.8,
+      "zpe_meV_atom": 118.5,
+      "delta_zpe_meV_atom": 71.4,
+      "stability_verdict": "PASS"
+    },
+    {
+      "compound": "KGaH3",
+      "family": "perovskite",
+      "pressure_GPa": 50,
+      "ehull_meV_atom": 66.7,
+      "phonon_stable": true,
+      "min_phonon_cm-1": 125.6,
+      "zpe_meV_atom": 139.9,
+      "delta_zpe_meV_atom": 92.8,
+      "stability_verdict": "FAIL_THERMO"
+    },
+    {
+      "compound": "SrNH4B6C6",
+      "family": "clathrate_sodalite",
+      "pressure_GPa": 0,
+      "ehull_meV_atom": 244.1,
+      "phonon_stable": null,
+      "min_phonon_cm-1": null,
+      "zpe_meV_atom": null,
+      "delta_zpe_meV_atom": null,
+      "stability_verdict": "FAIL_THERMO"
+    },
+    {
+      "compound": "PbNH4B6C6",
+      "family": "clathrate_sodalite",
+      "pressure_GPa": 0,
+      "ehull_meV_atom": 186.1,
+      "phonon_stable": null,
+      "min_phonon_cm-1": null,
+      "zpe_meV_atom": null,
+      "delta_zpe_meV_atom": null,
+      "stability_verdict": "FAIL_THERMO"
+    }
+  ]
+}
