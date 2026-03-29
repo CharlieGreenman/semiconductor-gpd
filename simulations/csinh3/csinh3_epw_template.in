@@ -1,0 +1,69 @@
+--
+&inputepw
+  prefix       = 'csinh3'
+  outdir       = './tmp/'
+  dvscf_dir    = './save/'
+
+  ep_coupling  = .true.
+  elph         = .true.
+  epbwrite     = .true.
+  epbread      = .false.
+  epwwrite     = .true.
+  epwread      = .false.
+
+  ! ASSERT_CONVENTION: xc_functional=PBEsol, pseudopotential=ONCV_norm_conserving,
+  !   lambda_definition=2*integral[alpha2F/omega], mustar_protocol=fixed_0.10_0.13,
+  !   eliashberg_method=isotropic_Matsubara, nf_convention=per_spin_per_cell
+
+  ! EPW TEMPLATE FOR Tc(P) PRESSURE SWEEP
+  ! Usage: Copy this file, set muc = 0.10 or 0.13
+  ! Run SEPARATELY for each pressure point after vc-relax -> SCF -> NSCF -> DFPT
+  ! Identical parameters at all pressures (only structure changes via prior relaxation)
+
+  nbndsub      = 14
+  num_iter     = 500
+
+  dis_win_min  = -8.0
+  dis_win_max  =  8.0
+  dis_froz_min = -3.0
+  dis_froz_max =  3.0
+
+  nk1          = 12
+  nk2          = 12
+  nk3          = 12
+  nq1          = 6
+  nq2          = 6
+  nq3          = 6
+
+  nkf1         = 40
+  nkf2         = 40
+  nkf3         = 40
+  nqf1         = 20
+  nqf2         = 20
+  nqf3         = 20
+
+  degaussw     = 0.025
+  fsthick      = 2.0
+
+  eliashberg   = .true.
+  limag        = .true.
+  lpade        = .true.
+  liso         = .true.
+  laniso       = .false.
+
+  wscut        = 1.0
+  nsiter       = 500
+  conv_thr_iaxis = 1.0d-4
+  broyden_beta = 0.7
+
+  ! SET mu*: run with muc = 0.10, then muc = 0.13
+  muc          = 0.13
+
+  nstemp       = 26
+  tempsmin     = 50.0
+  tempsmax     = 300.0
+
+  prtgkk       = .true.
+  a2f          = .true.
+  phonselfen   = .true.
+/

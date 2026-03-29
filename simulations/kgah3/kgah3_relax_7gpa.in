@@ -1,0 +1,68 @@
+! KGaH3 Pm-3m variable-cell relaxation at 7 GPa
+! ASSERT_CONVENTION: natural_units=NOT_used, fourier_convention=QE_plane_wave,
+!   unit_system_internal=Rydberg_atomic, pressure_unit_qe=kbar,
+!   xc_functional=PBEsol, pseudopotential=ONCV_norm_conserving, asr=crystal,
+!   phonon_stability_threshold=-5cm-1
+!
+! Structure: Pm-3m (space group #221), simple cubic perovskite, 5 atoms/cell
+! Target pressure: 7 GPa = 70 kbar
+! Initial structure: 10 GPa relaxed geometry
+!
+! Pressure check: 7 GPa = 70 kbar
+
+&CONTROL
+  calculation  = 'vc-relax'
+  prefix       = 'kgah3'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  tprnfor      = .true.
+  tstress      = .true.
+  forc_conv_thr = 1.0d-4
+  etot_conv_thr = 1.0d-6
+  nstep        = 200
+/
+
+&SYSTEM
+  ibrav        = 1
+  celldm(1)    = 7.02724
+  nat          = 5
+  ntyp         = 3
+  ecutwfc      = 90.0
+  ecutrho      = 360.0
+  occupations  = 'smearing'
+  smearing     = 'mp'
+  degauss      = 0.02
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10
+  mixing_beta  = 0.3
+  mixing_mode  = 'plain'
+  diagonalization = 'david'
+/
+
+&IONS
+  ion_dynamics = 'bfgs'
+/
+
+&CELL
+  cell_dynamics = 'bfgs'
+  press        = 70.0          ! 7 GPa = 70 kbar
+  press_conv_thr = 0.5
+  cell_dofree  = 'ibrav'
+/
+
+ATOMIC_SPECIES
+  K   39.0983  K.upf
+  Ga  69.723   Ga.upf
+  H    1.008   H.upf
+
+ATOMIC_POSITIONS {crystal}
+  K   0.000000  0.000000  0.000000
+  Ga  0.500000  0.500000  0.500000
+  H   0.500000  0.500000  0.000000
+  H   0.500000  0.000000  0.500000
+  H   0.000000  0.500000  0.500000
+
+K_POINTS {automatic}
+  12  12  12  0  0  0
