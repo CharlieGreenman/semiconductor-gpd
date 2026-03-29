@@ -166,6 +166,28 @@
     "secondary_score": 2.90,
     "spread": 1.25
   },
+  "sensitivity": {
+    "method": "+/-20% relative perturbation on each axis weight, renormalized to sum=1.00",
+    "total_scenarios": 10,
+    "flips_count": 0,
+    "verdict": "robust",
+    "minimum_spread": 1.138,
+    "minimum_spread_scenario": "A1 -20%",
+    "maximum_spread": 1.349,
+    "maximum_spread_scenario": "A1 +20%",
+    "scenarios": [
+      {"axis": "A1", "direction": "+20%", "hg_total": 4.198, "ni_total": 2.849, "spread": 1.349, "flips": false},
+      {"axis": "A1", "direction": "-20%", "hg_total": 4.096, "ni_total": 2.958, "spread": 1.138, "flips": false},
+      {"axis": "A2", "direction": "+20%", "hg_total": 4.143, "ni_total": 2.905, "spread": 1.238, "flips": false},
+      {"axis": "A2", "direction": "-20%", "hg_total": 4.158, "ni_total": 2.895, "spread": 1.263, "flips": false},
+      {"axis": "A3", "direction": "+20%", "hg_total": 4.106, "ni_total": 2.942, "spread": 1.163, "flips": false},
+      {"axis": "A3", "direction": "-20%", "hg_total": 4.198, "ni_total": 2.854, "spread": 1.344, "flips": false},
+      {"axis": "A4", "direction": "+20%", "hg_total": 4.175, "ni_total": 2.903, "spread": 1.272, "flips": false},
+      {"axis": "A4", "direction": "-20%", "hg_total": 4.124, "ni_total": 2.897, "spread": 1.227, "flips": false},
+      {"axis": "A5", "direction": "+20%", "hg_total": 4.128, "ni_total": 2.902, "spread": 1.226, "flips": false},
+      {"axis": "A5", "direction": "-20%", "hg_total": 4.174, "ni_total": 2.898, "spread": 1.276, "flips": false}
+    ]
+  },
   "gap_arithmetic": {
     "hg1223_retained_ambient": {
       "tc_k": 151,

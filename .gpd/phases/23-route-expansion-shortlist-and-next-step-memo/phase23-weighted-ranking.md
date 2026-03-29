@@ -104,6 +104,45 @@ All other route classes (pressure-only without retention, onset-only without hea
 
 The best carried retained benchmark remains Hg1223 at 151 K (zero-resistance, retained ambient after pressure-quench synthesis). The room-temperature gap is 300 - 151 = **149 K**. Neither route is close to room-temperature practical operation.
 
+## Sensitivity Analysis
+
+### Method
+
+Each of the 5 axis weights was varied by +20% and -20% (relative to default), then all weights were renormalized to sum to 1.00. This produces 10 perturbation scenarios. For each scenario, the weighted totals for both routes were recomputed and the primary/secondary assignment was checked for flips.
+
+### Results
+
+| Scenario | Perturbed axis | Direction | Hg-family total | Nickelate total | Spread | Flips? |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | A1: Tc headroom | +20% | 4.198 | 2.849 | 1.349 | No |
+| 2 | A1: Tc headroom | -20% | 4.096 | 2.958 | 1.138 | No |
+| 3 | A2: Evidence depth | +20% | 4.143 | 2.905 | 1.238 | No |
+| 4 | A2: Evidence depth | -20% | 4.158 | 2.895 | 1.263 | No |
+| 5 | A3: Lever count | +20% | 4.106 | 2.942 | 1.163 | No |
+| 6 | A3: Lever count | -20% | 4.198 | 2.854 | 1.344 | No |
+| 7 | A4: Operating pressure | +20% | 4.175 | 2.903 | 1.272 | No |
+| 8 | A4: Operating pressure | -20% | 4.124 | 2.897 | 1.227 | No |
+| 9 | A5: Retention pathway | +20% | 4.128 | 2.902 | 1.226 | No |
+| 10 | A5: Retention pathway | -20% | 4.174 | 2.898 | 1.276 | No |
+
+### Robustness Verdict
+
+**ROBUST.** The ranking does not flip in any of the 10 perturbation scenarios.
+
+- **Minimum spread:** 1.138 (scenario 2: A1 weight reduced by 20%)
+- **Maximum spread:** 1.349 (scenario 1: A1 weight increased by 20%)
+- Even the worst-case scenario (A1 -20%) preserves a spread of 1.14, which is 28% of the 1-5 scale range.
+
+The Hg-family primary assignment is driven primarily by axes A1 (headroom) and A4 (operating pressure), where Hg-family scores 5 vs nickelate scores of 2-3. These are the axes where the routes are most asymmetric, and no single +/-20% weight perturbation can overcome a 3-point score gap on the highest-weighted axis.
+
+### Flip Threshold Analysis
+
+The ranking would flip only if the A3 (lever count) weight exceeded approximately 0.65 while A1 (headroom) dropped correspondingly -- a scenario far outside the +/-20% perturbation envelope and one that would require arguing that controllable levers matter more than twice as much as all other criteria combined.
+
+### Fragility Check
+
+The ranking does NOT flip with any single-axis weight change of less than 10%. Per the decision criterion in RESEARCH.md, since the ranking is robust (0/10 flips), the quantitative ranking stands and no fallback to the qualitative Phase 22 asymmetry argument is needed.
+
 ## Sources
 
 - Phase 22 frontier-headroom map: `.gpd/phases/22-gap-closing-frontier-map-and-control-ledger/phase22-frontier-headroom-map.md`
