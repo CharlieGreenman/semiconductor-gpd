@@ -1,0 +1,62 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=qe_bloch, xc_functional=PBEsol, pseudopotential=ONCV_PseudoDojo_PBEsol_stringent
+!
+! LaH10 (Fm-3m) NSCF calculation at 170 GPa
+! Computes eigenvalues on uniform k-grid for Wannier90/EPW
+! Primitive FCC cell: 11 atoms (1 La + 10 H)
+!
+! NSCF must use the SAME ecutwfc, ecutrho, CELL_PARAMETERS, ATOMIC_POSITIONS as SCF
+! K-grid: uniform 4x4x4 to match EPW coarse grid (nk1=nk2=nk3=4)
+! nbnd: ~30 bands (enough to capture La d-bands + H s-bands near E_F +/- 5 eV)
+!
+&CONTROL
+  calculation  = 'nscf',
+  prefix       = 'lah10',
+  outdir       = './tmp/',
+  pseudo_dir   = './pseudo/',
+/
+
+&SYSTEM
+  ibrav        = 0,
+  nat          = 11,
+  ntyp         = 2,
+  ecutwfc      = 80.0,
+  ecutrho      = 320.0,
+  occupations  = 'smearing',
+  smearing     = 'mp',
+  degauss      = 0.02,
+  nbnd         = 30,
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10,
+  diagonalization = 'david',
+/
+
+ATOMIC_SPECIES
+  La  138.90547  La.upf
+  H     1.00794  H.upf
+
+! PLACEHOLDER: Replace with relaxed cell parameters from vc-relax output
+CELL_PARAMETERS {angstrom}
+  0.000000  2.550000  2.550000
+  2.550000  0.000000  2.550000
+  2.550000  2.550000  0.000000
+
+! PLACEHOLDER: Replace with relaxed atomic positions from vc-relax output
+ATOMIC_POSITIONS {crystal}
+La  0.000000  0.000000  0.000000
+H   0.250000  0.250000  0.250000
+H   0.750000  0.750000  0.750000
+H   0.118000  0.118000  0.118000
+H   0.882000  0.882000  0.882000
+H   0.118000  0.118000  0.882000
+H   0.882000  0.882000  0.118000
+H   0.118000  0.882000  0.118000
+H   0.882000  0.118000  0.882000
+H   0.882000  0.118000  0.118000
+H   0.118000  0.882000  0.882000
+
+! Uniform 4x4x4 k-grid (must match EPW coarse grid)
+! nosym and noinv required for EPW Wannier interpolation
+K_POINTS {automatic}
+  4 4 4  0 0 0

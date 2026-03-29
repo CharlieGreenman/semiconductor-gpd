@@ -1,0 +1,65 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=qe_bloch, xc_functional=PBEsol, pseudopotential=ONCV_PseudoDojo_PBEsol_stringent
+!
+! LaH10 (Fm-3m) SCF calculation at 170 GPa
+! Primitive FCC cell: 11 atoms (1 La + 10 H)
+! Use RELAXED structure from lah10_relax.in output
+!
+! DIMENSIONAL CHECK: ecutwfc = 80 Ry = 1088.5 eV
+!
+! NOTE: After vc-relax completes, update CELL_PARAMETERS and ATOMIC_POSITIONS
+! with the relaxed values from the vc-relax output.
+!
+&CONTROL
+  calculation  = 'scf',
+  prefix       = 'lah10',
+  outdir       = './tmp/',
+  pseudo_dir   = './pseudo/',
+  tprnfor      = .true.,
+  tstress      = .true.,
+/
+
+&SYSTEM
+  ibrav        = 0,
+  nat          = 11,
+  ntyp         = 2,
+  ecutwfc      = 80.0,
+  ecutrho      = 320.0,
+  occupations  = 'smearing',
+  smearing     = 'mp',
+  degauss      = 0.02,
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10,
+  mixing_beta  = 0.5,
+  diagonalization = 'david',
+/
+
+ATOMIC_SPECIES
+  La  138.90547  La.upf
+  H     1.00794  H.upf
+
+! PLACEHOLDER: Replace with relaxed cell parameters from vc-relax output
+! Expected: conventional a ~ 5.10-5.12 A at 170 GPa
+! Primitive vectors: a/2 * (0,1,1), a/2 * (1,0,1), a/2 * (1,1,0)
+CELL_PARAMETERS {angstrom}
+  0.000000  2.550000  2.550000
+  2.550000  0.000000  2.550000
+  2.550000  2.550000  0.000000
+
+! PLACEHOLDER: Replace with relaxed atomic positions from vc-relax output
+ATOMIC_POSITIONS {crystal}
+La  0.000000  0.000000  0.000000
+H   0.250000  0.250000  0.250000
+H   0.750000  0.750000  0.750000
+H   0.118000  0.118000  0.118000
+H   0.882000  0.882000  0.882000
+H   0.118000  0.118000  0.882000
+H   0.882000  0.882000  0.118000
+H   0.118000  0.882000  0.118000
+H   0.882000  0.118000  0.882000
+H   0.882000  0.118000  0.118000
+H   0.118000  0.882000  0.882000
+
+K_POINTS {automatic}
+  16 16 16  0 0 0

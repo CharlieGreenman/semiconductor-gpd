@@ -1,0 +1,99 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, metric_signature=N/A, fourier_convention=qe_bloch, coupling_convention=N/A, renormalization_scheme=N/A, gauge_choice=N/A
+! ASSERT_CONVENTION: unit_system_internal=rydberg_atomic, unit_system_reporting=SI_derived, pressure_unit_qe=kbar, xc_functional=PBEsol, pseudopotential=ONCV_PseudoDojo_PBEsol_stringent
+!
+! LaH10 (Fm-3m, space group #225) variable-cell relaxation at 170 GPa
+! Primitive FCC cell: 11 atoms (1 La + 10 H)
+!
+! Fm-3m Wyckoff positions (conventional cell):
+!   La at 4a: (0, 0, 0)
+!   H1 at 8c: (1/4, 1/4, 1/4)  -- 8 H forming cube vertices
+!   H2 at 32f: (x, x, x) with x ~ 0.118 -- H in sodalite cage
+!
+! Conventional lattice parameter a ~ 5.10 A at 170 GPa (from literature)
+! Primitive FCC vectors: a1 = a/2*(0,1,1), a2 = a/2*(1,0,1), a3 = a/2*(1,1,0)
+!
+! DIMENSIONAL CHECK: press = 1700.0 kbar = 170 GPa (1 GPa = 10 kbar)
+! La PP: 11 valence electrons (includes 5s2 5p6 5d1 6s2 semicore)
+! H PP: 1 valence electron
+!
+&CONTROL
+  calculation  = 'vc-relax',
+  prefix       = 'lah10',
+  outdir       = './tmp/',
+  pseudo_dir   = './pseudo/',
+  tprnfor      = .true.,
+  tstress      = .true.,
+  forc_conv_thr = 1.0d-4,
+  etot_conv_thr = 1.0d-6,
+  nstep        = 200,
+/
+
+&SYSTEM
+  ibrav        = 0,
+  nat          = 11,
+  ntyp         = 2,
+  ecutwfc      = 80.0,
+  ecutrho      = 320.0,
+  occupations  = 'smearing',
+  smearing     = 'mp',
+  degauss      = 0.02,
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10,
+  mixing_beta  = 0.5,
+  diagonalization = 'david',
+/
+
+&IONS
+  ion_dynamics = 'bfgs',
+/
+
+&CELL
+  cell_dynamics = 'bfgs',
+  press        = 1700.0,
+  press_conv_thr = 0.5,
+  cell_dofree  = 'all',
+/
+
+ATOMIC_SPECIES
+  La  138.90547  La.upf
+  H     1.00794  H.upf
+
+! Primitive FCC cell vectors for conventional a = 5.10 A = 9.638 Bohr
+! a1 = a/2*(0,1,1), a2 = a/2*(1,0,1), a3 = a/2*(1,1,0)
+! In Angstrom: a/2 = 2.55 A
+CELL_PARAMETERS {angstrom}
+  0.000000  2.550000  2.550000
+  2.550000  0.000000  2.550000
+  2.550000  2.550000  0.000000
+
+! Atomic positions in crystal (fractional) coordinates of the PRIMITIVE cell
+! Mapping from conventional Wyckoff to primitive FCC fractional coords:
+!
+! La at 4a: conventional (0,0,0) -> primitive (0, 0, 0)
+!
+! H1 at 8c: conventional (1/4,1/4,1/4) and (3/4,3/4,3/4)
+!   (1/4,1/4,1/4) -> primitive: (3/4, 3/4, 3/4)
+!   (3/4,3/4,3/4) -> not in primitive cell (equivalent by FCC translation)
+!   But 8c in primitive FCC gives 2 atoms: (1/4,1/4,1/4) and (3/4,3/4,3/4)
+!
+! H2 at 32f: conventional (x,x,x) with x~0.118
+!   In primitive cell, 32f maps to 8 atoms
+!   Coordinates: permutations of (3x, 3x-2x, 3x-2x) etc in primitive basis
+!
+ATOMIC_POSITIONS {crystal}
+La  0.000000  0.000000  0.000000
+H   0.250000  0.250000  0.250000
+H   0.750000  0.750000  0.750000
+H   0.118000  0.118000  0.118000
+H   0.882000  0.882000  0.882000
+H   0.118000  0.118000  0.882000
+H   0.882000  0.882000  0.118000
+H   0.118000  0.882000  0.118000
+H   0.882000  0.118000  0.882000
+H   0.882000  0.118000  0.118000
+H   0.118000  0.882000  0.882000
+
+K_POINTS {automatic}
+  16 16 16  0 0 0

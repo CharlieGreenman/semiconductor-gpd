@@ -1,0 +1,33 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=qe_bloch, xc_functional=PBEsol, pseudopotential=ONCV_PseudoDojo_PBEsol_stringent
+!
+! LaH10 (Fm-3m) DFPT phonon calculation at 170 GPa
+! Computes dynamical matrices and electron-phonon matrix elements on coarse q-grid
+!
+! Coarse q-grid: 4x4x4 (LaH10 is ~15x more expensive than H3S per q-point
+! due to 11-atom primitive cell vs 4-atom)
+!
+! KNOWN ISSUE: Harmonic DFPT for Fm-3m LaH10 may show soft modes
+! near 170 GPa. Quantum nuclear effects (SSCHA) stabilize the structure
+! (Errea et al., Nature 578, 66 (2020)). Marginally imaginary modes
+! (< 20 cm^-1) at isolated q-points are acceptable.
+!
+! Expected computational cost: 24-72 hours on 16-32 cores
+! Bottleneck: each irreducible q-point costs 3-10x an SCF calculation
+!
+Phonons of LaH10 at 170 GPa (Fm-3m)
+&INPUTPH
+  prefix       = 'lah10',
+  outdir       = './tmp/',
+  fildyn       = 'lah10.dyn',
+  fildvscf     = 'dvscf',
+  ldisp        = .true.,
+  nq1          = 4,
+  nq2          = 4,
+  nq3          = 4,
+  tr2_ph       = 1.0d-14,
+  alpha_mix(1) = 0.3,
+  nmix_ph      = 8,
+  electron_phonon = 'interpolated',
+  el_ph_sigma  = 0.005,
+  el_ph_nsigma = 10,
+/
