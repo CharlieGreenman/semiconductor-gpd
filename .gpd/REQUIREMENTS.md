@@ -1,0 +1,117 @@
+# Requirements: Room-Temperature Hydride Superconductor Discovery
+
+**Defined:** 2026-03-28
+**Core Research Question:** Can a thermodynamically or dynamically stable ternary hydride be identified from first principles with Tc ≥ 300 K at near-ambient pressure (P ≤ 10 GPa)?
+
+## Primary Requirements
+
+### Benchmarking
+
+- [ ] **BENCH-01**: Reproduce H₃S Tc within 15% of experimental 203 K at 150 GPa using full Eliashberg equations (Im-3m structure)
+- [ ] **BENCH-02**: Reproduce LaH₁₀ Tc within 15% of experimental 250 K at 170 GPa using full Eliashberg equations (Fm-3m structure)
+- [ ] **BENCH-03**: Validate DFT phonon dispersions for H₃S and LaH₁₀ against published ab initio results (no imaginary modes at experimental pressure)
+
+### Candidate Screening
+
+- [ ] **SCREEN-01**: Construct pressure-dependent convex hulls for at least 3 ternary A-B-H systems (e.g., La-Be-H, Ca-B-H, Mg-B-H) at P = 0, 5, 10, 50 GPa
+- [ ] **SCREEN-02**: Identify ternary hydride compositions within 50 meV/atom of the convex hull at P ≤ 10 GPa
+- [ ] **SCREEN-03**: Compute phonon dispersions for all near-hull candidates and filter for dynamic stability (no imaginary frequencies after q-grid convergence)
+
+### Eliashberg Calculations
+
+- [ ] **ELIAS-01**: Compute α²F(ω), λ, and ω_log for all dynamically stable candidates using EPW with Wannier interpolation
+- [ ] **ELIAS-02**: Solve isotropic Eliashberg equations on Matsubara axis for Tc with μ* = 0.10, 0.13 (sensitivity bracket)
+- [ ] **ELIAS-03**: Compute Tc(P) curves at 5 pressure points for the top 2-3 candidates to identify the lowest pressure achieving Tc ≥ 300 K
+
+### Stability Analysis
+
+- [ ] **STAB-01**: Verify thermodynamic stability: formation enthalpy relative to all competing binary and elemental phases at target pressure
+- [ ] **STAB-02**: Verify dynamic stability: converged phonon dispersions with no imaginary modes (test q-grid convergence: 4×4×4 → 6×6×6 → 8×8×8)
+- [ ] **STAB-03**: Assess anharmonic stability via SSCHA for top 1-2 candidates (structures unstable in harmonic approx may be quantum-stabilized)
+
+### Validation
+
+- [ ] **VALD-01**: Cross-check Eliashberg Tc against Allen-Dynes formula for all candidates (should agree within 20% for λ < 2.5)
+- [ ] **VALD-02**: Verify electron-phonon coupling convergence: λ converged to < 5% with respect to k-point and q-point grids
+- [ ] **VALD-03**: Perform μ* sensitivity analysis: Tc(μ*) for μ* = 0.08, 0.10, 0.13, 0.15 for top candidates
+- [ ] **VALD-04**: Compare DFT equation of state (PBEsol) against experiment or higher-level theory for at least one benchmark system
+
+## Follow-up Requirements
+
+### Extended Analysis
+
+- **EXTD-01**: Anisotropic Eliashberg calculation for the best candidate (could modify Tc by 10-20%)
+- **EXTD-02**: Vertex correction estimate for candidates with λ > 3 (Migdal breakdown check)
+- **EXTD-03**: Full SSCHA + anharmonic α²F(ω) for final Tc prediction
+- **EXTD-04**: Investigate metastability — can high-pressure phases be quenched to ambient?
+
+## Out of Scope
+
+| Topic | Reason |
+|-------|--------|
+| Unconventional pairing (spin fluctuations, excitons) | Different theoretical framework; not computable with Eliashberg |
+| Experimental synthesis pathways | Requires laboratory work, not computational |
+| Crystal structure prediction (AIRSS/CALYPSO) | Too expensive for workstation; use prototype substitution instead |
+| Beyond-Migdal vertex corrections | Computationally prohibitive; tracked as uncertainty |
+| Cuprate/iron-based superconductors | Different physics, out of project scope |
+
+## Accuracy and Validation Criteria
+
+| Requirement | Accuracy Target | Validation Method |
+|-------------|----------------|-------------------|
+| BENCH-01 | Tc within 15% of 203 K (170-230 K) | Compare with Drozdov et al., Nature 2015 |
+| BENCH-02 | Tc within 15% of 250 K (212-288 K) | Compare with Somayazulu et al., PRL 2019 |
+| BENCH-03 | No imaginary phonon modes; frequencies within 10% of published | Compare with Errea et al., Nature 2016 |
+| SCREEN-01 | Formation enthalpies converged to < 5 meV/atom | Plane-wave cutoff and k-point convergence |
+| SCREEN-02 | Hull distance accurate to ±10 meV/atom | Include all known competing phases |
+| ELIAS-01 | λ converged to < 5% | k-grid and q-grid convergence tests |
+| ELIAS-02 | Tc converged to ±5 K | Matsubara frequency cutoff convergence |
+| STAB-02 | Phonon frequencies converged to < 5 cm⁻¹ | q-grid convergence: 4×4×4 → 8×8×8 |
+
+## Contract Coverage
+
+| Requirement | Decisive Output / Deliverable | Anchor / Benchmark / Reference | Prior Inputs / Baselines | False Progress To Reject |
+|-------------|------------------------------|-------------------------------|--------------------------|--------------------------|
+| BENCH-01 | deliv-benchmark: Tc comparison table | ref-h3s: Drozdov et al. 2015 | None (first calculation) | Matching Tc by tuning μ* |
+| BENCH-02 | deliv-benchmark: Tc comparison table | ref-lah10: Somayazulu et al. 2019 | None (first calculation) | Matching Tc by tuning μ* |
+| SCREEN-01 | Convex hull diagrams at 4 pressures | Materials Project + own DFT | None | Incomplete competing phases |
+| ELIAS-02 | deliv-candidate: Tc values for candidates | Eliashberg equations | Benchmarked pipeline | High Tc from unstable structure |
+| ELIAS-03 | deliv-tc-curve: Tc(P) figure | H₃S and LaH₁₀ Tc(P) for comparison | Benchmark Tc values | Tc at pressure where structure unstable |
+| VALD-01 | Allen-Dynes cross-check table | Eliashberg vs Allen-Dynes | Own Eliashberg results | Agreement only because both wrong |
+
+## Traceability
+
+| Requirement | Phase | Contract Item | Status |
+|-------------|-------|---------------|--------|
+| BENCH-01 | Phase 1: Pipeline Validation | claim-benchmark, deliv-benchmark, test-h3s | Pending |
+| BENCH-02 | Phase 1: Pipeline Validation | claim-benchmark, deliv-benchmark, test-lah10 | Pending |
+| BENCH-03 | Phase 1: Pipeline Validation | claim-benchmark (phonon validation) | Pending |
+| VALD-04 | Phase 1: Pipeline Validation | claim-benchmark (EOS cross-check) | Pending |
+| SCREEN-01 | Phase 2: Candidate Screening | claim-candidate (stability prerequisite) | Pending |
+| SCREEN-02 | Phase 2: Candidate Screening | claim-candidate, test-stability | Pending |
+| SCREEN-03 | Phase 2: Candidate Screening | claim-candidate, test-stability | Pending |
+| STAB-01 | Phase 2: Candidate Screening | claim-candidate, test-stability | Pending |
+| STAB-02 | Phase 2: Candidate Screening | claim-candidate, test-stability | Pending |
+| ELIAS-01 | Phase 3: Eliashberg Tc | claim-candidate, deliv-candidate | Pending |
+| ELIAS-02 | Phase 3: Eliashberg Tc | claim-candidate, deliv-candidate, test-tc-target | Pending |
+| ELIAS-03 | Phase 3: Eliashberg Tc | claim-candidate, deliv-tc-curve | Pending |
+| VALD-01 | Phase 3: Eliashberg Tc | claim-benchmark (cross-check) | Pending |
+| VALD-02 | Phase 3: Eliashberg Tc | claim-candidate (convergence) | Pending |
+| VALD-03 | Phase 3: Eliashberg Tc | deliv-candidate (mu* sensitivity) | Pending |
+| STAB-03 | Phase 4: Anharmonic Corrections | claim-candidate (anharmonic Tc) | Pending |
+
+**Coverage:**
+
+- Primary requirements: 16 total
+- Mapped to phases: 16/16
+- Unmapped: 0
+- Contract claims surfaced: 2/2 (claim-benchmark, claim-candidate)
+- Contract deliverables surfaced: 3/3 (deliv-benchmark, deliv-candidate, deliv-tc-curve)
+- Acceptance tests surfaced: 4/4 (test-h3s, test-lah10, test-tc-target, test-stability)
+- Forbidden proxies surfaced: 3/3 (fp-unstable-tc, fp-above-hull, fp-tuned-mustar)
+- Anchors surfaced: 2/2 (ref-h3s, ref-lah10)
+
+---
+
+_Requirements defined: 2026-03-28_
+_Last updated: 2026-03-28 after roadmap creation_
