@@ -4,21 +4,18 @@
 
 See: .gpd/PROJECT.md (updated 2026-03-28)
 
-**Machine-readable scoping contract:** `.gpd/state.json` field `project_contract`
-
 **Core research question:** Can a thermodynamically or dynamically stable ternary hydride be identified from first principles with Tc >= 300 K at near-ambient pressure (P <= 10 GPa)?
 **Current focus:** Phase 1 - Pipeline Validation and Benchmarking
 
 ## Current Position
 
-**Current Phase:** 1
-**Current Phase Name:** Pipeline Validation and Benchmarking
-**Total Phases:** 5
-**Current Plan:** --
-**Total Plans in Phase:** TBD
-**Status:** Ready to plan
-**Last Activity:** 2026-03-28
-**Last Activity Description:** Roadmap created; 5 phases derived from 16 requirements
+**Current Phase:** —
+**Current Phase Name:** —
+**Total Phases:** —
+**Current Plan:** —
+**Total Plans in Phase:** —
+**Status:** Phase complete — ready for verification
+**Last Activity:** —
 
 **Progress:** [░░░░░░░░░░] 0%
 
@@ -35,8 +32,6 @@ None yet.
 - Which specific ternary chemical families (e.g., XBeH8, XBH8, XCH) show the best Tc-vs-pressure tradeoff?
 - What is the practical Tc ceiling of Migdal-Eliashberg theory at lambda > 2-3?
 - Whether metastable low-pressure phases exist for any discovered high-Tc candidate
-- Mg2IrH6 Tc discrepancy (50 K vs 160 K in literature) -- must be resolved by independent calculation
-- Does the lambda-omega_log anticorrelation (Gao et al. 2025) relax at 5-10 GPa?
 
 ## Performance Metrics
 
@@ -48,21 +43,33 @@ None yet.
 
 ### Decisions
 
-Full log: `.gpd/DECISIONS.md`
-
-**Recent high-impact:**
-- [Init]: Chemical pre-compression over metastable quenching -- systematic and computable
-- [Init]: Ternary hydrides with Be/B/C scaffolds -- light elements maximize phonon frequencies
-- [Init]: Benchmark before predict -- validate pipeline on H3S and LaH10 first
-- [Init]: Local workstation scope -- focused screening of 2-3 families
+None yet.
 
 ### Active Approximations
 
-None yet -- to be established in Phase 1.
+None yet.
 
 **Convention Lock:**
 
-No conventions locked yet. See `.gpd/CONVENTIONS.md` when established.
+- Fourier convention: QE plane-wave: Bloch psi_nk = e^{ikr} u_nk; asymmetric 1/Omega normalization
+- Natural units: NOT used; explicit hbar and k_B
+
+*Custom conventions:*
+- Unit System Internal: Rydberg atomic units (Ry, Bohr)
+- Unit System Reporting: SI-derived (K, GPa, eV, meV)
+- Pressure Unit Qe: kbar
+- Pressure Unit Report: GPa (1 GPa = 10 kbar)
+- Energy Conversion: 1 Ry = 13.6057 eV = 157887 K
+- Lambda Definition: lambda = 2 * integral[alpha2F(omega)/omega d(omega)]
+- Mustar Protocol: Fixed 0.10-0.13 bracket; NOT tuned
+- Pseudopotential: ONCV norm-conserving (SG15 or PseudoDojo)
+- Xc Functional: PBEsol primary; PBE cross-check
+- Dos Convention: N_F per spin per cell (EPW); QE dos.x gives total for both spins
+- Phonon Imaginary: Negative frequency = imaginary mode; threshold -5 cm^-1
+- Ehull Threshold: 50 meV/atom above hull
+- Electron Charge: e > 0; electron has charge -e
+- Eliashberg Method: Isotropic Eliashberg on Matsubara axis; Allen-Dynes cross-check only
+- Asr Enforcement: asr=crystal in QE matdyn.x
 
 ### Propagated Uncertainties
 
@@ -74,10 +81,10 @@ None yet.
 
 ### Blockers/Concerns
 
-- Feasibility concern: Gao et al. (2025) systematic study of 20,000+ metals places ambient-pressure Tc ceiling at ~100-120 K for thermodynamically stable compounds. The 300 K / <= 10 GPa target may be unattainable within phonon-mediated superconductivity. Pipeline validation and screening remain scientifically valuable regardless.
+None
 
 ## Session Continuity
 
-**Last session:** 2026-03-28
-**Stopped at:** Roadmap creation complete; ready to plan Phase 1
-**Resume file:** --
+**Last session:** —
+**Stopped at:** —
+**Resume file:** —
