@@ -51,7 +51,7 @@ Milestone v7.0 tests the two routes ranked in v6.0 with experiment-facing protoc
 
 - [x] **Phase 24: Hg1223 PQP Reproduction Protocol and Route-Confidence Map** — Design independent PQP reproduction campaign with success gate at 131 K and map each outcome class to a route decision (completed 2026-03-29)
 - [x] **Phase 25: Bilayer Nickelate Strain-Tc Mapping Protocol and Promotion Assessment** — Design strain-Tc mapping campaign for bilayer La3Ni2O7-class films with success gate at 80 K and evaluate promotion triggers (completed 2026-03-29)
-- [ ] **Phase 26: Two-Track Decision Integration and v7.0 Closeout** — Integrate PQP and strain mapping outcomes into updated route-confidence assessment and produce v7.0 closeout
+- [x] **Phase 26: Two-Track Decision Integration and v7.0 Closeout** — Integrate PQP and strain mapping outcomes into updated route-confidence assessment and produce v7.0 closeout (completed 2026-03-29)
 
 ## Phase Dependencies
 

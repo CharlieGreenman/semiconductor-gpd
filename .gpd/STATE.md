@@ -7,20 +7,20 @@ See: .gpd/PROJECT.md (updated 2026-03-29)
 **Machine-readable scoping contract:** `.gpd/state.json` field `project_contract`
 
 **Core research question:** Can independent reproduction of the `Hg1223` PQP benchmark confirm retained `Tc >= 131 K`, and can epitaxial strain engineering push bilayer `La3Ni2O7`-class nickelate films to ambient zero-resist `Tc > 80 K`?
-**Current focus:** Milestone `v7.0` active -- Phases 24 and 25 executed in parallel; Phase 26 (decision integration) ready to plan
+**Current focus:** Milestone `v7.0` complete — all three phases executed; route ranking confirmed unchanged; next milestone must execute protocols
 
 ## Current Position
 
 **Current Phase:** 26
 **Current Phase Name:** Two-Track Decision Integration and v7.0 Closeout
 **Total Phases:** 26
-**Current Plan:** --
-**Total Plans in Phase:** TBD
-**Status:** Ready to plan
+**Current Plan:** 02 (complete)
+**Total Plans in Phase:** 2
+**Status:** v7.0 milestone complete; ready to close
 **Last Activity:** 2026-03-29
-**Last Activity Description:** Phases 24 and 25 executed: PQP protocol + route-confidence map complete; strain-Tc mapping protocol + promotion memo complete
+**Last Activity Description:** v7.0 closeout memo written; route ranking confirmed unchanged (Hg1223 primary, nickelates secondary watch); 149 K gap unchanged; 17/17 cross-artifact consistency
 
-**Progress:** [██████░░░░] 67%
+**Progress:** [██████████] 100%
 
 ## Active Calculations
 
