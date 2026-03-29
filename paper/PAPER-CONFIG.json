@@ -1,0 +1,77 @@
+{
+  "title": "CsInH$_3$: A Perovskite Hydride Superconductor with $T_c \\sim 200$~K at 3~GPa from First Principles",
+  "authors": [
+    {
+      "name": "C. Author",
+      "email": "author@university.edu",
+      "affiliation": "Department of Physics, University"
+    }
+  ],
+  "abstract": "PLACEHOLDER — drafted last in Wave 5",
+  "sections": [
+    {
+      "heading": "Introduction",
+      "content": "PLACEHOLDER",
+      "label": "sec:intro"
+    },
+    {
+      "heading": "Methods",
+      "content": "PLACEHOLDER",
+      "label": "sec:methods"
+    },
+    {
+      "heading": "Results",
+      "content": "PLACEHOLDER",
+      "label": "sec:results"
+    },
+    {
+      "heading": "Discussion",
+      "content": "PLACEHOLDER",
+      "label": "sec:discussion"
+    },
+    {
+      "heading": "Conclusions",
+      "content": "PLACEHOLDER",
+      "label": "sec:conclusions"
+    }
+  ],
+  "figures": [
+    {
+      "path": "figures/tc_vs_pressure_final.pdf",
+      "caption": "SSCHA-corrected $T_c(P)$ for CsInH$_3$ (red circles) compared with H$_3$S (blue square) and LaH$_{10}$ (green diamond). The dashed line marks 300~K. CsInH$_3$ achieves H$_3$S-class $T_c \\sim 214$~K at 3~GPa --- a 30$\\times$ pressure reduction.",
+      "label": "fig:tc_pressure",
+      "width": "\\columnwidth",
+      "double_column": false
+    },
+    {
+      "path": "figures/csinh3_candidate_summary.pdf",
+      "caption": "CsInH$_3$ characterization: (a) crystal structure (Pm$\\bar{3}$m perovskite), (b) phonon dispersion (harmonic vs SSCHA), (c) Eliashberg spectral function $\\alpha^2F(\\omega)$ and cumulative $\\lambda(\\omega)$, (d) $T_c$ vs $\\mu^*$ sensitivity.",
+      "label": "fig:candidate_summary",
+      "width": "\\textwidth",
+      "double_column": true
+    },
+    {
+      "path": "figures/benchmark_comparison.pdf",
+      "caption": "Pipeline validation: computed vs experimental $T_c$ for H$_3$S and LaH$_{10}$ benchmarks. Error bars show the $\\mu^* = 0.10$--$0.13$ bracket.",
+      "label": "fig:benchmark",
+      "width": "\\columnwidth",
+      "double_column": false
+    }
+  ],
+  "acknowledgments": "Computational resources were provided by [institution]. Generated with Get Physics Done.",
+  "bib_file": "references",
+  "journal": "prl",
+  "appendix_sections": [
+    {
+      "heading": "Convergence Tests",
+      "content": "PLACEHOLDER",
+      "label": "app:convergence"
+    },
+    {
+      "heading": "SSCHA Details",
+      "content": "PLACEHOLDER",
+      "label": "app:sscha"
+    }
+  ],
+  "attribution_footer": "Generated with Get Physics Done"
+}

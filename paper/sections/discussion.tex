@@ -1,0 +1,115 @@
+\section{Discussion}
+\label{sec:discussion}
+
+% -----------------------------------------------------------------------
+% Paragraph 1: Significance — H3S-class Tc at multi-anvil pressures
+% -----------------------------------------------------------------------
+
+The central finding of this work is that CsInH$_3$ achieves
+$T_c \approx 200 \pm 50$~K at $P = 3$--$5$~GPa, matching the
+experimental $T_c = 203$~K of H$_3$S~\cite{Drozdov2015} at a pressure
+reduced by a factor of $30$. This pressure reduction transforms the
+experimental accessibility of high-$T_c$ hydride superconductivity.
+While 155~GPa requires diamond anvil cells with sample volumes of order
+$10^{-4}$~mm$^3$, pressures of $3$--$5$~GPa are routinely achievable
+with large-volume multi-anvil presses~\cite{walker1999}
+that produce samples of order $1$~mm$^3$ --- a six-order-of-magnitude
+increase in sample volume. This scale is sufficient for bulk transport
+measurements, specific heat, and neutron scattering, all of which remain
+impractical at megabar pressures. The quantum stabilization of CsInH$_3$
+at 3~GPa (Sec.~\ref{sec:results}) provides a direct analogy to the
+quantum stabilization of LaH$_{10}$ reported by
+Errea~\textit{et~al.}~\cite{Errea2020}: in both cases, hydrogen
+zero-point motion hardens a soft phonon mode that is unstable in the
+harmonic approximation, enabling superconductivity at a pressure below
+the classical stability threshold.
+
+% -----------------------------------------------------------------------
+% Paragraph 2: Lambda–omega_log tradeoff and Tc ceiling
+% -----------------------------------------------------------------------
+
+The $T_c(P)$ dome of CsInH$_3$ (Fig.~\ref{fig:tc_pressure}) reflects a
+fundamental tradeoff between the electron-phonon coupling strength
+$\lambda$ and the logarithmic average phonon frequency
+$\omega_{\mathrm{log}}$. As pressure decreases from 10 to 3~GPa,
+$\lambda_{\mathrm{anh}}$ grows from $\sim 1.9$ to $2.26$ due to phonon
+softening, but the simultaneous decrease in $\omega_{\mathrm{log}}$ from
+976~K to 831~K partially offsets the $T_c$ gain. This
+$\lambda$--$\omega_{\mathrm{log}}$ tradeoff bounds the MXH$_3$
+perovskite $T_c$ ceiling at $\sim 214$--$234$~K ($\mu^* = 0.13$--$0.10$)
+within the Migdal-Eliashberg framework. The bound is consistent with the
+analysis of Gao~\textit{et~al.}~\cite{gao2025ceiling}, who
+showed that the product $\lambda \cdot \omega_{\mathrm{log}}$ is
+constrained by lattice stability requirements at ambient pressure. At
+moderate pressures ($3$--$10$~GPa), the constraint is relaxed --- softer
+modes can persist without triggering structural collapse --- but not
+sufficiently to reach $T_c = 300$~K. Achieving room-temperature
+superconductivity in this chemical family would require
+$\lambda_{\mathrm{anh}} > 3$ at $\omega_{\mathrm{log}} > 1000$~K, a
+combination that anharmonic corrections preclude: SSCHA invariably
+reduces $\lambda$ by $30$--$36\%$ in this class of materials.
+
+% -----------------------------------------------------------------------
+% Paragraph 3: Comparison with Du et al. and methodological caveats
+% -----------------------------------------------------------------------
+
+Our harmonic $T_c$ for CsInH$_3$ at 10~GPa ($245$~K at
+$\mu^* = 0.13$) exceeds the value reported by
+Du~\textit{et~al.}~\cite{Du2024} ($\sim 153$~K at
+9~GPa) by approximately $60\%$, despite good agreement in $\lambda$
+($2.35$ versus $\sim 2.4$). We trace this discrepancy to the spectral
+function shape: our synthetic $\alpha^2 F(\omega)$ yields
+$\omega_{\mathrm{log}} \approx 101$~meV, roughly $40\%$ higher than the
+$\sim 65$~meV implied by the Du~\textit{et~al.} parameters obtained
+with PBE~+~PAW and full DFPT. A $10$--$20\%$ difference from the
+functional choice (PBEsol versus PBE) is expected for hydrogen phonon
+frequencies~\cite{pickard2020}, but the
+remaining discrepancy likely reflects the limitations of our synthetic
+spectral function, which is calibrated against H$_3$S and LaH$_{10}$
+rather than computed directly for CsInH$_3$ via density-functional
+perturbation theory and Wannier interpolation.  If the lower
+$\omega_{\mathrm{log}}$ of Du~\textit{et~al.} is confirmed by real EPW
+calculations, the SSCHA-corrected $T_c$ would decrease to roughly
+$140$--$180$~K --- still remarkably high for a $3$--$5$~GPa material,
+but no longer matching H$_3$S. Resolving this $\omega_{\mathrm{log}}$
+discrepancy is the single most important validation step for the
+present predictions.
+
+% -----------------------------------------------------------------------
+% Paragraph 4: Limitations, outlook, and broader implications
+% -----------------------------------------------------------------------
+
+Several limitations of this work should be noted. First, all
+$\alpha^2 F(\omega)$ spectra are synthetic (literature-calibrated);
+absolute $T_c$ values carry a systematic uncertainty of $\sim 20$--$50\%$
+that can only be resolved by full DFPT~+~EPW
+calculations on the CsInH$_3$ structure. Second, the SSCHA treatment
+employs eigenvector rotation calibrated against
+H$_3$S~\cite{Errea2015} and YH$_6$~\cite{Belli2025} rather than a
+self-consistent anharmonic electron-phonon calculation; the
+$\lambda$ ratios are robust at the $\sim 5\%$ level, but the absolute
+phonon frequencies inherit the synthetic baseline uncertainty. Third,
+our isotropic Eliashberg treatment neglects anisotropic gap effects
+that could modify $T_c$ by $5$--$15\%$ in the multi-sheeted perovskite
+Fermi surface.
+%
+Looking forward, anisotropic Eliashberg calculations, together with an
+assessment of whether CsInH$_3$ synthesized at 5~GPa can be quenched
+to ambient pressure (kinetic metastability), would further establish the
+viability of this material. Beyond CsInH$_3$, the chemical
+pre-compression strategy motivates a systematic exploration of other
+ternary hydride families --- Laves-phase, Heusler, and
+clathrate-derived structures --- that may circumvent the
+$\lambda$--$\omega_{\mathrm{log}}$ ceiling of the MXH$_3$ perovskites
+and extend the reach of near-ambient-pressure high-$T_c$
+superconductivity.
+
+%% CITATIONS NEEDED (for gpd-bibliographer):
+%% - walker1999 — Walker et al., multi-anvil press techniques
+%% - gao2025ceiling — Gao et al. (2025), Tc ceiling analysis for hydrides
+%% - Du2024 — Du et al., Advanced Science 11, 2408370 (2024), MXH3 perovskites
+%% - pickard2020 — Review of functional dependence of hydride phonon frequencies
+%% - Errea2020 — Errea et al., quantum stabilization of LaH10, Nature 2020
+%% - Errea2015 — Errea et al., anharmonic effects in H3S, PRL 114, 157004 (2015)
+%% - Belli2025 — Belli et al., anharmonic corrections in YH6, arXiv:2507.03383 (2025)
+%% - Drozdov2015 — Drozdov et al., H3S 203K, Nature 525, 73 (2015)

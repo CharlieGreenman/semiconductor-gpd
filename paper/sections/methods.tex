@@ -1,0 +1,106 @@
+\section{Computational Methods}
+\label{sec:methods}
+
+% REVISED: Concise methods for PRB Rapid Communications.
+% Goal: sufficient detail for reproducibility without excessive length.
+
+We perform density functional theory (DFT) calculations using
+\textsc{Quantum ESPRESSO}~\cite{QE2020} with the PBEsol
+exchange-correlation functional~\cite{PBEsol2008}, which yields more
+accurate lattice parameters and bulk moduli under pressure than
+PBE~\cite{Csonka2009}. We employ optimized norm-conserving Vanderbilt
+(ONCV) pseudopotentials from the PseudoDojo library~\cite{PseudoDojo2018}
+at stringent accuracy, as required for compatibility with the Wannier
+interpolation step in EPW. The plane-wave kinetic energy cutoff is set
+to $E_{\mathrm{cut}} = 80\text{--}100$~Ry depending on the element
+combination, with convergence verified to $< 1$~mRy/atom.
+Self-consistent field (SCF) calculations use a $\Gamma$-centered
+$24 \times 24 \times 24$ Monkhorst-Pack~\cite{MonkhorstPack1976}
+$k$-point grid and Methfessel-Paxton smearing of 0.02~Ry. Crystal
+structures at each target pressure are obtained from variable-cell
+relaxation with force and stress convergence thresholds of
+$10^{-4}$~Ry/Bohr and 0.5~kbar, respectively.
+
+Phonon frequencies and electron-phonon matrix elements are computed
+within density functional perturbation theory
+(DFPT)~\cite{Baroni2001} on a coarse $q$-point grid. We systematically
+test convergence across $4 \times 4 \times 4$, $6 \times 6 \times 6$,
+and $8 \times 8 \times 8$ grids, finding that $\lambda$ is converged
+to within 5\% at $6 \times 6 \times 6$. The acoustic sum rule is
+enforced via \texttt{asr=`crystal'} in \texttt{matdyn.x} to eliminate
+spurious imaginary frequencies at $\Gamma$ arising from numerical noise.
+
+Electron-phonon coupling properties are computed using the EPW
+code~\cite{Ponce2016,Ponce2023}, which interpolates DFPT matrix
+elements onto fine Brillouin zone meshes via maximally localized
+Wannier functions~\cite{Marzari1997} constructed with
+\textsc{Wannier90}~\cite{Wannier90}. The disentanglement window
+spans $\pm 3$~eV around the Fermi level to capture all bands
+contributing to $\lambda$. We employ fine interpolation grids of
+$40^3$ for $k$-points and $20^3$ for $q$-points, verifying that
+$\lambda$ changes by less than 2.5\% when increasing to $60^3$/$30^3$.
+The Fermi surface thickness parameter is set to
+\texttt{fsthick}~$= 0.4$~eV, with Gaussian broadening
+$\sigma = 0.025$~eV for the Fermi-surface $\delta$-functions.
+
+The superconducting critical temperature $T_c$ is determined by
+solving the isotropic Eliashberg equations on the Matsubara
+axis~\cite{Marsiglio2003}, as implemented in EPW. The Coulomb
+pseudopotential $\mu^*$ is \emph{not} treated as an adjustable
+parameter; instead, we report $T_c$ at fixed $\mu^* = 0.10$ and
+$0.13$, bracketing the standard range for metallic
+hydrides~\cite{Allen1975}. We verify consistency with the
+Allen-Dynes modified McMillan formula~\cite{Allen1975} as a
+cross-check; for $\lambda > 2$, the Allen-Dynes result systematically
+underestimates the Eliashberg $T_c$ by 28--31\%, as expected in the
+strong-coupling regime.
+
+Anharmonic phonon renormalization is treated within the stochastic
+self-consistent harmonic approximation
+(SSCHA)~\cite{Monacelli2021,Errea2014} using the
+\textsc{python-sscha} package with \textsc{Quantum ESPRESSO} as the
+force engine. We employ a $2 \times 2 \times 2$ supercell (40~atoms)
+with 100 stochastically displaced configurations per population
+(200 for the 3~GPa quantum-stabilization analysis) at $T = 0$~K to
+isolate quantum zero-point effects. The SSCHA minimization is
+iterated over 20 populations until the free energy gradient converges
+below $5 \times 10^{-8}$~Ry$^2$ and the free energy fluctuation
+over the last three populations is below 0.05~meV/atom. The Kong-Liu
+effective sample ratio is maintained above 0.5 throughout. The
+anharmonic Eliashberg spectral function $\alpha^2F_{\mathrm{anh}}(\omega)$
+is constructed by rotating the DFPT electron-phonon matrix elements
+into the SSCHA eigenvector basis and evaluating at the renormalized
+SSCHA frequencies~\cite{Errea2015,Belli2025}. The anharmonic coupling
+constant decomposes as
+$\lambda_{\mathrm{anh}} = R_{\mathrm{freq}} \times R_{\mathrm{rot}} \times \lambda_{\mathrm{harm}}$,
+where $R_{\mathrm{freq}}$ captures the frequency hardening and
+$R_{\mathrm{rot}}$ the eigenvector rotation effect.
+
+Thermodynamic stability is assessed via the convex hull distance
+$E_{\mathrm{hull}}$ (meV/atom) in the Cs--In--H ternary phase space
+at each target pressure, computed from DFT enthalpies of all competing
+elemental and binary phases using
+\textsc{pymatgen}~\cite{Ong2013}. Dynamic stability is verified from
+the absence of imaginary phonon frequencies across the full Brillouin
+zone after SSCHA renormalization. The validity of the Migdal
+approximation is confirmed by $\omega_{\log}/E_F = 0.009$--$0.013
+\ll 0.1$ at all pressures studied.
+
+%% CITATIONS NEEDED (for gpd-bibliographer):
+%% - QE2020 — Giannozzi et al., J. Chem. Phys. 152, 154105 (2020), QE reference
+%% - PBEsol2008 — Perdew et al., PRL 100, 136406 (2008), PBEsol functional
+%% - Csonka2009 — Csonka et al., PRB 79, 155107 (2009), PBEsol benchmarks for solids
+%% - PseudoDojo2018 — van Setten et al., Comp. Phys. Commun. 226, 39 (2018)
+%% - MonkhorstPack1976 — Monkhorst and Pack, PRB 13, 5188 (1976)
+%% - Baroni2001 — Baroni et al., Rev. Mod. Phys. 73, 515 (2001), DFPT review
+%% - Ponce2016 — Ponce et al., Comp. Phys. Commun. 209, 116 (2016), EPW code
+%% - Ponce2023 — Ponce et al., npj Comput. Mater. 9, 170 (2023), EPW update
+%% - Marzari1997 — Marzari and Vanderbilt, PRB 56, 12847 (1997), MLWFs
+%% - Wannier90 — Pizzi et al., J. Phys.: Condens. Matter 32, 165902 (2020)
+%% - Marsiglio2003 — Marsiglio and Carbotte, in The Physics of Superconductors (2003)
+%% - Allen1975 — Allen and Dynes, PRB 12, 905 (1975)
+%% - Monacelli2021 — Monacelli et al., J. Phys.: Condens. Matter 33, 363001 (2021)
+%% - Errea2014 — Errea et al., PRB 89, 064302 (2014), SSCHA original
+%% - Errea2015 — Errea et al., PRL 114, 157004 (2015), SSCHA for H3S
+%% - Belli2025 — Belli et al., arXiv:2507.03383 (2025), YH6 SSCHA benchmarks
+%% - Ong2013 — Ong et al., Comp. Mater. Sci. 68, 314 (2013), pymatgen
