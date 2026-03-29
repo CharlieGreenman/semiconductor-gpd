@@ -2,81 +2,73 @@
 
 ## Project Reference
 
-See: `.gpd/PROJECT.md` (updated 2026-03-29)
+See: .gpd/PROJECT.md (updated 2026-03-29)
 
-**Core research question:** Can any hydride or hydride-derived pathway supported by first-principles evidence retain superconductivity at ambient pressure, or after pressure quench, and if not, which experimentally anchored broader benchmark route should replace that search as the repo's next high-confidence candidate?
-**Current focus:** Phase 10 - Experimental Benchmark Pivot Beyond Hydrides
+**Core research question:** After `v5.0`, which route family gives the best chance of actually shrinking the remaining `149 K` gap: `Hg`-family uplift around the `Hg1223` benchmark, nickelate escalation via pressure, strain, and chemical pressure, or neither?
+**Current focus:** Milestone `v6.0` complete — Phase `23` executed, producing a ranked two-route program: `Hg1223` primary, bilayer nickelates secondary
 
 ## Current Position
 
-**Current Phase:** 10
-**Current Phase Name:** Experimental Benchmark Pivot Beyond Hydrides
-**Total Phases:** 10
-**Current Plan:** —
+**Current Phase:** 23
+**Current Phase Name:** Route Expansion Shortlist and Next-Step Memo
+**Total Phases:** 23
+**Current Plan:** 03 (complete)
 **Total Plans in Phase:** 3
-**Status:** Ready to plan
+**Status:** Phase complete, v6.0 ready to close
 **Last Activity:** 2026-03-29
+**Last Activity Description:** Phase `23` executed: weighted ranking, named shortlist, next-step memo, and cross-artifact consistency check all complete
 
 **Progress:** [██████████] 100%
 
 ## Active Calculations
 
-None yet for milestone v2.0.
+None.
 
 ## Intermediate Results
 
-- v1.0 archived: CsInH3 remains the best repo result at `Tc = 214 K` and `3 GPa`
-- Ambient pressure after synthesis remains unestablished for CsInH3
-- Stable ambient conventional hydrides in the recent literature remain far below room temperature
-- Pressure-quench / metastability is now the main escape route worth testing
-- Phase 07 executed: the `CsInH3` class is unlikely to retain a superconducting ambient-pressure phase after decompression
-- `CsInH3` remains useful as a low-pressure benchmark, not as a practical ambient-route candidate
-- Phase 08 executed: no candidate survives as a decisive mixed-evidence ambient winner in the shared `0-5 GPa` screen
-- `RbPH3` is now the Phase 09 negative-validation primary and `KB3C3` is the framework benchmark
-- Phase 08 triggers a no-go on consumer-hardware framing unless Phase 09 overturns it with stronger evidence
-- Phase 09 planned: validation is now locked to `CsInH3` baseline, `RbPH3` primary, `KB3C3` benchmark, and an explicit no-synthetic-final evidence gate
-- Phase 09 executed: no route passes the shared high-fidelity gate, so v2.0 closes with no credible consumer path inside the present conventional hydride route
-- Phase 10 executed: `HgBa2Ca2Cu3O8+delta` via pressure quench is now the repo's strongest confidence-ranked benchmark candidate, but it remains `149 K` below room temperature
+- `v5.0` closed without a room-temperature superconductor, but with a full Stage `A` decision package for `Hg1223`
+- The best carried retained benchmark remains `Hg1223` at `151 K`, still `149 K` below room temperature
+- Phase 22: `Hg`-family cuprates still lead on absolute `Tc` headroom; nickelates lead on tunable uplift levers and rate of frontier improvement
+- Phase 23, Plan 01: Weighted 5-axis ranking — `Hg`-family cuprates scored `4.15/5.00` (primary), nickelates scored `2.90/5.00` (secondary); ranking robust (0/10 perturbation flips)
+- Phase 23, Plan 02: Named shortlist — `Hg1223` primary, bilayer `La3Ni2O7`-class secondary lead, infinite-layer `SmNiO2`-class secondary backup; pivot trigger at `131 K` PQP reproduction, promotion trigger at `100 K` nickelate ambient
+- Phase 23, Plan 03: Next-step memo — primary route first action is independent PQP reproduction; secondary route first action is epitaxial strain-`Tc` mapping; 10/10 cross-artifact consistency checks passed
 
 ## Open Questions
 
-- What parameter window and reproducibility story actually govern the `Hg1223` pressure-quench route?
-- Which broader comparator should be treated as second priority after `Hg1223`: `SmNiO2` or a more practical ambient baseline such as `MgB2`?
-- Is any future route likely to close the remaining `149 K` room-temperature gap without abandoning experimental credibility?
+- Can the `Hg1223` `151 K` PQP benchmark be independently reproduced? (single-group result, fragile)
+- Can bilayer `La3Ni2O7`-class nickelate films reach ambient zero-resist `Tc` above `80 K` via strain engineering?
+- Should the next milestone run both route tracks in parallel or sequence the PQP campaign first?
 
 ## Performance Metrics
 
 | Label | Duration | Tasks | Files |
 | ----- | -------- | ----- | ----- |
-| v1.0 archive | — | 17 plans archived | `.gpd/milestones/`, `.gpd/MILESTONES.md` |
-| Phase 07 execution | — | 3 plans executed | `.gpd/phases/07-ambient-retention-of-csinh3-class-phases/` |
-| Phase 08 execution | — | 3 plans executed | `.gpd/phases/08-ambient-leaning-candidate-search/` |
-| Phase 09 execution | — | 3 plans executed | `.gpd/phases/09-high-fidelity-validation-and-pivot-decision/` |
-| Phase 10 execution | — | 3 plans executed | `.gpd/phases/10-experimental-benchmark-pivot-beyond-hydrides-hg1223-pressure-quench-route-and-ambient-gap-map/` |
+| Phase 22 execution | — | 3 plans, 3 tasks each | `.gpd/phases/22-*` |
+| Phase 23 Plan 01 | ~20 min | 2 tasks | ranking `.md` + `.json` |
+| Phase 23 Plan 02 | ~15 min | 1 task | shortlist `.md` + `.json` |
+| Phase 23 Plan 03 | ~25 min | 2 tasks | next-step memo `.md` + `.json` |
 
 ## Accumulated Context
 
 ### Decisions
 
-- Start milestone `v2.0 Ambient Retention and Practical Viability`
-- Separate synthesis pressure from operating pressure in every future claim
-- Treat quenchability and decompression stability as first-class requirements
-- [Phase 0]: Started milestone v2.0: Ambient Retention and Practical Viability — Archived the v1.0 negative-result milestone and pivoted the live roadmap toward ambient retention, quenchability, and practical operating conditions
-- [Phase 06]: Phase 06 research: prioritize ambient retention and metastability over further pressure-supported Tc optimization — The 2024-2026 literature does not support room-temperature consumer viability for conventional ambient hydrides. CsInH3 remains the best low-pressure hydride result at 3 GPa, but ambient retention is unproven. The most credible next work is decompression/barrier analysis for CsInH3 plus targeted study of ambient-leaning families such as RbPH3, Mg2IrH6, and hydride-derived clathrates.
-- [Phase 06]: Phase 06 executed: CsInH3 remains Phase 07 priority, RbPH3 becomes top hydride ambient target, and consumer framing now requires >=100 K ambient-retained evidence — Phase 06 artifacts now separate synthesis pressure from operating pressure, map metastability and quench routes, and rank pathways by practical viability. The immediate next work is decompression and barrier analysis for CsInH3, with RbPH3 as the leading ambient-leaning hydride comparator. If no path survives with P_op = 0 GPa, Tc >= 100 K, and nontrivial retention confidence, the milestone should pivot from consumer-hardware language to a low-pressure and quench-enabled superconductivity map.
-- [Phase 07]: Phase 07 planning: use RbInH3 as the same-family derivative and reserve RbPH3 for Phase 08 comparator work — The decompression verdict should test the CsInH3 perovskite class under one coherent logic. RbInH3 shares the MXH3 Pm-3m design and already has repo-local stability and Tc anchors, so it is the right derivative for Phase 07. RbPH3 remains valuable, but as an ambient-leaning literature comparator for Phase 08 rather than as a same-family decompression control.
-- [Phase 07]: Phase 07 executed: CsInH3-class ambient retention is unlikely, so keep `CsInH3` as a low-pressure benchmark and move the practical search to Phase 08 families — The decompression path fails before ambient pressure, the ambient cubic endpoint is not locally protected, and the same-family `RbInH3` comparison does not rescue the class. Practical follow-up should move toward ambient-leaning hydrides, contradiction-tracked `Mg2IrH6`, and hydride-derived clathrate/framework routes rather than plain `MXH3` retention optimism.
-- [Phase 08]: Phase 08 planning: shortlist `RbPH3`, a limited perovskite-side bridge bucket, contradiction-tracked `Mg2XH6` members, and `KB3C3` / `KRbB6C6` frameworks for a common `0-5 GPa` screen — The next candidate search should stay downstream of the negative CsInH3-class verdict. `RbPH3` remains the primary hydride ambient target, `Mg2IrH6` must stay contradiction-tracked rather than headline-driven, and framework routes deserve direct comparison because they may offer a more honest ambient path even at lower `Tc`.
-- [Phase 08]: Phase 08 executed: no decisive ambient survivor emerges, so Phase 09 should negatively validate `RbPH3` against a `KB3C3` benchmark rather than force a practical winner — The shared `0-5 GPa` screen ends with zero survivors, `Mg2IrH6` stays contradiction-tracked, the NH4-filled clathrates are rejected on prior local hull failures, and the ranking triggers a no-go on consumer-hardware language.
-- [Phase 09]: Phase 09 planning: lock negative-validation roles and require real EPW / anharmonic evidence before any practical pass — `CsInH3` stays the baseline control, `RbPH3` is the hydride-side primary, `KB3C3` is the benchmark, and the phase must end in either a validated pass or an explicit no-go without consumer-language drift.
-- [Phase 09]: Phase 09 executed: no route passes the shared high-fidelity practical gate, so v2.0 closes negatively and the next milestone should pivot to experimentally anchored ambient or pressure-quench benchmarks outside the current hydride-only frame — `CsInH3` remains the low-pressure benchmark, `RbPH3` is blocked, `KB3C3` remains benchmark-only, and `HgBa2Ca2Cu3O8+delta` becomes the strongest broader benchmark candidate.
-- [Phase 10]: Added Phase 10: Experimental benchmark pivot beyond hydrides — Continue beyond the v2.0 hydride no-go by auditing the strongest experimentally anchored ambient or pressure-quench benchmark route
-- [Phase 10]: Phase 10 executed: `HgBa2Ca2Cu3O8+delta` is now the top confidence-ranked benchmark candidate, while `MgB2` is the practical ambient floor and `SmNiO2` the main ambient-oxide comparator — The repo now has a candidate it can actually be confident in, but not a room-temperature consumer-hardware solution.
+- [Phase 0]: Started milestone `v2.0` and separated synthesis pressure from operating pressure in all future claims
+- [Phase 07]: `CsInH3`-class ambient retention is unlikely; keep `CsInH3` as a low-pressure benchmark only
+- [Phase 09]: No present hydride route passes the practical high-fidelity gate
+- [Phase 10]: `HgBa2Ca2Cu3O8+delta` via pressure quench became the strongest confidence-ranked benchmark candidate
+- [Phase 14]: Primary route became `Hg1223`-class pressure-quenched cuprates, backup route became bilayer nickelate films
+- [Phase 18]: `v4.0` closed with `Hg1223` still primary, nickelates still backup, and the `149 K` room-temperature gap explicit
+- [Phase 21]: `v5.0` closed with explicit Stage `A` evidence tiers and route gates for `Hg1223`
+- [Phase 0]: Started milestone `v6.0`: Gap-Closing Route Expansion Beyond `v5.0`
+- [Phase 22]: `Hg`-family cuprates still lead on absolute `Tc` headroom, while nickelates now lead on tunable uplift levers and recent frontier improvement
+- [Phase 23]: `Hg`-family cuprates confirmed as primary route (weighted score `4.15/5.00`), nickelates confirmed as secondary route (`2.90/5.00`); ranking robust to `+/-20%` weight perturbation
+- [Phase 23]: Bilayer `La3Ni2O7`-class is the lead nickelate candidate; infinite-layer `SmNiO2`-class is the ambient-stability backup
+- [Phase 23]: Pivot trigger for `Hg1223` primary route set at `131 K`; promotion trigger for nickelate secondary route set at `100 K` ambient zero-resistance
+- [Phase 23]: `v6.0` closed with explicit two-route program: `Hg1223` PQP reproducibility campaign (primary), bilayer nickelate strain mapping (secondary), `149 K` gap unchanged
 
 ### Active Approximations
 
-- Synthetic `alpha^2F` remains acceptable only for pre-validation scoping, never for final practical claims
-- Pressure-quench feasibility will initially be inferred from decompression energetics, phonons, and barrier estimates before any experimental confirmation
+None.
 
 **Convention Lock:**
 
@@ -102,22 +94,21 @@ None yet for milestone v2.0.
 
 ### Propagated Uncertainties
 
-- Ambient-pressure conventional ceiling may make room-temperature claims structurally implausible in this route
-- Quenchability of hydrides is much less established than low-pressure superconductivity under load
-- Real EPW and full SSCHA remain outstanding for any final practical-path claim
+None.
 
 ### Pending Todos
 
-- Plan the next phase around `Hg1223` pressure-quench parameter windows and reproducibility
-- Compare `SmNiO2` against `MgB2` as the strongest secondary benchmark family
+- Close `v6.0` milestone formally
+- Scope `v7.0`: PQP reproducibility campaign + nickelate strain mapping
 
 ### Blockers/Concerns
 
-- The top benchmark candidate is still `149 K` below room temperature
-- Pressure-quench reproducibility and scale-up remain unclear even for the strongest benchmark route
+- No carried route is close to room-temperature operation
+- `Hg1223` PQP benchmark is single-group with limited thermal stability
+- The `149 K` gap requires fundamentally new uplift, not incremental optimization
 
 ## Session Continuity
 
 **Last session:** 2026-03-29
-**Stopped at:** Phase 10 executed; `Hg1223` selected as the top confidence-ranked benchmark candidate
-**Resume file:** `.gpd/phases/10-experimental-benchmark-pivot-beyond-hydrides-hg1223-pressure-quench-route-and-ambient-gap-map/phase10-top-candidate-memo.md`
+**Stopped at:** Phase `23` complete; `v6.0` ready to close
+**Resume file:** .gpd/phases/23-route-expansion-shortlist-and-next-step-memo/phase23-next-step-memo.md

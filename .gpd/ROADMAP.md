@@ -24,7 +24,7 @@ Milestone `v5.0` ended with a clean `Hg1223` decision package, but not with a ro
 ## Phases
 
 - [x] **Phase 22: Gap-Closing Frontier Map and Control Ledger** - Compare the surviving post-`v5.0` routes by headroom, operating state, and controllable uplift levers instead of by isolated `Tc` headlines (completed 2026-03-29)
-- [ ] **Phase 23: Route Expansion Shortlist and Next-Step Memo** - Turn the frontier map into an explicit next route program with one primary path and one secondary path
+- [x] **Phase 23: Route Expansion Shortlist and Next-Step Memo** - Turn the frontier map into an explicit next route program with one primary path and one secondary path (completed 2026-03-29)
 
 ## Phase Dependencies
 
@@ -79,12 +79,14 @@ Milestone `v5.0` ended with a clean `Hg1223` decision package, but not with a ro
 3. The next-step memo says what the next milestone should do first
 4. The room-temperature gap stays explicit
 
-**Plans:** 0/3 plans complete
+**Plans:** 3/3 plans complete
 
 Plans:
-- [ ] 23-01-PLAN.md -- Weighted multi-criteria ranking with sensitivity analysis
-- [ ] 23-02-PLAN.md -- Route shortlist with named candidate families and pivot triggers
-- [ ] 23-03-PLAN.md -- Next-step memo and v6.0 closeout
+- [x] 23-01-PLAN.md -- Weighted multi-criteria ranking with sensitivity analysis
+- [x] 23-02-PLAN.md -- Route shortlist with named candidate families and pivot triggers
+- [x] 23-03-PLAN.md -- Next-step memo and v6.0 closeout
+
+**Executed outcome (2026-03-29):** Hg-family cuprates confirmed as primary route (weighted score 4.15/5.00, gap = 149 K), nickelates confirmed as secondary route (2.90/5.00, gap = 237-260 K). Ranking robust to +/-20% weight perturbation. Next milestone should start with independent Hg1223 PQP reproduction and bilayer La3Ni2O7 strain-Tc mapping.
 
 ## Risk Register
 
@@ -100,4 +102,4 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 | --- | --- | --- | --- |
 | 22. Gap-Closing Frontier Map and Control Ledger | 3/3 | Complete | 2026-03-29 |
-| 23. Route Expansion Shortlist and Next-Step Memo | 0/3 | Not started | -- |
+| 23. Route Expansion Shortlist and Next-Step Memo | 3/3 | Complete | 2026-03-29 |
