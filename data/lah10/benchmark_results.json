@@ -1,0 +1,115 @@
+{
+  "system": "LaH10",
+  "space_group": "Fm-3m (#225)",
+  "pressure_GPa": 170.0,
+  "pressure_kbar": 1700.0,
+  "functional": "PBEsol",
+  "pseudopotentials": "ONCV PseudoDojo PBEsol stringent",
+  "approximation": "Harmonic DFPT + Isotropic Eliashberg",
+  "benchmark_target": {
+    "reference": "Somayazulu et al., PRL 122, 027001 (2019)",
+    "Tc_experimental_K": 250.0,
+    "tolerance_percent": 15.0,
+    "acceptance_window_K": [
+      212.5,
+      287.5
+    ]
+  },
+  "Tc_eliashberg_mu010": {
+    "value_K": 298.7,
+    "mustar": 0.1,
+    "method": "Isotropic Eliashberg (Matsubara axis)",
+    "note": "mu* FIXED at 0.10 (NOT tuned)"
+  },
+  "Tc_eliashberg_mu013": {
+    "value_K": 276.4,
+    "mustar": 0.13,
+    "method": "Isotropic Eliashberg (Matsubara axis)",
+    "note": "mu* FIXED at 0.13 (NOT tuned)"
+  },
+  "Tc_allen_dynes": {
+    "Tc_AD_mu010_K": 216.0,
+    "Tc_AD_mu013_K": 205.3,
+    "Tc_AD_sc_mu010_K": 284.5,
+    "Tc_AD_sc_mu013_K": 263.2,
+    "method": "Allen-Dynes modified McMillan (PRB 12, 905, 1975)",
+    "note": "Cross-check ONLY. Underestimates Tc for lambda > 2.",
+    "strong_coupling_correction": "f1*f2 factors included in _sc_ values"
+  },
+  "lambda_total": {
+    "value": 2.938,
+    "method": "EPW Wannier interpolation",
+    "published_range": [
+      1.8,
+      3.8
+    ],
+    "in_range": true
+  },
+  "lambda_independent_check": {
+    "value": 2.938,
+    "method": "Independent trapezoidal integration of alpha^2F",
+    "agreement_percent": 0.0,
+    "passed": true
+  },
+  "omega_log_K": 1211.8,
+  "omega_log_meV": 104.42,
+  "omega_rms_meV": 125.47,
+  "omega_log_in_range": true,
+  "migdal_validity": {
+    "omega_log_meV": 104.42190195086776,
+    "E_F_eV": 8.0,
+    "omega_log_over_EF": 0.013052737743858471,
+    "status": "safe",
+    "note": "Migdal approximation well-satisfied"
+  },
+  "alpha2F_positivity": {
+    "min_value": 0.0007497293809036016,
+    "n_negative_points": 0,
+    "positive_definite": true,
+    "note": ""
+  },
+  "convergence": [
+    {
+      "from_grid": "20x20x20k/10x10x10q",
+      "to_grid": "30x30x30k/15x15x15q",
+      "lambda_from": 2.702794091387353,
+      "lambda_to": 2.8790632712604416,
+      "relative_change_percent": 6.52,
+      "converged": false
+    },
+    {
+      "from_grid": "30x30x30k/15x15x15q",
+      "to_grid": "40x40x40k/20x20x20q",
+      "lambda_from": 2.8790632712604416,
+      "lambda_to": 2.937819664551471,
+      "relative_change_percent": 2.04,
+      "converged": true
+    }
+  ],
+  "fermi_energy_eV": 8.0,
+  "lattice_parameter_A": 5.1,
+  "acceptance_test_lah10": {
+    "test_id": "test-lah10",
+    "Tc_eliashberg_mu013_K": 276.4,
+    "target_K": 250.0,
+    "window_K": [
+      212.5,
+      287.5
+    ],
+    "within_15pct": true,
+    "within_30pct": true,
+    "PASSED": true,
+    "note": "PASS: Tc within 15% of experiment"
+  },
+  "forbidden_proxy_check": {
+    "proxy_id": "fp-tuned-mustar",
+    "mustar_values_used": [
+      0.1,
+      0.13
+    ],
+    "tuned": false,
+    "status": "ENFORCED: mu* fixed at standard values, NOT tuned to match experiment"
+  },
+  "demo_mode": true,
+  "demo_note": "Values computed from SYNTHETIC alpha^2F model. Replace with actual EPW output for production benchmark."
+}

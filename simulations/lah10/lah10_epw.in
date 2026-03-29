@@ -1,0 +1,86 @@
+--
+&inputepw
+  prefix       = 'lah10',
+  outdir       = './tmp/',
+  dvscf_dir    = './save/',
+
+  ! ASSERT_CONVENTION: lambda_definition=2*integral[alpha2F/omega], mustar_protocol=fixed_0.10_0.13,
+  !   eliashberg_method=isotropic_matsubara, unit_system_internal=rydberg_atomic,
+  !   xc_functional=PBEsol, pseudopotential=ONCV_PseudoDojo_PBEsol_stringent
+
+  ! === Electron-phonon calculation flags ===
+  ep_coupling  = .true.,
+  elph         = .true.,
+  epbwrite     = .true.,
+  epbread      = .false.,
+  epwwrite     = .true.,
+  epwread      = .false.,
+
+  ! === Wannier90 settings ===
+  ! LaH10 (11 atoms): La d-bands + H s-bands near E_F
+  ! Need ~20-30 Wannier functions to capture bands in [-5, 5] eV window
+  wannierize   = .true.,
+  nbndsub      = 24,
+  num_iter     = 500,
+  dis_froz_min = -5.0,
+  dis_froz_max =  5.0,
+  dis_win_min  = -12.0,
+  dis_win_max  =  18.0,
+
+  ! Wannier projections: La d + H s orbitals
+  ! La: 5 d-orbitals
+  ! H (10 atoms): 10 s-orbitals
+  ! Additional: La s,p for completeness -> 5+10+1+3 = 19... use 24 for margin
+  proj(1)      = 'La:d',
+  proj(2)      = 'H:s',
+
+  ! === Coarse grids (must match DFPT) ===
+  nk1          = 4,
+  nk2          = 4,
+  nk3          = 4,
+  nq1          = 4,
+  nq2          = 4,
+  nq3          = 4,
+
+  ! === Fine grids for Wannier interpolation ===
+  ! Start with 20^3/10^3; convergence study: 20/10, 30/15, 40/20
+  nkf1         = 20,
+  nkf2         = 20,
+  nkf3         = 20,
+  nqf1         = 10,
+  nqf2         = 10,
+  nqf3         = 10,
+
+  ! === Eliashberg spectral function ===
+  ! Compute alpha^2F(omega) and lambda
+  ! lambda = 2 * integral[alpha^2F(omega)/omega d(omega)]
+  phonselfen   = .true.,
+  a2f          = .true.,
+
+  ! === Eliashberg Tc solver ===
+  ! Isotropic Eliashberg on Matsubara axis
+  ! mu* = 0.10 (first run); then re-run with mu* = 0.13
+  ! FORBIDDEN: Do NOT tune mu* (fp-tuned-mustar)
+  eliashberg   = .true.,
+  laniso       = .false.,
+  liso         = .true.,
+  limag        = .true.,
+  lpade        = .true.,
+  nsiter       = 500,
+  conv_thr_iaxis = 1.0d-4,
+  wscut        = 1.5,
+  muc          = 0.10,
+
+  ! === Smearing for delta functions ===
+  fsthick      = 2.0,
+  degaussw     = 0.05,
+  degaussq     = 0.05,
+
+  ! === Output control ===
+  prtgkk       = .false.,
+  lscreen      = .false.,
+
+  ! === Temperature range for gap function ===
+  temps        = 300.0,
+  nstemp       = 1,
+/

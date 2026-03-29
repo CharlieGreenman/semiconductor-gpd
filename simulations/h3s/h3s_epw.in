@@ -1,0 +1,83 @@
+--
+&inputepw
+  prefix       = 'h3s'
+  outdir       = './tmp/'
+  dvscf_dir    = './save/'
+
+  ! Electron-phonon calculation settings
+  ep_coupling  = .true.
+  elph         = .true.
+  epbwrite     = .true.
+  epbread      = .false.
+  epwwrite     = .true.
+  epwread      = .false.
+
+  ! Wannier90 settings
+  ! H3S (Im-3m, 4 atoms): 9 valence electrons -> 5 occupied bands at Gamma
+  ! Wannier functions: S sp3 + H s -> approximately 7-10 Wannier functions
+  ! Select bands crossing E_F plus margin for disentanglement
+  nbndsub      = 10          ! Number of Wannier functions (bands to Wannierize)
+  num_iter     = 500         ! Wannier spread minimization iterations
+
+  ! Disentanglement window (eV relative to E_F)
+  ! H3S has significant S-p/H-s hybridization near E_F
+  ! Frozen window should capture all bands at E_F
+  dis_win_min  = -15.0       ! Lower disentanglement window (eV)
+  dis_win_max  =  25.0       ! Upper disentanglement window (eV)
+  dis_froz_min = -5.0        ! Lower frozen window (eV)
+  dis_froz_max =  5.0        ! Upper frozen window (eV)
+
+  ! Coarse grids (MUST match DFPT calculation)
+  nkf1         = 6
+  nkf2         = 6
+  nkf3         = 6
+  nqf1         = 6
+  nqf2         = 6
+  nqf3         = 6
+
+  ! Fine interpolation grids (start with 20^3, convergence test up to 40^3)
+  ! Run three times: 20^3/10^3, 30^3/15^3, 40^3/20^3 for convergence
+  nkf1         = 40
+  nkf2         = 40
+  nkf3         = 40
+  nqf1         = 20
+  nqf2         = 20
+  nqf3         = 20
+
+  ! Delta function smearing
+  degaussw     = 0.05        ! eV (test also 0.025 and 0.1 eV)
+  fsthick      = 2.0         ! eV (Fermi surface thickness for e-ph)
+
+  ! Eliashberg solver settings
+  ! ASSERT_CONVENTION: eliashberg_method=isotropic_Matsubara, mustar_protocol=fixed_0.10_0.13
+  limag        = .true.       ! Imaginary-axis Eliashberg
+  lpade        = .true.       ! Pade analytic continuation to real axis
+  liso         = .true.       ! Isotropic Eliashberg
+
+  ! Matsubara frequency cutoff
+  ! wscut >= 5 * max_phonon_frequency; H3S max phonon ~ 200 meV -> wscut >= 1.0 eV
+  wscut        = 1.5          ! eV (Matsubara frequency cutoff)
+  nsiter       = 500          ! Max Eliashberg iterations
+  conv_thr_iaxis = 1.0d-4    ! Convergence threshold for imaginary axis
+
+  ! Coulomb pseudopotential -- FIXED, NOT TUNED (fp-tuned-mustar FORBIDDEN)
+  ! Run twice: mu* = 0.10 and mu* = 0.13
+  muc          = 0.13         ! Morel-Anderson Coulomb pseudopotential
+  ! NOTE: Re-run with muc = 0.10 for bracketing
+
+  ! Temperature sweep for Tc determination (K)
+  ! Start broad, then narrow around Tc
+  temps        = 300 280 260 240 230 220 210 200 195 190 185 180 170 160 140 120 100
+
+  ! Output settings
+  prtgkk       = .true.       ! Print e-ph matrix elements
+  a2f          = .true.       ! Compute alpha^2F(omega)
+
+  ! Band structure path for Wannier quality check
+  band_plot    = .true.
+  filkf        = 'kpath_bcc.dat'
+
+  ! Phonon linewidths and lambda
+  phonselfen   = .true.       ! Phonon self-energy (linewidths)
+  a2f          = .true.       ! alpha^2F(omega)
+/
