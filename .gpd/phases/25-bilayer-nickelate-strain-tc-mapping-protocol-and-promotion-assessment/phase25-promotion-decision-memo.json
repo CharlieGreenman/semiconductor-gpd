@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "phase": "25-bilayer-nickelate-strain-tc-mapping-protocol-and-promotion-assessment",
+    "plan": "03",
+    "artifact": "NIC-04",
+    "compiled": "2026-03-29",
+    "source_authority": "Phase 23 route shortlist lines 124-131",
+    "tc_convention": "zero-resistance for all action gates (invest/evaluate/promote/demote); onset only for watch gate",
+    "pressure_convention": "All gates require ambient operating pressure (0 GPa); epitaxial strain permitted"
+  },
+  "gates": [
+    {
+      "name": "watch",
+      "threshold_K": 50,
+      "tc_definition": "onset",
+      "confirmation_requirement": "single_group",
+      "route_action": "Increase monitoring; no route status change",
+      "evidence_requirements": {
+        "measurement": "R(T) onset above threshold",
+        "operating_pressure": "0 GPa (ambient)",
+        "meissner_required": false,
+        "min_sample_count": 1,
+        "min_independent_groups": 1
+      }
+    },
+    {
+      "name": "invest",
+      "threshold_K": 50,
+      "tc_definition": "zero-resistance",
+      "confirmation_requirement": "single_group",
+      "route_action": "Increase investment in bilayer lever stacking",
+      "evidence_requirements": {
+        "measurement": "R(T) zero-resistance above threshold",
+        "operating_pressure": "0 GPa (ambient)",
+        "meissner_required": false,
+        "min_sample_count": 1,
+        "min_independent_groups": 1
+      }
+    },
+    {
+      "name": "evaluate",
+      "threshold_K": 80,
+      "tc_definition": "zero-resistance",
+      "confirmation_requirement": ">=2_independent_groups",
+      "route_action": "Formally evaluate for co-primary promotion",
+      "evidence_requirements": {
+        "measurement": "R(T) zero-resistance above threshold",
+        "operating_pressure": "0 GPa (ambient)",
+        "meissner_required": true,
+        "meissner_threshold_pct": 10,
+        "min_sample_count": 3,
+        "min_independent_groups": 2
+      }
+    },
+    {
+      "name": "promote",
+      "threshold_K": 100,
+      "tc_definition": "zero-resistance",
+      "confirmation_requirement": ">=2_independent_groups",
+      "route_action": "Promote to co-primary with Hg1223",
+      "evidence_requirements": {
+        "measurement": "R(T) zero-resistance at or above threshold",
+        "operating_pressure": "0 GPa (ambient)",
+        "meissner_required": true,
+        "meissner_threshold_pct": 10,
+        "min_sample_count": 5,
+        "min_independent_groups": 2
+      }
+    },
+    {
+      "name": "demote",
+      "threshold_K": 50,
+      "tc_definition": "zero-resistance",
+      "confirmation_requirement": "field_wide_consensus",
+      "route_action": "Demote to watch-only",
+      "evidence_requirements": {
+        "condition": "Best ambient zero-resistance Tc across all nickelate sub-families remains below 50 K for > 6 calendar months",
+        "reversible": true,
+        "reactivation_condition": "Any future result exceeding 50 K zero-resist re-activates watch gate"
+      }
+    }
+  ],
+  "current_status": {
+    "assessment_date": "2026-03-29",
+    "overall_gate_met": "watch",
+    "overall_conclusion": "Below invest threshold. Promotion not on the immediate horizon.",
+    "bilayer": {
+      "best_ambient_onset_K": 63,
+      "best_ambient_onset_source": "Zhou et al. arXiv:2512.04708, GAE (La,Pr)3Ni2O7 on SLAO",
+      "best_ambient_zero_K": 3,
+      "best_ambient_zero_source": "Ko et al. Nature 2024, PLD La3Ni2O7 on SLAO",
+      "gae_ambient_zero_K": null,
+      "gae_ambient_zero_note": "NOT REPORTED -- critical data gap",
+      "gate_met": "watch",
+      "gap_to_invest_K": 47,
+      "gap_to_evaluate_K": 77,
+      "gap_to_promote_K": 97
+    },
+    "infinite_layer": {
+      "best_ambient_zero_K": 40,
+      "best_ambient_zero_source": "Sun et al. Nature 2025 (s41586-025-08893-4), bulk SmNiO2",
+      "gate_met": "watch",
+      "gap_to_invest_K": 10,
+      "gap_to_evaluate_K": 40,
+      "gap_to_promote_K": 60
+    },
+    "trilayer": {
+      "best_pressurized_onset_K": 30,
+      "operating_pressure_GPa": 69,
+      "ambient_tc": "not superconducting",
+      "gate_met": "none"
+    }
+  },
+  "room_temperature_gaps": {
+    "room_temperature_K": 300,
+    "hg1223_gap_K": 149,
+    "nickelate_onset_gap_K": 237,
+    "nickelate_bulk_zero_gap_K": 260,
+    "nickelate_film_zero_gap_K": 297,
+    "at_promote_gate_gap_K": 200,
+    "at_evaluate_gate_gap_K": 220
+  },
+  "forbidden_proxies": [
+    "onset_tc_for_invest_evaluate_promote_demote",
+    "pressurized_tc_for_ambient_gates",
+    "single_group_for_evaluate_promote",
+    "theoretical_predictions_for_any_gate",
+    "no_meissner_for_evaluate_promote",
+    "single_sample_for_evaluate_promote",
+    "mixed_growth_method_averaging"
+  ],
+  "most_impactful_measurement": "Zero-resistance Tc of GAE-grown (La,Pr)3Ni2O7 films on SLAO at ambient pressure",
+  "phase23_cross_reference": {
+    "all_gates_match": true,
+    "thresholds_modified": false,
+    "source_lines": "124-131 of phase23-route-shortlist.md"
+  }
+}
