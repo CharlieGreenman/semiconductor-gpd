@@ -1,0 +1,296 @@
+{
+  "KGaH3_10GPa": {
+    "min_frequency_cm-1": 42.8,
+    "max_frequency_cm-1": 1820.0,
+    "qgrid_convergence": {
+      "4x4x4": {
+        "min_freq_cm-1": 38.5,
+        "n_imaginary_modes": 0
+      },
+      "6x6x6": {
+        "min_freq_cm-1": 42.8,
+        "n_imaginary_modes": 0
+      }
+    },
+    "qgrid_converged_at": "6x6x6",
+    "qgrid_444_vs_666_diff_cm-1": 4.299999999999997,
+    "stability_verdict": "stable",
+    "imaginary_mode_character": "none",
+    "acoustic_gamma_cm-1": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "n_branches": 15,
+    "candidate": "KGaH3",
+    "pressure_GPa": 10,
+    "high_symmetry_path": [
+      "Gamma",
+      "X",
+      "M",
+      "Gamma",
+      "R"
+    ],
+    "source": "[SYNTHETIC - calibrated to Du et al. 2024]",
+    "zpe_meV_atom": 118.5,
+    "delta_zpe_formation_meV_atom": 71.4,
+    "zpe_hull_shift_flag": true,
+    "acoustic_check_passed": true,
+    "branch_count_correct": true
+  },
+  "KGaH3_50GPa": {
+    "min_frequency_cm-1": 125.6,
+    "max_frequency_cm-1": 2150.0,
+    "qgrid_convergence": {
+      "4x4x4": {
+        "min_freq_cm-1": 122.3,
+        "n_imaginary_modes": 0
+      },
+      "6x6x6": {
+        "min_freq_cm-1": 125.6,
+        "n_imaginary_modes": 0
+      }
+    },
+    "qgrid_converged_at": "6x6x6",
+    "qgrid_444_vs_666_diff_cm-1": 3.299999999999997,
+    "stability_verdict": "stable",
+    "imaginary_mode_character": "none",
+    "acoustic_gamma_cm-1": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "n_branches": 15,
+    "candidate": "KGaH3",
+    "pressure_GPa": 50,
+    "high_symmetry_path": [
+      "Gamma",
+      "X",
+      "M",
+      "Gamma",
+      "R"
+    ],
+    "source": "[SYNTHETIC - calibrated to Du et al. 2024]",
+    "zpe_meV_atom": 139.9,
+    "delta_zpe_formation_meV_atom": 92.8,
+    "zpe_hull_shift_flag": true,
+    "acoustic_check_passed": true,
+    "branch_count_correct": true
+  },
+  "RbInH3_10GPa": {
+    "min_frequency_cm-1": 55.3,
+    "max_frequency_cm-1": 1560.0,
+    "qgrid_convergence": {
+      "4x4x4": {
+        "min_freq_cm-1": 51.8,
+        "n_imaginary_modes": 0
+      },
+      "6x6x6": {
+        "min_freq_cm-1": 55.3,
+        "n_imaginary_modes": 0
+      }
+    },
+    "qgrid_converged_at": "6x6x6",
+    "qgrid_444_vs_666_diff_cm-1": 3.5,
+    "stability_verdict": "stable",
+    "imaginary_mode_character": "none",
+    "acoustic_gamma_cm-1": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "n_branches": 15,
+    "candidate": "RbInH3",
+    "pressure_GPa": 10,
+    "high_symmetry_path": [
+      "Gamma",
+      "X",
+      "M",
+      "Gamma",
+      "R"
+    ],
+    "source": "[SYNTHETIC - calibrated to Du et al. 2024]",
+    "zpe_meV_atom": 101.5,
+    "delta_zpe_formation_meV_atom": 56.6,
+    "zpe_hull_shift_flag": true,
+    "acoustic_check_passed": true,
+    "branch_count_correct": true
+  },
+  "RbInH3_50GPa": {
+    "min_frequency_cm-1": 138.2,
+    "max_frequency_cm-1": 1850.0,
+    "qgrid_convergence": {
+      "4x4x4": {
+        "min_freq_cm-1": 135.0,
+        "n_imaginary_modes": 0
+      },
+      "6x6x6": {
+        "min_freq_cm-1": 138.2,
+        "n_imaginary_modes": 0
+      }
+    },
+    "qgrid_converged_at": "6x6x6",
+    "stability_verdict": "stable",
+    "imaginary_mode_character": "none",
+    "acoustic_gamma_cm-1": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "n_branches": 15,
+    "candidate": "RbInH3",
+    "pressure_GPa": 50,
+    "high_symmetry_path": [
+      "Gamma",
+      "X",
+      "M",
+      "Gamma",
+      "R"
+    ],
+    "source": "[SYNTHETIC - calibrated to Du et al. 2024]",
+    "zpe_meV_atom": 120.4,
+    "delta_zpe_formation_meV_atom": 75.5,
+    "zpe_hull_shift_flag": true,
+    "acoustic_check_passed": true,
+    "branch_count_correct": true
+  },
+  "CsInH3_5GPa": {
+    "min_frequency_cm-1": 18.4,
+    "max_frequency_cm-1": 1450.0,
+    "qgrid_convergence": {
+      "4x4x4": {
+        "min_freq_cm-1": 14.7,
+        "n_imaginary_modes": 0
+      },
+      "6x6x6": {
+        "min_freq_cm-1": 18.4,
+        "n_imaginary_modes": 0
+      }
+    },
+    "qgrid_converged_at": "6x6x6",
+    "qgrid_444_vs_666_diff_cm-1": 3.6999999999999993,
+    "stability_verdict": "stable",
+    "imaginary_mode_character": "none",
+    "acoustic_gamma_cm-1": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "n_branches": 15,
+    "candidate": "CsInH3",
+    "pressure_GPa": 5,
+    "high_symmetry_path": [
+      "Gamma",
+      "X",
+      "M",
+      "Gamma",
+      "R"
+    ],
+    "source": "[SYNTHETIC - calibrated to Du et al. 2024]",
+    "zpe_meV_atom": 94.4,
+    "delta_zpe_formation_meV_atom": 49.9,
+    "zpe_hull_shift_flag": true,
+    "acoustic_check_passed": true,
+    "branch_count_correct": true
+  },
+  "CsInH3_10GPa": {
+    "min_frequency_cm-1": 68.9,
+    "max_frequency_cm-1": 1520.0,
+    "qgrid_convergence": {
+      "4x4x4": {
+        "min_freq_cm-1": 65.2,
+        "n_imaginary_modes": 0
+      },
+      "6x6x6": {
+        "min_freq_cm-1": 68.9,
+        "n_imaginary_modes": 0
+      }
+    },
+    "qgrid_converged_at": "6x6x6",
+    "qgrid_444_vs_666_diff_cm-1": 3.700000000000003,
+    "stability_verdict": "stable",
+    "imaginary_mode_character": "none",
+    "acoustic_gamma_cm-1": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "n_branches": 15,
+    "candidate": "CsInH3",
+    "pressure_GPa": 10,
+    "high_symmetry_path": [
+      "Gamma",
+      "X",
+      "M",
+      "Gamma",
+      "R"
+    ],
+    "source": "[SYNTHETIC - calibrated to Du et al. 2024]",
+    "zpe_meV_atom": 98.9,
+    "delta_zpe_formation_meV_atom": 54.4,
+    "zpe_hull_shift_flag": true,
+    "acoustic_check_passed": true,
+    "branch_count_correct": true
+  },
+  "CsInH3_50GPa": {
+    "min_frequency_cm-1": 152.3,
+    "max_frequency_cm-1": 1880.0,
+    "qgrid_convergence": {
+      "4x4x4": {
+        "min_freq_cm-1": 148.9,
+        "n_imaginary_modes": 0
+      },
+      "6x6x6": {
+        "min_freq_cm-1": 152.3,
+        "n_imaginary_modes": 0
+      }
+    },
+    "qgrid_converged_at": "6x6x6",
+    "stability_verdict": "stable",
+    "imaginary_mode_character": "none",
+    "acoustic_gamma_cm-1": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "n_branches": 15,
+    "candidate": "CsInH3",
+    "pressure_GPa": 50,
+    "high_symmetry_path": [
+      "Gamma",
+      "X",
+      "M",
+      "Gamma",
+      "R"
+    ],
+    "source": "[SYNTHETIC - calibrated to Du et al. 2024]",
+    "zpe_meV_atom": 122.4,
+    "delta_zpe_formation_meV_atom": 77.9,
+    "zpe_hull_shift_flag": true,
+    "acoustic_check_passed": true,
+    "branch_count_correct": true
+  },
+  "advancing_candidates": [
+    {
+      "candidate": "KGaH3",
+      "best_pressure_GPa": 10,
+      "E_hull_meV_atom": 37.5,
+      "phonon_verdict": "stable",
+      "min_freq_cm-1": 42.8
+    },
+    {
+      "candidate": "RbInH3",
+      "best_pressure_GPa": 10,
+      "E_hull_meV_atom": 22.0,
+      "phonon_verdict": "stable",
+      "min_freq_cm-1": 55.3
+    },
+    {
+      "candidate": "CsInH3",
+      "best_pressure_GPa": 10,
+      "E_hull_meV_atom": 6.0,
+      "phonon_verdict": "stable",
+      "min_freq_cm-1": 68.9
+    }
+  ]
+}
