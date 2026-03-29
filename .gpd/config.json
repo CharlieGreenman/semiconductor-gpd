@@ -1,0 +1,12 @@
+{
+  "autonomy": "balanced",
+  "research_mode": "balanced",
+  "parallelization": true,
+  "commit_docs": true,
+  "model_profile": "review",
+  "workflow": {
+    "research": true,
+    "plan_checker": true,
+    "verifier": true
+  }
+}

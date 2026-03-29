@@ -1,0 +1,419 @@
+{
+  "project_reference": {
+    "project_md_updated": null,
+    "core_research_question": null,
+    "current_focus": null
+  },
+  "project_contract": {
+    "schema_version": 1,
+    "scope": {
+      "question": "Can a thermodynamically or dynamically stable ternary hydride be identified from first principles with Tc >= 300 K at near-ambient pressure (P <= 10 GPa)?",
+      "in_scope": [
+        "Eliashberg theory framework for phonon-mediated superconductivity",
+        "DFT electronic structure and DFPT phonon calculations for hydrides",
+        "Ternary hydrides with light-element cage scaffolds (Be, B, C families)",
+        "Thermodynamic stability via convex hull analysis",
+        "Dynamic stability via phonon dispersion (no imaginary frequencies)",
+        "Chemical pre-compression strategy to reduce required external pressure",
+        "Benchmark reproduction of known hydride superconductors (H3S, LaH10)"
+      ],
+      "out_of_scope": [
+        "Unconventional pairing mechanisms (spin-fluctuation, excitonic, polaronic)",
+        "Experimental synthesis or characterization",
+        "Cuprate or iron-based superconductors",
+        "Full crystal structure prediction searches (AIRSS/CALYPSO) requiring HPC",
+        "Dynamical mean-field theory or beyond-Migdal vertex corrections"
+      ],
+      "unresolved_questions": [
+        "Which specific ternary chemical families (e.g., XBeH8, XBH8, XCH) show the best Tc-vs-pressure tradeoff?",
+        "What is the practical Tc ceiling of Migdal-Eliashberg theory at lambda > 2-3?",
+        "Whether metastable low-pressure phases exist for any discovered high-Tc candidate"
+      ]
+    },
+    "context_intake": {
+      "must_read_refs": [
+        "ref-h3s",
+        "ref-lah10"
+      ],
+      "must_include_prior_outputs": [],
+      "user_asserted_anchors": [
+        "Reproduce H3S Tc ~ 200 K at 150 GPa before trusting new predictions",
+        "Reproduce LaH10 Tc ~ 250 K at 170 GPa before trusting new predictions"
+      ],
+      "known_good_baselines": [],
+      "context_gaps": [
+        "No prior DFT calculations in this project yet \u2014 benchmarks must be established in Phase 1",
+        "Optimal pseudopotentials and convergence parameters for hydride systems TBD"
+      ],
+      "crucial_inputs": [
+        "Eliashberg spectral function alpha^2F(omega) for benchmark systems",
+        "Convex hull data from Materials Project for stability assessment"
+      ]
+    },
+    "approach_policy": {
+      "formulations": [
+        "DFT with PBE functional for electronic structure",
+        "DFPT for phonon dispersions and electron-phonon coupling",
+        "Isotropic Migdal-Eliashberg equations for Tc prediction",
+        "Allen-Dynes modified McMillan formula as cross-check"
+      ],
+      "allowed_estimator_families": [
+        "Eliashberg spectral function",
+        "Allen-Dynes-McMillan"
+      ],
+      "forbidden_estimator_families": [
+        "BCS weak-coupling Tc formula alone without Eliashberg"
+      ],
+      "allowed_fit_families": [
+        "physically motivated mu* values from literature (0.10-0.15)"
+      ],
+      "forbidden_fit_families": [
+        "tuning mu* to match desired Tc"
+      ],
+      "stop_and_rethink_conditions": [
+        "All explored ternary hydrides show imaginary phonon frequencies at P < 50 GPa",
+        "Required lambda for 300 K systematically exceeds 3.0, putting Migdal approximation in doubt",
+        "Convex hull analysis shows all candidates are > 50 meV/atom above hull at target pressures"
+      ]
+    },
+    "observables": [
+      {
+        "id": "obs-tc",
+        "name": "Superconducting critical temperature Tc",
+        "kind": "scalar",
+        "definition": "Tc computed from isotropic Eliashberg equations using ab initio alpha^2F(omega) and mu* = 0.10-0.13",
+        "regime": null,
+        "units": null
+      },
+      {
+        "id": "obs-tc-vs-p",
+        "name": "Tc as a function of pressure",
+        "kind": "curve",
+        "definition": "Tc(P) curve from Eliashberg theory at multiple pressure points for each candidate material",
+        "regime": null,
+        "units": null
+      },
+      {
+        "id": "obs-phonon-dispersion",
+        "name": "Phonon dispersion and stability",
+        "kind": "curve",
+        "definition": "Phonon band structure showing absence of imaginary frequencies at target pressure",
+        "regime": null,
+        "units": null
+      },
+      {
+        "id": "obs-lambda",
+        "name": "Electron-phonon coupling constant lambda",
+        "kind": "scalar",
+        "definition": "Integrated electron-phonon coupling lambda = 2 * integral[alpha^2F(omega)/omega d(omega)]",
+        "regime": null,
+        "units": null
+      },
+      {
+        "id": "obs-convex-hull",
+        "name": "Thermodynamic stability (distance from convex hull)",
+        "kind": "scalar",
+        "definition": "Formation enthalpy relative to competing phases at target pressure, in meV/atom",
+        "regime": null,
+        "units": null
+      }
+    ],
+    "claims": [
+      {
+        "id": "claim-benchmark",
+        "statement": "The computational pipeline (DFT + DFPT + Eliashberg) reproduces known Tc values for H3S and LaH10 within 15%",
+        "observables": [
+          "obs-tc"
+        ],
+        "deliverables": [
+          "deliv-benchmark"
+        ],
+        "acceptance_tests": [
+          "test-h3s",
+          "test-lah10"
+        ],
+        "references": [
+          "ref-h3s",
+          "ref-lah10"
+        ]
+      },
+      {
+        "id": "claim-candidate",
+        "statement": "At least one ternary hydride candidate is identified with Tc >= 300 K at P <= 10 GPa, confirmed dynamically and thermodynamically stable",
+        "observables": [
+          "obs-tc",
+          "obs-tc-vs-p",
+          "obs-phonon-dispersion",
+          "obs-lambda",
+          "obs-convex-hull"
+        ],
+        "deliverables": [
+          "deliv-candidate",
+          "deliv-tc-curve"
+        ],
+        "acceptance_tests": [
+          "test-tc-target",
+          "test-stability"
+        ],
+        "references": [
+          "ref-h3s",
+          "ref-lah10"
+        ]
+      }
+    ],
+    "deliverables": [
+      {
+        "id": "deliv-benchmark",
+        "kind": "table",
+        "path": null,
+        "description": "Benchmark table comparing computed vs experimental Tc for H3S and LaH10",
+        "must_contain": [
+          "computed Tc",
+          "experimental Tc",
+          "relative error",
+          "lambda",
+          "omega_log"
+        ]
+      },
+      {
+        "id": "deliv-candidate",
+        "kind": "report",
+        "path": null,
+        "description": "Candidate material report: composition, crystal structure, electronic structure, phonon dispersion, Eliashberg function, Tc, stability analysis",
+        "must_contain": [
+          "crystal structure",
+          "band structure",
+          "phonon dispersion",
+          "alpha^2F(omega)",
+          "Tc value",
+          "convex hull distance"
+        ]
+      },
+      {
+        "id": "deliv-tc-curve",
+        "kind": "figure",
+        "path": null,
+        "description": "Tc(P) curve for the best candidate material showing the pressure at which Tc crosses 300 K",
+        "must_contain": [
+          "Tc vs pressure data points",
+          "300 K reference line",
+          "comparison with H3S and LaH10 Tc(P)"
+        ]
+      }
+    ],
+    "acceptance_tests": [
+      {
+        "id": "test-h3s",
+        "subject": "claim-benchmark",
+        "kind": "benchmark",
+        "procedure": "Compute Tc for Im-3m H3S at 150 GPa using Eliashberg equations and compare to experimental 200 K",
+        "pass_condition": "Computed Tc within 15% of 200 K (i.e., 170-230 K)",
+        "evidence_required": [
+          "deliv-benchmark",
+          "ref-h3s"
+        ],
+        "automation": "automated"
+      },
+      {
+        "id": "test-lah10",
+        "subject": "claim-benchmark",
+        "kind": "benchmark",
+        "procedure": "Compute Tc for Fm-3m LaH10 at 170 GPa using Eliashberg equations and compare to experimental 250 K",
+        "pass_condition": "Computed Tc within 15% of 250 K (i.e., 212-288 K)",
+        "evidence_required": [
+          "deliv-benchmark",
+          "ref-lah10"
+        ],
+        "automation": "automated"
+      },
+      {
+        "id": "test-tc-target",
+        "subject": "claim-candidate",
+        "kind": "benchmark",
+        "procedure": "Verify that at least one candidate has Eliashberg Tc >= 300 K at P <= 10 GPa",
+        "pass_condition": "Tc >= 300 K at P <= 10 GPa from converged Eliashberg calculation",
+        "evidence_required": [
+          "deliv-candidate",
+          "deliv-tc-curve"
+        ],
+        "automation": "automated"
+      },
+      {
+        "id": "test-stability",
+        "subject": "claim-candidate",
+        "kind": "consistency",
+        "procedure": "Verify candidate has no imaginary phonon frequencies and is within 50 meV/atom of convex hull at target pressure",
+        "pass_condition": "All phonon frequencies real AND convex hull distance <= 50 meV/atom",
+        "evidence_required": [
+          "deliv-candidate"
+        ],
+        "automation": "automated"
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-h3s",
+        "kind": "paper",
+        "locator": "Drozdov et al., Nature 525, 73 (2015)",
+        "aliases": [
+          "H3S-discovery"
+        ],
+        "role": "benchmark",
+        "why_it_matters": "First confirmed high-Tc hydride superconductor; primary benchmark for validating the computational pipeline",
+        "applies_to": [
+          "claim-benchmark"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare",
+          "cite"
+        ]
+      },
+      {
+        "id": "ref-lah10",
+        "kind": "paper",
+        "locator": "Somayazulu et al., PRL 122, 027001 (2019)",
+        "aliases": [
+          "LaH10-discovery"
+        ],
+        "role": "benchmark",
+        "why_it_matters": "Highest confirmed Tc in hydrides (~250 K); second benchmark for pipeline validation",
+        "applies_to": [
+          "claim-benchmark"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare",
+          "cite"
+        ]
+      }
+    ],
+    "forbidden_proxies": [
+      {
+        "id": "fp-unstable-tc",
+        "subject": "claim-candidate",
+        "proxy": "High Tc prediction for a structure with imaginary phonon frequencies",
+        "reason": "Dynamically unstable structures are unphysical \u2014 high lambda from soft modes is an artifact, not superconductivity"
+      },
+      {
+        "id": "fp-above-hull",
+        "subject": "claim-candidate",
+        "proxy": "High Tc for a composition far above the convex hull (> 50 meV/atom)",
+        "reason": "Thermodynamically unreachable phases cannot be synthesized regardless of predicted Tc"
+      },
+      {
+        "id": "fp-tuned-mustar",
+        "subject": "claim-benchmark",
+        "proxy": "Matching experimental Tc by adjusting mu* rather than computing alpha^2F accurately",
+        "reason": "Tuning the Coulomb pseudopotential to fit known data destroys predictive power for new materials"
+      }
+    ],
+    "links": [
+      {
+        "id": "link-benchmark-to-candidate",
+        "source": "claim-benchmark",
+        "target": "claim-candidate",
+        "relation": "depends_on",
+        "verified_by": [
+          "test-h3s",
+          "test-lah10"
+        ]
+      },
+      {
+        "id": "link-candidate-to-figure",
+        "source": "claim-candidate",
+        "target": "deliv-tc-curve",
+        "relation": "visualizes",
+        "verified_by": [
+          "test-tc-target"
+        ]
+      }
+    ],
+    "uncertainty_markers": {
+      "weakest_anchors": [
+        "Migdal-Eliashberg validity at lambda > 2-3 (vertex corrections neglected)",
+        "Isotropic approximation may miss anisotropic gap structure that changes Tc by 10-20%"
+      ],
+      "unvalidated_assumptions": [
+        "PBE functional adequate for hydride electronic structure (no hybrid or GW needed)",
+        "Harmonic phonon approximation sufficient (anharmonic effects may be large for light H atoms)",
+        "mu* in range 0.10-0.13 for all candidate materials"
+      ],
+      "competing_explanations": [
+        "Anharmonic corrections could suppress or enhance Tc significantly in hydrogen-rich systems",
+        "Strong electron-phonon coupling might drive a structural transition before superconductivity"
+      ],
+      "disconfirming_observations": [
+        "All explored ternary hydrides require P > 50 GPa for dynamic stability \u2014 chemical pre-compression insufficient",
+        "Benchmark Tc for H3S/LaH10 off by > 30% \u2014 pipeline untrustworthy for predictions"
+      ]
+    }
+  },
+  "position": {
+    "current_phase": null,
+    "current_phase_name": null,
+    "total_phases": null,
+    "current_plan": null,
+    "total_plans_in_phase": null,
+    "status": null,
+    "last_activity": null,
+    "last_activity_desc": null,
+    "progress_percent": 0,
+    "paused_at": null
+  },
+  "active_calculations": [],
+  "intermediate_results": [],
+  "open_questions": [
+    "Which specific ternary chemical families (e.g., XBeH8, XBH8, XCH) show the best Tc-vs-pressure tradeoff?",
+    "What is the practical Tc ceiling of Migdal-Eliashberg theory at lambda > 2-3?",
+    "Whether metastable low-pressure phases exist for any discovered high-Tc candidate"
+  ],
+  "performance_metrics": {
+    "rows": []
+  },
+  "decisions": [],
+  "approximations": [],
+  "convention_lock": {
+    "metric_signature": null,
+    "fourier_convention": null,
+    "natural_units": null,
+    "gauge_choice": null,
+    "regularization_scheme": null,
+    "renormalization_scheme": null,
+    "coordinate_system": null,
+    "spin_basis": null,
+    "state_normalization": null,
+    "coupling_convention": null,
+    "index_positioning": null,
+    "time_ordering": null,
+    "commutation_convention": null,
+    "levi_civita_sign": null,
+    "generator_normalization": null,
+    "covariant_derivative_sign": null,
+    "gamma_matrix_convention": null,
+    "creation_annihilation_order": null,
+    "custom_conventions": {}
+  },
+  "propagated_uncertainties": [],
+  "pending_todos": [],
+  "blockers": [],
+  "session": {
+    "last_date": null,
+    "stopped_at": null,
+    "resume_file": null
+  }
+}
