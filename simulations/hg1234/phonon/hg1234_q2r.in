@@ -1,0 +1,6 @@
+! q2r.x input for Hg1234 force constant interpolation
+&INPUT
+  fildyn = 'hg1234.dyn'
+  flfrc  = 'hg1234.fc'
+  zasr   = 'crystal'
+/

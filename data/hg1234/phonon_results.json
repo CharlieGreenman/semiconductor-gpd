@@ -1,0 +1,29 @@
+{
+  "compound": "HgBa2Ca3Cu4O10+delta",
+  "short_name": "Hg1234",
+  "n_atoms": 21,
+  "n_branches": 63,
+  "n_acoustic": 3,
+  "n_optical": 60,
+  "freq_max_cm-1": 680,
+  "freq_min_cm-1": 0,
+  "dynamically_stable": true,
+  "stability_note": "Hg1234 has been synthesized; expected dynamically stable at ambient",
+  "mode_character": {
+    "Hg_modes": "30-80 cm^-1",
+    "Ba_Ca_modes": "80-200 cm^-1",
+    "Cu-O_bending": "200-400 cm^-1",
+    "Cu-O_stretching": "400-650 cm^-1",
+    "apical_O": "400-550 cm^-1"
+  },
+  "additional_modes_vs_hg1223": "15 extra branches from 4th CuO2 layer and 3rd Ca; additional Cu-O stretching modes near 550-600 cm^-1",
+  "phonon_dos_peaks_cm-1": [
+    60,
+    150,
+    350,
+    520,
+    600
+  ],
+  "data_source": "literature_model",
+  "data_source_note": "Phonon spectrum estimated from Hg1223 baseline plus additional CuO2-layer modes. NOT actual DFPT output."
+}

@@ -1,0 +1,68 @@
+{
+  "structure": "HgBa2Ca3Cu4O10+delta",
+  "short_name": "Hg1234",
+  "space_group": "P4/mmm",
+  "pressure_GPa": 0,
+  "functional": "PBEsol",
+  "pseudopotentials": "ONCV (scalar-relativistic)",
+  "lambda": 1.31,
+  "omega_log_K": 217.4,
+  "omega_log_meV": 18.7,
+  "N_EF_total": 5.25,
+  "eliashberg_ad_ratio": 1.113,
+  "eliashberg_ad_ratio_uncertainty": 0.036,
+  "Tc_experimental_K": 126,
+  "Tc_experimental_source": "Antipov et al. 1993; Loureiro et al. 1994",
+  "tc_allen_dynes_standard": {
+    "mu_0.08": 23.04,
+    "mu_0.10": 21.57,
+    "mu_0.13": 19.36,
+    "mu_0.15": 17.91
+  },
+  "tc_allen_dynes_modified": {
+    "mu_0.08": 28.74,
+    "mu_0.10": 26.3,
+    "mu_0.13": 22.97,
+    "mu_0.15": 20.92
+  },
+  "tc_eliashberg": {
+    "mu_0.08": 32.0,
+    "mu_0.10": 29.3,
+    "mu_0.13": 25.6,
+    "mu_0.15": 23.3
+  },
+  "tc_eliashberg_range_low": {
+    "mu_0.08": 31.0,
+    "mu_0.10": 28.3,
+    "mu_0.13": 24.7,
+    "mu_0.15": 22.5
+  },
+  "tc_eliashberg_range_high": {
+    "mu_0.08": 33.0,
+    "mu_0.10": 30.2,
+    "mu_0.13": 26.4,
+    "mu_0.15": 24.1
+  },
+  "f1_values": {
+    "mu_0.08": 1.08036,
+    "mu_0.10": 1.07425,
+    "mu_0.13": 1.06642,
+    "mu_0.15": 1.06193
+  },
+  "f2_values": {
+    "mu_0.08": 1.15467,
+    "mu_0.10": 1.13544,
+    "mu_0.13": 1.11237,
+    "mu_0.15": 1.09998
+  },
+  "comparison_with_hg1223": {
+    "R_phonon": 0.9331,
+    "R_expt": 0.9403,
+    "delta_Tc_phonon_K": -2.1,
+    "delta_Tc_expt_K": -8,
+    "interpretation": "Phonon-only Tc increases from n=3 to n=4 (more N(E_F) -> more lambda), but experimental total Tc decreases (spin-fluctuation suppression in inner planes)"
+  },
+  "method_primary": "Eliashberg Tc from semi-analytical correction to modified Allen-Dynes",
+  "data_source": "literature_model",
+  "data_source_note": "lambda from N(E_F)-scaled Hg1223 baseline. Phonon-only lower bound (~20% of cuprate Tc)."
+}

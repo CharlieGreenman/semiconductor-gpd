@@ -1,0 +1,22 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! HgBa2Ca3Cu4O10+delta (Hg1234) -- DFPT phonon calculation
+! 21 atoms -> 63 phonon branches
+! q-grid: 4x4x1 (c/a ~ 4.9, reduced c-axis sampling)
+
+phonons of Hg1234
+&INPUTPH
+  outdir       = './tmp/'
+  prefix       = 'hg1234'
+  fildyn       = 'hg1234.dyn'
+  fildvscf     = 'dvscf'
+  ldisp        = .true.
+  nq1          = 4
+  nq2          = 4
+  nq3          = 1
+  tr2_ph       = 1.0d-14
+  alpha_mix(1) = 0.7
+  epsil        = .true.
+  search_sym   = .true.
+  recover      = .true.
+/

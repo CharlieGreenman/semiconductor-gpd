@@ -1,0 +1,12 @@
+! matdyn.x input for Hg1234 phonon dispersion and DOS
+&INPUT
+  asr    = 'crystal'
+  flfrc  = 'hg1234.fc'
+  flfrq  = 'hg1234.freq'
+  fldos  = 'hg1234.phdos'
+  dos    = .true.
+  nk1    = 20
+  nk2    = 20
+  nk3    = 10
+  deltaE = 1.0
+/

@@ -1,0 +1,50 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! HgBa2Ca3Cu4O10+delta (Hg1234) -- EPW electron-phonon coupling
+!
+! 21 atoms, 4 CuO2 layers
+! Wannier functions: 4 Cu x 5d + (8 O_planar + 2 O_apical + 1 O_delta) x 3p = 20 + 33 = 53 WFs
+! Simplified: Cu:d + O:p projections
+
+--
+&inputepw
+  prefix       = 'hg1234'
+  outdir       = './tmp/'
+  dvscf_dir    = './save/'
+
+  nk1=8, nk2=8, nk3=3
+  nq1=4, nq2=4, nq3=1
+
+  nkf1=20, nkf2=20, nkf3=8
+  nqf1=20, nqf2=20, nqf3=8
+
+  num_iter     = 500
+  dis_num_iter = 200
+  proj_natom   = 15
+
+  dis_win_min  = 5.0
+  dis_win_max  = 17.0
+  dis_froz_min = 9.0
+  dis_froz_max = 13.0
+
+  ephwrite     = .true.
+  epbwrite     = .true.
+  epbread      = .false.
+
+  elph         = .true.
+  a2f          = .true.
+  fsthick      = 1.0
+  degaussw     = 0.025
+  degaussq     = 0.05
+  nstemp       = 1
+  temps        = 300.0
+
+  wannierize   = .true.
+  auto_projections = .false.
+  use_ws       = .true.
+/
+
+PROJECTIONS
+Cu : d
+O  : p
+END
