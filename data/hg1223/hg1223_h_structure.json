@@ -1,0 +1,150 @@
+{
+  "material": "Hg1223-H",
+  "formula": "HgBa2Ca2Cu3O6H2",
+  "parent": "HgBa2Ca2Cu3O8 (Hg1223)",
+  "modification": "Apical O replaced by H at z~0.172 and z~0.828",
+  "space_group": "P4/mmm (if H sits on-axis; may lower to P4mm)",
+  "a_angstrom": 3.845,
+  "c_angstrom": 15.0,
+  "c_over_a": 3.9012,
+  "atomic_positions": [
+    {
+      "species": "Hg",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Ba",
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.178,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Ba",
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.822,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Ca",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.354,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Ca",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.646,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Cu",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.282,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Cu",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.718,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Cu",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.5,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "H",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.172,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "H",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.828,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.5,
+      "z": 0.282,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 0.282,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.5,
+      "z": 0.718,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 0.718,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.5,
+      "z": 0.5,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 0.5,
+      "coord_type": "crystal"
+    }
+  ],
+  "species_count": {
+    "Hg": 1,
+    "Ba": 2,
+    "Ca": 2,
+    "Cu": 3,
+    "H": 2,
+    "O": 6
+  },
+  "total_atoms": 16,
+  "total_valence_electrons": 123,
+  "functional": "PBEsol (expected)",
+  "cu_h_bond_angstrom": 1.65,
+  "doping_analysis": {
+    "parent_Cu_valence": "+2.0 (with O delta ~ 0)",
+    "h_substituted_Cu_valence": "+1.33 (assuming H^{-1})",
+    "doping_effect": "ELECTRON DOPED: H(-1) replacing O(-2) adds electrons to CuO2",
+    "net_hole_change": "-0.67 per Cu (severe underdoping)",
+    "concern": "CuO2 planes likely lose superconducting state due to underdoping",
+    "mitigation": "Could compensate with additional hole source (e.g., excess O in Hg layer)"
+  },
+  "concerns": [
+    "H(-1) replacing O(-2) electron-dopes the CuO2 planes",
+    "Cu valence drops to +1.33 -- far below optimal +2.0 to +2.33",
+    "H may be mobile at T > 300 K (diffusion barrier ~ 0.3-0.5 eV in oxides)",
+    "Structure may relax to different H position off c-axis"
+  ]
+}

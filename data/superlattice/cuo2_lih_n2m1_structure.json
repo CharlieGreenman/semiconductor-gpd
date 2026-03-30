@@ -1,0 +1,107 @@
+{
+  "material": "[CuO2]2/[LiH]1",
+  "formula": "Li1H1Cu2CaO4",
+  "space_group": "P4/mmm (assumed; may lower with LiH ordering)",
+  "a_angstrom": 3.85,
+  "c_angstrom": 12.94,
+  "c_over_a": 3.3614,
+  "lattice_mismatch_pct": 6.1,
+  "atomic_positions": [
+    {
+      "species": "Li",
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.0,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "H",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Cu",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.2489,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 0.2489,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.5,
+      "z": 0.2489,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Ca",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.5,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "Cu",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.7511,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 0.7511,
+      "coord_type": "crystal"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.5,
+      "z": 0.7511,
+      "coord_type": "crystal"
+    }
+  ],
+  "species_count": {
+    "Li": 1,
+    "H": 1,
+    "Cu": 2,
+    "O": 4,
+    "Ca": 1
+  },
+  "total_atoms": 9,
+  "total_valence_electrons": 60,
+  "layer_thicknesses": {
+    "bilayer_A": 6.5,
+    "lih_layer_A": 2.0415,
+    "interface_A": 2.2
+  },
+  "cu_cu_bilayer_distance_A": 6.5,
+  "doping_analysis": {
+    "li_h_charge_transfer": "LiH is neutral (Li+H- = 0 net charge to CuO2)",
+    "formal_Cu_valence": "+3.0 (d^8, over-oxidized)",
+    "optimal_Cu_valence": "+2.15 (0.15 holes/Cu for superconductivity)",
+    "doping_problem": "SEVERELY OVER-DOPED: Cu(+3) is far from optimal Cu(+2.15)",
+    "concern": "CuO2 planes are likely non-superconducting in this configuration",
+    "mitigation": [
+      "Add electron donor to compensate (e.g., replace Ca with La or Y)",
+      "Use LiOH instead of LiH (provides different charge balance)",
+      "Consider Nd/Sr substitution to control doping"
+    ]
+  },
+  "concerns": [
+    "Lattice mismatch 6.1% is large (>5%)",
+    "Cu(+3) valence: severely over-doped",
+    "No known synthesis route for this structure",
+    "Strain from mismatch may cause interface defects"
+  ]
+}

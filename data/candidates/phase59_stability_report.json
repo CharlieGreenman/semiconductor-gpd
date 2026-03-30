@@ -1,0 +1,246 @@
+{
+  "phase": 59,
+  "plan": "01",
+  "date": "2026-03-30T01:51:54.795040",
+  "random_seed": 59,
+  "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "numpy_version": "2.3.3",
+  "target_zone": {
+    "lambda_range": [
+      2.5,
+      4.0
+    ],
+    "omega_log_range_K": [
+      700,
+      1200
+    ],
+    "source": "Phase 58 inverse Eliashberg target map"
+  },
+  "candidates": [
+    {
+      "name": "Hg1223-H",
+      "formula": "HgBa2Ca2Cu3O6H2",
+      "structure": {
+        "a_A": 3.845,
+        "c_A": 15.0,
+        "n_atoms": 16
+      },
+      "stability": {
+        "material": "Hg1223-H",
+        "e_hull_meV_per_atom": 210.0,
+        "e_hull_uncertainty_meV_per_atom": 80,
+        "e_hull_range": "130 to 290 meV/atom",
+        "e_hull_gate": "FAIL",
+        "bond_penalty_eV": 2.0,
+        "chemical_potential_correction_eV": 1.2,
+        "parent_e_hull_meV_per_atom": 10.0,
+        "h_mode_phonon": {
+          "cu_h_stretch_cm1": [
+            1100,
+            1400
+          ],
+          "cu_h_stretch_meV": [
+            136.4,
+            173.6
+          ],
+          "cu_h_stretch_K": [
+            1583.0,
+            2014.0
+          ],
+          "imaginary_modes": "Unlikely for H local mode; but CDW instability possible from overdoping"
+        },
+        "phonon_gate": "CONDITIONAL -- H stretch modes are real, but electronic instability from doping may cause soft modes",
+        "overall_verdict": "FAIL -- E_hull >> 50 meV/atom; thermodynamically unstable",
+        "concerns": [
+          "E_hull ~ 210 meV/atom far exceeds 50 meV/atom gate",
+          "Doping is wrong sign (electron doping, not hole doping)",
+          "H diffusion barrier too low for practical stability",
+          "Would require extreme non-equilibrium synthesis"
+        ],
+        "possible_salvage": [
+          "Add additional hole source (e.g., F substitution on another O site)",
+          "Use H+ (proton) intercalation instead of H- substitution",
+          "Consider partial substitution (1 H per formula unit instead of 2)"
+        ]
+      },
+      "electronic": {
+        "material": "Hg1223-H",
+        "N_EF_states_per_eV_per_cell": 4.5,
+        "N_EF_uncertainty": 1.5,
+        "N_EF_gate": "PASS",
+        "d_band_character": "Cu d_{x2-y2} present but weight reduced by electron doping",
+        "AF_correlations": "WEAKENED: Cu(+1.33) is far from Mott insulator (Cu+2)",
+        "d_wave_pairing_prospect": "POOR: AF correlations needed for d-wave pairing likely suppressed",
+        "metallic": true,
+        "orbital_near_EF": "Cu d_{x2-y2} + O 2p (standard cuprate-like, but doping wrong)",
+        "verdict": "MARGINAL",
+        "key_issue": "Wrong doping direction (electron doping from H-)"
+      },
+      "gate": {
+        "material": "Hg1223-H",
+        "formula": "HgBa2Ca2Cu3O6H2",
+        "gates": {
+          "e_hull": "FAIL",
+          "phonon": "CONDITIONAL -- H stretch modes are real, but electronic instability from doping may cause soft modes",
+          "n_ef": "PASS",
+          "d_wave": "FAIL"
+        },
+        "overall": "FAIL",
+        "failure_reasons": [
+          "e_hull gate failed",
+          "d_wave gate failed",
+          "Doping incompatible with d-wave superconductivity"
+        ]
+      }
+    },
+    {
+      "name": "[CuO2]2/[LiH]1",
+      "formula": "Li1H1Cu2CaO4",
+      "structure": {
+        "a_A": 3.85,
+        "c_A": 12.94,
+        "n_atoms": 9
+      },
+      "stability": {
+        "material": "[CuO2]2/[LiH]1",
+        "e_hull_meV_per_atom": 202.6,
+        "e_hull_uncertainty_meV_per_atom": 60,
+        "e_hull_range": "143 to 263 meV/atom",
+        "e_hull_gate": "FAIL",
+        "strain_energy_meV_per_atom": 2.6,
+        "interface_energy_meV_per_atom": 80.0,
+        "decomposition_energy_meV_per_atom": 120.0,
+        "lih_phonon": {
+          "lih_stretch_cm1": [
+            500,
+            700
+          ],
+          "lih_stretch_meV": [
+            62.0,
+            86.8
+          ],
+          "lih_stretch_K": [
+            719.0,
+            1007.0
+          ]
+        },
+        "phonon_gate": "UNCERTAIN -- LiH modes are real, but interface modes may be soft",
+        "overall_verdict": "FAIL -- E_hull >> 50 meV/atom; thermodynamically unstable",
+        "doping_verdict": "SEVERELY OVER-DOPED: Cu(+3) is far from optimal Cu(+2.15)",
+        "concerns": [
+          "E_hull ~ 203 meV/atom far exceeds 50 meV/atom gate",
+          "Lattice mismatch 6.1% causes significant strain",
+          "Cu(+3) valence: severely over-doped for superconductivity",
+          "No known experimental precedent for CuO2/LiH interfaces"
+        ]
+      },
+      "electronic": {
+        "material": "[CuO2]2/[LiH]1",
+        "N_EF_states_per_eV_per_cell": 3.5,
+        "N_EF_uncertainty": 1.5,
+        "N_EF_gate": "PASS",
+        "d_band_character": "Cu d_{x2-y2} present but heavily over-doped (Cu+3)",
+        "AF_correlations": "DESTROYED: far from half-filling, no Mott physics",
+        "d_wave_pairing_prospect": "VERY POOR: no AF correlations => no spin-fluctuation d-wave pairing",
+        "metallic": true,
+        "orbital_near_EF": "Cu d_{x2-y2} (heavily hole-doped, non-superconducting regime)",
+        "verdict": "FAIL",
+        "key_issue": "Severe over-doping (Cu+3) destroys AF correlations"
+      },
+      "gate": {
+        "material": "[CuO2]2/[LiH]1",
+        "formula": "Li1H1Cu2CaO4",
+        "gates": {
+          "e_hull": "FAIL",
+          "phonon": "UNCERTAIN -- LiH modes are real, but interface modes may be soft",
+          "n_ef": "PASS",
+          "d_wave": "FAIL"
+        },
+        "overall": "FAIL",
+        "failure_reasons": [
+          "e_hull gate failed",
+          "d_wave gate failed",
+          "Doping incompatible with d-wave superconductivity"
+        ]
+      }
+    },
+    {
+      "name": "[CuO2]2/[LiH]2",
+      "formula": "Li2H2Cu2CaO4",
+      "structure": {
+        "a_A": 3.85,
+        "c_A": 19.07,
+        "n_atoms": 11
+      },
+      "stability": {
+        "material": "[CuO2]2/[LiH]2",
+        "e_hull_meV_per_atom": 208.4,
+        "e_hull_uncertainty_meV_per_atom": 60,
+        "e_hull_range": "148 to 268 meV/atom",
+        "e_hull_gate": "FAIL",
+        "strain_energy_meV_per_atom": 8.4,
+        "interface_energy_meV_per_atom": 80.0,
+        "decomposition_energy_meV_per_atom": 120.0,
+        "lih_phonon": {
+          "lih_stretch_cm1": [
+            500,
+            700
+          ],
+          "lih_stretch_meV": [
+            62.0,
+            86.8
+          ],
+          "lih_stretch_K": [
+            719.0,
+            1007.0
+          ]
+        },
+        "phonon_gate": "UNCERTAIN -- LiH modes are real, but interface modes may be soft",
+        "overall_verdict": "FAIL -- E_hull >> 50 meV/atom; thermodynamically unstable",
+        "doping_verdict": "SEVERELY OVER-DOPED: Cu(+3) is far from optimal Cu(+2.15)",
+        "concerns": [
+          "E_hull ~ 208 meV/atom far exceeds 50 meV/atom gate",
+          "Lattice mismatch 6.1% causes significant strain",
+          "Cu(+3) valence: severely over-doped for superconductivity",
+          "No known experimental precedent for CuO2/LiH interfaces"
+        ]
+      },
+      "electronic": {
+        "material": "[CuO2]2/[LiH]2",
+        "N_EF_states_per_eV_per_cell": 3.5,
+        "N_EF_uncertainty": 1.5,
+        "N_EF_gate": "PASS",
+        "d_band_character": "Cu d_{x2-y2} present but heavily over-doped (Cu+3)",
+        "AF_correlations": "DESTROYED: far from half-filling, no Mott physics",
+        "d_wave_pairing_prospect": "VERY POOR: no AF correlations => no spin-fluctuation d-wave pairing",
+        "metallic": true,
+        "orbital_near_EF": "Cu d_{x2-y2} (heavily hole-doped, non-superconducting regime)",
+        "verdict": "FAIL",
+        "key_issue": "Severe over-doping (Cu+3) destroys AF correlations"
+      },
+      "gate": {
+        "material": "[CuO2]2/[LiH]2",
+        "formula": "Li2H2Cu2CaO4",
+        "gates": {
+          "e_hull": "FAIL",
+          "phonon": "UNCERTAIN -- LiH modes are real, but interface modes may be soft",
+          "n_ef": "PASS",
+          "d_wave": "FAIL"
+        },
+        "overall": "FAIL",
+        "failure_reasons": [
+          "e_hull gate failed",
+          "d_wave gate failed",
+          "Doping incompatible with d-wave superconductivity"
+        ]
+      }
+    }
+  ],
+  "verdict": {
+    "n_candidates_passing": 0,
+    "n_candidates_total": 3,
+    "backtracking_trigger": true,
+    "reason": "All hydrogen-cuprate candidates fail E_hull and/or doping gates",
+    "pivot": "Phase 60 hydrogen-nickelate becomes primary track; also explore H+ intercalation"
+  }
+}
