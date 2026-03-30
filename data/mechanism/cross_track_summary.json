@@ -1,0 +1,228 @@
+{
+  "title": "Cross-track mechanism summary and 149 K gap update",
+  "date": "2026-03-29",
+  "phase": "31-mechanism-analysis-and-cross-track-synthesis",
+
+  "master_candidate_table": [
+    {
+      "id": "Hg1223",
+      "family": "Hg-cuprate",
+      "track": "A (Phase 28 baseline)",
+      "structure": "HgBa2Ca2Cu3O8+delta",
+      "space_group": "P4/mmm",
+      "pressure_GPa": 0,
+      "n_CuO2_layers": 3,
+      "lambda": 1.193,
+      "omega_log_K": 291,
+      "mu_star": 0.10,
+      "Tc_phonon_only_K": 31.4,
+      "Tc_phonon_only_mu013_K": 27.4,
+      "Tc_experimental_K": 151,
+      "phonon_fraction": 0.21,
+      "E_hull_meV_atom": "< 5 (known stable phase)",
+      "dynamic_stability": "STABLE",
+      "synthetic_accessibility": "HIGH (known synthesis, PQP demonstrated)",
+      "method": "Eliashberg (semi-analytical, PBEsol+ONCV, EPW literature model)"
+    },
+    {
+      "id": "Hg1234",
+      "family": "Hg-cuprate",
+      "track": "A (Phase 28)",
+      "structure": "HgBa2Ca3Cu4O10+delta",
+      "space_group": "P4/mmm",
+      "pressure_GPa": 0,
+      "n_CuO2_layers": 4,
+      "lambda": 1.29,
+      "omega_log_K": 285,
+      "mu_star": 0.10,
+      "Tc_phonon_only_K": 29.3,
+      "Tc_phonon_only_mu013_K": 25.6,
+      "Tc_experimental_K": 126,
+      "phonon_fraction": 0.23,
+      "E_hull_meV_atom": "< 10 (known phase)",
+      "dynamic_stability": "STABLE",
+      "synthetic_accessibility": "MEDIUM (synthesized, but harder than n=3)",
+      "method": "Eliashberg (literature model)"
+    },
+    {
+      "id": "Hg1245",
+      "family": "Hg-cuprate",
+      "track": "A (Phase 28)",
+      "structure": "HgBa2Ca4Cu5O12+delta",
+      "space_group": "P4/mmm",
+      "pressure_GPa": 0,
+      "n_CuO2_layers": 5,
+      "lambda": "0.55-1.42 (AF to paramagnetic)",
+      "omega_log_K": 280,
+      "mu_star": 0.10,
+      "Tc_phonon_only_K": "12.4-36.0 (AF to paramagnetic)",
+      "Tc_phonon_only_mu013_K": "9.8-31.5",
+      "Tc_experimental_K": 108,
+      "phonon_fraction": "0.11-0.33",
+      "E_hull_meV_atom": "< 15",
+      "dynamic_stability": "STABLE (but AF instability in inner planes)",
+      "synthetic_accessibility": "LOW (difficult to grow, phase purity issues)",
+      "method": "Eliashberg (literature model, AF/paramagnetic bracket)"
+    },
+    {
+      "id": "La3Ni2O7_unstrained",
+      "family": "Bilayer nickelate",
+      "track": "B (Phase 29)",
+      "structure": "La3Ni2O7 (bulk)",
+      "space_group": "Amam",
+      "pressure_GPa": 0,
+      "n_NiO2_layers": 2,
+      "lambda": 0.76,
+      "omega_log_K": 296,
+      "mu_star": 0.10,
+      "Tc_phonon_only_K": 17.4,
+      "Tc_phonon_only_mu013_K": 13.7,
+      "Tc_experimental_K": "40 (bulk onset, SmNiO2 reference)",
+      "phonon_fraction": 0.44,
+      "E_hull_meV_atom": "< 5 (known stable phase)",
+      "dynamic_stability": "STABLE",
+      "synthetic_accessibility": "HIGH (polycrystalline bulk, single crystals available)",
+      "method": "Eliashberg (Gruneisen model)"
+    },
+    {
+      "id": "La3Ni2O7_SLAO",
+      "family": "Bilayer nickelate",
+      "track": "B (Phase 29)",
+      "structure": "La3Ni2O7 on SrLaAlO4 (-2.01%)",
+      "space_group": "Amam (strained)",
+      "pressure_GPa": 0,
+      "n_NiO2_layers": 2,
+      "lambda": 0.89,
+      "omega_log_K": 300,
+      "mu_star": 0.10,
+      "Tc_phonon_only_K": 21.9,
+      "Tc_phonon_only_mu013_K": 17.6,
+      "Tc_experimental_K": "40 (SLAO film onset; zero-resist ~2 K)",
+      "phonon_fraction": 0.55,
+      "E_hull_meV_atom": "< 10 (epitaxial film)",
+      "dynamic_stability": "STABLE under epitaxial constraint",
+      "synthetic_accessibility": "MEDIUM (MBE/PLD on SLAO substrate)",
+      "method": "Eliashberg (Gruneisen model)"
+    },
+    {
+      "id": "Sm_La3Ni2O7_SLAO",
+      "family": "Bilayer nickelate",
+      "track": "B (Phase 29)",
+      "structure": "Sm3Ni2O7 on SrLaAlO4 (-2.01%)",
+      "space_group": "Amam (strained)",
+      "pressure_GPa": 0,
+      "n_NiO2_layers": 2,
+      "lambda": 1.01,
+      "omega_log_K": 300,
+      "mu_star": 0.10,
+      "Tc_phonon_only_K": 26.3,
+      "Tc_phonon_only_mu013_K": 21.2,
+      "Tc_experimental_K": "not measured (prediction)",
+      "phonon_fraction": "0.30-0.70 (estimated)",
+      "E_hull_meV_atom": "< 15 (estimated, Sm3Ni2O7 bulk known)",
+      "dynamic_stability": "LIKELY STABLE (analog to La3Ni2O7, needs verification)",
+      "synthetic_accessibility": "MEDIUM (Sm3Ni2O7 films demonstrated)",
+      "method": "Eliashberg (Gruneisen + RE chemical pressure model)"
+    },
+    {
+      "id": "Superlattice_Cand2",
+      "family": "Cuprate-nickelate hybrid",
+      "track": "C (Phase 30)",
+      "structure": "HgBa2CuO4/La2NiO4 RP superlattice",
+      "space_group": "P4/mmm (approx.)",
+      "pressure_GPa": 0,
+      "n_active_layers": "1 CuO2 + 1 NiO2",
+      "lambda": 0.867,
+      "omega_log_K": 308,
+      "mu_star": 0.10,
+      "Tc_phonon_only_K": 20.8,
+      "Tc_phonon_only_mu013_K": 17.0,
+      "Tc_experimental_K": "none (computational design)",
+      "phonon_fraction": "unknown (no experimental reference)",
+      "E_hull_meV_atom": 11.5,
+      "dynamic_stability": "PREDICTED STABLE (no imaginary modes in model)",
+      "synthetic_accessibility": "LOW (no demonstrated synthesis, requires precise MBE)",
+      "method": "Allen-Dynes + Eliashberg correction"
+    }
+  ],
+
+  "phonon_fraction_summary": {
+    "Hg_cuprates": {
+      "phonon_fraction_range": [0.11, 0.25],
+      "central_estimate": 0.22,
+      "dominant_pairing": "spin-fluctuation (d-wave, ~75-80%)",
+      "note": "Well-established from 30 years of cuprate literature. Phonon-mediated Eliashberg captures only the low-Tc tail."
+    },
+    "bilayer_nickelates": {
+      "phonon_fraction_range": [0.30, 0.70],
+      "central_estimate": 0.45,
+      "dominant_pairing": "spin-fluctuation (s+/- or d-wave, ~55%)",
+      "note": "Higher phonon fraction than cuprates due to stronger c-axis phonon coupling to dz2 sigma-bonding. Still insufficient alone."
+    },
+    "hybrid_superlattice": {
+      "phonon_fraction_range": "unknown",
+      "central_estimate": "N/A",
+      "dominant_pairing": "unknown (no experimental Tc to compare)",
+      "note": "Interface charge transfer effects not captured by isotropic Eliashberg."
+    }
+  },
+
+  "gap_update_149K": {
+    "best_phonon_only_Tc_K": 31.4,
+    "best_candidate": "Hg1223 (the already-known benchmark)",
+    "best_new_candidate_Tc_K": 26.3,
+    "best_new_candidate": "Sm3Ni2O7 on SLAO (-2% strain)",
+    "gap_to_300K_best_phonon_K": 269,
+    "gap_status": "UNCHANGED at 149 K",
+    "honest_assessment": "No candidate computed in Phases 28-30 exceeds the existing Hg1223 phonon-only benchmark of 31.4 K. The 149 K gap (300 K - 151 K experimental) remains unchanged. Within the phonon-only Eliashberg framework, no oxide material can approach 300 K because (a) phonon frequencies in oxides are limited to omega_log ~ 250-350 K, (b) lambda_phonon for layered oxides is limited to 0.7-1.5, and (c) these together give a Tc ceiling of ~30-40 K for the phonon channel alone."
+  },
+
+  "what_would_close_the_gap": {
+    "computation": {
+      "DMFT_plus_Eliashberg": {
+        "description": "Dynamical mean-field theory provides the correct correlated electronic structure. Combined with Eliashberg on the DMFT Green's function, this captures both phonon and spin-fluctuation pairing.",
+        "expected_improvement": "Could predict Tc ~ 80-150 K for Hg1223 (based on literature: Kitatani et al. PRL 2022 for cuprates, Worm et al. 2024 for nickelates)",
+        "computational_cost": "100-1000 node-hours per material (accessible with modern HPC)",
+        "status": "Established method, implemented in codes like w2dynamics + TRIQS, AbinitioDGA"
+      },
+      "RPA_spin_fluctuation": {
+        "description": "Random phase approximation for magnetic susceptibility, used as input to spin-fluctuation Eliashberg. Simpler than DMFT.",
+        "expected_improvement": "Could predict Tc ~ 50-100 K (less accurate than DMFT but captures spin-fluctuation channel)",
+        "computational_cost": "10-100 node-hours per material",
+        "status": "Widely used for cuprates and nickelates (Scalapino, RMP 2012)"
+      }
+    },
+    "experiment": {
+      "Hg1223_PQP_reproduction": {
+        "description": "Independent reproduction of the 151 K pressure-quench result",
+        "value": "Confirms the 151 K benchmark is real and reproducible",
+        "status": "Protocol ready (v7.0 Phase 24-26)"
+      },
+      "Sm3Ni2O7_SLAO_film": {
+        "description": "Grow Sm3Ni2O7 film on SLAO substrate, measure Tc",
+        "value": "Tests whether RE substitution + strain cooperatively enhance nickelate Tc",
+        "status": "No existing data"
+      },
+      "pressurized_nickelate_zero_resist": {
+        "description": "Establish zero-resistance Tc for La3Ni2O7 under pressure (currently ambiguous onset vs zero-resist)",
+        "value": "Resolves the onset/zero-resist ambiguity that dominates the phonon fraction uncertainty",
+        "status": "Several groups pursuing"
+      }
+    }
+  },
+
+  "requirements_check": {
+    "HG-04": {
+      "status": "SATISFIED",
+      "evidence": "Hg multilayer mechanism quantified: AF inner-plane competition, plane-resolved lambda, phonon fraction ~22%"
+    },
+    "NI-04": {
+      "status": "SATISFIED",
+      "evidence": "Nickelate mechanism quantified: dz2 orbital enhancement, strain-lambda correlation, phonon fraction ~45%"
+    },
+    "VALD-03": {
+      "status": "SATISFIED",
+      "evidence": "149 K gap explicitly stated as UNCHANGED. Best phonon-only Tc = 31.4 K (Hg1223). No new candidate exceeds this."
+    }
+  }
+}
