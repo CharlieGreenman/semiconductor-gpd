@@ -1,0 +1,106 @@
+{
+  "gate_id": "VALD-01",
+  "gate_pass": true,
+  "criteria_passed": 3,
+  "criteria_total": 4,
+  "threshold": 3,
+  "phase_37_status": "UNLOCKED",
+  "criterion_1_pseudogap": {
+    "pass": true,
+    "A_antinode_EF": 0.17820968424822292,
+    "A_node_EF": 0.29553712887944145,
+    "ratio_AN_over_N": 0.6030026918239436,
+    "estimated_gap_meV": 45.0,
+    "arpes_pseudogap_meV": [
+      30,
+      50
+    ],
+    "eps_antinode_eV": -0.7929355593449507,
+    "eps_node_eV": -0.5355713010176435,
+    "xi_antinode_eV": -0.2645394268379874,
+    "xi_node_eV": -0.17867747679158846
+  },
+  "criterion_2_hubbard_bands": {
+    "pass": true,
+    "Z_coherent": 0.33362033486873155,
+    "incoherent_fraction": 0.6663796651312685,
+    "LHB_peak_eV": -0.5049999999999999,
+    "LHB_peak_A": 0.24559665372855355,
+    "UHB_peak_eV": 1.9750000000000005,
+    "UHB_peak_A": 0.11768100805043806,
+    "coherent_weight": 0.30238610525137566,
+    "lhb_weight": 0.3398754179140007,
+    "uhb_weight": 0.2442841985277141,
+    "total_spectral_weight": 0.9172041258664385
+  },
+  "criterion_3_d_wave": {
+    "pass": true,
+    "V_d_wave_eV": -0.8001697367843039,
+    "V_s_wave_eV": 12.860617398742251,
+    "V_p_wave_eV": -1.718926761644563,
+    "leading_channel": "d-wave",
+    "n_sign_changes": 4,
+    "gap_magnitude_meV": 43.58434068636549,
+    "VALD_03_pass": true
+  },
+  "criterion_4_Z_and_FS": {
+    "pass": false,
+    "Z_dmft": 0.33362033486873155,
+    "Z_arpes_center": 0.3,
+    "Z_arpes_range": [
+      0.25,
+      0.35
+    ],
+    "Z_deviation_pct": 11.206778289577187,
+    "Z_within_range": true,
+    "Z_within_30pct": true,
+    "FS_hole_like": true,
+    "antinode_near_FS": false,
+    "eps_pipi_eV": 0.5796738184006878,
+    "eps_00_eV": -1.1360879037813603,
+    "eps_pi0_eV": -0.7929355593449507,
+    "hole_area_fraction": 0.16204833984375,
+    "luttinger_expected": 0.42,
+    "luttinger_deviation_pct": 61.41706194196428,
+    "vF_nodal_eVA": 2.60108784891019,
+    "vF_arpes_eVA": 2.0,
+    "vF_deviation_pct": 30.054392445509492
+  },
+  "arpes_reference_values": {
+    "Z_center": 0.3,
+    "Z_range": [
+      0.25,
+      0.35
+    ],
+    "pseudogap_meV": [
+      30,
+      50
+    ],
+    "nodal_vF_eVA": 2.0,
+    "nodal_vF_tolerance": 0.3,
+    "LHB_energy_eV": [
+      -2.0,
+      -1.0
+    ],
+    "UHB_energy_eV": [
+      1.5,
+      3.5
+    ]
+  },
+  "dmft_input": {
+    "Z": 0.33362033486873155,
+    "m_star_over_m": 2.997419208254996,
+    "U_d_eV": 3.5,
+    "t_ren_eV": 0.214470215272756,
+    "t_prime_ren_eV": -0.0643410645818268,
+    "mu_eff_eV": 0.5355713010176435,
+    "gamma_qp_eV": 0.16086373958403044
+  },
+  "room_temperature_gap_K": 149,
+  "note": "149 K gap to room temperature remains. Gate passage enables Tc prediction, not room-temperature claim.",
+  "convention_assertions": {
+    "units": "eV for energies, 1/eV for spectral functions, dimensionless for Z",
+    "fourier": "QE plane-wave convention",
+    "natural_units": false
+  }
+}
