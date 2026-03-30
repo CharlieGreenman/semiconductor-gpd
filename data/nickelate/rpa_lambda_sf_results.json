@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "description": "Spin-fluctuation lambda_sf for La3Ni2O7",
+    "method": "RPA V_sf with FS-weighted channel projections",
+    "pairing_channels": [
+      "s+/-",
+      "d-wave"
+    ],
+    "U_mapping": "U_eff from Stoner target; U_bare ~ U_eff/Z^2, Z~0.4",
+    "ASSERT_CONVENTION": "natural_units=NOT_used, strain_sign=negative_compressive"
+  },
+  "results": [
+    {
+      "strain_pct": 0.0,
+      "label": "Bulk (0%)",
+      "stoner_parameter": 0.6,
+      "U_eff_eV": 0.08859661013557381,
+      "U_bare_estimate_eV": 0.5537288133473361,
+      "lambda_spm": -0.013630642704840101,
+      "lambda_dw": -0.001964097522392665,
+      "leading_channel": "d-wave",
+      "leading_lambda_sf": -0.001964097522392665,
+      "VALD03_sign_check": "False"
+    },
+    {
+      "strain_pct": 0.0,
+      "label": "Bulk (0%)",
+      "stoner_parameter": 0.75,
+      "U_eff_eV": 0.11074576266946727,
+      "U_bare_estimate_eV": 0.6921610166841703,
+      "lambda_spm": -0.03262950958095887,
+      "lambda_dw": -0.003987872804029419,
+      "leading_channel": "d-wave",
+      "leading_lambda_sf": -0.003987872804029419,
+      "VALD03_sign_check": "False"
+    },
+    {
+      "strain_pct": 0.0,
+      "label": "Bulk (0%)",
+      "stoner_parameter": 0.85,
+      "U_eff_eV": 0.12551186435872957,
+      "U_bare_estimate_eV": 0.7844491522420597,
+      "lambda_spm": -0.05284519005008317,
+      "lambda_dw": -0.003770162687458277,
+      "leading_channel": "d-wave",
+      "leading_lambda_sf": -0.003770162687458277,
+      "VALD03_sign_check": "False"
+    },
+    {
+      "strain_pct": 0.0,
+      "label": "Bulk (0%)",
+      "stoner_parameter": 0.9,
+      "U_eff_eV": 0.13289491520336072,
+      "U_bare_estimate_eV": 0.8305932200210043,
+      "lambda_spm": -0.06252444479086569,
+      "lambda_dw": -5.2558791756138896e-05,
+      "leading_channel": "d-wave",
+      "leading_lambda_sf": -5.2558791756138896e-05,
+      "VALD03_sign_check": "False"
+    },
+    {
+      "strain_pct": 0.0,
+      "label": "Bulk (0%)",
+      "stoner_parameter": 0.95,
+      "U_eff_eV": 0.14027796604799186,
+      "U_bare_estimate_eV": 0.876737287799949,
+      "lambda_spm": -0.05423715141023649,
+      "lambda_dw": 0.016587645554832376,
+      "leading_channel": "d-wave",
+      "leading_lambda_sf": 0.016587645554832376,
+      "VALD03_sign_check": "True"
+    },
+    {
+      "strain_pct": -2.01,
+      "label": "SLAO (-2%)",
+      "stoner_parameter": 0.6,
+      "U_eff_eV": 0.06876983939331263,
+      "U_bare_estimate_eV": 0.42981149620820386,
+      "lambda_spm": -0.005354140728852928,
+      "lambda_dw": 0.002341910543010397,
+      "leading_channel": "d-wave",
+      "leading_lambda_sf": 0.002341910543010397,
+      "VALD03_sign_check": "True"
+    },
+    {
+      "strain_pct": -2.01,
+      "label": "SLAO (-2%)",
+      "stoner_parameter": 0.75,
+      "U_eff_eV": 0.08596229924164078,
+      "U_bare_estimate_eV": 0.5372643702602548,
+      "lambda_spm": -0.012653319157334293,
+      "lambda_dw": 0.00609565716541219,
+      "leading_channel": "d-wave",
+      "leading_lambda_sf": 0.00609565716541219,
+      "VALD03_sign_check": "True"
+    },
+    {
+      "strain_pct": -2.01,
+      "label": "SLAO (-2%)",
+      "stoner_parameter": 0.85,
+      "U_eff_eV": 0.09742393914052622,
+      "U_bare_estimate_eV": 0.6088996196282888,
+      "lambda_spm": -0.019113671499732098,
+      "lambda_dw": 0.01188031328681334,
+      "leading_channel": "d-wave",
+      "leading_lambda_sf": 0.01188031328681334,
+      "VALD03_sign_check": "True"
+    },
+    {
+      "strain_pct": -2.01,
+      "label": "SLAO (-2%)",
+      "stoner_parameter": 0.9,
+      "U_eff_eV": 0.10315475908996895,
+      "U_bare_estimate_eV": 0.6447172443123058,
+      "lambda_spm": -0.02168005423041661,
+      "lambda_dw": 0.01745953540641028,
+      "leading_channel": "d-wave",
+      "leading_lambda_sf": 0.01745953540641028,
+      "VALD03_sign_check": "True"
+    },
+    {
+      "strain_pct": -2.01,
+      "label": "SLAO (-2%)",
+      "stoner_parameter": 0.95,
+      "U_eff_eV": 0.10888557903941166,
+      "U_bare_estimate_eV": 0.6805348689963228,
+      "lambda_spm": -0.02018020954880045,
+      "lambda_dw": 0.028324501915539327,
+      "leading_channel": "d-wave",
+      "leading_lambda_sf": 0.028324501915539327,
+      "VALD03_sign_check": "True"
+    }
+  ],
+  "phonon_lambda_v8": {
+    "0pct": {
+      "lambda_ph": 0.58,
+      "Tc_phonon_K": 7.5,
+      "source": "v8.0 Phase 29"
+    },
+    "-2pct": {
+      "lambda_ph": 0.92,
+      "Tc_phonon_K": 21.9,
+      "source": "v8.0 Phase 29"
+    }
+  },
+  "literature_comparison": {
+    "Sakakibara_PRL_2024": {
+      "method": "multi-orbital RPA",
+      "lambda_sf_range": "0.5-1.5",
+      "pairing": "s+/-",
+      "note": "bilayer, U/t~3-4"
+    },
+    "Yang_PRB_2023": {
+      "method": "two-orbital RPA",
+      "chi_enhancement": "3-10x",
+      "pairing": "s+/- dominant"
+    },
+    "Qu_PRL_2024": {
+      "method": "bilayer two-orbital",
+      "lambda_sf_range": "0.8-2.0",
+      "pairing": "s+/- for sigma-bonding channel"
+    }
+  }
+}

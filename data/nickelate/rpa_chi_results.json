@@ -1,0 +1,322 @@
+{
+  "metadata": {
+    "description": "RPA spin susceptibility for La3Ni2O7",
+    "method": "3-band Lindhard + RPA, FS-weighted projections",
+    "q_mesh": "48x48",
+    "k_mesh": "128x128",
+    "T_K": 50.0,
+    "delta_eV": 0.01,
+    "stoner_targets": [
+      0.6,
+      0.75,
+      0.85,
+      0.9,
+      0.95
+    ],
+    "chi0_rescaling": "chi_0(q=0) rescaled to match DFT N(E_F)",
+    "references": [
+      "Sun et al. PRL 131, 236002 (2023)",
+      "Sakakibara et al. PRL 133, 076002 (2024)",
+      "Yang et al. PRB 108, L140505 (2023)",
+      "Qu et al. PRL 132, 036502 (2024)"
+    ],
+    "ASSERT_CONVENTION": "natural_units=NOT_used, strain_sign=negative_compressive"
+  },
+  "strain_results": [
+    {
+      "strain_pct": 0.0,
+      "label": "Bulk (0%)",
+      "tight_binding_params": {
+        "t1": 0.5,
+        "t1p": -0.12,
+        "t2": 0.38,
+        "t2p": -0.1,
+        "mu_gamma": -1.65,
+        "mu_beta": -1.45,
+        "mu_alpha": 0.72,
+        "sigma_split": 0.8,
+        "N_EF_target": 4.2,
+        "dz2_weight": 0.28,
+        "dx2y2_weight": 0.3
+      },
+      "chi0_summary": {
+        "chi0_max": 6.7722681384971475,
+        "chi0_peak_q_pi": [
+          -0.9583333333333334,
+          -0.9166666666666666
+        ],
+        "chi0_at_q0": 4.2,
+        "nesting_enhancement": 1.6124447948802731,
+        "N_EF_per_spin": 2.1
+      },
+      "rpa_results": {
+        "alpha=0.60": {
+          "stoner_parameter": 0.6,
+          "U_eff_eV": 0.08859661013557381,
+          "U_bare_estimate_eV": 0.5537288133473361,
+          "Z_estimate": 0.4,
+          "stoner_safe": true,
+          "chi_rpa_max": 16.930670346242866,
+          "rpa_enhancement_factor": 2.4999999999999996,
+          "lambda_spm": -0.013630642704840101,
+          "lambda_dw": -0.001964097522392665,
+          "V_sf_max_eV": 0.15504406773725413,
+          "V_sf_at_pipi_eV": 0.1515014246560804,
+          "V_sf_at_pi0_eV": 0.0984836792289788,
+          "leading_channel": "d-wave",
+          "leading_lambda": -0.001964097522392665,
+          "VALD03_sign_check": "False"
+        },
+        "alpha=0.75": {
+          "stoner_parameter": 0.75,
+          "U_eff_eV": 0.11074576266946727,
+          "U_bare_estimate_eV": 0.6921610166841703,
+          "Z_estimate": 0.4,
+          "stoner_safe": true,
+          "chi_rpa_max": 27.08907255398859,
+          "rpa_enhancement_factor": 4.0,
+          "lambda_spm": -0.03262950958095887,
+          "lambda_dw": -0.003987872804029419,
+          "V_sf_max_eV": 0.4429830506778691,
+          "V_sf_at_pipi_eV": 0.42896198484642833,
+          "V_sf_at_pi0_eV": 0.24965401378600452,
+          "leading_channel": "d-wave",
+          "leading_lambda": -0.003987872804029419,
+          "VALD03_sign_check": "False"
+        },
+        "alpha=0.85": {
+          "stoner_parameter": 0.85,
+          "U_eff_eV": 0.12551186435872957,
+          "U_bare_estimate_eV": 0.7844491522420597,
+          "Z_estimate": 0.4,
+          "stoner_safe": true,
+          "chi_rpa_max": 45.148454256647646,
+          "rpa_enhancement_factor": 6.666666666666666,
+          "lambda_spm": -0.05284519005008317,
+          "lambda_dw": -0.003770162687458277,
+          "V_sf_max_eV": 1.0040949148698366,
+          "V_sf_at_pipi_eV": 0.9549901664640977,
+          "V_sf_at_pi0_eV": 0.45605215775226293,
+          "leading_channel": "d-wave",
+          "leading_lambda": -0.003770162687458277,
+          "VALD03_sign_check": "False"
+        },
+        "alpha=0.90": {
+          "stoner_parameter": 0.9,
+          "U_eff_eV": 0.13289491520336072,
+          "U_bare_estimate_eV": 0.8305932200210043,
+          "Z_estimate": 0.4,
+          "stoner_safe": true,
+          "chi_rpa_max": 67.72268138497141,
+          "rpa_enhancement_factor": 9.999999999999991,
+          "lambda_spm": -0.06252444479086569,
+          "lambda_dw": -5.2558791756138896e-05,
+          "V_sf_max_eV": 1.7276338976436878,
+          "V_sf_at_pipi_eV": 1.6065541099172744,
+          "V_sf_at_pi0_eV": 0.6277155680175232,
+          "leading_channel": "d-wave",
+          "leading_lambda": -5.2558791756138896e-05,
+          "VALD03_sign_check": "False"
+        },
+        "alpha=0.95": {
+          "stoner_parameter": 0.95,
+          "U_eff_eV": 0.14027796604799186,
+          "U_bare_estimate_eV": 0.876737287799949,
+          "Z_estimate": 0.4,
+          "stoner_safe": true,
+          "chi_rpa_max": 135.44536276994282,
+          "rpa_enhancement_factor": 19.999999999999982,
+          "lambda_spm": -0.05423715141023649,
+          "lambda_dw": 0.016587645554832376,
+          "V_sf_max_eV": 3.9277830493437684,
+          "V_sf_at_pipi_eV": 3.422272008873603,
+          "V_sf_at_pi0_eV": 0.888814008120257,
+          "leading_channel": "d-wave",
+          "leading_lambda": 0.016587645554832376,
+          "VALD03_sign_check": "True"
+        }
+      }
+    },
+    {
+      "strain_pct": -2.01,
+      "label": "SLAO (-2%)",
+      "tight_binding_params": {
+        "t1": 0.5289252355124539,
+        "t1p": -0.13428571428571429,
+        "t2": 0.40198317898946495,
+        "t2p": -0.11190476190476191,
+        "mu_gamma": -1.7240342753831488,
+        "mu_beta": -1.500224751573625,
+        "mu_alpha": 0.7126946207197645,
+        "sigma_split": 1.05,
+        "N_EF_target": 4.7,
+        "dz2_weight": 0.35,
+        "dx2y2_weight": 0.27
+      },
+      "chi0_summary": {
+        "chi0_max": 8.72475499860402,
+        "chi0_peak_q_pi": [
+          -1.0,
+          -1.0
+        ],
+        "chi0_at_q0": 4.7,
+        "nesting_enhancement": 1.8563308507668126,
+        "N_EF_per_spin": 2.35
+      },
+      "rpa_results": {
+        "alpha=0.60": {
+          "stoner_parameter": 0.6,
+          "U_eff_eV": 0.06876983939331263,
+          "U_bare_estimate_eV": 0.42981149620820386,
+          "Z_estimate": 0.4,
+          "stoner_safe": true,
+          "chi_rpa_max": 21.81188749651005,
+          "rpa_enhancement_factor": 2.5,
+          "lambda_spm": -0.005354140728852928,
+          "lambda_dw": 0.002341910543010397,
+          "V_sf_max_eV": 0.12034721893829713,
+          "V_sf_at_pipi_eV": 0.10336115701003824,
+          "V_sf_at_pi0_eV": 0.06311023299925238,
+          "leading_channel": "d-wave",
+          "leading_lambda": 0.002341910543010397,
+          "VALD03_sign_check": "True"
+        },
+        "alpha=0.75": {
+          "stoner_parameter": 0.75,
+          "U_eff_eV": 0.08596229924164078,
+          "U_bare_estimate_eV": 0.5372643702602548,
+          "Z_estimate": 0.4,
+          "stoner_safe": true,
+          "chi_rpa_max": 34.89901999441608,
+          "rpa_enhancement_factor": 4.0,
+          "lambda_spm": -0.012653319157334293,
+          "lambda_dw": 0.00609565716541219,
+          "V_sf_max_eV": 0.34384919696656313,
+          "V_sf_at_pipi_eV": 0.2801036350783493,
+          "V_sf_at_pi0_eV": 0.15648582015967769,
+          "leading_channel": "d-wave",
+          "leading_lambda": 0.00609565716541219,
+          "VALD03_sign_check": "True"
+        },
+        "alpha=0.85": {
+          "stoner_parameter": 0.85,
+          "U_eff_eV": 0.09742393914052622,
+          "U_bare_estimate_eV": 0.6088996196282888,
+          "Z_estimate": 0.4,
+          "stoner_safe": true,
+          "chi_rpa_max": 58.16503332402679,
+          "rpa_enhancement_factor": 6.666666666666665,
+          "lambda_spm": -0.019113671499732098,
+          "lambda_dw": 0.01188031328681334,
+          "V_sf_max_eV": 0.7793915131242095,
+          "V_sf_at_pipi_eV": 0.5744666185863947,
+          "V_sf_at_pi0_eV": 0.27406821133393955,
+          "leading_channel": "d-wave",
+          "leading_lambda": 0.01188031328681334,
+          "VALD03_sign_check": "True"
+        },
+        "alpha=0.90": {
+          "stoner_parameter": 0.9,
+          "U_eff_eV": 0.10315475908996895,
+          "U_bare_estimate_eV": 0.6447172443123058,
+          "Z_estimate": 0.4,
+          "stoner_safe": true,
+          "chi_rpa_max": 87.24754998604021,
+          "rpa_enhancement_factor": 10.000000000000002,
+          "lambda_spm": -0.02168005423041661,
+          "lambda_dw": 0.01745953540641028,
+          "V_sf_max_eV": 1.3410118681695966,
+          "V_sf_at_pipi_eV": 0.8810075919540968,
+          "V_sf_at_pi0_eV": 0.36433186413093693,
+          "leading_channel": "d-wave",
+          "leading_lambda": 0.01745953540641028,
+          "VALD03_sign_check": "True"
+        },
+        "alpha=0.95": {
+          "stoner_parameter": 0.95,
+          "U_eff_eV": 0.10888557903941166,
+          "U_bare_estimate_eV": 0.6805348689963228,
+          "Z_estimate": 0.4,
+          "stoner_safe": true,
+          "chi_rpa_max": 174.49509997208025,
+          "rpa_enhancement_factor": 19.999999999999982,
+          "lambda_spm": -0.02018020954880045,
+          "lambda_dw": 0.028324501915539327,
+          "V_sf_max_eV": 3.048796213103524,
+          "V_sf_at_pipi_eV": 1.5077099544221169,
+          "V_sf_at_pi0_eV": 0.4903098955419718,
+          "leading_channel": "d-wave",
+          "leading_lambda": 0.028324501915539327,
+          "VALD03_sign_check": "True"
+        }
+      }
+    }
+  ],
+  "strain_comparison": {
+    "alpha=0.60": {
+      "delta_lambda_spm": 0.008276501975987173,
+      "delta_lambda_dw": 0.0043060080654030615,
+      "leading_0pct": {
+        "ch": "d-wave",
+        "lam": -0.001964097522392665
+      },
+      "leading_m2pct": {
+        "ch": "d-wave",
+        "lam": 0.002341910543010397
+      },
+      "strain_enhances_leading": true
+    },
+    "alpha=0.75": {
+      "delta_lambda_spm": 0.019976190423624578,
+      "delta_lambda_dw": 0.01008352996944161,
+      "leading_0pct": {
+        "ch": "d-wave",
+        "lam": -0.003987872804029419
+      },
+      "leading_m2pct": {
+        "ch": "d-wave",
+        "lam": 0.00609565716541219
+      },
+      "strain_enhances_leading": true
+    },
+    "alpha=0.85": {
+      "delta_lambda_spm": 0.03373151855035107,
+      "delta_lambda_dw": 0.01565047597427162,
+      "leading_0pct": {
+        "ch": "d-wave",
+        "lam": -0.003770162687458277
+      },
+      "leading_m2pct": {
+        "ch": "d-wave",
+        "lam": 0.01188031328681334
+      },
+      "strain_enhances_leading": true
+    },
+    "alpha=0.90": {
+      "delta_lambda_spm": 0.040844390560449084,
+      "delta_lambda_dw": 0.017512094198166416,
+      "leading_0pct": {
+        "ch": "d-wave",
+        "lam": -5.2558791756138896e-05
+      },
+      "leading_m2pct": {
+        "ch": "d-wave",
+        "lam": 0.01745953540641028
+      },
+      "strain_enhances_leading": true
+    },
+    "alpha=0.95": {
+      "delta_lambda_spm": 0.03405694186143604,
+      "delta_lambda_dw": 0.01173685636070695,
+      "leading_0pct": {
+        "ch": "d-wave",
+        "lam": 0.016587645554832376
+      },
+      "leading_m2pct": {
+        "ch": "d-wave",
+        "lam": 0.028324501915539327
+      },
+      "strain_enhances_leading": true
+    }
+  }
+}
