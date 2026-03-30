@@ -1,0 +1,69 @@
+{
+  "phase": 75,
+  "track": "A",
+  "verdict": "NEGATIVE -- orbital selectivity real but lambda_ph too low for 300 K",
+  "best_Tc_K": 124.94856462895144,
+  "best_candidate": "La3Ni2O7",
+  "gap_to_300K": 175.05143537104857,
+  "backtracking_trigger_met": true,
+  "backtracking_reason": "lambda_ph(itinerant) ~ 0.3-0.5 < 1.5 threshold",
+  "key_limitation": "Spatial separation that decouples channels also weakens phonon coupling",
+  "candidates": [
+    {
+      "candidate": "NdNiO2-H0.5",
+      "lambda_sf": 1.5,
+      "lambda_ph_total": 0.398,
+      "lambda_ph_H": 0.098,
+      "lambda_total": 1.898,
+      "omega_log_eff_K": 413.0,
+      "omega_sf_K": 348.0,
+      "omega_ph_eff_K": 789.0,
+      "Tc_dwave_only_K": 76.0,
+      "Tc_two_orbital_K": 90.0,
+      "Tc_optimistic_K": 118.0,
+      "gap_to_300K": 210.0,
+      "E_hull_estimate_meV": 95.0,
+      "lambda_plus": 1.501,
+      "sf_fraction": 0.79
+    },
+    {
+      "candidate": "La3Ni2O7-H0.5",
+      "lambda_sf": 1.8,
+      "lambda_ph_total": 0.441,
+      "lambda_ph_H": 0.091,
+      "lambda_total": 2.241,
+      "omega_log_eff_K": 465.0,
+      "omega_sf_K": 406.0,
+      "omega_ph_eff_K": 804.0,
+      "Tc_dwave_only_K": 109.0,
+      "Tc_two_orbital_K": 125.0,
+      "Tc_optimistic_K": 161.0,
+      "gap_to_300K": 175.0,
+      "E_hull_estimate_meV": 95.0,
+      "lambda_plus": 1.801,
+      "sf_fraction": 0.8
+    },
+    {
+      "candidate": "La4Ni3O10-H0.5",
+      "lambda_sf": 1.65,
+      "lambda_ph_total": 0.36,
+      "lambda_ph_H": 0.04,
+      "lambda_total": 2.01,
+      "omega_log_eff_K": 420.0,
+      "omega_sf_K": 371.0,
+      "omega_ph_eff_K": 733.0,
+      "Tc_dwave_only_K": 90.0,
+      "Tc_two_orbital_K": 102.0,
+      "Tc_optimistic_K": 128.0,
+      "gap_to_300K": 198.0,
+      "E_hull_estimate_meV": 95.0,
+      "lambda_plus": 1.651,
+      "sf_fraction": 0.82
+    }
+  ],
+  "anchors_checked": {
+    "v13.0_lambda_ph_target": "3.0 -- NOT MET (best: 0.53)",
+    "v12.0_omega_log_eff_baseline": "483 K -- NOT EXCEEDED (best: ~410 K)",
+    "v11.0_cuprate_Tc": "146 K -- comparable but not exceeded"
+  }
+}
