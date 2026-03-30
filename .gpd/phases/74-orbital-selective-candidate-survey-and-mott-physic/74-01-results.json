@@ -1,0 +1,74 @@
+{
+  "phase": 74,
+  "track": "A",
+  "top_candidates": [
+    {
+      "compound": "NdNiO2",
+      "family": "infinite-layer nickelate",
+      "OS_score": 8.3,
+      "Z_correlated": 0.25,
+      "Z_itinerant": 0.6,
+      "J_corr_meV": 65.0,
+      "d_wave_plausible": true,
+      "phonon_coupling": "moderate",
+      "Tc_K": 15.0,
+      "pairing_symmetry": "d-wave (predicted; experimental evidence growing)"
+    },
+    {
+      "compound": "LaNiO2",
+      "family": "infinite-layer nickelate",
+      "OS_score": 8.2,
+      "Z_correlated": 0.28,
+      "Z_itinerant": 0.65,
+      "J_corr_meV": 60.0,
+      "d_wave_plausible": true,
+      "phonon_coupling": "moderate",
+      "Tc_K": 9.0,
+      "pairing_symmetry": "d-wave (predicted)"
+    },
+    {
+      "compound": "La4Ni3O10",
+      "family": "trilayer nickelate (RP n=3)",
+      "OS_score": 7.68,
+      "Z_correlated": 0.28,
+      "Z_itinerant": 0.52,
+      "J_corr_meV": 75.0,
+      "d_wave_plausible": true,
+      "phonon_coupling": "moderate",
+      "Tc_K": 30.0,
+      "pairing_symmetry": "unknown (predicted d-wave or s+/-)"
+    },
+    {
+      "compound": "La3Ni2O7",
+      "family": "bilayer nickelate (RP n=2)",
+      "OS_score": 7.22,
+      "Z_correlated": 0.3,
+      "Z_itinerant": 0.5,
+      "J_corr_meV": 70.0,
+      "d_wave_plausible": true,
+      "phonon_coupling": "moderate",
+      "Tc_K": 80.0,
+      "pairing_symmetry": "s+/- or d-wave (under debate)"
+    },
+    {
+      "compound": "CeCoIn5",
+      "family": "heavy fermion (115)",
+      "OS_score": 6.6,
+      "Z_correlated": 0.01,
+      "Z_itinerant": 0.8,
+      "J_corr_meV": 5.0,
+      "d_wave_plausible": true,
+      "phonon_coupling": "weak",
+      "Tc_K": 2.3,
+      "pairing_symmetry": "d-wave (dx2-y2)"
+    }
+  ],
+  "all_candidates_count": 12,
+  "d_wave_viable_count": 5,
+  "assessment": {
+    "best_family": "nickelates (infinite-layer and Ruddlesden-Popper)",
+    "key_mechanism": "dx2-y2 (correlated, d-wave) / dz2 (itinerant, phonon) spatial separation",
+    "risk": "lambda_ph(dz2) may be too low even with H intercalation",
+    "backtracking_trigger": "lambda_ph(itinerant) < 1.5 for all candidates"
+  }
+}
