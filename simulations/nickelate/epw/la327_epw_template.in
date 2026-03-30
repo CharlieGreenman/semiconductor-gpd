@@ -1,0 +1,59 @@
+! ASSERT_CONVENTION: units=SI_derived, functional=PBEsol
+! N_EF_convention: per spin per cell for EPW; total (both spins) for reporting
+
+! ============================================================================
+! La3Ni2O7 -- EPW electron-phonon coupling template
+! Phase 29-03, Task 1
+!
+! Template for all 3 strain points (substitute prefix and structure).
+! Wannier projections: Ni-d + O-p for accurate e-ph interpolation.
+! ============================================================================
+
+&inputepw
+   prefix       = 'la327_STRAIN'         ! Replace: la327_0pct, la327_m1pct, la327_m2pct
+   outdir       = './tmp/'
+   dvscf_dir    = './save/'
+
+   ! Wannier setup
+   num_iter     = 500
+   dis_win_min  = -10.0
+   dis_win_max  =   5.0
+   dis_froz_min =  -2.0
+   dis_froz_max =   2.0
+   proj(1)      = 'Ni:d'
+   proj(2)      = 'O:p'
+   ! Total Wannier functions: 2 Ni * 5d + 7 O * 3p = 10 + 21 = 31 WFs
+   ! If disentanglement fails, add La:d (proj(3) = 'La:d') for 31+6*5=61 WFs
+
+   ! Electron-phonon
+   ephwrite     = .true.
+   ep_coupling  = .true.
+   elph         = .true.
+   wmin_specfun = 0.0
+   wmax_specfun = 1.0     ! eV
+   nw_specfun   = 500
+
+   ! Fine grids (start coarse, converge)
+   nkf1         = 20
+   nkf2         = 20
+   nkf3         = 5
+   nqf1         = 20
+   nqf2         = 20
+   nqf3         = 5
+   ! Production: 30x30x10 for converged lambda
+
+   ! Fermi surface and broadening
+   fsthick      = 0.4     ! eV (Fermi surface thickness)
+   degaussw     = 0.05    ! eV (Gaussian broadening for self-energy)
+   degaussq     = 0.05    ! eV
+
+   ! Output
+   iverbosity   = 2
+   a2f          = .true.  ! Compute alpha2F spectral function
+/
+
+! Notes on convergence:
+! - lambda converges slowly with fine grid density
+! - Start at 20x20x5, then 30x30x10, verify lambda changes < 5%
+! - For production: may need 40x40x15 for layered system
+! - fsthick = 0.4 eV is standard; test sensitivity at 0.3 and 0.5 eV

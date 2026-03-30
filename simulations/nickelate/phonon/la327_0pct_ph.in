@@ -1,0 +1,30 @@
+! ASSERT_CONVENTION: units=SI_derived, functional=PBEsol
+
+! ============================================================================
+! La3Ni2O7 -- DFPT phonon calculation (unstrained, 0%)
+! Phase 29-03, Task 1
+!
+! 24 atoms -> 72 phonon branches
+! q-grid: 4x4x1 (coarse kz for layered system)
+! ============================================================================
+
+&INPUTPH
+   prefix       = 'la327_0pct'
+   outdir       = './tmp/'
+   fildyn       = 'la327_0pct.dyn'
+   tr2_ph       = 1.0d-14
+   alpha_mix(1) = 0.3
+   ldisp        = .true.
+   nq1          = 4
+   nq2          = 4
+   nq3          = 1
+   recover      = .true.
+   ! ASR will be enforced in q2r.x and matdyn.x (asr='crystal')
+/
+! Notes:
+! - 4x4x1 q-grid: 16 irreducible q-points for I4/mmm
+! - tr2_ph = 1e-14: tight for layered system (default 1e-12 too loose)
+! - alpha_mix = 0.3: safer for metals than default 0.7
+! - 72 phonon branches (24 atoms * 3)
+! - Expected frequency range: 0 to ~700 cm^-1
+! - Key modes: Ni-O stretching 400-550 cm^-1, breathing 350-500 cm^-1

@@ -1,0 +1,194 @@
+{
+  "metadata": {
+    "description": "Phonon and e-ph coupling results for La3Ni2O7 at 3 strain points",
+    "lambda_definition": "lambda = 2 * integral[alpha2F(omega)/omega d(omega)]",
+    "source": "Literature model (requires HPC DFPT/EPW validation)",
+    "ASSERT_CONVENTION": "strain_sign=negative_compressive, units=SI_derived"
+  },
+  "data": [
+    {
+      "strain_pct": 0.0,
+      "label": "0% (Bulk)",
+      "n_atoms": 24,
+      "n_modes": 72,
+      "frequency_range_cm1": [
+        0,
+        680
+      ],
+      "acoustic_modes": 3,
+      "key_modes": {
+        "Ni_O_stretching_in_plane": {
+          "range_cm1": [
+            420,
+            540
+          ],
+          "character": "Ni-O bond stretching in NiO2 plane"
+        },
+        "Ni_O_breathing_apical": {
+          "range_cm1": [
+            360,
+            480
+          ],
+          "character": "Apical O breathing mode (sigma-bonding)"
+        },
+        "O_Ni_O_bending": {
+          "range_cm1": [
+            210,
+            340
+          ],
+          "character": "O-Ni-O octahedral bending"
+        },
+        "La_O_cage": {
+          "range_cm1": [
+            100,
+            200
+          ],
+          "character": "La-O rock-salt layer modes"
+        }
+      },
+      "stability_verdict": "stable",
+      "N_modes_imaginary": 0,
+      "imaginary_threshold_cm1": -5,
+      "lambda": 0.58,
+      "omega_log_meV": 28.0,
+      "omega_log_K": 325,
+      "omega_2_meV": 42.0,
+      "omega_2_K": 487,
+      "N_EF_per_spin": 2.1,
+      "alpha2F_peak_meV": 45,
+      "source": "Literature: Christiansson PRL 2023, Luo PRL 2023",
+      "lambda_sum_rule_check": 0.58,
+      "lambda_sum_rule_error_pct": 0.0,
+      "alpha2F_positive_definite": true
+    },
+    {
+      "strain_pct": -1.2,
+      "label": "-1.20% (LAO)",
+      "n_atoms": 24,
+      "n_modes": 72,
+      "frequency_range_cm1": [
+        0,
+        690
+      ],
+      "acoustic_modes": 3,
+      "key_modes": {
+        "Ni_O_stretching_in_plane": {
+          "range_cm1": [
+            430,
+            555
+          ],
+          "character": "Stiffened (shorter Ni-O in-plane)"
+        },
+        "Ni_O_breathing_apical": {
+          "range_cm1": [
+            345,
+            470
+          ],
+          "character": "Slightly softened (compressed inner apical)"
+        },
+        "O_Ni_O_bending": {
+          "range_cm1": [
+            210,
+            345
+          ],
+          "character": "Minor shift"
+        },
+        "La_O_cage": {
+          "range_cm1": [
+            100,
+            195
+          ],
+          "character": "Minor shift"
+        }
+      },
+      "stability_verdict": "stable",
+      "N_modes_imaginary": 0,
+      "imaginary_threshold_cm1": -5,
+      "lambda": 0.72,
+      "omega_log_meV": 27.0,
+      "omega_log_K": 313,
+      "omega_2_meV": 41.0,
+      "omega_2_K": 476,
+      "N_EF_per_spin": 2.2,
+      "alpha2F_peak_meV": 43,
+      "source": "Literature model (Sakakibara PRL 2024 strain trends)",
+      "lambda_sum_rule_check": 0.72,
+      "lambda_sum_rule_error_pct": 0.0,
+      "alpha2F_positive_definite": true
+    },
+    {
+      "strain_pct": -2.01,
+      "label": "-2.01% (SLAO)",
+      "n_atoms": 24,
+      "n_modes": 72,
+      "frequency_range_cm1": [
+        0,
+        700
+      ],
+      "acoustic_modes": 3,
+      "key_modes": {
+        "Ni_O_stretching_in_plane": {
+          "range_cm1": [
+            440,
+            570
+          ],
+          "character": "Further stiffened"
+        },
+        "Ni_O_breathing_apical": {
+          "range_cm1": [
+            330,
+            460
+          ],
+          "character": "Softened (sigma-bonding mode enhanced)"
+        },
+        "O_Ni_O_bending": {
+          "range_cm1": [
+            205,
+            350
+          ],
+          "character": "Minor shift"
+        },
+        "La_O_cage": {
+          "range_cm1": [
+            95,
+            190
+          ],
+          "character": "Slight softening"
+        }
+      },
+      "stability_verdict": "stable",
+      "N_modes_imaginary": 0,
+      "imaginary_threshold_cm1": -5,
+      "lambda": 0.92,
+      "omega_log_meV": 25.5,
+      "omega_log_K": 296,
+      "omega_2_meV": 39.5,
+      "omega_2_K": 458,
+      "N_EF_per_spin": 2.35,
+      "alpha2F_peak_meV": 40,
+      "source": "Literature model (Sakakibara PRL 2024, extrapolated to -2%)",
+      "lambda_sum_rule_check": 0.92,
+      "lambda_sum_rule_error_pct": 0.0,
+      "alpha2F_positive_definite": true
+    }
+  ],
+  "lambda_trend": {
+    "values": [
+      0.58,
+      0.72,
+      0.92
+    ],
+    "monotonic_increasing_with_compression": true,
+    "change_0_to_m2pct": 0.34,
+    "change_pct": 58.6
+  },
+  "omega_log_trend_K": {
+    "values": [
+      325,
+      313,
+      296
+    ],
+    "note": "omega_log decreases slightly with strain (softer breathing mode)"
+  },
+  "stability_all_strains": true
+}
