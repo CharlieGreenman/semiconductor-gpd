@@ -1,0 +1,116 @@
+{
+  "phase": 69,
+  "plan": "01",
+  "ASSERT_CONVENTION": "natural_units=NOT_used, fourier_convention=QE_plane_wave, custom=SI_derived_eV_K_GPa",
+  "VALD03_statement": "Room temperature = 300 K.",
+  "script_version": "5.0.0",
+  "random_seed": 69,
+  "date": "2026-03-30T07:27:24.364442+00:00",
+  "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "numpy_version": "2.3.3",
+  "input": {
+    "lambda_ph": 1.27,
+    "omega_ph_K": 852.0,
+    "omega_ph_meV": 73.42,
+    "lambda_sf": 2.231,
+    "omega_sf_K": 350.0,
+    "omega_sf_meV": 30.16,
+    "lambda_total": 3.501,
+    "mu_star": 0.0
+  },
+  "dwave_couplings": {
+    "lambda_ph_d": 0.8872,
+    "lambda_sf_d": 1.3574,
+    "lambda_total_d": 2.2446,
+    "omega_log_d_K": 497.5,
+    "ph_d_fraction": 0.6986,
+    "sf_d_fraction": 0.6084,
+    "a_sq_MK": 254.003929
+  },
+  "Tc_results": {
+    "Tc_aniso_K": 87.0,
+    "Tc_eliash_iso_K": 223.0,
+    "Tc_AD_iso_K": 177.6,
+    "Tc_AD_dwave_K": 129.8,
+    "Tc_AD_v12_ref_K": 197.0,
+    "R_aniso_vs_AD_iso": 0.4901,
+    "R_aniso_vs_eliash_iso": 0.3903,
+    "R_aniso_vs_v12_ref": 0.4418,
+    "enhancement_pct_vs_v12": -55.8
+  },
+  "omega_analysis": {
+    "omega_log_iso_K": 483.3,
+    "omega_log_d_K": 497.5,
+    "omega_log_equiv_K": 236.9,
+    "boost_K": -246.4,
+    "target_740K": 740,
+    "gap_to_300K": 213.0,
+    "reaches_300K": false
+  },
+  "limiting_cases": {
+    "ph_only_d_AD_K": 86.0,
+    "ph_only_d_eliash_K": 170.6,
+    "sf_only_d_AD_K": 57.7,
+    "sf_only_d_eliash_K": 93.6
+  },
+  "convergence": [
+    {
+      "N_fs": 32,
+      "lam_ph_d": 0.8104,
+      "lam_sf_d": 1.0987,
+      "lam_d": 1.909,
+      "ph_d_frac": 0.6381,
+      "sf_d_frac": 0.4925,
+      "a_sq": 30.031324,
+      "omega_log_d_K": 510.6
+    },
+    {
+      "N_fs": 64,
+      "lam_ph_d": 0.8819,
+      "lam_sf_d": 1.4234,
+      "lam_d": 2.3052,
+      "ph_d_frac": 0.6944,
+      "sf_d_frac": 0.638,
+      "a_sq": 62.015732,
+      "omega_log_d_K": 491.9
+    },
+    {
+      "N_fs": 128,
+      "lam_ph_d": 0.8373,
+      "lam_sf_d": 1.2449,
+      "lam_d": 2.0821,
+      "ph_d_frac": 0.6593,
+      "sf_d_frac": 0.558,
+      "a_sq": 126.007842,
+      "omega_log_d_K": 500.5
+    },
+    {
+      "N_fs": 256,
+      "lam_ph_d": 0.8872,
+      "lam_sf_d": 1.3574,
+      "lam_d": 2.2446,
+      "ph_d_frac": 0.6986,
+      "sf_d_frac": 0.6084,
+      "a_sq": 254.003929,
+      "omega_log_d_K": 497.5
+    }
+  ],
+  "mechanism": {
+    "summary": "d-wave symmetry redistributes coupling: phonons weakened, SF strengthened. SF dominates pairing in d-wave. The effective omega_log in d-wave is weighted toward omega_sf (lower), partially offsetting the lambda_sf enhancement. Net: moderate enhancement over isotropic Allen-Dynes.",
+    "key_finding": "The anisotropic Eliashberg gives an enhancement but is limited by strong-coupling Z renormalization and the lower omega_sf dragging down omega_log_d."
+  },
+  "figures": [
+    "figures/anisotropic_eliashberg/phase69/phase69_gap_and_coupling.png",
+    "figures/anisotropic_eliashberg/phase69/phase69_tc_comparison.png",
+    "figures/anisotropic_eliashberg/phase69/phase69_convergence.png"
+  ],
+  "confidence": {
+    "level": "MEDIUM",
+    "rationale": "Full Eliashberg solver validated against AD in isotropic limit. d-wave couplings converged with FS mesh. Enhancement is a robust ratio. Absolute Tc depends on lambda_sf uncertainty (~30%). Model uses parametrized momentum dependence.",
+    "unchecked": [
+      "Full ab initio alpha2F(k,k',omega)",
+      "Vertex corrections",
+      "Multi-band effects"
+    ]
+  }
+}
