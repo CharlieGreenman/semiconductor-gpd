@@ -6,25 +6,25 @@ See: .gpd/PROJECT.md (updated 2026-03-30)
 
 **Machine-readable scoping contract:** `.gpd/state.json` field `project_contract`
 
-**Core research question:** Can we raise omega_log_eff from 483 K to 740 K+ by finding materials with stiffer spin fluctuations (omega_sf > 60 meV), solving the full anisotropic Eliashberg equation, or engineering phonon-dominant pairing -- thereby closing the final 103 K gap to room-temperature superconductivity?
-**Current focus:** Phase 67 -- High-J Materials Survey and omega_sf Computation (Track A entry) / Phase 69 -- Full Anisotropic Eliashberg (Track B entry) / Phase 71 -- Phonon-Dominant Design (Track C entry)
+**Core research question:** Does a real material exist (or can one be designed) with lambda_ph >= 3.0, d-wave pairing symmetry (mu*=0), and omega_log_eff >= 740 K -- the three conditions needed for Tc = 300 K?
+**Current focus:** Phase 74 -- Orbital-Selective Candidate Survey (Track A entry) / Phase 76 -- Superlattice Interface Design (Track B entry) / Phase 78 -- Frustrated Magnet Survey (Track C entry)
 
 ## Current Position
 
-**Current Phase:** 67, 69, 71 (parallel entry points)
-**Current Phase Names:** High-J Survey (A) | Anisotropic Eliashberg (B) | Phonon-Dominant Design (C)
-**Total Phases:** 7 (Phases 67-73)
+**Current Phase:** 74, 76, 78 (parallel entry points)
+**Current Phase Names:** OS Candidate Survey (A) | Superlattice Design (B) | Frustrated Magnet Survey (C)
+**Total Phases:** 7 (Phases 74-80)
 **Current Plan:** --
 **Total Plans in Phase:** TBD
 **Status:** Ready to plan
-**Last Activity:** 2026-03-30
-**Last Activity Description:** v13.0 roadmap created; three parallel tracks ready to plan
+**Last Activity:** 2026-03-29
+**Last Activity Description:** v14.0 roadmap created; three parallel tracks ready to plan
 
 **Progress:** [----------] 0%
 
 ## Active Calculations
 
-None yet. Phases 67, 69, 71 await planning (parallel entry).
+None yet. Phases 74, 76, 78 await planning (parallel entry).
 
 ## Intermediate Results
 
@@ -51,22 +51,25 @@ Carried from prior milestones:
 - **v12.0 Tc = 197 K at mu*=0 (Allen-Dynes) -- 103 K short of 300 K**
 - **v12.0 target: omega_log_eff = 740 K needed at lambda_total=3.5 for Tc = 300 K**
 - **v12.0 three routes identified: (A) stiffer SF, (B) anisotropic Eliashberg, (C) phonon-dominant**
+- **v13.0 finding: 300 K requires lambda_ph >= 3.0 + d-wave (mu*=0) + omega_log_eff >= 740 K**
+- **v13.0 key obstacle: d-wave requires correlations (large U) but correlations produce SF that drag omega_log_eff down**
+- **v13.0 three strategies for v14.0: orbital-selective, interface proximity, frustrated magnetism + H**
 - Carried retained benchmark: Hg1223 at 151 K after pressure quench (ref-hg1223-quench)
 - Room-temperature gap: 149 K (unchanged since v4.0); computational gap: 103 K (from v12.0 best)
 
 ## Open Questions
 
-- Can any material family combine J > 150 meV with metallic character and lambda_sf > 1.5?
-- Does the full anisotropic Eliashberg equation give materially higher Tc than the Allen-Dynes log-average?
-- Can phonon-dominant pairing (lambda_ph >> lambda_sf) reach 300 K despite the mu*=0.10 Coulomb penalty?
-- Is stiff spin fluctuation (high J) fundamentally incompatible with strong electron-SF coupling (high lambda_sf)?
+- Can orbital-selective Mott physics truly decouple the d-wave channel from the phonon channel?
+- Does proximity coupling preserve d-wave symmetry in the phonon-active layer, or does it revert to s-wave?
+- Can geometric frustration suppress lambda_sf while preserving enough total coupling (lambda_total >= 3.0)?
+- Is the lambda_ph=3 + d-wave material fundamentally forbidden by a no-go theorem, or just hard to find?
 - Is the Migdal theorem valid when omega_log approaches 800+ K?
 
 ## Performance Metrics
 
 | Label | Duration | Tasks | Files |
 | ----- | -------- | ----- | ----- |
-| v13.0 roadmap creation | -- | -- | `.gpd/ROADMAP.md`, `.gpd/STATE.md` |
+| v14.0 roadmap creation | -- | -- | `.gpd/ROADMAP.md`, `.gpd/STATE.md` |
 
 ## Accumulated Context
 
@@ -76,6 +79,8 @@ Carried from prior milestones:
 - [v12.0 start]: Hydrogen-correlated oxide inverse design -- combine hydride omega_log with cuprate spin fluctuations and d-wave Coulomb evasion
 - [v12.0 closeout]: Allen-Dynes omega_log_eff = 483 K yields Tc = 197 K; 103 K gap to 300 K remains; three routes to close it identified
 - [v13.0 start]: Three parallel tracks to close 103 K gap: (A) high-J materials with omega_sf > 500 K, (B) full anisotropic Eliashberg to beat Allen-Dynes, (C) phonon-dominant design with weak SF + high omega_eff
+- [v13.0 closeout]: 300 K requires lambda_ph >= 3.0 + d-wave (mu*=0) + omega_log_eff >= 740 K; the central tension is that d-wave needs correlations but correlations produce SF drag
+- [v14.0 start]: Hybrid Material Design -- three strategies to resolve the correlation/phonon tension: orbital-selective, interface proximity, frustrated magnetism + hydrogen
 
 ### Active Approximations
 
@@ -87,7 +92,7 @@ Carried from prior milestones:
 | Isotropic mu* = 0.10-0.13 | Conventional SC | Screened Coulomb | 0.10-0.13 | Standard for hydrides |
 | Migdal theorem | omega_ph << E_F | omega_log / E_F | TBD for H-oxides | Must verify for H modes |
 | Nc-extrapolation | Nc=4,8 -> inf | 1/Nc fit quality | lambda_sf_inf=2.70 | Carried from v11.0 |
-| Allen-Dynes formula | lambda < 3-4, isotropic | Strong coupling corrections | lambda_total=3.5 | v12.0 baseline; Track B tests beyond |
+| Allen-Dynes formula | lambda < 3-4, isotropic | Strong coupling corrections | lambda_total=3.5 | v12.0 baseline; anisotropic Eliashberg preferred in v14.0 |
 
 **Convention Lock:**
 
@@ -112,14 +117,14 @@ None yet.
 
 ### Blockers/Concerns
 
-- Migdal theorem validity: if omega_log approaches 800+ K in hydrogen-oxide systems, the ratio omega_log/E_F may not be small enough for standard Eliashberg
-- High-J materials may have weak electron-SF coupling (stiff but decoupled)
-- Phonon-dominant materials face mu*=0.10 penalty without d-wave Coulomb evasion
-- Anisotropic Eliashberg enhancement may be small (< 10%), leaving the log-average as adequate
-- All three tracks may fail: the 103 K gap may not be closable within Eliashberg theory
+- Orbital selectivity may not genuinely decouple phonon and SF channels -- interorbital hybridization could mix them
+- Proximity effect typically reduces the stronger layer's Tc rather than enhancing it
+- Frustrated magnets may lose d-wave pairing along with spin fluctuations (both come from the same AF exchange)
+- Migdal theorem validity remains unverified for omega_log > 800 K
+- All three tracks may fail: the lambda_ph=3 + d-wave material may not exist within known chemistry
 
 ## Session Continuity
 
-**Last session:** 2026-03-30
-**Stopped at:** v13.0 roadmap created; Phases 67, 69, 71 ready to plan (parallel entry)
+**Last session:** 2026-03-29
+**Stopped at:** v14.0 roadmap created; Phases 74, 76, 78 ready to plan (parallel entry)
 **Resume file:** `.gpd/ROADMAP.md`

@@ -1,69 +1,74 @@
-# Requirements: v13.0 Close the Final 103 K Gap to Room Temperature
+# Requirements: v14.0 Hybrid Material Design — Find the lambda_ph=3 + d-wave Material
 
 **Defined:** 2026-03-30
-**Core Research Question:** Can we raise omega_log_eff from 483 K to 740 K+ by finding materials with stiffer spin fluctuations (omega_sf > 60 meV) or by engineering the phonon/SF momentum structure to avoid the log-average suppression?
+**Core Research Question:** Does a real material exist (or can one be designed) with lambda_ph >= 3.0, d-wave pairing symmetry (mu*=0), and omega_log_eff >= 740 K — the three conditions needed for Tc = 300 K?
 
-## The Physics Problem (from v12.0 correction)
+## The Physics Target (from v13.0)
 
-omega_log_eff = exp[(lambda_ph * ln(omega_ph) + lambda_sf * ln(omega_sf)) / lambda_total]
+300 K requires: lambda_ph >= 3.0 + d-wave (mu*=0) + omega_log_eff >= 740 K.
 
-With lambda_ph=1.27, omega_ph=852 K, lambda_sf=2.23, omega_sf=350 K:
-omega_log_eff = 483 K → Tc = 197 K (mu*=0) — short of 300 K.
+The obstacle: d-wave pairing requires electronic correlations (large U), but correlations ALSO produce spin fluctuations that drag omega_log_eff down. We need a material where:
+- Correlations are strong enough for d-wave symmetry
+- But phonon coupling dominates over spin-fluctuation coupling (lambda_ph >> lambda_sf)
+- And hydrogen modes keep omega_log_ph high
 
-To reach 300 K at lambda=3.5: need omega_log_eff = 740 K.
-This requires either omega_sf ~ 700 K or a way to weight the phonon channel more heavily.
+Possible strategies:
+1. **Orbital-selective correlations** — one orbital is correlated (provides d-wave) while another couples to phonons
+2. **Interface engineering** — d-wave layer adjacent to phonon-active H layer (proximity effect)
+3. **Frustrated magnetism** — correlations present but spin fluctuations suppressed by geometric frustration
+4. **Heavy-fermion + hydrogen** — f-electron correlations for d-wave, s/p-electron phonon coupling
 
 ## Primary Requirements
 
-### High-omega_sf Materials Search (Track A)
+### Orbital-Selective Design (Track A)
 
-- [ ] **HJ-01**: Survey materials with exchange coupling J > 150 meV (vs ~130 meV in cuprates, ~60 meV in nickelates); compute omega_sf = 2*sqrt(2)*J*S for candidate systems
-- [ ] **HJ-02**: Screen iridates (J_eff=1/2 with strong SOC, J~60-80 meV), ruthenates (J~50-100 meV), and iron pnictides (J~50-60 meV) for omega_sf > 500 K
-- [ ] **HJ-03**: For each candidate with omega_sf > 500 K: estimate lambda_sf from chi(q) and check whether H intercalation is chemically feasible
-- [ ] **HJ-04**: Compute omega_log_eff and Tc for the best high-J + H candidates; identify any reaching 300 K
+- [ ] **OS-01**: Identify material families where orbital-selective Mott physics creates one correlated orbital (d-wave channel) and one itinerant orbital (phonon channel); screen iron pnictides, ruthenates, and multi-orbital nickelates
+- [ ] **OS-02**: For top candidates, compute orbital-resolved lambda_ph and lambda_sf; verify lambda_ph(itinerant) >> lambda_sf and that the correlated orbital supports d-wave
+- [ ] **OS-03**: Design H-intercalated versions; compute omega_log_eff using orbital-resolved couplings
 
-### Anisotropic Eliashberg Without Log-Average (Track B)
+### Interface Proximity Design (Track B)
 
-- [ ] **AE-01**: Solve the FULL linearized anisotropic Eliashberg equation for La3Ni2O7-H0.5 with separate phonon and SF kernels (NOT the Allen-Dynes approximation)
-- [ ] **AE-02**: Determine whether the anisotropic solution gives higher Tc than the Allen-Dynes log-average estimate, because the phonon and SF channels couple to different momentum regions of the Fermi surface
-- [ ] **AE-03**: If anisotropic Tc > Allen-Dynes Tc: quantify the enhancement and determine if it's enough to bridge the gap to 300 K
+- [ ] **IP-01**: Design superlattice where a d-wave superconducting layer (cuprate or nickelate) is proximity-coupled to a high-lambda_ph hydrogen-active layer
+- [ ] **IP-02**: Compute the proximity-induced gap in the phonon layer and the effective Tc of the combined system using McMillan proximity equations
+- [ ] **IP-03**: Determine whether proximity coupling can produce Tc > 241 K (beating the s-wave ceiling)
 
-### Phonon-Dominant Hydrogen Oxide Design (Track C)
+### Frustrated Magnet + Hydrogen (Track C)
 
-- [ ] **PD-01**: Design materials where lambda_ph >> lambda_sf (phonon-dominant pairing) so omega_log_eff stays close to omega_ph (~852 K); screen light-element oxides with weak correlations but strong e-ph coupling
-- [ ] **PD-02**: For the most promising phonon-dominant candidate: compute full Eliashberg Tc with mu*=0.10 (no d-wave advantage needed if SF is weak)
-- [ ] **PD-03**: Compare: is it better to have strong SF + low omega_eff (our current approach) or weak SF + high omega_eff (conventional-like)?
+- [ ] **FM-01**: Identify correlated materials where geometric frustration suppresses long-range AF order and spin resonance energy, keeping lambda_sf low while preserving d-wave pairing
+- [ ] **FM-02**: Screen triangular/kagome/pyrochlore lattice correlated oxides for d-wave pairing with suppressed omega_sf; compute lambda_sf
+- [ ] **FM-03**: Design H-intercalated frustrated-magnet candidates; compute omega_log_eff and Tc
 
 ### Validations
 
-- [ ] **VALD-01**: All Tc computed from anisotropic Eliashberg, not Allen-Dynes (fixes v12.0 limitation)
-- [ ] **VALD-02**: 300 K target explicit in all deliverables
-- [ ] **VALD-03**: Every material must pass E_hull < 50 meV/atom stability gate
+- [ ] **VALD-01**: All Tc from anisotropic Eliashberg (not Allen-Dynes) per v13.0 Track B finding
+- [ ] **VALD-02**: d-wave symmetry must be verified for each candidate (gap equation eigenvalue decomposition)
+- [ ] **VALD-03**: E_hull < 50 meV/atom + no imaginary phonons for all candidates
+- [ ] **VALD-04**: 300 K (80°F) target explicit
 
 ### Decision
 
-- [ ] **DEC-01**: Rank all candidates by best-method Tc with honest uncertainty
-- [ ] **DEC-02**: 300 K decision: reached or not, with clear accounting of what's missing
+- [ ] **DEC-01**: Master ranking by anisotropic Eliashberg Tc
+- [ ] **DEC-02**: 300 K verdict with full accounting
 
 ## Traceability
 
 | Requirement | Phase | Status |
 | --- | --- | --- |
-| HJ-01 | Phase 67 (High-J Survey) | Pending |
-| HJ-02 | Phase 67 (High-J Survey) | Pending |
-| HJ-03 | Phase 68 (High-J Screening) | Pending |
-| HJ-04 | Phase 68 (High-J Screening) | Pending |
-| AE-01 | Phase 69 (Anisotropic Eliashberg) | Pending |
-| AE-02 | Phase 69 (Anisotropic Eliashberg) | Pending |
-| AE-03 | Phase 70 (Aniso Enhancement) | Pending |
-| PD-01 | Phase 71 (Phonon-Dominant Design) | Pending |
-| PD-02 | Phase 72 (Phonon-Dominant Tc) | Pending |
-| PD-03 | Phase 72 (Strategy Comparison) | Pending |
-| VALD-01 | Phase 73 (Final Verdict) | Pending |
-| VALD-02 | Phase 73 (Final Verdict) | Pending |
-| VALD-03 | Phase 68, 71, 73 (stability gates) | Pending |
-| DEC-01 | Phase 73 (Final Verdict) | Pending |
-| DEC-02 | Phase 73 (Final Verdict) | Pending |
+| OS-01 | Phase 74 | Pending |
+| OS-02 | Phase 75 | Pending |
+| OS-03 | Phase 75 | Pending |
+| IP-01 | Phase 76 | Pending |
+| IP-02 | Phase 76 | Pending |
+| IP-03 | Phase 77 | Pending |
+| FM-01 | Phase 78 | Pending |
+| FM-02 | Phase 78 | Pending |
+| FM-03 | Phase 79 | Pending |
+| VALD-01 | Phase 75, 77, 79, 80 | Pending |
+| VALD-02 | Phase 75, 79, 80 | Pending |
+| VALD-03 | Phase 75, 79, 80 | Pending |
+| VALD-04 | Phase 75, 77, 79, 80 | Pending |
+| DEC-01 | Phase 80 | Pending |
+| DEC-02 | Phase 80 | Pending |
 
 **Coverage:** 15/15 primary requirements mapped
 
