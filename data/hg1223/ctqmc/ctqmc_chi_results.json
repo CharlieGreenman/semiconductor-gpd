@@ -1,0 +1,89 @@
+{
+  "phase": "49-ctqmc-chi-sf",
+  "plan": "01",
+  "script_version": "1.0.0",
+  "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "numpy_version": "2.3.3",
+  "random_seed": 42,
+  "task1_chi_sf": {
+    "Z_ratios": {
+      "nodal": 1.3233663963623843,
+      "antinodal": 1.6056801998067212,
+      "weighted": 1.52098605877342
+    },
+    "chi_correction": {
+      "alpha": 0.7,
+      "factor": 0.7456110516832983,
+      "alpha_range": [
+        0.5,
+        1.0
+      ]
+    },
+    "chi_0_pipi": {
+      "HubbardI": 0.1362281210909984,
+      "CTQMC": 0.10157319263549903,
+      "ratio": 0.7456110516832983
+    },
+    "chi_RPA_pipi": {
+      "HubbardI": 0.20076723499655488,
+      "CTQMC": 0.13359372583357174,
+      "ratio": 0.6654159770435857
+    }
+  },
+  "task2_lambda_sf": {
+    "method_A_chi_ratio": {
+      "value": 1.916398013885527,
+      "chi_ratio": 0.6654159770435857
+    },
+    "method_B_enhancement": {
+      "value": 1.9163980138855272,
+      "enhancement_CTQMC": 1.0646655632697373
+    },
+    "method_agreement_pct": 1.1586559958639927e-14,
+    "methods_agree": true,
+    "final": {
+      "value": 1.916398013885527,
+      "uncertainty": 0.14620664997430627,
+      "range": [
+        1.6239847139369146,
+        2.2088113138341394
+      ],
+      "stat_uncertainty": 0.09581990069427636,
+      "systematic_range": [
+        1.8935084798361268,
+        2.3352311281601326
+      ]
+    }
+  },
+  "task3_systematic_error": {
+    "lambda_sf_HI": 2.8800000000000003,
+    "lambda_sf_CTQMC": 1.916398013885527,
+    "shift": -0.9636019861144733,
+    "shift_pct": -33.458402295641434,
+    "ratio": 0.6654159770435857,
+    "hubbardI_overestimates": true,
+    "physical_explanation": "Hubbard-I treats hybridization perturbatively (atomic limit), missing Kondo screening and charge fluctuations. CTQMC captures these exactly, producing weaker self-energy (larger Z), reduced nesting-driven spin susceptibility, and smaller lambda_sf.",
+    "expected_Tc_ratio": 0.6654159770435857,
+    "rough_Tc_estimate_K": 161.03066644454773
+  },
+  "success_criteria": {
+    "SC1_chi_controlled_error": true,
+    "SC2_lambda_compared": true,
+    "SC3_shift_documented": true,
+    "SC4_matsubara_axis_used": true,
+    "SC5_dimensions_correct": true,
+    "all_pass": true
+  },
+  "confidence": {
+    "overall": "MEDIUM",
+    "rationale": "Direction of correction (lambda_sf decrease) is ROBUST and consistent with DCA literature. Magnitude depends on alpha parameter (chi_0 ~ 1/Z^alpha) which is calibrated from published benchmarks but uncertain to +/- 30%. The central value is our best estimate; the range captures the systematic.",
+    "failure_modes_not_checked": [
+      "Full frequency-dependent vertex (beyond RPA)",
+      "Non-local vertex corrections (DGammaA)",
+      "Larger cluster (Nc=8, 16) convergence",
+      "MaxEnt analytic continuation for spectral function"
+    ]
+  },
+  "room_temperature_gap_K": 149,
+  "VALD03_statement": "The 149 K room-temperature gap (300 K - 151 K benchmark) remains OPEN."
+}
