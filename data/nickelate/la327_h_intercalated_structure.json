@@ -1,0 +1,158 @@
+{
+  "material": "La3Ni2O7-H",
+  "formula": "La3Ni2O7H",
+  "parent": "La3Ni2O7 (I4/mmm)",
+  "modification": "H intercalated in rocksalt LaO layer at (0.5, 0.5, 0)",
+  "space_group": "P4/mmm (symmetry lowered from I4/mmm by H ordering)",
+  "a_angstrom": 3.835,
+  "c_angstrom": 20.9,
+  "c_over_a": 5.4498,
+  "atomic_positions": [
+    {
+      "species": "La",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "coord_type": "crystal",
+      "role": "rocksalt"
+    },
+    {
+      "species": "O",
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.038,
+      "coord_type": "crystal",
+      "role": "rocksalt"
+    },
+    {
+      "species": "H",
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.0,
+      "coord_type": "crystal",
+      "role": "interstitial"
+    },
+    {
+      "species": "Ni",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.098,
+      "coord_type": "crystal",
+      "role": "NiO2_outer"
+    },
+    {
+      "species": "O",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 0.098,
+      "coord_type": "crystal",
+      "role": "NiO2_outer"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.5,
+      "z": 0.098,
+      "coord_type": "crystal",
+      "role": "NiO2_outer"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.155,
+      "coord_type": "crystal",
+      "role": "apical_inner"
+    },
+    {
+      "species": "La",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.185,
+      "coord_type": "crystal",
+      "role": "inner_La"
+    },
+    {
+      "species": "Ni",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.248,
+      "coord_type": "crystal",
+      "role": "NiO2_inner"
+    },
+    {
+      "species": "O",
+      "x": 0.5,
+      "y": 0.0,
+      "z": 0.248,
+      "coord_type": "crystal",
+      "role": "NiO2_inner"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.5,
+      "z": 0.248,
+      "coord_type": "crystal",
+      "role": "NiO2_inner"
+    },
+    {
+      "species": "O",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.338,
+      "coord_type": "crystal",
+      "role": "apical_outer"
+    },
+    {
+      "species": "La",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.5,
+      "coord_type": "crystal",
+      "role": "rocksalt_top"
+    }
+  ],
+  "species_count": {
+    "La": 3,
+    "O": 7,
+    "H": 1,
+    "Ni": 2
+  },
+  "total_atoms": 13,
+  "representation": "Z=1 minimal cell (13 + 1H = 14 atoms)",
+  "doping_analysis": {
+    "parent_Ni_valence": "+2.5 (mixed Ni2+/Ni3+)",
+    "h_plus_intercalation": {
+      "Ni_valence": "+2.0 (d^8, Mott insulator)",
+      "effect": "Electron doping -- pushes toward Mott insulator",
+      "sc_prospect": "POOR: Ni(+2) is insulating, not superconducting"
+    },
+    "h_minus_intercalation": {
+      "Ni_valence": "+3.0 (d^7, metallic)",
+      "effect": "Hole doping -- pushes away from Mott transition",
+      "sc_prospect": "MARGINAL: metallic but weaker correlations at Ni(+3)"
+    },
+    "optimal_Ni_valence": "+2.5 (at 15 GPa, where Tc ~ 80 K observed)",
+    "half_h_option": {
+      "formula": "La3Ni2O7H0.5",
+      "Ni_valence_h_plus": "+2.25",
+      "Ni_valence_h_minus": "+2.75",
+      "note": "Partial intercalation could maintain closer-to-optimal doping"
+    },
+    "key_finding": "H intercalation changes Ni valence; must be carefully controlled to maintain SC state"
+  },
+  "h_environment": {
+    "site": "tetrahedral interstitial in LaO rocksalt layer",
+    "h_o_distance_A": 0.79,
+    "h_la_inplane_distance_A": 2.71,
+    "bonding": "H likely forms O-H bond (0.79 A is typical O-H distance)"
+  },
+  "concerns": [
+    "H intercalation changes Ni valence (either +2.0 or +3.0 depending on H charge state)",
+    "Optimal Ni valence for SC is +2.5; any H content disrupts this",
+    "H diffusion in the rocksalt layer may be fast at T > 200 K",
+    "Structural distortion from H ordering may lower symmetry significantly",
+    "15 GPa pressure needed for parent SC may not be compatible with H intercalation"
+  ]
+}

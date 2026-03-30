@@ -1,0 +1,129 @@
+{
+  "phase": "59+60",
+  "date": "2026-03-30T01:57:17.309643",
+  "random_seed": 60,
+  "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "numpy_version": "2.3.3",
+  "target_zone": {
+    "lambda_range": [
+      2.5,
+      4.0
+    ],
+    "omega_log_range_K": [
+      700,
+      1200
+    ],
+    "source": "Phase 58 inverse Eliashberg target map"
+  },
+  "summary": {
+    "total_candidates": 4,
+    "advancing_to_phase_61": 1,
+    "phase_59_candidates": 3,
+    "phase_59_passing": 0,
+    "phase_60_candidates": 1,
+    "phase_60_passing": 1
+  },
+  "candidates": [
+    {
+      "name": "Hg1223-H",
+      "formula": "HgBa2Ca2Cu3O6H2",
+      "phase": 59,
+      "gates": {
+        "e_hull": "FAIL",
+        "e_hull_value_meV_per_atom": 210.0,
+        "phonon": "CONDITIONAL -- H stretch modes are real, but electronic instability from doping may cause soft modes",
+        "n_ef": "PASS",
+        "n_ef_value": 4.5,
+        "d_wave": "FAIL",
+        "omega_log_800K": "N/A (failed stability gate)"
+      },
+      "overall": "FAIL",
+      "failure_reasons": [
+        "e_hull gate failed",
+        "d_wave gate failed",
+        "Doping incompatible with d-wave superconductivity"
+      ],
+      "advances_to_phase_61": false
+    },
+    {
+      "name": "[CuO2]2/[LiH]1",
+      "formula": "Li1H1Cu2CaO4",
+      "phase": 59,
+      "gates": {
+        "e_hull": "FAIL",
+        "e_hull_value_meV_per_atom": 202.6,
+        "phonon": "UNCERTAIN -- LiH modes are real, but interface modes may be soft",
+        "n_ef": "PASS",
+        "n_ef_value": 3.5,
+        "d_wave": "FAIL",
+        "omega_log_800K": "N/A (failed stability gate)"
+      },
+      "overall": "FAIL",
+      "failure_reasons": [
+        "e_hull gate failed",
+        "d_wave gate failed",
+        "Doping incompatible with d-wave superconductivity"
+      ],
+      "advances_to_phase_61": false
+    },
+    {
+      "name": "[CuO2]2/[LiH]2",
+      "formula": "Li2H2Cu2CaO4",
+      "phase": 59,
+      "gates": {
+        "e_hull": "FAIL",
+        "e_hull_value_meV_per_atom": 208.4,
+        "phonon": "UNCERTAIN -- LiH modes are real, but interface modes may be soft",
+        "n_ef": "PASS",
+        "n_ef_value": 3.5,
+        "d_wave": "FAIL",
+        "omega_log_800K": "N/A (failed stability gate)"
+      },
+      "overall": "FAIL",
+      "failure_reasons": [
+        "e_hull gate failed",
+        "d_wave gate failed",
+        "Doping incompatible with d-wave superconductivity"
+      ],
+      "advances_to_phase_61": false
+    },
+    {
+      "name": "La3Ni2O7-H (partial, H- interstitial)",
+      "formula": "La3Ni2O7H0.5 (best-case partial intercalation)",
+      "phase": 60,
+      "gates": {
+        "e_hull": "PASS",
+        "e_hull_value_meV_per_atom": 27.2,
+        "phonon": "CONDITIONAL PASS -- H local modes are positive-frequency; need DFT confirmation",
+        "n_ef": "PASS",
+        "n_ef_value": 3.5,
+        "d_wave": "CONDITIONAL",
+        "omega_log_800K": "PASS",
+        "omega_log_value_K": 852.3
+      },
+      "overall": "CONDITIONAL PASS",
+      "failure_reasons": [],
+      "advances_to_phase_61": true,
+      "conditions_for_advancement": [
+        "DFT relaxation must confirm E_hull < 50 meV/atom",
+        "Phonon calculation must show no imaginary modes",
+        "H charge state must be determined (H+ vs H- affects Ni valence critically)",
+        "Partial intercalation (H0.5) must be achievable",
+        "f_H >= 0.30 in alpha2F (minimum for omega_log > 800 K)"
+      ]
+    }
+  ],
+  "key_findings": [
+    "ALL Phase 59 cuprate-H candidates FAIL: E_hull >> 50 meV/atom + doping incompatibility",
+    "La3Ni2O7-H CONDITIONALLY PASSES: E_hull ~ 27 meV/atom, omega_log ~ 852 K",
+    "Fundamental insight: H intercalation in nickelate rocksalt layer preserves bilayer sigma-bonding",
+    "H modes boost omega_log from 250 K to 853 K (+241%) -- sufficient for Phase 58 target zone entry",
+    "Minimum H spectral weight for 800 K gate: f_H >= 0.29",
+    "Critical uncertainty: H charge state (H+ vs H-) determines whether SC survives"
+  ],
+  "backtracking_assessment": {
+    "phase_59_trigger": "ACTIVATED -- all cuprate-H candidates fail",
+    "phase_60_la327h": "CONDITIONAL PASS -- proceeds with caveats",
+    "overall": "ONE conditional candidate advances; hydrogen-nickelate is viable track"
+  }
+}

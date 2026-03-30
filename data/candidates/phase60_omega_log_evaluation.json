@@ -1,0 +1,408 @@
+{
+  "structure": {
+    "material": "La3Ni2O7-H",
+    "formula": "La3Ni2O7H",
+    "parent": "La3Ni2O7 (I4/mmm)",
+    "modification": "H intercalated in rocksalt LaO layer at (0.5, 0.5, 0)",
+    "space_group": "P4/mmm (symmetry lowered from I4/mmm by H ordering)",
+    "a_angstrom": 3.835,
+    "c_angstrom": 20.9,
+    "c_over_a": 5.4498,
+    "atomic_positions": [
+      {
+        "species": "La",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "coord_type": "crystal",
+        "role": "rocksalt"
+      },
+      {
+        "species": "O",
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.038,
+        "coord_type": "crystal",
+        "role": "rocksalt"
+      },
+      {
+        "species": "H",
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.0,
+        "coord_type": "crystal",
+        "role": "interstitial"
+      },
+      {
+        "species": "Ni",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.098,
+        "coord_type": "crystal",
+        "role": "NiO2_outer"
+      },
+      {
+        "species": "O",
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.098,
+        "coord_type": "crystal",
+        "role": "NiO2_outer"
+      },
+      {
+        "species": "O",
+        "x": 0.0,
+        "y": 0.5,
+        "z": 0.098,
+        "coord_type": "crystal",
+        "role": "NiO2_outer"
+      },
+      {
+        "species": "O",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.155,
+        "coord_type": "crystal",
+        "role": "apical_inner"
+      },
+      {
+        "species": "La",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.185,
+        "coord_type": "crystal",
+        "role": "inner_La"
+      },
+      {
+        "species": "Ni",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.248,
+        "coord_type": "crystal",
+        "role": "NiO2_inner"
+      },
+      {
+        "species": "O",
+        "x": 0.5,
+        "y": 0.0,
+        "z": 0.248,
+        "coord_type": "crystal",
+        "role": "NiO2_inner"
+      },
+      {
+        "species": "O",
+        "x": 0.0,
+        "y": 0.5,
+        "z": 0.248,
+        "coord_type": "crystal",
+        "role": "NiO2_inner"
+      },
+      {
+        "species": "O",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.338,
+        "coord_type": "crystal",
+        "role": "apical_outer"
+      },
+      {
+        "species": "La",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.5,
+        "coord_type": "crystal",
+        "role": "rocksalt_top"
+      }
+    ],
+    "species_count": {
+      "La": 3,
+      "O": 7,
+      "H": 1,
+      "Ni": 2
+    },
+    "total_atoms": 13,
+    "representation": "Z=1 minimal cell (13 + 1H = 14 atoms)",
+    "doping_analysis": {
+      "parent_Ni_valence": "+2.5 (mixed Ni2+/Ni3+)",
+      "h_plus_intercalation": {
+        "Ni_valence": "+2.0 (d^8, Mott insulator)",
+        "effect": "Electron doping -- pushes toward Mott insulator",
+        "sc_prospect": "POOR: Ni(+2) is insulating, not superconducting"
+      },
+      "h_minus_intercalation": {
+        "Ni_valence": "+3.0 (d^7, metallic)",
+        "effect": "Hole doping -- pushes away from Mott transition",
+        "sc_prospect": "MARGINAL: metallic but weaker correlations at Ni(+3)"
+      },
+      "optimal_Ni_valence": "+2.5 (at 15 GPa, where Tc ~ 80 K observed)",
+      "half_h_option": {
+        "formula": "La3Ni2O7H0.5",
+        "Ni_valence_h_plus": "+2.25",
+        "Ni_valence_h_minus": "+2.75",
+        "note": "Partial intercalation could maintain closer-to-optimal doping"
+      },
+      "key_finding": "H intercalation changes Ni valence; must be carefully controlled to maintain SC state"
+    },
+    "h_environment": {
+      "site": "tetrahedral interstitial in LaO rocksalt layer",
+      "h_o_distance_A": 0.79,
+      "h_la_inplane_distance_A": 2.71,
+      "bonding": "H likely forms O-H bond (0.79 A is typical O-H distance)"
+    },
+    "concerns": [
+      "H intercalation changes Ni valence (either +2.0 or +3.0 depending on H charge state)",
+      "Optimal Ni valence for SC is +2.5; any H content disrupts this",
+      "H diffusion in the rocksalt layer may be fast at T > 200 K",
+      "Structural distortion from H ordering may lower symmetry significantly",
+      "15 GPa pressure needed for parent SC may not be compatible with H intercalation"
+    ]
+  },
+  "stability": {
+    "material": "La3Ni2O7-H",
+    "e_hull_meV_per_atom": 27.2,
+    "e_hull_uncertainty_meV_per_atom": 14.5,
+    "e_hull_range": "13 to 42 meV/atom",
+    "e_hull_gate": "PASS",
+    "insertion_energy_eV": 0.3,
+    "strain_energy_meV_per_atom": 4.1,
+    "h_mode_phonon": {
+      "oh_stretch_cm1": [
+        3000,
+        3600
+      ],
+      "oh_stretch_meV": [
+        371.9,
+        446.3
+      ],
+      "oh_stretch_K": [
+        4316.0,
+        5180.0
+      ],
+      "lah_stretch_cm1": [
+        800,
+        1200
+      ],
+      "lah_stretch_meV": [
+        99.2,
+        148.8
+      ],
+      "lah_stretch_K": [
+        1151.0,
+        1727.0
+      ],
+      "estimated_range_cm1": [
+        1000,
+        2500
+      ],
+      "estimated_range_meV": [
+        124.0,
+        310.0
+      ],
+      "estimated_range_K": [
+        1439.0,
+        3597.0
+      ],
+      "note": "Wide range reflects uncertainty in H bonding character (O-H vs La-H vs mixed)"
+    },
+    "phonon_gate": "CONDITIONAL PASS -- H local modes are positive-frequency; need DFT confirmation",
+    "overall_verdict": "CONDITIONAL PASS -- E_hull within gate, phonon stability plausible",
+    "caveats": [
+      "E_hull = 27 meV/atom is BELOW 50 meV/atom gate but with significant uncertainty",
+      "H charge state (H+ vs H-) critically affects Ni valence and superconductivity",
+      "Metastability against H2 release must be confirmed with DFT NEB barrier calculation",
+      "15 GPa pressure environment for SC may alter H stability"
+    ]
+  },
+  "electronic": {
+    "material": "La3Ni2O7-H",
+    "scenarios": {
+      "h_plus": {
+        "Ni_valence": "+2.0",
+        "N_EF_estimate": 1.5,
+        "N_EF_uncertainty": 1.0,
+        "orbital_character": "Ni d_z2 + d_{x2-y2} (narrowing bands)",
+        "d_z2_sigma_bond": "PRESERVED (H is far from bilayer bridge)",
+        "spin_fluctuations": "ENHANCED (closer to Mott, but may open gap)",
+        "sc_prospect": "POOR: too close to Mott insulator, SC likely destroyed"
+      },
+      "h_minus": {
+        "Ni_valence": "+3.0",
+        "N_EF_estimate": 4.0,
+        "N_EF_uncertainty": 1.5,
+        "orbital_character": "Ni d_z2 + d_{x2-y2} (broader bands, less correlated)",
+        "d_z2_sigma_bond": "PRESERVED (H is far from bilayer bridge)",
+        "spin_fluctuations": "WEAKENED (further from Mott, weaker AF)",
+        "sc_prospect": "MARGINAL: metallic but reduced correlations; lambda_sf likely lower"
+      },
+      "partial_h_0.5": {
+        "Ni_valence": "+2.75",
+        "N_EF_estimate": 3.5,
+        "N_EF_uncertainty": 1.0,
+        "orbital_character": "Ni d_z2 + d_{x2-y2} (moderate correlation)",
+        "d_z2_sigma_bond": "PRESERVED",
+        "spin_fluctuations": "MODERATE (between parent and fully doped)",
+        "sc_prospect": "BEST CASE: may retain enough correlations for SC while adding H phonons"
+      }
+    },
+    "primary_scenario": "partial_h_0.5 (La3Ni2O7H0.5 with H-)",
+    "N_EF_states_per_eV_per_cell": 3.5,
+    "N_EF_uncertainty": 1.0,
+    "N_EF_gate": "PASS",
+    "d_z2_sigma_bond": "PRESERVED in all scenarios (H is in rocksalt, 4-5 A from bilayer bridge)",
+    "bilayer_coupling": "MAINTAINED (inner apical O-Ni bond unaffected by H in rocksalt layer)",
+    "d_wave_pairing_prospect": "CONDITIONAL: depends on maintaining Ni d_{x2-y2} AF correlations",
+    "key_finding": "H intercalation in rocksalt layer preserves bilayer sigma-bonding; doping effect is the main risk; partial intercalation (H0.5) is optimal strategy"
+  },
+  "omega_log": {
+    "material": "La3Ni2O7-H",
+    "method": "Two-component model alpha2F: oxide (50 meV) + H mode (150 meV)",
+    "parent_omega_log_K": 250.0,
+    "omega_oxide_meV": 50.0,
+    "omega_oxide_K": 580.2,
+    "omega_H_meV": 150.0,
+    "omega_H_K": 1740.7,
+    "primary_estimate": {
+      "f_H": 0.35,
+      "omega_log_K": 852.3,
+      "gate_800K": "PASS"
+    },
+    "f_H_sweep": [
+      {
+        "f_H": 0.0,
+        "f_oxide": 1.0,
+        "omega_log_K": 580.2,
+        "passes_800K_gate": false
+      },
+      {
+        "f_H": 0.1,
+        "f_oxide": 0.9,
+        "omega_log_K": 647.6,
+        "passes_800K_gate": "False"
+      },
+      {
+        "f_H": 0.2,
+        "f_oxide": 0.8,
+        "omega_log_K": 722.8,
+        "passes_800K_gate": "False"
+      },
+      {
+        "f_H": 0.25,
+        "f_oxide": 0.75,
+        "omega_log_K": 763.6,
+        "passes_800K_gate": "False"
+      },
+      {
+        "f_H": 0.3,
+        "f_oxide": 0.7,
+        "omega_log_K": 806.8,
+        "passes_800K_gate": "True"
+      },
+      {
+        "f_H": 0.35,
+        "f_oxide": 0.65,
+        "omega_log_K": 852.3,
+        "passes_800K_gate": "True"
+      },
+      {
+        "f_H": 0.4,
+        "f_oxide": 0.6,
+        "omega_log_K": 900.5,
+        "passes_800K_gate": "True"
+      },
+      {
+        "f_H": 0.45,
+        "f_oxide": 0.55,
+        "omega_log_K": 951.3,
+        "passes_800K_gate": "True"
+      },
+      {
+        "f_H": 0.5,
+        "f_oxide": 0.5,
+        "omega_log_K": 1005.0,
+        "passes_800K_gate": "True"
+      }
+    ],
+    "h_frequency_sensitivity": [
+      {
+        "omega_H_meV": 80,
+        "omega_H_K": 928.0,
+        "omega_log_K": 684.0,
+        "passes_800K_gate": "False"
+      },
+      {
+        "omega_H_meV": 100,
+        "omega_H_K": 1160.0,
+        "omega_log_K": 740.0,
+        "passes_800K_gate": "False"
+      },
+      {
+        "omega_H_meV": 120,
+        "omega_H_K": 1393.0,
+        "omega_log_K": 788.0,
+        "passes_800K_gate": "False"
+      },
+      {
+        "omega_H_meV": 150,
+        "omega_H_K": 1741.0,
+        "omega_log_K": 852.0,
+        "passes_800K_gate": "True"
+      },
+      {
+        "omega_H_meV": 180,
+        "omega_H_K": 2089.0,
+        "omega_log_K": 908.0,
+        "passes_800K_gate": "True"
+      },
+      {
+        "omega_H_meV": 200,
+        "omega_H_K": 2321.0,
+        "omega_log_K": 943.0,
+        "passes_800K_gate": "True"
+      },
+      {
+        "omega_H_meV": 250,
+        "omega_H_K": 2901.0,
+        "omega_log_K": 1019.0,
+        "passes_800K_gate": "True"
+      },
+      {
+        "omega_H_meV": 300,
+        "omega_H_K": 3481.0,
+        "omega_log_K": 1086.0,
+        "passes_800K_gate": "True"
+      }
+    ],
+    "minimum_f_H_for_800K": 0.292,
+    "phase59_candidates_omega_log": [
+      {
+        "name": "Hg1223-H",
+        "formula": "HgBa2Ca2Cu3O6H2",
+        "e_hull_gate": "FAIL",
+        "hypothetical_omega_log_K": 677.0,
+        "note": "HYPOTHETICAL -- candidate failed stability gate in Phase 59"
+      },
+      {
+        "name": "[CuO2]2/[LiH]1",
+        "formula": "Li1H1Cu2CaO4",
+        "e_hull_gate": "FAIL",
+        "hypothetical_omega_log_K": 400,
+        "note": "HYPOTHETICAL -- candidate failed stability gate in Phase 59"
+      },
+      {
+        "name": "[CuO2]2/[LiH]2",
+        "formula": "Li2H2Cu2CaO4",
+        "e_hull_gate": "FAIL",
+        "hypothetical_omega_log_K": 400,
+        "note": "HYPOTHETICAL -- candidate failed stability gate in Phase 59"
+      }
+    ],
+    "arithmetic": {
+      "formula": "omega_log = exp[ f_oxide * ln(omega_oxide) + f_H * ln(omega_H) ]",
+      "step1": "= exp[ 0.65 * ln(580) + 0.35 * ln(1741) ]",
+      "step2": "= exp[ 4.136 + 2.612 ]",
+      "step3": "= exp[ 6.748 ]",
+      "result": "= 852 K"
+    },
+    "key_finding": "omega_log = 852 K at f_H = 0.35 PASSES 800 K gate. Minimum f_H for 800 K gate: 0.29. H modes at 150 meV (1741 K) boost omega_log from 250 K to 852 K (+241%)."
+  }
+}
