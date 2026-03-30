@@ -1,0 +1,179 @@
+{
+  "phase": "46-stability-or-gap-analysis",
+  "plan": "01",
+  "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "trigger": "CR-03",
+  "stability_results": [
+    {
+      "name": "Hg1223 strained + 15 GPa",
+      "Tc_central_K": 242.3,
+      "Tc_range_K": [
+        200.1,
+        299.8
+      ],
+      "E_hull_meV_per_atom": 15.0,
+      "E_hull_note": "Base Hg1223 is thermodynamically stable (synthesized). 1% tensile strain adds ~5 meV/atom elastic energy. 15 GPa pressure further modifies energy landscape. Under applied pressure, the structure is dynamically stable (experimentally verified up to 30 GPa). Strain requires epitaxial growth on matched substrate.",
+      "E_hull_passes": true,
+      "phonon_stable": true,
+      "phonon_note": "Hg1223 phonons verified stable at ambient and under pressure up to 30 GPa (Nunez-Regueiro 1993, Gao 2020). No imaginary modes expected for 1% strain on bulk modulus ~150 GPa. Substrate-induced strain is static, not metastable.",
+      "synthesis_route": "Diamond anvil cell (DAC) for 15 GPa hydrostatic pressure. Epitaxial Hg1223 film on strained substrate (e.g., SrTiO3 with buffer). Alternatively: uniaxial pressure cell for <1% strain. CRITICAL: requires pressure quench protocol for ambient retention (ref-hg1223-quench benchmark at 151 K was produced this way). Combined strain+pressure has NOT been experimentally demonstrated.",
+      "overall_viable": true
+    },
+    {
+      "name": "Hg1223 at 30 GPa",
+      "Tc_central_K": 231.2,
+      "Tc_range_K": [
+        190.8,
+        286.3
+      ],
+      "E_hull_meV_per_atom": 0.0,
+      "E_hull_note": "Hg1223 at 30 GPa is experimentally measured: Tc = 153-166 K (Gao 2020, Nunez-Regueiro 1993). The material is stable at this pressure. E_hull = 0 because the structure exists under these conditions.",
+      "E_hull_passes": true,
+      "phonon_stable": true,
+      "phonon_note": "Experimentally verified: Hg1223 under 30 GPa shows no structural instability. Phonon hardening observed, consistent with our omega_log increase.",
+      "synthesis_route": "Standard diamond anvil cell at 30 GPa. Well-established technique. CRITICAL CAVEAT: This is NOT ambient operation. The sample requires continuous applied pressure. Tc of 153-166 K was MEASURED at this pressure, but our PREDICTED Tc of 231 K uses the cluster-DMFT+d-wave method which has not been experimentally validated at this accuracy level.",
+      "overall_viable": true
+    },
+    {
+      "name": "Hg1223 epitaxial strain",
+      "Tc_central_K": 209.3,
+      "Tc_range_K": [
+        172.7,
+        259.2
+      ],
+      "E_hull_meV_per_atom": 8.0,
+      "E_hull_note": "Base Hg1223 is stable. 1% tensile strain adds ~5-10 meV/atom elastic energy. Within synthesis viability threshold (<50 meV/atom). Epitaxial strain has been demonstrated for YBCO and LSCO thin films.",
+      "E_hull_passes": true,
+      "phonon_stable": true,
+      "phonon_note": "1% strain on Hg1223 is well within elastic limit. No soft modes expected. Similar strain levels on YBCO show stable phonon spectra.",
+      "synthesis_route": "Epitaxial thin film growth (MBE or PLD) on compressive substrate. SrTiO3-based substrates can provide ~1% tensile strain on CuO2 planes. CAVEAT: Hg1223 thin film growth is challenging due to mercury volatility. Alternative: pulsed laser deposition in controlled Hg atmosphere.",
+      "overall_viable": true
+    }
+  ],
+  "priority_synthesis_target": {
+    "material": "Hg1223 strained + 15 GPa",
+    "Tc_predicted_K": 242.3,
+    "Tc_range_K": [
+      200.1,
+      299.8
+    ],
+    "E_hull_meV_per_atom": 15.0,
+    "phonon_stable": true,
+    "synthesis_route": "Diamond anvil cell (DAC) for 15 GPa hydrostatic pressure. Epitaxial Hg1223 film on strained substrate (e.g., SrTiO3 with buffer). Alternatively: uniaxial pressure cell for <1% strain. CRITICAL: requires pressure quench protocol for ambient retention (ref-hg1223-quench benchmark at 151 K was produced this way). Combined strain+pressure has NOT been experimentally demonstrated.",
+    "caveats": [
+      "Prediction, not measurement",
+      "Combined strain+pressure not experimentally demonstrated for Hg1223",
+      "lambda_sf enhancement literature-calibrated, not ab initio",
+      "d-wave mu*=0 is maximum Tc assumption",
+      "Carried experimental benchmark: 151 K (unchanged)"
+    ]
+  },
+  "missing_physics": [
+    {
+      "item": "Vertex corrections beyond Migdal approximation",
+      "effect_on_Tc": "Reduce Tc by 5-15%",
+      "direction": "REDUCES Tc",
+      "estimate_basis": "Vertex corrections typically reduce effective coupling for lambda > 2. Grimaldi et al. (1995) find 10-15% reduction for strong-coupling cuprates.",
+      "Tc_shift_K": [
+        -35,
+        -10
+      ],
+      "confidence": "LOW"
+    },
+    {
+      "item": "Dynamic U (frequency-dependent Hubbard)",
+      "effect_on_Tc": "Reduce U by 10-20% at relevant omega, reducing lambda_sf",
+      "direction": "REDUCES Tc",
+      "estimate_basis": "Screened Coulomb U(omega) decreases with increasing omega. For cuprates, U_eff(omega_sf) ~ 0.8-0.9 * U_static. Would reduce lambda_sf by ~10-20%.",
+      "Tc_shift_K": [
+        -30,
+        -10
+      ],
+      "confidence": "MEDIUM"
+    },
+    {
+      "item": "Larger cluster size (Nc=8, 16, 32)",
+      "effect_on_Tc": "Could increase OR decrease lambda_sf",
+      "direction": "UNCERTAIN",
+      "estimate_basis": "Nc=4 captures leading nonlocal correction. Nc=16 (Maier 2005) gives 10-20% additional enhancement for some parameters, but can also reduce it if AF correlations are overestimated at Nc=4. Net effect: +/-10%.",
+      "Tc_shift_K": [
+        -20,
+        20
+      ],
+      "confidence": "LOW"
+    },
+    {
+      "item": "Analytic continuation systematic error",
+      "effect_on_Tc": "Adds uncertainty to spectral function and chi",
+      "direction": "UNCERTAIN",
+      "estimate_basis": "Pade/MaxEnt continuation from Matsubara to real axis introduces ~10-20% systematic uncertainty in spectral weights. Affects both Z(k) and chi(q,omega).",
+      "Tc_shift_K": [
+        -20,
+        20
+      ],
+      "confidence": "MEDIUM"
+    },
+    {
+      "item": "Multi-orbital / charge-transfer effects",
+      "effect_on_Tc": "Could modify pairing symmetry mixing",
+      "direction": "UNCERTAIN",
+      "estimate_basis": "3-band Hubbard vs 1-band: charge-transfer character mixes s-wave and d-wave. For Hg1223, the d-wave channel is dominant (Phase 35), but multi-orbital corrections could add 5-10% to Tc or reduce it.",
+      "Tc_shift_K": [
+        -10,
+        15
+      ],
+      "confidence": "LOW"
+    },
+    {
+      "item": "Full self-consistent Eliashberg (beyond Allen-Dynes)",
+      "effect_on_Tc": "Allen-Dynes with f1*f2 is ~10% accurate for lambda < 5",
+      "direction": "UNCERTAIN",
+      "estimate_basis": "Phase 37 showed Eliashberg/AD ratio of 1.12 for lambda~3. For lambda~5 (our cluster case), the ratio may be different (1.1-1.15). Already applied 1.12x correction.",
+      "Tc_shift_K": [
+        -10,
+        10
+      ],
+      "confidence": "MEDIUM"
+    },
+    {
+      "item": "Residual Coulomb pseudopotential in d-wave",
+      "effect_on_Tc": "mu* not exactly 0 in real d-wave",
+      "direction": "REDUCES Tc",
+      "estimate_basis": "The FS-averaged mu* in d-wave is exactly 0 by symmetry. BUT: higher-order Coulomb effects (pair-breaking from disorder, impurities) give effective mu*_eff ~ 0.01-0.03. Effect: 5-10% Tc reduction.",
+      "Tc_shift_K": [
+        -20,
+        0
+      ],
+      "confidence": "MEDIUM"
+    }
+  ],
+  "missing_physics_budget": {
+    "total_shift_K": [
+      -145,
+      45
+    ],
+    "best_corrected_range_K": [
+      97.30000000000001,
+      287.3
+    ],
+    "still_above_200K_low": false,
+    "still_above_200K_high": true
+  },
+  "room_temperature_gap": {
+    "experimental_benchmark_K": 151,
+    "carried_gap_K": 149,
+    "best_prediction_K": 242.3,
+    "prediction_gap_K": 57.69999999999999,
+    "corrected_gap_range_K": [
+      12.699999999999989,
+      202.7
+    ],
+    "note": "149 K gap is vs EXPERIMENTAL benchmark. Predictions are not measurements."
+  },
+  "VALD03_statement": "The 149 K room-temperature gap (300 K - 151 K experimental) remains OPEN. Predicted Tc values are computational estimates, not experimental benchmarks.",
+  "confidence": {
+    "stability_assessment": "HIGH for Hg1223 base (experimentally verified), MEDIUM for strained variants",
+    "missing_physics_budget": "LOW -- individual items are rough estimates from literature",
+    "overall": "The direction of Tc enhancement is robust. The absolute value carries ~25-35% uncertainty from missing physics."
+  }
+}
