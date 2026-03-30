@@ -1,0 +1,51 @@
+{
+  "verdict": "PHONON-PARTIAL",
+  "Tc_best_phonon_only": {
+    "value_K": 26.31,
+    "strain_pct": -2.01,
+    "RE": "Sm",
+    "mu_star": 0.1,
+    "lambda": 1.01,
+    "omega_log_K": 300.3
+  },
+  "Tc_vs_80K": "below",
+  "Tc_gap_to_80K_K": 53.7,
+  "phonon_fraction_estimate": {
+    "vs_La327_SLAO_onset": 0.55,
+    "vs_La327_SLAO_zero": ">>1 (phonon Tc >> zero-resist 2K; comparison unhelpful)",
+    "vs_LaPr327_onset": 0.35,
+    "range": [
+      0.3,
+      0.7
+    ],
+    "note": "Large onset-zero gap (38 K for La3Ni2O7 on SLAO) makes phonon fraction assessment ambiguous. Phonon-only Tc (21.9 K) exceeds zero-resistance Tc (2 K) but is ~55% of onset Tc (40 K). Zero-resistance Tc may be suppressed by film quality/thickness effects, not by pairing weakness."
+  },
+  "lambda_needed_for_80K": {
+    "value": 2.57,
+    "at_omega_log_K": 296,
+    "enhancement_factor": 2.8
+  },
+  "missing_contributions": [
+    "Spin fluctuations (likely dominant pairing channel for nickelates; lambda_sf ~ 0.5-2.0 estimated)",
+    "Anisotropic gap effects (sign-changing s+/- or d-wave may enhance Tc beyond isotropic prediction)",
+    "Anharmonic phonon corrections (10-20% effect on lambda, direction uncertain)",
+    "Film quality optimization (zero-resistance Tc currently limited by defects/grain boundaries)"
+  ],
+  "key_electronic_parameter": {
+    "name": "Ni-dz2 sigma-bonding weight at E_F",
+    "trend": "Monotonically increases with compressive strain (+25% from 0% to -2%)",
+    "correlation_with_Tc": "Strong positive correlation with experimental Tc ordering",
+    "mechanism": "Compressive strain increases c/a, improving dz2-O_pz-dz2 overlap across the bilayer. This enhances both the sigma-bonding Fermi surface sheets and the electron-phonon coupling for apical-breathing phonon modes."
+  },
+  "recommendation_for_phase_31": "Phase 31 (mechanism analysis) should: (1) Estimate spin-fluctuation lambda_sf from RPA or DMFT susceptibility; (2) Compute anisotropic Eliashberg with dz2/dx2-y2 gap functions; (3) Combine phonon + spin-fluctuation pairing to predict total Tc; (4) Assess whether the 80 K gate is reachable with the combined mechanism.",
+  "room_temperature_gap_status": {
+    "gap_K": 149,
+    "note": "The 149 K gap to room temperature is NOT closed by this phase. Even the best phonon-only Tc (26.3 K for Sm at -2%) is far below 300 K. Nickelates are not a room-temperature superconductor route via phonon engineering alone."
+  },
+  "NI_milestone_status": {
+    "NI-01": "COMPLETE (3 strain points: 0%, -1.20%, -2.01%)",
+    "NI-02": "COMPLETE (phonon + e-ph at 3 strains)",
+    "NI-03": "COMPLETE (RE substitution: Pr, Nd, Sm at optimal strain)",
+    "NI-04": "COMPLETE (80 K gate assessed: NOT reached with phonon-only)"
+  }
+}
