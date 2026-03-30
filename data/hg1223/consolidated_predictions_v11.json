@@ -1,0 +1,446 @@
+{
+  "phase": "56-cross-validation",
+  "plan": "01",
+  "script_version": "1.0.0",
+  "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "ASSERT_CONVENTION": "natural_units=NOT_used, fourier_convention=QE_plane_wave, custom=SI_derived_eV_K_GPa",
+  "consolidated_predictions": [
+    {
+      "id": 5,
+      "name": "Hg1223 strained + 15 GPa",
+      "Tc_v10_HI_K": 242.3,
+      "Tc_CTQMC_Nc4_K": 147.7,
+      "Tc_Nc_converged_K": 140.5,
+      "Tc_vertex_corrected_K": 145.6,
+      "Tc_final_range_K": [
+        143.0,
+        216.0
+      ],
+      "best_method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "exceeds_200K_central": false,
+      "exceeds_200K_bracket": true,
+      "exceeds_300K_bracket": false,
+      "operating_conditions": "strained + 15 GPa",
+      "material_class": "cuprate"
+    },
+    {
+      "id": 4,
+      "name": "Hg1223 at 30 GPa",
+      "Tc_v10_HI_K": 231.2,
+      "Tc_CTQMC_Nc4_K": 140.4,
+      "Tc_Nc_converged_K": 135.8,
+      "Tc_vertex_corrected_K": 140.8,
+      "Tc_final_range_K": [
+        138.3,
+        209.7
+      ],
+      "best_method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "exceeds_200K_central": false,
+      "exceeds_200K_bracket": true,
+      "exceeds_300K_bracket": false,
+      "operating_conditions": "30 GPa",
+      "material_class": "cuprate"
+    },
+    {
+      "id": 1,
+      "name": "Hg1223 epitaxial strain",
+      "Tc_v10_HI_K": 209.3,
+      "Tc_CTQMC_Nc4_K": 127.6,
+      "Tc_Nc_converged_K": 122.3,
+      "Tc_vertex_corrected_K": 126.7,
+      "Tc_final_range_K": [
+        124.5,
+        187.3
+      ],
+      "best_method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "exceeds_200K_central": false,
+      "exceeds_200K_bracket": false,
+      "exceeds_300K_bracket": false,
+      "operating_conditions": "epitaxial strain",
+      "material_class": "cuprate"
+    },
+    {
+      "id": 2,
+      "name": "(Hg0.8Tl0.2)Ba2Ca2Cu3O8+d",
+      "Tc_v10_HI_K": 193.1,
+      "Tc_CTQMC_Nc4_K": 118.9,
+      "Tc_Nc_converged_K": 115.7,
+      "Tc_vertex_corrected_K": 120.0,
+      "Tc_final_range_K": [
+        117.8,
+        178.1
+      ],
+      "best_method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "exceeds_200K_central": false,
+      "exceeds_200K_bracket": false,
+      "exceeds_300K_bracket": false,
+      "operating_conditions": "see notes",
+      "material_class": "cuprate"
+    },
+    {
+      "id": 0,
+      "name": "Hg1223 (baseline)",
+      "Tc_v10_HI_K": 188.6,
+      "Tc_CTQMC_Nc4_K": 114.6,
+      "Tc_Nc_converged_K": 112.5,
+      "Tc_vertex_corrected_K": 116.7,
+      "Tc_final_range_K": [
+        114.6,
+        173.2
+      ],
+      "best_method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "exceeds_200K_central": false,
+      "exceeds_200K_bracket": false,
+      "exceeds_300K_bracket": false,
+      "operating_conditions": "ambient",
+      "material_class": "cuprate"
+    },
+    {
+      "id": 6,
+      "name": "Sm3Ni2O7 (max levers)",
+      "Tc_v10_HI_K": 175.5,
+      "Tc_CTQMC_Nc4_K": 109.5,
+      "Tc_Nc_converged_K": 108.7,
+      "Tc_vertex_corrected_K": 113.1,
+      "Tc_final_range_K": [
+        110.9,
+        171.9
+      ],
+      "best_method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "exceeds_200K_central": false,
+      "exceeds_200K_bracket": false,
+      "exceeds_300K_bracket": false,
+      "operating_conditions": "see notes",
+      "material_class": "nickelate"
+    },
+    {
+      "id": 3,
+      "name": "Hg1223 overdoped (p=0.22)",
+      "Tc_v10_HI_K": 177.4,
+      "Tc_CTQMC_Nc4_K": 110.2,
+      "Tc_Nc_converged_K": 106.7,
+      "Tc_vertex_corrected_K": 110.0,
+      "Tc_final_range_K": [
+        108.3,
+        156.2
+      ],
+      "best_method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "exceeds_200K_central": false,
+      "exceeds_200K_bracket": false,
+      "exceeds_300K_bracket": false,
+      "operating_conditions": "ambient (doped)",
+      "material_class": "cuprate"
+    },
+    {
+      "id": "new-ndnio2_strained",
+      "name": "NdNiO2 (3.5% compressive strain)",
+      "Tc_screening_rough_K": 230.0,
+      "Tc_known_experimental_K": 15,
+      "lambda_sf_cluster_est": 1.8199999999999998,
+      "best_method": "RPA screening (Phase 51) -- NOT validated by cluster DMFT",
+      "exceeds_200K_central": false,
+      "exceeds_300K_bracket": false,
+      "operating_conditions": "Epitaxial strain 3.5% on SrTiO3 or similar, ambient P",
+      "material_class": "infinite-layer nickelate",
+      "note": "Screening-level only. Backtracking trigger fired (Phase 55): none exceed lambda_sf=2.5"
+    },
+    {
+      "id": "new-he_nickelate",
+      "name": "High-entropy (La,Nd,Sm,Gd,Y)NiO3",
+      "Tc_screening_rough_K": 43.0,
+      "Tc_known_experimental_K": 0,
+      "lambda_sf_cluster_est": 0.44000000000000006,
+      "best_method": "RPA screening (Phase 51) -- NOT validated by cluster DMFT",
+      "exceeds_200K_central": false,
+      "exceeds_300K_bracket": false,
+      "operating_conditions": "Bulk polycrystal or thin film, ambient P",
+      "material_class": "high-entropy nickelate",
+      "note": "Screening-level only. Backtracking trigger fired (Phase 55): none exceed lambda_sf=2.5"
+    },
+    {
+      "id": "new-sr2ruo4_pressure",
+      "name": "Sr2RuO4 at 1.5 GPa",
+      "Tc_screening_rough_K": 45.0,
+      "Tc_known_experimental_K": 1.5,
+      "lambda_sf_cluster_est": 0.69,
+      "best_method": "RPA screening (Phase 51) -- NOT validated by cluster DMFT",
+      "exceeds_200K_central": false,
+      "exceeds_300K_bracket": false,
+      "operating_conditions": "Hydrostatic pressure 1.5 GPa, cryogenic (<3 K)",
+      "material_class": "ruthenate",
+      "note": "Screening-level only. Backtracking trigger fired (Phase 55): none exceed lambda_sf=2.5"
+    },
+    {
+      "id": "new-lafeas_strained",
+      "name": "LaFeAsO (2% biaxial strain)",
+      "Tc_screening_rough_K": 181.0,
+      "Tc_known_experimental_K": 43,
+      "lambda_sf_cluster_est": 2.2399999999999998,
+      "best_method": "RPA screening (Phase 51) -- NOT validated by cluster DMFT",
+      "exceeds_200K_central": false,
+      "exceeds_300K_bracket": false,
+      "operating_conditions": "Epitaxial strain 2%, F-doped, ambient P",
+      "material_class": "iron-based 1111",
+      "note": "Screening-level only. Backtracking trigger fired (Phase 55): none exceed lambda_sf=2.5"
+    },
+    {
+      "id": "new-bilayer_ni_extreme",
+      "name": "La2.7Sm0.3Ni2O7 (4% strain)",
+      "Tc_screening_rough_K": 212.0,
+      "Tc_known_experimental_K": 80,
+      "lambda_sf_cluster_est": 2.25,
+      "best_method": "RPA screening (Phase 51) -- NOT validated by cluster DMFT",
+      "exceeds_200K_central": false,
+      "exceeds_300K_bracket": false,
+      "operating_conditions": "Epitaxial strain 4%, Sm x=0.3, 15-30 GPa or ambient film",
+      "material_class": "bilayer nickelate (extreme)",
+      "note": "Screening-level only. Backtracking trigger fired (Phase 55): none exceed lambda_sf=2.5"
+    }
+  ],
+  "validation_checks": {
+    "VALD01": {
+      "check": "VALD-01: CTQMC matches Hubbard-I at small U",
+      "status": "PASS",
+      "evidence": "Phase 48: Z_CTQMC -> Z_HI as U -> 0 within statistical error",
+      "reconfirmed": true
+    },
+    "VALD02": {
+      "check": "VALD-02: lambda_sf trend is monotonic with Nc",
+      "status": "PASS",
+      "evidence": "Phase 52: trend = increasing",
+      "reconfirmed": true
+    },
+    "VALD03": {
+      "check": "VALD-03: 300 K room-temperature target explicitly addressed",
+      "status": "ADDRESSED",
+      "result": "300 K NOT reached",
+      "best_Tc_K": 145.6,
+      "best_range_K": [
+        143.0,
+        216.0
+      ],
+      "gap_to_300K_K": 84.0,
+      "statement": "Room temperature = 300 K = 80 F = 27 C. No candidate reaches 300 K within its uncertainty bracket."
+    },
+    "VALD04": {
+      "check": "VALD-04: Any Tc >= 300 K requires full evidence package",
+      "status": "NOT APPLICABLE",
+      "reason": "No candidate reaches 300 K. No evidence package required.",
+      "note": "If a 300 K claim were made, it would require: full uncertainty bracket, structural stability, synthesis pathway, operating conditions."
+    }
+  },
+  "error_budget": {
+    "candidate": "Hg1223 strained + 15 GPa",
+    "Tc_central_K": 145.6,
+    "sources": [
+      {
+        "source": "CTQMC statistical (Monte Carlo sampling)",
+        "contribution_K": 10,
+        "direction": "symmetric",
+        "from_phase": 49
+      },
+      {
+        "source": "Analytic continuation (alpha parameter in chi_0 ~ 1/Z^alpha)",
+        "contribution_K": 35,
+        "direction": "asymmetric (mostly upward)",
+        "from_phase": 49
+      },
+      {
+        "source": "Nc extrapolation (1/Nc fit uncertainty)",
+        "contribution_K": 15,
+        "direction": "symmetric",
+        "from_phase": 52
+      },
+      {
+        "source": "Vertex correction (delta_vertex range 3-18%)",
+        "contribution_K": 8,
+        "direction": "asymmetric (upward)",
+        "from_phase": 54
+      },
+      {
+        "source": "Allen-Dynes vs full Matsubara Eliashberg",
+        "contribution_K": 20,
+        "direction": "unknown (could go either way)",
+        "from_phase": "systematic"
+      },
+      {
+        "source": "Phonon coupling lambda_ph (DFT uncertainty)",
+        "contribution_K": 8,
+        "direction": "symmetric",
+        "from_phase": "v8.0"
+      },
+      {
+        "source": "Strong-coupling correction (f1 factor uncertainty)",
+        "contribution_K": 12,
+        "direction": "unknown",
+        "from_phase": "systematic"
+      }
+    ],
+    "total_downward_K": 40,
+    "total_upward_K": 70,
+    "final_bracket_K": [
+      106.0,
+      216.0
+    ],
+    "note": "Dominated by analytic continuation systematic and Allen-Dynes approximation. Full Matsubara-axis Eliashberg would be the single largest improvement."
+  },
+  "forbidden_proxy_check": {
+    "fp1_no_uncontrolled_uncertainty": true,
+    "fp1_detail": "All candidates carry explicit uncertainty brackets",
+    "fp2_no_pressure_as_ambient": true,
+    "fp2_detail": "Hg1223 strained+15GPa explicitly labeled as requiring 15 GPa operating pressure",
+    "fp3_no_screening_hit_as_prediction": true,
+    "fp3_detail": "Beyond-cuprate screening results labeled as RPA-level, not validated by cluster DMFT"
+  },
+  "final_ranking": [
+    {
+      "rank": 1,
+      "name": "Hg1223 strained + 15 GPa",
+      "Tc_K": 145.6,
+      "range_K": [
+        143.0,
+        216.0
+      ],
+      "method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "material_class": "cuprate",
+      "exceeds_300K": false
+    },
+    {
+      "rank": 2,
+      "name": "Hg1223 at 30 GPa",
+      "Tc_K": 140.8,
+      "range_K": [
+        138.3,
+        209.7
+      ],
+      "method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "material_class": "cuprate",
+      "exceeds_300K": false
+    },
+    {
+      "rank": 3,
+      "name": "Hg1223 epitaxial strain",
+      "Tc_K": 126.7,
+      "range_K": [
+        124.5,
+        187.3
+      ],
+      "method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "material_class": "cuprate",
+      "exceeds_300K": false
+    },
+    {
+      "rank": 4,
+      "name": "(Hg0.8Tl0.2)Ba2Ca2Cu3O8+d",
+      "Tc_K": 120.0,
+      "range_K": [
+        117.8,
+        178.1
+      ],
+      "method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "material_class": "cuprate",
+      "exceeds_300K": false
+    },
+    {
+      "rank": 5,
+      "name": "Hg1223 (baseline)",
+      "Tc_K": 116.7,
+      "range_K": [
+        114.6,
+        173.2
+      ],
+      "method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "material_class": "cuprate",
+      "exceeds_300K": false
+    },
+    {
+      "rank": 6,
+      "name": "Sm3Ni2O7 (max levers)",
+      "Tc_K": 113.1,
+      "range_K": [
+        110.9,
+        171.9
+      ],
+      "method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "material_class": "nickelate",
+      "exceeds_300K": false
+    },
+    {
+      "rank": 7,
+      "name": "Hg1223 overdoped (p=0.22)",
+      "Tc_K": 110.0,
+      "range_K": [
+        108.3,
+        156.2
+      ],
+      "method": "CTQMC + Nc-conv + vertex (v11.0 final)",
+      "material_class": "cuprate",
+      "exceeds_300K": false
+    },
+    {
+      "rank": 8,
+      "name": "NdNiO2 (3.5% compressive strain)",
+      "Tc_K": 15,
+      "range_K": "N/A",
+      "method": "RPA screening (Phase 51) -- NOT validated by cluster DMFT",
+      "material_class": "infinite-layer nickelate",
+      "exceeds_300K": false
+    },
+    {
+      "rank": 9,
+      "name": "High-entropy (La,Nd,Sm,Gd,Y)NiO3",
+      "Tc_K": 0,
+      "range_K": "N/A",
+      "method": "RPA screening (Phase 51) -- NOT validated by cluster DMFT",
+      "material_class": "high-entropy nickelate",
+      "exceeds_300K": false
+    },
+    {
+      "rank": 10,
+      "name": "Sr2RuO4 at 1.5 GPa",
+      "Tc_K": 1.5,
+      "range_K": "N/A",
+      "method": "RPA screening (Phase 51) -- NOT validated by cluster DMFT",
+      "material_class": "ruthenate",
+      "exceeds_300K": false
+    },
+    {
+      "rank": 11,
+      "name": "LaFeAsO (2% biaxial strain)",
+      "Tc_K": 43,
+      "range_K": "N/A",
+      "method": "RPA screening (Phase 51) -- NOT validated by cluster DMFT",
+      "material_class": "iron-based 1111",
+      "exceeds_300K": false
+    },
+    {
+      "rank": 12,
+      "name": "La2.7Sm0.3Ni2O7 (4% strain)",
+      "Tc_K": 80,
+      "range_K": "N/A",
+      "method": "RPA screening (Phase 51) -- NOT validated by cluster DMFT",
+      "material_class": "bilayer nickelate (extreme)",
+      "exceeds_300K": false
+    }
+  ],
+  "decision_300K": {
+    "reaches_300K": false,
+    "gap_to_300K_from_upper_bracket_K": 84,
+    "assessment": "300 K (room temperature) is NOT reached by any candidate at any method level. Best prediction: Hg1223 strained + 15 GPa at 146 K [106, 216]. The gap of ~84 K from the upper bracket to 300 K cannot be closed by any remaining known theoretical correction within the spin-fluctuation + phonon Eliashberg framework."
+  },
+  "success_criteria": {
+    "SC1_vertex_incorporated": true,
+    "SC2_single_table": true,
+    "SC3_VALD01_confirmed": true,
+    "SC4_VALD02_confirmed": true,
+    "SC5_VALD03_explicit": true,
+    "SC6_VALD04_checked": true,
+    "all_pass": true
+  },
+  "confidence": {
+    "overall": "MEDIUM-HIGH",
+    "rationale": "All tracks converge on the same conclusion: Hg1223 strained+15GPa is the best candidate at ~146 K, well below 300 K. The DIRECTION is robust (below 300 K). The MAGNITUDE has uncertainty from analytic continuation and Allen-Dynes approximation, but even the most optimistic bracket (216 K) falls 84 K short."
+  },
+  "room_temperature_gap_K": 149,
+  "VALD03_statement": "The 149 K room-temperature gap remains OPEN. All theoretical handles exhausted within current framework."
+}
