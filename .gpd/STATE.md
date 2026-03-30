@@ -6,52 +6,59 @@ See: .gpd/PROJECT.md (updated 2026-03-30)
 
 **Machine-readable scoping contract:** `.gpd/state.json` field `project_contract`
 
-**Core research question:** Can beyond-Eliashberg methods (DMFT+Eliashberg, spin-fluctuation RPA) predict a material or condition that closes the 149 K gap -- and if they reproduce the 151 K Hg1223 benchmark, can they guide the design of a room-temperature superconductor?
-**Current focus:** Phase 34 -- DMFT Setup and Correlated Electronic Structure
+**Core research question:** Can cluster DMFT + anisotropic Eliashberg push the predicted Tc for optimized cuprate or nickelate structures above 200 K -- and identify a specific material worth synthesizing for room-temperature superconductivity?
+**Current focus:** Phase 42 -- DCA Implementation and Cluster Self-Energy
 
 ## Current Position
 
-**Current Phase:** 34
-**Current Phase Name:** DMFT Setup and Correlated Electronic Structure
-**Total Phases:** 8 (Phases 34-41)
+**Current Phase:** 42
+**Current Phase Name:** DCA Implementation and Cluster Self-Energy
+**Total Phases:** 6 (Phases 42-47)
 **Current Plan:** --
 **Total Plans in Phase:** TBD
-**Status:** Milestone complete
-**Last Activity:** 2026-03-30
-**Last Activity Description:** v9.0 milestone completed and archived
+**Status:** Ready to plan
+**Last Activity:** 2026-03-29
+**Last Activity Description:** v10.0 roadmap created
 
 **Progress:** [░░░░░░░░░░] 0%
 
 ## Active Calculations
 
-None yet. Phase 34 awaits planning.
+None yet. Phase 42 awaits planning.
 
 ## Intermediate Results
 
 Carried from prior milestones:
 
-- v1.0 pipeline benchmarks: H3S Tc = 182 K (10.5% error vs expt), LaH10 Tc = 276 K (10.6% error vs expt) -- pipeline accuracy established
-- v1.0 CsInH3 result: Tc = 214 K at 3 GPa (SSCHA-corrected), E_hull = 6 meV/atom -- hydride Tc ceiling for this family
-- v8.0 phonon-only Tc ceiling: 26-36 K for all oxide candidates (Hg1223, Hg1234, Hg1245, strained La3Ni2O7, hybrid superlattices)
+- v1.0 pipeline benchmarks: H3S Tc = 182 K (10.5% error vs expt), LaH10 Tc = 276 K (10.6% error vs expt)
+- v1.0 CsInH3 result: Tc = 214 K at 3 GPa (SSCHA-corrected), E_hull = 6 meV/atom
+- v8.0 phonon-only Tc ceiling: 26-36 K for all oxide candidates
 - v8.0 mechanism analysis: phonon fraction 20-45% of cuprate Tc; spin fluctuations contribute 55-80%
-- v8.0 Hg multilayer finding: n=3 (Hg1223) is optimally layered; adding layers decreases Tc via AF inner-plane competition
-- v8.0 nickelate phonon lambda_ph: best 26 K phonon-only, 80 K gate not reached
+- v8.0 Hg multilayer finding: n=3 (Hg1223) is optimally layered
+- v9.0 DMFT: Z=0.33, m*/m=3.0, Mott proximity confirmed for Hg1223
+- v9.0 Spin susceptibility: lambda_sf=1.8, d-wave channel dominant
+- v9.0 Spectral gate: PASS 3/4 (pseudogap, Hubbard bands, d-wave)
+- v9.0 Full Eliashberg Tc: 108 K for Hg1223 (-28% vs 151 K experimental)
+- v9.0 Nickelate RPA: nesting at (pi,pi), strain enhances spin fluctuations
+- v9.0 Nickelate combined Tc: 54 K central
+- v9.0 Guided design: best candidate 145 K (strained+pressured Hg1223), no 200 K candidate
+- v9.0 Near-miss analysis: cluster DMFT could add 20-50% to lambda_sf, anisotropic Eliashberg adds 10-30% Tc uplift; combined range 170-217 K
 - Carried retained benchmark: Hg1223 at 151 K after pressure quench (ref-hg1223-quench)
-- Nickelate frontier: ambient film onset 63 K (ref-lapr327-ambient), ambient bulk 40 K (ref-smnio2-40k), pressurized single-crystal 96 K (ref-nickelate-96k)
 - Room-temperature gap: 149 K (unchanged since v4.0)
 
 ## Open Questions
 
-- Can single-site DMFT capture enough AF correlation physics for cuprates, or will cluster DMFT be needed? (scoping decision: single-site first, cluster is EXT scope)
-- What is the correct U/J for the Hg1223 3-band model? Constrained RPA vs literature values may differ
-- Is the spin-fluctuation pairing channel for La3Ni2O7 s+/- or d-wave? RPA will determine this
-- Will anisotropic Eliashberg (EXT-01) significantly change Tc predictions vs isotropic approximation?
+- Will 4-site DCA capture enough nonlocal AF correlation to push lambda_sf from 1.8 to 2.5-3.5?
+- Is the CTQMC sign problem manageable at physical temperatures (T~100 K) for the 4-site cluster?
+- Does anisotropic Eliashberg with d-wave gap give the expected 10-30% Tc uplift over isotropic?
+- Can the combined method push any candidate above 200 K, or is additional physics (vertex corrections, dynamic U) required?
+- What is the correct analytic continuation strategy for cluster DMFT Matsubara data?
 
 ## Performance Metrics
 
 | Label | Duration | Tasks | Files |
 | --- | --- | --- | --- |
-| v9.0 roadmap creation | -- | -- | `.gpd/ROADMAP.md`, `.gpd/STATE.md` |
+| v10.0 roadmap creation | -- | -- | `.gpd/ROADMAP.md`, `.gpd/STATE.md` |
 
 ## Accumulated Context
 
@@ -61,18 +68,17 @@ Full log: `.gpd/DECISIONS.md`
 
 **Recent high-impact:**
 - [v8.0 Phase 33]: Phonon-only Eliashberg cannot close 149 K gap; spin fluctuations dominate cuprate/nickelate Tc; beyond-Eliashberg methods required
-- [v9.0 start]: Three-track structure: Track A (DMFT+Eliashberg for Hg1223 with spectral gate), Track B (RPA for nickelates, parallel), Track C (guided design, contingent on Track A)
-- [v6.0 Phase 23]: Primary route = Hg1223 PQP (4.15/5.00), secondary = bilayer La3Ni2O7 (2.90/5.00)
-- [v7.0 Phase 26]: Both route protocols experiment-ready; 149 K gap unchanged; next milestone must produce computed or measured Tc
+- [v9.0 start]: Three-track structure: Track A (DMFT+Eliashberg for Hg1223), Track B (RPA for nickelates), Track C (guided design)
+- [v9.0 Phase 41]: 149 K gap OPEN; near-miss analysis points to cluster DMFT + anisotropic Eliashberg as next step (170-217 K range accessible)
+- [v10.0 start]: Three-track structure: Track A (cluster DMFT/DCA for Hg1223), Track B (anisotropic Eliashberg, parallel), Track C (combined re-screening + decision, after A and B)
 
 ### Active Approximations
 
 | Approximation | Validity Range | Controlling Parameter | Current Value | Status |
 | --- | --- | --- | --- | --- |
-| Single-site DMFT | Captures local correlations; misses nonlocal AF | Correlation length xi_AF | TBD | Starting approximation |
-| Isotropic Eliashberg | lambda < 3, no strong anisotropy | Fermi surface anisotropy | TBD | To be checked |
-| RPA spin susceptibility | Weak-to-moderate coupling | U*chi_0(Q) < 1 | TBD | Must verify Stoner criterion |
-| PBEsol exchange-correlation | Weakly correlated metals | U/W | TBD for cuprates | Marginal; DMFT corrects |
+| 4-site DCA cluster DMFT | Captures leading nonlocal AF at commensurate Q | Cluster size Nc | Nc=4 | New for v10.0 |
+| Anisotropic Eliashberg | Resolves k-dependent gap | Fermi surface mesh density | TBD | New for v10.0 |
+| PBEsol + DMFT | Correlated metals | U/W | U=3.5 eV | Carried from v9.0 |
 | mu* = 0.10-0.13 bracket | Conventional range for oxides | Screened Coulomb | 0.10-0.13 | Standard |
 | Migdal theorem | omega_ph << E_F | omega_log / E_F | TBD | Expected valid |
 
@@ -89,6 +95,9 @@ Full log: `.gpd/DECISIONS.md`
 | Hg1223 phonon-only Tc | 31 K | +/- 5 K | Phase 27 (v8.0) | Isotropic Eliashberg |
 | La3Ni2O7 phonon-only Tc | 26 K | +/- 5 K | Phase 29 (v8.0) | Isotropic Eliashberg |
 | Phonon fraction of cuprate Tc | 20-45% | range estimate | Phase 31 (v8.0) | Mechanism analysis |
+| Hg1223 DMFT+Eliashberg Tc | 108 K | +/- 15 K (est.) | Phase 37 (v9.0) | Single-site isotropic |
+| Hg1223 lambda_sf | 1.8 | +/- 0.3 (est.) | Phase 35 (v9.0) | Single-site DMFT |
+| Best guided-design Tc | 145 K | +/- 20 K (est.) | Phase 40 (v9.0) | Strained+pressured Hg1223 |
 
 ### Pending Todos
 
@@ -96,13 +105,13 @@ None yet.
 
 ### Blockers/Concerns
 
-- Single-site DMFT may underestimate AF correlation effects; this is a known limitation accepted for v9.0 scope (cluster DMFT is EXT scope)
-- CTQMC solver requires significant computational resources; analytic continuation from Matsubara to real-frequency axis introduces additional uncertainty
-- The 149 K gap requires fundamentally new uplift; even if DMFT+Eliashberg reproduces 151 K, finding a structure that exceeds 200 K is not guaranteed
-- RPA may hit Stoner instability for nickelates at realistic U values
+- CTQMC sign problem may limit accessible temperature range for 4-site cluster; physical T~100 K may require impractical Monte Carlo sampling
+- Analytic continuation (MaxEnt or Pade) from Matsubara to real-frequency axis introduces systematic uncertainty in spectral functions and susceptibilities
+- The 149 K gap requires fundamentally new uplift; even the optimistic 170-217 K range from near-miss analysis may not materialize
+- If cluster DMFT enhancement is modest (<20% lambda_sf increase), the combined method may not reach the 200 K threshold
 
 ## Session Continuity
 
 **Last session:** 2026-03-29
-**Stopped at:** v9.0 roadmap created; Phase 34 ready to plan
+**Stopped at:** v10.0 roadmap created; Phase 42 ready to plan
 **Resume file:** `.gpd/ROADMAP.md`
