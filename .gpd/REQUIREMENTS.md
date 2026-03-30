@@ -1,73 +1,69 @@
-# Requirements: v15.0 Beyond-Eliashberg Pairing Mechanisms for 300 K
+# Requirements: v16.0 Flat-Band Hydride Materials Discovery for 300 K
 
 **Defined:** 2026-03-30
-**Core Research Question:** Can non-adiabatic pairing, plasmon-mediated coupling, excitonic pairing, or an unknown mechanism break through the 240 K Eliashberg ceiling to reach 300 K?
+**Core Research Question:** Can we identify a specific material with a flat band at E_F ~ 50-100 meV, strong hydrogen phonon coupling (lambda ~ 2-3), and Migdal ratio omega_D/E_F ~ 2-3 that yields Tc >= 300 K via non-adiabatic vertex corrections?
 
-## The Physics Problem
+## The Physics Target (from v15.0)
 
-v14.0 established the Eliashberg ceiling at 240 +/- 30 K from four mutually contradictory constraints. The 60-90 K irreducible gap to 300 K cannot be closed within the phonon + spin-fluctuation Eliashberg framework. We must explore fundamentally different pairing mechanisms.
+Non-adiabatic vertex corrections give Tc_NA = Tc_Eliashberg * (1 + alpha_vc * omega_D/E_F).
+With alpha_vc ~ 0.3, omega_D/E_F ~ 2.5: enhancement ~ 1.75x.
+Starting from Eliashberg Tc ~ 170-200 K: vertex-corrected Tc ~ 300-350 K.
+
+Need: flat band (E_F ~ 50-100 meV) + hydrogen modes (omega_D ~ 150 meV) + lambda ~ 2-3.
 
 ## Primary Requirements
 
-### Non-Adiabatic Pairing (Track A — Migdal Breakdown)
+### Flat-Band Hydride Survey (Track A)
 
-- [ ] **NA-01**: Identify materials where the Migdal parameter omega_D/E_F > 0.3 (breakdown of adiabatic approximation); screen flat-band systems, magic-angle graphene, heavy-fermion hydrides
-- [ ] **NA-02**: Compute vertex corrections beyond Migdal-Eliashberg for the best candidate; determine whether non-adiabatic effects ENHANCE or SUPPRESS Tc
-- [ ] **NA-03**: Estimate non-adiabatic Tc for the best candidate; compare with Eliashberg ceiling (241 K)
+- [ ] **FB-01**: Survey materials with flat bands near E_F: twisted bilayer systems, kagome metals, Lieb lattice oxides, heavy-fermion hydrides, van Hove singularity systems; compute E_F and bandwidth W for each
+- [ ] **FB-02**: Screen for hydrogen incorporation feasibility: which flat-band materials can host H in interstitial sites or as part of the structure while maintaining the flat band?
+- [ ] **FB-03**: Compute Migdal parameter omega_D/E_F for each viable candidate; select those with ratio > 1.5
 
-### Plasmon-Mediated Pairing (Track B — Electronic Mechanism)
+### Electron-Phonon Coupling in Flat-Band Hydrides (Track B)
 
-- [ ] **PL-01**: Compute the dielectric function epsilon(q,omega) and plasmon spectrum for candidate layered metals; identify materials with low-energy plasmons (omega_pl < 1 eV) that could mediate pairing
-- [ ] **PL-02**: Evaluate the plasmon-mediated pairing interaction V_pl(q,omega) in the singlet channel; compute lambda_pl and effective omega_pl
-- [ ] **PL-03**: Solve combined phonon + plasmon Eliashberg equations; predict Tc with plasmon boost
+- [ ] **EP-01**: For top 3-5 candidates from Track A, compute DFT band structure confirming flat band and hydrogen phonon modes; extract lambda_ph from alpha2F
+- [ ] **EP-02**: Verify that the flat band survives hydrogen incorporation (doesn't disperse away from E_F)
+- [ ] **EP-03**: Compute omega_log for each candidate; verify omega_log > 700 K from H modes
 
-### Excitonic Pairing (Track C — Exciton-Mediated)
+### Non-Adiabatic Tc Prediction (Track C)
 
-- [ ] **EX-01**: Survey materials with low-energy excitons (< 100 meV) adjacent to metallic bands: semiconductor/metal heterostructures, excitonic insulators near the metal-insulator transition, mixed-valence compounds
-- [ ] **EX-02**: Compute exciton-mediated pairing interaction from the polarization function; evaluate lambda_ex and omega_ex
-- [ ] **EX-03**: Predict Tc from combined phonon + exciton kernel; assess whether excitonic mechanism can exceed 240 K ceiling
-
-### Novel Mechanism Discovery (Track D — AI-Guided)
-
-- [ ] **NM-01**: Analyze ALL known superconductors with Tc > 30 K from the SuperCon database; identify anomalous Tc outliers that exceed Eliashberg predictions — these may signal unknown mechanisms
-- [ ] **NM-02**: For any identified anomalous material, characterize what's different about its electronic structure, phonon spectrum, or correlation physics; propose a mechanism hypothesis
-- [ ] **NM-03**: If a new mechanism is identified, estimate its contribution to Tc and whether it can be combined with known mechanisms to exceed 300 K
+- [ ] **NA-01**: Compute vertex corrections for each candidate using the Pietronero-Grimaldi framework with forward-scattering dominance
+- [ ] **NA-02**: Solve the vertex-corrected Eliashberg equations; predict Tc_NA for each candidate
+- [ ] **NA-03**: Identify ANY candidate with Tc_NA >= 300 K; if found, compute thermodynamic stability
 
 ### Validations
 
-- [ ] **VALD-01**: All Tc predictions must include full uncertainty brackets
-- [ ] **VALD-02**: 300 K (80°F) target explicit in all deliverables
-- [ ] **VALD-03**: Any beyond-Eliashberg Tc must be compared with the 240 K Eliashberg ceiling to quantify the enhancement
+- [ ] **VALD-01**: Flat band must be confirmed (bandwidth W < 100 meV) from DFT
+- [ ] **VALD-02**: E_hull < 50 meV/atom for all candidates
+- [ ] **VALD-03**: 300 K target explicit; Tc must include vertex correction uncertainty
 
 ### Decision
 
-- [ ] **DEC-01**: Rank all beyond-Eliashberg candidates
-- [ ] **DEC-02**: 300 K verdict: does ANY mechanism break through?
+- [ ] **DEC-01**: Master ranking by vertex-corrected Tc
+- [ ] **DEC-02**: 300 K verdict: specific material identified or honest accounting of remaining gap
 
 ## Traceability
 
 | Requirement | Phase | Status |
 | --- | --- | --- |
-| NA-01 | Phase 81 | Pending |
-| NA-02 | Phase 82 | Pending |
-| NA-03 | Phase 82 | Pending |
-| PL-01 | Phase 83 | Pending |
-| PL-02 | Phase 84 | Pending |
-| PL-03 | Phase 84 | Pending |
-| EX-01 | Phase 85 | Pending |
-| EX-02 | Phase 86 | Pending |
-| EX-03 | Phase 86 | Pending |
-| NM-01 | Phase 87 | Pending |
-| NM-02 | Phase 88 | Pending |
-| NM-03 | Phase 88 | Pending |
-| VALD-01 | Phases 82, 84, 86, 88, 89 | Pending |
-| VALD-02 | Phases 82, 84, 86, 88, 89 | Pending |
-| VALD-03 | Phases 82, 84, 86, 88, 89 | Pending |
-| DEC-01 | Phase 89 | Pending |
-| DEC-02 | Phase 89 | Pending |
+| FB-01 | Phase 90 | Pending |
+| FB-02 | Phase 91 | Pending |
+| FB-03 | Phase 91 | Pending |
+| EP-01 | Phase 92 | Pending |
+| EP-02 | Phase 92 | Pending |
+| EP-03 | Phase 93 | Pending |
+| NA-01 | Phase 94 | Pending |
+| NA-02 | Phase 94 | Pending |
+| NA-03 | Phase 95 | Pending |
+| VALD-01 | Phase 92, 95 (final), 96 (final) | Pending |
+| VALD-02 | Phase 93, 95 (final), 96 (final) | Pending |
+| VALD-03 | Phase 95, 96 (final) | Pending |
+| DEC-01 | Phase 96 | Pending |
+| DEC-02 | Phase 96 | Pending |
 
-**Coverage:** 17/17 primary requirements mapped
+**Coverage:** 15/15 primary requirements mapped. No orphans. One requirement (VALD-01) appears in multiple phases with progressive validation; primary assignment is Phase 92 with final validation in Phase 96.
 
 ---
 
 _Requirements defined: 2026-03-30_
+_Traceability updated: 2026-03-29_

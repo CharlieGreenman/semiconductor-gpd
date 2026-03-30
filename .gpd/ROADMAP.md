@@ -16,7 +16,8 @@
 - **v12.0 Hydrogen-Correlated Oxide Inverse Design** -- Phases 58-66 (completed 2026-03-30)
 - **v13.0 Close the Final 103 K Gap** -- Phases 67-73 (completed 2026-03-30)
 - **v14.0 Hybrid Material Design** -- Phases 74-80 (completed 2026-03-29)
-- **v15.0 Beyond-Eliashberg Pairing Mechanisms** -- Phases 81-89 (active)
+- **v15.0 Beyond-Eliashberg Pairing Mechanisms** -- Phases 81-89 (completed 2026-03-29)
+- **v16.0 Flat-Band Hydride Materials Discovery** -- Phases 90-96 (active)
 
 <details>
 <summary>v6.0-v9.0 (Phases 22-41) -- COMPLETED</summary>
@@ -372,336 +373,286 @@ The three tracks each propose a different resolution of this tension.
 
 ---
 
-## v15.0 Beyond-Eliashberg Pairing Mechanisms for 300 K
+<details>
+<summary>v15.0 Beyond-Eliashberg Pairing Mechanisms (Phases 81-89) -- COMPLETED 2026-03-29</summary>
 
-**Target: Determine whether non-adiabatic corrections, plasmon-mediated pairing, excitonic pairing, or any previously unrecognized mechanism can break through the 240 K Eliashberg ceiling to reach Tc = 300 K**
+**Key result:** Non-adiabatic vertex corrections (Pietronero-Grimaldi framework) are the only beyond-Eliashberg mechanism that enhances Tc. With forward-scattering dominance and omega_D/E_F ~ 2-3, the enhancement factor is ~1.75x, yielding Tc_NA ~ 285 K [225, 345] from an Eliashberg base of ~170 K. Plasmon and excitonic routes were net-neutral or suppressive. Anomaly detection found no unexplained outliers. The path to 300 K requires a specific material with: (a) flat band at E_F giving E_F ~ 50-100 meV, (b) strong H-phonon coupling lambda ~ 2-3, (c) Migdal ratio omega_D/E_F ~ 2-3.
 
-**Overview:** v14.0 established that the anisotropic Eliashberg ceiling is 240 +/- 30 K. The remaining 60-90 K gap to 300 K cannot be closed by tuning lambda, omega_log_eff, or pairing symmetry within the Eliashberg framework. This milestone asks whether physics BEYOND Eliashberg -- vertex corrections from Migdal breakdown, electronic (plasmon) pairing glue, excitonic pairing, or mechanisms not yet catalogued -- can provide the missing Tc uplift. Four parallel tracks investigate independent mechanisms. A final decision phase consolidates all evidence into a definitive beyond-Eliashberg verdict.
+See: `.gpd/milestones/v15.0-ROADMAP.md`
 
-**Phases:** 9 (Phases 81-89)
+</details>
+
+---
+
+## v16.0 Flat-Band Hydride Materials Discovery for 300 K
+
+**Target: Identify a specific flat-band hydride material with omega_D/E_F ~ 2-3, lambda ~ 2-3, and vertex-corrected Tc >= 300 K**
+
+**Overview:** v15.0 established that non-adiabatic vertex corrections (Pietronero-Grimaldi framework with forward-scattering dominance) are the only beyond-Eliashberg mechanism that enhances Tc, yielding a 1.75x enhancement when omega_D/E_F ~ 2-3. Starting from an Eliashberg base of ~170 K for a strong-coupling hydride, vertex corrections push Tc_NA to ~285 K [225, 345] -- the first time 300 K has entered the uncertainty bracket from a controlled calculation. The missing ingredient is a real material with: (a) a flat band at E_F giving E_F ~ 50-100 meV, (b) strong H-phonon coupling lambda ~ 2-3, and (c) Migdal ratio omega_D/E_F ~ 2-3. This milestone searches for that material through three sequential tracks: survey and screening (Track A), DFT electron-phonon characterization (Track B), and non-adiabatic Tc prediction (Track C). A decision phase consolidates results.
+
+**Phases:** 7 (Phases 90-96)
 **Depth:** Standard
-**Research Mode:** Balanced (four parallel tracks + decision)
+**Research Mode:** Balanced (three sequential tracks + decision)
 
 ### Contract Overview
 
-**Target observable:** A beyond-Eliashberg mechanism (or combination) that demonstrably produces Tc > 240 K, ideally reaching 300 K, for at least one material candidate -- or a definitive assessment that no such mechanism exists within current theoretical reach.
+**Target observable:** A specific material (real or designable) with flat band at E_F (bandwidth W < 100 meV, E_F ~ 50-100 meV), strong hydrogen phonon coupling (lambda ~ 2-3), Migdal ratio omega_D/E_F ~ 2-3, and vertex-corrected Tc >= 300 K -- or a definitive assessment that no such material exists within known chemistry.
 
 **Key physics context:**
-- Eliashberg ceiling: 240 +/- 30 K (v14.0 result)
-- Migdal parameter omega_D/E_F must be checked for high-frequency H modes
-- Plasmon-mediated pairing requires low-energy plasmons (omega_pl < 1 eV) in layered metals
-- Excitonic pairing requires low-energy excitons (< 100 meV) adjacent to metallic bands
-- Unknown mechanisms may lurk in anomalous Tc outliers that exceed Eliashberg predictions
+- v15.0 result: non-adiabatic vertex corrections (Pietronero-Grimaldi, forward-scattering dominance) give ~1.75x Tc enhancement when omega_D/E_F ~ 2-3
+- Eliashberg base: strong-coupling hydride Tc ~ 170-200 K; vertex-corrected Tc ~ 285 K [225, 345]
+- The enhancement is material-specific: needs E_F ~ 50-100 meV (flat band) so that H-phonon omega_D ~ 150 meV gives omega_D/E_F ~ 2-3
+- Flat bands occur in twisted bilayer systems, kagome metals, Lieb lattice oxides, heavy-fermion hydrides, van Hove singularity systems
+- Not all flat-band materials can host hydrogen or maintain the flat band after H incorporation
 
 **Decisive outputs:**
-- Track A: Non-adiabatic Tc for best candidate with vertex corrections; sign of correction (enhancement vs. suppression)
-- Track B: Plasmon-boosted Tc from combined phonon + plasmon Eliashberg; lambda_pl and omega_pl
-- Track C: Exciton-mediated Tc from combined phonon + exciton kernel; lambda_ex and omega_ex
-- Track D: Anomalous-Tc material list with mechanism hypotheses; estimated Tc contribution from novel mechanism
-- Decision: Ranked beyond-Eliashberg candidates with 300 K verdict and full uncertainty brackets
+- Track A: Flat-band material survey with E_F, W, and Migdal ratio for each; H-screening to identify candidates that maintain flat band + host H
+- Track B: DFT band structures, phonon spectra, alpha2F, lambda_ph, and omega_log for top 3-5 candidates from Track A
+- Track C: Vertex-corrected Tc_NA for each Track B candidate using Pietronero-Grimaldi framework; thermodynamic stability
+- Decision: Master ranking by Tc_NA with 300 K verdict and material specification
 
 **Anchors carried:**
-- v14.0 Eliashberg ceiling: 240 +/- 30 K (the bar that must be exceeded)
-- v13.0 finding: 300 K requires lambda_ph >= 3.0 + d-wave (mu*=0) + omega_log_eff >= 740 K within Eliashberg
-- v12.0 omega_log_eff = 483 K, Tc = 197 K (Allen-Dynes baseline)
+- v15.0 non-adiabatic enhancement: 1.75x at omega_D/E_F ~ 2.5, alpha_vc ~ 0.3 (Pietronero-Grimaldi)
+- v15.0 best prediction: Tc_NA ~ 285 K [225, 345] (first time 300 K in uncertainty bracket)
+- v14.0 Eliashberg ceiling: 240 +/- 30 K (the conventional ceiling)
 - v11.0 CTQMC validated Tc = 146 K vs 151 K experimental for Hg1223
 - ref-hg1223-quench: 151 K retained benchmark (experimental)
 - 300 K (80 F) room-temperature target
+- E_hull < 50 meV/atom stability gate (carried from v12.0)
 
 **Forbidden proxies:**
-- Claiming beyond-Eliashberg enhancement without computing vertex corrections or non-Eliashberg kernels explicitly
-- Treating a Tc estimate from an uncontrolled approximation as evidence for 300 K
-- Ranking a mechanism as viable without uncertainty brackets that honestly account for approximation error
-- Hiding the 240 K Eliashberg ceiling or the 149 K experimental gap
-- Promoting anomalous Tc outliers without proposing a testable mechanism hypothesis
+- Claiming a flat band without DFT confirmation (bandwidth W must be computed, not assumed)
+- Treating omega_D/E_F > 1 as sufficient for Tc enhancement without solving the vertex-corrected Eliashberg equations
+- Ranking an unstable material (E_hull > 50 meV/atom or imaginary phonon modes) as a viable candidate
+- Hiding the 149 K experimental gap or the requirement for vertex corrections to reach 300 K
+- Assuming H incorporation preserves the flat band without computing the post-intercalation band structure
 
 **Stop/rethink conditions:**
-- All four tracks produce Tc < 240 K: beyond-Eliashberg mechanisms do not help
-- Vertex corrections are uniformly suppressive (non-adiabatic effects reduce Tc)
-- No anomalous Tc outlier survives scrutiny (all explained by conventional Eliashberg after correction)
-- The combined best mechanism yields Tc < 260 K: marginal improvement, not a breakthrough
+- No flat-band material can host hydrogen while maintaining W < 100 meV -- the flat band disperses upon H incorporation
+- All candidates have lambda_ph < 1.5 -- hydrogen coupling is too weak in flat-band systems
+- Vertex corrections are suppressive (not enhancing) for the actual material band structures found -- the Pietronero-Grimaldi estimate was too optimistic for these specific materials
+- No candidate reaches Tc_NA > 250 K even with vertex corrections -- the flat-band hydride route is quantitatively insufficient
 
 ---
 
-### Phase 81: Non-Adiabatic Candidate Screening and Migdal Parameter Survey
+### Phase 90: Flat-Band Materials Survey and Bandwidth Characterization
 
-**Track:** A (Non-Adiabatic / Migdal Breakdown)
-**Goal:** Materials where the Migdal approximation breaks down (omega_D/E_F > 0.3) are identified and characterized, establishing the landscape for non-adiabatic pairing enhancement.
+**Track:** A (Flat-Band Survey + H Screening)
+**Goal:** Materials with flat bands near E_F are surveyed and characterized by bandwidth W and Fermi energy E_F, establishing the landscape of candidate host lattices for hydrogen incorporation.
 
-**Objectives:** NA-01
+**Objectives:** FB-01
 **Dependencies:** None (entry point for Track A)
 
 **Success Criteria:**
-1. Survey covers flat-band systems (magic-angle graphene, kagome metals), heavy-fermion hydrides (where E_F is small due to heavy effective mass), low-carrier-density superconductors (SrTiO3, doped semiconductors), and at least one additional family with known Migdal breakdown
-2. Migdal parameter omega_D/E_F computed or collected from literature for each candidate; candidates with omega_D/E_F > 0.3 flagged as non-adiabatic
-3. For each non-adiabatic candidate: existing Eliashberg Tc prediction (if available) and experimental Tc tabulated; discrepancy between Eliashberg prediction and experiment noted (positive discrepancy = potential non-adiabatic enhancement)
-4. At least 3 candidate materials with omega_D/E_F > 0.3 and existing superconductivity tabulated: material | omega_D (K) | E_F (K) | omega_D/E_F | Tc_expt (K) | Tc_Eliashberg (K) | discrepancy
-5. Best candidate for Phase 82 vertex correction calculation identified with justification
+1. Survey covers at least five distinct flat-band families: twisted bilayer / moire systems (magic-angle graphene, twisted TMDs), kagome metals (AV3Sb5 family, Fe3Sn2, CoSn), Lieb lattice oxides and oxyhydrides, heavy-fermion systems with flat f-electron bands, and van Hove singularity systems (doped graphene, Sr2RuO4 near van Hove filling)
+2. For each family: bandwidth W (meV) and effective Fermi energy E_F (meV) extracted from DFT or literature; candidates with W < 100 meV flagged
+3. Migdal parameter omega_D/E_F estimated using typical hydrogen phonon omega_D ~ 150 meV (1740 K); candidates with omega_D/E_F > 1.5 identified as prime targets
+4. Crystal structure compatibility with hydrogen assessed qualitatively: does the structure have interstitial sites large enough for H? Is the lattice chemistry compatible with hydrogen (no violent decomposition)?
+5. Candidate table with at least 8 entries: material | family | W (meV) | E_F (meV) | omega_D/E_F (est.) | H compatibility (Y/N/maybe) | existing SC? | notes
+6. All energies in meV or K with explicit conversion; dimensional consistency verified
 
 **Contract Coverage:**
-- Advances NA-01
-- Anchor: Migdal theorem validity (omega_D << E_F); v11.0 open question about omega_log > 800 K
-- Forbidden proxy: do not assume non-adiabatic = enhancement; vertex corrections can suppress Tc
+- Advances FB-01 (flat-band survey with E_F and W)
+- Anchor: v15.0 requirement E_F ~ 50-100 meV for optimal vertex enhancement; omega_D/E_F ~ 2-3 target
+- Forbidden proxy: do not count a material as "flat band" without a quantitative W value; qualitative claims of flatness are insufficient
 
-**Backtracking Trigger:** If no material with omega_D/E_F > 0.3 also has existing superconductivity, the non-adiabatic route has no experimental anchor. Reassess whether theoretical candidates (unsynthesized) are worth pursuing.
+**Backtracking Trigger:** If no material family has W < 100 meV AND H compatibility, the flat-band hydride concept may require designing entirely new structures. Assess whether Lieb-lattice oxyhydrides or kagome hydrides can be computationally designed even if they do not yet exist.
 
 ---
 
-### Phase 82: Vertex Corrections and Non-Adiabatic Tc Prediction
+### Phase 91: Hydrogen Screening and Migdal Ratio Computation
 
 **Track:** A (continued)
-**Goal:** First vertex corrections beyond Migdal-Eliashberg are computed for the best non-adiabatic candidate, determining whether non-adiabatic effects enhance or suppress Tc and whether they can push beyond the 240 K Eliashberg ceiling.
+**Goal:** Flat-band candidates from Phase 90 are screened for hydrogen incorporation feasibility, and the Migdal ratio omega_D/E_F is computed from DFT for viable candidates, producing a ranked shortlist for Track B.
 
-**Objectives:** NA-02, NA-03
-**Dependencies:** Phase 81 (candidate with Migdal breakdown)
+**Objectives:** FB-02, FB-03
+**Dependencies:** Phase 90 (flat-band candidate list)
 
 **Success Criteria:**
-1. Leading vertex correction (first non-Migdal diagram) computed for the best candidate: Gamma_1(k,k',omega) evaluated at representative momenta
-2. Sign and magnitude of vertex correction determined: does it ENHANCE lambda_eff (positive correction) or SUPPRESS it (negative correction)?
-3. Non-adiabatic Tc estimated using vertex-corrected Eliashberg equations or Pietronero-Grimaldi formalism; full uncertainty bracket provided (VALD-01)
-4. Comparison with Eliashberg ceiling: non-adiabatic Tc vs 240 K; quantify enhancement (VALD-03): Delta_Tc_NA = Tc_NA - Tc_Eliashberg
-5. 300 K test explicit (VALD-02): does the non-adiabatic mechanism reach 300 K for any candidate?
-6. Physical assessment: is the non-adiabatic enhancement fundamentally bounded (e.g., by self-consistency or by pair-breaking from incoherent vertex), or can it grow without limit as omega_D/E_F -> 1?
+1. For each candidate with H compatibility = Y or maybe from Phase 90: hydrogen insertion sites identified (interstitial octahedral, tetrahedral, or structural); DFT relaxation of H-incorporated structure performed (or literature structure used)
+2. Post-H-incorporation band structure computed: does the flat band survive? Bandwidth W_H measured; candidates where W_H > 200 meV (flat band destroyed by H) eliminated
+3. Hydrogen phonon modes identified from phonon DOS or literature; omega_D extracted (highest H-related phonon frequency)
+4. Migdal ratio omega_D/E_F computed from DFT-derived E_F and omega_D for each surviving candidate; candidates ranked by proximity to optimal range 2-3
+5. At least 3-5 candidates pass to Track B with: material | W_H (meV) | E_F (meV) | omega_D (meV) | omega_D/E_F | E_hull (meV/atom) | phonon stable?
+6. Thermodynamic pre-screening: E_hull computed or estimated; candidates with E_hull > 100 meV/atom flagged as high-risk (full stability check deferred to Track C)
 
 **Contract Coverage:**
-- Advances NA-02 (vertex corrections), NA-03 (non-adiabatic Tc)
-- Validates VALD-01 (uncertainty brackets), VALD-02 (300 K explicit), VALD-03 (comparison with 240 K ceiling)
-- Anchor: 240 K Eliashberg ceiling from v14.0; Pietronero-Grimaldi (2001) non-adiabatic formalism
-- Forbidden proxy: do not extrapolate Tc from the sign of the vertex correction alone; must solve the modified gap equation
+- Advances FB-02 (H-incorporation screening), FB-03 (Migdal parameter computation)
+- Anchor: omega_D/E_F > 1.5 threshold from v15.0; E_hull < 50 meV/atom stability gate
+- Forbidden proxy: do not assume the flat band survives H incorporation -- must compute W_H explicitly
 
-**Backtracking Trigger:** If vertex corrections are uniformly suppressive (negative Delta_Tc_NA) for all candidates, the non-adiabatic route makes things worse, not better. Track A closes negatively.
+**Backtracking Trigger:** If all candidates lose their flat band upon H incorporation (W_H > 200 meV for all), the flat-band hydride concept fails at the structural level. Document which structural motifs best preserve flat bands near hydrogen and recommend computational design targets for v17.0.
 
 ---
 
-### Phase 83: Plasmon Spectrum Survey in Layered Metals
+### Phase 92: DFT Band Structure and Phonon Spectrum for Top Candidates
 
-**Track:** B (Plasmon-Mediated Pairing)
-**Goal:** Candidate layered metals with low-energy plasmons (omega_pl < 1 eV) that could mediate electronic pairing are identified, and their dielectric response characterized.
+**Track:** B (DFT Electron-Phonon Coupling)
+**Goal:** Full DFT band structures and phonon spectra are computed for the top 3-5 candidates from Track A, confirming flat-band character and characterizing the hydrogen phonon landscape.
 
-**Objectives:** PL-01
-**Dependencies:** None (entry point for Track B)
+**Objectives:** EP-01, EP-02, VALD-01
+**Dependencies:** Phase 91 (ranked shortlist with Migdal ratios)
 
 **Success Criteria:**
-1. Survey covers layered metals with known low-energy plasmons: quasi-2D electron gases (LAO/STO interfaces, delta-doped semiconductors), layered transition-metal dichalcogenides (NbSe2, TaS2), layered cuprates (acoustic plasmon mode), graphene multilayers, and at least one additional family
-2. Dielectric function epsilon(q,omega) computed from RPA or collected from literature for each candidate; plasmon dispersion omega_pl(q) extracted
-3. Low-energy plasmon candidates identified: omega_pl(q=0) < 1 eV AND metallic with finite density of states at E_F (necessary for superconductivity)
-4. For each candidate: existing Tc, carrier density, screening length, and dimensionality tabulated
-5. At least 2 candidates with well-characterized low-energy plasmons selected for Phase 84 pairing calculation
+1. DFT band structure computed for each candidate (PBEsol or PBE functional; consistent with repo pipeline): flat band confirmed with W < 100 meV from band dispersion along high-symmetry path
+2. Flat-band orbital character identified: which atomic orbitals contribute to the flat band? Is the flat band at E_F or does it require doping to reach E_F?
+3. Full phonon spectrum computed (DFPT or finite displacement); no imaginary frequencies (dynamically stable); hydrogen modes identified and omega_D extracted
+4. Phonon DOS decomposed by atom type: H contribution to high-frequency modes quantified; confirms that omega_D is hydrogen-dominated
+5. Flat-band survival verified quantitatively (VALD-01): W < 100 meV confirmed from DFT, not just from Phase 91 estimates
+6. All energies in consistent units (meV for electronic, K or meV for phonon); unit conversions explicit
 
 **Contract Coverage:**
-- Advances PL-01
-- Anchor: Takada (1978), Bill-Morel-Kresin (2003) plasmon-mediated pairing theory
-- Forbidden proxy: the mere existence of a plasmon does not mean it mediates pairing; must verify that the plasmon couples to the Cooper channel (same-spin singlet, appropriate momentum transfer)
+- Advances EP-01 (DFT band structure + phonon), EP-02 (flat-band survival verification), VALD-01 (DFT-confirmed flat band W < 100 meV)
+- Anchor: repo DFT pipeline (PBEsol, QE plane-wave basis); v12.0 phonon computation methods
+- Forbidden proxy: do not report omega_D without confirming it is H-dominated from the atom-projected phonon DOS
 
-**Backtracking Trigger:** If no metallic material has omega_pl < 1 eV with significant spectral weight in the pairing channel, plasmon-mediated pairing is energetically inaccessible. Reassess whether higher-energy plasmons (1-3 eV) could still contribute.
+**Backtracking Trigger:** If none of the top candidates are dynamically stable (all have imaginary phonon modes), revisit Phase 91 shortlist or explore whether small structural modifications (strain, doping, different H concentration) can stabilize the structure.
 
 ---
 
-### Phase 84: Plasmon Pairing Interaction and Combined Tc Prediction
+### Phase 93: Electron-Phonon Coupling and Eliashberg Spectral Function
 
 **Track:** B (continued)
-**Goal:** The plasmon-mediated pairing interaction is computed for the best candidates, combined with phonon pairing, and the total Tc predicted to test whether plasmon boost can exceed the 240 K Eliashberg ceiling.
+**Goal:** The electron-phonon coupling constant lambda_ph and Eliashberg spectral function alpha2F(omega) are computed for each stable candidate, establishing the Eliashberg-level Tc baseline before vertex corrections.
 
-**Objectives:** PL-02, PL-03
-**Dependencies:** Phase 83 (candidates with low-energy plasmons)
+**Objectives:** EP-03, VALD-02
+**Dependencies:** Phase 92 (DFT band structures and phonon spectra for stable candidates)
 
 **Success Criteria:**
-1. Plasmon-mediated pairing interaction V_pl(q,omega) computed in the singlet channel from the screened Coulomb interaction: V_pl = V_bare / epsilon(q,omega) - V_bare / epsilon(q,0); the retarded part is attractive
-2. lambda_pl and effective omega_pl extracted from V_pl; comparison with phonon lambda_ph for the same material
-3. Combined phonon + plasmon Eliashberg equations solved: alpha^2F_total(omega) = alpha^2F_ph(omega) + alpha^2F_pl(omega); Tc_combined computed with full uncertainty bracket (VALD-01)
-4. Plasmon boost quantified: Delta_Tc_pl = Tc_combined - Tc_phonon_only; comparison with 240 K ceiling (VALD-03)
-5. 300 K test explicit (VALD-02): does any candidate reach Tc > 240 K? Does any reach 300 K?
-6. Key physics question: is the plasmon contribution additive to phonon pairing, or does the enhanced screening from the plasmon reduce lambda_ph (competing effect)?
+1. alpha2F(omega) computed from EPW or equivalent for each candidate; lambda_ph extracted by integration: lambda_ph = 2 * integral[alpha2F(omega)/omega d_omega]
+2. omega_log computed: omega_log = exp[(2/lambda_ph) * integral[alpha2F(omega) * ln(omega) / omega d_omega]]; verify omega_log > 700 K from H modes (EP-03)
+3. Eliashberg Tc computed using Allen-Dynes or McMillan formula with mu* = 0.10-0.13 (conventional s-wave); this is the BASELINE Tc before vertex corrections
+4. For candidates with lambda_ph > 2: solve isotropic Eliashberg equations directly (Allen-Dynes unreliable at strong coupling); report Tc with uncertainty from mu* variation
+5. Candidate table: material | lambda_ph | omega_log (K) | mu* | Tc_Eliashberg [lower, central, upper] (K) | Tc > 170 K? (threshold for 300 K after vertex correction)
+6. Thermodynamic stability confirmed: E_hull < 50 meV/atom (VALD-02) for all candidates advancing to Track C
 
 **Contract Coverage:**
-- Advances PL-02 (plasmon pairing interaction), PL-03 (combined Tc)
-- Validates VALD-01 (uncertainty brackets), VALD-02 (300 K explicit), VALD-03 (240 K comparison)
-- Anchor: 240 K Eliashberg ceiling; Bill-Morel-Kresin formalism
-- Forbidden proxy: do not simply add lambda_pl to lambda_ph without checking that the plasmon does not simultaneously screen the phonon coupling
+- Advances EP-03 (omega_log > 700 K verification), VALD-02 (E_hull < 50 meV/atom)
+- Anchor: v12.0 Allen-Dynes omega_log_eff = 483 K as comparison; v14.0 Eliashberg ceiling 240 K
+- Forbidden proxy: do not skip the Eliashberg baseline -- vertex-corrected Tc must be compared against the standard Eliashberg result for the SAME material
 
-**Backtracking Trigger:** If lambda_pl < 0.1 for all candidates (plasmon contribution negligible compared to phonon), or if plasmon screening reduces lambda_ph by more than it adds lambda_pl (net suppression), Track B closes negatively.
+**Backtracking Trigger:** If lambda_ph < 1.5 for all candidates (hydrogen coupling too weak in flat-band systems), the flat-band hydride concept fails at the coupling level. The flat band may be too decoupled from the hydrogen sublattice. Document the coupling bottleneck.
 
 ---
 
-### Phase 85: Excitonic Pairing Candidate Survey
+### Phase 94: Vertex Corrections for Flat-Band Hydride Candidates
 
-**Track:** C (Exciton-Mediated Pairing)
-**Goal:** Materials with low-energy excitons (< 100 meV) adjacent to or coexisting with metallic bands are identified, establishing the landscape for excitonic pairing enhancement.
+**Track:** C (Non-Adiabatic Tc Prediction)
+**Goal:** First vertex corrections beyond Migdal-Eliashberg are computed for each candidate using the Pietronero-Grimaldi framework with the actual DFT-derived band structure and phonon spectrum, determining the material-specific non-adiabatic Tc enhancement.
 
-**Objectives:** EX-01
-**Dependencies:** None (entry point for Track C)
+**Objectives:** NA-01, NA-02
+**Dependencies:** Phase 93 (lambda_ph, alpha2F, omega_log for each candidate)
 
 **Success Criteria:**
-1. Survey covers excitonic insulator candidates near the metal-insulator transition (TmSe0.45Te0.55, 1T-TiSe2, Ta2NiSe5), semiconductor/metal heterostructures (InAs/GaSb, WTe2/NbSe2), mixed-valence compounds (SmB6, YbB12), and at least one additional family
-2. For each candidate: exciton binding energy, exciton energy scale omega_ex, metallic density of states at E_F (or proximity to metallic phase), and existing superconductivity (if any) tabulated
-3. Candidates with omega_ex < 100 meV AND metallic or near-metallic electronic structure selected; the exciton must be soft enough to mediate low-energy pairing but the system must still be metallic
-4. At least 2 candidates identified for Phase 86 pairing calculation
-5. Key distinction made: excitonic pairing requires the exciton to be a BOSON that mediates attraction between electrons (analogous to phonon), not just an excitonic instability that competes with superconductivity
+1. Vertex correction computed for each candidate using the Pietronero-Grimaldi framework: Tc_NA = Tc_Eliashberg * (1 + alpha_vc * omega_D/E_F) with alpha_vc extracted from the material-specific forward-scattering analysis
+2. Forward-scattering dominance verified for each candidate: the flat band concentrates spectral weight at small q, enhancing forward scattering; ratio of forward to backward vertex corrections quantified
+3. Material-specific alpha_vc computed (not assumed = 0.3 from generic estimate): alpha_vc depends on the actual band structure near E_F and the phonon momentum distribution
+4. Tc_NA predicted for each candidate with full uncertainty bracket: Tc_NA [lower, central, upper] accounting for (a) mu* variation, (b) alpha_vc uncertainty from higher-order vertex diagrams, (c) self-consistency effects
+5. Comparison with v15.0 generic estimate (285 K [225, 345]): are material-specific predictions consistent with the generic scaling, or does the actual band structure modify the enhancement significantly?
 
 **Contract Coverage:**
-- Advances EX-01
-- Anchor: Little (1964), Ginzburg (1964) excitonic pairing proposals; Allender-Bray-Bardeen (1973) excitonic mechanism
-- Forbidden proxy: do not confuse an excitonic insulator (which is NOT a superconductor) with excitonic pairing (which IS); the exciton must mediate Cooper pairing, not replace it
+- Advances NA-01 (Pietronero-Grimaldi vertex corrections), NA-02 (vertex-corrected Tc prediction)
+- Anchor: v15.0 alpha_vc ~ 0.3, omega_D/E_F ~ 2.5 giving 1.75x enhancement; Pietronero-Grimaldi (2001)
+- Forbidden proxy: do not use the generic alpha_vc = 0.3 for the final Tc prediction -- must compute material-specific alpha_vc from the actual electronic structure
 
-**Backtracking Trigger:** If no material combines low-energy excitons with metallic bands (excitonic insulators are insulating, metals have no low-energy excitons), the excitonic mechanism may require artificial heterostructures that do not yet exist. Document the design requirements.
+**Backtracking Trigger:** If vertex corrections are suppressive (alpha_vc < 0) for the actual flat-band materials -- meaning that the specific band structure topology leads to pair-breaking vertex corrections rather than pair-enhancing -- the v15.0 generic estimate was too optimistic. Document which band structure features lead to suppression versus enhancement.
 
 ---
 
-### Phase 86: Excitonic Pairing Interaction and Combined Tc Prediction
+### Phase 95: Stability Verification and Tc Uncertainty Budget
 
 **Track:** C (continued)
-**Goal:** The exciton-mediated pairing interaction is computed for the best candidates, combined with phonon pairing, and the total Tc predicted to test whether excitonic pairing can exceed the 240 K Eliashberg ceiling.
+**Goal:** All candidates with Tc_NA > 250 K undergo full thermodynamic and dynamic stability verification, and the Tc prediction uncertainty budget is closed with all known error sources quantified.
 
-**Objectives:** EX-02, EX-03
-**Dependencies:** Phase 85 (candidates with low-energy excitons)
+**Objectives:** NA-03, VALD-01 (final), VALD-02 (final), VALD-03
+**Dependencies:** Phase 94 (vertex-corrected Tc for each candidate)
 
 **Success Criteria:**
-1. Exciton-mediated pairing interaction computed from the polarization function: V_ex(q,omega) derived from the particle-hole susceptibility chi_ph(q,omega) of the excitonic channel
-2. lambda_ex and effective omega_ex extracted; comparison with phonon lambda_ph for the same material
-3. Combined phonon + exciton kernel: alpha^2F_total = alpha^2F_ph + alpha^2F_ex; Tc_combined computed with full uncertainty bracket (VALD-01)
-4. Excitonic boost quantified: Delta_Tc_ex = Tc_combined - Tc_phonon_only; comparison with 240 K ceiling (VALD-03)
-5. 300 K test explicit (VALD-02): does any candidate reach Tc > 240 K? Does any reach 300 K?
-6. Key physics question answered: does the excitonic mechanism provide a genuinely new pairing channel, or is it effectively a renormalization of the electronic screening (already captured in mu*)?
+1. E_hull < 50 meV/atom confirmed from DFT total energy relative to competing phases (VALD-02 final); marginal candidates (25 < E_hull < 50 meV/atom) flagged with synthesis difficulty assessment
+2. No imaginary phonon frequencies confirmed from Phase 92; if borderline modes exist, compute at finer q-grid
+3. Tc uncertainty budget closed for each candidate: (a) Eliashberg Tc uncertainty from mu* = 0.10-0.13, (b) vertex correction uncertainty from alpha_vc range, (c) DFT band structure uncertainty (functional dependence: PBEsol vs PBE vs SCAN), (d) phonon frequency uncertainty (anharmonic corrections estimated), (e) total bracket Tc_NA [lower, central, upper]
+4. 300 K test explicit (VALD-03): does any candidate have central Tc_NA >= 300 K? Does any have lower bound > 250 K?
+5. If Tc_NA >= 300 K for any candidate: operating conditions specified (ambient pressure? high pressure? strain?); if high pressure required, pressure quantified
 
 **Contract Coverage:**
-- Advances EX-02 (excitonic pairing interaction), EX-03 (combined Tc)
-- Validates VALD-01 (uncertainty brackets), VALD-02 (300 K explicit), VALD-03 (240 K comparison)
-- Anchor: 240 K Eliashberg ceiling; Allender-Bray-Bardeen formalism
-- Forbidden proxy: do not double-count the excitonic contribution if it is already partially captured in the screened Coulomb pseudopotential mu*
+- Advances NA-03 (Tc_NA >= 300 K identification + stability), VALD-01 (DFT flat-band confirmation, final), VALD-02 (E_hull, final), VALD-03 (300 K target explicit with uncertainty)
+- Anchor: E_hull < 50 meV/atom gate from v12.0; 300 K room-temperature target; v15.0 Tc_NA ~ 285 K [225, 345]
+- Forbidden proxy: do not claim 300 K without reporting the full uncertainty bracket; do not hide operating pressure if the material requires high pressure
 
-**Backtracking Trigger:** If lambda_ex < 0.1 for all candidates (excitonic contribution negligible), or if the excitonic interaction is repulsive in the dominant pairing channel, Track C closes negatively.
+**Backtracking Trigger:** If all candidates with Tc_NA > 250 K fail stability (E_hull > 50 meV/atom or imaginary phonons), the best flat-band hydrides are thermodynamically unstable. Assess whether metastability (pressure quench or epitaxial stabilization) could rescue any candidate.
 
 ---
 
-### Phase 87: Anomalous-Tc Outlier Detection and Database Mining
+### Phase 96: Master Ranking and 300 K Material Identification
 
-**Track:** D (Novel Mechanism Discovery / AI-Guided)
-**Goal:** Superconductors with Tc significantly exceeding their Eliashberg predictions are identified from the SuperCon database and literature, providing empirical evidence for unknown pairing mechanisms.
+**Track:** Decision (convergence of all tracks)
+**Goal:** All flat-band hydride candidates are consolidated into a master ranking by vertex-corrected Tc, and a definitive 300 K verdict produced with full material specification or honest gap accounting.
 
-**Objectives:** NM-01
-**Dependencies:** None (entry point for Track D)
-
-**Success Criteria:**
-1. All known superconductors with Tc > 30 K catalogued from SuperCon database and recent literature; Eliashberg-predicted Tc computed or collected where available
-2. Anomaly metric defined: Delta_Tc_anomaly = Tc_expt - Tc_Eliashberg; materials with Delta_Tc_anomaly > 30 K (> 2 sigma above typical Eliashberg error) flagged
-3. Known anomalies excluded: cuprates (already understood as spin-fluctuation mediated), heavy fermions (Kondo-mediated), organic superconductors (already catalogued); focus on materials where the anomaly is UNEXPLAINED
-4. At least 5 anomalous materials tabulated: material | Tc_expt | Tc_Eliashberg | Delta_Tc_anomaly | known mechanism? | anomaly unexplained?
-5. If no genuinely unexplained anomalies found: document that Eliashberg + known unconventional mechanisms account for all Tc > 30 K materials (this is itself a significant finding)
-
-**Contract Coverage:**
-- Advances NM-01
-- Anchor: SuperCon database; Eliashberg predictions from literature
-- Forbidden proxy: do not count cuprates or other materials with KNOWN unconventional mechanisms as "anomalous" -- the anomaly must be genuinely unexplained
-
-**Backtracking Trigger:** If the SuperCon database is inaccessible or too incomplete for systematic comparison, fall back to a targeted literature survey of claimed "anomalous" superconductors.
-
----
-
-### Phase 88: Novel Mechanism Characterization and Tc Estimate
-
-**Track:** D (continued)
-**Goal:** For any anomalous-Tc materials identified in Phase 87, the electronic structure, phonon spectrum, and correlation physics are characterized to propose and test mechanism hypotheses.
-
-**Objectives:** NM-02, NM-03
-**Dependencies:** Phase 87 (anomalous material list)
+**Objectives:** DEC-01, DEC-02, VALD-01 (final), VALD-02 (final), VALD-03 (final)
+**Dependencies:** Phase 95 (stability-verified Tc_NA predictions)
 
 **Success Criteria:**
-1. For each anomalous material: electronic band structure (from literature or DFT), phonon spectrum, and correlation indicators (U/W, magnetic ordering) compiled
-2. Mechanism hypothesis proposed for each anomaly: what physics is missing from the Eliashberg prediction? Options include non-adiabatic corrections (-> Track A overlap), electronic pairing (-> Track B overlap), excitonic pairing (-> Track C overlap), or genuinely new physics (spin-orbit mediated, topological, bipolaronic, etc.)
-3. For any genuinely new mechanism: estimated Tc contribution from the novel channel; can it be combined with known mechanisms to exceed 300 K? (VALD-01, VALD-02)
-4. Comparison with 240 K Eliashberg ceiling: does the novel mechanism provide additive or multiplicative enhancement? (VALD-03)
-5. If no genuinely new mechanism found: document that all anomalies reduce to known unconventional mechanisms upon closer inspection; the 240 K ceiling stands for all known physics
-6. Key deliverable: mechanism hypothesis table: material | anomaly | proposed mechanism | estimated Delta_Tc | combinable with Eliashberg? | 300 K reachable?
+1. Master candidate table: material | family | W (meV) | E_F (meV) | omega_D/E_F | lambda_ph | omega_log (K) | alpha_vc | Tc_Eliashberg (K) | Tc_NA [lower, central, upper] (K) | E_hull (meV/atom) | stable? | 300 K reached?
+2. DEC-01 (master ranking): candidates ranked by Tc_NA central value; top candidate fully specified with crystal structure, composition, operating conditions
+3. DEC-02 (300 K verdict): definitive answer with three possible outcomes:
+   - (a) YES: at least one stable candidate has central Tc_NA >= 300 K with lower bound > 250 K -- full material specification produced (composition, space group, lattice parameters, operating P and T, synthesis pathway, key uncertainties, experimental tests)
+   - (b) MARGINAL: at least one candidate has 300 K within uncertainty bracket but central Tc_NA < 300 K -- quantify how close and what would push it over (strain, doping, pressure)
+   - (c) NO: no stable candidate reaches 300 K even at upper bound -- honest gap accounting: best Tc_NA achieved, remaining gap, which bottleneck dominates (coupling too weak? flat band too dispersive? vertex corrections too small?)
+4. VALD-01 (final): flat band confirmed from DFT for top candidate (W < 100 meV)
+5. VALD-02 (final): E_hull < 50 meV/atom for top candidate
+6. VALD-03 (final): 300 K target explicit in all deliverables; room-temperature gap updated: gap = 300 K - max(Tc_NA_best, 151 K experimental)
+7. Comparison with v15.0 generic estimate: does the material-specific search validate or invalidate the v15.0 scaling argument?
+8. v17.0 recommendation: if 300 K reached, next milestone is refinement and experimental roadmap; if not, what alternative route (if any) should be pursued?
+9. Project-level assessment: after 16 milestones spanning hydrides, cuprates, hybrid oxides, orbital-selective, frustrated magnets, beyond-Eliashberg mechanisms, and now flat-band hydrides -- what is the honest probability that a room-temperature ambient-pressure superconductor can be computationally designed?
 
 **Contract Coverage:**
-- Advances NM-02 (mechanism characterization), NM-03 (Tc estimate from novel mechanism)
-- Validates VALD-01 (uncertainty brackets), VALD-02 (300 K explicit), VALD-03 (240 K comparison)
-- Forbidden proxy: do not propose a mechanism without at least a scaling argument for its Tc contribution; "unknown mechanism" is not a mechanism hypothesis
-
-**Backtracking Trigger:** If Phase 87 found no genuinely unexplained anomalies, Phase 88 becomes a null-result documentation phase: all known superconductors are accounted for by Eliashberg + known unconventional mechanisms. Track D closes with this finding.
-
----
-
-### Phase 89: Beyond-Eliashberg Verdict -- Consolidated Ranking and 300 K Decision
-
-**Track:** Decision (convergence of all four tracks)
-**Goal:** All beyond-Eliashberg mechanisms from Tracks A (non-adiabatic), B (plasmon), C (excitonic), and D (novel/AI-guided) are consolidated, ranked by their Tc enhancement over the 240 K Eliashberg ceiling, and a definitive 300 K verdict produced.
-
-**Objectives:** VALD-01 (final), VALD-02 (final), VALD-03 (final), DEC-01, DEC-02
-**Dependencies:** Phase 82 (Track A), Phase 84 (Track B), Phase 86 (Track C), Phase 88 (Track D)
-
-**Success Criteria:**
-1. Master ranking table: mechanism | track | best material | Tc_Eliashberg (K) | Delta_Tc_beyond (K) | Tc_total [lower, central, upper] (K) | 300 K reached? | confidence level
-2. VALD-01 (final): all Tc predictions include full uncertainty brackets accounting for approximation errors in vertex corrections, RPA dielectric functions, and excitonic polarization
-3. VALD-02 (final): 300 K (80 F) target explicit in ranking table, verdict, and all deliverables
-4. VALD-03 (final): every beyond-Eliashberg Tc compared quantitatively with the 240 K Eliashberg ceiling; enhancement factor = Tc_total / 240 K
-5. DEC-01 (ranking): mechanisms ordered by Delta_Tc_beyond; identification of which mechanism (if any) provides the largest Tc boost
-6. DEC-02 (300 K verdict): definitive answer to "can ANY known or proposed mechanism reach 300 K?" with three possible outcomes:
-   - (a) YES: at least one mechanism reaches 300 K with central Tc > 300 K and lower bound > 240 K
-   - (b) MARGINAL: at least one mechanism has 300 K within its uncertainty bracket but central Tc < 300 K
-   - (c) NO: no mechanism reaches 300 K even at the upper bound of uncertainties
-7. Cross-track assessment: are the mechanisms additive (can plasmon + non-adiabatic + excitonic be combined)? If so, what is the combined ceiling?
-8. **If any mechanism Tc >= 300 K:** Full specification of the material, mechanism, operating conditions, and key uncertainties; experimental tests that would confirm the mechanism
-9. **If no mechanism Tc >= 300 K:** Honest gap accounting: (a) best beyond-Eliashberg Tc and remaining gap, (b) which mechanism came closest, (c) whether 300 K faces a fundamental theoretical ceiling or merely a practical materials limitation, (d) v16.0 recommendation
-10. Room-temperature gap updated: gap = 300 K - max(Tc_best_total, 151 K experimental)
-11. Project-level assessment: after 15 milestones, what is the honest probability that a room-temperature ambient-pressure superconductor can be computationally designed with current theoretical tools?
-
-**Contract Coverage:**
-- Advances DEC-01 (mechanism ranking), DEC-02 (300 K verdict)
+- Advances DEC-01 (master ranking), DEC-02 (300 K verdict with full accounting)
 - Final validation of VALD-01, VALD-02, VALD-03
-- Anchor: 240 K Eliashberg ceiling (v14.0); 151 K experimental retained benchmark; 300 K room-temperature target
-- Forbidden proxy: no mechanism ranked without explicit Tc prediction and uncertainty bracket; no vague "promising" assessment without quantification; no diffuse list of future directions without a single best recommendation
-- Anchor: all v1-v14 cumulative results as context for the project-level assessment
+- Anchor: v15.0 Tc_NA ~ 285 K [225, 345]; v14.0 Eliashberg ceiling 240 K; 151 K experimental retained benchmark; 300 K room-temperature target; all v1-v15 cumulative results
+- Forbidden proxy: no candidate ranked without both vertex-corrected Tc AND stability verification; no diffuse "promising materials" list without a single best recommendation; no claim of 300 K without full uncertainty bracket
 
-**Backtracking Trigger:** None -- terminal phase. The deliverable is either a beyond-Eliashberg breakthrough candidate or an honest assessment that 300 K is unreachable with current theoretical tools. Both are valid outcomes.
+**Backtracking Trigger:** None -- terminal phase. The deliverable is either a material specification or an honest gap accounting. Both are valid outcomes.
 
 ---
 
-## Phase Dependencies (v15.0)
+## Phase Dependencies (v16.0)
 
 | Phase | Track | Depends On | Enables | Critical Path? |
 | --- | --- | --- | --- | :---: |
-| 81 - NA Candidate Screening | A | -- | 82 | No (parallel with 83, 85, 87) |
-| 82 - Vertex Corrections + NA Tc | A | 81 | 89 | Yes (if slowest track) |
-| 83 - Plasmon Spectrum Survey | B | -- | 84 | No (parallel with 81, 85, 87) |
-| 84 - Plasmon Pairing + Combined Tc | B | 83 | 89 | Yes (if slowest track) |
-| 85 - Excitonic Candidate Survey | C | -- | 86 | No (parallel with 81, 83, 87) |
-| 86 - Excitonic Pairing + Combined Tc | C | 85 | 89 | Yes (if slowest track) |
-| 87 - Anomalous-Tc Outlier Detection | D | -- | 88 | No (parallel with 81, 83, 85) |
-| 88 - Novel Mechanism Characterization | D | 87 | 89 | Yes (if slowest track) |
-| 89 - Beyond-Eliashberg Verdict | Decision | 82, 84, 86, 88 | -- | Yes |
+| 90 - Flat-Band Survey | A | -- | 91 | Yes |
+| 91 - H Screening + Migdal Ratio | A | 90 | 92 | Yes |
+| 92 - DFT Band + Phonon | B | 91 | 93 | Yes |
+| 93 - e-ph Coupling + alpha2F | B | 92 | 94 | Yes |
+| 94 - Vertex Corrections | C | 93 | 95 | Yes |
+| 95 - Stability + Uncertainty | C | 94 | 96 | Yes |
+| 96 - Master Ranking + 300 K Verdict | Decision | 95 | -- | Yes |
 
-**Critical path:** longest chain is any track's two phases -> 89 (3 sequential steps)
+**Critical path:** 90 -> 91 -> 92 -> 93 -> 94 -> 95 -> 96 (7 sequential phases; pipeline structure)
 
 **Parallel opportunities:**
-- Wave 1: Phase 81 (Track A) + Phase 83 (Track B) + Phase 85 (Track C) + Phase 87 (Track D) -- all four entry points run in parallel
-- Wave 2: Phase 82 (after 81) + Phase 84 (after 83) + Phase 86 (after 85) + Phase 88 (after 87) -- all four continuations run in parallel
-- Wave 3: Phase 89 (after 82, 84, 86, and 88 all complete)
+- Limited: this is a pipeline (each phase feeds the next). However, Phase 92 DFT calculations for multiple candidates can run in parallel internally. Similarly, Phase 94 vertex corrections for different candidates are independent.
+- Phase 90 is the sole entry point and pacing step.
 
-## Risk Register (v15.0)
+## Risk Register (v16.0)
 
 | Phase | Top Risk | Probability | Impact | Mitigation |
 | --- | --- | :---: | :---: | --- |
-| 81 | No material with omega_D/E_F > 0.3 also superconducts | MEDIUM | MEDIUM | Theoretical candidates still inform the physics even without experimental anchor |
-| 82 | Vertex corrections suppress Tc (non-adiabatic = pair-breaking) | HIGH | HIGH | Document sign and magnitude; if uniformly negative, Track A closes with clean result |
-| 83 | No metallic material has omega_pl < 1 eV with pairing-channel weight | MEDIUM | MEDIUM | Expand to 1-3 eV plasmons; assess whether higher-energy plasmons still contribute |
-| 84 | Plasmon screening reduces lambda_ph more than lambda_pl adds | HIGH | HIGH | Net effect calculated explicitly; if negative, plasmon mechanism is self-defeating |
-| 85 | No material combines low-energy excitons with metallic bands | HIGH | MEDIUM | Document design requirements for hypothetical heterostructure |
-| 86 | Excitonic interaction already captured in mu* (double counting) | MEDIUM | HIGH | Careful subtraction of static screening; verify excitonic contribution is retarded/dynamic |
-| 87 | No genuinely unexplained Tc anomalies exist | MEDIUM | MEDIUM | Null result is itself informative: Eliashberg + known mechanisms account for everything |
-| 88 | All anomalies reduce to known mechanisms upon inspection | MEDIUM | MEDIUM | Track D closes with documentation that no new mechanism is needed |
-| 89 | All four tracks produce Tc < 240 K | MEDIUM | HIGH | Honest verdict: beyond-Eliashberg does not help; reassess whether 300 K is achievable |
+| 90 | No material family has W < 100 meV + H compatibility | MEDIUM | HIGH | Expand to designed structures (Lieb lattice oxyhydrides, kagome hydrides) |
+| 91 | Flat band disperses upon H incorporation for all candidates | HIGH | HIGH | Terminal for flat-band hydride concept; document structural requirements for v17.0 |
+| 92 | All candidates dynamically unstable (imaginary phonons) | MEDIUM | HIGH | Explore small structural modifications (strain, doping, H concentration) |
+| 93 | lambda_ph < 1.5 for all candidates (weak H coupling in flat bands) | HIGH | HIGH | Flat band decoupled from H sublattice; coupling bottleneck documented |
+| 94 | Vertex corrections suppressive for actual band structures | MEDIUM | HIGH | v15.0 generic estimate was too optimistic; document which features lead to suppression |
+| 95 | All Tc_NA > 250 K candidates thermodynamically unstable | MEDIUM | MEDIUM | Assess metastability routes (pressure quench, epitaxial stabilization) |
+| 96 | No candidate reaches 300 K | MEDIUM | HIGH | Honest gap accounting; the flat-band hydride route may be quantitatively insufficient |
 
-## Progress (v15.0)
+## Progress (v16.0)
 
 | Phase | Name | Status |
 | --- | --- | --- |
-| 81 | NA Candidate Screening | Not started |
-| 82 | Vertex Corrections + Non-Adiabatic Tc | Not started |
-| 83 | Plasmon Spectrum Survey | Not started |
-| 84 | Plasmon Pairing + Combined Tc | Not started |
-| 85 | Excitonic Candidate Survey | Not started |
-| 86 | Excitonic Pairing + Combined Tc | Not started |
-| 87 | Anomalous-Tc Outlier Detection | Not started |
-| 88 | Novel Mechanism Characterization | Not started |
-| 89 | Beyond-Eliashberg Verdict | Not started |
+| 90 | Flat-Band Survey + Bandwidth | Not started |
+| 91 | H Screening + Migdal Ratio | Not started |
+| 92 | DFT Band Structure + Phonon | Not started |
+| 93 | e-ph Coupling + alpha2F | Not started |
+| 94 | Vertex Corrections | Not started |
+| 95 | Stability + Uncertainty Budget | Not started |
+| 96 | Master Ranking + 300 K Verdict | Not started |
