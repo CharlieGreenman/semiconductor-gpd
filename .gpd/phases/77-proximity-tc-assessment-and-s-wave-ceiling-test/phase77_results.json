@@ -1,0 +1,100 @@
+{
+  "swave_ceiling_lambda3_omega1500_mu010": 676.9324289680802,
+  "swave_ceiling_lambda3_omega1000_mu010": 451.2882859787201,
+  "dwave_lambda3_omega1500_mu000": 768.9192274159388,
+  "optima": {
+    "Model1_Hg1223_HighLambda": {
+      "best_cooper_limit": {
+        "Tc": 209.2350657866064,
+        "d_S": 0.3,
+        "d_N": 5.0,
+        "Gamma": 1.0,
+        "lambda_eff": 2.8872492900248283,
+        "omega_log_eff": 1410.1324551379691,
+        "mu_star_eff": 0.09174311926605504
+      },
+      "best_pair_breaking": {
+        "Tc": 145.41716644422274,
+        "d_S": 5.0,
+        "d_N": 0.3,
+        "Gamma": 0.1
+      },
+      "symmetry": {
+        "symmetry": "s+d mixed",
+        "mu_star_eff": 0.07958158584605368,
+        "Delta_d_center": 8.691964170141564,
+        "Delta_s": 33.87727800795984,
+        "ratio_d_over_s": 0.2565720943717389
+      },
+      "realistic_Tc": 219.69681907593673,
+      "Tc_S": 146.0,
+      "Tc_N": 223.37766523863928,
+      "max_standalone": 223.37766523863928,
+      "exceeds_241": false,
+      "reaches_300": false
+    },
+    "Model2_Hg1223_ModLambda": {
+      "best_cooper_limit": {
+        "Tc": 88.61888250290187,
+        "d_S": 0.3,
+        "d_N": 5.0,
+        "Gamma": 1.0,
+        "lambda_eff": 1.5135974450865877,
+        "omega_log_eff": 904.7851782438253,
+        "mu_star_eff": 0.0898876404494382
+      },
+      "best_pair_breaking": {
+        "Tc": 145.5335467232828,
+        "d_S": 5.0,
+        "d_N": 0.3,
+        "Gamma": 0.1
+      },
+      "symmetry": {
+        "symmetry": "s+d mixed",
+        "mu_star_eff": 0.05720087706818146,
+        "Delta_d_center": 10.705228570379806,
+        "Delta_s": 14.30750028247788,
+        "ratio_d_over_s": 0.7482249420896724
+      },
+      "realistic_Tc": 93.04982662804697,
+      "Tc_S": 146.0,
+      "Tc_N": 94.33981111912684,
+      "max_standalone": 146.0,
+      "exceeds_241": false,
+      "reaches_300": false
+    },
+    "Model3_YBCO_HighLambda": {
+      "best_cooper_limit": {
+        "Tc": 214.69274948828973,
+        "d_S": 0.3,
+        "d_N": 5.0,
+        "Gamma": 1.0,
+        "lambda_eff": 2.8627497601797955,
+        "omega_log_eff": 1456.1615446125859,
+        "mu_star_eff": 0.09328358208955223
+      },
+      "best_pair_breaking": {
+        "Tc": 92.53616056491946,
+        "d_S": 5.0,
+        "d_N": 0.3,
+        "Gamma": 0.1
+      },
+      "symmetry": {
+        "symmetry": "s-wave",
+        "mu_star_eff": 0.1,
+        "Delta_d_center": 6.518973127606173,
+        "Delta_s": 33.87727800795984,
+        "ratio_d_over_s": 0.19242907077880417
+      },
+      "realistic_Tc": 214.69274948828973,
+      "Tc_S": 93.0,
+      "Tc_N": 223.37766523863928,
+      "max_standalone": 223.37766523863928,
+      "exceeds_241": false,
+      "reaches_300": false
+    }
+  },
+  "track_b_verdict": "FAIL_300K",
+  "track_b_best_Tc": 219.69681907593673,
+  "track_b_reason": "d-wave/s-wave symmetry mismatch prevents mu*=0 transfer"
+}
