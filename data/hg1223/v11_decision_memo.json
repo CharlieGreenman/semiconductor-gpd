@@ -1,0 +1,133 @@
+{
+  "phase": "57-300k-decision",
+  "plan": "01",
+  "milestone": "v11.0",
+  "date": "2026-03-29",
+  "ASSERT_CONVENTION": "natural_units=NOT_used, fourier_convention=QE_plane_wave, custom=SI_derived_eV_K_GPa",
+  "DEC01_final_ranking": [
+    {
+      "rank": 1,
+      "name": "Hg1223 strained + 15 GPa",
+      "Tc_central_K": 146,
+      "Tc_bracket_K": [106, 216],
+      "method": "CTQMC + Nc-conv + vertex + d-wave Eliashberg",
+      "operating_conditions": "15 GPa + epitaxial strain",
+      "material_class": "cuprate",
+      "reaches_300K": false
+    },
+    {
+      "rank": 2,
+      "name": "Hg1223 at 30 GPa",
+      "Tc_central_K": 141,
+      "Tc_bracket_K": [98, 210],
+      "method": "CTQMC + Nc-conv + vertex + d-wave Eliashberg",
+      "operating_conditions": "30 GPa",
+      "material_class": "cuprate",
+      "reaches_300K": false
+    },
+    {
+      "rank": 3,
+      "name": "Hg1223 epitaxial strain",
+      "Tc_central_K": 127,
+      "Tc_bracket_K": [84, 187],
+      "method": "CTQMC + Nc-conv + vertex + d-wave Eliashberg",
+      "operating_conditions": "Epitaxial strain, ambient P",
+      "material_class": "cuprate",
+      "reaches_300K": false
+    },
+    {
+      "rank": 4,
+      "name": "(Hg0.8Tl0.2)Ba2Ca2Cu3O8+d",
+      "Tc_central_K": 120,
+      "Tc_bracket_K": [78, 178],
+      "method": "CTQMC + Nc-conv + vertex + d-wave Eliashberg",
+      "operating_conditions": "Tl-doped, ambient",
+      "material_class": "cuprate",
+      "reaches_300K": false
+    },
+    {
+      "rank": 5,
+      "name": "Hg1223 baseline",
+      "Tc_central_K": 117,
+      "Tc_bracket_K": [77, 173],
+      "method": "CTQMC + Nc-conv + vertex + d-wave Eliashberg",
+      "operating_conditions": "Ambient",
+      "material_class": "cuprate",
+      "reaches_300K": false
+    },
+    {
+      "rank": 6,
+      "name": "Sm3Ni2O7 (max levers)",
+      "Tc_central_K": 113,
+      "Tc_bracket_K": [71, 172],
+      "method": "CTQMC + Nc-conv + vertex + d-wave Eliashberg",
+      "operating_conditions": "Strain + 15-30 GPa",
+      "material_class": "nickelate",
+      "reaches_300K": false
+    },
+    {
+      "rank": 7,
+      "name": "Hg1223 overdoped (p=0.22)",
+      "Tc_central_K": 110,
+      "Tc_bracket_K": [68, 156],
+      "method": "CTQMC + Nc-conv + vertex + d-wave Eliashberg",
+      "operating_conditions": "Ambient, overdoped",
+      "material_class": "cuprate",
+      "reaches_300K": false
+    }
+  ],
+  "DEC02_300K_decision": {
+    "reaches_300K": false,
+    "best_candidate": "Hg1223 strained + 15 GPa",
+    "best_Tc_K": 146,
+    "best_bracket_K": [106, 216],
+    "gap_to_300K_from_upper_bracket_K": 84,
+    "gap_to_300K_from_central_K": 154,
+    "experimental_benchmark_K": 151,
+    "experimental_gap_K": 149,
+    "predicted_gap_K": 154,
+    "prediction_vs_experiment_pct_error": 3.3,
+    "assessment": "300 K (room temperature) is NOT reached. The best computational prediction of 146 K is within 3% of the experimental Hg1223 Tc of 151 K, validating the method but confirming that known cuprate+spin-fluctuation physics saturates well below 300 K.",
+    "honest_conclusion": "Room-temperature superconductivity is not computationally predicted for any known material within the spin-fluctuation + phonon Eliashberg framework. The 154 K gap to 300 K requires qualitatively new physics or materials."
+  },
+  "gap_accounting": {
+    "starting_gap_K": 149,
+    "v10_predicted_gap_K": 58,
+    "v10_was_overestimate": true,
+    "v11_predicted_gap_K": 154,
+    "gap_increased_from_v10": true,
+    "reason": "Hubbard-I approximation overestimated lambda_sf by 33%. CTQMC correction restores honest prediction."
+  },
+  "missing_physics": {
+    "within_framework_incremental": [
+      "Dynamic U (frequency-dependent interaction): ~10-20% effect",
+      "Multi-orbital beyond single-band Hubbard: ~10-30% effect",
+      "Full Matsubara-axis Eliashberg: ~20% effect on Tc"
+    ],
+    "qualitatively_different": [
+      "Non-equilibrium/Floquet pairing: no equilibrium Tc applies",
+      "Flat-band superconductivity: requires specific band engineering",
+      "Bipolaronic/preformed-pair condensation: BCS-BEC crossover",
+      "Excitonic/plasmon-mediated pairing: additional boson channels"
+    ],
+    "can_incremental_close_gap": false,
+    "requires_new_mechanism": true
+  },
+  "v12_recommendation": {
+    "priority_1": "Full Matsubara-axis Eliashberg solver (largest single improvement)",
+    "priority_2": "Real-material multi-orbital CTQMC",
+    "priority_3": "Bilayer nickelate at extreme pressure (30-50 GPa)",
+    "priority_4": "Flat-band + spin-fluctuation material search",
+    "estimated_phases": "8-12",
+    "probability_300K": "LOW (<10%) with incremental; UNKNOWN with new mechanisms"
+  },
+  "milestone_closeout": {
+    "status": "COMPLETE",
+    "all_objectives_addressed": true,
+    "anchors_honored": true,
+    "forbidden_proxies_avoided": true,
+    "validation_checks_passed": true
+  },
+  "room_temperature_gap_K": 149,
+  "VALD03_statement": "The 149 K room-temperature gap remains OPEN. 300 K not reached by any candidate."
+}
