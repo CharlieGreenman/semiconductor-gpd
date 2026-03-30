@@ -1,0 +1,45 @@
+{
+  "milestone": "v8.0",
+  "title": "Computational Materials Design for Room-Temperature Superconductivity",
+  "phases": [27, 28, 29, 30, 31, 32, 33],
+  "date_completed": "2026-03-29",
+  "status": "COMPLETE",
+
+  "executive_result": "Phonon-only Eliashberg calculations cannot close the 149 K gap. The benchmark (Hg1223, 151 K) remains the top candidate. Best new prediction: Sm3Ni2O7/SLAO at 26 K phonon-only.",
+
+  "key_findings": [
+    "Phonon-only oxide Tc ceiling: 30-40 K (fundamental, not computational)",
+    "Hg1223 (n=3) is optimal in Hg family; AF kills n>=4 inner planes",
+    "Nickelate strain enhances dz2 sigma-bonding: Tc(phonon) goes from 17 to 26 K",
+    "Hybrid superlattice: volume-dilution of lambda prevents Tc exceeding parents",
+    "Phonon fraction: cuprates ~22%, nickelates ~45%",
+    "Spin fluctuations provide 55-80% of total pairing in both families"
+  ],
+
+  "149K_gap": {
+    "status": "UNCHANGED",
+    "value_K": 149,
+    "best_experimental_Tc_K": 151,
+    "best_new_phonon_Tc_K": 26.3,
+    "candidate": "Sm3Ni2O7/SLAO"
+  },
+
+  "requirements_complete": {
+    "VALD-01": true, "VALD-02": true, "VALD-03": true, "VALD-04": true,
+    "HG-01": true, "HG-02": true, "HG-03": true, "HG-04": true,
+    "NI-01": true, "NI-02": true, "NI-03": true, "NI-04": true,
+    "HY-01": true, "HY-02": true, "HY-03": true,
+    "DEC-01": true, "DEC-02": true
+  },
+
+  "follow_up_triggered": ["EXT-01 (DMFT+Eliashberg)", "EXT-02 (Sm3Ni2O7/SLAO experiment)", "EXT-03 (spin-fluctuation calculation)"],
+
+  "next_steps_priority_order": [
+    "1. Reproduce Hg1223 PQP at 151 K (highest ROI experiment)",
+    "2. DMFT+Eliashberg for Hg1223 (highest ROI computation)",
+    "3. Grow Sm3Ni2O7 on SLAO (test new prediction)",
+    "4. RPA spin-fluctuation for La3Ni2O7 (cheaper than DMFT)"
+  ],
+
+  "honest_assessment": "No phonon-only computation can predict room-temperature superconductivity in oxides. The 30-40 K phonon ceiling is a fundamental limitation of oxide phonon frequencies. Room-temperature superconductivity in this materials class, if achievable at all, requires the spin-fluctuation channel. DMFT+Eliashberg is the minimum computational method needed for quantitative Tc prediction. The most productive experimental step is reproducing the existing 151 K benchmark."
+}
