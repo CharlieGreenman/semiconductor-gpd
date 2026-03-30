@@ -1,0 +1,66 @@
+{
+  "model": "three_band_dp_hubbard",
+  "material": "HgBa2Ca2Cu3O8 (Hg1223)",
+  "n_layers": 3,
+  "n_orbitals_per_layer": 3,
+  "orbital_basis": [
+    "Cu_dx2y2",
+    "O_px",
+    "O_py"
+  ],
+  "lattice_constant_angstrom": 3.845,
+  "hopping_parameters_eV": {
+    "t_pd": 1.5,
+    "t_pp": 0.65,
+    "t_pp_prime": 0.0,
+    "t_z": 0.02
+  },
+  "onsite_energies_eV": {
+    "eps_d": 0.0,
+    "eps_p": -3.5,
+    "charge_transfer_energy": 3.5
+  },
+  "interaction_parameters_eV": {
+    "U_d": 3.5,
+    "J_d": 0.65,
+    "U_p": 0.0,
+    "U_d_source": "Literature: Hirayama et al. PRB 98, 134501 (2018); Weber et al. PRL 108, 256402 (2012) [UNVERIFIED - training data]",
+    "J_d_source": "Literature: same references [UNVERIFIED - training data]"
+  },
+  "doping": {
+    "type": "hole",
+    "concentration_per_CuO2": 0.16,
+    "filling": 4.84,
+    "note": "Optimal doping for Hg1223"
+  },
+  "derived_quantities": {
+    "U_over_bandwidth": 1.6090626655360234,
+    "charge_transfer_regime": false
+  },
+  "references": [
+    "Emery, PRL 58, 2794 (1987)",
+    "Andersen et al., J. Phys. Chem. Solids 56, 1573 (1995)",
+    "Hirayama et al., PRB 98, 134501 (2018)",
+    "Weber et al., PRL 108, 256402 (2012)"
+  ],
+  "convention_assertions": {
+    "units": "eV for energies, 1/Angstrom for momenta",
+    "fourier": "QE plane-wave convention",
+    "natural_units": false
+  },
+  "validation": {
+    "hermiticity_error": 0.0,
+    "hermiticity_pass": true,
+    "antibonding_bandwidth_eV": 2.175179422756697,
+    "bandwidth_target_eV": 2.5,
+    "bandwidth_pass": true,
+    "cu_weight_at_gamma_antibonding": 1.0,
+    "cu_character_pass": true,
+    "trilayer_splitting_eV": 0.0565685424949238,
+    "expected_splitting_eV": 0.05656854249492381,
+    "trilayer_splitting_pass": true,
+    "time_reversal_error": 0.0,
+    "time_reversal_pass": true,
+    "all_pass": true
+  }
+}

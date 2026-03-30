@@ -1,0 +1,58 @@
+! Wannier90 input for Hg1223 3-band model
+! Cu-dx2y2 + O-px + O-py per CuO2 layer (9 bands total for trilayer)
+!
+! TEMPLATE: requires QE .amn/.mmn/.eig files from pw2wannier90.x
+! Convention: QE plane-wave convention psi_nk = e^{ikr} u_nk
+
+num_wann = 9
+num_bands = 30
+
+! Disentanglement window (eV relative to Fermi level)
+dis_win_min = -8.0
+dis_win_max =  4.0
+
+! Frozen window around the Fermi level
+dis_froz_min = -2.0
+dis_froz_max =  1.0
+
+dis_num_iter = 200
+num_iter = 100
+
+! Projections: Cu d_{x2-y2} and O p_{x,y} for each CuO2 layer
+begin projections
+! Layer 1 (outer, z ~ 0.282)
+Cu:l=2,mr=5     ! d_{x2-y2} = |2,5> in cubic harmonics
+O:l=1,mr=1      ! p_x
+O:l=1,mr=2      ! p_y
+! Layer 2 (inner, z = 0.5)
+Cu:l=2,mr=5
+O:l=1,mr=1
+O:l=1,mr=2
+! Layer 3 (outer, z ~ 0.718)
+Cu:l=2,mr=5
+O:l=1,mr=1
+O:l=1,mr=2
+end projections
+
+! Lattice vectors (Angstrom)
+begin unit_cell_cart
+Ang
+3.845000  0.000000  0.000000
+0.000000  3.845000  0.000000
+0.000000  0.000000  15.780000
+end unit_cell_cart
+
+! k-point mesh
+mp_grid = 8 8 4
+
+! Band structure plot
+bands_plot = .true.
+
+begin kpoint_path
+G  0.0 0.0 0.0  X  0.5 0.0 0.0
+X  0.5 0.0 0.0  M  0.5 0.5 0.0
+M  0.5 0.5 0.0  G  0.0 0.0 0.0
+end kpoint_path
+
+! Write Hamiltonian for DMFT input
+write_hr = .true.

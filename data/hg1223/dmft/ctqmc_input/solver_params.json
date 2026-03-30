@@ -1,0 +1,11 @@
+{
+  "n_cycles": 500000,
+  "length_cycle": 200,
+  "n_warmup_cycles": 50000,
+  "measure_G_l": true,
+  "measure_G_tau": true,
+  "move_double": true,
+  "random_seed": 42,
+  "max_time": 3600,
+  "performance_analysis": true
+}
