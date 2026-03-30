@@ -1,0 +1,74 @@
+{
+  "phase": 20,
+  "artifact": "diagnostic_routing_tree",
+  "branches": [
+    {
+      "condition": "source_state_absent_under_pressure",
+      "evidence_tier": "below_T1",
+      "interpretation": "not_yet_a_valid_test_of_ambient_retention",
+      "recommended_action": "fix_target_state_preparation_before_changing_route_confidence"
+    },
+    {
+      "condition": "source_state_present_valid_logs_no_initial_retained_signal",
+      "evidence_tier": "T1_failed_attempt",
+      "interpretation": "route_relevant_miss_potentially_release_path_dominated",
+      "recommended_action": "target_vq_and_release_path_followup"
+    },
+    {
+      "condition": "single_non_replicated_onset_curve",
+      "evidence_tier": "T1",
+      "interpretation": "non_decisive_positive",
+      "recommended_action": "repeat_same_fixed_node_under_matched_handling"
+    },
+    {
+      "condition": "replicate_support_and_77k_hold_support",
+      "evidence_tier": "T2",
+      "interpretation": "possible_basin_candidate",
+      "recommended_action": "proceed_to_smallest_justified_vq_or_retrieval_bulk_upgrade"
+    },
+    {
+      "condition": "replicate_support_and_selected_ex_dac_bulk_support",
+      "evidence_tier": "T3",
+      "interpretation": "strengthened_route_candidate",
+      "recommended_action": "keep_hg1223_primary_and_route_next_work_toward_basin_widening"
+    },
+    {
+      "condition": "logs_incomplete_or_run_invalidated",
+      "evidence_tier": "T0",
+      "interpretation": "uninterpretable_for_route_confidence",
+      "recommended_action": "troubleshoot_only"
+    },
+    {
+      "condition": "cryogenic_survival_but_warm_side_failure",
+      "evidence_tier": "T1_or_T2",
+      "interpretation": "cryogenic_retained_route_with_warm_fragility",
+      "recommended_action": "keep_room_temperature_gap_explicit"
+    },
+    {
+      "condition": "pre_retrieval_survival_clean_but_ex_dac_loss_strong",
+      "evidence_tier": "T1_or_T2",
+      "interpretation": "retrieval_control_problem",
+      "recommended_action": "isolate_retrieval_before_downgrading_route"
+    }
+  ],
+  "conditions": [
+    "source_state_absent_under_pressure",
+    "source_state_present_valid_logs_no_initial_retained_signal",
+    "single_non_replicated_onset_curve",
+    "replicate_support_and_77k_hold_support",
+    "replicate_support_and_selected_ex_dac_bulk_support",
+    "logs_incomplete_or_run_invalidated",
+    "cryogenic_survival_but_warm_side_failure",
+    "pre_retrieval_survival_clean_but_ex_dac_loss_strong"
+  ],
+  "recommended_actions": [
+    "fix_target_state_preparation_before_changing_route_confidence",
+    "target_vq_and_release_path_followup",
+    "repeat_same_fixed_node_under_matched_handling",
+    "proceed_to_smallest_justified_vq_or_retrieval_bulk_upgrade",
+    "keep_hg1223_primary_and_route_next_work_toward_basin_widening",
+    "troubleshoot_only",
+    "keep_room_temperature_gap_explicit",
+    "isolate_retrieval_before_downgrading_route"
+  ]
+}

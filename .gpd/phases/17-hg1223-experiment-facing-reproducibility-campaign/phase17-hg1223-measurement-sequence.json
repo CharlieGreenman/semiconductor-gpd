@@ -1,0 +1,76 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "stage": "sample_intake",
+      "required_measurements": ["sample_class", "oxygen_or_anneal_history", "geometry", "run_id"]
+    },
+    {
+      "step": 2,
+      "stage": "in_dac_targeting",
+      "required_measurements": ["in_dac_transport", "target_tc_confirmation"]
+    },
+    {
+      "step": 3,
+      "stage": "quench_event",
+      "required_measurements": ["pq", "tq", "vq_release_trace"]
+    },
+    {
+      "step": 4,
+      "stage": "immediate_retained_state_check",
+      "required_measurements": ["ambient_pressure_cryogenic_transport"]
+    },
+    {
+      "step": 5,
+      "stage": "cryogenic_hold",
+      "required_measurements": ["24h_checkpoint", "72h_checkpoint"]
+    },
+    {
+      "step": 6,
+      "stage": "intermediate_warm_hold",
+      "required_measurements": ["160_170k_hold_transport"]
+    },
+    {
+      "step": 7,
+      "stage": "high_warm_hold",
+      "required_measurements": ["200k_hold_transport"]
+    },
+    {
+      "step": 8,
+      "stage": "retrieval",
+      "required_measurements": ["retrieval_temperature_log", "retrieval_time_log"]
+    },
+    {
+      "step": 9,
+      "stage": "ex_dac_transport",
+      "required_measurements": ["post_retrieval_rt_curve"]
+    },
+    {
+      "step": 10,
+      "stage": "ex_dac_bulk_probe",
+      "required_measurements": ["magnetization_or_equivalent"]
+    },
+    {
+      "step": 11,
+      "stage": "ex_dac_structural_probe",
+      "required_measurements": ["xrd_or_equivalent"]
+    },
+    {
+      "step": 12,
+      "stage": "room_temperature_stress",
+      "required_measurements": ["293k_excursion_transport"]
+    }
+  ],
+  "stage_boundaries": [
+    "creation_and_recording",
+    "pre_retrieval_retention",
+    "retrieval_and_ex_dac_characterization",
+    "room_temperature_stress"
+  ],
+  "required_measurements": {
+    "transport_steps": [2, 4, 5, 6, 7, 9, 12],
+    "quench_log_step": 3,
+    "bulk_probe_step": 10,
+    "structural_probe_step": 11
+  }
+}

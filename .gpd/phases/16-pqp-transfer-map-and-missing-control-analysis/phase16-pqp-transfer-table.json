@@ -1,0 +1,139 @@
+{
+  "shared_axes": [
+    "pq_gpa",
+    "tq_k",
+    "retained_operating_pressure",
+    "retained_state",
+    "warm_side_stability",
+    "bulk_evidence",
+    "missing_controls"
+  ],
+  "systems": [
+    {
+      "system": "Hg1223",
+      "route": "best_reproduced_low_tq_window",
+      "pq_gpa": "10.1-28.4",
+      "tq_k": 4.2,
+      "retained_operating_pressure": "ambient",
+      "retained_state": "onset_tc_147_151_k",
+      "warm_side_stability": "stable_at_least_3_days_at_77_k_degrades_above_170_200_k",
+      "bulk_evidence": "retrieved_fraction_about_78_percent",
+      "missing_controls": ["exact_vq", "broad_sample_statistics"],
+      "route_specific_caveat": "highest Tc but strongest underreporting on vQ"
+    },
+    {
+      "system": "Hg1223",
+      "route": "warmer_quench_route",
+      "pq_gpa": 26.0,
+      "tq_k": 77.0,
+      "retained_operating_pressure": "ambient",
+      "retained_state": "onset_tc_139_k",
+      "warm_side_stability": "weaker_than_low_tq_route",
+      "bulk_evidence": "same_paper_bulk_context_only",
+      "missing_controls": ["exact_vq"],
+      "route_specific_caveat": "demonstrates strong tq penalty"
+    },
+    {
+      "system": "BST",
+      "route": "low_pressure_retained_route",
+      "pq_gpa": 8.0,
+      "tq_k": 77.0,
+      "retained_operating_pressure": "ambient",
+      "retained_state": "possible_sc_about_4_9_k",
+      "warm_side_stability": "retained_signal_after_quench",
+      "bulk_evidence": "not_isolated_for_this_row",
+      "missing_controls": ["single_phase_clarity"],
+      "route_specific_caveat": "low_tc_component_only"
+    },
+    {
+      "system": "BST",
+      "route": "intermediate_pressure_route",
+      "pq_gpa": 20.3,
+      "tq_k": 77.0,
+      "retained_operating_pressure": "ambient",
+      "retained_state": "only_lower_retained_phase_about_4_9_k",
+      "warm_side_stability": "higher_tc_target_not_cleanly_preserved",
+      "bulk_evidence": "not_isolated",
+      "missing_controls": ["phase_purity"],
+      "route_specific_caveat": "retention_does_not_scale_monotonically_with_pressure"
+    },
+    {
+      "system": "BST",
+      "route": "mixed_high_pressure_retained_route",
+      "pq_gpa": 33.3,
+      "tq_k": 77.0,
+      "retained_operating_pressure": "ambient",
+      "retained_state": "mixed_phases_about_6_0_k_and_10_2_k",
+      "warm_side_stability": "10_2_k_component_degrades_with_cycling_6_0_k_component_more_stable_some_signal_survives_room_temperature_handling",
+      "bulk_evidence": "recovered_sample_diamagnetic_shift_about_46_percent",
+      "missing_controls": ["single_phase_clarity", "higher_tc_component_lifetime"],
+      "route_specific_caveat": "strongest room_temperature_handling example but mixed_phase"
+    },
+    {
+      "system": "BST",
+      "route": "low_tq_comparison",
+      "pq_gpa": 32.3,
+      "tq_k": 4.2,
+      "retained_operating_pressure": "ambient",
+      "retained_state": "retained_transition_about_5_9_k",
+      "warm_side_stability": "lower_phase_survives_without_clean_high_tc_state",
+      "bulk_evidence": "not_isolated",
+      "missing_controls": ["higher_tc_phase_clean_retention"],
+      "route_specific_caveat": "lower_tq_does_not_remove_phase_complexity"
+    },
+    {
+      "system": "FeSe",
+      "route": "pristine_best_retained_route",
+      "pq_gpa": 4.15,
+      "tq_k": 4.2,
+      "retained_operating_pressure": "ambient",
+      "retained_state": "tc_about_37_k",
+      "warm_side_stability": "stable_to_about_200_k_reverts_after_300_k",
+      "bulk_evidence": "transport_evidence_only",
+      "missing_controls": ["bulk_fraction"],
+      "route_specific_caveat": "clean_tq_sensitivity_and_annealing_threshold"
+    },
+    {
+      "system": "FeSe",
+      "route": "pristine_warmer_quench_route",
+      "pq_gpa": 5.22,
+      "tq_k": 77.0,
+      "retained_operating_pressure": "ambient",
+      "retained_state": "tc_about_24_k",
+      "warm_side_stability": "survives_quench_not_300_k_without_reversion",
+      "bulk_evidence": "transport_evidence_only",
+      "missing_controls": ["bulk_fraction"],
+      "route_specific_caveat": "direct_tq_penalty_relative_to_4_2_k"
+    },
+    {
+      "system": "FeSe",
+      "route": "pristine_non_sc_retained_phase",
+      "pq_gpa": 11.12,
+      "tq_k": 77.0,
+      "retained_operating_pressure": "ambient",
+      "retained_state": "non_superconducting_retained_phase",
+      "warm_side_stability": "stable_to_300_k",
+      "bulk_evidence": "phase_retention_by_transport_hysteresis_logic",
+      "missing_controls": ["target_state_selection"],
+      "route_specific_caveat": "quench_can_retain_the_wrong_phase"
+    },
+    {
+      "system": "Cu-doped FeSe",
+      "route": "induced_retained_sc_route",
+      "pq_gpa": "~6.2-6.7",
+      "tq_k": "4.2_or_77",
+      "retained_operating_pressure": "ambient",
+      "retained_state": "tc_about_26_k",
+      "warm_side_stability": "retained_sc_phase_unchanged_for_at_least_7_days",
+      "bulk_evidence": "transport_evidence_only",
+      "missing_controls": ["direct_bulk_fraction"],
+      "route_specific_caveat": "chemistry_modifies_the_retained_basin"
+    }
+  ],
+  "route_specific_caveats": [
+    "Hg1223 has the highest retained Tc but the least explicit vQ reporting",
+    "BST is the strongest room-temperature-handling analog but preserves mixed retained phases",
+    "FeSe contributes the clearest thermal-threshold and residual-pressure-handling clues"
+  ],
+  "phase16_verdict": "shared_pqp_language_is_supported_but_universal_mechanism_claims_are_not"
+}

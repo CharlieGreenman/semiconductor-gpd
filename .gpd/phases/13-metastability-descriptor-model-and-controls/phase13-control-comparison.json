@@ -1,0 +1,150 @@
+{
+  "phase": "13",
+  "artifact": "phase13-control-comparison",
+  "controls": [
+    {
+      "route": "Hg1223",
+      "class": "positive benchmark",
+      "descriptor_scores": {
+        "ambient-access": "high",
+        "protocol-controllability": "medium",
+        "structural-memory": "medium-high",
+        "non-reconstructive-tuning": "medium",
+        "multi-knob-tunability": "medium",
+        "evidence-depth": "medium-high",
+        "synthesis-plausibility": "medium-low",
+        "roomtemp-gap-penalty": "149 K",
+        "fragility-penalty": "high"
+      },
+      "overall_retention_friendliness": "high"
+    },
+    {
+      "route": "BST",
+      "class": "positive analog",
+      "descriptor_scores": {
+        "ambient-access": "high",
+        "protocol-controllability": "high",
+        "structural-memory": "high",
+        "non-reconstructive-tuning": "high",
+        "multi-knob-tunability": "medium",
+        "evidence-depth": "medium",
+        "synthesis-plausibility": "medium",
+        "roomtemp-gap-penalty": "very large",
+        "fragility-penalty": "medium"
+      },
+      "overall_retention_friendliness": "medium-high"
+    },
+    {
+      "route": "FeSe",
+      "class": "positive analog",
+      "descriptor_scores": {
+        "ambient-access": "high",
+        "protocol-controllability": "high",
+        "structural-memory": "medium",
+        "non-reconstructive-tuning": "medium",
+        "multi-knob-tunability": "medium",
+        "evidence-depth": "medium",
+        "synthesis-plausibility": "medium-high",
+        "roomtemp-gap-penalty": "263 K",
+        "fragility-penalty": "medium"
+      },
+      "overall_retention_friendliness": "medium-high"
+    },
+    {
+      "route": "La3Ni2O7 thin films",
+      "class": "positive ambient platform",
+      "descriptor_scores": {
+        "ambient-access": "high",
+        "protocol-controllability": "high",
+        "structural-memory": "medium",
+        "non-reconstructive-tuning": "high",
+        "multi-knob-tunability": "high",
+        "evidence-depth": "medium",
+        "synthesis-plausibility": "medium",
+        "roomtemp-gap-penalty": "258-274 K",
+        "fragility-penalty": "medium-high"
+      },
+      "overall_retention_friendliness": "medium-high"
+    },
+    {
+      "route": "La2.85Pr0.15Ni2O7 films",
+      "class": "positive ambient platform",
+      "descriptor_scores": {
+        "ambient-access": "high",
+        "protocol-controllability": "high",
+        "structural-memory": "medium",
+        "non-reconstructive-tuning": "high",
+        "multi-knob-tunability": "high",
+        "evidence-depth": "medium-high",
+        "synthesis-plausibility": "medium",
+        "roomtemp-gap-penalty": "255 K",
+        "fragility-penalty": "medium"
+      },
+      "overall_retention_friendliness": "medium-high"
+    },
+    {
+      "route": "La2PrNi2O7 thin films",
+      "class": "positive ambient platform",
+      "descriptor_scores": {
+        "ambient-access": "high",
+        "protocol-controllability": "high",
+        "structural-memory": "medium",
+        "non-reconstructive-tuning": "high",
+        "multi-knob-tunability": "high",
+        "evidence-depth": "medium-high",
+        "synthesis-plausibility": "medium",
+        "roomtemp-gap-penalty": "large",
+        "fragility-penalty": "medium-high"
+      },
+      "overall_retention_friendliness": "medium-high"
+    },
+    {
+      "route": "CsInH3",
+      "class": "negative control",
+      "descriptor_scores": {
+        "ambient-access": "low",
+        "protocol-controllability": "low",
+        "structural-memory": "low",
+        "non-reconstructive-tuning": "low",
+        "multi-knob-tunability": "low",
+        "evidence-depth": "low-medium",
+        "synthesis-plausibility": "medium",
+        "roomtemp-gap-penalty": "86 K under pressure only",
+        "fragility-penalty": "medium"
+      },
+      "overall_retention_friendliness": "low"
+    },
+    {
+      "route": "RbPH3",
+      "class": "negative control",
+      "descriptor_scores": {
+        "ambient-access": "low-to-unclear",
+        "protocol-controllability": "low",
+        "structural-memory": "low",
+        "non-reconstructive-tuning": "low",
+        "multi-knob-tunability": "low",
+        "evidence-depth": "low",
+        "synthesis-plausibility": "low",
+        "roomtemp-gap-penalty": "unclear",
+        "fragility-penalty": "medium"
+      },
+      "overall_retention_friendliness": "low"
+    },
+    {
+      "route": "Stable ambient hydrides in the carried survey",
+      "class": "negative control",
+      "descriptor_scores": {
+        "ambient-access": "high",
+        "protocol-controllability": "low",
+        "structural-memory": "low",
+        "non-reconstructive-tuning": "medium",
+        "multi-knob-tunability": "low",
+        "evidence-depth": "medium",
+        "synthesis-plausibility": "medium",
+        "roomtemp-gap-penalty": "huge",
+        "fragility-penalty": "low"
+      },
+      "overall_retention_friendliness": "low"
+    }
+  ]
+}

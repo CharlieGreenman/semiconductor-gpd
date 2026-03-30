@@ -1,0 +1,37 @@
+{
+  "route_families": [
+    {
+      "name": "Hg-family cuprates",
+      "best_tc_k": 151,
+      "family_headroom": {
+        "zero_resist_k": 153,
+        "onset_k": 166
+      },
+      "operating_state": "retained ambient benchmark plus higher pressure-assisted family ceiling",
+      "evidence_depth": "strong benchmark, moderate transfer",
+      "route_verdict": "primary gap-closing route family"
+    },
+    {
+      "name": "nickelates",
+      "best_tc_k": 96,
+      "ambient_watchpoints_k": [63, 40],
+      "operating_state": "mixed ambient and pressure-assisted",
+      "evidence_depth": "improving but fragmented",
+      "route_verdict": "strongest secondary route family"
+    },
+    {
+      "name": "conventional near-ambient controls",
+      "best_tc_k": null,
+      "operating_state": "mostly theory-led or lower-headroom practical evidence",
+      "evidence_depth": "control-only",
+      "route_verdict": "not a primary post-v5 route"
+    }
+  ],
+  "room_temperature_gap_k": 149,
+  "comparison_basis": [
+    "best current Tc",
+    "operating state",
+    "retention status",
+    "evidence depth"
+  ]
+}

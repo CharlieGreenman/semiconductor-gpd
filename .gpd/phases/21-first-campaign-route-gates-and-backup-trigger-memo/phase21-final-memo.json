@@ -1,0 +1,12 @@
+{
+  "phase": 21,
+  "artifact": "final_memo",
+  "milestone_result": "v5.0 tightened the first Hg1223 campaign into a runbook, diagnostic package, and route-gate system",
+  "room_temperature_status": {
+    "found_room_temperature_superconductor": false,
+    "best_carried_retained_tc_k": 151,
+    "gap_to_300k_k": 149
+  },
+  "next_step": "execute the instrumented Stage A Hg1223 campaign and classify outcomes through the Phase 20 evidence ladder and Phase 21 route gates",
+  "backup_contingency": "if the first instrumented campaign fails cleanly or stalls below T2, strengthen the bilayer nickelate route into a co-primary discovery program"
+}

@@ -1,0 +1,54 @@
+{
+  "stages": [
+    {
+      "stage": "A",
+      "goal": "benchmark_window_reproduction",
+      "sample_class": "benchmark_like_oxygen_optimized",
+      "pq_nodes_gpa": [10.1, 18.9, 28.4],
+      "tq_nodes_k": [4.2, 77.0],
+      "vq_plan": "fastest_reproducible_measured_release_bin",
+      "replicates_per_node": 2,
+      "planned_runs": 12,
+      "promotion_rule": "any_low_tq_node_with_retained_onset_tc_gte_145_k_and_complete_logs"
+    },
+    {
+      "stage": "B",
+      "goal": "vq_isolation",
+      "fixed_node": "best_stage_a_node",
+      "vq_bins": ["fast", "medium", "slow"],
+      "replicates_per_bin": 3,
+      "planned_runs": 9,
+      "promotion_rule": "one_vq_bin_yields_retained_onset_tc_gte_145_k_in_at_least_2_of_3_runs"
+    },
+    {
+      "stage": "C1",
+      "goal": "sample_state_stress_test",
+      "fixed_node": "best_stage_b_node",
+      "variable": "sample_state",
+      "levels": ["benchmark_like", "shifted_oxygen_history"],
+      "replicates_per_level": 2,
+      "planned_runs": 4
+    },
+    {
+      "stage": "C2",
+      "goal": "handling_path_stress_test",
+      "fixed_node": "best_stage_b_node",
+      "variable": "handling_path",
+      "levels": ["cryogenic_first_retrieval", "stressed_warm_handling"],
+      "replicates_per_level": 2,
+      "planned_runs": 4
+    }
+  ],
+  "variables": ["pq", "tq", "vq", "sample_state", "handling_path"],
+  "replicate_plan": {
+    "stage_a": 2,
+    "stage_b": 3,
+    "stage_c": 2
+  },
+  "planned_total_runs": 29,
+  "decision_logic": {
+    "stage_a_failure": "no_low_tq_node_reaches_retained_onset_tc_gte_145_k_under_recorded_conditions",
+    "stage_b_failure": "vq_dependence_exists_but_no_repeatable_window_emerges",
+    "stage_c_failure": "success_depends_on_one_sample_history_or_one_handling_path_only"
+  }
+}

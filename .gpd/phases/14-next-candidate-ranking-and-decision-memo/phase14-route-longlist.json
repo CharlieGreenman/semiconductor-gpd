@@ -1,0 +1,51 @@
+{
+  "phase": "14",
+  "artifact": "phase14-route-longlist",
+  "routes": [
+    {
+      "rank": 1,
+      "route_class": "Hg1223-class pressure-quenched multilayer cuprates",
+      "confidence": "high",
+      "best_carried_tc_k": 151,
+      "roomtemp_gap_k": 149,
+      "why_live": "shortest gap in the carried experimental set; retained ambient operation already demonstrated",
+      "failure_mode": "protocol opacity, reproducibility, and toxicity"
+    },
+    {
+      "rank": 2,
+      "route_class": "strain plus oxygen-controlled bilayer nickelate films",
+      "confidence": "medium-high",
+      "best_carried_tc_k": 45,
+      "roomtemp_gap_k": 255,
+      "why_live": "richest current discovery platform with multiple coupled knobs at ambient pressure",
+      "failure_mode": "thin-film sensitivity, lower Tc, and processing complexity"
+    },
+    {
+      "rank": 3,
+      "route_class": "pressure-quench methodology platforms (BST, FeSe)",
+      "confidence": "high as method, medium as target",
+      "best_carried_tc_k": 37,
+      "roomtemp_gap_k": 263,
+      "why_live": "best route for understanding retention variables and structural memory",
+      "failure_mode": "too far from room temperature to be the primary target"
+    },
+    {
+      "rank": 4,
+      "route_class": "mature ambient baselines (MgB2-class thinking)",
+      "confidence": "very high",
+      "best_carried_tc_k": 39,
+      "roomtemp_gap_k": 261,
+      "why_live": "practical and reproducible engineering sanity check",
+      "failure_mode": "far from the room-temperature goal"
+    },
+    {
+      "rank": 5,
+      "route_class": "hydride and framework watchlist (CsInH3, KB3C3, RbPH3)",
+      "confidence": "low",
+      "best_carried_tc_k": null,
+      "roomtemp_gap_k": null,
+      "why_live": "scientifically useful as controls or speculative watchlist entries",
+      "failure_mode": "blocked by the v2.0 no-go or weak ambient evidence"
+    }
+  ]
+}

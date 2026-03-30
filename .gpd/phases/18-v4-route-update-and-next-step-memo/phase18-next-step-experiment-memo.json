@@ -1,0 +1,20 @@
+{
+  "primary_actions": [
+    "reproduce_low_tq_benchmark_window_at_10_1_18_9_28_4_gpa",
+    "record_full_vq_release_trace_for_every_run",
+    "measure_immediate_ambient_cryogenic_retained_state_before_warm_excursion",
+    "run_staged_thermal_checkpoints_at_77k_160_170k_and_200k",
+    "retrieve_only_surviving_conditions_for_ex_dac_transport_bulk_and_structural_probes"
+  ],
+  "secondary_actions": [
+    "compare_best_node_across_multiple_sample_state_classes",
+    "compare_cryogenic_first_and_stressed_handling_paths",
+    "upgrade_best_surviving_condition_toward_bulk_supported_evidence"
+  ],
+  "fallback_logic": {
+    "stay_primary": "at_least_one_low_tq_node_reproduces_retained_onset_tc_gte_147_k_under_recorded_conditions",
+    "hold_not_upgrade": "only_one_isolated_success_without_basin_gate",
+    "reopen_backup_more_actively": "low_tq_benchmark_window_fails_cleanly_under_recorded_conditions"
+  },
+  "backup_route_status": "bilayer_nickelates_preserved_as_backup_route"
+}

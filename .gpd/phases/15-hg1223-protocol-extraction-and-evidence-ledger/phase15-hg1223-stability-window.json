@@ -1,0 +1,41 @@
+{
+  "thermal_budget": [
+    {
+      "condition": "inside DAC at 77 K for up to 3 days",
+      "outcome": "retained Tc state survives with slight degradation",
+      "confidence": "high"
+    },
+    {
+      "condition": "warmed to about 170 K",
+      "outcome": "retained state still present",
+      "confidence": "medium"
+    },
+    {
+      "condition": "heated above roughly 170-200 K",
+      "outcome": "retained Tc degrades",
+      "confidence": "high"
+    },
+    {
+      "condition": "cycled to room temperature",
+      "outcome": "147 K class state can fall to 143 K; retrieved sample can drop to about 140 K",
+      "confidence": "high"
+    }
+  ],
+  "temporal_budget": {
+    "stable_at_77k_for_days": 3,
+    "room_temperature_long_duration_known": false
+  },
+  "structural_evidence": {
+    "structure_retained": "tetragonal",
+    "fwhm_pristine_deg": 0.12,
+    "fwhm_pqed_deg": 0.20,
+    "line_broadening_interpretation": "strain and/or defects",
+    "lattice_parameter_change": "slight expansion"
+  },
+  "magnetization": {
+    "bulk_fraction_percent": 78,
+    "retrieved_tc_k": 140,
+    "note": "likely partially annealed during retrieval"
+  },
+  "room_temperature_status": "not stable enough for ambient-use claims"
+}

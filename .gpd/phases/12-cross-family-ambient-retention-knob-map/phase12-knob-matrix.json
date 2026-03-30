@@ -1,0 +1,76 @@
+{
+  "phase": "12",
+  "artifact": "phase12-knob-matrix",
+  "knob_classes": [
+    "pressure quench",
+    "coherent epitaxial strain",
+    "oxygen or anneal history",
+    "microstructure and storage"
+  ],
+  "systems": [
+    {
+      "system": "Hg1223",
+      "family": "multilayer cuprate",
+      "knob_class": "pressure quench",
+      "observable_changed": "retained ambient Tc and phase access",
+      "current_reading": "ambient Tc = 151 K after PQP",
+      "evidence_class": "experimental"
+    },
+    {
+      "system": "BST",
+      "family": "topological chalcogenide",
+      "knob_class": "pressure quench",
+      "observable_changed": "ambient retention of pressure-induced phases",
+      "current_reading": "multiple superconducting phases retained at ambient after PQP",
+      "evidence_class": "experimental"
+    },
+    {
+      "system": "FeSe",
+      "family": "iron chalcogenide",
+      "knob_class": "pressure quench",
+      "observable_changed": "retained ambient Tc and stability window",
+      "current_reading": "retained ambient superconductivity up to 37 K",
+      "evidence_class": "experimental"
+    },
+    {
+      "system": "La3Ni2O7 thin films",
+      "family": "bilayer nickelate",
+      "knob_class": "coherent epitaxial strain",
+      "observable_changed": "onset Tc, zero resistance, diamagnetism access",
+      "current_reading": "onset 26.2-42.4 K; zero resistance near 2.2 K",
+      "evidence_class": "experimental"
+    },
+    {
+      "system": "La3Ni2O7 thin films",
+      "family": "bilayer nickelate",
+      "knob_class": "oxygen or anneal history",
+      "observable_changed": "transport quality and superconducting transition",
+      "current_reading": "ozone treatment changes transport dramatically and can recover superconducting behavior",
+      "evidence_class": "experimental"
+    },
+    {
+      "system": "La2.85Pr0.15Ni2O7 films",
+      "family": "bilayer nickelate",
+      "knob_class": "coherent epitaxial strain",
+      "observable_changed": "ambient onset Tc and BKT-like transition",
+      "current_reading": "onset 45 K, T_BKT = 9 K, Meissner at 8 K",
+      "evidence_class": "experimental"
+    },
+    {
+      "system": "La2PrNi2O7 thin films",
+      "family": "bilayer nickelate",
+      "knob_class": "oxygen or anneal history",
+      "observable_changed": "transition sharpness and intrinsic transport",
+      "current_reading": "growth optimization plus precision ozone annealing sharpen the superconducting regime",
+      "evidence_class": "experimental"
+    },
+    {
+      "system": "La2PrNi2O7 thin films",
+      "family": "bilayer nickelate",
+      "knob_class": "microstructure and storage",
+      "observable_changed": "time-dependent resistivity and stability",
+      "current_reading": "storage conditions measurably affect transport and superconducting quality",
+      "evidence_class": "experimental"
+    }
+  ]
+}

@@ -4,23 +4,23 @@
 
 This project started as a first-principles search for room-temperature superconductivity in lower-pressure hydrides. Milestone `v1.0` closed that route negatively for the `MXH3` perovskite family: the best repo result remains `CsInH3` at about `214 K` and `3 GPa`, with no evidence for ambient retention. Milestone `v2.0` tested whether ambient stability, pressure quenchability, or hydride-derived chemistry could rescue a consumer-relevant path; that route also closed negatively. Milestone `v3.0` widened the scope to experimentally anchored metastability and route ranking, ending with `Hg1223`-class pressure-quenched multilayer cuprates as the primary route and bilayer nickelate films as the backup. Milestone `v4.0` made the `Hg1223` route protocol-specified, control-mapped, and campaign-defined. Milestone `v5.0` then converted that route into a collaborator-facing Stage `A` runbook plus a clean evidence ladder and route-gate package.
 
-The active program now shifts from protocol design to computational materials design. Seven milestones have established that `Hg1223` at `151 K` retained ambient is the best current benchmark (`149 K` gap), nickelates are secondary but far from action gates, and protocols for both routes are experiment-ready. The `149 K` gap has not changed since `v4.0`. No further planning-only milestones will shrink it. `v8.0` will use first-principles computation (DFT + Eliashberg) to design materials and conditions that could actually close the gap.
+The active program now shifts from phonon-only computation to beyond-Eliashberg methods. Eight milestones established that `Hg1223` at `151 K` is the best benchmark, phonon-mediated coupling captures only `20-45%` of cuprate/nickelate `Tc`, and spin fluctuations contribute the dominant `55-80%`. No material within the phonon-only framework closes the `149 K` gap. The next milestone must capture spin-fluctuation pairing via DMFT+Eliashberg or RPA to predict whether any oxide system can reach room temperature.
 
-## Current State (after v7.0)
+## Current State (after v8.0)
 
-Milestone `v7.0` completed 2026-03-29. Both route protocols are experiment-ready. Route ranking confirmed unchanged: `Hg1223` primary (`4.15/5.00`), nickelates secondary watch (`2.90/5.00`). The `149 K` gap is unchanged — `v7.0` designed protocols, not ran experiments. The v7.0 closeout explicitly states that the next milestone must produce computed or measured `Tc` improvement, not more planning.
+Milestone `v8.0` completed 2026-03-30. Phonon-only Eliashberg Tc ceiling is `26-36 K` for all oxide candidates tested (`Hg1223`, `Hg1234`, `Hg1245`, strained `La3Ni2O7`, hybrid superlattices). The `n=3` Hg1223 is optimally layered; adding layers decreases Tc via AF inner-plane competition. Nickelate lever-stacking peaks at `26 K` phonon-only; `80 K` gate not reached. Hybrid superlattices dilute lambda rather than enhance it. The `149 K` gap is unchanged.
 
-## Next Milestone Goals (v8.0)
+## Next Milestone Goals (v9.0)
 
-**Computational Materials Design for Room-Temperature Superconductivity:**
+**Beyond-Eliashberg Computation for Room-Temperature Superconductivity:**
 
-1. **Hg-family multilayer engineering** — DFT + Eliashberg for `Hg1234` (4-layer) and `Hg1245` (5-layer) structures to computationally predict whether more `CuO2` layers push `Tc` above `151 K`
-2. **Nickelate lever-stacking optimization** — First-principles calculation of `La3Ni2O7` under optimized strain + oxygen stoichiometry + rare-earth substitution combinations
-3. **Hybrid cuprate-nickelate superlattice design** — Compute electronic structure and `Tc` for Ruddlesden-Popper superlattice structures combining cuprate-like planes with nickelate-like control surfaces
+1. **DMFT+Eliashberg for Hg1223** — capture spin fluctuations to predict full `Tc` and test whether the method reproduces `151 K`
+2. **Spin-fluctuation RPA for strained La3Ni2O7** — compute `lambda_sf` from spin susceptibility to estimate total `Tc` when combined with phonon `lambda_ph`
+3. **Design new candidates using spin-fluctuation guidance** — if DMFT+Eliashberg reproduces cuprate `Tc`, use it to screen structures optimized for spin-fluctuation pairing, not just phonon coupling
 
 ## Core Research Question
 
-Can first-principles computation identify a specific material, structure, or condition that closes the `149 K` gap to room-temperature superconductivity — via multilayer cuprate engineering, nickelate lever-stacking, or hybrid superlattice design?
+Can beyond-Eliashberg methods (DMFT+Eliashberg, spin-fluctuation RPA) predict a material or condition that closes the `149 K` gap — and if they reproduce the `151 K` Hg1223 benchmark, can they guide the design of a room-temperature superconductor?
 
 ## Scoping Contract Summary
 

@@ -1,0 +1,33 @@
+{
+  "phase": "12",
+  "artifact": "phase12-transferability-note",
+  "transferable_knobs": [
+    {
+      "knob_family": "pressure quench",
+      "why": [
+        "recurs across Hg1223, BST, and FeSe",
+        "depends on P_Q and T_Q",
+        "requires structural-memory or hysteresis logic"
+      ]
+    },
+    {
+      "knob_family": "strain plus oxygen control",
+      "why": [
+        "recurs across multiple bilayer nickelate thin-film papers",
+        "correlates with onset-Tc improvement",
+        "changes transport quality and superconducting signatures at ambient pressure"
+      ]
+    }
+  ],
+  "weak_knobs": [
+    {
+      "knob_family": "microstructure and storage",
+      "why": "important for stability and quality, but not yet a route-generating knob by itself"
+    },
+    {
+      "knob_family": "chemistry-only substitution",
+      "why": "effect remains entangled with strain and annealing in the carried set"
+    }
+  ],
+  "rationale": "The carried evidence supports two knob families strongly enough to use in descriptor and route ranking: pressure quench, and strain plus oxygen control."
+}

@@ -1,0 +1,52 @@
+{
+  "phase": 19,
+  "artifact": "stop_rules_and_handling_spec",
+  "handling_classes": [
+    {
+      "id": "H0",
+      "name": "cryogenic_first_benchmark_path",
+      "purpose": "preserve the closest post-quench state",
+      "allowed_before_next_checkpoint": "no unplanned excursion above the assigned cryogenic stage before the first retained-state measurement and 77 K hold checkpoints"
+    },
+    {
+      "id": "H1",
+      "name": "controlled_intermediate_warm_path",
+      "purpose": "probe early warm-side degradation",
+      "allowed_before_next_checkpoint": "one planned 160-170 K hold after the initial cryogenic retained-state checks"
+    },
+    {
+      "id": "H2",
+      "name": "controlled_high_warm_path",
+      "purpose": "probe stronger degradation",
+      "allowed_before_next_checkpoint": "one planned 200 K hold after earlier checkpoints"
+    },
+    {
+      "id": "H3",
+      "name": "room_temperature_stress_path",
+      "purpose": "test explicit room-temperature fragility",
+      "allowed_before_next_checkpoint": "one planned 293 K excursion only after all earlier evidence is captured"
+    }
+  ],
+  "invalidation_rules": [
+    "source_state_not_confirmed_before_release",
+    "missing_or_corrupted_vq_trace",
+    "missing_sample_or_oxygen_history_class",
+    "unplanned_warm_excursion_before_scheduled_checkpoint",
+    "retrieval_without_logged_thermal_path",
+    "stage_tags_too_incomplete_to_localize_failure"
+  ],
+  "interpretation_rules": [
+    "loss_before_first_ambient_cryogenic_check_counts_as_target_state_or_quench_failure",
+    "loss_only_after_logged_warm_checkpoint_counts_as_warm_side_fragility",
+    "loss_only_after_retrieval_with_logged_pre_retrieval_survival_counts_as_retrieval_sensitivity",
+    "single_onset_without_replicate_or_stage_local_support_is_non_decisive"
+  ],
+  "route_gate_rule": {
+    "countable_run_requirements": [
+      "planned_handling_class_maintained",
+      "pq_tq_vq_trace_present",
+      "first_retained_state_check_ambient_and_cryogenic",
+      "later_loss_localized_to_a_logged_stage"
+    ]
+  }
+}

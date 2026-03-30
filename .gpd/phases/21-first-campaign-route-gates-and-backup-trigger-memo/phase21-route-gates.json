@@ -1,0 +1,37 @@
+{
+  "phase": 21,
+  "artifact": "route_gates",
+  "gates": [
+    {
+      "id": "keep_primary",
+      "minimum_evidence": "at_least_one_valid_T1_headline_reproduction_candidate_under_complete_logs",
+      "route_action": "hg1223_remains_primary_but_not_basin_proven"
+    },
+    {
+      "id": "hold_confidence",
+      "minimum_evidence": "valid_but_non_decisive_T1_outcomes_or_mixed_T1_T0_without_clean_failure",
+      "route_action": "route_stays_primary_for_now_without_upgrade"
+    },
+    {
+      "id": "strengthened_route",
+      "minimum_evidence": "at_least_one_fixed_node_reaches_T2_and_selected_followup_reaches_T3",
+      "route_action": "hg1223_strengthens_as_experiment_grade_route"
+    },
+    {
+      "id": "downgrade",
+      "minimum_evidence": "no_low_TQ_node_reaches_valid_T1_and_misses_classify_as_clean_route_relevant_failures",
+      "route_action": "hg1223_weakens_as_near_term_primary_path"
+    }
+  ],
+  "evidence_tiers": ["T0", "T1", "T2", "T3"],
+  "route_actions": [
+    "keep_primary",
+    "hold_confidence",
+    "strengthened_route",
+    "downgrade"
+  ],
+  "room_temperature_guardrail": {
+    "best_carried_retained_tc_k": 151,
+    "gap_to_300k_k": 149
+  }
+}

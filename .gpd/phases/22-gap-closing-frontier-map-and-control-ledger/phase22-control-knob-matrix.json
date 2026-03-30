@@ -1,0 +1,42 @@
+{
+  "route_families": [
+    {
+      "name": "Hg-family cuprates",
+      "control_knobs": [
+        "pressure-quench transfer",
+        "multilayer optimization",
+        "inner_outer_plane_differentiation",
+        "oxygen_tuning",
+        "reservoir_layer_chemistry"
+      ],
+      "upside": "highest absolute headroom",
+      "risk": "narrow transfer to retained ambient operation"
+    },
+    {
+      "name": "nickelates",
+      "control_knobs": [
+        "compressive_strain",
+        "hydrostatic_pressure",
+        "oxygen_stoichiometry",
+        "rare_earth_substitution",
+        "bilayer_trilayer_choice"
+      ],
+      "upside": "richest control surface and improvement slope",
+      "risk": "absolute Tc still well below carried Hg1223 benchmark"
+    },
+    {
+      "name": "conventional near-ambient controls",
+      "control_knobs": [
+        "chemical_precompression",
+        "framework_choice",
+        "electron_count_tuning"
+      ],
+      "upside": "bounded control problem",
+      "risk": "insufficient headroom and evidence"
+    }
+  ],
+  "route_asymmetry": {
+    "absolute_headroom_leader": "Hg-family cuprates",
+    "control_richness_leader": "nickelates"
+  }
+}

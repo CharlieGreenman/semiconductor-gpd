@@ -1,0 +1,31 @@
+{
+  "phase": 21,
+  "artifact": "backup_trigger_memo",
+  "trigger_levels": [
+    {
+      "id": "stay_backup",
+      "condition": "hg1223_reaches_at_least_one_valid_T1_or_higher",
+      "route_action": "keep_nickelates_as_preserved_backup"
+    },
+    {
+      "id": "promote_in_parallel",
+      "condition": "hg1223_only_reaches_ambiguous_or_mixed_T1_T0_outcomes_without_T2_support",
+      "route_action": "start_more_active_parallel_nickelate_route_while_keeping_hg1223_primary"
+    },
+    {
+      "id": "co_primary_trigger",
+      "condition": "hg1223_fails_cleanly_under_countable_evidence_or_stalls_below_T2_after_clean_followup",
+      "route_action": "elevate_nickelates_to_co_primary_discovery_status"
+    }
+  ],
+  "conditions": [
+    "hg1223_reaches_at_least_one_valid_T1_or_higher",
+    "hg1223_only_reaches_ambiguous_or_mixed_T1_T0_outcomes_without_T2_support",
+    "hg1223_fails_cleanly_under_countable_evidence_or_stalls_below_T2_after_clean_followup"
+  ],
+  "route_actions": [
+    "keep_nickelates_as_preserved_backup",
+    "start_more_active_parallel_nickelate_route_while_keeping_hg1223_primary",
+    "elevate_nickelates_to_co_primary_discovery_status"
+  ]
+}

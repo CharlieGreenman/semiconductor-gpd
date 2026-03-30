@@ -1,0 +1,35 @@
+{
+  "phase": "11",
+  "artifact": "phase11-hg1223-window-map",
+  "candidate": "HgBa2Ca2Cu3O8+delta",
+  "evidence_class": "experimental",
+  "ambient_after_preparation": true,
+  "ambient_tc_k": 151,
+  "p_op_gpa": 0,
+  "pressure_history_method": "pressure-quench protocol",
+  "structural_support": [
+    "synchrotron XRD",
+    "phonon calculations",
+    "electronic structure calculations"
+  ],
+  "roomtemp_gap_k": 149,
+  "known_fields": [
+    "material identity",
+    "ambient operation after preparation",
+    "ambient Tc",
+    "p_op",
+    "PQP method",
+    "supporting structural and theoretical evidence"
+  ],
+  "unknown_fields": [
+    "exact P_Q sweep",
+    "exact T_Q sweep",
+    "sample-count statistics",
+    "ambient lifetime and cycling window"
+  ],
+  "trust_band": {
+    "benchmark_status": "high",
+    "protocol_specificity": "medium",
+    "reproducibility_window": "unknown"
+  }
+}

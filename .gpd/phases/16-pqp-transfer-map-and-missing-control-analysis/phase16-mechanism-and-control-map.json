@@ -1,0 +1,65 @@
+{
+  "shared_controls": [
+    {
+      "control": "tq",
+      "evidence_systems": ["Hg1223", "FeSe"],
+      "transfer_confidence": "high",
+      "summary": "Lower quench temperature favors higher retained superconducting performance."
+    },
+    {
+      "control": "post_quench_thermal_budget",
+      "evidence_systems": ["Hg1223", "BST", "FeSe"],
+      "transfer_confidence": "high",
+      "summary": "Warm-side exposure strongly affects retained-state survival and quality."
+    },
+    {
+      "control": "retrieval_and_handling_pathway",
+      "evidence_systems": ["Hg1223", "BST", "FeSe"],
+      "transfer_confidence": "high",
+      "summary": "Retrieval and handling can partially anneal or distort the retained state."
+    },
+    {
+      "control": "in_dac_target_state_confirmation",
+      "evidence_systems": ["Hg1223", "FeSe"],
+      "transfer_confidence": "medium",
+      "summary": "Quenching from the right in-pressure state matters as much as the act of quenching."
+    },
+    {
+      "control": "structural_memory_tracking",
+      "evidence_systems": ["Hg1223", "BST", "FeSe"],
+      "transfer_confidence": "medium",
+      "summary": "Retained phases are likely tied to strain, defects, barriers, or mixed microstates."
+    },
+    {
+      "control": "vq",
+      "evidence_systems": ["Hg1223", "BST", "FeSe"],
+      "transfer_confidence": "medium_low",
+      "summary": "Quench rate is conceptually central but not yet quantitatively transferred across the carried set."
+    }
+  ],
+  "route_specific_controls": {
+    "Hg1223": [
+      "oxygen_state_and_vacancy_content",
+      "defect_or_strain_broadening",
+      "missing_exact_vq_reporting",
+      "high_tc_but_warm_fragile_retention"
+    ],
+    "BST": [
+      "mixed_phase_retention",
+      "split_between_room_temperature_survival_and_high_tc_survival",
+      "non_monotonic_pressure_dependence"
+    ],
+    "FeSe": [
+      "residual_pressure_handling",
+      "barrier_mediated_phase_retention",
+      "composition_sensitive_retained_basin"
+    ]
+  },
+  "phase17_implications": [
+    "keep_campaign_hg1223_centric",
+    "instrument_vq",
+    "separate_in_dac_confirmation_from_retrieval",
+    "track_sample_state_and_oxygen_handling"
+  ],
+  "transfer_verdict": "analog_informed_hg1223_campaign_supported_universal_pqp_recipe_not_supported"
+}

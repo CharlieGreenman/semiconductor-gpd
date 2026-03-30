@@ -1,0 +1,30 @@
+{
+  "confidence_band": "protocol_specified_but_control_limited",
+  "confirmed": [
+    "reproducible retained ambient-pressure superconductivity in Hg1223",
+    "best supported PQ/TQ window is 10.1-28.4 GPa at 4.2 K",
+    "best carried retained onset Tc is 151 K",
+    "retained state survives at least 3 days at 77 K",
+    "retrieved sample shows about 78 percent bulk fraction",
+    "PQed phase remains tetragonal with line broadening"
+  ],
+  "partial": [
+    "room-temperature handling partially anneals the retained state",
+    "strain or defect stabilization is supported but not fully isolated",
+    "headline values use onset Tc rather than a full zero-resistance reproducibility ledger"
+  ],
+  "unknown": [
+    "exact numerical vQ",
+    "broader sample-count statistics",
+    "oxygen-state dependence of the retained window",
+    "robust ex-DAC >=150 K retention",
+    "meaning of the 172 K anomaly"
+  ],
+  "next_priority_controls": [
+    "vQ instrumentation",
+    "Hg1223 vs BST vs FeSe control comparison",
+    "oxygen-state sweep",
+    "retrieval-loss separation"
+  ],
+  "consumer_status": "blocked"
+}

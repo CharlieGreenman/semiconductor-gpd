@@ -1,0 +1,91 @@
+{
+  "material": "HgBa2Ca2Cu3O8+delta",
+  "sample_preparation": {
+    "growth": "self-flux",
+    "post_anneal_oxygen_c": 325,
+    "post_anneal_days": "5-10",
+    "sample_geometry": {
+      "diagonal_um": "80-120",
+      "thickness_um": "~20"
+    },
+    "pressure_medium": "cubic boron nitride",
+    "measurement_geometry": "Van der Pauw",
+    "ambient_baseline_tc_k": 133
+  },
+  "experiments": [
+    {
+      "experiment": 1,
+      "sample": "S1",
+      "pq_gpa": 26.0,
+      "tq_k": 77.0,
+      "target_tc_k": 152,
+      "retained_tc_k": 139,
+      "status": "reproduced",
+      "notes": "Higher TQ route; weaker retained Tc"
+    },
+    {
+      "experiment": 2,
+      "sample": "S1",
+      "pq_gpa": 28.4,
+      "tq_k": 4.2,
+      "target_tc_k": 154,
+      "retained_tc_k": 147,
+      "status": "reproduced",
+      "notes": "Lower TQ improves retained Tc"
+    },
+    {
+      "experiment": 3,
+      "sample": "S2",
+      "pq_gpa": 10.1,
+      "tq_k": 4.2,
+      "target_tc_k": 152,
+      "retained_tc_k": 147,
+      "status": "reproduced",
+      "notes": "Lower PQ still retains high Tc"
+    },
+    {
+      "experiment": 4,
+      "sample": "S3",
+      "pq_gpa": 10.9,
+      "tq_k": 4.2,
+      "target_tc_k": 154,
+      "retained_tc_k": {
+        "warming": 149,
+        "cooling": 148
+      },
+      "status": "reproduced",
+      "notes": "Two-direction retained Tc pair"
+    },
+    {
+      "experiment": 5,
+      "sample": "S4",
+      "pq_gpa": 18.9,
+      "tq_k": 4.2,
+      "target_tc_k": 158,
+      "retained_tc_k": {
+        "warming": 151,
+        "cooling": 150
+      },
+      "status": "reproduced_best",
+      "notes": "Best carried retained ambient benchmark"
+    },
+    {
+      "experiment": 6,
+      "sample": "S5",
+      "pq_gpa": 29.7,
+      "tq_k": 4.2,
+      "target_tc_k": 156,
+      "retained_tc_k": "unresolved_110_172_like_transition",
+      "status": "not_reproduced",
+      "notes": "Possible multi-phase anomaly; not carried as a reliable benchmark"
+    }
+  ],
+  "missing_fields": [
+    "exact numerical vQ",
+    "sample-to-sample zero-resistance statistics",
+    "broad reproducibility counts",
+    "long-duration room-temperature durability",
+    "direct oxygen-content delta before and after PQP"
+  ],
+  "consumer_status": "blocked"
+}

@@ -1,0 +1,18 @@
+{
+  "rejected_classes": [
+    "pressure_only_without_retention",
+    "onset_only_without_enough_headroom",
+    "theory_only_near_ambient_conventional_optimism",
+    "hydride_routes_already_closed_negatively"
+  ],
+  "rejection_reasons": {
+    "pressure_only_without_retention": "Does not yet reduce the practical operating-state gap.",
+    "onset_only_without_enough_headroom": "Scientifically interesting but not enough for top route priority.",
+    "theory_only_near_ambient_conventional_optimism": "Current ceiling and evidence do not beat the unconventional frontier.",
+    "hydride_routes_already_closed_negatively": "Previous milestones already screened them under stricter practical criteria."
+  },
+  "survivor_classes": [
+    "Hg-family cuprates",
+    "nickelates"
+  ]
+}

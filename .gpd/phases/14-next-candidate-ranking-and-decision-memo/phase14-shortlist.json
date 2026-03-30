@@ -1,0 +1,38 @@
+{
+  "phase": "14",
+  "artifact": "phase14-shortlist",
+  "score_axes": [
+    "benchmark confidence",
+    "discovery richness",
+    "room-temperature proximity",
+    "practical burden"
+  ],
+  "ranking": [
+    {
+      "route_class": "Hg1223-class pressure-quenched multilayer cuprates",
+      "benchmark_confidence": "highest",
+      "discovery_richness": "medium-high",
+      "room_temperature_proximity": "highest in carried set",
+      "practical_burden": "high",
+      "verdict": "primary route"
+    },
+    {
+      "route_class": "strain plus oxygen-controlled bilayer nickelate films",
+      "benchmark_confidence": "medium-high",
+      "discovery_richness": "highest",
+      "room_temperature_proximity": "medium",
+      "practical_burden": "medium-high",
+      "verdict": "backup route"
+    },
+    {
+      "route_class": "PQP methodology platforms (BST, FeSe)",
+      "benchmark_confidence": "high as method",
+      "discovery_richness": "medium",
+      "room_temperature_proximity": "low",
+      "practical_burden": "medium",
+      "verdict": "method platform only"
+    }
+  ],
+  "primary_route": "Hg1223-class pressure-quenched multilayer cuprates",
+  "backup_route": "strain plus oxygen-controlled bilayer nickelate films"
+}

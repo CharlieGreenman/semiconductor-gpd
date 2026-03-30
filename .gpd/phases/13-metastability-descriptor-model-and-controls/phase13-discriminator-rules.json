@@ -1,0 +1,20 @@
+{
+  "phase": "13",
+  "artifact": "phase13-discriminator-rules",
+  "rules": [
+    "High Tc is insufficient without ambient access or a credible retention mechanism.",
+    "Engineerable control variables outrank vague protocol claims.",
+    "Structural memory or non-reconstructive tuning outranks simple pressure reduction.",
+    "Routes with at least two usable knobs are discovery-richer than one-point benchmarks."
+  ],
+  "failure_modes": [
+    "A future breakthrough may come from a route with poor current controllability but easy synthesis.",
+    "Hg1223 may have a broader protocol window than the carried literature currently surfaces.",
+    "Thin-film nickelate sensitivity may reflect sample pathology rather than a robust tuning route."
+  ],
+  "carry_forward": [
+    "Pressure quench remains top for benchmark proximity.",
+    "Strain plus oxygen control remains top for discovery richness.",
+    "Hydrides remain negative controls unless new evidence appears."
+  ]
+}

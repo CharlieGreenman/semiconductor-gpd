@@ -1,0 +1,46 @@
+{
+  "baseline_phase14": {
+    "route_status": "benchmark_strong_but_protocol_opaque",
+    "primary_route": "Hg1223",
+    "backup_route": "bilayer_nickelates",
+    "room_temperature_gap_k": 149
+  },
+  "post_v4_status": {
+    "route_status": "protocol_specified_and_campaign_defined_but_still_experimentally_under_controlled",
+    "primary_route": "Hg1223",
+    "backup_route": "bilayer_nickelates",
+    "room_temperature_gap_k": 149
+  },
+  "confidence_axes": [
+    {
+      "axis": "protocol_specificity",
+      "before": "low",
+      "after": "high",
+      "update": "stronger"
+    },
+    {
+      "axis": "control_visibility",
+      "before": "low",
+      "after": "medium_high",
+      "update": "stronger"
+    },
+    {
+      "axis": "campaign_readiness",
+      "before": "low",
+      "after": "high",
+      "update": "much_stronger"
+    },
+    {
+      "axis": "reproducibility_proof",
+      "before": "low",
+      "after": "low",
+      "update": "unchanged"
+    },
+    {
+      "axis": "practical_readiness",
+      "before": "very_low",
+      "after": "very_low",
+      "update": "unchanged"
+    }
+  ]
+}

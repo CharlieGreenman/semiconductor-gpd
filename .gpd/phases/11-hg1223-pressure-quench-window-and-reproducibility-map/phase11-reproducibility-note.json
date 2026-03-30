@@ -1,0 +1,23 @@
+{
+  "phase": "11",
+  "artifact": "phase11-reproducibility-note",
+  "trust_band": {
+    "benchmark_status": "high-confidence benchmark",
+    "protocol_map": "medium-confidence",
+    "reproducibility_window": "low-confidence"
+  },
+  "load_bearing_variables": [
+    "P_Q",
+    "T_Q",
+    "structural-memory or phase-boundary context",
+    "ambient stability testing"
+  ],
+  "missing_information": [
+    "exact P_Q sweep",
+    "exact T_Q sweep",
+    "sample-count and reproducibility statistics",
+    "ambient lifetime and cycling sensitivity",
+    "explicit structural-memory marker"
+  ],
+  "carry_forward_decision": "Keep Hg1223 as the top benchmark, but do not treat it as a protocol-mature platform yet."
+}

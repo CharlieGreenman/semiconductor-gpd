@@ -1,0 +1,17 @@
+{
+  "phase": "14",
+  "artifact": "phase14-route-decision-memo",
+  "primary_route": "Hg1223-class pressure-quenched multilayer cuprates",
+  "backup_route": "strain plus oxygen-controlled bilayer nickelate films",
+  "supports_consumer_hardware": false,
+  "best_carried_roomtemp_gap_k": 149,
+  "scientific_value": [
+    "turning a benchmark pivot into a route hierarchy",
+    "treating pressure-quench routes as parameterized protocols",
+    "using descriptors to reject pressure-only mirages"
+  ],
+  "recommendation_split": {
+    "highest_current_confidence": "Hg1223-class pressure-quench",
+    "highest_discovery_leverage": "bilayer nickelate strain plus oxygen control"
+  }
+}

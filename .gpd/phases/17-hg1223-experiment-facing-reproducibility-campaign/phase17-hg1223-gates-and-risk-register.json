@@ -1,0 +1,43 @@
+{
+  "success_gates": {
+    "headline_reproduction": "at_least_1_low_tq_stage_a_run_with_retained_onset_tc_gte_147_k_complete_pq_tq_vq_logging_and_no_uncontrolled_warm_excursion_before_first_ambient_cryogenic_transport_measurement",
+    "basin_candidate": "at_least_2_of_3_runs_at_one_fixed_node_with_retained_onset_tc_gte_145_k_and_at_least_2_of_3_of_those_keep_tc_gte_140_k_after_24h_at_77_k",
+    "strengthened_route": "basin_candidate_plus_at_least_1_surviving_condition_with_ex_dac_bulk_evidence_and_no_more_than_5_k_loss_after_controlled_retrieval"
+  },
+  "downgrade_gates": [
+    "no_low_tq_node_reaches_retained_onset_tc_gte_145_k_in_stage_a",
+    "only_one_isolated_hit_without_repeat_support"
+  ],
+  "stop_gates": [
+    "vq_unrecorded",
+    "sample_state_untracked",
+    "sample_exceeds_planned_warm_budget_before_first_retained_state_measurement"
+  ],
+  "risks": [
+    {
+      "risk": "hidden_vq_variation",
+      "interpretation_impact": "apparent_irreproducibility_may_be_operator_drift",
+      "mitigation": "instrument_and_log_release_trace"
+    },
+    {
+      "risk": "retrieval_induced_annealing",
+      "interpretation_impact": "losses_may_be_blame_shifted_from_handling_to_route",
+      "mitigation": "keep_retrieval_as_separate_logged_stage"
+    },
+    {
+      "risk": "sample_state_drift",
+      "interpretation_impact": "sample_differences_masquerade_as_noise",
+      "mitigation": "track_preparation_class_and_oxygen_history"
+    },
+    {
+      "risk": "onset_only_overclaiming",
+      "interpretation_impact": "one_curve_is_mistaken_for_a_reproducibility_basin",
+      "mitigation": "require_replicates_and_bulk_follow_up"
+    },
+    {
+      "risk": "room_temperature_language_drift",
+      "interpretation_impact": "clearer_protocol_is_mistaken_for_product_readiness",
+      "mitigation": "keep_149_k_room_temperature_gap_explicit"
+    }
+  ]
+}

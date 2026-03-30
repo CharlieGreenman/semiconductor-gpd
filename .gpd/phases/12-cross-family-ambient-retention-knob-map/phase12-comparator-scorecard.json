@@ -1,0 +1,42 @@
+{
+  "phase": "12",
+  "artifact": "phase12-comparator-scorecard",
+  "knob_families": [
+    {
+      "name": "pressure quench",
+      "discovery_richness": "high",
+      "benchmark_proximity": "highest",
+      "experimental_maturity": "medium",
+      "main_strength": "shortest current room-temperature gap via Hg1223",
+      "main_weakness": "protocol opacity and reproducibility"
+    },
+    {
+      "name": "strain plus oxygen control",
+      "discovery_richness": "high",
+      "benchmark_proximity": "medium",
+      "experimental_maturity": "medium-high",
+      "main_strength": "rich ambient-pressure tuning platform",
+      "main_weakness": "current Tc remains far below Hg1223"
+    },
+    {
+      "name": "microstructure and storage control",
+      "discovery_richness": "medium",
+      "benchmark_proximity": "low",
+      "experimental_maturity": "medium",
+      "main_strength": "clearly affects stability and transport quality",
+      "main_weakness": "secondary knob family"
+    },
+    {
+      "name": "chemistry-only substitution",
+      "discovery_richness": "low-medium",
+      "benchmark_proximity": "low",
+      "experimental_maturity": "low",
+      "main_strength": "can support a coupled route",
+      "main_weakness": "not isolated cleanly in the carried set"
+    }
+  ],
+  "primary_verdicts": {
+    "richest_discovery_knob_family": "strain plus oxygen control",
+    "strongest_current_benchmark_knob_family": "pressure quench"
+  }
+}

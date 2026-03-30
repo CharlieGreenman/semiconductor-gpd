@@ -1,0 +1,12 @@
+{
+  "primary_route_status": "Hg1223_remains_primary_protocol_specified_control_mapped_campaign_defined_but_not_yet_basin_proven",
+  "backup_route_status": "bilayer_nickelates_remain_backup",
+  "room_temperature_gap_k": 149,
+  "consumer_hardware_supported": false,
+  "next_focus": [
+    "low_tq_benchmark_window_reproduction_under_recorded_vq",
+    "immediate_ambient_cryogenic_retained_state_measurement",
+    "staged_thermal_holds_before_retrieval",
+    "ex_dac_bulk_and_structural_follow_up_on_survivors"
+  ]
+}

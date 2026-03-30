@@ -1,0 +1,70 @@
+{
+  "phase": 20,
+  "artifact": "minimum_evidence_package",
+  "tiers": [
+    {
+      "id": "T0",
+      "label": "invalid_non_countable",
+      "minimum_requirements": [
+        "critical_logs_missing_or_invalid",
+        "or_uncontrolled_warm_excursion_before_next_scheduled_checkpoint"
+      ],
+      "allowed_claims": ["troubleshooting_only"],
+      "not_allowed": ["negative_route_evidence", "positive_route_evidence"]
+    },
+    {
+      "id": "T1",
+      "label": "headline_reproduction_candidate",
+      "minimum_requirements": [
+        "full_pq_tq_vq_trace",
+        "source_state_confirmed",
+        "first_ambient_cryogenic_retained_state_check_completed_under_planned_handling",
+        "countable_artifact_bundle_present"
+      ],
+      "allowed_claims": ["valid_headline_reproduction_candidate"],
+      "not_allowed": ["basin_language", "strengthened_route_language"]
+    },
+    {
+      "id": "T2",
+      "label": "basin_candidate_support",
+      "minimum_requirements": [
+        "tier_T1",
+        "replicate_support_at_one_fixed_node",
+        "survival_through_24h_77k_hold_threshold"
+      ],
+      "allowed_claims": ["reproducibility_window_may_exist"],
+      "not_allowed": ["strengthened_route_language_without_later_support"]
+    },
+    {
+      "id": "T3",
+      "label": "strengthened_route_support",
+      "minimum_requirements": [
+        "tier_T2",
+        "selected_ex_dac_followup",
+        "bulk_support",
+        "controlled_retrieval_with_limited_loss"
+      ],
+      "allowed_claims": ["route_improving_beyond_pure_headline_status"],
+      "not_allowed": ["room_temperature_language", "product_language"]
+    }
+  ],
+  "required_artifacts": {
+    "countable_run_bundle": [
+      "run_meta.json",
+      "pressure_release_trace.csv",
+      "in_dac_target_state.json",
+      "ambient_cryogenic_rt.csv",
+      "checkpoint_log.csv"
+    ],
+    "conditional_artifacts": [
+      "retrieval_log.json",
+      "ex_dac_followup.json"
+    ]
+  },
+  "allowed_claims": {
+    "T0": ["troubleshooting_only"],
+    "T1": ["headline_reproduction_candidate"],
+    "T2": ["basin_candidate_support"],
+    "T3": ["strengthened_route_support"]
+  }
+}

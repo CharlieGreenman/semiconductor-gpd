@@ -1,0 +1,63 @@
+{
+  "phase": 19,
+  "artifact": "run_log_schema",
+  "required_artifacts": [
+    "run_meta.json",
+    "pressure_release_trace.csv",
+    "in_dac_target_state.json",
+    "ambient_cryogenic_rt.csv",
+    "checkpoint_log.csv"
+  ],
+  "conditional_artifacts": [
+    "retrieval_log.json",
+    "ex_dac_followup.json"
+  ],
+  "required_fields": [
+    "run_id",
+    "condition_id",
+    "sample_id",
+    "sample_class",
+    "oxygen_history_class",
+    "target_pq_gpa",
+    "achieved_pq_gpa",
+    "tq_k",
+    "source_state_confirmed",
+    "pressure_release_trace_id",
+    "release_trace_complete",
+    "first_ambient_measurement_stage",
+    "first_ambient_measurement_temp_k",
+    "unplanned_temp_excursion",
+    "initial_retained_tc_onset_k",
+    "checkpoint_stage_tag",
+    "retrieval_performed"
+  ],
+  "stage_tags": [
+    "sample_intake",
+    "in_dac_targeting",
+    "quench_event",
+    "ambient_cryogenic_retained_state_check",
+    "cryogenic_hold_77k",
+    "controlled_warm_hold_160_170k",
+    "controlled_warm_hold_200k",
+    "retrieval",
+    "ex_dac_transport",
+    "ex_dac_bulk",
+    "ex_dac_structural",
+    "room_temperature_stress"
+  ],
+  "invalidation_fields": [
+    "source_state_confirmed",
+    "release_trace_complete",
+    "unplanned_temp_excursion",
+    "thermal_path_class",
+    "retrieval_log_complete",
+    "stage_tags_complete"
+  ],
+  "countable_run_bundle": [
+    "run_meta.json",
+    "pressure_release_trace.csv",
+    "in_dac_target_state.json",
+    "ambient_cryogenic_rt.csv",
+    "checkpoint_log.csv"
+  ]
+}

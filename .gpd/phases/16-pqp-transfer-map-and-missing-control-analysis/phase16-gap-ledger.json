@@ -1,0 +1,60 @@
+{
+  "ranked_gaps": [
+    {
+      "rank": 1,
+      "gap": "exact_vq",
+      "why_it_matters": "named as critical by the primary paper but not numerically surfaced",
+      "risk_if_unmeasured": "route remains operator_dependent_and_irreproducible",
+      "phase17_action": "instrument_and_report_pressure_release_trajectory"
+    },
+    {
+      "rank": 2,
+      "gap": "retrieval_disturbance_and_ex_dac_thermal_budget",
+      "why_it_matters": "retained state loses quality during warm handling and retrieval",
+      "risk_if_unmeasured": "handling_failures_masquerade_as_route_failures",
+      "phase17_action": "separate_in_dac_confirmation_cryogenic_holding_retrieval_and_ex_dac_testing"
+    },
+    {
+      "rank": 3,
+      "gap": "sample_state_oxygen_and_defect_history",
+      "why_it_matters": "route_specific_control_may_shift_retained_basin_even_when_pq_tq_match",
+      "risk_if_unmeasured": "sample_to_sample_variation_looks_like_noise_instead_of_control_dependence",
+      "phase17_action": "track_preparation_classes_and_oxygen_history_explicitly"
+    },
+    {
+      "rank": 4,
+      "gap": "sample_count_and_zero_resistance_statistics",
+      "why_it_matters": "current_evidence_is_benchmark_grade_not_basin_grade",
+      "risk_if_unmeasured": "narrow_success_window_is_misread_as_robust_route",
+      "phase17_action": "require_multi_sample_replication_with_onset_and_zero_resistance_reporting"
+    },
+    {
+      "rank": 5,
+      "gap": "long_duration_warm_storage_and_cycling_limits",
+      "why_it_matters": "current_route_is_established_mainly_for_cryogenic_storage_windows",
+      "risk_if_unmeasured": "thermal_fragility_remains_hidden",
+      "phase17_action": "add_staged_77k_160_170k_200k_and_room_temperature_checks"
+    },
+    {
+      "rank": 6,
+      "gap": "matched_structural_readout",
+      "why_it_matters": "mechanism_and_optimization_need_structural_context",
+      "risk_if_unmeasured": "mechanism_claims_remain_speculative",
+      "phase17_action": "pair_transport_with_xrd_or_equivalent_readout"
+    }
+  ],
+  "phase17_priority_variables": [
+    "pq",
+    "tq",
+    "vq",
+    "sample_state"
+  ],
+  "phase17_measurement_order": [
+    "in_dac_target_state_confirmation",
+    "recorded_quench_with_pq_tq_vq",
+    "cryogenic_retained_transport_before_warm_excursion",
+    "staged_thermal_holds_and_retrieval",
+    "replicate_zero_resistance_magnetization_and_structural_readout"
+  ],
+  "route_confidence_implication": "phase16_strengthens_hg1223_only_if_phase17_measures_top_three_gaps_cleanly"
+}

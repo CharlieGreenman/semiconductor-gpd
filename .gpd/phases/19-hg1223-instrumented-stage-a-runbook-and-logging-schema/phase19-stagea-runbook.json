@@ -1,0 +1,56 @@
+{
+  "phase": 19,
+  "artifact": "stagea_runbook",
+  "status": "internal_proposed_protocol",
+  "guardrail": {
+    "room_temperature_solution": false,
+    "best_carried_retained_tc_k": 151,
+    "gap_to_300k_k": 149
+  },
+  "nodes": [
+    {"condition_id": "A-01", "pq_gpa": 10.1, "tq_k": 4.2, "replicates": 2},
+    {"condition_id": "A-02", "pq_gpa": 18.9, "tq_k": 4.2, "replicates": 2},
+    {"condition_id": "A-03", "pq_gpa": 28.4, "tq_k": 4.2, "replicates": 2},
+    {"condition_id": "A-04", "pq_gpa": 10.1, "tq_k": 77.0, "replicates": 2},
+    {"condition_id": "A-05", "pq_gpa": 18.9, "tq_k": 77.0, "replicates": 2},
+    {"condition_id": "A-06", "pq_gpa": 28.4, "tq_k": 77.0, "replicates": 2}
+  ],
+  "ordered_steps": [
+    "sample_intake",
+    "in_dac_targeting",
+    "quench_event_with_vq_trace",
+    "first_ambient_cryogenic_transport",
+    "cryogenic_hold_77k",
+    "controlled_intermediate_warm_hold",
+    "controlled_high_warm_hold",
+    "retrieval_gate",
+    "ex_dac_followup"
+  ],
+  "required_preconditions": [
+    "unique_run_id",
+    "sample_metadata_recorded",
+    "source_state_confirmed_under_pressure",
+    "pressure_release_trace_capture_ready",
+    "ambient_cryogenic_measurement_ready",
+    "handling_class_assigned"
+  ],
+  "required_outputs": [
+    "run_metadata_record",
+    "pressure_release_trace_record",
+    "first_ambient_cryogenic_rt_record",
+    "77k_checkpoint_record",
+    "planned_warm_hold_records",
+    "retrieval_path_record_if_applicable",
+    "ex_dac_followup_record_if_applicable"
+  ],
+  "success_gate": {
+    "label": "headline_reproduction_candidate",
+    "requirements": [
+      "planned_handling_class_maintained",
+      "pq_tq_vq_trace_recorded",
+      "first_retained_state_measurement_ambient_and_cryogenic",
+      "retained_onset_reaches_carried_route_gate_band"
+    ],
+    "note": "Stage A alone does not prove a reproducibility basin."
+  }
+}

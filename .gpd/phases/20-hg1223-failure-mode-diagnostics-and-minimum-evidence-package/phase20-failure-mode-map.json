@@ -1,0 +1,89 @@
+{
+  "phase": 20,
+  "artifact": "failure_mode_map",
+  "failure_modes": [
+    {
+      "id": "target_state_failure",
+      "stage_signature": "source_state_absent_or_off_target_before_release",
+      "required_evidence": ["in_dac_target_state", "node_metadata"],
+      "implies": "source_state_not_created_cleanly",
+      "does_not_imply": "ambient_retention_route_failed",
+      "recommended_action": "fix_source_state_preparation"
+    },
+    {
+      "id": "quench_trajectory_failure",
+      "stage_signature": "source_state_confirmed_then_no_retained_signal_at_first_ambient_cryogenic_check",
+      "required_evidence": ["pq_tq_vq_trace", "first_ambient_cryogenic_rt"],
+      "implies": "loss_during_release_path_or_barrier_crossing",
+      "does_not_imply": "route_impossible",
+      "recommended_action": "target_vq_or_release_path_followup"
+    },
+    {
+      "id": "sample_state_dependence",
+      "stage_signature": "same_node_same_handling_split_by_sample_or_oxygen_history_class",
+      "required_evidence": ["matched_run_logs_across_sample_classes"],
+      "implies": "sample_state_is_load_bearing",
+      "does_not_imply": "route_is_purely_stochastic",
+      "recommended_action": "isolate_sample_state_classes"
+    },
+    {
+      "id": "cryogenic_retention_weakness",
+      "stage_signature": "initial_retained_signal_present_but_decays_within_77k_hold_window",
+      "required_evidence": ["first_ambient_cryogenic_rt", "77k_checkpoints"],
+      "implies": "retained_basin_is_narrow_even_before_warm_stress",
+      "does_not_imply": "no_retained_state_existed",
+      "recommended_action": "classify_as_fragile_retained_state"
+    },
+    {
+      "id": "warm_side_fragility",
+      "stage_signature": "signal_survives_cryogenic_checks_then_drops_at_160_170k_or_200k",
+      "required_evidence": ["logged_warm_checkpoints"],
+      "implies": "route_is_warm_fragile_below_room_temperature",
+      "does_not_imply": "room_temperature_robustness_was_expected",
+      "recommended_action": "keep_room_temperature_guardrail_explicit"
+    },
+    {
+      "id": "retrieval_induced_loss",
+      "stage_signature": "pre_retrieval_survival_logged_then_ex_dac_loss_after_retrieval",
+      "required_evidence": ["pre_retrieval_survival", "retrieval_log", "ex_dac_followup"],
+      "implies": "retrieval_is_a_dominant_loss_channel",
+      "does_not_imply": "earlier_retained_state_evidence_is_erased",
+      "recommended_action": "treat_retrieval_as_separate_control_problem"
+    },
+    {
+      "id": "onset_only_ambiguity",
+      "stage_signature": "single_onset_curve_without_replicate_or_bulk_support",
+      "required_evidence": ["single_transport_curve"],
+      "implies": "possible_retained_signature_exists",
+      "does_not_imply": "basin_or_strengthened_route_support",
+      "recommended_action": "keep_non_decisive_and_seek_higher_tier_evidence"
+    },
+    {
+      "id": "invalid_non_countable_run",
+      "stage_signature": "missing_vq_or_stage_logs_or_uncontrolled_warm_excursion",
+      "required_evidence": ["log_audit_failure"],
+      "implies": "run_unusable_for_route_gate_arguments",
+      "does_not_imply": "negative_route_evidence",
+      "recommended_action": "route_to_troubleshooting_only"
+    }
+  ],
+  "diagnostic_signatures": [
+    "source_state_absent",
+    "valid_quench_no_initial_retained_signal",
+    "sample_class_split",
+    "77k_decay",
+    "160_170k_or_200k_drop",
+    "post_retrieval_only_loss",
+    "onset_only_no_replicates",
+    "missing_logs_or_unplanned_warm_excursion"
+  ],
+  "required_evidence": [
+    "in_dac_target_state",
+    "pq_tq_vq_trace",
+    "first_ambient_cryogenic_rt",
+    "checkpoint_log",
+    "retrieval_log",
+    "ex_dac_followup",
+    "sample_metadata"
+  ]
+}

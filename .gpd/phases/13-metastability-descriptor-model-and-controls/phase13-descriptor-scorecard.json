@@ -1,0 +1,51 @@
+{
+  "phase": "13",
+  "artifact": "phase13-descriptor-scorecard",
+  "descriptors": [
+    {
+      "name": "ambient-access",
+      "rationale": "Routes operating at 0 GPa after preparation are more credible than pressure-only states",
+      "expected_signal": "high is good"
+    },
+    {
+      "name": "protocol-controllability",
+      "rationale": "Explicit quench, strain, or anneal windows make a route engineerable",
+      "expected_signal": "high is good"
+    },
+    {
+      "name": "structural-memory",
+      "rationale": "Retention often depends on hysteresis or recoverable motifs",
+      "expected_signal": "high is good"
+    },
+    {
+      "name": "non-reconstructive-tuning",
+      "rationale": "Routes that avoid full reconstructive decomposition are easier to stabilize",
+      "expected_signal": "high is good"
+    },
+    {
+      "name": "multi-knob-tunability",
+      "rationale": "Multiple knobs increase discovery surface",
+      "expected_signal": "high is good"
+    },
+    {
+      "name": "evidence-depth",
+      "rationale": "Transport plus structural or magnetic support is stronger than transport alone",
+      "expected_signal": "high is good"
+    },
+    {
+      "name": "synthesis-plausibility",
+      "rationale": "Routes that are not trapped in extreme DAC-only conditions are easier to advance",
+      "expected_signal": "high is good"
+    },
+    {
+      "name": "roomtemp-gap-penalty",
+      "rationale": "Routes closer to 300 K stay more relevant to the stated target",
+      "expected_signal": "lower is better"
+    },
+    {
+      "name": "fragility-penalty",
+      "rationale": "Toxicity, storage sensitivity, or severe handling fragility slow route development",
+      "expected_signal": "lower is better"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "phase": "11",
+  "artifact": "phase11-pqp-analog-map",
+  "analogs": [
+    {
+      "route_entry": "BST-I",
+      "pressure_window_gpa": "~4 superconducting onset; retained example from 8.0",
+      "t_q_k": 77,
+      "retained_at_ambient": true,
+      "tc_reading_k": "route family up to 10.2",
+      "load_bearing_note": "low-pressure superconducting phase appears without structural transition"
+    },
+    {
+      "route_entry": "BST-II",
+      "pressure_window_gpa": "20.3",
+      "t_q_k": 77,
+      "retained_at_ambient": true,
+      "tc_reading_k": "route family up to 10.2",
+      "load_bearing_note": "retained near structural-boundary region with phase coexistence"
+    },
+    {
+      "route_entry": "BST-III",
+      "pressure_window_gpa": "32.3-33.3",
+      "t_q_k": "4.2 or 77",
+      "retained_at_ambient": true,
+      "tc_reading_k": "route family up to 10.2",
+      "load_bearing_note": "multiple retained phases survive ambient recovery and stability testing"
+    },
+    {
+      "route_entry": "FeSe",
+      "pressure_window_gpa": "4.15-11.27",
+      "t_q_k": "4.2",
+      "retained_at_ambient": true,
+      "tc_reading_k": 37,
+      "load_bearing_note": "retained state survives warming to 300 K in some cases"
+    },
+    {
+      "route_entry": "FeSe",
+      "pressure_window_gpa": "5.22-11.12",
+      "t_q_k": "77",
+      "retained_at_ambient": true,
+      "tc_reading_k": "below best 4.2 K path",
+      "load_bearing_note": "same material shows T_Q sensitivity"
+    },
+    {
+      "route_entry": "Cu-doped FeSe",
+      "pressure_window_gpa": "6.08-9.65",
+      "t_q_k": "4.2, 77, 120",
+      "retained_at_ambient": true,
+      "tc_reading_k": "retained superconducting response",
+      "load_bearing_note": "chemistry and T_Q both tune the retained state"
+    }
+  ],
+  "recurring_variables": [
+    "P_Q",
+    "T_Q",
+    "phase-boundary position",
+    "ambient recovery and stability testing"
+  ]
+}
