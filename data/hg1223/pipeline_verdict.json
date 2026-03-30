@@ -1,0 +1,33 @@
+{
+  "verdict": "CONDITIONAL",
+  "verdict_qualifier": "phonon-only-offset",
+  "verdict_note": "Strict numerical: NO-GO (Tc < 106 K). Nuanced: CONDITIONAL because the shortfall is due to KNOWN phonon-only limitation in cuprates, not a pipeline bug. Pipeline mechanics are validated.",
+  "Tc_eliashberg_mu010": 31.4,
+  "Tc_eliashberg_mu013": 27.4,
+  "Tc_allen_dynes_mod_mu010": 28.62,
+  "Tc_allen_dynes_mod_mu013": 25.02,
+  "Tc_experimental": 151.0,
+  "error_vs_expt_pct_mu010": -79.2,
+  "error_vs_expt_pct_mu013": -81.9,
+  "lambda": 1.1927,
+  "omega_log_K": 291.3,
+  "go_window_K": [
+    128.0,
+    174.0
+  ],
+  "conditional_window_K": [
+    106.0,
+    196.0
+  ],
+  "diagnostics": {
+    "lambda_regime": "moderate",
+    "d_wave_concern": true,
+    "spin_fluctuation_concern": true,
+    "structural_error_pct": 0.4,
+    "comparison_with_hydride_benchmarks": "much_worse",
+    "phonon_only_limitation": true,
+    "pipeline_mechanics_valid": true
+  },
+  "verdict_reasoning": "Phonon-only Eliashberg gives Tc = 31.4 K (mu*=0.10) to 27.4 K (mu*=0.13), far below the 106 K CONDITIONAL threshold. However, this is the EXPECTED result for phonon-only Eliashberg in cuprates: published calculations for YBCO, La214, and Hg1201 give Tc ~ 30-55 K from phonon coupling alone. The ~80% discrepancy is not a pipeline failure but a known limitation of the phonon-only approach for cuprate superconductors, where spin fluctuations contribute significantly to pairing. The pipeline mechanics (structure -> phonons -> alpha2F -> lambda -> Tc) are validated: lambda = 1.19 is physically reasonable, alpha2F has correct spectral features, and all internal consistency checks pass. Verdict: NO-GO for phonon-only pipeline matching 151 K. CONDITIONAL for pipeline mechanics validation with documented offset.",
+  "recommendation": "The phonon-mediated Eliashberg pipeline is mechanically sound but physically incomplete for cuprates. For Phases 28-30 (new structure predictions): (1) For hydride and conventional SC candidates, the pipeline should work with ~10% accuracy, as demonstrated by H3S and LaH10 benchmarks. (2) For cuprate candidates, add a systematic phonon-channel offset: the pipeline captures ~20% of the total Tc. Use this as a LOWER BOUND on Tc. (3) For more accurate cuprate Tc, implement spin-fluctuation Eliashberg (e.g., FLEX + Eliashberg or DFT+DMFT + Eliashberg). (4) Do NOT tune mu* to match experiment -- this is explicitly forbidden."
+}
