@@ -1,0 +1,73 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! Candidate 1: [HgBa2CuO4]_1/[LaNiO2]_1 superlattice
+! EPW electron-phonon coupling calculation
+! 12 atoms, 6 species
+!
+! Wannier projections: Cu-d + Ni-d + O-p (mixed cuprate-nickelate)
+! Expected ~25 Wannier functions: 5 Cu-d + 5 Ni-d + 12 O-p (6 O atoms x 2p orbs used)
+!
+! NOTE: Requires ph.x output from candidate1_ph.in
+! This input is prepared for HPC execution. Not runnable locally.
+
+--
+&inputepw
+  prefix      = 'sl_cand1'
+  outdir      = './tmp/'
+  dvscf_dir   = './save/'
+
+  ! Coarse grids (must match SCF and phonon calculations)
+  nk1         = 8
+  nk2         = 8
+  nk3         = 4
+  nq1         = 4
+  nq2         = 4
+  nq3         = 2
+
+  ! Wannierization
+  wannierize  = .true.
+  num_iter    = 500
+  proj(1)     = 'Cu:d'
+  proj(2)     = 'Ni:d'
+  proj(3)     = 'O:p'
+  dis_froz_min = -2.0
+  dis_froz_max =  2.0
+  dis_win_min  = -6.0
+  dis_win_max  =  6.0
+
+  ! Electron-phonon coupling
+  elph        = .true.
+  epbwrite    = .true.
+  epbread     = .false.
+
+  ! Fine interpolation grids
+  nkf1        = 20
+  nkf2        = 20
+  nkf3        = 10
+  nqf1        = 10
+  nqf2        = 10
+  nqf3        = 5
+
+  ! Eliashberg spectral function
+  eliashberg  = .true.
+  laniso      = .false.
+  limag       = .true.
+  lpade       = .true.
+  nsiter      = 500
+  conv_thr_iaxis = 1.0d-4
+  wscut       = 1.0
+
+  ! Smearing
+  degaussw    = 0.05
+  degaussq    = 0.5
+
+  ! mu* bracket (NOT tuned)
+  muc         = 0.10
+
+  ! Temperature range for Tc search
+  temps       = 0.5 1.0 2.0 5.0 10.0 20.0 30.0 50.0
+
+  ! Output
+  filkf       = './sl_cand1_filkf'
+  filqf       = './sl_cand1_filqf'
+/

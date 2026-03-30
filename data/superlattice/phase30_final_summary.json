@@ -1,0 +1,46 @@
+{
+  "phase": "30-hybrid-superlattice-design",
+  "candidates": [
+    {
+      "candidate_id": 1,
+      "E_hull_meV_atom": 18.3,
+      "E_hull_verdict": "GO",
+      "N_EF_per_spin": 2.7,
+      "metallic": true,
+      "lambda": 0.733,
+      "omega_log_K": 333.3,
+      "Tc_Eli_mu010_K": 15.5,
+      "Tc_Eli_mu013_K": 12.0
+    },
+    {
+      "candidate_id": 2,
+      "E_hull_meV_atom": 11.5,
+      "E_hull_verdict": "GO",
+      "N_EF_per_spin": 5.5,
+      "metallic": true,
+      "lambda": 0.867,
+      "omega_log_K": 308.4,
+      "Tc_Eli_mu010_K": 20.8,
+      "Tc_Eli_mu013_K": 17.0
+    },
+    {
+      "candidate_id": 3,
+      "E_hull_meV_atom": 12.0,
+      "E_hull_verdict": "GO",
+      "N_EF_per_spin": 5.0,
+      "metallic": true,
+      "lambda": 0.713,
+      "omega_log_K": 315.0,
+      "Tc_Eli_mu010_K": 13.7,
+      "Tc_Eli_mu013_K": 10.4
+    }
+  ],
+  "best_candidate_id": 2,
+  "best_phonon_Tc_K": 20.8,
+  "overall_verdict": "MARGINAL",
+  "verdict_text": "Superlattice Tc between parent values; no clear advantage",
+  "gap_to_300K": 279.2,
+  "hg1223_phonon_Tc_comparison_K": 34.3,
+  "la327_phonon_Tc_comparison_K": 10.9,
+  "honest_assessment": "The hybrid cuprate-nickelate superlattice route yields phonon-only Tc of ~21 K (mu*=0.10), which is marginal compared to the Hg1223 parent phonon-only Tc of 34 K. The remaining gap to room temperature is 279 K. Any genuine Tc advantage over parent compounds would have to come from non-phonon mechanisms (spin fluctuations, interface charge transfer) not captured by isotropic Eliashberg theory."
+}

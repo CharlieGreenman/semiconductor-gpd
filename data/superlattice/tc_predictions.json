@@ -1,0 +1,134 @@
+[
+  {
+    "candidate_id": 1,
+    "label": "Candidate 1",
+    "parent_cuprate": "HgBa2CuO4",
+    "parent_nickelate": "LaNiO2",
+    "lambda": 0.733,
+    "lambda_range": [
+      0.633,
+      0.833
+    ],
+    "omega_log_K": 333.3,
+    "omega_log_range_K": [
+      266.7,
+      400.0
+    ],
+    "Tc_AD_mu010": 14.2,
+    "Tc_AD_mu013": 10.9,
+    "Tc_Eli_mu010": 15.5,
+    "Tc_Eli_mu013": 12.0,
+    "Tc_Eli_range_mu010": [
+      15.0,
+      16.0
+    ],
+    "Tc_Eli_range_mu013": [
+      11.6,
+      12.3
+    ],
+    "method": "Allen-Dynes + semi-analytical Eliashberg correction (ratio from Phase 27)",
+    "enhancement_variants": {
+      "0pct": {
+        "Tc_Eli_mu010": 15.5,
+        "Tc_Eli_mu013": 12.0
+      },
+      "10pct": {
+        "Tc_Eli_mu010": 19.4,
+        "Tc_Eli_mu013": 15.5
+      },
+      "20pct": {
+        "Tc_Eli_mu010": 23.2,
+        "Tc_Eli_mu013": 19.0
+      }
+    },
+    "note": "PHONON-ONLY LOWER BOUND. Phase 27 showed phonon-only captures ~20% of cuprate Tc."
+  },
+  {
+    "candidate_id": 2,
+    "label": "Candidate 2",
+    "parent_cuprate": "HgBa2Ca2Cu3O8",
+    "parent_nickelate": "La3Ni2O7",
+    "lambda": 0.867,
+    "lambda_range": [
+      0.74,
+      0.992
+    ],
+    "omega_log_K": 308.4,
+    "omega_log_range_K": [
+      258.0,
+      364.0
+    ],
+    "Tc_AD_mu010": 19.0,
+    "Tc_AD_mu013": 15.5,
+    "Tc_Eli_mu010": 20.8,
+    "Tc_Eli_mu013": 17.0,
+    "Tc_Eli_range_mu010": [
+      20.2,
+      21.5
+    ],
+    "Tc_Eli_range_mu013": [
+      16.5,
+      17.5
+    ],
+    "method": "Allen-Dynes + semi-analytical Eliashberg correction (ratio from Phase 27)",
+    "enhancement_variants": {
+      "0pct": {
+        "Tc_Eli_mu010": 20.8,
+        "Tc_Eli_mu013": 17.0
+      },
+      "10pct": {
+        "Tc_Eli_mu010": 25.1,
+        "Tc_Eli_mu013": 20.9
+      },
+      "20pct": {
+        "Tc_Eli_mu010": 29.2,
+        "Tc_Eli_mu013": 24.8
+      }
+    },
+    "note": "PHONON-ONLY LOWER BOUND. Phase 27 showed phonon-only captures ~20% of cuprate Tc."
+  },
+  {
+    "candidate_id": 3,
+    "label": "Candidate 3",
+    "parent_cuprate": "HgBa2CuO4",
+    "parent_nickelate": "La3Ni2O7",
+    "lambda": 0.713,
+    "lambda_range": [
+      0.575,
+      0.85
+    ],
+    "omega_log_K": 315.0,
+    "omega_log_range_K": [
+      250.0,
+      387.5
+    ],
+    "Tc_AD_mu010": 12.5,
+    "Tc_AD_mu013": 9.5,
+    "Tc_Eli_mu010": 13.7,
+    "Tc_Eli_mu013": 10.4,
+    "Tc_Eli_range_mu010": [
+      13.3,
+      14.1
+    ],
+    "Tc_Eli_range_mu013": [
+      10.1,
+      10.8
+    ],
+    "method": "Allen-Dynes + semi-analytical Eliashberg correction (ratio from Phase 27)",
+    "enhancement_variants": {
+      "0pct": {
+        "Tc_Eli_mu010": 13.7,
+        "Tc_Eli_mu013": 10.4
+      },
+      "10pct": {
+        "Tc_Eli_mu010": 17.2,
+        "Tc_Eli_mu013": 13.6
+      },
+      "20pct": {
+        "Tc_Eli_mu010": 20.7,
+        "Tc_Eli_mu013": 16.8
+      }
+    },
+    "note": "PHONON-ONLY LOWER BOUND. Phase 27 showed phonon-only captures ~20% of cuprate Tc."
+  }
+]

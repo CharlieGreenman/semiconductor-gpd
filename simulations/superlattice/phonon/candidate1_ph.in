@@ -1,0 +1,23 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! Candidate 1: [HgBa2CuO4]_1/[LaNiO2]_1 superlattice
+! DFPT phonon calculation (ph.x)
+! 12 atoms, a ~ 3.92 A, c ~ 12.88 A
+!
+! NOTE: Requires converged SCF from candidate1_scf.in (Plan 30-03)
+! This input is prepared for HPC execution. Not runnable locally.
+
+&INPUTPH
+  prefix      = 'sl_cand1'
+  outdir      = './tmp/'
+  fildyn      = 'sl_cand1.dyn'
+  tr2_ph      = 1.0d-14
+  ldisp       = .true.
+  nq1         = 4
+  nq2         = 4
+  nq3         = 2
+  recover     = .true.
+  alpha_mix(1) = 0.3
+  nmix_ph     = 8
+  verbosity   = 'high'
+/

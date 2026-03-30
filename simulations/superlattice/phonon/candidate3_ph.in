@@ -1,0 +1,23 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! Candidate 3: [HgBa2CuO4]_1/[La3Ni2O7]_1 superlattice
+! DFPT phonon calculation (ph.x)
+! 32 atoms, a ~ 3.92 A, c ~ 30.04 A
+!
+! NOTE: Requires converged SCF from candidate3_scf.in (Plan 30-03)
+! Larger cell -> coarser q-grid
+
+&INPUTPH
+  prefix      = 'sl_cand3'
+  outdir      = './tmp/'
+  fildyn      = 'sl_cand3.dyn'
+  tr2_ph      = 1.0d-14
+  ldisp       = .true.
+  nq1         = 3
+  nq2         = 3
+  nq3         = 1
+  recover     = .true.
+  alpha_mix(1) = 0.3
+  nmix_ph     = 8
+  verbosity   = 'high'
+/
