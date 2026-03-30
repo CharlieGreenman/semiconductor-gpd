@@ -154,15 +154,15 @@ Plans:
 
 **Backtracking trigger:** If Hg1234/1245 are dynamically unstable at ambient pressure, attempt stabilization via constrained relaxation or report as negative finding.
 
-**Plans:** TBD
+**Plans:** 5 plans in 3 waves
 
 Plans:
 
-- [ ] 28-01: Hg1234 structure construction, relaxation, and electronic structure (band structure, Fermi surface, DOS)
-- [ ] 28-02: Hg1245 structure construction, relaxation, and electronic structure
-- [ ] 28-03: Phonon and EPW for Hg1234 (DFPT, Wannier interpolation, alpha2F, lambda, Tc)
-- [ ] 28-04: Phonon and EPW for Hg1245 (DFPT, Wannier interpolation, alpha2F, lambda, Tc)
-- [ ] 28-05: Plane-resolved lambda decomposition and layer-count trend analysis (inner vs outer, Tc vs N_layers)
+- [ ] 28-01-PLAN.md -- Hg1234 structure construction, relaxation, and electronic structure (Wave 1)
+- [ ] 28-02-PLAN.md -- Hg1245 structure construction, relaxation, and electronic structure (Wave 1, parallel with 28-01)
+- [ ] 28-03-PLAN.md -- Phonon and EPW for Hg1234: DFPT, alpha2F, lambda, Eliashberg Tc (Wave 2, depends on 28-01)
+- [ ] 28-04-PLAN.md -- Phonon and EPW for Hg1245: DFPT, alpha2F, lambda, Eliashberg Tc with AF scenarios (Wave 2, depends on 28-02)
+- [ ] 28-05-PLAN.md -- Plane-resolved lambda decomposition, layer-count trend, mechanism, and phase verdict (Wave 3, depends on 28-03 + 28-04)
 
 ---
 
@@ -335,7 +335,7 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 | --- | --- | --- | --- | --- |
 | 27. Pipeline Validation | v8.0 | 0/3 | Not started | - |
-| 28. Hg Multilayer Engineering | v8.0 | 0/5 | Not started | - |
+| 28. Hg Multilayer Engineering | v8.0 | 0/5 | Planned | - |
 | 29. Nickelate Lever-Stacking | v8.0 | 0/4 | Not started | - |
 | 30. Hybrid Superlattice | v8.0 | 0/4 | Not started | - |
 | 31. Mechanism Analysis | v8.0 | 0/3 | Not started | - |
