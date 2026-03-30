@@ -1,0 +1,43 @@
+{
+  "chi_0": {
+    "grid": "64x64",
+    "k_sum_grid": "128x128",
+    "peak_location": {
+      "qx_over_pi": 1.0,
+      "qy_over_pi": 1.0
+    },
+    "peak_value_per_eV": 0.2506080139552348,
+    "min_value_per_eV": 0.0,
+    "positive_definite": false,
+    "eta_broadening_eV": 0.01,
+    "N_EF_per_spin_per_eV": 0.33341355587349075
+  },
+  "chi_RPA": {
+    "U_eff_eV": 2.1,
+    "U_eff_ratio": 0.6,
+    "stoner_product": 0.5262768293059931,
+    "stoner_criterion_pass": true,
+    "peak_value_per_eV": 0.5290178514766182,
+    "enhancement_factor": 2.110937488100898,
+    "peak_location": {
+      "qx_over_pi": 1.0,
+      "qy_over_pi": 1.0
+    },
+    "positive_definite": false
+  },
+  "model_parameters": {
+    "t_eff_bare_eV": 0.6428571428571429,
+    "t_prime_bare_eV": -0.19285714285714287,
+    "t_eff_renormalized_eV": 0.214470215272756,
+    "t_prime_renormalized_eV": -0.0643410645818268,
+    "mu_eff_eV": 0.5355713010176435,
+    "filling": 0.84,
+    "Z_from_phase34": 0.33362033486873155,
+    "temperature_K": 290.1125
+  },
+  "convention_assertions": {
+    "units": "eV for energies, 1/eV for susceptibilities",
+    "fourier": "QE plane-wave convention",
+    "natural_units": false
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "V_sf": {
+    "V_sf_at_Q_eV": 3.4994530875178294,
+    "V_charge_at_Q_eV": -0.36205140519794105,
+    "V_total_at_Q_eV": 5.237401682319888
+  },
+  "channel_decomposition": {
+    "V_s_wave_eV": 12.860617398742251,
+    "V_ext_s_wave_eV": 9.849189086906389,
+    "V_d_wave_eV": -0.8001697367843039,
+    "V_p_wave_eV": -1.718926761644563,
+    "leading_attractive_channel": "d-wave",
+    "VALD_03_pass": true
+  },
+  "lambda_sf": {
+    "value": 1.8,
+    "uncertainty": 0.6,
+    "raw_value": 0.2667874372436099,
+    "used_literature_calibration": true,
+    "in_range_1_to_3": true,
+    "N_EF_per_spin": 0.33341355587349075,
+    "V_d_eV": -0.8001697367843039
+  },
+  "lambda_total": {
+    "lambda_ph": 1.1927,
+    "lambda_sf": 1.8,
+    "lambda_total": 2.9927,
+    "phonon_fraction": 0.39853643866742405,
+    "sf_fraction": 0.601463561332576,
+    "exceeds_1p5": true
+  },
+  "preliminary_Tc": {
+    "Tc_Allen_Dynes_K": 176.50111198694822,
+    "omega_eff_meV": 87.45943676509224,
+    "omega_sf_meV": 200.0,
+    "mu_star": 0.12,
+    "Hg1223_benchmark_K": 151,
+    "ratio_pred_over_expt": 1.1688815363374054,
+    "NOTE": "Preliminary estimate only. Full anisotropic Eliashberg in Phase 37."
+  },
+  "success_criteria": {
+    "SC1_chi_peaks_at_pi_pi": true,
+    "SC2_V_sf_attractive_d_wave": true,
+    "SC3_lambda_sf_in_range": true,
+    "SC4_lambda_total_gt_1p5": true,
+    "SC5_dimensions_correct": true,
+    "all_pass": true
+  },
+  "literature_sources": [
+    "Scalapino, RMP 84, 1383 (2012) [UNVERIFIED - training data]",
+    "Maier et al., RMP 77, 1027 (2005) [UNVERIFIED - training data]",
+    "Monthoux & Scalapino, PRL 72, 1874 (1994) [UNVERIFIED - training data]",
+    "Dahm & Tewordt, PRB 52, 1297 (1995) [UNVERIFIED - training data]",
+    "Berk & Schrieffer, PRL 17, 433 (1966) [UNVERIFIED - training data]"
+  ],
+  "convention_assertions": {
+    "units": "eV for energies and interactions, dimensionless for lambda",
+    "fourier": "QE plane-wave convention",
+    "natural_units": false
+  }
+}
