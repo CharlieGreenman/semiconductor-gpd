@@ -1,10 +1,15 @@
 # Room-Temperature Superconductor Discovery
 
-## Key Result
+## Key Results
 
-**We computationally predict near-room-temperature superconductivity at Tc = 291 K (64°F / 18°C) in hydrogen-intercalated bilayer nickelate La₃Ni₂O₇H₀.₅ under 15 GPa pressure.**
+**After 16 milestones and 96 computational phases, we identify two testable candidates for near-room-temperature superconductivity and establish the Eliashberg ceiling at ~240 K.**
 
-This is 16°F below room temperature, with an uncertainty bracket of [226, 351] K that spans room temperature at the upper end.
+| Candidate | Predicted Tc | Pressure | Bracket | Mechanism |
+| --- | --- | --- | --- | --- |
+| **LaH₃ (flat-band hydride)** | **215 K (-72°F)** | **10 GPa** | **[148, 343] K** | **Non-adiabatic vertex + phonon** |
+| La₃Ni₂O₇H₀.₅ (H-nickelate) | 87–197 K | 15 GPa | depends on pairing | Phonon + spin fluctuation |
+
+Room temperature (300 K / 80°F) lies within the optimistic error bar of LaH₃ but is not centrally predicted. The paper includes complete experimental protocols for both materials.
 
 ### [Read the full paper (PDF)](paper/main.pdf)
 
