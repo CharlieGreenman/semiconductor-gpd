@@ -1,0 +1,86 @@
+! ASSERT_CONVENTION: strain_sign=negative_compressive, units=SI_derived, functional=PBEsol
+
+! ============================================================================
+! La3Ni2O7 -- band structure (from SCF charge density)
+! Phase 29-01, Task 2
+!
+! High-symmetry path for body-centered tetragonal (I4/mmm):
+! Gamma(0,0,0) - X(0.5,0,0) - M(0.5,0.5,0) - Gamma - Z(0,0,0.5)
+!   - R(0.5,0,0.5) - A(0.5,0.5,0.5) - Z
+! ============================================================================
+
+&CONTROL
+   calculation  = 'bands'
+   prefix       = 'la327_0pct'
+   outdir       = './tmp/'
+   pseudo_dir   = './pseudo/'
+   verbosity    = 'high'
+/
+
+&SYSTEM
+   ibrav        = 0
+   nat          = 24
+   ntyp         = 3
+   ecutwfc      = 80.0
+   ecutrho      = 640.0
+   occupations  = 'smearing'
+   smearing     = 'mv'
+   degauss      = 0.02
+   nspin        = 1
+   nbnd         = 180
+   ! 180 bands for 24-atom cell: captures all Ni-d and O-p states well above E_F
+   ! Minimum needed: 222/2 = 111 occupied bands; 180 gives ~70 unoccupied
+/
+
+&ELECTRONS
+   conv_thr     = 1.0d-10
+   diagonalization = 'david'
+/
+
+ATOMIC_SPECIES
+   La  138.90547  La_ONCV_PBEsol-1.2.upf
+   Ni   58.6934   Ni_ONCV_PBEsol-1.2.upf
+   O    15.9994   O_ONCV_PBEsol-1.2.upf
+
+CELL_PARAMETERS {angstrom}
+   3.835000000   0.000000000   0.000000000
+   0.000000000   3.835000000   0.000000000
+   0.000000000   0.000000000  20.500000000
+
+ATOMIC_POSITIONS {crystal}
+   La   0.000000   0.000000   0.500000
+   La   0.500000   0.500000   0.000000
+   La   0.000000   0.000000   0.318000
+   La   0.000000   0.000000   0.682000
+   La   0.500000   0.500000   0.818000
+   La   0.500000   0.500000   0.182000
+   Ni   0.000000   0.000000   0.098000
+   Ni   0.000000   0.000000   0.902000
+   Ni   0.500000   0.500000   0.598000
+   Ni   0.500000   0.500000   0.402000
+   O    0.000000   0.000000   0.000000
+   O    0.500000   0.500000   0.500000
+   O    0.000000   0.000000   0.198000
+   O    0.000000   0.000000   0.802000
+   O    0.500000   0.500000   0.698000
+   O    0.500000   0.500000   0.302000
+   O    0.000000   0.500000   0.098000
+   O    0.500000   0.000000   0.098000
+   O    0.000000   0.500000   0.902000
+   O    0.500000   0.000000   0.902000
+   O    0.500000   0.000000   0.598000
+   O    0.000000   0.500000   0.598000
+   O    0.500000   0.000000   0.402000
+   O    0.000000   0.500000   0.402000
+
+! High-symmetry path: Gamma - X - M - Gamma - Z - R - A - Z
+K_POINTS {tpiba_b}
+8
+  0.0000  0.0000  0.0000  40   ! Gamma
+  0.5000  0.0000  0.0000  40   ! X
+  0.5000  0.5000  0.0000  40   ! M
+  0.0000  0.0000  0.0000  40   ! Gamma
+  0.0000  0.0000  0.5000  40   ! Z
+  0.5000  0.0000  0.5000  40   ! R
+  0.5000  0.5000  0.5000  40   ! A
+  0.0000  0.0000  0.5000   0   ! Z (endpoint)

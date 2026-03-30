@@ -1,0 +1,30 @@
+! ASSERT_CONVENTION: units=SI_derived
+
+! ============================================================================
+! La3Ni2O7 -- DOS post-processing (projwfc.x for orbital-resolved DOS)
+! Phase 29-01, Task 2
+!
+! Run AFTER nscf calculation. Produces total and orbital-projected DOS.
+! ============================================================================
+
+&PROJWFC
+   prefix       = 'la327_0pct'
+   outdir       = './tmp/'
+   Emin         = -10.0
+   Emax         =  5.0
+   DeltaE       = 0.01
+   ngauss       = 0
+   degauss      = 0.02
+   filpdos      = 'la327_0pct_pdos'
+   filproj      = 'la327_0pct_proj'
+/
+! Orbital projections needed:
+!   Ni: l=2 (d-orbitals), specifically m=0 (dz2) and m=2 (dx2-y2)
+!   O:  l=1 (p-orbitals), specifically pz (sigma) and px,py (pi)
+!   La: l=2 (d-orbitals) for completeness
+!
+! Key output to extract:
+!   N(E_F) total: from integrated DOS at Fermi level
+!   Ni-dz2 weight: from PDOS of Ni l=2 m=0
+!   Ni-dx2y2 weight: from PDOS of Ni l=2 m=2 (in tetragonal basis)
+!   O-p weight: from PDOS of all O l=1
