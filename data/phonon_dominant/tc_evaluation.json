@@ -1,0 +1,345 @@
+{
+  "phase": 72,
+  "plan": "01",
+  "script": "scripts/v13/phase72_phonon_tc_evaluation.py",
+  "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "numpy_version": "2.3.3",
+  "random_seed": 42,
+  "conventions": {
+    "units": "K for temperatures, meV for energies, GPa for pressures",
+    "mu_star_s_wave": 0.1,
+    "mu_star_d_wave": 0.0,
+    "omega2_over_omegalog": 1.3,
+    "formula": "Modified Allen-Dynes with f1*f2 + isotropic Eliashberg"
+  },
+  "anchors": {
+    "v12_baseline_Tc_K": 197.0,
+    "v12_baseline_omega_eff_K": 483.0,
+    "target_Tc_K": 300.0,
+    "H3S_Tc_expt_K": 203.0,
+    "LaH10_Tc_expt_K": 250.0,
+    "Hg1223_Tc_expt_K": 151.0
+  },
+  "eliashberg_results": [
+    {
+      "id": "C2",
+      "name": "LaBeH8",
+      "lambda_total": 3.3,
+      "omega_log_eff_K": 912.3,
+      "pressure_GPa": 30,
+      "Tc_AD_s_wave_K": 240.8,
+      "Tc_AD_d_wave_K": 321.1,
+      "Tc_Eliashberg_s_wave_K": 400.0,
+      "Tc_Eliashberg_d_wave_K": 167.3,
+      "Eliashberg_AD_ratio_s": 1.661,
+      "Eliashberg_AD_ratio_d": 0.521,
+      "solver_info_s": {
+        "converged": false,
+        "reason": "Tc above upper bracket",
+        "ev_high": 1.9560464030003857
+      },
+      "solver_info_d": {
+        "converged": true,
+        "n_matsubara": 256,
+        "ev_at_Tc": 1.0,
+        "bracket": [
+          10.0,
+          500.0
+        ]
+      }
+    },
+    {
+      "id": "C3",
+      "name": "CaB2H8",
+      "lambda_total": 2.52,
+      "omega_log_eff_K": 1033.9,
+      "pressure_GPa": 20,
+      "Tc_AD_s_wave_K": 219.7,
+      "Tc_AD_d_wave_K": 296.2,
+      "Tc_Eliashberg_s_wave_K": 400.0,
+      "Tc_Eliashberg_d_wave_K": 141.4,
+      "Eliashberg_AD_ratio_s": 1.82,
+      "Eliashberg_AD_ratio_d": 0.477,
+      "solver_info_s": {
+        "converged": false,
+        "reason": "Tc above upper bracket",
+        "ev_high": 1.9234339240425573
+      },
+      "solver_info_d": {
+        "converged": true,
+        "n_matsubara": 256,
+        "ev_at_Tc": 1.0,
+        "bracket": [
+          10.0,
+          500.0
+        ]
+      }
+    },
+    {
+      "id": "C5",
+      "name": "BaSiH8",
+      "lambda_total": 2.63,
+      "omega_log_eff_K": 883.6,
+      "pressure_GPa": 40,
+      "Tc_AD_s_wave_K": 194.6,
+      "Tc_AD_d_wave_K": 261.9,
+      "Tc_Eliashberg_s_wave_K": 400.0,
+      "Tc_Eliashberg_d_wave_K": 129.2,
+      "Eliashberg_AD_ratio_s": 2.055,
+      "Eliashberg_AD_ratio_d": 0.493,
+      "solver_info_s": {
+        "converged": false,
+        "reason": "Tc above upper bracket",
+        "ev_high": 1.9260928970204745
+      },
+      "solver_info_d": {
+        "converged": true,
+        "n_matsubara": 256,
+        "ev_at_Tc": 1.0,
+        "bracket": [
+          10.0,
+          500.0
+        ]
+      }
+    }
+  ],
+  "mu_sensitivity": {
+    "C2": {
+      "name": "LaBeH8",
+      "lambda_total": 3.3,
+      "omega_log_eff_K": 912.3,
+      "mu_star_values": [
+        0.0,
+        0.05,
+        0.08,
+        0.1,
+        0.13,
+        0.15
+      ],
+      "Tc_K": [
+        321.1,
+        276.6,
+        254.3,
+        240.8,
+        222.4,
+        211.0
+      ]
+    },
+    "C3": {
+      "name": "CaB2H8",
+      "lambda_total": 2.52,
+      "omega_log_eff_K": 1033.9,
+      "mu_star_values": [
+        0.0,
+        0.05,
+        0.08,
+        0.1,
+        0.13,
+        0.15
+      ],
+      "Tc_K": [
+        296.2,
+        253.7,
+        232.5,
+        219.7,
+        202.0,
+        191.1
+      ]
+    },
+    "C5": {
+      "name": "BaSiH8",
+      "lambda_total": 2.63,
+      "omega_log_eff_K": 883.6,
+      "mu_star_values": [
+        0.0,
+        0.05,
+        0.08,
+        0.1,
+        0.13,
+        0.15
+      ],
+      "Tc_K": [
+        261.9,
+        224.5,
+        205.9,
+        194.6,
+        179.1,
+        169.5
+      ]
+    },
+    "C1": {
+      "name": "SrH10",
+      "lambda_total": 2.85,
+      "omega_log_eff_K": 800.0,
+      "mu_star_values": [
+        0.0,
+        0.05,
+        0.08,
+        0.1,
+        0.13,
+        0.15
+      ],
+      "Tc_K": [
+        252.3,
+        216.7,
+        198.9,
+        188.1,
+        173.4,
+        164.2
+      ]
+    },
+    "C4": {
+      "name": "La3Ni2O7-H1.0",
+      "lambda_total": 2.8,
+      "omega_log_eff_K": 632.3,
+      "mu_star_values": [
+        0.0,
+        0.05,
+        0.08,
+        0.1,
+        0.13,
+        0.15
+      ],
+      "Tc_K": [
+        196.7,
+        168.9,
+        155.0,
+        146.6,
+        135.0,
+        127.9
+      ]
+    },
+    "SF-base": {
+      "name": "SF-dominant baseline",
+      "lambda_total": 3.5,
+      "omega_log_eff_K": 483.0,
+      "mu_star_values": [
+        0.0,
+        0.05,
+        0.08,
+        0.1,
+        0.13,
+        0.15
+      ],
+      "Tc_K": [
+        147.1,
+        131.1,
+        122.7,
+        117.5,
+        110.1,
+        105.4
+      ]
+    }
+  },
+  "strategy_comparison": {
+    "sf_dominant": {
+      "Tc_K": 197.0,
+      "omega_eff_K": 483.0,
+      "lambda": 3.5,
+      "gap_to_300K": 103.0,
+      "strategy": "d-wave mu*=0, need omega_sf > 500 K with lambda_sf > 1.5"
+    },
+    "phonon_dominant_s_wave": {
+      "best_name": "LaBeH8",
+      "Tc_K": 400.0,
+      "omega_eff_K": 912.3,
+      "lambda": 3.3,
+      "gap_to_300K": -100.0,
+      "strategy": "s-wave mu*=0.10, push lambda_ph or omega_ph higher"
+    },
+    "phonon_dominant_d_wave": {
+      "best_name": "LaBeH8",
+      "Tc_K": 167.3,
+      "omega_eff_K": 912.3,
+      "lambda": 3.3,
+      "gap_to_300K": 132.7,
+      "strategy": "HYPOTHETICAL: d-wave + phonon-dominant -- requires correlation"
+    }
+  },
+  "hybrid_scenarios": [
+    {
+      "scenario": "Pure phonon (s-wave)",
+      "lambda_ph": 3.2,
+      "omega_ph_K": 950.0,
+      "lambda_sf": 0.1,
+      "omega_sf_K": 250.0,
+      "lambda_total": 3.3,
+      "omega_log_eff_K": 912.3,
+      "mu_star": 0.1,
+      "Tc_K": 240.8,
+      "notes": "LaBeH8 baseline -- s-wave, weak correlations"
+    },
+    {
+      "scenario": "Mild correlations",
+      "lambda_ph": 2.8,
+      "omega_ph_K": 900.0,
+      "lambda_sf": 0.5,
+      "omega_sf_K": 300.0,
+      "lambda_total": 3.3,
+      "omega_log_eff_K": 762.0,
+      "mu_star": 0.05,
+      "Tc_K": 231.1,
+      "notes": "Add mild correlations; mu* reduced to 0.05 by partial d-wave mixing"
+    },
+    {
+      "scenario": "Moderate correlations",
+      "lambda_ph": 2.5,
+      "omega_ph_K": 880.0,
+      "lambda_sf": 1.0,
+      "omega_sf_K": 350.0,
+      "lambda_total": 3.5,
+      "omega_log_eff_K": 676.2,
+      "mu_star": 0.02,
+      "Tc_K": 233.8,
+      "notes": "Significant correlations; nearly d-wave, mu* ~ 0.02"
+    },
+    {
+      "scenario": "Strong correlations (d-wave)",
+      "lambda_ph": 2.0,
+      "omega_ph_K": 852.0,
+      "lambda_sf": 1.5,
+      "omega_sf_K": 350.0,
+      "lambda_total": 3.5,
+      "omega_log_eff_K": 581.9,
+      "mu_star": 0.0,
+      "Tc_K": 213.7,
+      "notes": "Fully d-wave; mu*=0 but correlations drag omega_eff down"
+    },
+    {
+      "scenario": "v12.0 baseline",
+      "lambda_ph": 1.27,
+      "omega_ph_K": 852.0,
+      "lambda_sf": 2.23,
+      "omega_sf_K": 350.0,
+      "lambda_total": 3.5,
+      "omega_log_eff_K": 483.4,
+      "mu_star": 0.0,
+      "Tc_K": 177.5,
+      "notes": "SF-dominant -- current best from v12.0"
+    },
+    {
+      "scenario": "Hypothetical optimum",
+      "lambda_ph": 3.0,
+      "omega_ph_K": 950.0,
+      "lambda_sf": 0.5,
+      "omega_sf_K": 350.0,
+      "lambda_total": 3.5,
+      "omega_log_eff_K": 823.7,
+      "mu_star": 0.0,
+      "Tc_K": 302.6,
+      "notes": "HYPOTHETICAL: high lambda_ph + d-wave mu*=0 + weak SF"
+    }
+  ],
+  "conclusions": {
+    "best_s_wave_Tc_K": 400.0,
+    "best_s_wave_name": "LaBeH8",
+    "best_d_wave_Tc_K": 167.3,
+    "best_d_wave_name": "LaBeH8",
+    "reaches_300K_s_wave": true,
+    "reaches_300K_d_wave": false,
+    "gap_to_300K_s_wave": -100.0,
+    "sf_dominant_Tc_K": 197.0,
+    "phonon_dominant_advantage_K": 203.0,
+    "most_promising_path": "hybrid d-wave + phonon-dominant with moderate correlations"
+  }
+}
