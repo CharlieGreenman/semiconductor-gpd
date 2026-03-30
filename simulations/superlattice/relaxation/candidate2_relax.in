@@ -1,0 +1,116 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! Candidate 2: [Hg1223]_1/[La3Ni2O7]_1, ~40 atoms, a~3.91, c~36.4
+! Superlattice vc-relax: PBEsol + ONCV (following Phase 27 conventions)
+! Structure from Plan 30-01 CIF: hg1223_la3ni2o7_superlattice.cif
+!
+! APPROXIMATIONS:
+!   1. PBEsol GGA -- good for structural properties of oxides
+!   2. Scalar-relativistic ONCV -- SOC omitted (small near E_F for Cu/Ni)
+!   3. nspin=1 -- non-magnetic starting point
+!   4. ecutwfc=90 Ry -- higher than Hg1223 (80 Ry) due to mixed chemistry
+!
+! NOTE: This input is prepared for HPC execution. Not runnable locally.
+
+&CONTROL
+  calculation  = 'vc-relax'
+  prefix       = 'sl_cand2'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  tstress      = .true.
+  tprnfor      = .true.
+  forc_conv_thr = 1.0d-4
+  etot_conv_thr = 1.0d-6
+  verbosity    = 'high'
+/
+
+&SYSTEM
+  ibrav        = 0
+  nat          = 40
+  ntyp         = 7
+  ecutwfc      = 90.0
+  ecutrho      = 360.0
+  input_dft    = 'pbesol'
+  occupations  = 'smearing'
+  smearing     = 'cold'
+  degauss      = 0.02
+  nspin        = 1
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-8
+  mixing_beta  = 0.3
+  mixing_mode  = 'plain'
+  diagonalization = 'david'
+  electron_maxstep = 300
+/
+
+&IONS
+  ion_dynamics = 'bfgs'
+/
+
+&CELL
+  cell_dynamics = 'bfgs'
+  cell_dofree  = 'all'
+  press        = 0.0
+  press_conv_thr = 0.1
+/
+
+ATOMIC_SPECIES
+  Ba    137.327   Ba_ONCV_PBEsol-1.2.upf
+  Ca     40.078   Ca_ONCV_PBEsol-1.2.upf
+  Cu     63.546   Cu_ONCV_PBEsol-1.2.upf
+  Hg    200.590   Hg_ONCV_PBEsol-1.2.upf
+  La    138.905   La_ONCV_PBEsol-1.2.upf
+  Ni     58.693   Ni_ONCV_PBEsol-1.2.upf
+  O      15.999   O_ONCV_PBEsol-1.2.upf
+
+CELL_PARAMETERS {angstrom}
+      3.905000      0.000000      0.000000
+     -0.000000      3.905000      0.000000
+      0.000000      0.000000     36.376000
+
+ATOMIC_POSITIONS {crystal}
+  Ba      0.500000      0.500000      0.641923
+  Ba      0.500000      0.500000      0.922460
+  Ca      0.000000      0.000000      0.718591
+  Ca      0.000000      0.000000      0.845792
+  La      0.000000      0.000000      0.282192
+  La      0.500000      0.500000      0.000000
+  La      0.000000      0.000000      0.179474
+  La      0.000000      0.000000      0.384909
+  La      0.500000      0.500000      0.461665
+  La      0.500000      0.500000      0.102718
+  Cu      0.000000      0.000000      0.687227
+  Cu      0.000000      0.000000      0.877156
+  Cu      0.000000      0.000000      0.782192
+  Ni      0.000000      0.000000      0.054689
+  Ni      0.000000      0.000000      0.509694
+  Ni      0.500000      0.500000      0.336880
+  Ni      0.500000      0.500000      0.227503
+  Hg      0.000000      0.000000      0.564383
+  O       0.000000      0.000000      0.000000
+  O       0.500000      0.500000      0.282192
+  O       0.000000      0.000000      0.141096
+  O       0.000000      0.000000      0.423287
+  O       0.500000      0.500000      0.423287
+  O       0.500000      0.500000      0.141096
+  O       0.000000      0.500000      0.054689
+  O       0.000000      0.500000      0.509694
+  O       0.500000      0.000000      0.054689
+  O       0.500000      0.000000      0.509694
+  O       0.500000      0.000000      0.336880
+  O       0.500000      0.000000      0.227503
+  O       0.000000      0.500000      0.336880
+  O       0.000000      0.500000      0.227503
+  O       0.000000      0.000000      0.625805
+  O       0.000000      0.000000      0.938578
+  O       0.000000      0.500000      0.687227
+  O       0.500000      0.000000      0.687227
+  O       0.000000      0.500000      0.877156
+  O       0.500000      0.000000      0.877156
+  O       0.000000      0.500000      0.782192
+  O       0.500000      0.000000      0.782192
+
+K_POINTS {automatic}
+  6 6 2  0 0 0

@@ -1,0 +1,946 @@
+{
+  "1": [
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "LaNiO2",
+      "formula": "LaNiO2",
+      "E_f_eV_atom": -1.45,
+      "source": "Published DFT, Nomura et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La2O3",
+      "formula": "La2O3",
+      "E_f_eV_atom": -3.58,
+      "source": "MP mp-2292 [UNVERIFIED]",
+      "mp_id": "mp-2292"
+    },
+    {
+      "phase": "La2CuO4",
+      "formula": "La2CuO4",
+      "E_f_eV_atom": -2.42,
+      "source": "MP mp-3663 [UNVERIFIED]",
+      "mp_id": "mp-3663"
+    },
+    {
+      "phase": "LaNiO3",
+      "formula": "LaNiO3",
+      "E_f_eV_atom": -1.82,
+      "source": "MP mp-2328 [UNVERIFIED]",
+      "mp_id": "mp-2328"
+    },
+    {
+      "phase": "La2NiO4",
+      "formula": "La2NiO4",
+      "E_f_eV_atom": -2.25,
+      "source": "MP mp-4048 [UNVERIFIED]",
+      "mp_id": "mp-4048"
+    },
+    {
+      "phase": "LaNiO2",
+      "formula": "LaNiO2",
+      "E_f_eV_atom": -1.45,
+      "source": "Published DFT, Nomura et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La3Ni2O7",
+      "formula": "La3Ni2O7",
+      "E_f_eV_atom": -2.15,
+      "source": "Published DFT, Zhang et al. 2024 [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "NiO",
+      "formula": "NiO",
+      "E_f_eV_atom": -1.2,
+      "source": "MP mp-19009 [UNVERIFIED]",
+      "mp_id": "mp-19009"
+    },
+    {
+      "phase": "LaNiO3",
+      "formula": "LaNiO3",
+      "E_f_eV_atom": -1.82,
+      "source": "MP mp-2328 [UNVERIFIED]",
+      "mp_id": "mp-2328"
+    },
+    {
+      "phase": "La2NiO4",
+      "formula": "La2NiO4",
+      "E_f_eV_atom": -2.25,
+      "source": "MP mp-4048 [UNVERIFIED]",
+      "mp_id": "mp-4048"
+    },
+    {
+      "phase": "LaNiO2",
+      "formula": "LaNiO2",
+      "E_f_eV_atom": -1.45,
+      "source": "Published DFT, Nomura et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La3Ni2O7",
+      "formula": "La3Ni2O7",
+      "E_f_eV_atom": -2.15,
+      "source": "Published DFT, Zhang et al. 2024 [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgO",
+      "formula": "HgO",
+      "E_f_eV_atom": -0.35,
+      "source": "MP mp-1224 [UNVERIFIED]",
+      "mp_id": "mp-1224"
+    },
+    {
+      "phase": "BaO",
+      "formula": "BaO",
+      "E_f_eV_atom": -2.82,
+      "source": "MP mp-1342 [UNVERIFIED]",
+      "mp_id": "mp-1342"
+    },
+    {
+      "phase": "CaO",
+      "formula": "CaO",
+      "E_f_eV_atom": -3.26,
+      "source": "MP mp-2605 [UNVERIFIED]",
+      "mp_id": "mp-2605"
+    },
+    {
+      "phase": "CuO",
+      "formula": "CuO",
+      "E_f_eV_atom": -0.78,
+      "source": "MP mp-1692 [UNVERIFIED]",
+      "mp_id": "mp-1692"
+    },
+    {
+      "phase": "Cu2O",
+      "formula": "Cu2O",
+      "E_f_eV_atom": -0.57,
+      "source": "MP mp-361 [UNVERIFIED]",
+      "mp_id": "mp-361"
+    },
+    {
+      "phase": "La2O3",
+      "formula": "La2O3",
+      "E_f_eV_atom": -3.58,
+      "source": "MP mp-2292 [UNVERIFIED]",
+      "mp_id": "mp-2292"
+    },
+    {
+      "phase": "NiO",
+      "formula": "NiO",
+      "E_f_eV_atom": -1.2,
+      "source": "MP mp-19009 [UNVERIFIED]",
+      "mp_id": "mp-19009"
+    },
+    {
+      "phase": "BaCuO2",
+      "formula": "BaCuO2",
+      "E_f_eV_atom": -1.85,
+      "source": "MP mp-3452 [UNVERIFIED]",
+      "mp_id": "mp-3452"
+    },
+    {
+      "phase": "La2CuO4",
+      "formula": "La2CuO4",
+      "E_f_eV_atom": -2.42,
+      "source": "MP mp-3663 [UNVERIFIED]",
+      "mp_id": "mp-3663"
+    },
+    {
+      "phase": "LaNiO3",
+      "formula": "LaNiO3",
+      "E_f_eV_atom": -1.82,
+      "source": "MP mp-2328 [UNVERIFIED]",
+      "mp_id": "mp-2328"
+    },
+    {
+      "phase": "La2NiO4",
+      "formula": "La2NiO4",
+      "E_f_eV_atom": -2.25,
+      "source": "MP mp-4048 [UNVERIFIED]",
+      "mp_id": "mp-4048"
+    },
+    {
+      "phase": "BaHgO2",
+      "formula": "BaHgO2",
+      "E_f_eV_atom": -1.15,
+      "source": "estimated from binary sum [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "LaNiO2",
+      "formula": "LaNiO2",
+      "E_f_eV_atom": -1.45,
+      "source": "Published DFT, Nomura et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La3Ni2O7",
+      "formula": "La3Ni2O7",
+      "E_f_eV_atom": -2.15,
+      "source": "Published DFT, Zhang et al. 2024 [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgO",
+      "formula": "HgO",
+      "E_f_eV_atom": -0.35,
+      "source": "MP mp-1224 [UNVERIFIED]",
+      "mp_id": "mp-1224"
+    },
+    {
+      "phase": "BaHgO2",
+      "formula": "BaHgO2",
+      "E_f_eV_atom": -1.15,
+      "source": "estimated from binary sum [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "BaO",
+      "formula": "BaO",
+      "E_f_eV_atom": -2.82,
+      "source": "MP mp-1342 [UNVERIFIED]",
+      "mp_id": "mp-1342"
+    },
+    {
+      "phase": "BaCuO2",
+      "formula": "BaCuO2",
+      "E_f_eV_atom": -1.85,
+      "source": "MP mp-3452 [UNVERIFIED]",
+      "mp_id": "mp-3452"
+    },
+    {
+      "phase": "BaHgO2",
+      "formula": "BaHgO2",
+      "E_f_eV_atom": -1.15,
+      "source": "estimated from binary sum [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "CuO",
+      "formula": "CuO",
+      "E_f_eV_atom": -0.78,
+      "source": "MP mp-1692 [UNVERIFIED]",
+      "mp_id": "mp-1692"
+    },
+    {
+      "phase": "Cu2O",
+      "formula": "Cu2O",
+      "E_f_eV_atom": -0.57,
+      "source": "MP mp-361 [UNVERIFIED]",
+      "mp_id": "mp-361"
+    },
+    {
+      "phase": "BaCuO2",
+      "formula": "BaCuO2",
+      "E_f_eV_atom": -1.85,
+      "source": "MP mp-3452 [UNVERIFIED]",
+      "mp_id": "mp-3452"
+    },
+    {
+      "phase": "La2CuO4",
+      "formula": "La2CuO4",
+      "E_f_eV_atom": -2.42,
+      "source": "MP mp-3663 [UNVERIFIED]",
+      "mp_id": "mp-3663"
+    },
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    }
+  ],
+  "2": [
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La3Ni2O7",
+      "formula": "La3Ni2O7",
+      "E_f_eV_atom": -2.15,
+      "source": "Published DFT, Zhang et al. 2024 [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La2O3",
+      "formula": "La2O3",
+      "E_f_eV_atom": -3.58,
+      "source": "MP mp-2292 [UNVERIFIED]",
+      "mp_id": "mp-2292"
+    },
+    {
+      "phase": "La2CuO4",
+      "formula": "La2CuO4",
+      "E_f_eV_atom": -2.42,
+      "source": "MP mp-3663 [UNVERIFIED]",
+      "mp_id": "mp-3663"
+    },
+    {
+      "phase": "LaNiO3",
+      "formula": "LaNiO3",
+      "E_f_eV_atom": -1.82,
+      "source": "MP mp-2328 [UNVERIFIED]",
+      "mp_id": "mp-2328"
+    },
+    {
+      "phase": "La2NiO4",
+      "formula": "La2NiO4",
+      "E_f_eV_atom": -2.25,
+      "source": "MP mp-4048 [UNVERIFIED]",
+      "mp_id": "mp-4048"
+    },
+    {
+      "phase": "LaNiO2",
+      "formula": "LaNiO2",
+      "E_f_eV_atom": -1.45,
+      "source": "Published DFT, Nomura et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La3Ni2O7",
+      "formula": "La3Ni2O7",
+      "E_f_eV_atom": -2.15,
+      "source": "Published DFT, Zhang et al. 2024 [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "NiO",
+      "formula": "NiO",
+      "E_f_eV_atom": -1.2,
+      "source": "MP mp-19009 [UNVERIFIED]",
+      "mp_id": "mp-19009"
+    },
+    {
+      "phase": "LaNiO3",
+      "formula": "LaNiO3",
+      "E_f_eV_atom": -1.82,
+      "source": "MP mp-2328 [UNVERIFIED]",
+      "mp_id": "mp-2328"
+    },
+    {
+      "phase": "La2NiO4",
+      "formula": "La2NiO4",
+      "E_f_eV_atom": -2.25,
+      "source": "MP mp-4048 [UNVERIFIED]",
+      "mp_id": "mp-4048"
+    },
+    {
+      "phase": "LaNiO2",
+      "formula": "LaNiO2",
+      "E_f_eV_atom": -1.45,
+      "source": "Published DFT, Nomura et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La3Ni2O7",
+      "formula": "La3Ni2O7",
+      "E_f_eV_atom": -2.15,
+      "source": "Published DFT, Zhang et al. 2024 [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgO",
+      "formula": "HgO",
+      "E_f_eV_atom": -0.35,
+      "source": "MP mp-1224 [UNVERIFIED]",
+      "mp_id": "mp-1224"
+    },
+    {
+      "phase": "BaO",
+      "formula": "BaO",
+      "E_f_eV_atom": -2.82,
+      "source": "MP mp-1342 [UNVERIFIED]",
+      "mp_id": "mp-1342"
+    },
+    {
+      "phase": "CaO",
+      "formula": "CaO",
+      "E_f_eV_atom": -3.26,
+      "source": "MP mp-2605 [UNVERIFIED]",
+      "mp_id": "mp-2605"
+    },
+    {
+      "phase": "CuO",
+      "formula": "CuO",
+      "E_f_eV_atom": -0.78,
+      "source": "MP mp-1692 [UNVERIFIED]",
+      "mp_id": "mp-1692"
+    },
+    {
+      "phase": "Cu2O",
+      "formula": "Cu2O",
+      "E_f_eV_atom": -0.57,
+      "source": "MP mp-361 [UNVERIFIED]",
+      "mp_id": "mp-361"
+    },
+    {
+      "phase": "La2O3",
+      "formula": "La2O3",
+      "E_f_eV_atom": -3.58,
+      "source": "MP mp-2292 [UNVERIFIED]",
+      "mp_id": "mp-2292"
+    },
+    {
+      "phase": "NiO",
+      "formula": "NiO",
+      "E_f_eV_atom": -1.2,
+      "source": "MP mp-19009 [UNVERIFIED]",
+      "mp_id": "mp-19009"
+    },
+    {
+      "phase": "BaCuO2",
+      "formula": "BaCuO2",
+      "E_f_eV_atom": -1.85,
+      "source": "MP mp-3452 [UNVERIFIED]",
+      "mp_id": "mp-3452"
+    },
+    {
+      "phase": "La2CuO4",
+      "formula": "La2CuO4",
+      "E_f_eV_atom": -2.42,
+      "source": "MP mp-3663 [UNVERIFIED]",
+      "mp_id": "mp-3663"
+    },
+    {
+      "phase": "LaNiO3",
+      "formula": "LaNiO3",
+      "E_f_eV_atom": -1.82,
+      "source": "MP mp-2328 [UNVERIFIED]",
+      "mp_id": "mp-2328"
+    },
+    {
+      "phase": "La2NiO4",
+      "formula": "La2NiO4",
+      "E_f_eV_atom": -2.25,
+      "source": "MP mp-4048 [UNVERIFIED]",
+      "mp_id": "mp-4048"
+    },
+    {
+      "phase": "BaHgO2",
+      "formula": "BaHgO2",
+      "E_f_eV_atom": -1.15,
+      "source": "estimated from binary sum [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "LaNiO2",
+      "formula": "LaNiO2",
+      "E_f_eV_atom": -1.45,
+      "source": "Published DFT, Nomura et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La3Ni2O7",
+      "formula": "La3Ni2O7",
+      "E_f_eV_atom": -2.15,
+      "source": "Published DFT, Zhang et al. 2024 [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgO",
+      "formula": "HgO",
+      "E_f_eV_atom": -0.35,
+      "source": "MP mp-1224 [UNVERIFIED]",
+      "mp_id": "mp-1224"
+    },
+    {
+      "phase": "BaHgO2",
+      "formula": "BaHgO2",
+      "E_f_eV_atom": -1.15,
+      "source": "estimated from binary sum [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "BaO",
+      "formula": "BaO",
+      "E_f_eV_atom": -2.82,
+      "source": "MP mp-1342 [UNVERIFIED]",
+      "mp_id": "mp-1342"
+    },
+    {
+      "phase": "BaCuO2",
+      "formula": "BaCuO2",
+      "E_f_eV_atom": -1.85,
+      "source": "MP mp-3452 [UNVERIFIED]",
+      "mp_id": "mp-3452"
+    },
+    {
+      "phase": "BaHgO2",
+      "formula": "BaHgO2",
+      "E_f_eV_atom": -1.15,
+      "source": "estimated from binary sum [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "CaO",
+      "formula": "CaO",
+      "E_f_eV_atom": -3.26,
+      "source": "MP mp-2605 [UNVERIFIED]",
+      "mp_id": "mp-2605"
+    },
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "CuO",
+      "formula": "CuO",
+      "E_f_eV_atom": -0.78,
+      "source": "MP mp-1692 [UNVERIFIED]",
+      "mp_id": "mp-1692"
+    },
+    {
+      "phase": "Cu2O",
+      "formula": "Cu2O",
+      "E_f_eV_atom": -0.57,
+      "source": "MP mp-361 [UNVERIFIED]",
+      "mp_id": "mp-361"
+    },
+    {
+      "phase": "BaCuO2",
+      "formula": "BaCuO2",
+      "E_f_eV_atom": -1.85,
+      "source": "MP mp-3452 [UNVERIFIED]",
+      "mp_id": "mp-3452"
+    },
+    {
+      "phase": "La2CuO4",
+      "formula": "La2CuO4",
+      "E_f_eV_atom": -2.42,
+      "source": "MP mp-3663 [UNVERIFIED]",
+      "mp_id": "mp-3663"
+    },
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    }
+  ],
+  "3": [
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La3Ni2O7",
+      "formula": "La3Ni2O7",
+      "E_f_eV_atom": -2.15,
+      "source": "Published DFT, Zhang et al. 2024 [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La2O3",
+      "formula": "La2O3",
+      "E_f_eV_atom": -3.58,
+      "source": "MP mp-2292 [UNVERIFIED]",
+      "mp_id": "mp-2292"
+    },
+    {
+      "phase": "La2CuO4",
+      "formula": "La2CuO4",
+      "E_f_eV_atom": -2.42,
+      "source": "MP mp-3663 [UNVERIFIED]",
+      "mp_id": "mp-3663"
+    },
+    {
+      "phase": "LaNiO3",
+      "formula": "LaNiO3",
+      "E_f_eV_atom": -1.82,
+      "source": "MP mp-2328 [UNVERIFIED]",
+      "mp_id": "mp-2328"
+    },
+    {
+      "phase": "La2NiO4",
+      "formula": "La2NiO4",
+      "E_f_eV_atom": -2.25,
+      "source": "MP mp-4048 [UNVERIFIED]",
+      "mp_id": "mp-4048"
+    },
+    {
+      "phase": "LaNiO2",
+      "formula": "LaNiO2",
+      "E_f_eV_atom": -1.45,
+      "source": "Published DFT, Nomura et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La3Ni2O7",
+      "formula": "La3Ni2O7",
+      "E_f_eV_atom": -2.15,
+      "source": "Published DFT, Zhang et al. 2024 [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "NiO",
+      "formula": "NiO",
+      "E_f_eV_atom": -1.2,
+      "source": "MP mp-19009 [UNVERIFIED]",
+      "mp_id": "mp-19009"
+    },
+    {
+      "phase": "LaNiO3",
+      "formula": "LaNiO3",
+      "E_f_eV_atom": -1.82,
+      "source": "MP mp-2328 [UNVERIFIED]",
+      "mp_id": "mp-2328"
+    },
+    {
+      "phase": "La2NiO4",
+      "formula": "La2NiO4",
+      "E_f_eV_atom": -2.25,
+      "source": "MP mp-4048 [UNVERIFIED]",
+      "mp_id": "mp-4048"
+    },
+    {
+      "phase": "LaNiO2",
+      "formula": "LaNiO2",
+      "E_f_eV_atom": -1.45,
+      "source": "Published DFT, Nomura et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La3Ni2O7",
+      "formula": "La3Ni2O7",
+      "E_f_eV_atom": -2.15,
+      "source": "Published DFT, Zhang et al. 2024 [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgO",
+      "formula": "HgO",
+      "E_f_eV_atom": -0.35,
+      "source": "MP mp-1224 [UNVERIFIED]",
+      "mp_id": "mp-1224"
+    },
+    {
+      "phase": "BaO",
+      "formula": "BaO",
+      "E_f_eV_atom": -2.82,
+      "source": "MP mp-1342 [UNVERIFIED]",
+      "mp_id": "mp-1342"
+    },
+    {
+      "phase": "CaO",
+      "formula": "CaO",
+      "E_f_eV_atom": -3.26,
+      "source": "MP mp-2605 [UNVERIFIED]",
+      "mp_id": "mp-2605"
+    },
+    {
+      "phase": "CuO",
+      "formula": "CuO",
+      "E_f_eV_atom": -0.78,
+      "source": "MP mp-1692 [UNVERIFIED]",
+      "mp_id": "mp-1692"
+    },
+    {
+      "phase": "Cu2O",
+      "formula": "Cu2O",
+      "E_f_eV_atom": -0.57,
+      "source": "MP mp-361 [UNVERIFIED]",
+      "mp_id": "mp-361"
+    },
+    {
+      "phase": "La2O3",
+      "formula": "La2O3",
+      "E_f_eV_atom": -3.58,
+      "source": "MP mp-2292 [UNVERIFIED]",
+      "mp_id": "mp-2292"
+    },
+    {
+      "phase": "NiO",
+      "formula": "NiO",
+      "E_f_eV_atom": -1.2,
+      "source": "MP mp-19009 [UNVERIFIED]",
+      "mp_id": "mp-19009"
+    },
+    {
+      "phase": "BaCuO2",
+      "formula": "BaCuO2",
+      "E_f_eV_atom": -1.85,
+      "source": "MP mp-3452 [UNVERIFIED]",
+      "mp_id": "mp-3452"
+    },
+    {
+      "phase": "La2CuO4",
+      "formula": "La2CuO4",
+      "E_f_eV_atom": -2.42,
+      "source": "MP mp-3663 [UNVERIFIED]",
+      "mp_id": "mp-3663"
+    },
+    {
+      "phase": "LaNiO3",
+      "formula": "LaNiO3",
+      "E_f_eV_atom": -1.82,
+      "source": "MP mp-2328 [UNVERIFIED]",
+      "mp_id": "mp-2328"
+    },
+    {
+      "phase": "La2NiO4",
+      "formula": "La2NiO4",
+      "E_f_eV_atom": -2.25,
+      "source": "MP mp-4048 [UNVERIFIED]",
+      "mp_id": "mp-4048"
+    },
+    {
+      "phase": "BaHgO2",
+      "formula": "BaHgO2",
+      "E_f_eV_atom": -1.15,
+      "source": "estimated from binary sum [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "LaNiO2",
+      "formula": "LaNiO2",
+      "E_f_eV_atom": -1.45,
+      "source": "Published DFT, Nomura et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "La3Ni2O7",
+      "formula": "La3Ni2O7",
+      "E_f_eV_atom": -2.15,
+      "source": "Published DFT, Zhang et al. 2024 [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgO",
+      "formula": "HgO",
+      "E_f_eV_atom": -0.35,
+      "source": "MP mp-1224 [UNVERIFIED]",
+      "mp_id": "mp-1224"
+    },
+    {
+      "phase": "BaHgO2",
+      "formula": "BaHgO2",
+      "E_f_eV_atom": -1.15,
+      "source": "estimated from binary sum [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "BaO",
+      "formula": "BaO",
+      "E_f_eV_atom": -2.82,
+      "source": "MP mp-1342 [UNVERIFIED]",
+      "mp_id": "mp-1342"
+    },
+    {
+      "phase": "BaCuO2",
+      "formula": "BaCuO2",
+      "E_f_eV_atom": -1.85,
+      "source": "MP mp-3452 [UNVERIFIED]",
+      "mp_id": "mp-3452"
+    },
+    {
+      "phase": "BaHgO2",
+      "formula": "BaHgO2",
+      "E_f_eV_atom": -1.15,
+      "source": "estimated from binary sum [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "CuO",
+      "formula": "CuO",
+      "E_f_eV_atom": -0.78,
+      "source": "MP mp-1692 [UNVERIFIED]",
+      "mp_id": "mp-1692"
+    },
+    {
+      "phase": "Cu2O",
+      "formula": "Cu2O",
+      "E_f_eV_atom": -0.57,
+      "source": "MP mp-361 [UNVERIFIED]",
+      "mp_id": "mp-361"
+    },
+    {
+      "phase": "BaCuO2",
+      "formula": "BaCuO2",
+      "E_f_eV_atom": -1.85,
+      "source": "MP mp-3452 [UNVERIFIED]",
+      "mp_id": "mp-3452"
+    },
+    {
+      "phase": "La2CuO4",
+      "formula": "La2CuO4",
+      "E_f_eV_atom": -2.42,
+      "source": "MP mp-3663 [UNVERIFIED]",
+      "mp_id": "mp-3663"
+    },
+    {
+      "phase": "HgBa2CuO4",
+      "formula": "HgBa2CuO4",
+      "E_f_eV_atom": -1.9,
+      "source": "Published DFT, Ravindran et al. [UNVERIFIED]",
+      "mp_id": null
+    },
+    {
+      "phase": "HgBa2Ca2Cu3O8",
+      "formula": "HgBa2Ca2Cu3O8",
+      "E_f_eV_atom": -2.05,
+      "source": "Published DFT, Singh & Pickett [UNVERIFIED]",
+      "mp_id": null
+    }
+  ]
+}

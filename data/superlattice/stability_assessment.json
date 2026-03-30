@@ -1,0 +1,65 @@
+[
+  {
+    "candidate_id": 1,
+    "formula": "HgBa2LaCuNiO6",
+    "n_atoms": 12,
+    "mismatch_pct": 2.09,
+    "E_parents_eV_atom": -1.75,
+    "E_strain_meV_atom": 0.31,
+    "E_interface_meV_atom": 10.0,
+    "E_hg_penalty_meV_atom": 8.0,
+    "E_hull_meV_atom": 18.3,
+    "E_hull_uncertainty_meV_atom": 30.0,
+    "E_hull_range_meV_atom": [
+      0,
+      48.3
+    ],
+    "verdict": "GO",
+    "decomposition_reaction": "HgBa2LaCuNiO6 -> HgBa2CuO4 + LaNiO2 (+ residual O)",
+    "key_decomposition_energy_meV_atom": 18.3,
+    "competing_phases_count": 44,
+    "note": "E_hull estimated from literature formation enthalpies + interface/strain penalties. Uncertainty +/- 30 meV/atom. Interface energy is the dominant unknown. All competing phase energies from Materials Project [UNVERIFIED - training data]."
+  },
+  {
+    "candidate_id": 2,
+    "formula": "HgBa2Ca2La6Cu3Ni4O22",
+    "n_atoms": 40,
+    "mismatch_pct": 2.75,
+    "E_parents_eV_atom": -2.11,
+    "E_strain_meV_atom": 0.53,
+    "E_interface_meV_atom": 3.0,
+    "E_hg_penalty_meV_atom": 8.0,
+    "E_hull_meV_atom": 11.5,
+    "E_hull_uncertainty_meV_atom": 30.0,
+    "E_hull_range_meV_atom": [
+      0,
+      41.5
+    ],
+    "verdict": "GO",
+    "decomposition_reaction": "HgBa2Ca2La6Cu3Ni4O22 -> HgBa2Ca2Cu3O8 + La3Ni2O7 (+ residual O)",
+    "key_decomposition_energy_meV_atom": 11.5,
+    "competing_phases_count": 46,
+    "note": "E_hull estimated from literature formation enthalpies + interface/strain penalties. Uncertainty +/- 30 meV/atom. Interface energy is the dominant unknown. All competing phase energies from Materials Project [UNVERIFIED - training data]."
+  },
+  {
+    "candidate_id": 3,
+    "formula": "HgBa2La6CuNi4O20",
+    "n_atoms": 32,
+    "mismatch_pct": 2.06,
+    "E_parents_eV_atom": -2.087,
+    "E_strain_meV_atom": 0.3,
+    "E_interface_meV_atom": 3.75,
+    "E_hg_penalty_meV_atom": 8.0,
+    "E_hull_meV_atom": 12.0,
+    "E_hull_uncertainty_meV_atom": 30.0,
+    "E_hull_range_meV_atom": [
+      0,
+      42.0
+    ],
+    "verdict": "GO",
+    "decomposition_reaction": "HgBa2La6CuNi4O20 -> HgBa2CuO4 + La3Ni2O7 (+ residual O)",
+    "key_decomposition_energy_meV_atom": 12.0,
+    "competing_phases_count": 44,
+    "note": "E_hull estimated from literature formation enthalpies + interface/strain penalties. Uncertainty +/- 30 meV/atom. Interface energy is the dominant unknown. All competing phase energies from Materials Project [UNVERIFIED - training data]."
+  }
+]
