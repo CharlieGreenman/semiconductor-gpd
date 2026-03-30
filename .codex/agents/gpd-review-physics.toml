@@ -1,0 +1,3 @@
+# Managed by Get Physics Done (GPD).
+sandbox_mode = "workspace-write"
+developer_instructions = "You are the `gpd-review-physics` role for Get Physics Done (GPD).\nBefore doing any substantive work, read and follow the installed role brief at \"/Users/charlie/Razroo/room-temp-semiconductor/.codex/agents/gpd-review-physics.md\".\nTreat that markdown file as the authoritative role contract for scope, workflow, and output expectations."

@@ -1,0 +1,161 @@
+# GPD update notification
+notify = ["/Users/charlie/.gpd/venv/bin/python", ".codex/hooks/notify.py"]
+
+[features]
+# GPD multi-agent support
+multi_agent = true
+# GPD MCP servers
+
+[mcp_servers.gpd-arxiv]
+command = "/Users/charlie/.gpd/venv/bin/python"
+args = ["-m", "arxiv_mcp_server"]
+startup_timeout_sec = 30
+
+[mcp_servers.gpd-conventions]
+command = "/Users/charlie/.gpd/venv/bin/python"
+args = ["-m", "gpd.mcp.servers.conventions_server"]
+startup_timeout_sec = 30
+
+[mcp_servers.gpd-conventions.env]
+LOG_LEVEL = "WARNING"
+
+[mcp_servers.gpd-errors]
+command = "/Users/charlie/.gpd/venv/bin/python"
+args = ["-m", "gpd.mcp.servers.errors_mcp"]
+startup_timeout_sec = 30
+
+[mcp_servers.gpd-errors.env]
+LOG_LEVEL = "WARNING"
+
+[mcp_servers.gpd-patterns]
+command = "/Users/charlie/.gpd/venv/bin/python"
+args = ["-m", "gpd.mcp.servers.patterns_server"]
+startup_timeout_sec = 30
+
+[mcp_servers.gpd-patterns.env]
+LOG_LEVEL = "WARNING"
+
+[mcp_servers.gpd-protocols]
+command = "/Users/charlie/.gpd/venv/bin/python"
+args = ["-m", "gpd.mcp.servers.protocols_server"]
+startup_timeout_sec = 30
+
+[mcp_servers.gpd-protocols.env]
+LOG_LEVEL = "WARNING"
+
+[mcp_servers.gpd-skills]
+command = "/Users/charlie/.gpd/venv/bin/python"
+args = ["-m", "gpd.mcp.servers.skills_server"]
+startup_timeout_sec = 30
+
+[mcp_servers.gpd-skills.env]
+LOG_LEVEL = "WARNING"
+
+[mcp_servers.gpd-state]
+command = "/Users/charlie/.gpd/venv/bin/python"
+args = ["-m", "gpd.mcp.servers.state_server"]
+startup_timeout_sec = 30
+
+[mcp_servers.gpd-state.env]
+LOG_LEVEL = "WARNING"
+
+[mcp_servers.gpd-verification]
+command = "/Users/charlie/.gpd/venv/bin/python"
+args = ["-m", "gpd.mcp.servers.verification_server"]
+startup_timeout_sec = 30
+
+[mcp_servers.gpd-verification.env]
+LOG_LEVEL = "WARNING"
+# GPD agent roles
+
+[agents.gpd-bibliographer]
+description = "Maintains project-level .bib files, resolves citation keys against INSPIRE-HEP/ADS/arXiv via web_search, detects hallucinated citations, warns about missing citations when equations from papers are used, provides BibTeX in correct journal format."
+config_file = "agents/gpd-bibliographer.toml"
+
+[agents.gpd-consistency-checker]
+description = "Verifies cross-phase research consistency using semantic physics reasoning. Checks all accumulated conventions against current work, traces provides/consumes chains with test-value verification, and detects convention drift across arbitrarily distant phases."
+config_file = "agents/gpd-consistency-checker.toml"
+
+[agents.gpd-debugger]
+description = "Investigates errors, inconsistencies, and discrepancies in physics calculations using systematic scientific method. Manages debugging sessions, handles checkpoints. Spawned by the debug orchestrator workflow."
+config_file = "agents/gpd-debugger.toml"
+
+[agents.gpd-executor]
+description = "Default writable implementation agent for GPD research execution. Executes PLAN.md files or bounded implementation tasks with atomic research steps, deviation handling, checkpoint protocols, and state management. Applies rigorous physics reasoning protocols — derivation discipline, convention propagation, integral evaluation, perturbation theory, numerical computation, symbolic-to-numerical translation, renormalization group, path integrals, and effective field theory — to every task. Includes automatic failure escalation for repeated approximation breakdowns, context pressure, and persistent convergence failures. Spawned by execute-phase, execute-plan, quick, and parameter-sweep workflows."
+config_file = "agents/gpd-executor.toml"
+
+[agents.gpd-experiment-designer]
+description = "Designs numerical experiments, parameter sweeps, convergence studies, and statistical analysis pipelines for physics computations"
+config_file = "agents/gpd-experiment-designer.toml"
+
+[agents.gpd-explainer]
+description = "Explains a physics concept, method, notation, or paper rigorously in project context, with scoped literature references the user can open. Spawned by the explain workflow."
+config_file = "agents/gpd-explainer.toml"
+
+[agents.gpd-literature-reviewer]
+description = "Conducts systematic literature reviews for physics research topics with citation analysis and open question identification. Spawned by the literature-review orchestrator workflow."
+config_file = "agents/gpd-literature-reviewer.toml"
+
+[agents.gpd-notation-coordinator]
+description = "Owns and manages CONVENTIONS.md lifecycle — establishes, validates, and evolves notation conventions across phases"
+config_file = "agents/gpd-notation-coordinator.toml"
+
+[agents.gpd-paper-writer]
+description = "Drafts and revises physics paper sections from research results with proper LaTeX, equations, and citations. Spawned by the write-paper and respond-to-referees workflows."
+config_file = "agents/gpd-paper-writer.toml"
+
+[agents.gpd-phase-researcher]
+description = "Researches how to execute a physics research phase before planning. Produces RESEARCH.md consumed by gpd-planner. Spawned by the plan-phase or research-phase workflows."
+config_file = "agents/gpd-phase-researcher.toml"
+
+[agents.gpd-plan-checker]
+description = "Verifies plans will achieve phase goal before execution. Goal-backward analysis of plan quality for physics research. Spawned by the plan-phase and verify-work workflows."
+config_file = "agents/gpd-plan-checker.toml"
+
+[agents.gpd-planner]
+description = "Creates executable phase plans with task breakdown, dependency analysis, and goal-backward verification for physics research. Spawned by the plan-phase, quick, and verify-work workflows."
+config_file = "agents/gpd-planner.toml"
+
+[agents.gpd-project-researcher]
+description = "Researches physics domain ecosystem before roadmap creation. Produces files in .gpd/research/ consumed during roadmap creation. Spawned by the new-project or new-milestone orchestrator workflows."
+config_file = "agents/gpd-project-researcher.toml"
+
+[agents.gpd-referee]
+description = "Acts as the final adjudicating referee for staged manuscript review, or falls back to standalone review when panel artifacts are absent. Writes REFEREE-REPORT.md/.tex, review decision artifacts, and CONSISTENCY-REPORT.md when applicable."
+config_file = "agents/gpd-referee.toml"
+
+[agents.gpd-research-mapper]
+description = "Explores a physics research project and writes structured analysis documents. Spawned by map-research with a focus area (theory, computation, methodology, status). Writes documents directly to reduce orchestrator context load."
+config_file = "agents/gpd-research-mapper.toml"
+
+[agents.gpd-research-synthesizer]
+description = "Synthesizes research outputs from parallel researcher agents into SUMMARY.md. Spawned by the new-project or new-milestone orchestrator workflows after 4 parallel researcher agents complete."
+config_file = "agents/gpd-research-synthesizer.toml"
+
+[agents.gpd-review-literature]
+description = "Audits novelty and prior-work positioning against the bibliography and targeted literature search, producing a compact literature-context review artifact."
+config_file = "agents/gpd-review-literature.toml"
+
+[agents.gpd-review-math]
+description = "Checks mathematical correctness, derivation integrity, self-consistency, and verification coverage, then writes a compact mathematical-soundness artifact."
+config_file = "agents/gpd-review-math.toml"
+
+[agents.gpd-review-physics]
+description = "Evaluates physical assumptions, regime of validity, interpretation, and whether the paper's physical claims are actually supported by the math."
+config_file = "agents/gpd-review-physics.toml"
+
+[agents.gpd-review-reader]
+description = "Reads the full manuscript once with fresh context, extracts the actual claims and logic, and flags overclaiming before technical review begins."
+config_file = "agents/gpd-review-reader.toml"
+
+[agents.gpd-review-significance]
+description = "Judges interestingness, scientific value, and venue fit after the technical and physical stages, producing a compact significance artifact."
+config_file = "agents/gpd-review-significance.toml"
+
+[agents.gpd-roadmapper]
+description = "Creates research roadmaps with phase breakdown, objective mapping, success criteria derivation, and coverage validation. Spawned by the new-project or new-milestone orchestrator workflows."
+config_file = "agents/gpd-roadmapper.toml"
+
+[agents.gpd-verifier]
+description = "Verifies phase goal achievement through computational verification. Does not grep for mentions of physics — actually checks the physics by substituting test values, re-deriving limits, parsing dimensions, and cross-checking by alternative methods. Creates VERIFICATION.md report with equations checked, limits re-derived, numerical tests executed, and confidence assessment."
+config_file = "agents/gpd-verifier.toml"
