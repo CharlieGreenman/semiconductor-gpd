@@ -15,18 +15,24 @@ Milestone `v10.0` completed 2026-03-30. Cluster DMFT (DCA Nc=4) + anisotropic d-
 
 All are marginal with full missing-physics budget `[-145, +45]` K. The method overestimates by ~`25%`. To reach room temperature (`300 K`), the next milestone must either (a) tighten the prediction to confirm `300 K` is reachable, or (b) find a genuinely new material family where spin-fluctuation pairing is stronger than in cuprates.
 
-## Next Milestone Goals (v11.0)
+## Current State (after v11.0)
 
-**Push Past 300 K — Full CTQMC + Expanded Materials Search:**
+v11.0 completed 2026-03-30. Full CTQMC corrected the Hubbard-I overestimate: lambda_sf dropped `33%` (2.88 → 1.92). Nc-convergence recovered some (lambda_sf_inf = 2.70) but strong-coupling saturation caps Tc below `~200 K`. Best prediction: `146 K` [106, 216] — within `3%` of experimental `151 K`. The method works, but known spin-fluctuation + phonon physics cannot reach `300 K`. The bottleneck is `omega_log ~ 400 K` for cuprates.
 
-1. **Full CTQMC solver** replacing Hubbard-I — reduces the `25%` overestimate and narrows uncertainty brackets
-2. **Nc=16 cluster** — captures longer-range AF correlations; could increase or decrease lambda_sf
-3. **Beyond-cuprate search** — screen materials families with stronger spin fluctuations: infinite-layer nickelates under extreme strain, high-entropy oxides, pressurized layered ruthenates
-4. **Self-consistent vertex corrections** — the largest remaining theoretical uncertainty
+**Key insight:** Hydrides have `omega_log ~ 1000-2000 K` but no d-wave Coulomb evasion and need extreme pressure. Cuprates have d-wave mu*=0 and strong spin fluctuations but `omega_log` is only `400 K`. No one has designed a material with BOTH. If `omega_log` doubles to `800 K` while keeping `lambda_total ~ 3.5` and d-wave mu*=0, the Tc ceiling shifts from `~200 K` to `~400 K` — above room temperature.
+
+## Next Milestone Goals (v12.0)
+
+**Hydrogen-Correlated Oxide Inverse Design for Room-Temperature Superconductivity:**
+
+1. **Inverse Eliashberg** — compute the spectral function alpha2F(omega) required for `Tc = 300 K`, then search for materials matching that target
+2. **Hydrogen-cuprate hybrid structures** — DFT + DMFT + Eliashberg for `Hg1223` with H replacing apical O, `[CuO2]/[LiH]` superlattices, and H-intercalated `La3Ni2O7`
+3. **Combinatorial screening** — AI-driven search across H-insertion sites, layer sequences, and compositions to find the `omega_log > 800 K` + `lambda_sf > 2` + `d-wave` sweet spot
+4. **Stability-gated predictions** — only candidates passing `E_hull < 50 meV/atom` and phonon stability advance to Tc prediction
 
 ## Core Research Question
 
-Can refined many-body methods (full CTQMC, Nc=16, vertex corrections) either confirm `Hg1223` at `300 K` under achievable conditions, or identify an entirely new material family that reaches room temperature?
+Can a hydrogen-correlated oxide — combining hydride-like phonon frequencies with cuprate-like spin-fluctuation pairing and d-wave Coulomb evasion — computationally reach `Tc = 300 K` at ambient or near-ambient pressure?
 
 ## Scoping Contract Summary
 

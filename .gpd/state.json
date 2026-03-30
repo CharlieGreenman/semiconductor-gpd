@@ -590,6 +590,11 @@
       "phase": null,
       "summary": "[v10.0 start]: Three-track structure: Track A (cluster DMFT/DCA for Hg1223), Track B (anisotropic Eliashberg, parallel), Track C (combined re-screening + decision, after A and B)",
       "rationale": null
+    },
+    {
+      "phase": "0",
+      "summary": "Started milestone v12.0: Hydrogen-Correlated Oxide Inverse Design",
+      "rationale": "v11.0 showed known physics caps Tc at ~200 K due to omega_log~400 K ceiling. Hydrogen modes (omega_log~1000 K) combined with cuprate spin fluctuations and d-wave Coulomb evasion could break through to 300 K. This is genuinely uncharted territory."
     }
   ],
   "approximations": [
@@ -709,5 +714,5 @@
     "resume_file": "`.gpd/ROADMAP.md`"
   },
   "_version": 1,
-  "_synced_at": "2026-03-30T04:33:22.515113+00:00"
+  "_synced_at": "2026-03-30T05:20:17.173110+00:00"
 }

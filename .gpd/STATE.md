@@ -6,25 +6,25 @@ See: .gpd/PROJECT.md (updated 2026-03-30)
 
 **Machine-readable scoping contract:** `.gpd/state.json` field `project_contract`
 
-**Core research question:** Can cluster DMFT + anisotropic Eliashberg push the predicted Tc for optimized cuprate or nickelate structures above 200 K -- and identify a specific material worth synthesizing for room-temperature superconductivity?
-**Current focus:** Phase 42 -- DCA Implementation and Cluster Self-Energy
+**Core research question:** Can a hydrogen-correlated oxide -- combining hydride-like phonon frequencies with cuprate-like spin-fluctuation pairing and d-wave Coulomb evasion -- computationally reach Tc = 300 K at ambient or near-ambient pressure?
+**Current focus:** Phase 58 -- Inverse Eliashberg Target Map for 300 K
 
 ## Current Position
 
-**Current Phase:** 42
-**Current Phase Name:** DCA Implementation and Cluster Self-Energy
-**Total Phases:** 6 (Phases 42-47)
+**Current Phase:** 58
+**Current Phase Name:** Inverse Eliashberg Target Map for 300 K
+**Total Phases:** 9 (Phases 58-66)
 **Current Plan:** --
 **Total Plans in Phase:** TBD
-**Status:** Milestone complete
+**Status:** Ready to plan
 **Last Activity:** 2026-03-30
-**Last Activity Description:** v10.0 milestone completed and archived
+**Last Activity Description:** v12.0 roadmap created; Phase 58 ready to plan
 
 **Progress:** [░░░░░░░░░░] 0%
 
 ## Active Calculations
 
-None yet. Phase 42 awaits planning.
+None yet. Phase 58 awaits planning.
 
 ## Intermediate Results
 
@@ -36,51 +36,52 @@ Carried from prior milestones:
 - v8.0 mechanism analysis: phonon fraction 20-45% of cuprate Tc; spin fluctuations contribute 55-80%
 - v8.0 Hg multilayer finding: n=3 (Hg1223) is optimally layered
 - v9.0 DMFT: Z=0.33, m*/m=3.0, Mott proximity confirmed for Hg1223
-- v9.0 Spin susceptibility: lambda_sf=1.8, d-wave channel dominant
+- v9.0 Spin susceptibility: lambda_sf=1.8 (single-site), d-wave channel dominant
 - v9.0 Spectral gate: PASS 3/4 (pseudogap, Hubbard bands, d-wave)
 - v9.0 Full Eliashberg Tc: 108 K for Hg1223 (-28% vs 151 K experimental)
-- v9.0 Nickelate RPA: nesting at (pi,pi), strain enhances spin fluctuations
-- v9.0 Nickelate combined Tc: 54 K central
-- v9.0 Guided design: best candidate 145 K (strained+pressured Hg1223), no 200 K candidate
-- v9.0 Near-miss analysis: cluster DMFT could add 20-50% to lambda_sf, anisotropic Eliashberg adds 10-30% Tc uplift; combined range 170-217 K
+- v10.0 DCA Nc=4: Z_nodal=0.195, Z_antinodal=0.054; lambda_sf_cluster=2.88 (Hubbard-I)
+- v10.0 best prediction: 242 K [200, 300] for Hg1223 strained+15 GPa (Hubbard-I; overestimate)
+- **v11.0 CTQMC correction: lambda_sf dropped 33% (2.88 -> 1.92); Hubbard-I overestimate confirmed**
+- **v11.0 Nc-convergence: lambda_sf_inf = 2.70 via extrapolation; strong-coupling saturation**
+- **v11.0 best prediction: 146 K [106, 216] for Hg1223 -- within 3% of experimental 151 K**
+- **v11.0 Tc ceiling: ~200 K with known spin-fluctuation + phonon physics**
+- **v11.0 bottleneck identified: omega_log ~400 K for cuprates caps the ceiling**
+- **v11.0 key insight: hydrogen modes (omega_log ~1000-2000 K) + d-wave mu*=0 + lambda_sf ~2-3 could shift ceiling to ~400 K**
 - Carried retained benchmark: Hg1223 at 151 K after pressure quench (ref-hg1223-quench)
 - Room-temperature gap: 149 K (unchanged since v4.0)
 
 ## Open Questions
 
-- Will 4-site DCA capture enough nonlocal AF correlation to push lambda_sf from 1.8 to 2.5-3.5?
-- Is the CTQMC sign problem manageable at physical temperatures (T~100 K) for the 4-site cluster?
-- Does anisotropic Eliashberg with d-wave gap give the expected 10-30% Tc uplift over isotropic?
-- Can the combined method push any candidate above 200 K, or is additional physics (vertex corrections, dynamic U) required?
-- What is the correct analytic continuation strategy for cluster DMFT Matsubara data?
+- Can hydrogen be stably incorporated into cuprate or nickelate structures without destroying the correlated electronic structure?
+- Does hydrogen insertion preserve d-wave pairing symmetry, or does orbital hybridization shift to s-wave?
+- What is the realistic omega_log achievable from H modes in a layered oxide (as opposed to a pure hydride)?
+- Is the Migdal theorem valid when omega_log approaches 800-2000 K (comparable to E_F in some correlated systems)?
+- Can an ML surrogate trained on v1.0-v11.0 data generalize to hydrogen-oxide compositions outside the training distribution?
 
 ## Performance Metrics
 
 | Label | Duration | Tasks | Files |
-| --- | --- | --- | --- |
-| v10.0 roadmap creation | -- | -- | `.gpd/ROADMAP.md`, `.gpd/STATE.md` |
+| ----- | -------- | ----- | ----- |
+| v12.0 roadmap creation | -- | -- | `.gpd/ROADMAP.md`, `.gpd/STATE.md` |
 
 ## Accumulated Context
 
 ### Decisions
 
-Full log: `.gpd/DECISIONS.md`
-
-**Recent high-impact:**
-- [v8.0 Phase 33]: Phonon-only Eliashberg cannot close 149 K gap; spin fluctuations dominate cuprate/nickelate Tc; beyond-Eliashberg methods required
-- [v9.0 start]: Three-track structure: Track A (DMFT+Eliashberg for Hg1223), Track B (RPA for nickelates), Track C (guided design)
-- [v9.0 Phase 41]: 149 K gap OPEN; near-miss analysis points to cluster DMFT + anisotropic Eliashberg as next step (170-217 K range accessible)
-- [v10.0 start]: Three-track structure: Track A (cluster DMFT/DCA for Hg1223), Track B (anisotropic Eliashberg, parallel), Track C (combined re-screening + decision, after A and B)
+- [v11.0 Phase 57]: Known spin-fluctuation + phonon physics caps Tc at ~200 K; omega_log ~400 K is the cuprate bottleneck
+- [v12.0 start]: Hydrogen-correlated oxide inverse design -- combine hydride omega_log with cuprate spin fluctuations and d-wave Coulomb evasion
+- [v12.0 roadmap]: Four-track structure: A (inverse target), B (candidate design), C (combined Tc), D (AI screening); Track A first, B+D parallel after A, C after B
 
 ### Active Approximations
 
 | Approximation | Validity Range | Controlling Parameter | Current Value | Status |
 | --- | --- | --- | --- | --- |
-| 4-site DCA cluster DMFT | Captures leading nonlocal AF at commensurate Q | Cluster size Nc | Nc=4 | New for v10.0 |
-| Anisotropic Eliashberg | Resolves k-dependent gap | Fermi surface mesh density | TBD | New for v10.0 |
 | PBEsol + DMFT | Correlated metals | U/W | U=3.5 eV | Carried from v9.0 |
-| mu* = 0.10-0.13 bracket | Conventional range for oxides | Screened Coulomb | 0.10-0.13 | Standard |
-| Migdal theorem | omega_ph << E_F | omega_log / E_F | TBD | Expected valid |
+| CTQMC (CT-HYB) | Physical T > ~100 K | Sign problem severity | avg sign > 0.1 | Validated in v11.0 |
+| d-wave mu* = 0 | Unconventional SC | Gap symmetry | d-wave B1g | Standard for cuprates |
+| Isotropic mu* = 0.10-0.13 | Conventional SC | Screened Coulomb | 0.10-0.13 | Standard for hydrides |
+| Migdal theorem | omega_ph << E_F | omega_log / E_F | TBD for H-oxides | Must verify for H modes |
+| Nc-extrapolation | Nc=4,8 -> inf | 1/Nc fit quality | lambda_sf_inf=2.70 | Carried from v11.0 |
 
 **Convention Lock:**
 
@@ -92,12 +93,10 @@ Full log: `.gpd/DECISIONS.md`
 
 | Quantity | Current Value | Uncertainty | Last Updated (Phase) | Method |
 | --- | --- | --- | --- | --- |
-| Hg1223 phonon-only Tc | 31 K | +/- 5 K | Phase 27 (v8.0) | Isotropic Eliashberg |
-| La3Ni2O7 phonon-only Tc | 26 K | +/- 5 K | Phase 29 (v8.0) | Isotropic Eliashberg |
-| Phonon fraction of cuprate Tc | 20-45% | range estimate | Phase 31 (v8.0) | Mechanism analysis |
-| Hg1223 DMFT+Eliashberg Tc | 108 K | +/- 15 K (est.) | Phase 37 (v9.0) | Single-site isotropic |
-| Hg1223 lambda_sf | 1.8 | +/- 0.3 (est.) | Phase 35 (v9.0) | Single-site DMFT |
-| Best guided-design Tc | 145 K | +/- 20 K (est.) | Phase 40 (v9.0) | Strained+pressured Hg1223 |
+| Hg1223 CTQMC Tc | 146 K | [106, 216] K | Phase 56 (v11.0) | CTQMC + d-wave Eliashberg |
+| lambda_sf_inf (Hg1223) | 2.70 | +/- 0.3 (est.) | Phase 53 (v11.0) | Nc=4,8 extrapolation |
+| omega_log (Hg1223) | ~400 K | +/- 50 K | Phase 27 (v8.0) | DFT phonons |
+| Tc ceiling (current physics) | ~200 K | +/- 30 K (est.) | Phase 57 (v11.0) | Strong-coupling saturation analysis |
 
 ### Pending Todos
 
@@ -105,13 +104,12 @@ None yet.
 
 ### Blockers/Concerns
 
-- CTQMC sign problem may limit accessible temperature range for 4-site cluster; physical T~100 K may require impractical Monte Carlo sampling
-- Analytic continuation (MaxEnt or Pade) from Matsubara to real-frequency axis introduces systematic uncertainty in spectral functions and susceptibilities
-- The 149 K gap requires fundamentally new uplift; even the optimistic 170-217 K range from near-miss analysis may not materialize
-- If cluster DMFT enhancement is modest (<20% lambda_sf increase), the combined method may not reach the 200 K threshold
+- Migdal theorem validity: if omega_log approaches 800+ K in hydrogen-oxide systems, the ratio omega_log/E_F may not be small enough for standard Eliashberg; non-Migdal corrections may be needed
+- Stability of hydrogen in oxide structures: hydrogen is mobile and may diffuse out of designed positions at synthesis or operating temperatures
+- Training data distribution: v1.0-v11.0 data may not cover the hydrogen-oxide composition space well enough for reliable surrogate predictions
 
 ## Session Continuity
 
-**Last session:** 2026-03-29
-**Stopped at:** v10.0 roadmap created; Phase 42 ready to plan
+**Last session:** 2026-03-30
+**Stopped at:** v12.0 roadmap created; Phase 58 ready to plan
 **Resume file:** `.gpd/ROADMAP.md`

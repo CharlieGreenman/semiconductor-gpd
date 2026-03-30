@@ -12,7 +12,8 @@
 - **v8.0 Computational Materials Design** -- Phases 27-33 (completed 2026-03-30)
 - **v9.0 Beyond-Eliashberg Computation** -- Phases 34-41 (completed 2026-03-30)
 - **v10.0 Cluster DMFT + Anisotropic Eliashberg** -- Phases 42-47 (completed 2026-03-30)
-- **v11.0 Push Past 300 K** -- Phases 48-57 (active)
+- **v11.0 Push Past 300 K** -- Phases 48-57 (completed 2026-03-30)
+- **v12.0 Hydrogen-Correlated Oxide Inverse Design** -- Phases 58-66 (active)
 
 <details>
 <summary>v6.0-v9.0 (Phases 22-41) -- COMPLETED</summary>
@@ -37,338 +38,351 @@ See: `.gpd/milestones/v10.0-ROADMAP.md`
 
 </details>
 
+<details>
+<summary>v11.0 Push Past 300 K (Phases 48-57) -- COMPLETED 2026-03-30</summary>
+
+- [x] Phase 48: CTQMC deployment -- CT-HYB validated, sign problem manageable
+- [x] Phase 49: CTQMC lambda_sf -- lambda_sf dropped 33% (2.88 -> 1.92); Hubbard-I overestimate confirmed
+- [x] Phase 50: CTQMC-corrected Tc -- best prediction 146 K [106, 216], within 3% of experimental 151 K
+- [x] Phase 51: Beyond-cuprate screen -- no family exceeded cuprate lambda_sf
+- [x] Phase 52: Nc convergence -- lambda_sf_inf = 2.70 via extrapolation
+- [x] Phase 53: Converged Tc -- strong-coupling saturation caps Tc below ~200 K
+- [x] Phase 54: Vertex corrections -- subdominant
+- [x] Phase 55: New-family DMFT -- no candidate competitive with Hg1223
+- [x] Phase 56: Cross-validation -- method validated (146 K vs 151 K expt) but 300 K unreachable with known physics
+- [x] Phase 57: Decision memo -- known spin-fluctuation + phonon physics caps at ~200 K; omega_log ~400 K is the bottleneck
+
+**Key result:** CTQMC method works (146 K vs 151 K experimental). But omega_log ~400 K for cuprates caps Tc below ~200 K. Hydrides have omega_log ~1000-2000 K but need extreme pressure and lack d-wave Coulomb evasion. **Key insight:** no one has designed a material with BOTH high omega_log (hydrogen) AND d-wave mu*=0 (cuprate-like correlations).
+
+See: `.gpd/milestones/v11.0-ROADMAP.md`
+
+</details>
+
 ---
 
-## v11.0 Push Past 300 K -- Full CTQMC + Expanded Materials Search
+## v12.0 Hydrogen-Correlated Oxide Inverse Design
 
-**Target: 300 K (room temperature, 80 F, 27 C)**
+**Target: Tc = 300 K (room temperature, 80 F, 27 C) at ambient or near-ambient pressure**
 
-**Overview:** v10.0 produced a best prediction of 242 K [200, 300] for Hg1223 strained+15 GPa using Hubbard-I cluster DMFT (Nc=4) + anisotropic d-wave Eliashberg. The method overestimates by ~25%, and the uncertainty bracket barely touches 300 K at its optimistic end. v11.0 attacks the 300 K target from four directions: (A) replace Hubbard-I with full CTQMC to get honest error bars, (B) push to larger clusters for converged spin fluctuations, (C) search beyond cuprates for stronger pairing, and (D) add vertex corrections to close the largest remaining theoretical gap. The milestone succeeds if any candidate reaches 300 K with controlled uncertainty, or honestly documents what physics is still missing.
+**Overview:** v11.0 confirmed that the validated CTQMC + d-wave Eliashberg framework reproduces experimental Hg1223 Tc within 3%, but known spin-fluctuation + phonon physics caps Tc at ~200 K because cuprate omega_log is only ~400 K. Hydrides have omega_log ~1000-2000 K but require extreme pressure and lack d-wave Coulomb evasion. This milestone asks: can we design a material that combines BOTH? If omega_log doubles from 400 to 800+ K (via hydrogen modes) while preserving lambda_sf ~2-3 (cuprate-like spin fluctuations) and d-wave mu*=0 (Coulomb evasion), the Tc ceiling shifts from ~200 K to potentially ~400 K. Four tracks: (A) inverse Eliashberg to define the target, (B) hydrogen-cuprate hybrid candidate design, (C) combined Tc prediction for the 300 K test, (D) AI surrogate screening for scale. This is the most creative milestone in the project.
 
-**Phases:** 10 (Phases 48-57)
+**Phases:** 9 (Phases 58-66)
 **Depth:** Standard
 **Research Mode:** Balanced
 
 ### Contract Overview
 
-**Target observable:** Tc >= 300 K (room temperature) with tightened uncertainty bracket
+**Target observable:** Tc >= 300 K with full uncertainty bracket for at least one computationally stable hydrogen-correlated oxide
 
 **Decisive outputs:**
-- CTQMC-corrected Tc for Hg1223 variants (replaces Hubbard-I predictions)
-- Nc-converged lambda_sf with extrapolation uncertainty
-- Beyond-cuprate candidate Tc (if any exceeds Hg1223)
-- Vertex-corrected final Tc
-- Go/no-go decision memo for 300 K
+- Inverse Eliashberg (lambda, omega_log) target map for Tc = 300 K with d-wave symmetry
+- DFT + DMFT electronic structures and phonon spectra for hydrogen-cuprate hybrid candidates
+- Stability-gated candidate list (E_hull < 50 meV/atom, no imaginary phonons)
+- Combined spin-fluctuation + hydrogen-phonon Eliashberg Tc predictions with uncertainty brackets
+- AI surrogate screening of 1000+ compositions with DFT validation of top hits
+- Final candidate ranking with synthesis route assessment
+- Go/no-go "Room-Temperature Superconductor Candidate" report or honest gap accounting
 
-**Anchors carried:** ref-hg1223-quench (151 K retained benchmark), ref-hg-family-pressure (153-166 K under pressure), v10.0 results (242 K [200, 300] Hg1223 strained+15 GPa)
+**Anchors carried:**
+- ref-hg1223-quench: 151 K retained benchmark (experimental)
+- v11.0 CTQMC result: 146 K [106, 216] for Hg1223 (validated method, 3% of experiment)
+- v11.0 key numbers: lambda_sf_inf = 2.70, omega_log ~400 K for cuprates, Tc ceiling ~200 K
+- v1.0 hydride pipeline: H3S at 182 K (10.5% error), LaH10 at 276 K (10.6% error) -- validated phonon Eliashberg
+- v8.0 mechanism split: phonon fraction 20-45%, spin fluctuation 55-80% of cuprate Tc
 
 **Forbidden proxies:**
-- Claiming 300 K without controlled uncertainty bracket
-- Treating Hubbard-I predictions as if they were CTQMC-quality
+- Claiming 300 K without controlled uncertainty bracket and stability assessment
+- Treating a thermodynamically unstable structure as a viable candidate
 - Ranking a pressure-only route as ambient-ready
-- Presenting a new-family screening hit as a prediction without full cluster DMFT validation
+- Presenting surrogate-model hits as predictions without DFT + Eliashberg validation
+- Calling a hypothetical structure a "room-temperature superconductor" without synthesis pathway
 
 **Stop/rethink conditions:**
-- CTQMC sign problem makes Nc=4 impractical at T < 200 K
-- Nc=16 shows lambda_sf _decreasing_ -- overcount in smaller clusters
-- No beyond-cuprate family exceeds lambda_sf = 3.5
-- Vertex corrections push Tc _down_ by > 20%
+- No candidate structure passes stability gates (E_hull < 50 meV/atom AND no imaginary phonons)
+- Hydrogen insertion destroys the correlated electronic structure (lambda_sf drops below 1.0)
+- omega_log gain from hydrogen modes is less than 50% (omega_log < 600 K)
+- All candidates Tc < 200 K even with combined mechanisms -- the design concept does not work
 
 ---
 
-### Phase 48: CTQMC Solver Deployment and Weak-Coupling Validation
+### Phase 58: Inverse Eliashberg Target Map for 300 K
 
-**Track:** A (Foundation)
-**Goal:** A working CTQMC (CT-HYB) solver replaces Hubbard-I for the Hg1223 DCA Nc=4 cluster, validated in the weak-coupling limit.
+**Track:** A (Inverse Target -- entry point)
+**Goal:** The (lambda_total, omega_log) parameter space that permits Tc = 300 K with d-wave symmetry (mu*=0) is mapped, defining quantitative materials targets for all downstream design.
 
-**Objectives:** QMC-01, VALD-01
-**Dependencies:** None (entry point)
+**Objectives:** INV-01, INV-02, INV-03
+**Dependencies:** None (entry point; uses v11.0 validated Eliashberg solver)
 
 **Success Criteria:**
-1. CT-HYB solver converges for the 4-site Hg1223 cluster at physical temperatures (T >= 100 K) with statistical error < 5% on self-energy
-2. In the weak-coupling limit (U -> 0), CTQMC reproduces Hubbard-I quasiparticle weights Z within statistical error bars
-3. Sign problem severity quantified: average sign reported as function of temperature; minimum usable temperature identified
-4. Self-energy on Matsubara axis is smooth and monotonic at low frequencies (no sampling artifacts)
-5. All energies in eV, temperatures in K, self-energies in eV -- dimensional consistency verified
+1. Inverse d-wave Eliashberg solved: for Tc = 300 K and mu*=0, the minimum lambda_total is determined as a function of omega_log; the 300 K contour in (lambda, omega_log) space is plotted
+2. Target alpha2F(omega) spectral shape identified: what fraction of spectral weight must lie in hydrogen-mode frequency range (50-200 meV / 600-2300 K)?
+3. Materials constraints translated: minimum N(E_F) in states/eV/cell, minimum electron-phonon matrix elements |g|^2, and minimum H-mode frequency range for each point on the 300 K contour
+4. Comparison with known materials placed on the same (lambda, omega_log) map: pure cuprates (lambda~2.7, omega_log~400 K), hydrides (lambda~1.5-2, omega_log~1000-2000 K), and the gap between them
+5. The thermodynamic consistency check (VALD-01) passes: Z(omega) > 0 and Delta(omega) satisfies the self-consistent gap equation for the target spectral function
 
 **Contract Coverage:**
-- Advances QMC-01 (CTQMC deployment)
-- Validates VALD-01 (weak-coupling benchmark)
-- Anchor: v10.0 Hubbard-I Z values (Z_nodal=0.195, Z_antinodal=0.054) serve as comparison baseline
+- Advances INV-01 (inverse problem), INV-02 (spectral shape), INV-03 (materials constraints)
+- Validates VALD-01 (thermodynamic consistency)
+- Anchor: v11.0 validated Eliashberg solver (146 K vs 151 K experimental)
+- Anchor: v1.0 hydride Eliashberg (H3S 182 K, LaH10 276 K validated)
+- This phase defines the quantitative goalposts for the entire milestone
 
-**Backtracking Trigger:** If average sign < 0.1 at T = 200 K for Nc=4, the sign problem is too severe; consider CT-AUX or reduced-basis approach before proceeding.
+**Backtracking Trigger:** If the inverse solution requires lambda_total > 5 even at omega_log = 2000 K, the 300 K target is physically unrealistic within Eliashberg theory; reassess whether vertex corrections or non-Migdal effects change the picture before abandoning.
 
 ---
 
-### Phase 49: CTQMC Spin Susceptibility and lambda_sf Recalculation
+### Phase 59: Hydrogen-Cuprate Hybrid Structure Design (Hg1223-H + Superlattice)
 
-**Track:** A (Precision)
-**Goal:** The spin-fluctuation coupling constant lambda_sf is recomputed with CTQMC precision, and the systematic error of the Hubbard-I approximation is quantified.
+**Track:** B (Candidate Design -- after Track A defines targets)
+**Goal:** Two hydrogen-cuprate hybrid structures -- Hg1223 with H replacing apical O, and a [CuO2]/[LiH] Ruddlesden-Popper superlattice -- are designed, relaxed, and screened for structural stability.
 
-**Objectives:** QMC-02
-**Dependencies:** Phase 48 (converged CTQMC self-energy)
+**Objectives:** HC-01, HC-02
+**Dependencies:** Phase 58 (target map provides quantitative design goals)
 
 **Success Criteria:**
-1. chi_sf(q, omega) computed from CTQMC two-particle correlator with controlled statistical error
-2. lambda_sf_CTQMC compared with Hubbard-I value (2.88): systematic shift quantified with sign and magnitude
-3. If lambda_sf_CTQMC < 2.88, the Hubbard-I approximation overestimates AF correlations -- document by how much
-4. If lambda_sf_CTQMC > 2.88, stronger correlations than Hubbard-I captured -- document enhancement factor
-5. Analytic continuation method (MaxEnt or Pade) specified with systematic uncertainty estimate
+1. Hg1223-H (HgBa2Ca2Cu3O7H): DFT-relaxed structure with H at apical site; total energy, lattice parameters, and formation energy reported; E_hull evaluated against Materials Project convex hull
+2. [CuO2]n/[LiH]m superlattice (n=2, m=1 and n=2, m=2): layer-by-layer construction, DFT relaxation, E_hull < 50 meV/atom for at least one stoichiometry
+3. Phonon dispersion computed for each structure; no imaginary phonon branches > -5 cm^-1 (VALD-02 stability gate)
+4. Electronic structure: DFT + DMFT for both structures; N(E_F) > 3 states/eV/cell required; correlated d-band character confirmed near Fermi level
+5. All energies in eV/atom, phonon frequencies in cm^-1 and meV, lattice parameters in Angstroms -- dimensional consistency verified
 
 **Contract Coverage:**
-- Advances QMC-02 (Hubbard-I error quantification)
-- This is the single most important number in v11.0: lambda_sf_CTQMC determines whether 242 K survives, grows, or shrinks
-- Anchor: v10.0 lambda_sf_cluster = 2.88 (Hubbard-I) is the comparison target
+- Advances HC-01 (Hg1223-H) and HC-02 (superlattice)
+- Validates VALD-02 (stability gates)
+- Anchor: Phase 58 target map provides the (lambda, omega_log) design target
+- Anchor: v9.0 Hg1223 DMFT (Z=0.33, m*/m=3.0) as comparison for electronic structure
 
-**Backtracking Trigger:** If analytic continuation produces multiple qualitatively different spectra (bimodal MaxEnt), the real-frequency susceptibility is unreliable; fall back to Matsubara-axis Eliashberg formulation.
+**Backtracking Trigger:** If both structures fail E_hull < 50 meV/atom, neither is thermodynamically viable; pivot to hydrogen intercalation in nickelates (Phase 60) as the primary design track and consider other H-insertion geometries.
 
 ---
 
-### Phase 50: CTQMC-Corrected Tc for Hg1223 Variants
+### Phase 60: Hydrogen-Nickelate Hybrid and Phonon Evaluation
 
-**Track:** A (Precision)
-**Goal:** The Tc predictions for all Hg1223 variants are recomputed with CTQMC lambda_sf, determining whether the 242 K prediction survives at 300 K (room temperature).
+**Track:** B (Candidate Design -- parallel with Phase 59)
+**Goal:** H-intercalated La3Ni2O7 is designed and all stable Track B candidates receive full electron-phonon evaluation to determine omega_log.
 
-**Objectives:** QMC-03
-**Dependencies:** Phase 49 (CTQMC lambda_sf)
+**Objectives:** HC-03, HC-04
+**Dependencies:** Phase 58 (target map); Phase 59 provides parallel comparison
 
 **Success Criteria:**
-1. Tc recomputed for Hg1223 ambient, strained, and strained+15 GPa using CTQMC lambda_sf in the anisotropic d-wave Eliashberg solver
-2. Each prediction carries a statistical uncertainty from CTQMC sampling AND a systematic uncertainty from analytic continuation
-3. Combined uncertainty bracket is narrower than v10.0 bracket [200, 300] K for the best candidate
-4. Explicit statement: does the CTQMC-corrected best Tc reach 300 K (room temperature) within the tightened bracket? Yes/No with confidence level
-5. If Tc_best < 250 K after CTQMC correction, the 25% overestimate hypothesis is confirmed -- quantify actual overestimate percentage
+1. H-intercalated La3Ni2O7: hydrogen placed in rocksalt layer; DFT-relaxed structure; E_hull and phonon stability evaluated
+2. For EVERY stable candidate from Phases 59-60: alpha2F(omega) computed via EPW (electron-phonon Wannier interpolation)
+3. omega_log extracted for each candidate; explicit comparison with Phase 58 target: does any candidate achieve omega_log > 800 K?
+4. H-mode contribution isolated in alpha2F: what fraction of spectral weight comes from H vibrations vs O/Cu/Ni modes?
+5. N(E_F) confirmed > 3 states/eV/cell for each candidate passing stability gates; any candidate failing this threshold is eliminated
 
 **Contract Coverage:**
-- Advances QMC-03 (CTQMC Tc prediction)
-- Decisive test of the 300 K target for Hg1223 variants
-- Anchor: v10.0 predictions (242 K [200, 300], 231 K [191, 286], 209 K [173, 259])
+- Advances HC-03 (nickelate-H) and HC-04 (omega_log evaluation for all candidates)
+- Validates VALD-02 (stability gates, continued)
+- Anchor: Phase 58 target (omega_log > 800 K threshold)
+- Anchor: v8.0 phonon-only Eliashberg pipeline (validated for oxides)
+- This is the key gate: if no candidate reaches omega_log > 800 K, the hydrogen-boost concept fails at the phonon level
 
-**Backtracking Trigger:** If CTQMC Tc_best < 200 K, Hg1223 cannot reach 300 K with current physics; Track C (beyond-cuprate search) becomes the only 300 K path.
+**Backtracking Trigger:** If omega_log < 600 K for ALL candidates, hydrogen insertion does not produce sufficient frequency boost; the design concept needs revision (consider different H coordination, heavier-element substitution, or alternative high-frequency phonon sources like boron).
 
 ---
 
-### Phase 51: Beyond-Cuprate Spin-Fluctuation Screening
+### Phase 61: Spin-Fluctuation Analysis of Viable Hydrogen-Oxide Candidates
 
-**Track:** C (New Materials -- parallel with Tracks A and B)
-**Goal:** 3-5 non-cuprate material families are screened for spin-fluctuation pairing strength exceeding Hg1223 (lambda_sf > 3.5), identifying whether any family has a credible path to 300 K.
+**Track:** C (Combined Tc Prediction -- depends on Tracks A and B)
+**Goal:** For each candidate passing the omega_log > 800 K gate, the DMFT spin susceptibility and lambda_sf are computed to determine whether d-wave spin-fluctuation pairing survives hydrogen insertion.
 
-**Objectives:** NEW-01, NEW-02
-**Dependencies:** None (runs in parallel with Track A)
+**Objectives:** SF-01
+**Dependencies:** Phase 59 or 60 (stable candidates with omega_log data)
 
 **Success Criteria:**
-1. At least 3 families screened: infinite-layer nickelates under >3% strain, high-entropy transition-metal oxides, pressurized layered ruthenates (Sr2RuO4 family)
-2. Bare chi_0(q) computed for each family using v9.0/v10.0 RPA framework; nesting features and peak structure characterized
-3. lambda_sf estimated for each family; any family with lambda_sf > 3.5 flagged as "cuprate-exceeding" candidate
-4. Dimensional consistency: all chi in states/eV, lambda_sf dimensionless
-5. Comparison table: family | lambda_sf | peak q-vector | pairing symmetry | operating conditions | 300 K plausibility
+1. DMFT spin susceptibility chi_sf(q, omega) computed for each viable candidate using the v11.0-validated CTQMC framework
+2. lambda_sf extracted in the d-wave channel; comparison with Hg1223 value (lambda_sf_inf = 2.70)
+3. d-wave pairing channel confirmed attractive (eigenvalue of pairing kernel > 0 in B1g representation) for each candidate
+4. If lambda_sf < 1.5 for a candidate, hydrogen insertion has disrupted the magnetic correlations -- document the mechanism (orbital hybridization, bandwidth increase, Mott proximity loss)
+5. Candidates that achieve BOTH omega_log > 800 K AND lambda_sf > 1.5 AND d-wave attractive advance to Phase 62
 
 **Contract Coverage:**
-- Advances NEW-01 (screening), NEW-02 (lambda_sf estimation)
-- This is the only track that could find a genuinely new 300 K material
-- Anchor: Hg1223 lambda_sf_cluster = 2.88 (Hubbard-I) or CTQMC value from Phase 49 as the bar to beat
+- Advances SF-01 (spin susceptibility for H-oxide candidates)
+- Anchor: v11.0 lambda_sf_inf = 2.70 as the cuprate benchmark to compare against
+- Anchor: v11.0 CTQMC solver (validated, sign problem characterized)
+- Critical gate: this phase determines whether the "best of both worlds" concept survives contact with computation
 
-**Backtracking Trigger:** If no family exceeds lambda_sf = 2.0, the screening is too coarse or the candidate list is wrong; expand to include heavy-fermion or organic superconductors before giving up.
+**Backtracking Trigger:** If lambda_sf < 1.0 for ALL candidates, hydrogen insertion fundamentally disrupts the correlated electronic structure needed for spin-fluctuation pairing; the combined-mechanism concept is falsified. Document honestly and proceed to decision (Phase 65).
 
 ---
 
-### Phase 52: Nc=8 and Nc=16 Cluster Convergence
+### Phase 62: Combined Phonon + Spin-Fluctuation Eliashberg at 300 K
 
-**Track:** B (Convergence -- after Track A foundation)
-**Goal:** Cluster-size convergence of lambda_sf is established, determining whether Nc=4 captures the essential AF correlations or underestimates/overestimates them.
+**Track:** C (The 300 K Test)
+**Goal:** For each candidate passing Phase 61 gates, the combined phonon + spin-fluctuation d-wave Eliashberg equation is solved, producing the definitive Tc prediction with full uncertainty bracket.
 
-**Objectives:** NC-01, NC-02
-**Dependencies:** Phase 48 (CTQMC solver validated), Phase 49 (Nc=4 lambda_sf baseline)
+**Objectives:** SF-02, SF-03
+**Dependencies:** Phase 61 (lambda_sf for viable candidates), Phase 58 (target map for comparison)
 
 **Success Criteria:**
-1. DCA implemented for Nc=8 and Nc=16 with CTQMC solver; self-energy converges at each cluster size
-2. lambda_sf(Nc=4), lambda_sf(Nc=8), lambda_sf(Nc=16) form a monotonic convergence sequence (not oscillating) -- satisfies VALD-02
-3. Sign problem severity at Nc=8 and Nc=16 documented; if Nc=16 is impractical, extrapolation from Nc=4 and Nc=8 is used
-4. Convergence trend characterized: lambda_sf increasing (more AF captured), decreasing (overcount correction), or saturated
-5. If lambda_sf decreases with Nc, the v10.0 predictions were too optimistic -- quantify downward revision
+1. Combined Eliashberg solved with alpha2F_phonon(omega) from Phase 60 + alpha2F_sf(omega) from Phase 61 in the d-wave channel with mu*=0
+2. Tc predicted for each candidate with uncertainty bracket including: DFT error (~10%), DMFT lambda_sf uncertainty (~15%), analytic continuation error, and Eliashberg solver convergence
+3. Explicit answer to the core question: does any candidate reach Tc >= 300 K (room temperature) within the uncertainty bracket?
+4. For each 300 K candidate: the (lambda_total, omega_log_eff) point is placed on the Phase 58 inverse map to confirm internal consistency
+5. VALD-03: 300 K (80 F / 27 C) target explicit in all deliverables
 
 **Contract Coverage:**
-- Advances NC-01 (larger clusters), NC-02 (convergence assessment)
-- Validates VALD-02 (systematic convergence trend)
-- Anchor: lambda_sf(Nc=4) from Phase 49 as starting point
+- Advances SF-02 (combined Eliashberg) and SF-03 (300 K test)
+- Validates VALD-03 (300 K target explicit)
+- Anchor: Phase 58 inverse map defines what "on target" means
+- Anchor: v11.0 method validation (146 K vs 151 K) bounds systematic error
+- This is the decisive phase: the first quantitative test of whether hydrogen-correlated oxides can reach room temperature
 
-**Backtracking Trigger:** If lambda_sf oscillates (Nc=4 > Nc=8 < Nc=16), the DCA is not converging for this model; consider continuous self-energy methods (TRILEX, dual fermion) as alternative.
+**Backtracking Trigger:** If all candidates Tc < 200 K even with combined mechanisms, the design concept does not produce sufficient uplift; proceed directly to decision (Phase 65) with honest documentation.
 
 ---
 
-### Phase 53: Converged lambda_sf and Cluster-Extrapolated Tc
+### Phase 63: AI Surrogate Model Training and Screening
 
-**Track:** B (Convergence)
-**Goal:** A final converged lambda_sf value is established with quantified Nc-extrapolation uncertainty, and the Tc prediction is updated to reflect cluster convergence.
+**Track:** D (Combinatorial Search -- parallel with Tracks B and C)
+**Goal:** An ML surrogate model trained on all v1.0-v11.0 computed data screens 1000+ hypothetical hydrogen-containing layered oxide compositions, identifying high-Tc candidates that the manual design in Track B may have missed.
 
-**Objectives:** NC-03
-**Dependencies:** Phase 52 (Nc=8/Nc=16 data)
+**Objectives:** AI-01, AI-02
+**Dependencies:** Phase 58 (target map provides screening criteria)
 
 **Success Criteria:**
-1. Converged lambda_sf_inf extracted from Nc=4, 8, 16 sequence (or Nc=4, 8 if Nc=16 impractical) via 1/Nc extrapolation with fit uncertainty
-2. Tc recomputed with converged lambda_sf_inf in anisotropic Eliashberg solver
-3. Uncertainty bracket on Tc now includes: CTQMC statistical + analytic continuation + Nc extrapolation
-4. Explicit comparison with v10.0 prediction (242 K [200, 300]): is the bracket tighter? Does 300 K (room temperature) remain within reach?
-5. If lambda_sf_inf < lambda_sf(Nc=4), revise ALL candidate Tc values downward proportionally
+1. Surrogate model trained on all available (composition, structure descriptors, lambda, omega_log, Tc) data from v1.0-v11.0 plus Materials Project entries; training R^2 > 0.7, test R^2 > 0.5 on held-out data
+2. Feature importance: model identifies which descriptors (hydrogen content, layer count, d-band filling, octahedral distortion, etc.) most strongly predict Tc
+3. 1000+ hypothetical hydrogen-containing layered oxide compositions screened; ranked by predicted Tc
+4. Top 50 candidates identified with predicted Tc > 200 K; top 10 with predicted Tc > 250 K flagged for DFT validation
+5. Model uncertainty quantified (ensemble variance or conformal prediction intervals); no candidate ranked without uncertainty estimate
 
 **Contract Coverage:**
-- Advances NC-03 (converged lambda_sf)
-- This is the most reliable Tc prediction the project can produce for Hg1223
-- VALD-03: 300 K room-temperature target stated explicitly in deliverables
+- Advances AI-01 (surrogate model) and AI-02 (screening)
+- Anchor: Phase 58 target map provides physics-grounded screening criteria
+- Anchor: v1.0-v11.0 computed data provides training corpus
+- Forbidden proxy: surrogate hits are NOT Tc predictions -- they are screening flags that require DFT validation
 
-**Backtracking Trigger:** If converged Tc_best < 180 K, cuprate spin-fluctuation pairing alone cannot reach 300 K; only a new material family (Track C) or a qualitatively different mechanism could close the gap.
+**Backtracking Trigger:** If test R^2 < 0.3, the available data is insufficient or the descriptor space is wrong; simplify to a physics-informed rule-based screen (omega_log proxy + N(E_F) proxy + stability proxy) rather than a learned model.
 
 ---
 
-### Phase 54: Vertex Corrections for d-Wave Channel
+### Phase 64: DFT Validation of Top Surrogate Hits
 
-**Track:** D (Theory -- parallel with Track B)
-**Goal:** The leading vertex correction to the d-wave pairing interaction is computed, determining the sign and magnitude of the Tc correction.
+**Track:** D (Validation of AI screening)
+**Goal:** The top 10 surrogate hits receive full DFT + Eliashberg evaluation, determining the surrogate's false positive rate and potentially discovering candidates that Track B missed.
 
-**Objectives:** VX-01
-**Dependencies:** Phase 49 (CTQMC susceptibility provides the bare vertex input)
+**Objectives:** AI-03
+**Dependencies:** Phase 63 (surrogate ranking), Phase 58 (target map)
 
 **Success Criteria:**
-1. Particle-particle ladder vertex correction computed for the d-wave channel using CTQMC two-particle vertex
-2. Sign of vertex correction determined: enhancement (+) or suppression (-) of Tc
-3. Magnitude estimated as percentage of bare Tc: |delta_Tc / Tc| with uncertainty
-4. If |correction| < 10%, vertex corrections are subdominant -- document and proceed without incorporating
-5. Dimensional check: vertex function has correct dimension [energy^{-1}] in the particle-particle channel
+1. Top 10 surrogate hits: DFT structure relaxation, E_hull evaluation, phonon stability check
+2. For stable hits: alpha2F computed via EPW; omega_log extracted; compared with surrogate prediction
+3. False positive rate quantified: what fraction of top-10 hits fail stability or have omega_log far below prediction?
+4. Any hit that passes stability AND achieves omega_log > 800 K is forwarded to Phase 61/62 pipeline for spin-fluctuation analysis and combined Tc
+5. VALD-02: every candidate structure must pass stability gates (E_hull < 50 meV/atom, no imaginary phonons > -5 cm^-1)
 
 **Contract Coverage:**
-- Advances VX-01 (vertex correction estimate)
-- Addresses the largest remaining theoretical uncertainty identified in v10.0 missing-physics budget
-- Anchor: v10.0 missing-physics budget [-145, +45] K -- vertex corrections are the dominant unknown in this range
+- Advances AI-03 (validation of surrogate)
+- Validates VALD-02 (stability gates for AI-discovered candidates)
+- Anchor: Phase 58 target map (omega_log > 800 K threshold)
+- This phase connects Track D back to Track C: any validated hit feeds into the combined Tc pipeline
 
-**Backtracking Trigger:** If vertex computation requires the full two-particle vertex at all momenta and frequencies (computationally prohibitive), fall back to the DGA (dynamical vertex approximation) estimate or Moriya-lambda correction.
+**Backtracking Trigger:** If all 10 hits fail stability or omega_log < 600 K, the surrogate is not useful for this problem; document limitations and rely entirely on Track B candidates for the final ranking.
 
 ---
 
-### Phase 55: Full Cluster DMFT for Best New-Family Candidate
-
-**Track:** C (New Materials)
-**Goal:** The most promising beyond-cuprate family from Phase 51 receives the full cluster DMFT + anisotropic Eliashberg treatment, producing a Tc prediction comparable in quality to the Hg1223 result.
-
-**Objectives:** NEW-03
-**Dependencies:** Phase 51 (screening identifies best candidate), Phase 48 (CTQMC solver available)
-
-**Success Criteria:**
-1. Full cluster DMFT (Nc=4 minimum) + CTQMC run for the best new-family candidate
-2. lambda_sf computed at the same level of theory as Hg1223 (CTQMC, not Hubbard-I)
-3. Tc predicted with anisotropic Eliashberg and uncertainty bracket
-4. Direct comparison: new-family Tc vs Hg1223 Tc (both at CTQMC level); which is closer to 300 K?
-5. If new-family Tc > 300 K: flag as room-temperature superconductor candidate with full caveats. If not: document the gap to 300 K
-
-**Contract Coverage:**
-- Advances NEW-03 (full treatment of best new candidate)
-- Only phase where a genuinely new 300 K candidate could emerge
-- VALD-04: any Tc >= 300 K prediction must include full uncertainty, stability, and synthesis pathway
-
-**Backtracking Trigger:** If no Phase 51 candidate exceeds lambda_sf = 2.5, skip this phase -- no candidate justifies the full treatment. Document in the decision memo.
-
----
-
-### Phase 56: Cross-Validation and Consolidated Predictions
+### Phase 65: Consolidated Ranking and Stability Assessment
 
 **Track:** Validation (all tracks converge)
-**Goal:** All predictions are cross-validated, vertex corrections incorporated where significant, and a single consolidated ranking of all candidates against the 300 K room-temperature target is produced.
+**Goal:** All candidates from Tracks B, C, and D are consolidated into a single stability-gated ranking against the 300 K room-temperature target, with synthesis route assessment for any viable candidate.
 
-**Objectives:** VX-02, VALD-01 (final check), VALD-02 (final check), VALD-03, VALD-04
-**Dependencies:** Phase 50 (CTQMC Tc), Phase 53 (converged Tc), Phase 54 (vertex corrections), Phase 55 (new-family Tc, if applicable)
+**Objectives:** VALD-01 (final), VALD-02 (final), VALD-03, VALD-04, DEC-01
+**Dependencies:** Phase 62 (combined Tc predictions), Phase 64 (validated surrogate hits, if any)
 
 **Success Criteria:**
-1. If vertex corrections > 10% (Phase 54), Eliashberg solver rerun with vertex-corrected interaction; final Tc reported
-2. All Tc predictions collected into a single table: candidate | method level | Tc_central | uncertainty bracket | 300 K reached?
-3. Weak-coupling validation (VALD-01) confirmed: CTQMC matches Hubbard-I at small U (carried from Phase 48, reconfirmed)
-4. Cluster convergence (VALD-02) confirmed: lambda_sf trend is monotonic (carried from Phase 52, reconfirmed)
-5. 300 K target (VALD-03) explicitly stated in every deliverable: "Room temperature = 300 K = 80 F = 27 C"
-6. Any Tc >= 300 K prediction (VALD-04) carries: (a) full uncertainty bracket, (b) structural stability assessment, (c) synthesis pathway, (d) operating conditions (pressure, strain)
+1. All candidates collected into master table: candidate | structure | E_hull | phonon stable? | omega_log | lambda_sf | lambda_total | Tc [lower, central, upper] | 300 K reached?
+2. VALD-01: every Eliashberg solution in the table is thermodynamically consistent (Z > 0, gap equation satisfied)
+3. VALD-02: every candidate in the table passes stability gates; unstable candidates listed separately with reason for failure
+4. VALD-03: "Room temperature = 300 K = 80 F = 27 C" stated explicitly in every deliverable
+5. VALD-04: any candidate with Tc >= 300 K carries full uncertainty bracket AND synthesis route assessment (precursors, method, pressure/temperature conditions, expected difficulty)
+6. Final ranking by Tc (central value) with stability and synthesizability tiers
 
 **Contract Coverage:**
-- Advances VX-02 (vertex incorporation), VALD-01 through VALD-04 (all validation requirements)
-- This phase produces the definitive candidate ranking that DEC-01 and DEC-02 consume
-- Forbidden proxy check: no candidate ranked without controlled uncertainty; no pressure-only route called ambient-ready
+- Advances VALD-01 through VALD-04 (all validation requirements) and DEC-01 (final ranking)
+- Forbidden proxy: no candidate ranked without stability gate; no pressure-only route called ambient-ready; no surrogate hit without DFT validation
+- Anchor: 151 K retained benchmark (ref-hg1223-quench) and 149 K experimental gap carried to ranking
 
-**Backtracking Trigger:** If vertex-corrected Tc differs from uncorrected by > 50 K for any candidate, the perturbative vertex treatment is unreliable; flag as unresolved systematic.
+**Backtracking Trigger:** If no candidate passes ALL gates (stability + omega_log > 800 K + lambda_sf > 1.5 + d-wave attractive), the hydrogen-correlated oxide design concept has not produced a viable candidate; proceed to honest gap accounting in Phase 66.
 
 ---
 
-### Phase 57: 300 K Decision Memo and Milestone Closeout
+### Phase 66: 300 K Decision Report and Milestone Closeout
 
 **Track:** Decision
-**Goal:** A definitive go/no-go decision on 300 K room-temperature superconductivity is documented, with either a candidate specification or an honest gap accounting.
+**Goal:** A definitive assessment of whether hydrogen-correlated oxides can reach room-temperature superconductivity, documented as either a candidate specification or an honest gap accounting with a clear path forward.
 
-**Objectives:** DEC-01, DEC-02
-**Dependencies:** Phase 56 (consolidated predictions)
+**Objectives:** DEC-02
+**Dependencies:** Phase 65 (consolidated ranking)
 
 **Success Criteria:**
-1. Final ranking table of ALL candidates (Hg1223 variants + new families) by best-method Tc with full uncertainty brackets
-2. **If any candidate Tc >= 300 K:** "Room-temperature superconductor candidate" memo specifying: material composition, crystal structure, operating conditions (P, strain, T), predicted Tc [lower, central, upper], synthesis pathway, and key uncertainties
-3. **If no candidate Tc >= 300 K:** Honest accounting: (a) best Tc achieved and its gap to 300 K, (b) which physics is still missing (higher-order vertex, dynamic U, non-perturbative effects), (c) whether 300 K is reachable within known unconventional-SC physics or requires a new mechanism
-4. The 149 K experimental gap (300 K - 151 K retained benchmark) is explicitly revisited: has the _predicted_ gap shrunk, even if the experimental benchmark is unchanged?
-5. Clear next-milestone recommendation: what would v12.0 need to do?
+1. **If any candidate Tc >= 300 K:** "Room-Temperature Superconductor Candidate" report specifying: composition, crystal structure, space group, lattice parameters, operating conditions (P, T, strain), predicted Tc [lower, central, upper], synthesis pathway (precursors, method, conditions), key uncertainties, and what experimental validation would confirm or refute the prediction
+2. **If no candidate Tc >= 300 K:** Honest gap accounting: (a) best Tc achieved and its gap to 300 K, (b) which design lever failed (omega_log too low, lambda_sf destroyed, stability impossible), (c) whether the concept is worth iterating (second-generation candidates) or fundamentally limited, (d) what alternative mechanisms (excitonic, plasmonic, bipolaronic) might close the gap
+3. The 149 K experimental gap is revisited: has the project's best PREDICTED Tc improved beyond the v11.0 ceiling of ~200 K?
+4. VALD-03: 300 K target explicit throughout the report
+5. Clear v13.0 recommendation: iterate on hydrogen-oxide design, pivot to alternative mechanisms, or declare the computational ceiling reached
 
 **Contract Coverage:**
-- Advances DEC-01 (final ranking), DEC-02 (300 K decision memo)
-- VALD-03: 300 K target explicit throughout
+- Advances DEC-02 (300 K decision report)
+- VALD-03: 300 K target explicit
 - VALD-04: any 300 K claim carries full evidence package
 - Forbidden proxy: no diffuse watchlist; one primary candidate or honest "not yet"
-- Anchor: 151 K retained benchmark (ref-hg1223-quench) and 149 K experimental gap carried to final accounting
+- Anchor: 151 K retained benchmark and 149 K gap carried to final accounting
+- Anchor: v11.0 Tc ceiling (~200 K) as the baseline that v12.0 must improve upon
 
-**Backtracking Trigger:** None -- this is the terminal phase. If evidence is insufficient, the deliverable is the gap accounting, not a forced claim.
+**Backtracking Trigger:** None -- terminal phase. If evidence is insufficient, the deliverable is the gap accounting, not a forced claim.
 
 ---
 
-## Phase Dependencies
+## Phase Dependencies (v12.0)
 
 | Phase | Track | Depends On | Enables | Critical Path? |
 | --- | --- | --- | --- | :---: |
-| 48 - CTQMC Deployment | A | -- | 49, 52, 55 | Yes |
-| 49 - CTQMC lambda_sf | A | 48 | 50, 52, 54 | Yes |
-| 50 - CTQMC Tc | A | 49 | 56 | Yes |
-| 51 - Beyond-Cuprate Screen | C | -- | 55 | No (parallel) |
-| 52 - Nc=8/16 Convergence | B | 48, 49 | 53 | No (parallel w/ 50) |
-| 53 - Converged Tc | B | 52 | 56 | No |
-| 54 - Vertex Corrections | D | 49 | 56 | No (parallel w/ B) |
-| 55 - New-Family Full DMFT | C | 51, 48 | 56 | No |
-| 56 - Cross-Validation | -- | 50, 53, 54, 55 | 57 | Yes |
-| 57 - Decision Memo | -- | 56 | -- | Yes |
+| 58 - Inverse Eliashberg Target | A | -- | 59, 60, 63 | Yes |
+| 59 - Hg1223-H + Superlattice Design | B | 58 | 60, 61 | Yes |
+| 60 - Nickelate-H + Phonon Eval | B | 58 | 61 | Yes (parallel w/ 59) |
+| 61 - Spin-Fluctuation Analysis | C | 59, 60 | 62 | Yes |
+| 62 - Combined Eliashberg 300 K Test | C | 61, 58 | 65 | Yes |
+| 63 - AI Surrogate Screening | D | 58 | 64 | No (parallel w/ B, C) |
+| 64 - DFT Validation of Surrogate Hits | D | 63 | 65 | No (parallel w/ C) |
+| 65 - Consolidated Ranking | -- | 62, 64 | 66 | Yes |
+| 66 - Decision Report | -- | 65 | -- | Yes |
 
-**Critical path:** 48 -> 49 -> 50 -> 56 -> 57 (5 phases, minimum duration)
+**Critical path:** 58 -> 59/60 -> 61 -> 62 -> 65 -> 66 (6 sequential steps)
 
 **Parallel opportunities:**
-- Wave 1: Phase 48 (CTQMC) + Phase 51 (beyond-cuprate screen)
-- Wave 2: Phase 49 (after 48)
-- Wave 3: Phase 50 + Phase 52 + Phase 54 (after 49; parallel across tracks A, B, D)
-- Wave 3 also: Phase 55 (after 51 + 48; parallel with above)
-- Wave 4: Phase 53 (after 52)
-- Wave 5: Phase 56 (after 50, 53, 54, 55)
-- Wave 6: Phase 57 (after 56)
+- Wave 1: Phase 58 (sole entry point)
+- Wave 2: Phase 59 + Phase 60 + Phase 63 (all depend only on 58; parallel across B and D)
+- Wave 3: Phase 61 (after 59 and 60) + Phase 64 (after 63; parallel)
+- Wave 4: Phase 62 (after 61)
+- Wave 5: Phase 65 (after 62 and 64)
+- Wave 6: Phase 66 (after 65)
 
-## Risk Register
+## Risk Register (v12.0)
 
 | Phase | Top Risk | Probability | Impact | Mitigation |
 | --- | --- | :---: | :---: | --- |
-| 48 | CTQMC sign problem at physical T | HIGH | HIGH | Quantify average sign vs T; fall back to CT-AUX or higher-T extrapolation |
-| 49 | Analytic continuation ambiguity | MEDIUM | HIGH | Use Matsubara-axis Eliashberg as fallback; compare MaxEnt + Pade |
-| 50 | Tc drops below 200 K after CTQMC | MEDIUM | MEDIUM | Honest result; shifts burden to Track C |
-| 51 | No family exceeds cuprate lambda_sf | HIGH | MEDIUM | Expected outcome; confirms cuprate supremacy for spin-fluctuation pairing |
-| 52 | Nc=16 computationally infeasible | HIGH | MEDIUM | Extrapolate from Nc=4, 8 with fit uncertainty |
-| 54 | Full vertex computation prohibitive | MEDIUM | MEDIUM | Fall back to DGA or Moriya-lambda estimate |
-| 55 | Best new candidate still < 200 K | HIGH | LOW | Document; cuprate route remains primary |
-| 57 | No candidate reaches 300 K | MEDIUM | HIGH | Deliverable is the honest gap accounting; 300 K may require new physics |
+| 58 | Inverse solution requires unphysical lambda > 5 | LOW | HIGH | Would falsify the Eliashberg-based 300 K concept; reassess with vertex corrections |
+| 59 | Both Hg1223-H and superlattice fail stability | MEDIUM | HIGH | Pivot to nickelate-H and alternative H-insertion geometries in Phase 60 |
+| 60 | omega_log < 600 K for all candidates | MEDIUM | HIGH | H-boost concept fails at phonon level; consider boron substitution or different high-frequency modes |
+| 61 | H insertion destroys spin fluctuations (lambda_sf < 1.0) | MEDIUM | HIGH | Combined-mechanism concept falsified; honest documentation; concept may need weaker H-coupling that preserves correlations |
+| 62 | All combined Tc < 200 K | MEDIUM | HIGH | Design concept insufficient; proceed to honest gap accounting |
+| 63 | Surrogate model R^2 < 0.3 | MEDIUM | MEDIUM | Fall back to physics-informed rule-based screen; Track D contributes less but Tracks B/C proceed |
+| 64 | All surrogate hits fail DFT validation | HIGH | LOW | Expected for ML screening; confirms Track B manual design was more reliable |
+| 65 | No candidate passes all gates | MEDIUM | HIGH | Honest result; the gap accounting IS the deliverable |
+| 66 | No 300 K candidate found | MEDIUM | HIGH | Document what worked, what failed, and what remains; 300 K may require physics beyond current framework |
 
-## Progress
+## Progress (v12.0)
 
 | Phase | Name | Status |
 | --- | --- | --- |
-| 48 | CTQMC Deployment + Validation | Pending |
-| 49 | CTQMC lambda_sf Recalculation | Pending |
-| 50 | CTQMC-Corrected Tc | Pending |
-| 51 | Beyond-Cuprate Screen | Pending |
-| 52 | Nc=8/16 Convergence | Pending |
-| 53 | Converged Tc | Pending |
-| 54 | Vertex Corrections | Pending |
-| 55 | New-Family Full DMFT | Pending |
-| 56 | Cross-Validation | Pending |
-| 57 | 300 K Decision Memo | Pending |
+| 58 | Inverse Eliashberg Target Map | Not started |
+| 59 | Hg1223-H + Superlattice Design | Not started |
+| 60 | Nickelate-H + Phonon Evaluation | Not started |
+| 61 | Spin-Fluctuation Analysis | Not started |
+| 62 | Combined Eliashberg 300 K Test | Not started |
+| 63 | AI Surrogate Screening | Not started |
+| 64 | DFT Validation of Surrogate Hits | Not started |
+| 65 | Consolidated Ranking | Not started |
+| 66 | Decision Report | Not started |
