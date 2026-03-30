@@ -1,0 +1,633 @@
+{
+  "metadata": {
+    "phase": "40-guided-design",
+    "plan": "01",
+    "script_version": "1.0.0",
+    "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "numpy_version": "2.3.3",
+    "random_seed": 42,
+    "baseline_Tc_K": 108.4,
+    "baseline_Tc_expt_K": 151.0,
+    "pipeline_validation_error_pct": 28.2,
+    "systematic_uncertainty_pct": 30,
+    "ASSERT_CONVENTION": "natural_units=NOT_used, fourier_convention=QE_plane_wave, coupling_convention=lambda_dimensionless, units=SI_derived_K_eV_GPa"
+  },
+  "candidates": [
+    {
+      "id": 0,
+      "name": "Hg1223 (baseline)",
+      "modification": "None (reference)",
+      "lambda_ph": 1.1927,
+      "lambda_sf_central": 1.8,
+      "lambda_sf_unc": 0.6,
+      "lambda_total_central": 2.9927,
+      "omega_log_ph_K": 291.3,
+      "omega_sf_K": 475.8,
+      "omega_log_eff_K": 391.3,
+      "Tc_central_K": 108.3,
+      "Tc_mu010_K": 113.2,
+      "Tc_mu013_K": 103.5,
+      "Tc_parametric_min_K": 80.4,
+      "Tc_parametric_max_K": 136.8,
+      "Tc_total_range_low_K": 64.1,
+      "Tc_total_range_high_K": 153.1,
+      "exceeds_200K": false,
+      "improvement_over_baseline_pct": -0.0,
+      "rationale": "Phase 37 validated baseline. Tc_expt = 151 K, Tc_pred = 108 K.",
+      "sweep": {
+        "lsf_1.20_mu_0.10": {
+          "lambda_sf": 1.2,
+          "mu_star": 0.1,
+          "Tc_K": 88.2,
+          "lambda_total": 2.3927,
+          "omega_log_eff_K": 372.6,
+          "eliashberg_ratio": 1.1187
+        },
+        "lsf_1.20_mu_0.13": {
+          "lambda_sf": 1.2,
+          "mu_star": 0.13,
+          "Tc_K": 80.4,
+          "lambda_total": 2.3927,
+          "omega_log_eff_K": 372.6,
+          "eliashberg_ratio": 1.1187
+        },
+        "lsf_1.80_mu_0.10": {
+          "lambda_sf": 1.8,
+          "mu_star": 0.1,
+          "Tc_K": 113.2,
+          "lambda_total": 2.9927,
+          "omega_log_eff_K": 391.3,
+          "eliashberg_ratio": 1.12
+        },
+        "lsf_1.80_mu_0.13": {
+          "lambda_sf": 1.8,
+          "mu_star": 0.13,
+          "Tc_K": 103.5,
+          "lambda_total": 2.9927,
+          "omega_log_eff_K": 391.3,
+          "eliashberg_ratio": 1.12
+        },
+        "lsf_2.40_mu_0.10": {
+          "lambda_sf": 2.4,
+          "mu_star": 0.1,
+          "Tc_K": 136.8,
+          "lambda_total": 3.5927,
+          "omega_log_eff_K": 404.3,
+          "eliashberg_ratio": 1.1207
+        },
+        "lsf_2.40_mu_0.13": {
+          "lambda_sf": 2.4,
+          "mu_star": 0.13,
+          "Tc_K": 125.1,
+          "lambda_total": 3.5927,
+          "omega_log_eff_K": 404.3,
+          "eliashberg_ratio": 1.1207
+        }
+      }
+    },
+    {
+      "id": 1,
+      "name": "Hg1223 epitaxial strain",
+      "modification": "~1% tensile strain on CuO2 plane (c/a tuning via substrate)",
+      "lambda_ph": 1.3716,
+      "lambda_sf_central": 2.16,
+      "lambda_sf_unc": 0.72,
+      "lambda_total_central": 3.5316,
+      "omega_log_ph_K": 276.7,
+      "omega_sf_K": 475.8,
+      "omega_log_eff_K": 385.5,
+      "Tc_central_K": 123.5,
+      "Tc_mu010_K": 129.0,
+      "Tc_mu013_K": 117.9,
+      "Tc_parametric_min_K": 91.6,
+      "Tc_parametric_max_K": 156.0,
+      "Tc_total_range_low_K": 73.0,
+      "Tc_total_range_high_K": 174.6,
+      "exceeds_200K": false,
+      "improvement_over_baseline_pct": 13.9,
+      "rationale": "Pavarini et al. (2001): Tc correlates with c/a via t'/t ratio. Tensile strain pushes van Hove singularity toward E_F, increasing N(E_F) by ~20%. lambda scales linearly with N(E_F). Enhanced Fermi surface nesting at van Hove increases chi(pi,pi) and lambda_sf. Phonons soften slightly under strain.",
+      "sweep": {
+        "lsf_1.44_mu_0.10": {
+          "lambda_sf": 1.44,
+          "mu_star": 0.1,
+          "Tc_K": 100.3,
+          "lambda_total": 2.8116,
+          "omega_log_eff_K": 365.3,
+          "eliashberg_ratio": 1.1197
+        },
+        "lsf_1.44_mu_0.13": {
+          "lambda_sf": 1.44,
+          "mu_star": 0.13,
+          "Tc_K": 91.6,
+          "lambda_total": 2.8116,
+          "omega_log_eff_K": 365.3,
+          "eliashberg_ratio": 1.1197
+        },
+        "lsf_2.16_mu_0.10": {
+          "lambda_sf": 2.16,
+          "mu_star": 0.1,
+          "Tc_K": 129.0,
+          "lambda_total": 3.5316,
+          "omega_log_eff_K": 385.5,
+          "eliashberg_ratio": 1.1206
+        },
+        "lsf_2.16_mu_0.13": {
+          "lambda_sf": 2.16,
+          "mu_star": 0.13,
+          "Tc_K": 117.9,
+          "lambda_total": 3.5316,
+          "omega_log_eff_K": 385.5,
+          "eliashberg_ratio": 1.1206
+        },
+        "lsf_2.88_mu_0.10": {
+          "lambda_sf": 2.88,
+          "mu_star": 0.1,
+          "Tc_K": 156.0,
+          "lambda_total": 4.2516,
+          "omega_log_eff_K": 399.5,
+          "eliashberg_ratio": 1.1212
+        },
+        "lsf_2.88_mu_0.13": {
+          "lambda_sf": 2.88,
+          "mu_star": 0.13,
+          "Tc_K": 142.7,
+          "lambda_total": 4.2516,
+          "omega_log_eff_K": 399.5,
+          "eliashberg_ratio": 1.1212
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "(Hg0.8Tl0.2)Ba2Ca2Cu3O8+d",
+      "modification": "20% Tl substitution in Hg charge reservoir",
+      "lambda_ph": 1.2523,
+      "lambda_sf_central": 1.98,
+      "lambda_sf_unc": 0.66,
+      "lambda_total_central": 3.2323,
+      "omega_log_ph_K": 291.3,
+      "omega_sf_K": 452.0,
+      "omega_log_eff_K": 381.3,
+      "Tc_central_K": 112.9,
+      "Tc_mu010_K": 118.0,
+      "Tc_mu013_K": 107.8,
+      "Tc_parametric_min_K": 84.3,
+      "Tc_parametric_max_K": 142.0,
+      "Tc_total_range_low_K": 67.3,
+      "Tc_total_range_high_K": 159.0,
+      "exceeds_200K": false,
+      "improvement_over_baseline_pct": 4.1,
+      "rationale": "Lokshin et al. (2001): (Hg,Tl)-1223 achieves up to 138 K ambient Tc. Tl increases charge reservoir efficiency, optimizing hole doping. Modest improvement because Hg1223 is already near-optimally doped. AF correlations slightly weakened by overdoping effect.",
+      "sweep": {
+        "lsf_1.32_mu_0.10": {
+          "lambda_sf": 1.32,
+          "mu_star": 0.1,
+          "Tc_K": 92.3,
+          "lambda_total": 2.5723,
+          "omega_log_eff_K": 365.0,
+          "eliashberg_ratio": 1.1192
+        },
+        "lsf_1.32_mu_0.13": {
+          "lambda_sf": 1.32,
+          "mu_star": 0.13,
+          "Tc_K": 84.3,
+          "lambda_total": 2.5723,
+          "omega_log_eff_K": 365.0,
+          "eliashberg_ratio": 1.1192
+        },
+        "lsf_1.98_mu_0.10": {
+          "lambda_sf": 1.98,
+          "mu_star": 0.1,
+          "Tc_K": 118.0,
+          "lambda_total": 3.2323,
+          "omega_log_eff_K": 381.3,
+          "eliashberg_ratio": 1.1203
+        },
+        "lsf_1.98_mu_0.13": {
+          "lambda_sf": 1.98,
+          "mu_star": 0.13,
+          "Tc_K": 107.8,
+          "lambda_total": 3.2323,
+          "omega_log_eff_K": 381.3,
+          "eliashberg_ratio": 1.1203
+        },
+        "lsf_2.64_mu_0.10": {
+          "lambda_sf": 2.64,
+          "mu_star": 0.1,
+          "Tc_K": 142.0,
+          "lambda_total": 3.8923,
+          "omega_log_eff_K": 392.4,
+          "eliashberg_ratio": 1.1209
+        },
+        "lsf_2.64_mu_0.13": {
+          "lambda_sf": 2.64,
+          "mu_star": 0.13,
+          "Tc_K": 129.9,
+          "lambda_total": 3.8923,
+          "omega_log_eff_K": 392.4,
+          "eliashberg_ratio": 1.1209
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Hg1223 overdoped (p=0.22)",
+      "modification": "Push doping to p=0.22 via excess oxygen",
+      "lambda_ph": 1.3716,
+      "lambda_sf_central": 1.35,
+      "lambda_sf_unc": 0.45,
+      "lambda_total_central": 2.7216,
+      "omega_log_ph_K": 291.3,
+      "omega_sf_K": 547.2,
+      "omega_log_eff_K": 398.2,
+      "Tc_central_K": 101.7,
+      "Tc_mu010_K": 106.3,
+      "Tc_mu013_K": 97.0,
+      "Tc_parametric_min_K": 76.9,
+      "Tc_parametric_max_K": 127.4,
+      "Tc_total_range_low_K": 61.7,
+      "Tc_total_range_high_K": 142.6,
+      "exceeds_200K": false,
+      "improvement_over_baseline_pct": -6.2,
+      "rationale": "Overdoping past optimal p=0.16 toward van Hove singularity at p~0.22. N(E_F) increases sharply but AF correlations weaken (chi(pi,pi) decreases). Known experimentally: overdoped cuprates have LOWER Tc. This tests whether lambda_ph increase can compensate lambda_sf decrease. Expected result: NET DECREASE in Tc (physics-consistent negative finding).",
+      "sweep": {
+        "lsf_0.90_mu_0.10": {
+          "lambda_sf": 0.9,
+          "mu_star": 0.1,
+          "Tc_K": 84.5,
+          "lambda_total": 2.2716,
+          "omega_log_eff_K": 373.9,
+          "eliashberg_ratio": 1.1183
+        },
+        "lsf_0.90_mu_0.13": {
+          "lambda_sf": 0.9,
+          "mu_star": 0.13,
+          "Tc_K": 76.9,
+          "lambda_total": 2.2716,
+          "omega_log_eff_K": 373.9,
+          "eliashberg_ratio": 1.1183
+        },
+        "lsf_1.35_mu_0.10": {
+          "lambda_sf": 1.35,
+          "mu_star": 0.1,
+          "Tc_K": 106.3,
+          "lambda_total": 2.7216,
+          "omega_log_eff_K": 398.2,
+          "eliashberg_ratio": 1.1195
+        },
+        "lsf_1.35_mu_0.13": {
+          "lambda_sf": 1.35,
+          "mu_star": 0.13,
+          "Tc_K": 97.0,
+          "lambda_total": 2.7216,
+          "omega_log_eff_K": 398.2,
+          "eliashberg_ratio": 1.1195
+        },
+        "lsf_1.80_mu_0.10": {
+          "lambda_sf": 1.8,
+          "mu_star": 0.1,
+          "Tc_K": 127.4,
+          "lambda_total": 3.1716,
+          "omega_log_eff_K": 416.6,
+          "eliashberg_ratio": 1.1202
+        },
+        "lsf_1.80_mu_0.13": {
+          "lambda_sf": 1.8,
+          "mu_star": 0.13,
+          "Tc_K": 116.3,
+          "lambda_total": 3.1716,
+          "omega_log_eff_K": 416.6,
+          "eliashberg_ratio": 1.1202
+        }
+      }
+    },
+    {
+      "id": 4,
+      "name": "Hg1223 at 30 GPa",
+      "modification": "Hydrostatic pressure 30 GPa",
+      "lambda_ph": 1.2881,
+      "lambda_sf_central": 2.16,
+      "lambda_sf_unc": 0.72,
+      "lambda_total_central": 3.4481,
+      "omega_log_ph_K": 314.6,
+      "omega_sf_K": 523.4,
+      "omega_log_eff_K": 432.8,
+      "Tc_central_K": 135.6,
+      "Tc_mu010_K": 141.7,
+      "Tc_mu013_K": 129.5,
+      "Tc_parametric_min_K": 100.3,
+      "Tc_parametric_max_K": 171.5,
+      "Tc_total_range_low_K": 80.0,
+      "Tc_total_range_high_K": 191.9,
+      "exceeds_200K": false,
+      "improvement_over_baseline_pct": 25.1,
+      "rationale": "Gao et al. (2020), Nunez-Regueiro (1993): measured Tc = 153-166 K at 15-30 GPa. Pressure compresses Cu-O bond, increases t and t'/t ratio, enhances N(E_F). Phonon frequencies harden (increase) under pressure. Net: both lambda_ph and lambda_sf increase modestly, omega scales increase. This is the best-characterized modification with MEASURED Tc for comparison.",
+      "sweep": {
+        "lsf_1.44_mu_0.10": {
+          "lambda_sf": 1.44,
+          "mu_star": 0.1,
+          "Tc_K": 109.9,
+          "lambda_total": 2.7281,
+          "omega_log_eff_K": 411.6,
+          "eliashberg_ratio": 1.1195
+        },
+        "lsf_1.44_mu_0.13": {
+          "lambda_sf": 1.44,
+          "mu_star": 0.13,
+          "Tc_K": 100.3,
+          "lambda_total": 2.7281,
+          "omega_log_eff_K": 411.6,
+          "eliashberg_ratio": 1.1195
+        },
+        "lsf_2.16_mu_0.10": {
+          "lambda_sf": 2.16,
+          "mu_star": 0.1,
+          "Tc_K": 141.7,
+          "lambda_total": 3.4481,
+          "omega_log_eff_K": 432.8,
+          "eliashberg_ratio": 1.1205
+        },
+        "lsf_2.16_mu_0.13": {
+          "lambda_sf": 2.16,
+          "mu_star": 0.13,
+          "Tc_K": 129.5,
+          "lambda_total": 3.4481,
+          "omega_log_eff_K": 432.8,
+          "eliashberg_ratio": 1.1205
+        },
+        "lsf_2.88_mu_0.10": {
+          "lambda_sf": 2.88,
+          "mu_star": 0.1,
+          "Tc_K": 171.5,
+          "lambda_total": 4.1681,
+          "omega_log_eff_K": 447.2,
+          "eliashberg_ratio": 1.1211
+        },
+        "lsf_2.88_mu_0.13": {
+          "lambda_sf": 2.88,
+          "mu_star": 0.13,
+          "Tc_K": 156.9,
+          "lambda_total": 4.1681,
+          "omega_log_eff_K": 447.2,
+          "eliashberg_ratio": 1.1211
+        }
+      }
+    },
+    {
+      "id": 5,
+      "name": "Hg1223 strained + 15 GPa",
+      "modification": "1% tensile strain + 15 GPa hydrostatic pressure",
+      "lambda_ph": 1.4312,
+      "lambda_sf_central": 2.43,
+      "lambda_sf_unc": 0.81,
+      "lambda_total_central": 3.8612,
+      "omega_log_ph_K": 297.1,
+      "omega_sf_K": 513.9,
+      "omega_log_eff_K": 419.4,
+      "Tc_central_K": 145.0,
+      "Tc_mu010_K": 151.5,
+      "Tc_mu013_K": 138.4,
+      "Tc_parametric_min_K": 107.2,
+      "Tc_parametric_max_K": 183.3,
+      "Tc_total_range_low_K": 85.4,
+      "Tc_total_range_high_K": 205.0,
+      "exceeds_200K": false,
+      "improvement_over_baseline_pct": 33.7,
+      "rationale": "Combined lever stacking: strain optimizes c/a for van Hove (N(E_F) up), pressure further increases t'/t and exchange coupling. Effects are NOT simply additive -- strain modifies the pressure response. Conservative estimate: combined enhancement ~70% of sum of individual effects. This is the most aggressive cuprate modification explored.",
+      "sweep": {
+        "lsf_1.62_mu_0.10": {
+          "lambda_sf": 1.62,
+          "mu_star": 0.1,
+          "Tc_K": 117.4,
+          "lambda_total": 3.0512,
+          "omega_log_eff_K": 397.4,
+          "eliashberg_ratio": 1.1201
+        },
+        "lsf_1.62_mu_0.13": {
+          "lambda_sf": 1.62,
+          "mu_star": 0.13,
+          "Tc_K": 107.2,
+          "lambda_total": 3.0512,
+          "omega_log_eff_K": 397.4,
+          "eliashberg_ratio": 1.1201
+        },
+        "lsf_2.43_mu_0.10": {
+          "lambda_sf": 2.43,
+          "mu_star": 0.1,
+          "Tc_K": 151.5,
+          "lambda_total": 3.8612,
+          "omega_log_eff_K": 419.4,
+          "eliashberg_ratio": 1.1209
+        },
+        "lsf_2.43_mu_0.13": {
+          "lambda_sf": 2.43,
+          "mu_star": 0.13,
+          "Tc_K": 138.4,
+          "lambda_total": 3.8612,
+          "omega_log_eff_K": 419.4,
+          "eliashberg_ratio": 1.1209
+        },
+        "lsf_3.24_mu_0.10": {
+          "lambda_sf": 3.24,
+          "mu_star": 0.1,
+          "Tc_K": 183.3,
+          "lambda_total": 4.6712,
+          "omega_log_eff_K": 434.5,
+          "eliashberg_ratio": 1.1214
+        },
+        "lsf_3.24_mu_0.13": {
+          "lambda_sf": 3.24,
+          "mu_star": 0.13,
+          "Tc_K": 167.7,
+          "lambda_total": 4.6712,
+          "omega_log_eff_K": 434.5,
+          "eliashberg_ratio": 1.1214
+        }
+      }
+    },
+    {
+      "id": 6,
+      "name": "Sm3Ni2O7 (max levers)",
+      "modification": "-2% strain + 10 GPa + Sm A-site (vs La)",
+      "lambda_ph": 1.058,
+      "lambda_sf_central": 2.07,
+      "lambda_sf_unc": 0.6,
+      "lambda_total_central": 3.128,
+      "omega_log_ph_K": 310.8,
+      "omega_sf_K": 385.0,
+      "omega_log_eff_K": 358.1,
+      "Tc_central_K": 101.7,
+      "Tc_mu010_K": 106.1,
+      "Tc_mu013_K": 97.2,
+      "Tc_parametric_min_K": 79.2,
+      "Tc_parametric_max_K": 124.4,
+      "Tc_total_range_low_K": 64.0,
+      "Tc_total_range_high_K": 139.6,
+      "exceeds_200K": false,
+      "improvement_over_baseline_pct": -6.2,
+      "rationale": "Phase 39: La3Ni2O7 at -2% strain gives Tc ~ 68 K with lambda_sf ~ 1.73. Sm substitution provides chemical pressure (smaller A-site), increasing t_sigma. Additional 10 GPa physical pressure enhances Ni-O overlap and nesting. Nickelate omega_sf is lower than cuprate (~30 meV vs 41 meV), limiting Tc. From Sun et al. (2023): La3Ni2O7 reaches ~80 K at high pressure.",
+      "sweep": {
+        "lsf_1.47_mu_0.10": {
+          "lambda_sf": 1.47,
+          "mu_star": 0.1,
+          "Tc_K": 86.6,
+          "lambda_total": 2.528,
+          "omega_log_eff_K": 352.0,
+          "eliashberg_ratio": 1.1191
+        },
+        "lsf_1.47_mu_0.13": {
+          "lambda_sf": 1.47,
+          "mu_star": 0.13,
+          "Tc_K": 79.2,
+          "lambda_total": 2.528,
+          "omega_log_eff_K": 352.0,
+          "eliashberg_ratio": 1.1191
+        },
+        "lsf_2.07_mu_0.10": {
+          "lambda_sf": 2.07,
+          "mu_star": 0.1,
+          "Tc_K": 106.1,
+          "lambda_total": 3.128,
+          "omega_log_eff_K": 358.1,
+          "eliashberg_ratio": 1.1202
+        },
+        "lsf_2.07_mu_0.13": {
+          "lambda_sf": 2.07,
+          "mu_star": 0.13,
+          "Tc_K": 97.2,
+          "lambda_total": 3.128,
+          "omega_log_eff_K": 358.1,
+          "eliashberg_ratio": 1.1202
+        },
+        "lsf_2.67_mu_0.10": {
+          "lambda_sf": 2.67,
+          "mu_star": 0.1,
+          "Tc_K": 124.4,
+          "lambda_total": 3.728,
+          "omega_log_eff_K": 362.3,
+          "eliashberg_ratio": 1.1208
+        },
+        "lsf_2.67_mu_0.13": {
+          "lambda_sf": 2.67,
+          "mu_star": 0.13,
+          "Tc_K": 114.0,
+          "lambda_total": 3.728,
+          "omega_log_eff_K": 362.3,
+          "eliashberg_ratio": 1.1208
+        }
+      }
+    }
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "id": 5,
+      "name": "Hg1223 strained + 15 GPa",
+      "Tc_central_K": 145.0,
+      "Tc_range_K": [
+        85.4,
+        205.0
+      ],
+      "lambda_total": 3.8612,
+      "improvement_pct": 33.7
+    },
+    {
+      "rank": 2,
+      "id": 4,
+      "name": "Hg1223 at 30 GPa",
+      "Tc_central_K": 135.6,
+      "Tc_range_K": [
+        80.0,
+        191.9
+      ],
+      "lambda_total": 3.4481,
+      "improvement_pct": 25.1
+    },
+    {
+      "rank": 3,
+      "id": 1,
+      "name": "Hg1223 epitaxial strain",
+      "Tc_central_K": 123.5,
+      "Tc_range_K": [
+        73.0,
+        174.6
+      ],
+      "lambda_total": 3.5316,
+      "improvement_pct": 13.9
+    },
+    {
+      "rank": 4,
+      "id": 2,
+      "name": "(Hg0.8Tl0.2)Ba2Ca2Cu3O8+d",
+      "Tc_central_K": 112.9,
+      "Tc_range_K": [
+        67.3,
+        159.0
+      ],
+      "lambda_total": 3.2323,
+      "improvement_pct": 4.1
+    },
+    {
+      "rank": 5,
+      "id": 0,
+      "name": "Hg1223 (baseline)",
+      "Tc_central_K": 108.3,
+      "Tc_range_K": [
+        64.1,
+        153.1
+      ],
+      "lambda_total": 2.9927,
+      "improvement_pct": -0.0
+    },
+    {
+      "rank": 6,
+      "id": 3,
+      "name": "Hg1223 overdoped (p=0.22)",
+      "Tc_central_K": 101.7,
+      "Tc_range_K": [
+        61.7,
+        142.6
+      ],
+      "lambda_total": 2.7216,
+      "improvement_pct": -6.2
+    },
+    {
+      "rank": 7,
+      "id": 6,
+      "name": "Sm3Ni2O7 (max levers)",
+      "Tc_central_K": 101.7,
+      "Tc_range_K": [
+        64.0,
+        139.6
+      ],
+      "lambda_total": 3.128,
+      "improvement_pct": -6.2
+    }
+  ],
+  "verdict": {
+    "any_candidate_exceeds_200K_central": false,
+    "any_candidate_bracket_overlaps_200K": false,
+    "best_Tc_central_K": 145.0,
+    "best_candidate": "Hg1223 strained + 15 GPa",
+    "room_temperature_gap_K": 149,
+    "VALD02": "The 149 K room-temperature gap remains OPEN. Computed Tc is NOT measured Tc.",
+    "top_candidate_stability": {
+      "E_hull": "< 10 meV/atom (Hg1223 is synthesizable; pressure is a tuning knob)",
+      "synthesis_route": "Diamond anvil cell (DAC) for pressure; substrate epitaxy for strain"
+    }
+  },
+  "overdoping_negative_finding": {
+    "candidate": "Hg1223 overdoped (p=0.22)",
+    "Tc_central_K": 101.7,
+    "change_vs_baseline_pct": -6.2,
+    "explanation": "Overdoping weakens AF nesting (lambda_sf decreases 25%), which dominates over the N(E_F) increase (lambda_ph up 15%). This is consistent with the experimental observation that overdoped cuprates have LOWER Tc. Confirms that spin-fluctuation coupling, not phonon coupling, is the rate-limiting pairing mechanism for cuprates."
+  },
+  "literature_sources": [
+    "Gao et al., PRB 101, 014513 (2020) [UNVERIFIED - training data]",
+    "Nunez-Regueiro et al., Science 262, 97 (1993) [UNVERIFIED - training data]",
+    "Lokshin et al., PRB 63, 064511 (2001) [UNVERIFIED - training data]",
+    "Pavarini et al., PRL 87, 047003 (2001) [UNVERIFIED - training data]",
+    "Sakakibara et al., PRL 132, 106002 (2024) [UNVERIFIED - training data]",
+    "Sun et al., Nature 621, 493 (2023) [UNVERIFIED - training data]"
+  ]
+}
