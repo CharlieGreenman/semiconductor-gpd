@@ -1,0 +1,539 @@
+{
+  "phase": 70,
+  "plan": "01",
+  "ASSERT_CONVENTION": "natural_units=NOT_used, fourier_convention=QE_plane_wave, custom=SI_derived_eV_K_GPa",
+  "VALD03_statement": "Room temperature = 300 K.",
+  "script_version": "1.0.0",
+  "random_seed": 70,
+  "date": "2026-03-30T07:33:06.412918+00:00",
+  "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "numpy_version": "2.3.3",
+  "base_parameters": {
+    "lambda_ph": 1.27,
+    "omega_ph_K": 852.0,
+    "lambda_sf": 2.231,
+    "omega_sf_K": 350.0
+  },
+  "phase69_baseline": {
+    "Tc_aniso_K": 87.0,
+    "Tc_AD_v12_ref_K": 197.0
+  },
+  "omega_sf_sensitivity": [
+    {
+      "omega_sf_K": 200,
+      "Tc_eliash_d_K": 60.2,
+      "Tc_AD_iso_K": 124.3,
+      "Tc_AD_d_K": 87.7,
+      "R_eliash_d_vs_AD_iso": 0.4843,
+      "omega_log_d_K": 358.2,
+      "omega_log_iso_K": 338.3
+    },
+    {
+      "omega_sf_K": 250,
+      "Tc_eliash_d_K": 64.8,
+      "Tc_AD_iso_K": 143.3,
+      "Tc_AD_d_K": 100.3,
+      "R_eliash_d_vs_AD_iso": 0.4525,
+      "omega_log_d_K": 409.3,
+      "omega_log_iso_K": 390.0
+    },
+    {
+      "omega_sf_K": 300,
+      "Tc_eliash_d_K": 70.7,
+      "Tc_AD_iso_K": 161.0,
+      "Tc_AD_d_K": 111.8,
+      "R_eliash_d_vs_AD_iso": 0.439,
+      "omega_log_d_K": 456.5,
+      "omega_log_iso_K": 438.1
+    },
+    {
+      "omega_sf_K": 350,
+      "Tc_eliash_d_K": 75.3,
+      "Tc_AD_iso_K": 177.6,
+      "Tc_AD_d_K": 122.6,
+      "R_eliash_d_vs_AD_iso": 0.4241,
+      "omega_log_d_K": 500.5,
+      "omega_log_iso_K": 483.3
+    },
+    {
+      "omega_sf_K": 400,
+      "Tc_eliash_d_K": 80.0,
+      "Tc_AD_iso_K": 193.3,
+      "Tc_AD_d_K": 132.8,
+      "R_eliash_d_vs_AD_iso": 0.4136,
+      "omega_log_d_K": 542.1,
+      "omega_log_iso_K": 526.2
+    },
+    {
+      "omega_sf_K": 500,
+      "Tc_eliash_d_K": 90.4,
+      "Tc_AD_iso_K": 222.9,
+      "Tc_AD_d_K": 151.7,
+      "R_eliash_d_vs_AD_iso": 0.4057,
+      "omega_log_d_K": 619.5,
+      "omega_log_iso_K": 606.6
+    },
+    {
+      "omega_sf_K": 600,
+      "Tc_eliash_d_K": 99.7,
+      "Tc_AD_iso_K": 250.3,
+      "Tc_AD_d_K": 169.2,
+      "R_eliash_d_vs_AD_iso": 0.3983,
+      "omega_log_d_K": 690.9,
+      "omega_log_iso_K": 681.4
+    },
+    {
+      "omega_sf_K": 700,
+      "Tc_eliash_d_K": 107.8,
+      "Tc_AD_iso_K": 276.2,
+      "Tc_AD_d_K": 185.5,
+      "R_eliash_d_vs_AD_iso": 0.3905,
+      "omega_log_d_K": 757.6,
+      "omega_log_iso_K": 751.7
+    },
+    {
+      "omega_sf_K": 800,
+      "Tc_eliash_d_K": 117.1,
+      "Tc_AD_iso_K": 300.7,
+      "Tc_AD_d_K": 201.0,
+      "R_eliash_d_vs_AD_iso": 0.3896,
+      "omega_log_d_K": 820.5,
+      "omega_log_iso_K": 818.5
+    },
+    {
+      "omega_sf_K": 1000,
+      "Tc_eliash_d_K": 133.4,
+      "Tc_AD_iso_K": 346.7,
+      "Tc_AD_d_K": 229.6,
+      "R_eliash_d_vs_AD_iso": 0.3849,
+      "omega_log_d_K": 937.6,
+      "omega_log_iso_K": 943.6
+    }
+  ],
+  "lambda_sf_sensitivity": [
+    {
+      "lambda_sf": 1.0,
+      "lambda_d": 1.3953,
+      "Tc_eliash_d_K": 83.4,
+      "Tc_AD_iso_K": 151.6,
+      "R": 0.5505
+    },
+    {
+      "lambda_sf": 1.5,
+      "lambda_d": 1.6743,
+      "Tc_eliash_d_K": 80.0,
+      "Tc_AD_iso_K": 162.4,
+      "R": 0.4924
+    },
+    {
+      "lambda_sf": 2.0,
+      "lambda_d": 1.9532,
+      "Tc_eliash_d_K": 76.5,
+      "Tc_AD_iso_K": 172.9,
+      "R": 0.4423
+    },
+    {
+      "lambda_sf": 2.231,
+      "lambda_d": 2.0821,
+      "Tc_eliash_d_K": 75.3,
+      "Tc_AD_iso_K": 177.6,
+      "R": 0.4241
+    },
+    {
+      "lambda_sf": 2.5,
+      "lambda_d": 2.2322,
+      "Tc_eliash_d_K": 74.1,
+      "Tc_AD_iso_K": 182.9,
+      "R": 0.4054
+    },
+    {
+      "lambda_sf": 3.0,
+      "lambda_d": 2.5112,
+      "Tc_eliash_d_K": 73.0,
+      "Tc_AD_iso_K": 192.5,
+      "R": 0.3792
+    },
+    {
+      "lambda_sf": 3.5,
+      "lambda_d": 2.7902,
+      "Tc_eliash_d_K": 70.7,
+      "Tc_AD_iso_K": 201.6,
+      "R": 0.3505
+    },
+    {
+      "lambda_sf": 4.0,
+      "lambda_d": 3.0692,
+      "Tc_eliash_d_K": 70.7,
+      "Tc_AD_iso_K": 210.3,
+      "R": 0.3359
+    }
+  ],
+  "2d_scan": [
+    {
+      "lambda_sf": 1.5,
+      "omega_sf_K": 300,
+      "Tc_eliash_d_K": 75.3,
+      "Tc_AD_K": 149.4,
+      "lambda_d": 1.674,
+      "omega_log_d_K": 505.6
+    },
+    {
+      "lambda_sf": 1.5,
+      "omega_sf_K": 400,
+      "Tc_eliash_d_K": 83.4,
+      "Tc_AD_K": 174.6,
+      "lambda_d": 1.674,
+      "omega_log_d_K": 583.8
+    },
+    {
+      "lambda_sf": 1.5,
+      "omega_sf_K": 500,
+      "Tc_eliash_d_K": 91.6,
+      "Tc_AD_K": 197.0,
+      "lambda_d": 1.674,
+      "omega_log_d_K": 652.7
+    },
+    {
+      "lambda_sf": 1.5,
+      "omega_sf_K": 600,
+      "Tc_eliash_d_K": 99.7,
+      "Tc_AD_K": 217.4,
+      "lambda_d": 1.674,
+      "omega_log_d_K": 715.0
+    },
+    {
+      "lambda_sf": 1.5,
+      "omega_sf_K": 700,
+      "Tc_eliash_d_K": 106.7,
+      "Tc_AD_K": 236.4,
+      "lambda_d": 1.674,
+      "omega_log_d_K": 772.3
+    },
+    {
+      "lambda_sf": 1.5,
+      "omega_sf_K": 800,
+      "Tc_eliash_d_K": 113.7,
+      "Tc_AD_K": 254.1,
+      "lambda_d": 1.674,
+      "omega_log_d_K": 825.6
+    },
+    {
+      "lambda_sf": 1.5,
+      "omega_sf_K": 1000,
+      "Tc_eliash_d_K": 126.4,
+      "Tc_AD_K": 286.7,
+      "lambda_d": 1.674,
+      "omega_log_d_K": 923.0
+    },
+    {
+      "lambda_sf": 2.0,
+      "omega_sf_K": 300,
+      "Tc_eliash_d_K": 71.8,
+      "Tc_AD_K": 157.3,
+      "lambda_d": 1.953,
+      "omega_log_d_K": 469.3
+    },
+    {
+      "lambda_sf": 2.0,
+      "omega_sf_K": 400,
+      "Tc_eliash_d_K": 81.1,
+      "Tc_AD_K": 187.6,
+      "lambda_d": 1.953,
+      "omega_log_d_K": 553.1
+    },
+    {
+      "lambda_sf": 2.0,
+      "omega_sf_K": 500,
+      "Tc_eliash_d_K": 90.4,
+      "Tc_AD_K": 215.0,
+      "lambda_d": 1.953,
+      "omega_log_d_K": 628.3
+    },
+    {
+      "lambda_sf": 2.0,
+      "omega_sf_K": 600,
+      "Tc_eliash_d_K": 99.7,
+      "Tc_AD_K": 240.4,
+      "lambda_d": 1.953,
+      "omega_log_d_K": 697.3
+    },
+    {
+      "lambda_sf": 2.0,
+      "omega_sf_K": 700,
+      "Tc_eliash_d_K": 107.8,
+      "Tc_AD_K": 264.2,
+      "lambda_d": 1.953,
+      "omega_log_d_K": 761.5
+    },
+    {
+      "lambda_sf": 2.0,
+      "omega_sf_K": 800,
+      "Tc_eliash_d_K": 116.0,
+      "Tc_AD_K": 286.6,
+      "lambda_d": 1.953,
+      "omega_log_d_K": 821.9
+    },
+    {
+      "lambda_sf": 2.0,
+      "omega_sf_K": 1000,
+      "Tc_eliash_d_K": 132.3,
+      "Tc_AD_K": 328.5,
+      "lambda_d": 1.953,
+      "omega_log_d_K": 933.6
+    },
+    {
+      "lambda_sf": 2.5,
+      "omega_sf_K": 300,
+      "Tc_eliash_d_K": 68.3,
+      "Tc_AD_K": 165.1,
+      "lambda_d": 2.232,
+      "omega_log_d_K": 443.8
+    },
+    {
+      "lambda_sf": 2.5,
+      "omega_sf_K": 400,
+      "Tc_eliash_d_K": 80.0,
+      "Tc_AD_K": 199.8,
+      "lambda_d": 2.232,
+      "omega_log_d_K": 531.2
+    },
+    {
+      "lambda_sf": 2.5,
+      "omega_sf_K": 500,
+      "Tc_eliash_d_K": 89.3,
+      "Tc_AD_K": 231.7,
+      "lambda_d": 2.232,
+      "omega_log_d_K": 610.6
+    },
+    {
+      "lambda_sf": 2.5,
+      "omega_sf_K": 600,
+      "Tc_eliash_d_K": 99.7,
+      "Tc_AD_K": 261.5,
+      "lambda_d": 2.232,
+      "omega_log_d_K": 684.3
+    },
+    {
+      "lambda_sf": 2.5,
+      "omega_sf_K": 700,
+      "Tc_eliash_d_K": 109.0,
+      "Tc_AD_K": 289.6,
+      "lambda_d": 2.232,
+      "omega_log_d_K": 753.5
+    },
+    {
+      "lambda_sf": 2.5,
+      "omega_sf_K": 800,
+      "Tc_eliash_d_K": 118.3,
+      "Tc_AD_K": 316.4,
+      "lambda_d": 2.232,
+      "omega_log_d_K": 819.1
+    },
+    {
+      "lambda_sf": 2.5,
+      "omega_sf_K": 1000,
+      "Tc_eliash_d_K": 135.7,
+      "Tc_AD_K": 366.9,
+      "lambda_d": 2.232,
+      "omega_log_d_K": 941.7
+    },
+    {
+      "lambda_sf": 3.0,
+      "omega_sf_K": 300,
+      "Tc_eliash_d_K": 67.2,
+      "Tc_AD_K": 172.7,
+      "lambda_d": 2.511,
+      "omega_log_d_K": 424.9
+    },
+    {
+      "lambda_sf": 3.0,
+      "omega_sf_K": 400,
+      "Tc_eliash_d_K": 78.8,
+      "Tc_AD_K": 211.4,
+      "lambda_d": 2.511,
+      "omega_log_d_K": 514.7
+    },
+    {
+      "lambda_sf": 3.0,
+      "omega_sf_K": 500,
+      "Tc_eliash_d_K": 89.3,
+      "Tc_AD_K": 247.3,
+      "lambda_d": 2.511,
+      "omega_log_d_K": 597.2
+    },
+    {
+      "lambda_sf": 3.0,
+      "omega_sf_K": 600,
+      "Tc_eliash_d_K": 99.7,
+      "Tc_AD_K": 281.1,
+      "lambda_d": 2.511,
+      "omega_log_d_K": 674.4
+    },
+    {
+      "lambda_sf": 3.0,
+      "omega_sf_K": 700,
+      "Tc_eliash_d_K": 110.2,
+      "Tc_AD_K": 313.2,
+      "lambda_d": 2.511,
+      "omega_log_d_K": 747.4
+    },
+    {
+      "lambda_sf": 3.0,
+      "omega_sf_K": 800,
+      "Tc_eliash_d_K": 119.5,
+      "Tc_AD_K": 344.0,
+      "lambda_d": 2.511,
+      "omega_log_d_K": 817.0
+    },
+    {
+      "lambda_sf": 3.0,
+      "omega_sf_K": 1000,
+      "Tc_eliash_d_K": 139.2,
+      "Tc_AD_K": 402.4,
+      "lambda_d": 2.511,
+      "omega_log_d_K": 948.0
+    },
+    {
+      "lambda_sf": 3.5,
+      "omega_sf_K": 300,
+      "Tc_eliash_d_K": 64.8,
+      "Tc_AD_K": 180.0,
+      "lambda_d": 2.79,
+      "omega_log_d_K": 410.3
+    },
+    {
+      "lambda_sf": 3.5,
+      "omega_sf_K": 400,
+      "Tc_eliash_d_K": 77.6,
+      "Tc_AD_K": 222.4,
+      "lambda_d": 2.79,
+      "omega_log_d_K": 501.9
+    },
+    {
+      "lambda_sf": 3.5,
+      "omega_sf_K": 500,
+      "Tc_eliash_d_K": 88.1,
+      "Tc_AD_K": 261.9,
+      "lambda_d": 2.79,
+      "omega_log_d_K": 586.7
+    },
+    {
+      "lambda_sf": 3.5,
+      "omega_sf_K": 600,
+      "Tc_eliash_d_K": 99.7,
+      "Tc_AD_K": 299.4,
+      "lambda_d": 2.79,
+      "omega_log_d_K": 666.6
+    },
+    {
+      "lambda_sf": 3.5,
+      "omega_sf_K": 700,
+      "Tc_eliash_d_K": 110.2,
+      "Tc_AD_K": 335.3,
+      "lambda_d": 2.79,
+      "omega_log_d_K": 742.5
+    },
+    {
+      "lambda_sf": 3.5,
+      "omega_sf_K": 800,
+      "Tc_eliash_d_K": 120.6,
+      "Tc_AD_K": 369.8,
+      "lambda_d": 2.79,
+      "omega_log_d_K": 815.3
+    },
+    {
+      "lambda_sf": 3.5,
+      "omega_sf_K": 1000,
+      "Tc_eliash_d_K": 141.5,
+      "Tc_AD_K": 435.5,
+      "lambda_d": 2.79,
+      "omega_log_d_K": 953.1
+    },
+    {
+      "lambda_sf": 4.0,
+      "omega_sf_K": 300,
+      "Tc_eliash_d_K": 63.7,
+      "Tc_AD_K": 187.1,
+      "lambda_d": 3.069,
+      "omega_log_d_K": 398.8
+    },
+    {
+      "lambda_sf": 4.0,
+      "omega_sf_K": 400,
+      "Tc_eliash_d_K": 76.5,
+      "Tc_AD_K": 232.8,
+      "lambda_d": 3.069,
+      "omega_log_d_K": 491.6
+    },
+    {
+      "lambda_sf": 4.0,
+      "omega_sf_K": 500,
+      "Tc_eliash_d_K": 88.1,
+      "Tc_AD_K": 275.7,
+      "lambda_d": 3.069,
+      "omega_log_d_K": 578.2
+    },
+    {
+      "lambda_sf": 4.0,
+      "omega_sf_K": 600,
+      "Tc_eliash_d_K": 99.7,
+      "Tc_AD_K": 316.7,
+      "lambda_d": 3.069,
+      "omega_log_d_K": 660.2
+    },
+    {
+      "lambda_sf": 4.0,
+      "omega_sf_K": 700,
+      "Tc_eliash_d_K": 111.3,
+      "Tc_AD_K": 356.0,
+      "lambda_d": 3.069,
+      "omega_log_d_K": 738.5
+    },
+    {
+      "lambda_sf": 4.0,
+      "omega_sf_K": 800,
+      "Tc_eliash_d_K": 121.8,
+      "Tc_AD_K": 393.9,
+      "lambda_d": 3.069,
+      "omega_log_d_K": 813.9
+    },
+    {
+      "lambda_sf": 4.0,
+      "omega_sf_K": 1000,
+      "Tc_eliash_d_K": 143.9,
+      "Tc_AD_K": 466.7,
+      "lambda_d": 3.069,
+      "omega_log_d_K": 957.2
+    }
+  ],
+  "verdict": {
+    "track_B_status": "CLOSED_NEGATIVE",
+    "reason": "d-wave Eliashberg gives LOWER Tc than Allen-Dynes because lambda_d < lambda_total while Z = 1+lambda_total",
+    "Tc_aniso_base_K": 87.0,
+    "Tc_AD_base_K": 197.0,
+    "R_base": 0.442,
+    "max_Tc_d_in_scan_K": 143.9,
+    "reaches_300K_anywhere": false,
+    "gap_to_300K_best_K": 156.1,
+    "conclusion": "The full anisotropic d-wave Eliashberg with proper Z renormalization gives Tc = 87.0 K (baseline), with maximum 143.9 K in the parameter scan. 300 K is NOT reachable. The v12.0 Allen-Dynes baseline of 197 K was an overestimate because it used lambda_total rather than lambda_d for pairing. The 103 K gap cannot be closed by anisotropic effects."
+  },
+  "physical_insight": {
+    "why_lower": "In d-wave, only ~64% of the total coupling (lambda_d/lambda_total) contributes to pairing. But 100% of the coupling contributes to mass renormalization (Z). This asymmetry fundamentally limits d-wave Tc.",
+    "comparison_with_cuprates": "In cuprates, the 'anisotropic enhancement' typically refers to the effect within the d-wave channel (comparing anisotropic vs averaged d-wave coupling). This is a modest 10-30% effect. What we computed here is the d-wave Eliashberg Tc vs the isotropic Allen-Dynes Tc, which shows a large REDUCTION because of the lambda_d vs lambda_total mismatch.",
+    "allen_dynes_overestimate": "Allen-Dynes with mu*=0 and lambda_total implicitly assumes all coupling pairs in the same channel. For d-wave, this is wrong -- only the d-wave projected fraction contributes."
+  },
+  "figures": [
+    "figures/anisotropic_eliashberg/phase70/phase70_omega_sf_sensitivity.png",
+    "figures/anisotropic_eliashberg/phase70/phase70_lambda_sf_sensitivity.png",
+    "figures/anisotropic_eliashberg/phase70/phase70_2d_scan.png"
+  ],
+  "confidence": {
+    "level": "MEDIUM",
+    "rationale": "Sensitivity analysis covers wide parameter range. The fundamental finding (lambda_d < lambda_total suppresses d-wave Tc) is a robust structural result, not a numerical artifact. Absolute Tc values depend on the Eliashberg solver accuracy and parametrized coupling model.",
+    "unchecked": [
+      "Full ab initio alpha2F",
+      "Vertex corrections",
+      "Non-Migdal effects"
+    ]
+  }
+}
