@@ -1,0 +1,78 @@
+{
+  "structure": "HgBa2Ca2Cu3O8+delta",
+  "space_group": "P4/mmm",
+  "pressure_GPa": 0,
+  "functional": "PBEsol",
+  "pseudopotentials": "ONCV (scalar-relativistic)",
+  "a_angstrom": 3.845,
+  "c_angstrom": 15.78,
+  "lambda": 1.1927,
+  "omega_log_K": 291.3,
+  "omega_log_meV": 25.1,
+  "omega_2_meV": 45.98,
+  "omega_2_K": 533.6,
+  "N_EF_per_spin": 2.0,
+  "N_EF_total": 4.0,
+  "tc_eliashberg": {
+    "mu_0.08": 34.2,
+    "mu_0.10": 31.4,
+    "mu_0.13": 27.4,
+    "mu_0.15": 24.9
+  },
+  "tc_eliashberg_range_low": {
+    "mu_0.08": 33.1,
+    "mu_0.10": 30.4,
+    "mu_0.13": 26.6,
+    "mu_0.15": 24.2
+  },
+  "tc_eliashberg_range_high": {
+    "mu_0.08": 35.2,
+    "mu_0.10": 32.4,
+    "mu_0.13": 28.3,
+    "mu_0.15": 25.7
+  },
+  "tc_allen_dynes_standard": {
+    "mu_0.08": 27.87,
+    "mu_0.10": 25.88,
+    "mu_0.13": 22.94,
+    "mu_0.15": 21.0
+  },
+  "tc_allen_dynes_modified": {
+    "mu_0.08": 31.16,
+    "mu_0.10": 28.62,
+    "mu_0.13": 25.02,
+    "mu_0.15": 22.74
+  },
+  "f1_values": {
+    "mu_0.08": 1.07049,
+    "mu_0.10": 1.06509,
+    "mu_0.13": 1.05817,
+    "mu_0.15": 1.05421
+  },
+  "f2_values": {
+    "mu_0.08": 1.04454,
+    "mu_0.10": 1.03823,
+    "mu_0.13": 1.03098,
+    "mu_0.15": 1.02722
+  },
+  "eliashberg_ad_ratio": 1.097,
+  "eliashberg_ad_ratio_uncertainty": 0.034,
+  "method_primary": "Eliashberg Tc from semi-analytical correction to modified Allen-Dynes",
+  "method_crosscheck": "Allen-Dynes (1975) with f1*f2 strong-coupling corrections",
+  "method_note": "Direct Matsubara solver attempted but had kernel symmetrization bug. Semi-analytical correction from Allen & Mitrovic (1982) / Marsiglio & Carbotte (2008) used instead.",
+  "Tc_experimental_K": 151,
+  "Tc_experimental_source": "Ambient-pressure 151 K superconductivity in HgBa2Ca2Cu3O8+delta via pressure quench (arXiv, 2026)",
+  "error_vs_expt_pct": {
+    "eliashberg_mu_0.10": -79.2,
+    "eliashberg_mu_0.13": -81.8,
+    "allen_dynes_mod_mu_0.10": -81.0,
+    "allen_dynes_mod_mu_0.13": -83.4
+  },
+  "literature_cuprate_phonon_only_Tc_K": {
+    "YBCO": "30-40",
+    "La214": "25-45",
+    "Hg1201": "35-55"
+  },
+  "data_source": "literature_model",
+  "data_source_note": "lambda, omega_log, alpha2F from literature model (Plan 27-02). Allen-Dynes computed with explicit arithmetic. Eliashberg estimated via semi-analytical correction. All values PHONON-ONLY (no spin fluctuations). Replace with actual EPW/Eliashberg when HPC available."
+}
