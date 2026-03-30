@@ -1,8 +1,8 @@
 {
   "project_reference": {
     "project_md_updated": "2026-03-30",
-    "core_research_question": "Can beyond-Eliashberg methods (DMFT+Eliashberg, spin-fluctuation RPA) predict a material or condition that closes the 149 K gap -- and if they reproduce the 151 K Hg1223 benchmark, can they guide the design of a room-temperature superconductor?",
-    "current_focus": "Phase 34 -- DMFT Setup and Correlated Electronic Structure"
+    "core_research_question": "Can cluster DMFT + anisotropic Eliashberg push the predicted Tc for optimized cuprate or nickelate structures above 200 K -- and identify a specific material worth synthesizing for room-temperature superconductivity?",
+    "current_focus": "Phase 42 -- DCA Implementation and Cluster Self-Energy"
   },
   "project_contract": {
     "schema_version": 1,
@@ -524,39 +524,46 @@
     }
   },
   "position": {
-    "current_phase": "34",
-    "current_phase_name": "DMFT Setup and Correlated Electronic Structure",
+    "current_phase": "42",
+    "current_phase_name": "DCA Implementation and Cluster Self-Energy",
     "total_phases": null,
     "current_plan": "--",
     "total_plans_in_phase": null,
     "status": "Milestone complete",
     "last_activity": "2026-03-30",
-    "last_activity_desc": "v9.0 milestone completed and archived",
+    "last_activity_desc": "v10.0 milestone completed and archived",
     "progress_percent": 0,
     "paused_at": null
   },
   "active_calculations": [],
   "intermediate_results": [
-    "v1.0 pipeline benchmarks: H3S Tc = 182 K (10.5% error vs expt), LaH10 Tc = 276 K (10.6% error vs expt) -- pipeline accuracy established",
-    "v1.0 CsInH3 result: Tc = 214 K at 3 GPa (SSCHA-corrected), E_hull = 6 meV/atom -- hydride Tc ceiling for this family",
-    "v8.0 phonon-only Tc ceiling: 26-36 K for all oxide candidates (Hg1223, Hg1234, Hg1245, strained La3Ni2O7, hybrid superlattices)",
+    "v1.0 pipeline benchmarks: H3S Tc = 182 K (10.5% error vs expt), LaH10 Tc = 276 K (10.6% error vs expt)",
+    "v1.0 CsInH3 result: Tc = 214 K at 3 GPa (SSCHA-corrected), E_hull = 6 meV/atom",
+    "v8.0 phonon-only Tc ceiling: 26-36 K for all oxide candidates",
     "v8.0 mechanism analysis: phonon fraction 20-45% of cuprate Tc; spin fluctuations contribute 55-80%",
-    "v8.0 Hg multilayer finding: n=3 (Hg1223) is optimally layered; adding layers decreases Tc via AF inner-plane competition",
-    "v8.0 nickelate phonon lambda_ph: best 26 K phonon-only, 80 K gate not reached",
+    "v8.0 Hg multilayer finding: n=3 (Hg1223) is optimally layered",
+    "v9.0 DMFT: Z=0.33, m*/m=3.0, Mott proximity confirmed for Hg1223",
+    "v9.0 Spin susceptibility: lambda_sf=1.8, d-wave channel dominant",
+    "v9.0 Spectral gate: PASS 3/4 (pseudogap, Hubbard bands, d-wave)",
+    "v9.0 Full Eliashberg Tc: 108 K for Hg1223 (-28% vs 151 K experimental)",
+    "v9.0 Nickelate RPA: nesting at (pi,pi), strain enhances spin fluctuations",
+    "v9.0 Nickelate combined Tc: 54 K central",
+    "v9.0 Guided design: best candidate 145 K (strained+pressured Hg1223), no 200 K candidate",
+    "v9.0 Near-miss analysis: cluster DMFT could add 20-50% to lambda_sf, anisotropic Eliashberg adds 10-30% Tc uplift; combined range 170-217 K",
     "Carried retained benchmark: Hg1223 at 151 K after pressure quench (ref-hg1223-quench)",
-    "Nickelate frontier: ambient film onset 63 K (ref-lapr327-ambient), ambient bulk 40 K (ref-smnio2-40k), pressurized single-crystal 96 K (ref-nickelate-96k)",
     "Room-temperature gap: 149 K (unchanged since v4.0)"
   ],
   "open_questions": [
-    "Can single-site DMFT capture enough AF correlation physics for cuprates, or will cluster DMFT be needed? (scoping decision: single-site first, cluster is EXT scope)",
-    "What is the correct U/J for the Hg1223 3-band model? Constrained RPA vs literature values may differ",
-    "Is the spin-fluctuation pairing channel for La3Ni2O7 s+/- or d-wave? RPA will determine this",
-    "Will anisotropic Eliashberg (EXT-01) significantly change Tc predictions vs isotropic approximation?"
+    "Will 4-site DCA capture enough nonlocal AF correlation to push lambda_sf from 1.8 to 2.5-3.5?",
+    "Is the CTQMC sign problem manageable at physical temperatures (T~100 K) for the 4-site cluster?",
+    "Does anisotropic Eliashberg with d-wave gap give the expected 10-30% Tc uplift over isotropic?",
+    "Can the combined method push any candidate above 200 K, or is additional physics (vertex corrections, dynamic U) required?",
+    "What is the correct analytic continuation strategy for cluster DMFT Matsubara data?"
   ],
   "performance_metrics": {
     "rows": [
       {
-        "label": "v9.0 roadmap creation",
+        "label": "v10.0 roadmap creation",
         "duration": "--",
         "tasks": "--",
         "files": "`.gpd/ROADMAP.md`, `.gpd/STATE.md`"
@@ -571,53 +578,41 @@
     },
     {
       "phase": null,
-      "summary": "[v9.0 start]: Three-track structure: Track A (DMFT+Eliashberg for Hg1223 with spectral gate), Track B (RPA for nickelates, parallel), Track C (guided design, contingent on Track A)",
+      "summary": "[v9.0 start]: Three-track structure: Track A (DMFT+Eliashberg for Hg1223), Track B (RPA for nickelates), Track C (guided design)",
       "rationale": null
     },
     {
       "phase": null,
-      "summary": "[v6.0 Phase 23]: Primary route = Hg1223 PQP (4.15/5.00), secondary = bilayer La3Ni2O7 (2.90/5.00)",
+      "summary": "[v9.0 Phase 41]: 149 K gap OPEN; near-miss analysis points to cluster DMFT + anisotropic Eliashberg as next step (170-217 K range accessible)",
       "rationale": null
     },
     {
       "phase": null,
-      "summary": "[v7.0 Phase 26]: Both route protocols experiment-ready; 149 K gap unchanged; next milestone must produce computed or measured Tc",
+      "summary": "[v10.0 start]: Three-track structure: Track A (cluster DMFT/DCA for Hg1223), Track B (anisotropic Eliashberg, parallel), Track C (combined re-screening + decision, after A and B)",
       "rationale": null
-    },
-    {
-      "phase": "0",
-      "summary": "Started milestone v10.0: Cluster DMFT + Anisotropic Eliashberg",
-      "rationale": "v9.0 near-miss analysis shows cluster DMFT (nonlocal correlations) + anisotropic Eliashberg (d-wave gap) could push predictions from 145 K to 170-217 K range \u2014 the window where 200 K+ candidates might emerge"
     }
   ],
   "approximations": [
     {
-      "name": "Single-site DMFT",
-      "validity_range": "Captures local correlations; misses nonlocal AF",
-      "controlling_param": "Correlation length xi_AF",
-      "current_value": "TBD",
-      "status": "Starting approximation"
+      "name": "4-site DCA cluster DMFT",
+      "validity_range": "Captures leading nonlocal AF at commensurate Q",
+      "controlling_param": "Cluster size Nc",
+      "current_value": "Nc=4",
+      "status": "New for v10.0"
     },
     {
-      "name": "Isotropic Eliashberg",
-      "validity_range": "lambda < 3, no strong anisotropy",
-      "controlling_param": "Fermi surface anisotropy",
+      "name": "Anisotropic Eliashberg",
+      "validity_range": "Resolves k-dependent gap",
+      "controlling_param": "Fermi surface mesh density",
       "current_value": "TBD",
-      "status": "To be checked"
+      "status": "New for v10.0"
     },
     {
-      "name": "RPA spin susceptibility",
-      "validity_range": "Weak-to-moderate coupling",
-      "controlling_param": "U*chi_0(Q) < 1",
-      "current_value": "TBD",
-      "status": "Must verify Stoner criterion"
-    },
-    {
-      "name": "PBEsol exchange-correlation",
-      "validity_range": "Weakly correlated metals",
+      "name": "PBEsol + DMFT",
+      "validity_range": "Correlated metals",
       "controlling_param": "U/W",
-      "current_value": "TBD for cuprates",
-      "status": "Marginal; DMFT corrects"
+      "current_value": "U=3.5 eV",
+      "status": "Carried from v9.0"
     },
     {
       "name": "mu* = 0.10-0.13 bracket",
@@ -678,20 +673,41 @@
       "uncertainty": "range estimate",
       "phase": "Phase 31 (v8.0)",
       "method": "Mechanism analysis"
+    },
+    {
+      "quantity": "Hg1223 DMFT+Eliashberg Tc",
+      "value": "108 K",
+      "uncertainty": "+/- 15 K (est.)",
+      "phase": "Phase 37 (v9.0)",
+      "method": "Single-site isotropic"
+    },
+    {
+      "quantity": "Hg1223 lambda_sf",
+      "value": "1.8",
+      "uncertainty": "+/- 0.3 (est.)",
+      "phase": "Phase 35 (v9.0)",
+      "method": "Single-site DMFT"
+    },
+    {
+      "quantity": "Best guided-design Tc",
+      "value": "145 K",
+      "uncertainty": "+/- 20 K (est.)",
+      "phase": "Phase 40 (v9.0)",
+      "method": "Strained+pressured Hg1223"
     }
   ],
   "pending_todos": [],
   "blockers": [
-    "Single-site DMFT may underestimate AF correlation effects; this is a known limitation accepted for v9.0 scope (cluster DMFT is EXT scope)",
-    "CTQMC solver requires significant computational resources; analytic continuation from Matsubara to real-frequency axis introduces additional uncertainty",
-    "The 149 K gap requires fundamentally new uplift; even if DMFT+Eliashberg reproduces 151 K, finding a structure that exceeds 200 K is not guaranteed",
-    "RPA may hit Stoner instability for nickelates at realistic U values"
+    "CTQMC sign problem may limit accessible temperature range for 4-site cluster; physical T~100 K may require impractical Monte Carlo sampling",
+    "Analytic continuation (MaxEnt or Pade) from Matsubara to real-frequency axis introduces systematic uncertainty in spectral functions and susceptibilities",
+    "The 149 K gap requires fundamentally new uplift; even the optimistic 170-217 K range from near-miss analysis may not materialize",
+    "If cluster DMFT enhancement is modest (<20% lambda_sf increase), the combined method may not reach the 200 K threshold"
   ],
   "session": {
     "last_date": "2026-03-29",
-    "stopped_at": "v9.0 roadmap created; Phase 34 ready to plan",
+    "stopped_at": "v10.0 roadmap created; Phase 42 ready to plan",
     "resume_file": "`.gpd/ROADMAP.md`"
   },
   "_version": 1,
-  "_synced_at": "2026-03-30T03:22:53.755950+00:00"
+  "_synced_at": "2026-03-30T04:33:22.515113+00:00"
 }
