@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "description": "Eliashberg Tc results for La3Ni2O7 at 3 strain points",
+    "method": "Allen-Dynes modified + semi-analytical Eliashberg correction",
+    "mu_star_bracket": [
+      0.1,
+      0.13
+    ],
+    "mu_star_NOT_tuned": true,
+    "source": "Phonon data from literature model (requires HPC validation)",
+    "ASSERT_CONVENTION": "strain_sign=negative_compressive, tc_definition=zero_resistance_primary, mu_star=standard_bracket"
+  },
+  "strain_results": [
+    {
+      "strain_pct": 0.0,
+      "label": "0% (Bulk)",
+      "lambda": 0.58,
+      "omega_log_K": 325,
+      "omega_2_K": 487,
+      "N_EF_per_spin": 2.1,
+      "stability": "stable",
+      "tc_values": {
+        "mu_0.10": {
+          "mu_star": 0.1,
+          "Tc_AD_standard_K": 6.69,
+          "Tc_AD_modified_K": 7.24,
+          "Tc_Eliashberg_est_K": 7.54,
+          "f1": 1.02301,
+          "f2": 1.0581,
+          "method": "Allen-Dynes modified + semi-analytical Eliashberg correction"
+        },
+        "mu_0.13": {
+          "mu_star": 0.13,
+          "Tc_AD_standard_K": 4.6,
+          "Tc_AD_modified_K": 4.92,
+          "Tc_Eliashberg_est_K": 5.12,
+          "f1": 1.02048,
+          "f2": 1.04681,
+          "method": "Allen-Dynes modified + semi-analytical Eliashberg correction"
+        }
+      }
+    },
+    {
+      "strain_pct": -1.2,
+      "label": "-1.20% (LAO)",
+      "lambda": 0.72,
+      "omega_log_K": 313,
+      "omega_2_K": 476,
+      "N_EF_per_spin": 2.2,
+      "stability": "stable",
+      "tc_values": {
+        "mu_0.10": {
+          "mu_star": 0.1,
+          "Tc_AD_standard_K": 11.64,
+          "Tc_AD_modified_K": 12.74,
+          "Tc_Eliashberg_est_K": 13.51,
+          "f1": 1.03155,
+          "f2": 1.06085,
+          "method": "Allen-Dynes modified + semi-analytical Eliashberg correction"
+        },
+        "mu_0.13": {
+          "mu_star": 0.13,
+          "Tc_AD_standard_K": 9.04,
+          "Tc_AD_modified_K": 9.75,
+          "Tc_Eliashberg_est_K": 10.34,
+          "f1": 1.02811,
+          "f2": 1.0491,
+          "method": "Allen-Dynes modified + semi-analytical Eliashberg correction"
+        }
+      }
+    },
+    {
+      "strain_pct": -2.01,
+      "label": "-2.01% (SLAO)",
+      "lambda": 0.92,
+      "omega_log_K": 296,
+      "omega_2_K": 458,
+      "N_EF_per_spin": 2.35,
+      "stability": "stable",
+      "tc_values": {
+        "mu_0.10": {
+          "mu_star": 0.1,
+          "Tc_AD_standard_K": 18.01,
+          "Tc_AD_modified_K": 20.08,
+          "Tc_Eliashberg_est_K": 21.86,
+          "f1": 1.04497,
+          "f2": 1.06676,
+          "method": "Allen-Dynes modified + semi-analytical Eliashberg correction"
+        },
+        "mu_0.13": {
+          "mu_star": 0.13,
+          "Tc_AD_standard_K": 15.16,
+          "Tc_AD_modified_K": 16.62,
+          "Tc_Eliashberg_est_K": 18.1,
+          "f1": 1.04012,
+          "f2": 1.05402,
+          "method": "Allen-Dynes modified + semi-analytical Eliashberg correction"
+        }
+      }
+    }
+  ],
+  "analysis": {
+    "Tc_best_phonon_only_K": {
+      "mu_0.10": 21.86,
+      "mu_0.13": 18.1
+    },
+    "Tc_trend_matches_experiment": true,
+    "Tc_trend_direction": "increasing with compressive strain (correct)",
+    "gate_80K_reached": false,
+    "gate_80K_assessment": "NO -- phonon-only Tc does not reach 80 K at any strain. Maximum phonon-only Tc = 21.9 K (mu*=0.10) at -2.01% strain.",
+    "phonon_fraction_at_m2pct": {
+      "Tc_phonon_K": 21.86,
+      "Tc_expt_onset_K": 40,
+      "Tc_expt_zero_K": 2,
+      "ratio_vs_onset": 0.55,
+      "note": "Phonon-only Tc may EXCEED zero-resistance Tc (2 K). The 38 K onset-zero gap suggests filamentary SC. Phonon fraction assessment is ambiguous when onset >> zero-resist."
+    },
+    "lambda_needed_for_80K": {
+      "value": 2.57,
+      "at_omega_log_K": 296,
+      "at_mu_star": 0.1,
+      "note": "lambda = 2.57 needed; current best is 0.92 -- requires ~2.8x enhancement"
+    }
+  }
+}
