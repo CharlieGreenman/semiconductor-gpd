@@ -1,0 +1,221 @@
+{
+  "phase": 63,
+  "plan": "01",
+  "purpose": "Top 10 surrogate hits for DFT validation in Phase 64",
+  "VALD03_statement": "Room temperature = 300 K = 80 F = 27 C",
+  "forbidden_proxy_note": "Surrogate hits are NOT Tc predictions -- require DFT + Eliashberg validation",
+  "candidates": [
+    {
+      "name": "[CuO2]1/[LiH]3",
+      "family": "h_superlattice",
+      "A_site": "Li",
+      "B_site": "Cu",
+      "H_frac": 0.3333,
+      "d_electron_count": 9,
+      "n_layers": 1,
+      "lambda_est": 1.167,
+      "omega_log_est_K": 550.0,
+      "Tc_predicted_K": 81.9,
+      "Tc_std_K": 14.4,
+      "Tc_lower_K": 53.1,
+      "Tc_upper_K": 110.8
+    },
+    {
+      "name": "[CuO2]1/[LiH]2",
+      "family": "h_superlattice",
+      "A_site": "Li",
+      "B_site": "Cu",
+      "H_frac": 0.2857,
+      "d_electron_count": 9,
+      "n_layers": 1,
+      "lambda_est": 1.143,
+      "omega_log_est_K": 514.3,
+      "Tc_predicted_K": 81.7,
+      "Tc_std_K": 15.0,
+      "Tc_lower_K": 51.7,
+      "Tc_upper_K": 111.7
+    },
+    {
+      "name": "[CuO2]2/[LiH]3",
+      "family": "h_superlattice",
+      "A_site": "Li",
+      "B_site": "Cu",
+      "H_frac": 0.25,
+      "d_electron_count": 9,
+      "n_layers": 2,
+      "lambda_est": 1.125,
+      "omega_log_est_K": 487.5,
+      "Tc_predicted_K": 79.6,
+      "Tc_std_K": 15.8,
+      "Tc_lower_K": 48.1,
+      "Tc_upper_K": 111.2
+    },
+    {
+      "name": "[CuO2]3/[LiH]3",
+      "family": "h_superlattice",
+      "A_site": "Li",
+      "B_site": "Cu",
+      "H_frac": 0.2,
+      "d_electron_count": 9,
+      "n_layers": 3,
+      "lambda_est": 1.1,
+      "omega_log_est_K": 450.0,
+      "Tc_predicted_K": 75.2,
+      "Tc_std_K": 10.1,
+      "Tc_lower_K": 55.0,
+      "Tc_upper_K": 95.4
+    },
+    {
+      "name": "[CuO2]3/[LiH]2",
+      "family": "h_superlattice",
+      "A_site": "Li",
+      "B_site": "Cu",
+      "H_frac": 0.1538,
+      "d_electron_count": 9,
+      "n_layers": 3,
+      "lambda_est": 1.077,
+      "omega_log_est_K": 415.4,
+      "Tc_predicted_K": 72.2,
+      "Tc_std_K": 7.7,
+      "Tc_lower_K": 56.9,
+      "Tc_upper_K": 87.6
+    },
+    {
+      "name": "[CuO2]2/[LiH]2",
+      "family": "h_superlattice",
+      "A_site": "Li",
+      "B_site": "Cu",
+      "H_frac": 0.2,
+      "d_electron_count": 9,
+      "n_layers": 2,
+      "lambda_est": 1.1,
+      "omega_log_est_K": 450.0,
+      "Tc_predicted_K": 71.8,
+      "Tc_std_K": 8.9,
+      "Tc_lower_K": 54.0,
+      "Tc_upper_K": 89.7
+    },
+    {
+      "name": "[CuO2]2/[LiH]1",
+      "family": "h_superlattice",
+      "A_site": "Li",
+      "B_site": "Cu",
+      "H_frac": 0.125,
+      "d_electron_count": 9,
+      "n_layers": 2,
+      "lambda_est": 1.062,
+      "omega_log_est_K": 393.8,
+      "Tc_predicted_K": 70.1,
+      "Tc_std_K": 9.2,
+      "Tc_lower_K": 51.7,
+      "Tc_upper_K": 88.4
+    },
+    {
+      "name": "[CuO2]1/[LiH]1",
+      "family": "h_superlattice",
+      "A_site": "Li",
+      "B_site": "Cu",
+      "H_frac": 0.2,
+      "d_electron_count": 9,
+      "n_layers": 1,
+      "lambda_est": 1.1,
+      "omega_log_est_K": 450.0,
+      "Tc_predicted_K": 69.1,
+      "Tc_std_K": 9.4,
+      "Tc_lower_K": 50.4,
+      "Tc_upper_K": 87.8
+    },
+    {
+      "name": "[CuO2]3/[LiH]1",
+      "family": "h_superlattice",
+      "A_site": "Li",
+      "B_site": "Cu",
+      "H_frac": 0.0909,
+      "d_electron_count": 9,
+      "n_layers": 3,
+      "lambda_est": 1.045,
+      "omega_log_est_K": 368.2,
+      "Tc_predicted_K": 67.4,
+      "Tc_std_K": 11.5,
+      "Tc_lower_K": 44.4,
+      "Tc_upper_K": 90.4
+    },
+    {
+      "name": "LaCuO1.25H1.75",
+      "family": "h_perovskite",
+      "A_site": "La",
+      "B_site": "Cu",
+      "H_frac": 0.2593,
+      "d_electron_count": 9,
+      "n_layers": 1,
+      "lambda_est": 1.13,
+      "omega_log_est_K": 494.5,
+      "Tc_predicted_K": 49.8,
+      "Tc_std_K": 8.4,
+      "Tc_lower_K": 33.0,
+      "Tc_upper_K": 66.5
+    }
+  ],
+  "phase58_target_check": [
+    {
+      "name": "[CuO2]1/[LiH]3",
+      "lambda_est": 1.167,
+      "omega_log_est_K": 550.0,
+      "in_Phase58_target_zone": false
+    },
+    {
+      "name": "[CuO2]1/[LiH]2",
+      "lambda_est": 1.143,
+      "omega_log_est_K": 514.3,
+      "in_Phase58_target_zone": false
+    },
+    {
+      "name": "[CuO2]2/[LiH]3",
+      "lambda_est": 1.125,
+      "omega_log_est_K": 487.5,
+      "in_Phase58_target_zone": false
+    },
+    {
+      "name": "[CuO2]3/[LiH]3",
+      "lambda_est": 1.1,
+      "omega_log_est_K": 450.0,
+      "in_Phase58_target_zone": false
+    },
+    {
+      "name": "[CuO2]3/[LiH]2",
+      "lambda_est": 1.077,
+      "omega_log_est_K": 415.4,
+      "in_Phase58_target_zone": false
+    },
+    {
+      "name": "[CuO2]2/[LiH]2",
+      "lambda_est": 1.1,
+      "omega_log_est_K": 450.0,
+      "in_Phase58_target_zone": false
+    },
+    {
+      "name": "[CuO2]2/[LiH]1",
+      "lambda_est": 1.062,
+      "omega_log_est_K": 393.8,
+      "in_Phase58_target_zone": false
+    },
+    {
+      "name": "[CuO2]1/[LiH]1",
+      "lambda_est": 1.1,
+      "omega_log_est_K": 450.0,
+      "in_Phase58_target_zone": false
+    },
+    {
+      "name": "[CuO2]3/[LiH]1",
+      "lambda_est": 1.045,
+      "omega_log_est_K": 368.2,
+      "in_Phase58_target_zone": false
+    },
+    {
+      "name": "LaCuO1.25H1.75",
+      "lambda_est": 1.13,
+      "omega_log_est_K": 494.5,
+      "in_Phase58_target_zone": false
+    }
+  ]
+}

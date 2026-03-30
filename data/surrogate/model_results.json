@@ -1,0 +1,47 @@
+{
+  "phase": 63,
+  "plan": "01",
+  "task": 2,
+  "ASSERT_CONVENTION": "natural_units=NOT_used, fourier_convention=QE_plane_wave, custom=SI_derived_eV_K_GPa",
+  "random_seed": 42,
+  "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "n_training": 44,
+  "n_test": 12,
+  "best_params": {
+    "learning_rate": 0.1,
+    "max_depth": 3,
+    "min_samples_leaf": 2,
+    "n_estimators": 500
+  },
+  "train_r2": 1.0,
+  "test_r2": 0.9308,
+  "train_mae_K": 0.0,
+  "test_mae_K": 17.8,
+  "feature_importances": {
+    "omega_log_K": 0.3750347904982443,
+    "lambda": 0.37189974071612153,
+    "d_electron_count": 0.06515947698968393,
+    "pressure_GPa": 0.05469286374217964,
+    "n_layers": 0.035511637899361986,
+    "H_frac": 0.03521723220513895,
+    "struct_type_enc": 0.03124716020895843,
+    "family_enc": 0.031237097740311286
+  },
+  "feature_columns": [
+    "H_frac",
+    "d_electron_count",
+    "n_layers",
+    "pressure_GPa",
+    "lambda",
+    "omega_log_K",
+    "struct_type_enc",
+    "family_enc"
+  ],
+  "backtracking_triggered": false,
+  "success_criteria": {
+    "train_r2_threshold": 0.7,
+    "test_r2_threshold": 0.5,
+    "train_r2_pass": true,
+    "test_r2_pass": true
+  }
+}
