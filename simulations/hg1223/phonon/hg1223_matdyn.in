@@ -1,0 +1,68 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! HgBa2Ca2Cu3O8+delta (Hg1223) -- matdyn.x input
+!
+! Interpolates phonon frequencies from IFCs along high-symmetry path.
+! Uses the same BZ path as electronic band structure (Plan 27-01).
+!
+! Path: Gamma - X - M - Gamma - Z - R - A - Z
+!   P4/mmm BZ for tetragonal with c > a:
+!   Gamma = (0,0,0)
+!   X     = (0.5,0,0)
+!   M     = (0.5,0.5,0)
+!   Z     = (0,0,0.5)
+!   R     = (0.5,0,0.5)
+!   A     = (0.5,0.5,0.5)
+
+&INPUT
+  asr    = 'crystal'
+  flfrc  = 'hg1223.fc'
+  flfrq  = 'hg1223.freq'
+  flvec  = 'hg1223.modes'
+  fleig  = 'hg1223.eig'
+  fldos  = 'hg1223.phdos'
+  dos    = .true.
+  nk1    = 20
+  nk2    = 20
+  nk3    = 10
+  ndos   = 500
+  deltaE = 2.0
+  q_in_band_form = .true.
+/
+8
+  0.0000  0.0000  0.0000  51   ! Gamma
+  0.5000  0.0000  0.0000  51   ! X
+  0.5000  0.5000  0.0000  51   ! M
+  0.0000  0.0000  0.0000  51   ! Gamma
+  0.0000  0.0000  0.5000  51   ! Z
+  0.5000  0.0000  0.5000  51   ! R
+  0.5000  0.5000  0.5000  51   ! A
+  0.0000  0.0000  0.5000   1   ! Z
+
+! OUTPUT FILES:
+!   hg1223.freq   -- phonon frequencies along the path (cm^-1)
+!                    Format: q-path-distance  omega_1  omega_2  ...  omega_48
+!   hg1223.modes  -- eigenvectors (mode displacement patterns)
+!   hg1223.eig    -- eigenvalues in a different format
+!   hg1223.phdos  -- phonon density of states
+!
+! NOTES:
+!   - dos = .true. also computes the phonon DOS on a separate mesh (nk1 x nk2 x nk3).
+!     20x20x10 is adequate for DOS (need denser mesh than dispersion because
+!     DOS averages over BZ).
+!   - deltaE = 2.0 cm^-1 sets the Gaussian broadening for DOS. Small enough
+!     to resolve individual peaks but large enough to smooth noise.
+!   - ndos = 500 points in the DOS energy axis.
+!   - q_in_band_form = .true. uses the segment format with npoints per segment.
+!   - 51 points per segment x 7 segments = 357 points total along the path.
+!
+! PHONON DOS NORMALIZATION:
+!   Integral of g(omega) d(omega) = 3 * N_atoms = 3 * 16 = 48
+!   This is a key sanity check: if the integral deviates by more than 1%,
+!   the q-mesh for DOS is too coarse.
+!
+! EXPECTED FREQUENCY RANGE:
+!   0 to ~650-700 cm^-1 (0 to ~80-87 meV)
+!   Compare: H3S goes to ~2000 cm^-1, LaH10 to ~2500 cm^-1
+!   The factor of ~3-4x lower max frequency fundamentally limits omega_log
+!   and therefore the phonon-mediated Tc contribution.

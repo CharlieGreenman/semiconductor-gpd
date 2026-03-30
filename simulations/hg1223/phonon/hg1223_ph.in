@@ -1,0 +1,73 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! HgBa2Ca2Cu3O8+delta (Hg1223) -- DFPT phonon calculation
+!
+! Prerequisite: converged SCF from hg1223_scf.in (Plan 27-01)
+!   outdir and prefix must match the SCF calculation.
+!
+! This computes dynamical matrices on a coarse q-grid via DFPT.
+! The q-grid 4x4x2 is chosen because:
+!   - Hg1223 has 16 atoms/cell -> 48 phonon branches -> expensive per q-point
+!   - c/a ~ 4.1 so c-axis sampling needs ~half the in-plane density
+!   - 4x4x2 gives 10 irreducible q-points (P4/mmm symmetry)
+!   - Convergence check: compare with 6x6x3 (see convergence plan below)
+!
+! Expected wall time: ~24-72 hours on 64-128 cores (per q-point: ~2-6 hrs)
+!
+! CONVERGENCE TEST PLAN:
+!   Grid A (production):  4x4x2  -> 10 irr. q-points
+!   Grid B (validation):  6x6x3  -> ~30 irr. q-points
+!   Criterion: max|omega_A - omega_B| < 5 cm^-1 for all modes at high-symmetry points
+
+phonons of Hg1223
+&INPUTPH
+  outdir       = './tmp/'
+  prefix       = 'hg1223'
+  fildyn       = 'hg1223.dyn'
+  fildvscf     = 'dvscf'
+  ldisp        = .true.
+  nq1          = 4
+  nq2          = 4
+  nq3          = 2
+  tr2_ph       = 1.0d-14
+  alpha_mix(1) = 0.7
+  epsil        = .true.
+  search_sym   = .true.
+  recover      = .true.
+/
+
+! NOTES:
+! - epsil = .true. computes Born effective charges and dielectric tensor
+!   for LO-TO splitting correction at Gamma. Essential for polar optical
+!   modes in cuprate oxides (O vibrations are strongly polar).
+!
+! - tr2_ph = 1e-14 is tight; standard is 1e-12. Using 1e-14 for better
+!   convergence of acoustic modes near Gamma (ASR enforcement is more
+!   accurate with tighter self-consistency).
+!
+! - recover = .true. enables restart if a q-point calculation is interrupted.
+!
+! - search_sym = .true. uses symmetry to reduce computational cost.
+!   P4/mmm has 16 operations -> reduces 4x4x2 = 32 q-points to ~10 irr.
+!
+! EXPECTED OUTPUT:
+!   hg1223.dyn0        -- q-point list
+!   hg1223.dyn1..dynN  -- dynamical matrices at each irr. q-point
+!   _ph0/hg1223.dvscf1 -- DFPT self-consistent potential change (for EPW)
+!
+! EXPECTED PHYSICS:
+!   48 phonon branches (16 atoms x 3):
+!     3 acoustic (2 TA + 1 LA, approaching 0 at Gamma)
+!     45 optical:
+!       - Hg modes:            ~30-80 cm^-1  (heavy atom, weakly bonded)
+!       - Ba/Ca modes:         ~80-200 cm^-1 (intermediate mass)
+!       - Cu-O bending:        ~200-400 cm^-1
+!       - Cu-O half-breathing: ~350-500 cm^-1
+!       - Cu-O full-breathing: ~400-600 cm^-1
+!       - Apical O stretching: ~400-550 cm^-1
+!       - Highest O modes:     ~500-700 cm^-1
+!   No modes above ~700 cm^-1 (compare: H3S has H modes at ~1000-2000 cm^-1)
+!
+! DYNAMIC STABILITY CRITERION:
+!   All omega_{q,nu} > -5 cm^-1 (allowing numerical noise near Gamma)
+!   If any mode < -50 cm^-1: structure is genuinely unstable, STOP pipeline

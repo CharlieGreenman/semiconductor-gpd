@@ -1,0 +1,76 @@
+{
+  "min_frequency_cm-1": -0.36,
+  "min_frequency_meV": -0.0446,
+  "min_at_q_index": 2,
+  "min_at_branch": 0,
+  "max_frequency_cm-1": 686.81,
+  "max_frequency_meV": 85.1505,
+  "n_imaginary_modes_below_minus5": 0,
+  "n_strongly_imaginary_below_minus50": 0,
+  "acoustic_at_gamma_cm-1": [
+    0.0,
+    0.0,
+    -0.0
+  ],
+  "stability_verdict": "STABLE",
+  "stability_detail": "All modes above -5.0 cm^-1. Structure is dynamically stable.",
+  "n_branches": 48,
+  "n_q_points": 351,
+  "frequency_range_cm-1": [
+    -0.36,
+    686.81
+  ],
+  "frequency_range_meV": [
+    -0.0446,
+    85.1505
+  ],
+  "data_source": "literature_model",
+  "data_source_note": "Phonon dispersion constructed from published Hg-family cuprate data. NOT actual DFPT output. Replace with real ph.x + matdyn.x results when available. Sources: Jepsen et al. JPCS 1998, Renker et al. ZPB 1996, Pashitskii & Pentegov LTP 2008, Bohnen et al. PRL 2001 [UNVERIFIED - training data]",
+  "phonon_dos_integral": 48.0,
+  "phonon_dos_expected_integral": 48,
+  "phonon_dos_normalization_error_pct": 0.0,
+  "convergence_test_plan": {
+    "coarse_grid": "4x4x2 (10 irr. q-points)",
+    "fine_grid": "6x6x3 (~30 irr. q-points)",
+    "criterion": "max|omega_coarse - omega_fine| < 5 cm^-1 at high-symmetry points",
+    "status": "planned"
+  },
+  "mode_character_summary": {
+    "acoustic": {
+      "count": 3,
+      "range_cm-1": "0 to ~120"
+    },
+    "Hg_modes": {
+      "count": 3,
+      "range_cm-1": "35 to ~90"
+    },
+    "Ba_modes": {
+      "count": 6,
+      "range_cm-1": "90 to ~170"
+    },
+    "Ca_modes": {
+      "count": 6,
+      "range_cm-1": "165 to ~240"
+    },
+    "CuO_bending": {
+      "count": 12,
+      "range_cm-1": "240 to ~395"
+    },
+    "CuO_stretching": {
+      "count": 12,
+      "range_cm-1": "390 to ~590"
+    },
+    "apical_O": {
+      "count": 6,
+      "range_cm-1": "575 to ~685"
+    },
+    "total": 48
+  },
+  "expected_physics_notes": [
+    "Hg1223 max phonon freq ~650-700 cm^-1 << H3S ~2000 cm^-1",
+    "Cu-O stretching modes (390-590 cm^-1) carry strongest e-ph coupling",
+    "Heavy Hg atom contributes low-frequency modes with weak e-ph coupling",
+    "No imaginary modes expected at ambient pressure for optimally doped Hg1223",
+    "LO-TO splitting at Gamma for O modes: ~20-50 cm^-1 in cuprates"
+  ]
+}

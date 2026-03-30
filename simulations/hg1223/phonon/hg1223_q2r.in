@@ -1,0 +1,31 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! HgBa2Ca2Cu3O8+delta (Hg1223) -- q2r.x input
+!
+! Converts dynamical matrices from reciprocal space (DFPT q-grid)
+! to real-space interatomic force constants (IFCs).
+!
+! Prerequisite: completed ph.x run (all q-points in hg1223.dyn0..dynN)
+!
+! The acoustic sum rule (asr='crystal') is enforced to ensure:
+!   - Three acoustic branches go to exactly zero at Gamma
+!   - Translational invariance is satisfied
+!   - Small numerical violations from DFPT are corrected
+
+&INPUT
+  fildyn = 'hg1223.dyn'
+  zasr   = 'crystal'
+  flfrc  = 'hg1223.fc'
+/
+
+! OUTPUT:
+!   hg1223.fc  -- real-space interatomic force constants
+!                 This file is input for matdyn.x (phonon interpolation)
+!                 and for EPW (electron-phonon coupling)
+!
+! NOTES:
+!   zasr = 'crystal' is appropriate for 3D periodic crystals.
+!   For 2D or molecular systems, use 'simple' or 'one-dim'.
+!   'crystal' enforces the full crystal ASR including the invariance
+!   under rigid rotations (important for layered structures like Hg1223
+!   where the c-axis acoustic mode can have numerical noise).
