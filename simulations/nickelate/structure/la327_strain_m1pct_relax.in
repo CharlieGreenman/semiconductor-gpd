@@ -1,0 +1,97 @@
+! ASSERT_CONVENTION: strain_sign=negative_compressive, tc_definition=zero_resistance_primary,
+!   units=SI_derived, functional=PBEsol, pseudopotentials=ONCV_SG15
+
+! ============================================================================
+! La3Ni2O7 -- constrained relaxation at -1.20% compressive strain (LAO substrate)
+! Phase 29-02, Task 1
+!
+! Epitaxial strain: a = a_LAO = 3.787 A (fixed)
+! epsilon = (3.787 - 3.833) / 3.833 = -1.200%
+! c-axis and internal coordinates relaxed; a, b fixed to substrate
+! ============================================================================
+
+&CONTROL
+   calculation  = 'vc-relax'
+   prefix       = 'la327_m1pct'
+   outdir       = './tmp/'
+   pseudo_dir   = './pseudo/'
+   tstress      = .true.
+   tprnfor      = .true.
+   forc_conv_thr = 1.0d-4
+   etot_conv_thr = 1.0d-6
+   nstep        = 200
+   verbosity    = 'high'
+/
+
+&SYSTEM
+   ibrav        = 0
+   nat          = 24
+   ntyp         = 3
+   ecutwfc      = 80.0
+   ecutrho      = 640.0
+   occupations  = 'smearing'
+   smearing     = 'mv'
+   degauss      = 0.02
+   nspin        = 1
+/
+
+&ELECTRONS
+   conv_thr     = 1.0d-8
+   mixing_beta  = 0.3
+   mixing_mode  = 'plain'
+   diagonalization = 'david'
+   electron_maxstep = 200
+/
+
+&IONS
+   ion_dynamics = 'bfgs'
+/
+
+&CELL
+   cell_dynamics = 'bfgs'
+   cell_dofree  = 'z'
+   ! ONLY c-axis relaxes; a and b are FIXED to substrate value
+   press        = 0.0
+   press_conv_thr = 0.5
+/
+
+ATOMIC_SPECIES
+   La  138.90547  La_ONCV_PBEsol-1.2.upf
+   Ni   58.6934   Ni_ONCV_PBEsol-1.2.upf
+   O    15.9994   O_ONCV_PBEsol-1.2.upf
+
+! a = a_LAO = 3.787 A (EXACT substrate lattice constant, NOT rounded -1%)
+CELL_PARAMETERS {angstrom}
+   3.787000000   0.000000000   0.000000000
+   0.000000000   3.787000000   0.000000000
+   0.000000000   0.000000000  20.500000000
+
+ATOMIC_POSITIONS {crystal}
+! Same fractional coordinates as unstrained (starting point for relaxation)
+   La   0.000000   0.000000   0.500000
+   La   0.500000   0.500000   0.000000
+   La   0.000000   0.000000   0.318000
+   La   0.000000   0.000000   0.682000
+   La   0.500000   0.500000   0.818000
+   La   0.500000   0.500000   0.182000
+   Ni   0.000000   0.000000   0.098000
+   Ni   0.000000   0.000000   0.902000
+   Ni   0.500000   0.500000   0.598000
+   Ni   0.500000   0.500000   0.402000
+   O    0.000000   0.000000   0.000000
+   O    0.500000   0.500000   0.500000
+   O    0.000000   0.000000   0.198000
+   O    0.000000   0.000000   0.802000
+   O    0.500000   0.500000   0.698000
+   O    0.500000   0.500000   0.302000
+   O    0.000000   0.500000   0.098000
+   O    0.500000   0.000000   0.098000
+   O    0.000000   0.500000   0.902000
+   O    0.500000   0.000000   0.902000
+   O    0.500000   0.000000   0.598000
+   O    0.000000   0.500000   0.598000
+   O    0.500000   0.000000   0.402000
+   O    0.000000   0.500000   0.402000
+
+K_POINTS {automatic}
+   8 8 2   1 1 1
