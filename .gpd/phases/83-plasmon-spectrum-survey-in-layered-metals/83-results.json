@@ -1,0 +1,79 @@
+{
+  "phase": 83,
+  "total_candidates_surveyed": 10,
+  "low_energy_count": 2,
+  "selected_for_phase_84": [
+    {
+      "name": "Cuprate c-axis plasmon (Bi2212/Hg1223)",
+      "omega_pl_meV": "10-50 (Josephson plasmon)",
+      "Tc_expt_K": "90-135"
+    },
+    {
+      "name": "n-SrTiO3 (dilute)",
+      "omega_pl_meV": "50-200",
+      "Tc_expt_K": 0.3
+    }
+  ],
+  "all_candidates": [
+    {
+      "name": "Cuprate (Bi2212) c-axis",
+      "omega_pl_3D_meV": 1517.0,
+      "omega_pl_2D_meV": 1901.0,
+      "Tc_expt_K": 90.0
+    },
+    {
+      "name": "Cuprate (Hg1223) c-axis",
+      "omega_pl_3D_meV": 1918.0,
+      "omega_pl_2D_meV": 2404.0,
+      "Tc_expt_K": 135.0
+    },
+    {
+      "name": "NbSe2 (layered TMD)",
+      "omega_pl_3D_meV": 6782.0,
+      "omega_pl_2D_meV": 8501.0,
+      "Tc_expt_K": 7.2
+    },
+    {
+      "name": "TaS2 (2H polytype)",
+      "omega_pl_3D_meV": 4550.0,
+      "omega_pl_2D_meV": 5702.0,
+      "Tc_expt_K": 0.8
+    },
+    {
+      "name": "n-SrTiO3 (dilute, n~1e19)",
+      "omega_pl_3D_meV": 68.0,
+      "omega_pl_2D_meV": null,
+      "Tc_expt_K": 0.3
+    },
+    {
+      "name": "n-SrTiO3 (moderate, n~1e20)",
+      "omega_pl_3D_meV": 214.0,
+      "omega_pl_2D_meV": null,
+      "Tc_expt_K": 0.3
+    },
+    {
+      "name": "LAO/STO interface 2DEG",
+      "omega_pl_3D_meV": 214480.0,
+      "omega_pl_2D_meV": null,
+      "Tc_expt_K": 0.3
+    },
+    {
+      "name": "Graphene (doped, n~1e13 cm^-2)",
+      "omega_pl_3D_meV": 3915850.0,
+      "omega_pl_2D_meV": 4907791.0,
+      "Tc_expt_K": 0.0
+    },
+    {
+      "name": "WTe2 (type-II Weyl semimetal)",
+      "omega_pl_3D_meV": 1661.0,
+      "omega_pl_2D_meV": 2082.0,
+      "Tc_expt_K": 0.0
+    },
+    {
+      "name": "MgB2 (sigma-band)",
+      "omega_pl_3D_meV": 15166.0,
+      "omega_pl_2D_meV": 19008.0,
+      "Tc_expt_K": 39.0
+    }
+  ]
+}
