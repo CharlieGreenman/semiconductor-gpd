@@ -1,0 +1,167 @@
+{
+  "phase": "37-full-eliashberg-tc",
+  "plan": "01",
+  "script_version": "1.0.0",
+  "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "numpy_version": "2.3.3",
+  "random_seed": 42,
+  "input_parameters": {
+    "lambda_ph": 1.1927,
+    "omega_log_ph_K": 291.3,
+    "omega_log_ph_meV": 25.1,
+    "lambda_sf_central": 1.8,
+    "lambda_sf_uncertainty": 0.6,
+    "omega_sf_meV": 41.0,
+    "omega_sf_K": 475.8,
+    "mu_star_bracket": [
+      0.1,
+      0.13
+    ],
+    "Tc_experimental_K": 151.0,
+    "DM04_window_K": [
+      105.7,
+      196.3
+    ]
+  },
+  "task1_omega_log_eff": {
+    "omega_log_eff_central_K": 391.3,
+    "omega_log_eff_central_meV": 33.72,
+    "lambda_total_central": 2.9927,
+    "phonon_fraction": 0.3985,
+    "sf_fraction": 0.6015
+  },
+  "task2_allen_dynes": {
+    "mu_0.10": {
+      "Tc_AD_modified": 101.10626523406754,
+      "Tc_AD_bare": 70.33379378583255,
+      "f1": 1.2226487756234743,
+      "f2": 1.1757427440086408
+    },
+    "mu_0.13": {
+      "Tc_AD_modified": 92.37082087597375,
+      "Tc_AD_bare": 66.89533201956935,
+      "f1": 1.2015708696503935,
+      "f2": 1.1491840736836632
+    }
+  },
+  "task3_eliashberg": {
+    "mu_0.10": {
+      "Tc_Allen_Dynes_modified_K": 101.1,
+      "Tc_Eliashberg_K": 113.2,
+      "eliashberg_ratio": 1.12,
+      "f1": 1.2226,
+      "f2": 1.1757
+    },
+    "mu_0.13": {
+      "Tc_Allen_Dynes_modified_K": 92.4,
+      "Tc_Eliashberg_K": 103.5,
+      "eliashberg_ratio": 1.12,
+      "f1": 1.2016,
+      "f2": 1.1492
+    }
+  },
+  "task4_bracket": {
+    "sweep_results": {
+      "lambda_sf_1.2": {
+        "lambda_sf": 1.2,
+        "lambda_total": 2.3927,
+        "omega_log_eff_K": 372.6,
+        "mu_0.10": {
+          "Tc_AD_modified_K": 78.8,
+          "Tc_Eliashberg_K": 88.2,
+          "eliashberg_ratio": 1.1187
+        },
+        "mu_0.13": {
+          "Tc_AD_modified_K": 71.9,
+          "Tc_Eliashberg_K": 80.4,
+          "eliashberg_ratio": 1.1187
+        }
+      },
+      "lambda_sf_1.8": {
+        "lambda_sf": 1.8,
+        "lambda_total": 2.9927,
+        "omega_log_eff_K": 391.3,
+        "mu_0.10": {
+          "Tc_AD_modified_K": 101.1,
+          "Tc_Eliashberg_K": 113.2,
+          "eliashberg_ratio": 1.12
+        },
+        "mu_0.13": {
+          "Tc_AD_modified_K": 92.4,
+          "Tc_Eliashberg_K": 103.5,
+          "eliashberg_ratio": 1.12
+        }
+      },
+      "lambda_sf_2.4": {
+        "lambda_sf": 2.4,
+        "lambda_total": 3.5927,
+        "omega_log_eff_K": 404.3,
+        "mu_0.10": {
+          "Tc_AD_modified_K": 122.1,
+          "Tc_Eliashberg_K": 136.8,
+          "eliashberg_ratio": 1.1207
+        },
+        "mu_0.13": {
+          "Tc_AD_modified_K": 111.6,
+          "Tc_Eliashberg_K": 125.1,
+          "eliashberg_ratio": 1.1207
+        }
+      }
+    },
+    "Tc_min_K": 80.4,
+    "Tc_max_K": 136.8,
+    "Tc_central_mu010_K": 113.2,
+    "Tc_central_mu013_K": 103.5,
+    "vF_systematic_pct": 10.0,
+    "vF_systematic_K": 10.8,
+    "full_bracket_low_K": 69.6,
+    "full_bracket_high_K": 147.6
+  },
+  "task5_verdict": {
+    "Tc_prediction_central_K": 108.4,
+    "Tc_prediction_bracket_K": [
+      69.6,
+      147.6
+    ],
+    "Tc_experimental_K": 151.0,
+    "relative_error_central_pct": -28.2,
+    "DM04_central_passes": true,
+    "DM04_bracket_overlaps": true,
+    "DM04_sweep_points_passing": "3/6",
+    "track_C_unlocked": true,
+    "room_temperature_gap_K": 149,
+    "VALD02_statement": "The 149 K room-temperature gap remains open. Computed Tc is NOT measured Tc.",
+    "phonon_fraction_of_lambda": 0.399,
+    "sf_fraction_of_lambda": 0.601,
+    "phonon_only_Tc_K": 31,
+    "sf_enhancement_factor": 3.5
+  },
+  "figures_generated": true,
+  "figure_paths": [
+    "figures/eliashberg_combined/tc_prediction_bracket.png",
+    "figures/eliashberg_combined/tc_comparison.png",
+    "figures/eliashberg_combined/channel_breakdown.png"
+  ],
+  "convention_assertions": {
+    "units": "K for temperatures, eV and meV for energies, dimensionless for lambda and mu*",
+    "natural_units": false,
+    "fourier": "QE plane-wave convention",
+    "k_B": "8.617333262e-5 eV/K (explicit)"
+  },
+  "confidence": {
+    "Tc_prediction": "MEDIUM",
+    "rationale": "Tc within 30% window but lambda_sf has large uncertainty (+/-0.6); single-site DMFT with Hubbard-I solver; Eliashberg correction is semi-analytical not fully self-consistent; v_F deviation adds 10% systematic",
+    "failure_modes_not_checked": [
+      "Anisotropic Eliashberg (d-wave gap structure on FS)",
+      "Vertex corrections beyond Migdal approximation",
+      "Cluster DMFT effects on chi(q,omega)",
+      "Frequency dependence of mu*(omega)"
+    ]
+  },
+  "literature_sources": [
+    "Allen & Dynes, PRB 12, 905 (1975) [UNVERIFIED - training data]",
+    "Allen & Mitrovic, Solid State Physics 37, 1 (1982) [UNVERIFIED - training data]",
+    "Marsiglio & Carbotte, in 'Superconductivity' ed. Bennemann & Ketterson (2008) [UNVERIFIED - training data]",
+    "Scalapino, RMP 84, 1383 (2012) [UNVERIFIED - training data]"
+  ]
+}
