@@ -6,25 +6,25 @@ See: .gpd/PROJECT.md (updated 2026-03-30)
 
 **Machine-readable scoping contract:** `.gpd/state.json` field `project_contract`
 
-**Core research question:** Can a hydrogen-correlated oxide -- combining hydride-like phonon frequencies with cuprate-like spin-fluctuation pairing and d-wave Coulomb evasion -- computationally reach Tc = 300 K at ambient or near-ambient pressure?
-**Current focus:** Phase 58 -- Inverse Eliashberg Target Map for 300 K
+**Core research question:** Can we raise omega_log_eff from 483 K to 740 K+ by finding materials with stiffer spin fluctuations (omega_sf > 60 meV), solving the full anisotropic Eliashberg equation, or engineering phonon-dominant pairing -- thereby closing the final 103 K gap to room-temperature superconductivity?
+**Current focus:** Phase 67 -- High-J Materials Survey and omega_sf Computation (Track A entry) / Phase 69 -- Full Anisotropic Eliashberg (Track B entry) / Phase 71 -- Phonon-Dominant Design (Track C entry)
 
 ## Current Position
 
-**Current Phase:** 58
-**Current Phase Name:** Inverse Eliashberg Target Map for 300 K
-**Total Phases:** 9 (Phases 58-66)
+**Current Phase:** 67, 69, 71 (parallel entry points)
+**Current Phase Names:** High-J Survey (A) | Anisotropic Eliashberg (B) | Phonon-Dominant Design (C)
+**Total Phases:** 7 (Phases 67-73)
 **Current Plan:** --
 **Total Plans in Phase:** TBD
 **Status:** Ready to plan
 **Last Activity:** 2026-03-30
-**Last Activity Description:** v12.0 roadmap created; Phase 58 ready to plan
+**Last Activity Description:** v13.0 roadmap created; three parallel tracks ready to plan
 
-**Progress:** [░░░░░░░░░░] 0%
+**Progress:** [----------] 0%
 
 ## Active Calculations
 
-None yet. Phase 58 awaits planning.
+None yet. Phases 67, 69, 71 await planning (parallel entry).
 
 ## Intermediate Results
 
@@ -47,22 +47,26 @@ Carried from prior milestones:
 - **v11.0 Tc ceiling: ~200 K with known spin-fluctuation + phonon physics**
 - **v11.0 bottleneck identified: omega_log ~400 K for cuprates caps the ceiling**
 - **v11.0 key insight: hydrogen modes (omega_log ~1000-2000 K) + d-wave mu*=0 + lambda_sf ~2-3 could shift ceiling to ~400 K**
+- **v12.0 Allen-Dynes omega_log_eff = 483 K with best candidate: lambda_ph=1.27, omega_ph=852 K, lambda_sf=2.23, omega_sf=350 K**
+- **v12.0 Tc = 197 K at mu*=0 (Allen-Dynes) -- 103 K short of 300 K**
+- **v12.0 target: omega_log_eff = 740 K needed at lambda_total=3.5 for Tc = 300 K**
+- **v12.0 three routes identified: (A) stiffer SF, (B) anisotropic Eliashberg, (C) phonon-dominant**
 - Carried retained benchmark: Hg1223 at 151 K after pressure quench (ref-hg1223-quench)
-- Room-temperature gap: 149 K (unchanged since v4.0)
+- Room-temperature gap: 149 K (unchanged since v4.0); computational gap: 103 K (from v12.0 best)
 
 ## Open Questions
 
-- Can hydrogen be stably incorporated into cuprate or nickelate structures without destroying the correlated electronic structure?
-- Does hydrogen insertion preserve d-wave pairing symmetry, or does orbital hybridization shift to s-wave?
-- What is the realistic omega_log achievable from H modes in a layered oxide (as opposed to a pure hydride)?
-- Is the Migdal theorem valid when omega_log approaches 800-2000 K (comparable to E_F in some correlated systems)?
-- Can an ML surrogate trained on v1.0-v11.0 data generalize to hydrogen-oxide compositions outside the training distribution?
+- Can any material family combine J > 150 meV with metallic character and lambda_sf > 1.5?
+- Does the full anisotropic Eliashberg equation give materially higher Tc than the Allen-Dynes log-average?
+- Can phonon-dominant pairing (lambda_ph >> lambda_sf) reach 300 K despite the mu*=0.10 Coulomb penalty?
+- Is stiff spin fluctuation (high J) fundamentally incompatible with strong electron-SF coupling (high lambda_sf)?
+- Is the Migdal theorem valid when omega_log approaches 800+ K?
 
 ## Performance Metrics
 
 | Label | Duration | Tasks | Files |
 | ----- | -------- | ----- | ----- |
-| v12.0 roadmap creation | -- | -- | `.gpd/ROADMAP.md`, `.gpd/STATE.md` |
+| v13.0 roadmap creation | -- | -- | `.gpd/ROADMAP.md`, `.gpd/STATE.md` |
 
 ## Accumulated Context
 
@@ -70,7 +74,8 @@ Carried from prior milestones:
 
 - [v11.0 Phase 57]: Known spin-fluctuation + phonon physics caps Tc at ~200 K; omega_log ~400 K is the cuprate bottleneck
 - [v12.0 start]: Hydrogen-correlated oxide inverse design -- combine hydride omega_log with cuprate spin fluctuations and d-wave Coulomb evasion
-- [v12.0 roadmap]: Four-track structure: A (inverse target), B (candidate design), C (combined Tc), D (AI screening); Track A first, B+D parallel after A, C after B
+- [v12.0 closeout]: Allen-Dynes omega_log_eff = 483 K yields Tc = 197 K; 103 K gap to 300 K remains; three routes to close it identified
+- [v13.0 start]: Three parallel tracks to close 103 K gap: (A) high-J materials with omega_sf > 500 K, (B) full anisotropic Eliashberg to beat Allen-Dynes, (C) phonon-dominant design with weak SF + high omega_eff
 
 ### Active Approximations
 
@@ -82,6 +87,7 @@ Carried from prior milestones:
 | Isotropic mu* = 0.10-0.13 | Conventional SC | Screened Coulomb | 0.10-0.13 | Standard for hydrides |
 | Migdal theorem | omega_ph << E_F | omega_log / E_F | TBD for H-oxides | Must verify for H modes |
 | Nc-extrapolation | Nc=4,8 -> inf | 1/Nc fit quality | lambda_sf_inf=2.70 | Carried from v11.0 |
+| Allen-Dynes formula | lambda < 3-4, isotropic | Strong coupling corrections | lambda_total=3.5 | v12.0 baseline; Track B tests beyond |
 
 **Convention Lock:**
 
@@ -96,7 +102,9 @@ Carried from prior milestones:
 | Hg1223 CTQMC Tc | 146 K | [106, 216] K | Phase 56 (v11.0) | CTQMC + d-wave Eliashberg |
 | lambda_sf_inf (Hg1223) | 2.70 | +/- 0.3 (est.) | Phase 53 (v11.0) | Nc=4,8 extrapolation |
 | omega_log (Hg1223) | ~400 K | +/- 50 K | Phase 27 (v8.0) | DFT phonons |
-| Tc ceiling (current physics) | ~200 K | +/- 30 K (est.) | Phase 57 (v11.0) | Strong-coupling saturation analysis |
+| Tc ceiling (current physics) | ~200 K | +/- 30 K (est.) | Phase 57 (v11.0) | Strong-coupling saturation |
+| omega_log_eff (best H-oxide) | 483 K | +/- 50 K (est.) | Phase 66 (v12.0) | Allen-Dynes combined formula |
+| Allen-Dynes Tc (best H-oxide) | 197 K | +/- 30 K (est.) | Phase 66 (v12.0) | mu*=0, lambda=3.5 |
 
 ### Pending Todos
 
@@ -104,12 +112,14 @@ None yet.
 
 ### Blockers/Concerns
 
-- Migdal theorem validity: if omega_log approaches 800+ K in hydrogen-oxide systems, the ratio omega_log/E_F may not be small enough for standard Eliashberg; non-Migdal corrections may be needed
-- Stability of hydrogen in oxide structures: hydrogen is mobile and may diffuse out of designed positions at synthesis or operating temperatures
-- Training data distribution: v1.0-v11.0 data may not cover the hydrogen-oxide composition space well enough for reliable surrogate predictions
+- Migdal theorem validity: if omega_log approaches 800+ K in hydrogen-oxide systems, the ratio omega_log/E_F may not be small enough for standard Eliashberg
+- High-J materials may have weak electron-SF coupling (stiff but decoupled)
+- Phonon-dominant materials face mu*=0.10 penalty without d-wave Coulomb evasion
+- Anisotropic Eliashberg enhancement may be small (< 10%), leaving the log-average as adequate
+- All three tracks may fail: the 103 K gap may not be closable within Eliashberg theory
 
 ## Session Continuity
 
 **Last session:** 2026-03-30
-**Stopped at:** v12.0 roadmap created; Phase 58 ready to plan
+**Stopped at:** v13.0 roadmap created; Phases 67, 69, 71 ready to plan (parallel entry)
 **Resume file:** `.gpd/ROADMAP.md`
