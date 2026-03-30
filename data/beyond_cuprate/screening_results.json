@@ -1,0 +1,322 @@
+{
+  "metadata": {
+    "phase": "51-beyond-cuprate-spin-fluctuation-screening",
+    "plan": "01",
+    "description": "Multi-family spin-fluctuation screening for 300 K candidates",
+    "method": "Literature-calibrated lambda_sf + Lindhard nesting characterization",
+    "calibration_anchor": "Hg1223 lambda_sf=1.8 (v9.0), cluster=2.88 (v10.0)",
+    "q_mesh": "64x64",
+    "k_mesh": "128x128",
+    "T_K": 100.0,
+    "ASSERT_CONVENTION": "natural_units=NOT_used, fourier_convention=QE_plane_wave",
+    "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "numpy_version": "2.3.3"
+  },
+  "screening_results": [
+    {
+      "name": "hg1223",
+      "label": "Hg1223 (cuprate baseline)",
+      "family": "cuprate",
+      "operating_conditions": "Ambient (after PQ) or 15 GPa",
+      "chi0_characterization": {
+        "chi0_max": 0.6312776096553427,
+        "peak_q_pi": [
+          -1.0,
+          -0.18749999999999992
+        ],
+        "chi0_q0": -0.0,
+        "chi0_pipi": 0.14422655304212745,
+        "nesting_ratio": NaN
+      },
+      "nesting_quality": "indeterminate (chi0(0)~0)",
+      "expected_peak_q": "(pi, pi)",
+      "pairing_symmetry": "d-wave",
+      "Z_factor": 0.33,
+      "lambda_sf_literature": {
+        "single_site_DMFT": {
+          "value": 1.8,
+          "source": "v9.0 Phase 35",
+          "method": "DMFT+RPA"
+        },
+        "cluster_DCA_Nc4": {
+          "value": 2.88,
+          "source": "v10.0 Phase 43",
+          "method": "DCA Nc=4 Hubbard-I"
+        }
+      },
+      "lambda_sf_adopted": 1.8,
+      "lambda_sf_uncertainty": 0.5,
+      "cluster_enhancement_factor": 1.6,
+      "lambda_sf_cluster_estimate": 2.8800000000000003,
+      "lambda_sf_cluster_uncertainty": 0.8,
+      "lambda_ph_est": 1.19,
+      "lambda_total_est": 4.07,
+      "omega_sf_meV": 200.0,
+      "omega_eff_meV": 159.06633906633908,
+      "Tc_rough_K": 362.3749253207968,
+      "known_Tc_K": 151,
+      "reaches_300K": "Plausible",
+      "exceeds_3p5": false
+    },
+    {
+      "name": "ndnio2_strained",
+      "label": "NdNiO2 (3.5% compressive strain)",
+      "family": "infinite-layer nickelate",
+      "operating_conditions": "Epitaxial strain 3.5% on SrTiO3 or similar, ambient P",
+      "chi0_characterization": {
+        "chi0_max": 0.6833177552352279,
+        "peak_q_pi": [
+          -1.0,
+          -0.875
+        ],
+        "chi0_q0": -0.0,
+        "chi0_pipi": 0.5887532216317382,
+        "nesting_ratio": NaN
+      },
+      "nesting_quality": "indeterminate (chi0(0)~0)",
+      "expected_peak_q": "(pi, pi)",
+      "pairing_symmetry": "d-wave",
+      "Z_factor": 0.5,
+      "lambda_sf_literature": {
+        "DMFT_Lechermann_2020": {
+          "value": 0.8,
+          "source": "Lechermann PRB 101, 081110(R) (2020) [UNVERIFIED]",
+          "method": "single-site DMFT+cRPA",
+          "note": "unstrained, Nd d-electron pocket complicates"
+        },
+        "Kitatani_PRL_2020": {
+          "value": 1.2,
+          "source": "Kitatani et al. PRL 124, 147204 (2020) [UNVERIFIED]",
+          "method": "DGA (diagrammatic extensions of DMFT)",
+          "note": "lambda_sf ~ 0.8-1.5 range"
+        }
+      },
+      "lambda_sf_adopted": 1.4,
+      "lambda_sf_uncertainty": 0.5,
+      "cluster_enhancement_factor": 1.3,
+      "lambda_sf_cluster_estimate": 1.8199999999999998,
+      "lambda_sf_cluster_uncertainty": 0.65,
+      "lambda_ph_est": 0.5,
+      "lambda_total_est": 2.32,
+      "omega_sf_meV": 150.0,
+      "omega_eff_meV": 130.60344827586204,
+      "Tc_rough_K": 230.01946135161475,
+      "known_Tc_K": 15,
+      "reaches_300K": "Unlikely",
+      "exceeds_3p5": false
+    },
+    {
+      "name": "he_nickelate",
+      "label": "High-entropy (La,Nd,Sm,Gd,Y)NiO3",
+      "family": "high-entropy nickelate",
+      "operating_conditions": "Bulk polycrystal or thin film, ambient P",
+      "chi0_characterization": {
+        "chi0_max": 0.7287337414123319,
+        "peak_q_pi": [
+          0.0,
+          -1.0
+        ],
+        "chi0_q0": -0.0,
+        "chi0_pipi": 0.19583361914052277,
+        "nesting_ratio": NaN
+      },
+      "nesting_quality": "indeterminate (chi0(0)~0)",
+      "expected_peak_q": "(pi, 0) or (pi, pi)",
+      "pairing_symmetry": "d-wave (uncertain)",
+      "Z_factor": 0.45,
+      "lambda_sf_literature": {
+        "estimate": {
+          "value": 0.4,
+          "source": "No direct calculation exists",
+          "method": "Estimate: perovskite nickelate RPA, reduced by disorder scattering",
+          "note": "Disorder smears nesting peaks by ~50%, reducing lambda_sf"
+        }
+      },
+      "lambda_sf_adopted": 0.4,
+      "lambda_sf_uncertainty": 0.3,
+      "cluster_enhancement_factor": 1.1,
+      "lambda_sf_cluster_estimate": 0.44000000000000006,
+      "lambda_sf_cluster_uncertainty": 0.33,
+      "lambda_ph_est": 0.4,
+      "lambda_total_est": 0.8400000000000001,
+      "omega_sf_meV": 100.0,
+      "omega_eff_meV": 80.95238095238096,
+      "Tc_rough_K": 42.62894729052783,
+      "known_Tc_K": 0,
+      "reaches_300K": "No",
+      "exceeds_3p5": false
+    },
+    {
+      "name": "sr2ruo4_pressure",
+      "label": "Sr2RuO4 at 1.5 GPa",
+      "family": "ruthenate",
+      "operating_conditions": "Hydrostatic pressure 1.5 GPa, cryogenic (<3 K)",
+      "chi0_characterization": {
+        "chi0_max": 24.84655933820786,
+        "peak_q_pi": [
+          -0.78125,
+          -0.78125
+        ],
+        "chi0_q0": 11.718235316450865,
+        "chi0_pipi": 23.41263392347305,
+        "nesting_ratio": 2.120332854497857
+      },
+      "nesting_quality": "good",
+      "expected_peak_q": "(2/3 pi, 2/3 pi) incommensurate",
+      "pairing_symmetry": "p-wave (chiral?) or d-wave under pressure",
+      "Z_factor": 0.7,
+      "lambda_sf_literature": {
+        "Nomura_JPSJ_2002": {
+          "value": 0.6,
+          "source": "Nomura & Yamada, JPSJ 71, 1993 (2002) [UNVERIFIED]",
+          "method": "RPA",
+          "note": "incommensurate SF at q~(2/3 pi, 2/3 pi)"
+        },
+        "Aoki_RMP_2012": {
+          "value": 0.5,
+          "source": "Maeno et al., JPSJ 81, 011009 (2012) [UNVERIFIED]",
+          "method": "Review estimate",
+          "note": "weak-to-moderate spin fluctuations"
+        }
+      },
+      "lambda_sf_adopted": 0.6,
+      "lambda_sf_uncertainty": 0.2,
+      "cluster_enhancement_factor": 1.15,
+      "lambda_sf_cluster_estimate": 0.69,
+      "lambda_sf_cluster_uncertainty": 0.22999999999999998,
+      "lambda_ph_est": 0.4,
+      "lambda_total_est": 1.0899999999999999,
+      "omega_sf_meV": 50.0,
+      "omega_eff_meV": 53.669724770642205,
+      "Tc_rough_K": 45.000050704367325,
+      "known_Tc_K": 1.5,
+      "reaches_300K": "No",
+      "exceeds_3p5": false
+    },
+    {
+      "name": "lafeas_strained",
+      "label": "LaFeAsO (2% biaxial strain)",
+      "family": "iron-based 1111",
+      "operating_conditions": "Epitaxial strain 2%, F-doped, ambient P",
+      "chi0_characterization": {
+        "chi0_max": 3.603660411522785,
+        "peak_q_pi": [
+          -0.125,
+          0.0
+        ],
+        "chi0_q0": 2.635171441340882,
+        "chi0_pipi": 1.7165607399973766,
+        "nesting_ratio": 1.367524084007641
+      },
+      "nesting_quality": "moderate",
+      "expected_peak_q": "(pi, 0)",
+      "pairing_symmetry": "s+/-",
+      "Z_factor": 0.45,
+      "lambda_sf_literature": {
+        "Kuroki_PRL_2008": {
+          "value": 1.5,
+          "source": "Kuroki et al., PRL 101, 087004 (2008) [UNVERIFIED]",
+          "method": "5-orbital RPA",
+          "note": "s+/- pairing, (pi,0) nesting"
+        },
+        "Graser_NJP_2009": {
+          "value": 1.8,
+          "source": "Graser et al., NJP 11, 025016 (2009) [UNVERIFIED]",
+          "method": "5-orbital RPA",
+          "note": "lambda_sf ~ 1.2-2.0 depending on U"
+        },
+        "Mazin_PRL_2008": {
+          "value": 1.3,
+          "source": "Mazin et al., PRL 101, 057003 (2008) [UNVERIFIED]",
+          "method": "LMTO+RPA",
+          "note": "s+/- scenario"
+        }
+      },
+      "lambda_sf_adopted": 1.6,
+      "lambda_sf_uncertainty": 0.4,
+      "cluster_enhancement_factor": 1.4,
+      "lambda_sf_cluster_estimate": 2.2399999999999998,
+      "lambda_sf_cluster_uncertainty": 0.5599999999999999,
+      "lambda_ph_est": 0.7,
+      "lambda_total_est": 2.9399999999999995,
+      "omega_sf_meV": 100.0,
+      "omega_eff_meV": 90.47619047619047,
+      "Tc_rough_K": 181.07757357478752,
+      "known_Tc_K": 43,
+      "reaches_300K": "Unlikely",
+      "exceeds_3p5": false
+    },
+    {
+      "name": "bilayer_ni_extreme",
+      "label": "La2.7Sm0.3Ni2O7 (4% strain)",
+      "family": "bilayer nickelate (extreme)",
+      "operating_conditions": "Epitaxial strain 4%, Sm x=0.3, 15-30 GPa or ambient film",
+      "chi0_characterization": {
+        "chi0_max": 2.1212100172641226,
+        "peak_q_pi": [
+          -0.84375,
+          0.84375
+        ],
+        "chi0_q0": 1.5975545539801477,
+        "chi0_pipi": 1.8232253896618722,
+        "nesting_ratio": 1.3277856533783712
+      },
+      "nesting_quality": "moderate",
+      "expected_peak_q": "(pi, pi) or near",
+      "pairing_symmetry": "s+/- (inter-layer)",
+      "Z_factor": 0.4,
+      "lambda_sf_literature": {
+        "Sakakibara_PRL_2024": {
+          "value": 1.0,
+          "source": "Sakakibara et al., PRL 133, 076002 (2024) [UNVERIFIED]",
+          "method": "multi-orbital RPA",
+          "note": "unstrained, s+/- pairing, lambda ~ 0.5-1.5"
+        },
+        "Qu_PRL_2024": {
+          "value": 1.2,
+          "source": "Qu et al., PRL 132, 036502 (2024) [UNVERIFIED]",
+          "method": "bilayer two-orbital",
+          "note": "sigma-bonding channel, lambda ~ 0.8-2.0"
+        },
+        "v9_our_calc": {
+          "value": 0.03,
+          "source": "v9.0 Phase 38 (this project)",
+          "method": "3-band scalar RPA",
+          "note": "underestimates due to simplified model"
+        }
+      },
+      "lambda_sf_adopted": 1.5,
+      "lambda_sf_uncertainty": 0.5,
+      "cluster_enhancement_factor": 1.5,
+      "lambda_sf_cluster_estimate": 2.25,
+      "lambda_sf_cluster_uncertainty": 0.75,
+      "lambda_ph_est": 0.9,
+      "lambda_total_est": 3.15,
+      "omega_sf_meV": 120.0,
+      "omega_eff_meV": 102.85714285714288,
+      "Tc_rough_K": 212.4234127597096,
+      "known_Tc_K": 80,
+      "reaches_300K": "Unlikely",
+      "exceeds_3p5": false
+    }
+  ],
+  "comparison_summary": {
+    "cuprate_baseline_lambda_sf": 1.8,
+    "cuprate_cluster_lambda_sf": 2.88,
+    "target_threshold": 3.5,
+    "any_non_cuprate_exceeds_3p5": false,
+    "best_non_cuprate": "bilayer_ni_extreme",
+    "best_non_cuprate_label": "La2.7Sm0.3Ni2O7 (4% strain)",
+    "best_non_cuprate_lambda_sf_cluster": 2.25,
+    "best_non_cuprate_lambda_sf_cluster_uncertainty": 0.75,
+    "ranking": [
+      "bilayer_ni_extreme",
+      "lafeas_strained",
+      "ndnio2_strained",
+      "sr2ruo4_pressure",
+      "he_nickelate"
+    ]
+  },
+  "room_temperature_gap_K": 149,
+  "VALD03_statement": "The 149 K room-temperature gap remains open. No beyond-cuprate family identified that credibly exceeds Hg1223."
+}
