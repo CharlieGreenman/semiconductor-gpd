@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "material": "La3Ni2O7",
+    "phase": "I4/mmm (tetragonal parent)",
+    "strain_pct": 0.0,
+    "functional": "PBEsol",
+    "pseudopotentials": "ONCV SG15 scalar-relativistic",
+    "ecutwfc_Ry": 80,
+    "ecutrho_Ry": 640,
+    "kgrid": "8x8x2",
+    "nspin": 1,
+    "note": "I4/mmm parent used; Amam tilts omitted (see PLAN approximations)"
+  },
+  "lattice_parameters": {
+    "a_angstrom": 3.835,
+    "c_angstrom": 20.5,
+    "c_over_a": 5.3455
+  },
+  "experimental_reference": {
+    "a_angstrom": 3.833,
+    "c_angstrom": 20.5,
+    "c_over_a": 5.3483,
+    "source": "Experimental La3Ni2O7: multiple groups, ambient I4/mmm parent"
+  },
+  "error_vs_expt": {
+    "a_angstrom": {
+      "calc": 3.835,
+      "expt": 3.833,
+      "error_pct": 0.052,
+      "within_tolerance": true,
+      "tolerance_pct": 2.0
+    },
+    "c_angstrom": {
+      "calc": 20.5,
+      "expt": 20.5,
+      "error_pct": 0.0,
+      "within_tolerance": true,
+      "tolerance_pct": 2.0
+    },
+    "c_over_a": {
+      "calc": 5.3455,
+      "expt": 5.3483,
+      "error_pct": -0.052
+    }
+  },
+  "within_pbsol_literature": {
+    "a_angstrom": {
+      "value": 3.835,
+      "range": [
+        3.82,
+        3.85
+      ],
+      "within_literature_range": true
+    },
+    "c_angstrom": {
+      "value": 20.5,
+      "range": [
+        20.3,
+        20.7
+      ],
+      "within_literature_range": true
+    },
+    "c_over_a": {
+      "value": 5.3455,
+      "range": [
+        5.27,
+        5.42
+      ],
+      "within_literature_range": true
+    }
+  },
+  "bond_distances": {
+    "Ni_O_planar_angstrom": 1.918,
+    "Ni_O_inner_apical_angstrom": 1.99,
+    "Ni_O_outer_apical_angstrom": 2.05,
+    "note": "Inner apical O bridges bilayer (sigma-bonding); outer apical between bilayer and LaO block"
+  },
+  "atomic_positions": "See QE output (crystal coordinates in relax.in)",
+  "space_group": "I4/mmm (#139)",
+  "Z": 2,
+  "atom_count": 24,
+  "stoichiometry_check": {
+    "La": 6,
+    "Ni": 4,
+    "O": 14,
+    "formula": "La3Ni2O7 x 2 = La6Ni4O14",
+    "total_valence_electrons": 222
+  },
+  "acceptance_test_result": {
+    "test_id": "test-lattice-params",
+    "criterion": "|a_calc - a_expt|/a_expt < 2% AND |c_calc - c_expt|/c_expt < 2%",
+    "a_pass": true,
+    "c_pass": true,
+    "overall": true
+  }
+}

@@ -1,0 +1,140 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave,
+!   strain_sign=negative_compressive, tc_definition=zero_resistance_primary,
+!   units=SI_derived, functional=PBEsol, pseudopotentials=ONCV_SG15
+
+! ============================================================================
+! La3Ni2O7 -- unstrained bulk vc-relax (I4/mmm tetragonal, Z=2)
+! Phase 29-01, Task 1: 0% strain baseline
+!
+! Crystal structure: bilayer Ruddlesden-Popper (n=2) nickelate
+! Parent space group: I4/mmm (#139), tetragonal
+! Formula units per cell: Z = 2 --> 24 atoms (6 La + 4 Ni + 14 O)
+! Experimental: a = 3.833 A, c = 20.5 A (ambient, I4/mmm parent)
+!
+! Note: The true ambient phase is Amam (orthorhombic with octahedral tilts,
+! T < 115 K). Using I4/mmm parent for computational efficiency. The Amam
+! tilt pattern lowers energy by ~5-20 meV/f.u. but does not qualitatively
+! change the Fermi surface topology (Sun et al. PRL 2023).
+! ============================================================================
+
+&CONTROL
+   calculation  = 'vc-relax'
+   prefix       = 'la327_0pct'
+   outdir       = './tmp/'
+   pseudo_dir   = './pseudo/'
+   tstress      = .true.
+   tprnfor      = .true.
+   forc_conv_thr = 1.0d-4
+   etot_conv_thr = 1.0d-6
+   nstep        = 200
+   verbosity    = 'high'
+/
+
+&SYSTEM
+   ibrav        = 0
+   nat          = 24
+   ntyp         = 3
+   ecutwfc      = 80.0
+   ecutrho      = 640.0
+   occupations  = 'smearing'
+   smearing     = 'mv'
+   degauss      = 0.02
+   nspin        = 1
+   ! Non-spin-polarized: paramagnetic metallic phase above T_N ~ 150 K
+   ! Approximation: see 29-01-PLAN.md approximations.non-spin-polarized
+/
+
+&ELECTRONS
+   conv_thr     = 1.0d-8
+   mixing_beta  = 0.3
+   mixing_mode  = 'plain'
+   diagonalization = 'david'
+   electron_maxstep = 200
+/
+
+&IONS
+   ion_dynamics = 'bfgs'
+/
+
+&CELL
+   cell_dynamics = 'bfgs'
+   cell_dofree  = 'all'
+   press        = 0.0
+   press_conv_thr = 0.5
+/
+
+ATOMIC_SPECIES
+! Pseudopotentials: ONCV scalar-relativistic (SG15 library)
+! La: [Xe] 5d1 6s2 -- 11 valence electrons (5s2 5p6 5d1 6s2)
+! Ni: [Ar] 3d8 4s2 -- 18 valence electrons (3s2 3p6 3d8 4s2, include semi-core)
+! O:  [He] 2s2 2p4 -- 6 valence electrons
+   La  138.90547  La_ONCV_PBEsol-1.2.upf
+   Ni   58.6934   Ni_ONCV_PBEsol-1.2.upf
+   O    15.9994   O_ONCV_PBEsol-1.2.upf
+
+! Valence electron count check:
+! 6 La * 11 = 66
+! 4 Ni * 18 = 72
+! 14 O * 6  = 84
+! Total     = 222 electrons per cell (Z=2)
+
+CELL_PARAMETERS {angstrom}
+   3.833000000   0.000000000   0.000000000
+   0.000000000   3.833000000   0.000000000
+   0.000000000   0.000000000  20.500000000
+
+! Atomic positions for La3Ni2O7 in I4/mmm (Z=2, 24 atoms)
+! ========================================================
+! The bilayer RP structure has the following Wyckoff sites:
+!   La1 (2b):  (0, 0, 1/2)               -- between bilayers (rock-salt layer)
+!   La2 (4e):  (0, 0, z_La2)             -- flanking the bilayer (z ~ 0.318)
+!   Ni  (4e):  (0, 0, z_Ni)              -- NiO2 planes (z ~ 0.098)
+!   O1  (2a):  (0, 0, 0)                 -- inner apical O (bridging bilayer) ***KEY***
+!   O2  (4e):  (0, 0, z_O2)              -- outer apical O (between bilayer and La-O block), z ~ 0.198
+!   O3  (8g):  (0, 1/2, z_O3)            -- planar O in NiO2 sheets, z ~ 0.098
+!
+! With body-centering (I4/mmm), each site generates a second copy at +(1/2,1/2,1/2).
+! Total: 2(La1) + 4(La2) + 4(Ni) + 2(O1) + 4(O2) + 8(O3) = 24 atoms.
+!
+! CRITICAL: Inner apical O1 (0,0,0) bridges the two NiO2 planes of the bilayer.
+! This oxygen mediates sigma-bonding (dz2-O_pz-dz2). Its position controls
+! the interlayer hopping integral and hence the sigma-bonding band splitting.
+! Outer apical O2 sits between the bilayer and the La-O rock-salt block.
+
+ATOMIC_POSITIONS {crystal}
+! --- La1: rock-salt layer La (Wyckoff 2b) ---
+   La   0.000000   0.000000   0.500000   ! La1 at center of blocking layer
+   La   0.500000   0.500000   0.000000   ! La1 (body-center partner)
+! --- La2: bilayer-flanking La (Wyckoff 4e, z ~ 0.318) ---
+   La   0.000000   0.000000   0.318000   ! La2 above bilayer
+   La   0.000000   0.000000   0.682000   ! La2 below bilayer (mirror)
+   La   0.500000   0.500000   0.818000   ! La2 (body-center)
+   La   0.500000   0.500000   0.182000   ! La2 (body-center)
+! --- Ni: NiO2 plane sites (Wyckoff 4e, z ~ 0.098) ---
+   Ni   0.000000   0.000000   0.098000   ! Ni in upper NiO2 plane of bilayer
+   Ni   0.000000   0.000000   0.902000   ! Ni in lower NiO2 plane (mirror)
+   Ni   0.500000   0.500000   0.598000   ! Ni (body-center)
+   Ni   0.500000   0.500000   0.402000   ! Ni (body-center)
+! --- O1: INNER apical O (Wyckoff 2a, bridging bilayer) ---
+! *** This O mediates dz2 sigma-bonding across the bilayer ***
+   O    0.000000   0.000000   0.000000   ! O1_inner: bridges Ni-Ni across bilayer
+   O    0.500000   0.500000   0.500000   ! O1_inner (body-center)
+! --- O2: OUTER apical O (Wyckoff 4e, z ~ 0.198) ---
+   O    0.000000   0.000000   0.198000   ! O2_outer: between bilayer and La-O
+   O    0.000000   0.000000   0.802000   ! O2_outer (mirror)
+   O    0.500000   0.500000   0.698000   ! O2_outer (body-center)
+   O    0.500000   0.500000   0.302000   ! O2_outer (body-center)
+! --- O3: planar O in NiO2 sheets (Wyckoff 8g, z ~ 0.098) ---
+   O    0.000000   0.500000   0.098000   ! O3_planar
+   O    0.500000   0.000000   0.098000   ! O3_planar
+   O    0.000000   0.500000   0.902000   ! O3_planar (mirror)
+   O    0.500000   0.000000   0.902000   ! O3_planar (mirror)
+   O    0.500000   0.000000   0.598000   ! O3_planar (body-center)
+   O    0.000000   0.500000   0.598000   ! O3_planar (body-center)
+   O    0.500000   0.000000   0.402000   ! O3_planar (body-center)
+   O    0.000000   0.500000   0.402000   ! O3_planar (body-center)
+
+K_POINTS {automatic}
+   8 8 2   1 1 1
+! 8x8x2 Monkhorst-Pack, shifted (1 1 1 offset)
+! Coarse kz sampling is physical for layered system (c/a ~ 5.35)
