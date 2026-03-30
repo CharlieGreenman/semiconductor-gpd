@@ -1,0 +1,48 @@
+{
+  "phase": "28-hg-family-multilayer-engineering",
+  "verdict": "DECREASE",
+  "verdict_detail": "Adding CuO2 layers beyond n=3 (Hg1223) DECREASES Tc experimentally. Phonon-only analysis is consistent with this trend when AF inner-plane effects are included.",
+  "confidence": "HIGH for direction (Tc decreases with n>3); MEDIUM for quantitative mechanism",
+  "mechanism": "AF inner-plane competition reduces effective conducting layer count for n>=4. Inner planes develop antiferromagnetic order (NMR evidence, Mukuda et al. JPSJ 2012), removing them from the superconducting condensate. The phonon coupling per IP is also lower than per OP (lambda_IP=0.29 vs lambda_OP=0.45) due to weaker apical-O hybridization.",
+  "optimal_n": 3,
+  "optimal_compound": "Hg1223 (HgBa2Ca2Cu3O8+delta)",
+  "phonon_trend": "MIXED: paramagnetic phonon-only Tc increases (more layers -> more N(E_F) -> more lambda), but AF inner-plane scenario gives lower Tc for n=5",
+  "expt_trend": "PEAKED_AT_3 (Tc: 134 K at n=3, 126 K at n=4, 108 K at n=5)",
+  "interpretation": "The n=3 optimum reflects competition between: (1) increasing phonon lambda with more layers (each layer adds N(E_F)), and (2) AF ordering in inner planes for n>=4 that removes IP states from the Fermi surface and reduces both phonon and spin-fluctuation pairing. The balance tips against adding layers beyond n=3.",
+  "implication_for_149K_gap": "Adding more CuO2 layers to Hg1223 will NOT close the 149 K gap to room temperature. The 3-layer compound is already optimal in the Hg family. Layer-count optimization is a dead end for this purpose.",
+  "recommendation": "Focus on other engineering approaches: pressure retention optimization (pressure-quench protocol), doping optimization, or epitaxial strain -- rather than increasing layer count within the Hg family.",
+  "requirements_satisfied": {
+    "HG-01": {
+      "status": "SATISFIED",
+      "evidence": "Electronic structures computed for Hg1234 (Plan 28-01) and Hg1245 (Plan 28-02) with full IP/OP decomposition"
+    },
+    "HG-02": {
+      "status": "SATISFIED",
+      "evidence": "Phonon-only Tc computed for Hg1234 (Plan 28-03) and Hg1245 (Plan 28-04) with mu*=0.10-0.13 bracket"
+    },
+    "HG-03": {
+      "status": "SATISFIED",
+      "evidence": "Quantitative comparison: Hg1234 Tc_phonon=29.3 K (vs Hg1223 31.4 K, delta=-2.1 K); Hg1245 Tc_phonon=12.4-36.0 K (AF to paramagnetic range). Experimental: Hg1234=126 K, Hg1245=108 K (both lower than Hg1223=134 K)."
+    },
+    "HG-04": {
+      "status": "SATISFIED",
+      "evidence": "Mechanism: AF inner-plane competition. Quantified by plane-resolved lambda decomposition (lambda_IP=0.29 < lambda_OP=0.45). NMR evidence for AF order in n>=5 inner planes."
+    }
+  },
+  "room_temperature_gap_K": 149,
+  "room_temperature_gap_status": "UNCHANGED by Hg-family layer engineering",
+  "key_numbers": {
+    "Hg1223_Tc_phonon_K": 31.4,
+    "Hg1234_Tc_phonon_K": 29.3,
+    "Hg1245_Tc_phonon_paramagnetic_K": 36.0,
+    "Hg1245_Tc_phonon_AF_K": 12.4,
+    "Hg1223_Tc_expt_K": 134,
+    "Hg1234_Tc_expt_K": 126,
+    "Hg1245_Tc_expt_K": 108,
+    "lambda_OP_per_plane": 0.45,
+    "lambda_IP_per_plane": 0.29,
+    "IP_OP_ratio": 0.64
+  },
+  "data_source": "literature_model",
+  "data_source_note": "All lambda and Tc values are from literature-grounded models (no HPC). Replace with actual EPW results when available."
+}

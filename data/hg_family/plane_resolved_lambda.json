@@ -1,0 +1,38 @@
+{
+  "Hg1223": {
+    "n_layers": 3,
+    "n_IP": 1,
+    "n_OP": 2,
+    "lambda_OP_per_plane": 0.45,
+    "lambda_IP_per_plane": 0.29,
+    "lambda_OP_total": 0.9,
+    "lambda_IP_total": 0.29,
+    "lambda_sum": 1.19,
+    "lambda_reported": 1.19,
+    "Tc_exp": 134
+  },
+  "Hg1234": {
+    "n_layers": 4,
+    "n_IP": 2,
+    "n_OP": 2,
+    "lambda_OP_per_plane": 0.45,
+    "lambda_IP_per_plane": 0.29,
+    "lambda_OP_total": 0.9,
+    "lambda_IP_total": 0.58,
+    "lambda_sum": 1.48,
+    "lambda_reported": 1.31,
+    "Tc_exp": 126
+  },
+  "Hg1245": {
+    "n_layers": 5,
+    "n_IP": 3,
+    "n_OP": 2,
+    "lambda_OP_per_plane": 0.45,
+    "lambda_IP_per_plane": 0.29,
+    "lambda_OP_total": 0.9,
+    "lambda_IP_total": 0.87,
+    "lambda_sum": 1.77,
+    "lambda_reported": 1.5,
+    "Tc_exp": 108
+  }
+}

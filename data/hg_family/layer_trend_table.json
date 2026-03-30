@@ -1,0 +1,65 @@
+{
+  "compounds": [
+    {
+      "name": "Hg1223",
+      "n_layers": 3,
+      "n_IP": 1,
+      "n_OP": 2,
+      "a_A": 3.845,
+      "c_A": 15.78,
+      "N_EF": 4.04,
+      "lambda": 1.1927,
+      "omega_log_K": 291.3,
+      "Tc_phonon_mu010": 31.4,
+      "Tc_phonon_mu013": 27.4,
+      "Tc_expt_K": 134,
+      "Tc_expt_PQ_K": 151,
+      "scenario": "paramagnetic"
+    },
+    {
+      "name": "Hg1234",
+      "n_layers": 4,
+      "n_IP": 2,
+      "n_OP": 2,
+      "a_A": 3.848,
+      "c_A": 18.93,
+      "N_EF": 5.25,
+      "lambda": 1.31,
+      "omega_log_K": 217.4,
+      "Tc_phonon_mu010": 29.3,
+      "Tc_phonon_mu013": 25.6,
+      "Tc_expt_K": 126,
+      "scenario": "paramagnetic"
+    },
+    {
+      "name": "Hg1245_paramagnetic",
+      "n_layers": 5,
+      "n_IP": 3,
+      "n_OP": 2,
+      "a_A": 3.848,
+      "c_A": 22.03,
+      "N_EF": 6.5,
+      "lambda": 1.5,
+      "omega_log_K": 217.4,
+      "Tc_phonon_mu010": 36.0,
+      "Tc_phonon_mu013": 31.8,
+      "Tc_expt_K": 108,
+      "scenario": "paramagnetic"
+    },
+    {
+      "name": "Hg1245_AF",
+      "n_layers": 5,
+      "n_IP": 3,
+      "n_OP": 2,
+      "a_A": 3.848,
+      "c_A": 22.03,
+      "N_EF": 2.7,
+      "lambda": 0.82,
+      "omega_log_K": 217.4,
+      "Tc_phonon_mu010": 12.4,
+      "Tc_phonon_mu013": 10.0,
+      "Tc_expt_K": 108,
+      "scenario": "AF_inner_planes"
+    }
+  ]
+}
