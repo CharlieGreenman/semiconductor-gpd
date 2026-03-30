@@ -188,14 +188,14 @@ Plans:
 
 **Backtracking trigger:** If La3Ni2O7 phonon calculations show strong imaginary modes at all strain points, consider virtual crystal approximation for the RE substitution or report nickelate lever-stacking as computationally unpromising within the phonon-mediated framework.
 
-**Plans:** TBD
+**Plans:** 4 plans in 4 waves (sequential: structure -> strain -> phonon+Tc -> RE substitution+verdict)
 
 Plans:
 
-- [ ] 29-01: La3Ni2O7 structure at 0% strain -- relaxation, electronic structure (band structure, Fermi surface, d-orbital character)
-- [ ] 29-02: Strained La3Ni2O7 at -1% and -2% -- constrained relaxation, electronic structure comparison
-- [ ] 29-03: Phonon and EPW for La3Ni2O7 at 0%, -1%, -2% strain (DFPT, Wannier, alpha2F, lambda, Tc)
-- [ ] 29-04: Rare-earth substitution -- (La,RE)3Ni2O7 at optimal strain; Tc prediction for best combination
+- [ ] 29-01-PLAN.md -- La3Ni2O7 structure at 0% strain: relaxation, electronic structure, dz2 sigma-bonding baseline (Wave 1)
+- [ ] 29-02-PLAN.md -- Strained La3Ni2O7 at -1.2% (LAO) and -2.0% (SLAO): constrained relaxation, electronic structure comparison, dz2 trend (Wave 2)
+- [ ] 29-03-PLAN.md -- Phonon and EPW for La3Ni2O7 at 0%, -1%, -2% strain: DFPT, Wannier, alpha2F, lambda, Eliashberg Tc (Wave 3)
+- [ ] 29-04-PLAN.md -- RE substitution (Pr, Nd, Sm) at optimal strain: chemical pressure modeling, Tc predictions, lever-stacking verdict (Wave 4)
 
 ---
 
