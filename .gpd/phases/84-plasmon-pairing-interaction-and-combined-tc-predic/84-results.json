@@ -1,0 +1,24 @@
+{
+  "phase": 84,
+  "n_SrTiO3": {
+    "omega_pl_meV": 68.0,
+    "lambda_pl": 0.0886,
+    "lambda_pl_attractive": -0.0083,
+    "delta_mu_star": 0.023,
+    "Tc_phonon_K": 0.56,
+    "Tc_combined_K": 2.12,
+    "Delta_Tc_K": 1.56
+  },
+  "Hg1223_c_axis_plasmon": {
+    "omega_pl_meV": 30.0,
+    "lambda_pl": 3.5133,
+    "delta_mu_star": 0.9,
+    "Tc_base_K": 73.2,
+    "Tc_combined_K": 5.1,
+    "Delta_Tc_K": -68.0
+  },
+  "lambda_pl_needed_for_300K": 4.9,
+  "verdict": "negligible",
+  "reaches_300K": false,
+  "track_B_outcome": "NEGATIVE -- plasmon contribution negligible for 300 K"
+}
