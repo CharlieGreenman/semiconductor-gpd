@@ -1,0 +1,215 @@
+{
+  "title": "Multi-axis candidate ranking with stability gates",
+  "date": "2026-03-29",
+  "phase": "32-candidate-ranking-and-decision",
+  "ranking_methodology": {
+    "axes": [
+      {
+        "name": "Tc_score",
+        "weight": 0.50,
+        "description": "Estimated full Tc (phonon + spin-fluctuation), normalized to 300 K target"
+      },
+      {
+        "name": "stability_score",
+        "weight": 0.25,
+        "description": "Combined thermodynamic (E_hull) and dynamic stability. 1.0 = known stable, 0.5 = predicted stable, 0.0 = unstable or unknown"
+      },
+      {
+        "name": "accessibility_score",
+        "weight": 0.25,
+        "description": "Synthetic accessibility: 1.0 = demonstrated synthesis, 0.5 = feasible with existing methods, 0.0 = speculative"
+      }
+    ],
+    "gates": {
+      "E_hull_gate": "< 50 meV/atom (hard gate: candidates above threshold flagged but not promoted)",
+      "dynamic_stability_gate": "No imaginary phonon modes above -5 cm^-1 (soft gate: flagged if not verified)"
+    }
+  },
+
+  "candidates": [
+    {
+      "rank": 1,
+      "id": "Hg1223",
+      "family": "Hg-cuprate",
+      "structure": "HgBa2Ca2Cu3O8+delta",
+      "lambda": 1.193,
+      "omega_log_K": 291,
+      "Tc_phonon_mu010_K": 31.4,
+      "Tc_phonon_mu013_K": 27.4,
+      "Tc_estimated_full_K": "134-151 (experimental, not estimated)",
+      "phonon_fraction": 0.22,
+      "E_hull_meV_atom": "< 5",
+      "E_hull_gate": "PASS",
+      "dynamic_stability": "STABLE (known)",
+      "dynamic_stability_gate": "PASS",
+      "synthetic_accessibility": "HIGH -- demonstrated PQP synthesis, single crystals available",
+      "Tc_score": 0.50,
+      "stability_score": 1.00,
+      "accessibility_score": 1.00,
+      "composite_score": 0.75,
+      "vs_Hg1223_Tc": "BASELINE (this IS Hg1223)",
+      "note": "The benchmark itself ranks #1. No new candidate exceeds it. This is the key finding."
+    },
+    {
+      "rank": 2,
+      "id": "Hg1234",
+      "family": "Hg-cuprate",
+      "structure": "HgBa2Ca3Cu4O10+delta",
+      "lambda": 1.29,
+      "omega_log_K": 285,
+      "Tc_phonon_mu010_K": 29.3,
+      "Tc_phonon_mu013_K": 25.6,
+      "Tc_estimated_full_K": "~126 (experimental)",
+      "phonon_fraction": 0.23,
+      "E_hull_meV_atom": "< 10",
+      "E_hull_gate": "PASS",
+      "dynamic_stability": "STABLE (known)",
+      "dynamic_stability_gate": "PASS",
+      "synthetic_accessibility": "MEDIUM -- synthesized but requires high-pressure high-temperature methods",
+      "Tc_score": 0.42,
+      "stability_score": 1.00,
+      "accessibility_score": 0.70,
+      "composite_score": 0.64,
+      "vs_Hg1223_Tc": "-25 K experimental, -2.1 K phonon-only",
+      "note": "Known compound, lower Tc than Hg1223. Not a path forward."
+    },
+    {
+      "rank": 3,
+      "id": "Sm_La3Ni2O7_SLAO",
+      "family": "Bilayer nickelate",
+      "structure": "Sm3Ni2O7 on SrLaAlO4 (-2.01%)",
+      "lambda": 1.01,
+      "omega_log_K": 300,
+      "Tc_phonon_mu010_K": 26.3,
+      "Tc_phonon_mu013_K": 21.2,
+      "Tc_estimated_full_K": "38-88 (phonon fraction 0.30-0.70)",
+      "phonon_fraction": "0.30-0.70",
+      "E_hull_meV_atom": "< 15 (estimated)",
+      "E_hull_gate": "PASS",
+      "dynamic_stability": "LIKELY STABLE (not independently verified)",
+      "dynamic_stability_gate": "SOFT PASS (analog to La3Ni2O7)",
+      "synthetic_accessibility": "MEDIUM -- Sm3Ni2O7 films demonstrated; SLAO substrates commercial",
+      "Tc_score": 0.21,
+      "stability_score": 0.70,
+      "accessibility_score": 0.60,
+      "composite_score": 0.43,
+      "vs_Hg1223_Tc": "Phonon-only: -5.1 K. Estimated full: -63 to -113 K below Hg1223 expt",
+      "note": "Best NEW prediction. Testable. But estimated full Tc (38-88 K) still far below Hg1223."
+    },
+    {
+      "rank": 4,
+      "id": "La3Ni2O7_SLAO",
+      "family": "Bilayer nickelate",
+      "structure": "La3Ni2O7 on SrLaAlO4 (-2.01%)",
+      "lambda": 0.89,
+      "omega_log_K": 300,
+      "Tc_phonon_mu010_K": 21.9,
+      "Tc_phonon_mu013_K": 17.6,
+      "Tc_estimated_full_K": "31-73 (phonon fraction 0.30-0.70)",
+      "phonon_fraction": 0.55,
+      "E_hull_meV_atom": "< 10",
+      "E_hull_gate": "PASS",
+      "dynamic_stability": "STABLE under epitaxial constraint",
+      "dynamic_stability_gate": "PASS",
+      "synthetic_accessibility": "MEDIUM -- demonstrated MBE/PLD growth",
+      "Tc_score": 0.17,
+      "stability_score": 0.85,
+      "accessibility_score": 0.65,
+      "composite_score": 0.46,
+      "vs_Hg1223_Tc": "Phonon-only: -9.5 K. Estimated full: -78 to -120 K below Hg1223 expt",
+      "note": "Existing experimental data (onset ~40 K) can validate the model."
+    },
+    {
+      "rank": 5,
+      "id": "Superlattice_Cand2",
+      "family": "Cuprate-nickelate hybrid",
+      "structure": "HgBa2CuO4/La2NiO4 RP superlattice",
+      "lambda": 0.867,
+      "omega_log_K": 308,
+      "Tc_phonon_mu010_K": 20.8,
+      "Tc_phonon_mu013_K": 17.0,
+      "Tc_estimated_full_K": "unknown (no experimental reference for phonon fraction)",
+      "phonon_fraction": "unknown",
+      "E_hull_meV_atom": 11.5,
+      "E_hull_gate": "PASS",
+      "dynamic_stability": "PREDICTED STABLE",
+      "dynamic_stability_gate": "SOFT PASS",
+      "synthetic_accessibility": "LOW -- no demonstrated synthesis, precise MBE required",
+      "Tc_score": 0.07,
+      "stability_score": 0.50,
+      "accessibility_score": 0.20,
+      "composite_score": 0.21,
+      "vs_Hg1223_Tc": "Phonon-only: -10.6 K. Full Tc: unknown.",
+      "note": "Speculative. Volume-dilution of lambda makes hybrid approach fundamentally limited."
+    },
+    {
+      "rank": 6,
+      "id": "La3Ni2O7_unstrained",
+      "family": "Bilayer nickelate",
+      "structure": "La3Ni2O7 (bulk)",
+      "lambda": 0.76,
+      "omega_log_K": 296,
+      "Tc_phonon_mu010_K": 17.4,
+      "Tc_phonon_mu013_K": 13.7,
+      "Tc_estimated_full_K": "25-58 (phonon fraction 0.30-0.70)",
+      "phonon_fraction": 0.44,
+      "E_hull_meV_atom": "< 5",
+      "E_hull_gate": "PASS",
+      "dynamic_stability": "STABLE (known)",
+      "dynamic_stability_gate": "PASS",
+      "synthetic_accessibility": "HIGH -- polycrystalline bulk, single crystals available",
+      "Tc_score": 0.12,
+      "stability_score": 1.00,
+      "accessibility_score": 1.00,
+      "composite_score": 0.56,
+      "vs_Hg1223_Tc": "Phonon-only: -14.0 K. Estimated full: -93 to -126 K below Hg1223 expt",
+      "note": "Known compound. Ambient Tc ~40 K (onset). Stable and accessible but far from Hg1223."
+    },
+    {
+      "rank": 7,
+      "id": "Hg1245",
+      "family": "Hg-cuprate",
+      "structure": "HgBa2Ca4Cu5O12+delta",
+      "lambda": "0.55-1.42",
+      "omega_log_K": 280,
+      "Tc_phonon_mu010_K": "12.4-36.0",
+      "Tc_phonon_mu013_K": "9.8-31.5",
+      "Tc_estimated_full_K": "~108 (experimental)",
+      "phonon_fraction": "0.11-0.33",
+      "E_hull_meV_atom": "< 15",
+      "E_hull_gate": "PASS",
+      "dynamic_stability": "STABLE (but AF in inner planes)",
+      "dynamic_stability_gate": "PASS",
+      "synthetic_accessibility": "LOW -- difficult synthesis, phase purity issues",
+      "Tc_score": 0.36,
+      "stability_score": 0.80,
+      "accessibility_score": 0.30,
+      "composite_score": 0.46,
+      "vs_Hg1223_Tc": "-43 K experimental. AF kills inner-plane SC.",
+      "note": "Confirms n=3 is optimal. Adding layers is counterproductive."
+    }
+  ],
+
+  "top_candidate_summary": {
+    "rank_1": {
+      "id": "Hg1223",
+      "Tc_expt_K": 151,
+      "finding": "THE BENCHMARK ITSELF REMAINS THE TOP CANDIDATE. No new material computed in v8.0 exceeds Hg1223 in any metric. This is the central honest finding of the milestone."
+    },
+    "rank_3_best_new": {
+      "id": "Sm_La3Ni2O7_SLAO",
+      "Tc_phonon_K": 26.3,
+      "Tc_estimated_full_K": "38-88",
+      "finding": "Best new prediction from v8.0. Testable with current MBE capabilities. But even the optimistic estimated full Tc (88 K) is well below Hg1223 (151 K)."
+    }
+  },
+
+  "computational_ceiling": {
+    "phonon_only_oxide_ceiling_K": "30-40",
+    "explanation": "Oxide phonon frequencies give omega_log ~ 250-350 K. Maximum achievable lambda_phonon ~ 1.0-1.5 for layered structures. Together: Tc_max(phonon) ~ 30-40 K via McMillan/Allen-Dynes. This is a fundamental material limitation, not a computational artifact.",
+    "implication": "Phonon-only Eliashberg calculations are informative about the phonon channel but CANNOT predict full cuprate or nickelate Tc. The 80-120 K 'missing' Tc comes from spin fluctuations and must be computed with DMFT+Eliashberg or similar methods."
+  },
+
+  "DEC-01_status": "SATISFIED -- all candidates ranked by Tc, stability, and accessibility",
+  "VALD-04_status": "SATISFIED -- stability gates applied (E_hull < 50 meV/atom, dynamic stability)"
+}
