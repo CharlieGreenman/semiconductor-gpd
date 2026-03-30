@@ -1,0 +1,85 @@
+{
+  "grids": [
+    {
+      "label": "10x10x5",
+      "nkf": [
+        10,
+        10,
+        5
+      ],
+      "nqf": [
+        10,
+        10,
+        5
+      ],
+      "lambda": 0.8924,
+      "omega_log_K": 381.0
+    },
+    {
+      "label": "16x16x8",
+      "nkf": [
+        16,
+        16,
+        8
+      ],
+      "nqf": [
+        16,
+        16,
+        8
+      ],
+      "lambda": 1.0821,
+      "omega_log_K": 359.3
+    },
+    {
+      "label": "20x20x10",
+      "nkf": [
+        20,
+        20,
+        10
+      ],
+      "nqf": [
+        20,
+        20,
+        10
+      ],
+      "lambda": 1.122,
+      "omega_log_K": 364.9
+    },
+    {
+      "label": "24x24x12",
+      "nkf": [
+        24,
+        24,
+        12
+      ],
+      "nqf": [
+        24,
+        24,
+        12
+      ],
+      "lambda": 1.1404,
+      "omega_log_K": 356.2
+    },
+    {
+      "label": "30x30x15",
+      "nkf": [
+        30,
+        30,
+        15
+      ],
+      "nqf": [
+        30,
+        30,
+        15
+      ],
+      "lambda": 1.1655,
+      "omega_log_K": 352.8
+    }
+  ],
+  "converged": false,
+  "convergence_metric": 0.021536,
+  "convergence_criterion": 0.001,
+  "converged_grid": "NOT YET",
+  "lambda_final": 1.1655,
+  "omega_log_K_final": 352.8
+}
