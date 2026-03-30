@@ -1,0 +1,68 @@
+[
+  {
+    "candidate_id": 1,
+    "parent_cuprate": "HgBa2CuO4",
+    "parent_nickelate": "LaNiO2",
+    "N_EF_per_spin": 2.7,
+    "N_EF_uncertainty": 0.42,
+    "N_EF_total": 5.4,
+    "Cu_d_fraction": 0.306,
+    "Ni_d_fraction": 0.267,
+    "O_p_fraction": 0.311,
+    "other_fraction": 0.117,
+    "n_bands_at_EF": 3,
+    "metallic": true,
+    "bandwidth_eV": 2.5,
+    "method": "Superposition of parent compound N(E_F) -- ESTIMATE, not DFT",
+    "source": "Published LDA/GGA (Singh & Pickett 1994, Novikov 2011) [UNVERIFIED - training data]; Published LDA (Lee & Pickett 2004, Botana & Norman 2020) [UNVERIFIED - training data]",
+    "caveats": [
+      "N(E_F) superposition ignores interface hybridization (+/- 20%)",
+      "PBEsol without +U may overestimate metallic bandwidth by 20-40%",
+      "Interface charge transfer may shift E_F relative to parent bands"
+    ]
+  },
+  {
+    "candidate_id": 2,
+    "parent_cuprate": "HgBa2Ca2Cu3O8",
+    "parent_nickelate": "La3Ni2O7",
+    "N_EF_per_spin": 5.5,
+    "N_EF_uncertainty": 0.54,
+    "N_EF_total": 11.0,
+    "Cu_d_fraction": 0.2,
+    "Ni_d_fraction": 0.318,
+    "O_p_fraction": 0.333,
+    "other_fraction": 0.149,
+    "n_bands_at_EF": 6,
+    "metallic": true,
+    "bandwidth_eV": 3.0,
+    "method": "Superposition of parent compound N(E_F) -- ESTIMATE, not DFT",
+    "source": "Phase 27 Plan 01: N(EF)=4.0 states/eV/cell, Cu-d 55% + O-p 39%; Published DFT (Luo et al. 2023, Zhang et al. 2024) [UNVERIFIED - training data]",
+    "caveats": [
+      "N(E_F) superposition ignores interface hybridization (+/- 20%)",
+      "PBEsol without +U may overestimate metallic bandwidth by 20-40%",
+      "Interface charge transfer may shift E_F relative to parent bands"
+    ]
+  },
+  {
+    "candidate_id": 3,
+    "parent_cuprate": "HgBa2CuO4",
+    "parent_nickelate": "La3Ni2O7",
+    "N_EF_per_spin": 5.0,
+    "N_EF_uncertainty": 0.58,
+    "N_EF_total": 10.0,
+    "Cu_d_fraction": 0.165,
+    "Ni_d_fraction": 0.35,
+    "O_p_fraction": 0.33,
+    "other_fraction": 0.155,
+    "n_bands_at_EF": 4,
+    "metallic": true,
+    "bandwidth_eV": 3.0,
+    "method": "Superposition of parent compound N(E_F) -- ESTIMATE, not DFT",
+    "source": "Published LDA/GGA (Singh & Pickett 1994, Novikov 2011) [UNVERIFIED - training data]; Published DFT (Luo et al. 2023, Zhang et al. 2024) [UNVERIFIED - training data]",
+    "caveats": [
+      "N(E_F) superposition ignores interface hybridization (+/- 20%)",
+      "PBEsol without +U may overestimate metallic bandwidth by 20-40%",
+      "Interface charge transfer may shift E_F relative to parent bands"
+    ]
+  }
+]

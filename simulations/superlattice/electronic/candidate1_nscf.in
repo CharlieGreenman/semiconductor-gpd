@@ -1,0 +1,55 @@
+! Candidate 1 NSCF -- dense k-grid for DOS (tetrahedra)
+
+&CONTROL
+  calculation  = 'nscf'
+  prefix       = 'sl_cand1'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  verbosity    = 'high'
+/
+
+&SYSTEM
+  ibrav        = 0
+  nat          = 12
+  ntyp         = 6
+  ecutwfc      = 90.0
+  ecutrho      = 360.0
+  input_dft    = 'pbesol'
+  occupations  = 'tetrahedra_opt'
+  nspin        = 1
+  nbnd         = 70
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-8
+/
+
+ATOMIC_SPECIES
+  Ba    137.327   Ba_ONCV_PBEsol-1.2.upf
+  Cu     63.546   Cu_ONCV_PBEsol-1.2.upf
+  Hg    200.590   Hg_ONCV_PBEsol-1.2.upf
+  La    138.905   La_ONCV_PBEsol-1.2.upf
+  Ni     58.693   Ni_ONCV_PBEsol-1.2.upf
+  O      15.999   O_ONCV_PBEsol-1.2.upf
+
+CELL_PARAMETERS {angstrom}
+      3.918500      0.000000      0.000000
+     -0.000000      3.918500      0.000000
+      0.000000      0.000000     12.882000
+
+ATOMIC_POSITIONS {crystal}
+  Ba      0.500000      0.500000      0.478746
+  Ba      0.500000      0.500000      0.783247
+  La      0.500000      0.500000      0.130997
+  Cu      0.000000      0.000000      0.630997
+  Ni      0.000000      0.000000      0.000000
+  Hg      0.000000      0.000000      0.261993
+  O       0.500000      0.000000      0.000000
+  O       0.000000      0.500000      0.000000
+  O       0.500000      0.000000      0.630997
+  O       0.000000      0.500000      0.630997
+  O       0.000000      0.000000      0.379632
+  O       0.000000      0.000000      0.882362
+
+K_POINTS {automatic}
+  16 16 8  0 0 0
