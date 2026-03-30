@@ -1,0 +1,31 @@
+{
+  "phase": 64,
+  "plan": "01",
+  "ASSERT_CONVENTION": "natural_units=NOT_used, fourier_convention=QE_plane_wave, custom=SI_derived_eV_K_GPa",
+  "VALD03_statement": "Room temperature = 300 K = 80 F = 27 C",
+  "summary": {
+    "total_validated": 10,
+    "stability_pass": 0,
+    "phonon_pass": 0,
+    "all_gates_pass": 0,
+    "reaches_200K": 0,
+    "reaches_300K": 0,
+    "viable": 0,
+    "false_positive_rate": 1.0
+  },
+  "key_findings": [
+    "False positive rate: 100% (10/10 fail stability + physics gates)",
+    "All 9 CuO2/LiH superlattices fail stability: CuO2 planes need charge reservoir layers",
+    "LaCuO1.25H1.75 perovskite is the only marginal survivor (E_hull ~62 meV/atom)",
+    "No candidate reaches Phase 58 target zone (lambda >= 2.5, omega_log >= 700 K)",
+    "Best combined Tc estimate: 155 K (far below 300 K)",
+    "Surrogate model is not useful for finding 300 K candidates in this composition space",
+    "Root cause: physics-estimated lambda and omega_log for H-oxides don't reach target zone"
+  ],
+  "forward_to_phase61_62": 0,
+  "backtracking_assessment": {
+    "trigger": "All 10 hits fail omega_log > 800 K gate; only 1 marginally passes stability",
+    "conclusion": "Surrogate is not useful for this problem at current scope",
+    "recommendation": "Rely on Track B candidates (Phases 59-62) for final ranking"
+  }
+}
