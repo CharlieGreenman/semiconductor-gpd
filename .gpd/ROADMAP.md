@@ -221,14 +221,14 @@ Plans:
 
 **Backtracking trigger:** If all candidate superlattices have E_hull > 50 meV/atom, simplify to a bilayer interface model or report hybrid route as thermodynamically unfavorable.
 
-**Plans:** TBD
+**Plans:** 4 plans in 4 waves (sequential pipeline: structures -> stability -> electronic -> Tc)
 
 Plans:
 
-- [ ] 30-01: Superlattice structure design -- 2-3 candidate RP structures with atomic positions and symmetry analysis
-- [ ] 30-02: DFT relaxation and thermodynamic stability (E_hull vs competing phases)
-- [ ] 30-03: Electronic structure of stable candidates (band structure, DOS, orbital-resolved Fermi surface)
-- [ ] 30-04: Phonon and EPW for stable candidates (DFPT, Wannier, alpha2F, lambda, Tc)
+- [ ] 30-01-PLAN.md -- Superlattice structure design: build 3 candidate RP structures with pymatgen/ASE, symmetry analysis, interface chemistry, MBE feasibility
+- [ ] 30-02-PLAN.md -- DFT relaxation inputs + thermodynamic stability (E_hull estimation vs competing phases, GO/NO-GO verdicts)
+- [ ] 30-03-PLAN.md -- Electronic structure of stable candidates (QE inputs, literature-grounded band structure/DOS/N(E_F) estimates)
+- [ ] 30-04-PLAN.md -- Phonon/EPW inputs + Eliashberg Tc estimation for stable candidates, parent compound comparison, Phase 30 verdict
 
 ---
 
