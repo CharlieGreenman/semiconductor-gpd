@@ -1,0 +1,66 @@
+{
+  "phase": 81,
+  "total_candidates_screened": 9,
+  "non_adiabatic_count": 7,
+  "best_candidate": "FeSe/STO interface",
+  "best_candidate_ratio": 2.0,
+  "best_candidate_Tc_enhancement": "8 K -> 65 K (8.1x)",
+  "non_adiabatic_candidates": [
+    {
+      "name": "SrTiO3 (dilute, n~1e18 cm-3)",
+      "omega_D_meV": 100.0,
+      "E_F_meV": 5.0,
+      "migdal_ratio": 20.0,
+      "Tc_expt_K": 0.3,
+      "Tc_Eliashberg_K": null
+    },
+    {
+      "name": "MATBG (magic-angle TBG)",
+      "omega_D_meV": 20.0,
+      "E_F_meV": 5.0,
+      "migdal_ratio": 4.0,
+      "Tc_expt_K": 3.0,
+      "Tc_Eliashberg_K": 0.1
+    },
+    {
+      "name": "Flat-band hydride (hypothetical)",
+      "omega_D_meV": 150.0,
+      "E_F_meV": 50.0,
+      "migdal_ratio": 3.0,
+      "Tc_expt_K": 0.0,
+      "Tc_Eliashberg_K": null
+    },
+    {
+      "name": "FeSe/STO interface",
+      "omega_D_meV": 100.0,
+      "E_F_meV": 50.0,
+      "migdal_ratio": 2.0,
+      "Tc_expt_K": 65.0,
+      "Tc_Eliashberg_K": 8.0
+    },
+    {
+      "name": "LaH10 (high-pressure hydride)",
+      "omega_D_meV": 250.0,
+      "E_F_meV": 600.0,
+      "migdal_ratio": 0.42,
+      "Tc_expt_K": 250.0,
+      "Tc_Eliashberg_K": 241.0
+    },
+    {
+      "name": "H3S (high-pressure hydride)",
+      "omega_D_meV": 200.0,
+      "E_F_meV": 500.0,
+      "migdal_ratio": 0.4,
+      "Tc_expt_K": 203.0,
+      "Tc_Eliashberg_K": 195.0
+    },
+    {
+      "name": "LaBeH8 (predicted clathrate)",
+      "omega_D_meV": 200.0,
+      "E_F_meV": 500.0,
+      "migdal_ratio": 0.4,
+      "Tc_expt_K": 0.0,
+      "Tc_Eliashberg_K": 241.0
+    }
+  ]
+}
