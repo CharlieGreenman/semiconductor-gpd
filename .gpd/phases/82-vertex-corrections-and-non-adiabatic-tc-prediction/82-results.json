@@ -1,0 +1,27 @@
+{
+  "phase": 82,
+  "FeSe_STO": {
+    "Tc_Eliashberg_K": 8.5,
+    "Tc_NA_phonon_K": 105.3,
+    "Tc_NA_combined_K": 334.2,
+    "Tc_expt_K": 65.0,
+    "enhancement_factor": 39.2
+  },
+  "LaH10_NA": {
+    "Tc_Eliashberg_K": 197.6,
+    "Tc_NA_K": 213.2,
+    "Delta_Tc_K": 15.5
+  },
+  "flat_band_hydride": {
+    "Tc_Eliashberg_K": 171.0,
+    "Tc_NA_K": 310.3,
+    "Delta_Tc_K": 139.3
+  },
+  "Hg1223_H_substrate": {
+    "Tc_base_K": 73.2,
+    "Tc_NA_K": 123.3
+  },
+  "parameter_scan_max_Tc_K": 285.3,
+  "verdict": "exceeds_ceiling",
+  "reaches_300K": false
+}
