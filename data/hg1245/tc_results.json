@@ -1,0 +1,35 @@
+{
+  "structure": "HgBa2Ca4Cu5O12+delta",
+  "short_name": "Hg1245",
+  "pressure_GPa": 0,
+  "Tc_experimental_K": 108,
+  "Tc_paramagnetic": {
+    "mu_0.08": 39.1,
+    "mu_0.10": 36.0,
+    "mu_0.13": 31.8,
+    "mu_0.15": 29.2
+  },
+  "Tc_paramagnetic_lambda": 1.5,
+  "Tc_paramagnetic_omega_log_K": 217.4,
+  "Tc_2OP": {
+    "mu_0.08": 14.2,
+    "mu_0.10": 12.4,
+    "mu_0.13": 10.0,
+    "mu_0.15": 8.5
+  },
+  "Tc_2OP_lambda": 0.82,
+  "Tc_2OP_omega_log_K": 217.4,
+  "comparison": {
+    "hg1223_Tc_phonon": 31.4,
+    "hg1234_Tc_phonon": 29.3,
+    "hg1245A_Tc_phonon": 36.0,
+    "hg1245B_Tc_phonon": 12.4,
+    "R_phonon_1234_1223": 0.9331,
+    "R_phonon_1245A_1223": 1.1465,
+    "R_phonon_1245B_1223": 0.3949,
+    "R_expt_1234_1223": 0.9403,
+    "R_expt_1245_1223": 0.806
+  },
+  "data_source": "literature_model",
+  "data_source_note": "Phonon-only lower bound. Trend across family is the meaningful comparison."
+}

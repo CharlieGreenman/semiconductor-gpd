@@ -1,0 +1,21 @@
+{
+  "compound": "HgBa2Ca4Cu5O12+delta",
+  "short_name": "Hg1245",
+  "n_atoms": 26,
+  "n_branches": 78,
+  "n_acoustic": 3,
+  "n_optical": 75,
+  "freq_max_cm-1": 690,
+  "freq_min_cm-1": 0,
+  "dynamically_stable": true,
+  "stability_note": "Hg1245 synthesized; expected stable at ambient in paramagnetic state",
+  "AF_note": "If inner planes are AF-ordered, phonon spectrum may differ from nspin=1 result",
+  "mode_character": {
+    "Hg_modes": "30-80 cm^-1",
+    "Ba_Ca_modes": "80-200 cm^-1",
+    "Cu-O_bending": "200-400 cm^-1",
+    "Cu-O_stretching": "400-650 cm^-1",
+    "apical_O": "400-550 cm^-1"
+  },
+  "data_source": "literature_model"
+}

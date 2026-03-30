@@ -1,0 +1,11 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+! HgBa2Ca4Cu5O12+delta (Hg1245) -- DFPT phonon calculation
+! 26 atoms -> 78 phonon branches. WARNING: nspin=1 (inner planes may be AF)
+
+phonons of Hg1245
+&INPUTPH
+  outdir='./tmp/', prefix='hg1245', fildyn='hg1245.dyn', fildvscf='dvscf',
+  ldisp=.true., nq1=4, nq2=4, nq3=1,
+  tr2_ph=1.0d-14, alpha_mix(1)=0.7, epsil=.true.,
+  search_sym=.true., recover=.true.
+/

@@ -1,0 +1,5 @@
+&INPUT
+  asr='crystal', flfrc='hg1245.fc', flfrq='hg1245.freq',
+  fldos='hg1245.phdos', dos=.true.,
+  nk1=20, nk2=20, nk3=8, deltaE=1.0
+/

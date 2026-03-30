@@ -1,0 +1,21 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+! HgBa2Ca4Cu5O12+delta (Hg1245) -- EPW electron-phonon coupling
+! 26 atoms, 5 CuO2 layers. Wannier: 5 Cu*5d + 14 O*3p = 25+42 = ~67 WFs
+
+--
+&inputepw
+  prefix='hg1245', outdir='./tmp/', dvscf_dir='./save/',
+  nk1=8, nk2=8, nk3=2, nq1=4, nq2=4, nq3=1,
+  nkf1=20, nkf2=20, nkf3=6, nqf1=20, nqf2=20, nqf3=6,
+  num_iter=500, dis_num_iter=200, proj_natom=19,
+  dis_win_min=5.0, dis_win_max=17.0, dis_froz_min=9.0, dis_froz_max=13.0,
+  ephwrite=.true., epbwrite=.true., epbread=.false.,
+  elph=.true., a2f=.true., fsthick=1.0, degaussw=0.025, degaussq=0.05,
+  nstemp=1, temps=300.0,
+  wannierize=.true., auto_projections=.false., use_ws=.true.
+/
+
+PROJECTIONS
+Cu : d
+O  : p
+END
