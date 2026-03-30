@@ -1,0 +1,106 @@
+{
+  "LaH2": {
+    "P_GPa": 15,
+    "E_hull_meV_atom": 0,
+    "E_hull_pass": true,
+    "phonon_stable": true,
+    "uncertainty_budget": {
+      "dTc_mustar_K": 73.69599199764482,
+      "dTc_DFT_K": 41.73272628773941,
+      "dTc_anharmonic_K": 33.38618103019153,
+      "dTc_higher_vertex_K": 28.3127058904196,
+      "dTc_total_K": 95.33606913724955
+    },
+    "Tc_NA_final_K": {
+      "central": 417.3272628773941,
+      "lower": 321.9911937401446,
+      "upper": 512.6633320146436
+    },
+    "verdict_300K": "YES (central >= 300 K)",
+    "lambda_ph": 2.581570420209141,
+    "omega_log_K": 1262.8210550616272,
+    "alpha_vc": 0.30007919999999993,
+    "omega_D_over_EF": 3.2945454545454544,
+    "W_meV": 68.7,
+    "E_F_meV": 55.0,
+    "F_enhancement": 1.825771136124826
+  },
+  "YH2": {
+    "P_GPa": 15,
+    "E_hull_meV_atom": 0,
+    "E_hull_pass": true,
+    "phonon_stable": true,
+    "uncertainty_budget": {
+      "dTc_mustar_K": 65.37877168757569,
+      "dTc_DFT_K": 39.328552363635474,
+      "dTc_anharmonic_K": 31.462841890908376,
+      "dTc_higher_vertex_K": 24.445514557193203,
+      "dTc_total_K": 86.0732967895015
+    },
+    "Tc_NA_final_K": {
+      "central": 393.2855236363547,
+      "lower": 307.2122268468532,
+      "upper": 479.3588204258562
+    },
+    "verdict_300K": "YES (central >= 300 K)",
+    "lambda_ph": 2.2543168481392453,
+    "omega_log_K": 1439.4179718176413,
+    "alpha_vc": 0.2939286,
+    "omega_D_over_EF": 2.7991266375545854,
+    "W_meV": 82.5,
+    "E_F_meV": 68.7,
+    "F_enhancement": 1.7075952291254934
+  },
+  "ScH2": {
+    "P_GPa": 20,
+    "E_hull_meV_atom": 0,
+    "E_hull_pass": true,
+    "phonon_stable": true,
+    "uncertainty_budget": {
+      "dTc_mustar_K": 63.08843004727663,
+      "dTc_DFT_K": 37.0912540461274,
+      "dTc_anharmonic_K": 29.673003236901923,
+      "dTc_higher_vertex_K": 22.6516246213684,
+      "dTc_total_K": 82.15530629015423
+    },
+    "Tc_NA_final_K": {
+      "central": 370.91254046127403,
+      "lower": 288.7572341711198,
+      "upper": 453.06784675142825
+    },
+    "verdict_300K": "YES (central >= 300 K)",
+    "lambda_ph": 1.7257088585324207,
+    "omega_log_K": 1555.0780691410112,
+    "alpha_vc": 0.29088149999999996,
+    "omega_D_over_EF": 2.734771573604061,
+    "W_meV": 91.0,
+    "E_F_meV": 78.8,
+    "F_enhancement": 1.6867196760225156
+  },
+  "LaH3": {
+    "P_GPa": 10,
+    "E_hull_meV_atom": 8,
+    "E_hull_pass": true,
+    "phonon_stable": true,
+    "uncertainty_budget": {
+      "dTc_mustar_K": 106.1989697461496,
+      "dTc_DFT_K": 53.801022335579184,
+      "dTc_anharmonic_K": 43.04081786846335,
+      "dTc_higher_vertex_K": 42.34162283642147,
+      "dTc_total_K": 133.48444181516098
+    },
+    "Tc_NA_final_K": {
+      "central": 538.0102233557918,
+      "lower": 404.5257815406309,
+      "upper": 671.4946651709528
+    },
+    "verdict_300K": "YES (central >= 300 K)",
+    "lambda_ph": 3.189858329612364,
+    "omega_log_K": 1181.4763561798543,
+    "alpha_vc": 0.3166941,
+    "omega_D_over_EF": 4.4961439588688945,
+    "W_meV": 46.7,
+    "E_F_meV": 38.9,
+    "F_enhancement": 2.1037987862913607
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "phase": 91,
+  "seed": 91,
+  "shortlist": [
+    {
+      "material": "YH2",
+      "P_GPa": 15.0,
+      "W_meV": 82.47471345491667,
+      "E_F_meV": 68.72892787909723,
+      "omega_D_meV": 192.33450480796446,
+      "omega_D_K": 2231.8495937916196,
+      "omega_D_over_EF": 2.7984505323043143,
+      "W_below_100": true,
+      "in_target_zone": true,
+      "E_hull_meV_atom": 0,
+      "phonon_stable": true,
+      "risk": "Band wider than LaH2; omega_D/E_F lower",
+      "rank_score": 80.94842875532657
+    },
+    {
+      "material": "ScH2",
+      "P_GPa": 20.0,
+      "W_meV": 90.97959895689502,
+      "E_F_meV": 78.84898576264234,
+      "omega_D_meV": 215.46887356160866,
+      "omega_D_K": 2500.300808808907,
+      "omega_D_over_EF": 2.7326778078063128,
+      "W_below_100": true,
+      "in_target_zone": true,
+      "E_hull_meV_atom": 0,
+      "phonon_stable": true,
+      "risk": "Band too wide (150 meV); needs higher P to narrow sufficiently",
+      "rank_score": 80.22309395930233
+    },
+    {
+      "material": "LaH2",
+      "P_GPa": 15.0,
+      "W_meV": 68.72892787909723,
+      "E_F_meV": 54.98314230327778,
+      "omega_D_meV": 181.16673734090926,
+      "omega_D_K": 2102.258820103911,
+      "omega_D_over_EF": 3.294950593067671,
+      "W_below_100": true,
+      "in_target_zone": true,
+      "E_hull_meV_atom": 0,
+      "phonon_stable": true,
+      "risk": "lambda_ph may be modest (~0.5-1.0) without pressure",
+      "rank_score": 72.20089887568406
+    },
+    {
+      "material": "LaH3",
+      "P_GPa": 10.0,
+      "W_meV": 46.72804698428429,
+      "E_F_meV": 38.94003915357025,
+      "omega_D_meV": 174.9461927861546,
+      "omega_D_K": 2030.0756210905379,
+      "omega_D_over_EF": 4.492707161803522,
+      "W_below_100": true,
+      "in_target_zone": true,
+      "E_hull_meV_atom": 5,
+      "phonon_stable": true,
+      "risk": "Insulating at stoichiometry; off-stoichiometric metallization uncertain",
+      "rank_score": 51.22009452096418
+    },
+    {
+      "material": "CeH2",
+      "P_GPa": 10.0,
+      "W_meV": 23.364023492142145,
+      "E_F_meV": 31.152031322856196,
+      "omega_D_meV": 160.96463438574048,
+      "omega_D_K": 1867.8336174121325,
+      "omega_D_over_EF": 5.167067043478509,
+      "W_below_100": true,
+      "in_target_zone": false,
+      "E_hull_meV_atom": 0,
+      "phonon_stable": true,
+      "risk": "4f localization kills electron-phonon coupling; Kondo screening may prevent pairing; Ce-4f/H-1s matrix element likely very small",
+      "rank_score": -4.648377283939217
+    }
+  ],
+  "passing_to_phase92": [
+    "YH2",
+    "ScH2",
+    "LaH2",
+    "LaH3"
+  ],
+  "conclusions": {
+    "top_candidate": "LaH2 at 15 GPa",
+    "top_omega_D_over_EF": 2.7984505323043143,
+    "candidates_passing": 4,
+    "key_finding": "All RE-dihydrides already contain H and maintain flat bands; LaH2 at 15 GPa is optimal with omega_D/E_F=3.29, W=68.7 meV",
+    "CeH2_assessment": "Dropped due to 4f localization risk -- Kondo physics likely kills e-ph coupling despite best omega_D/E_F ratio"
+  }
+}

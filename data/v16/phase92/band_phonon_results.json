@@ -1,0 +1,46 @@
+{
+  "LaH2": {
+    "P_GPa": 15,
+    "W_meV": 68.7,
+    "E_F_meV": 55.0,
+    "omega_D_meV": 181.2,
+    "omega_D_over_EF": 3.2945454545454544,
+    "flat_band_character": "La-5d / H-1s antibonding",
+    "orbital_weight_H": 0.45,
+    "flat_band_confirmed": true,
+    "phonon_stable": true
+  },
+  "YH2": {
+    "P_GPa": 15,
+    "W_meV": 82.5,
+    "E_F_meV": 68.7,
+    "omega_D_meV": 192.3,
+    "omega_D_over_EF": 2.7991266375545854,
+    "flat_band_character": "Y-4d / H-1s antibonding",
+    "orbital_weight_H": 0.4,
+    "flat_band_confirmed": true,
+    "phonon_stable": true
+  },
+  "ScH2": {
+    "P_GPa": 20,
+    "W_meV": 91.0,
+    "E_F_meV": 78.8,
+    "omega_D_meV": 215.5,
+    "omega_D_over_EF": 2.734771573604061,
+    "flat_band_character": "Sc-3d / H-1s antibonding",
+    "orbital_weight_H": 0.35,
+    "flat_band_confirmed": true,
+    "phonon_stable": true
+  },
+  "LaH3": {
+    "P_GPa": 10,
+    "W_meV": 46.7,
+    "E_F_meV": 38.9,
+    "omega_D_meV": 174.9,
+    "omega_D_over_EF": 4.4961439588688945,
+    "flat_band_character": "La-5d / H-1s (mixed tet+oct)",
+    "orbital_weight_H": 0.55,
+    "flat_band_confirmed": true,
+    "phonon_stable": true
+  }
+}

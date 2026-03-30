@@ -1,0 +1,139 @@
+{
+  "phase": 96,
+  "seed": 96,
+  "master_ranking": [
+    {
+      "rank": 1,
+      "material": "LaH3",
+      "P_GPa": 10,
+      "W_meV": 46.7,
+      "E_F_meV": 38.9,
+      "omega_D_over_EF": 4.4961439588688945,
+      "lambda_raw": 3.189858329612364,
+      "lambda_corrected": 2.2329008307286546,
+      "omega_log_raw_K": 1181.4763561798543,
+      "omega_log_corrected_K": 767.9596315169053,
+      "alpha_vc_raw": 0.3166941,
+      "alpha_vc_corrected": 0.23752057499999998,
+      "F_vertex_corrected": 1.8278490897185204,
+      "Tc_Eliashberg_corrected_K": 117.75974463393109,
+      "Tc_NA_K": {
+        "pessimistic": 148.1284076807327,
+        "central": 215.24704203461636,
+        "optimistic": 342.81006959692485
+      },
+      "E_hull_meV_atom": 8,
+      "phonon_stable": true,
+      "verdict_300K": "MARGINAL (300 K reachable in optimistic scenario)"
+    },
+    {
+      "rank": 2,
+      "material": "LaH2",
+      "P_GPa": 15,
+      "W_meV": 68.7,
+      "E_F_meV": 55.0,
+      "omega_D_over_EF": 3.2945454545454544,
+      "lambda_raw": 2.581570420209141,
+      "lambda_corrected": 1.8070992941463986,
+      "omega_log_raw_K": 1262.8210550616272,
+      "omega_log_corrected_K": 820.8336857900578,
+      "alpha_vc_raw": 0.30007919999999993,
+      "alpha_vc_corrected": 0.22505939999999997,
+      "F_vertex_corrected": 1.6193283520936197,
+      "Tc_Eliashberg_corrected_K": 121.64134137255886,
+      "Tc_NA_K": {
+        "pessimistic": 111.77110953429043,
+        "central": 196.97727287128316,
+        "optimistic": 269.25325755790533
+      },
+      "E_hull_meV_atom": 0,
+      "phonon_stable": true,
+      "verdict_300K": "CLOSE (gap = 103 K; optimistic reaches 269 K)"
+    },
+    {
+      "rank": 3,
+      "material": "YH2",
+      "P_GPa": 15,
+      "W_meV": 82.5,
+      "E_F_meV": 68.7,
+      "omega_D_over_EF": 2.7991266375545854,
+      "lambda_raw": 2.2543168481392453,
+      "lambda_corrected": 1.5780217936974716,
+      "omega_log_raw_K": 1439.4179718176413,
+      "omega_log_corrected_K": 935.6216816814668,
+      "alpha_vc_raw": 0.2939286,
+      "alpha_vc_corrected": 0.22044645,
+      "F_vertex_corrected": 1.53069642184412,
+      "Tc_Eliashberg_corrected_K": 120.30635666168615,
+      "Tc_NA_K": {
+        "pessimistic": 101.12906386943925,
+        "central": 184.1525096671455,
+        "optimistic": 289.96622594392466
+      },
+      "E_hull_meV_atom": 0,
+      "phonon_stable": true,
+      "verdict_300K": "CLOSE (gap = 116 K; optimistic reaches 290 K)"
+    },
+    {
+      "rank": 4,
+      "material": "ScH2",
+      "P_GPa": 20,
+      "W_meV": 91.0,
+      "E_F_meV": 78.8,
+      "omega_D_over_EF": 2.734771573604061,
+      "lambda_raw": 1.7257088585324207,
+      "lambda_corrected": 1.2079962009726943,
+      "omega_log_raw_K": 1555.0780691410112,
+      "omega_log_corrected_K": 1010.8007449416573,
+      "alpha_vc_raw": 0.29088149999999996,
+      "alpha_vc_corrected": 0.21816112499999996,
+      "F_vertex_corrected": 1.5150397570168865,
+      "Tc_Eliashberg_corrected_K": 93.1965404332806,
+      "Tc_NA_K": {
+        "pessimistic": 69.15857976403618,
+        "central": 141.1964639728519,
+        "optimistic": 235.4973413174117
+      },
+      "E_hull_meV_atom": 0,
+      "phonon_stable": true,
+      "verdict_300K": "NO (gap = 159 K)"
+    }
+  ],
+  "best_candidate": {
+    "material": "LaH3",
+    "Tc_NA_K": {
+      "pessimistic": 148.1284076807327,
+      "central": 215.24704203461636,
+      "optimistic": 342.81006959692485
+    },
+    "verdict_300K": "MARGINAL (300 K reachable in optimistic scenario)",
+    "confidence": "LOW-MEDIUM"
+  },
+  "gap_accounting": {
+    "room_temp_target_K": 300,
+    "best_prediction_K": 215.24704203461636,
+    "best_experimental_K": 151,
+    "computational_gap_K": 84.75295796538364,
+    "experimental_gap_K": 149
+  },
+  "corrections_applied": {
+    "lambda_factor": 0.7,
+    "omega_log_factor": 0.65,
+    "alpha_vc_factor": 0.75,
+    "strong_coupling_factor": 0.85
+  },
+  "v17_recommendation": [
+    "Full DFT band + phonon for LaH3 at 10 GPa",
+    "EPW alpha2F computation",
+    "Isotropic Eliashberg with DFT kernel",
+    "Material-specific vertex corrections",
+    "Experimental validation where possible"
+  ],
+  "project_assessment": {
+    "milestones_completed": 16,
+    "eliashberg_ceiling_K": 240,
+    "vertex_corrected_ceiling_K": 215.24704203461636,
+    "probability_RT_SC": "15-25%",
+    "key_bottleneck": "lambda_ph under moderate pressure needs DFT verification"
+  }
+}

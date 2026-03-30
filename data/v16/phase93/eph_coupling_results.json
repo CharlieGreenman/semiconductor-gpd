@@ -1,0 +1,86 @@
+{
+  "LaH2": {
+    "P_GPa": 15,
+    "lambda_ph": 2.581570420209141,
+    "lambda_ac": 0.15,
+    "lambda_H": 1.25,
+    "omega_log_K": 1262.8210550616272,
+    "omega_log_meV": 108.82635772678623,
+    "omega_2_K": 1568.3928268763007,
+    "omega2_ratio": 1.2419755123577354,
+    "Tc_Eliashberg_K": {
+      "central": 228.57589027459676,
+      "lower": 219.45642856607068,
+      "upper": 238.10097508418536
+    },
+    "in_target_zone": false,
+    "Tc_above_170K": true,
+    "W_meV": 68.7,
+    "E_F_meV": 55.0,
+    "omega_D_meV": 181.2,
+    "omega_D_over_EF": 3.2945454545454544
+  },
+  "YH2": {
+    "P_GPa": 15,
+    "lambda_ph": 2.2543168481392453,
+    "lambda_ac": 0.12,
+    "lambda_H": 1.1,
+    "omega_log_K": 1439.4179718176413,
+    "omega_log_meV": 124.04498205943135,
+    "omega_2_K": 1723.9505057416222,
+    "omega2_ratio": 1.1976719337224089,
+    "Tc_Eliashberg_K": {
+      "central": 230.31542658840002,
+      "lower": 220.86167782914035,
+      "upper": 240.12812216479935
+    },
+    "in_target_zone": false,
+    "Tc_above_170K": true,
+    "W_meV": 82.5,
+    "E_F_meV": 68.7,
+    "omega_D_meV": 192.3,
+    "omega_D_over_EF": 2.7991266375545854
+  },
+  "ScH2": {
+    "P_GPa": 20,
+    "lambda_ph": 1.7257088585324207,
+    "lambda_ac": 0.1,
+    "lambda_H": 0.85,
+    "omega_log_K": 1555.0780691410112,
+    "omega_log_meV": 134.01224311797753,
+    "omega_2_K": 1863.2027893471072,
+    "omega2_ratio": 1.1981409977547282,
+    "Tc_Eliashberg_K": {
+      "central": 219.90170965215137,
+      "lower": 209.53351898615654,
+      "upper": 230.58367854134318
+    },
+    "in_target_zone": false,
+    "Tc_above_170K": true,
+    "W_meV": 91.0,
+    "E_F_meV": 78.8,
+    "omega_D_meV": 215.5,
+    "omega_D_over_EF": 2.734771573604061
+  },
+  "LaH3": {
+    "P_GPa": 10,
+    "lambda_ph": 3.189858329612364,
+    "lambda_ac": 0.2,
+    "lambda_H": 1.55,
+    "omega_log_K": 1181.4763561798543,
+    "omega_log_meV": 101.81630094621289,
+    "omega_2_K": 1516.6221378117382,
+    "omega2_ratio": 1.2836669391468256,
+    "Tc_Eliashberg_K": {
+      "central": 255.73273777964872,
+      "lower": 245.79808146627246,
+      "upper": 266.1727096881959
+    },
+    "in_target_zone": true,
+    "Tc_above_170K": true,
+    "W_meV": 46.7,
+    "E_F_meV": 38.9,
+    "omega_D_meV": 174.9,
+    "omega_D_over_EF": 4.4961439588688945
+  }
+}
