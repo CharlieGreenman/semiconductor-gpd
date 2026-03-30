@@ -1,0 +1,166 @@
+{
+  "metadata": {
+    "description": "RE substitution effects on La3Ni2O7 at -2.01% strain (SLAO)",
+    "base_strain_pct": -2.01,
+    "base_lambda": 0.92,
+    "gruneisen_lambda": 2.0,
+    "gruneisen_range": [
+      1.0,
+      3.0
+    ],
+    "ionic_radii_source": "Shannon (9-coordinate)",
+    "source": "Chemical pressure model (requires HPC validation)",
+    "ASSERT_CONVENTION": "strain_sign=negative_compressive, tc_definition=zero_resistance_primary, mu_star=standard_bracket"
+  },
+  "data": [
+    {
+      "RE_species": "La",
+      "ionic_radius_angstrom": 1.16,
+      "delta_r_frac": 0.0,
+      "strain_pct": -2.01,
+      "a_angstrom": 3.756,
+      "c_eff_angstrom": 21.05,
+      "c_over_a": 5.604,
+      "delta_V_frac": 0.0,
+      "chem_pressure_GPa_equiv": -0.0,
+      "lambda_est": 0.92,
+      "lambda_range": [
+        0.92,
+        0.92
+      ],
+      "omega_log_K": 296.0,
+      "omega_2_K": 458.0,
+      "N_EF_total": 4.7,
+      "Ni_dz2_weight": 0.35,
+      "tc_values": {
+        "mu_0.10": {
+          "Tc_AD_modified_K": 20.08,
+          "Tc_Eliashberg_est_K": 21.86
+        },
+        "mu_0.13": {
+          "Tc_AD_modified_K": 16.62,
+          "Tc_Eliashberg_est_K": 18.1
+        }
+      },
+      "Tc_Eliashberg_range_K": [
+        21.9,
+        21.9
+      ],
+      "4f_near_EF_risk": false,
+      "4f_config": "4f^0"
+    },
+    {
+      "RE_species": "Pr",
+      "ionic_radius_angstrom": 1.126,
+      "delta_r_frac": 0.0293,
+      "strain_pct": -2.01,
+      "a_angstrom": 3.756,
+      "c_eff_angstrom": 20.618,
+      "c_over_a": 5.489,
+      "delta_V_frac": -0.0205,
+      "chem_pressure_GPa_equiv": 12.3,
+      "lambda_est": 0.958,
+      "lambda_range": [
+        0.939,
+        0.977
+      ],
+      "omega_log_K": 297.8,
+      "omega_2_K": 460.8,
+      "N_EF_total": 4.8,
+      "Ni_dz2_weight": 0.354,
+      "tc_values": {
+        "mu_0.10": {
+          "Tc_AD_modified_K": 21.68,
+          "Tc_Eliashberg_est_K": 23.72
+        },
+        "mu_0.13": {
+          "Tc_AD_modified_K": 18.12,
+          "Tc_Eliashberg_est_K": 19.82
+        }
+      },
+      "Tc_Eliashberg_range_K": [
+        22.8,
+        24.6
+      ],
+      "4f_near_EF_risk": false,
+      "4f_config": "4f^2"
+    },
+    {
+      "RE_species": "Nd",
+      "ionic_radius_angstrom": 1.109,
+      "delta_r_frac": 0.044,
+      "strain_pct": -2.01,
+      "a_angstrom": 3.756,
+      "c_eff_angstrom": 20.402,
+      "c_over_a": 5.432,
+      "delta_V_frac": -0.0308,
+      "chem_pressure_GPa_equiv": 18.5,
+      "lambda_est": 0.977,
+      "lambda_range": [
+        0.948,
+        1.005
+      ],
+      "omega_log_K": 298.7,
+      "omega_2_K": 462.2,
+      "N_EF_total": 4.84,
+      "Ni_dz2_weight": 0.356,
+      "tc_values": {
+        "mu_0.10": {
+          "Tc_AD_modified_K": 22.49,
+          "Tc_Eliashberg_est_K": 24.67
+        },
+        "mu_0.13": {
+          "Tc_AD_modified_K": 18.87,
+          "Tc_Eliashberg_est_K": 20.7
+        }
+      },
+      "Tc_Eliashberg_range_K": [
+        23.4,
+        26.0
+      ],
+      "4f_near_EF_risk": false,
+      "4f_config": "4f^3"
+    },
+    {
+      "RE_species": "Sm",
+      "ionic_radius_angstrom": 1.079,
+      "delta_r_frac": 0.0698,
+      "strain_pct": -2.01,
+      "a_angstrom": 3.756,
+      "c_eff_angstrom": 20.021,
+      "c_over_a": 5.33,
+      "delta_V_frac": -0.0489,
+      "chem_pressure_GPa_equiv": 29.3,
+      "lambda_est": 1.01,
+      "lambda_range": [
+        0.965,
+        1.055
+      ],
+      "omega_log_K": 300.3,
+      "omega_2_K": 464.7,
+      "N_EF_total": 4.93,
+      "Ni_dz2_weight": 0.36,
+      "tc_values": {
+        "mu_0.10": {
+          "Tc_AD_modified_K": 23.9,
+          "Tc_Eliashberg_est_K": 26.31
+        },
+        "mu_0.13": {
+          "Tc_AD_modified_K": 20.19,
+          "Tc_Eliashberg_est_K": 22.23
+        }
+      },
+      "Tc_Eliashberg_range_K": [
+        24.3,
+        28.3
+      ],
+      "4f_near_EF_risk": true,
+      "4f_config": "4f^5"
+    }
+  ],
+  "validation": {
+    "Pr_enhances_Tc": true,
+    "ionic_radius_ordering_correct": true,
+    "Sm_4f_flagged": true
+  }
+}

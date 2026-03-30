@@ -1,0 +1,102 @@
+! ASSERT_CONVENTION: strain_sign=negative_compressive, functional=PBEsol
+
+! ============================================================================
+! (La2Pr)Ni2O7 -- ordered substitution on SLAO substrate (-2.01% strain)
+! Phase 29-04, Task 1
+!
+! La2PrNi2O7: one La replaced by Pr per formula unit (33% substitution)
+! 2x1x1 supercell of I4/mmm: 48 atoms, with one La2 site occupied by Pr
+! a = 3.756 A (SLAO), b = 3.756 A, c ~ 21.0 A (to be relaxed)
+!
+! Pr3+: 4f^2 configuration, ionic radius 1.126 A (vs La3+ = 1.160 A)
+! Chemical pressure effect: ~2-4 GPa equivalent from ionic radius reduction
+! ============================================================================
+
+&CONTROL
+   calculation  = 'vc-relax'
+   prefix       = 'la2pr_m2pct'
+   outdir       = './tmp/'
+   pseudo_dir   = './pseudo/'
+   tstress      = .true.
+   tprnfor      = .true.
+   forc_conv_thr = 1.0d-4
+   etot_conv_thr = 1.0d-6
+   nstep        = 200
+   verbosity    = 'high'
+/
+
+&SYSTEM
+   ibrav        = 0
+   nat          = 24
+   ntyp         = 4
+   ecutwfc      = 80.0
+   ecutrho      = 640.0
+   occupations  = 'smearing'
+   smearing     = 'mv'
+   degauss      = 0.02
+   nspin        = 1
+   ! Pr 4f states treated as core (f-in-core pseudopotential or explicit with U)
+   ! For PBEsol without U: Pr-4f may appear as spurious bands near E_F
+   ! Check: if Pr-4f appears within 2 eV of E_F, flag as limitation
+/
+
+&ELECTRONS
+   conv_thr     = 1.0d-8
+   mixing_beta  = 0.3
+   diagonalization = 'david'
+   electron_maxstep = 200
+/
+
+&IONS
+   ion_dynamics = 'bfgs'
+/
+
+&CELL
+   cell_dynamics = 'bfgs'
+   cell_dofree  = 'z'
+   press        = 0.0
+   press_conv_thr = 0.5
+/
+
+ATOMIC_SPECIES
+   La  138.90547  La_ONCV_PBEsol-1.2.upf
+   Pr  140.90766  Pr_ONCV_PBEsol-1.2.upf
+   Ni   58.6934   Ni_ONCV_PBEsol-1.2.upf
+   O    15.9994   O_ONCV_PBEsol-1.2.upf
+
+! a = 3.756 A (SLAO substrate, fixed)
+CELL_PARAMETERS {angstrom}
+   3.756000000   0.000000000   0.000000000
+   0.000000000   3.756000000   0.000000000
+   0.000000000   0.000000000  21.000000000
+
+ATOMIC_POSITIONS {crystal}
+! Replace 2 of 6 La atoms with Pr (one La2 pair -> Pr)
+! La2 flanking the bilayer: replace z~0.318 and z~0.682 pair with Pr
+   La   0.000000   0.000000   0.500000   ! La1 (blocking layer)
+   La   0.500000   0.500000   0.000000   ! La1 (body-center)
+   Pr   0.000000   0.000000   0.318000   ! Pr substituting La2 (bilayer-flanking)
+   Pr   0.000000   0.000000   0.682000   ! Pr (mirror)
+   La   0.500000   0.500000   0.818000   ! La2 (body-center, remains La)
+   La   0.500000   0.500000   0.182000   ! La2 (body-center, remains La)
+   Ni   0.000000   0.000000   0.098000
+   Ni   0.000000   0.000000   0.902000
+   Ni   0.500000   0.500000   0.598000
+   Ni   0.500000   0.500000   0.402000
+   O    0.000000   0.000000   0.000000
+   O    0.500000   0.500000   0.500000
+   O    0.000000   0.000000   0.198000
+   O    0.000000   0.000000   0.802000
+   O    0.500000   0.500000   0.698000
+   O    0.500000   0.500000   0.302000
+   O    0.000000   0.500000   0.098000
+   O    0.500000   0.000000   0.098000
+   O    0.000000   0.500000   0.902000
+   O    0.500000   0.000000   0.902000
+   O    0.500000   0.000000   0.598000
+   O    0.000000   0.500000   0.598000
+   O    0.500000   0.000000   0.402000
+   O    0.000000   0.500000   0.402000
+
+K_POINTS {automatic}
+   8 8 2   1 1 1
