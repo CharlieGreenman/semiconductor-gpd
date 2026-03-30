@@ -1,0 +1,101 @@
+{
+  "Model1_Hg1223_HighLambda": {
+    "description": "Hg1223 (d-wave, Tc~146K) / High-lambda hydride (lambda=3, omega_log=1500K)",
+    "Tc_S": 146.0,
+    "Tc_N_standalone": 223.37766523863928,
+    "best_pair_breaking": {
+      "Tc": 145.9513414435433,
+      "d_S": 10.0,
+      "d_N": 0.5,
+      "Gamma": 0.01
+    },
+    "best_cooper_limit": {
+      "Tc": 211.4464270417879,
+      "d_S": 0.5,
+      "d_N": 10.0,
+      "Gamma": 1.0,
+      "lambda_eff": 2.9047300202535373,
+      "omega_log_eff": 1424.1516747843004,
+      "mu_star_eff": 0.09302325581395349
+    },
+    "best_cooperative_raw": 600,
+    "best_cooperative_capped": 290.3909648102311,
+    "cooperative_was_capped": true,
+    "pairing_symmetry": {
+      "symmetry": "s+d mixed",
+      "mu_star_eff": 0.08254176232228902,
+      "Delta_d_center": 7.1653131057378925,
+      "Delta_s": 33.87727800795984,
+      "ratio_d_over_s": 0.21150793472938328
+    },
+    "realistic_Tc": 246.8323200886964,
+    "exceeds_241": true,
+    "reaches_300": false
+  },
+  "Model2_Hg1223_ModLambda": {
+    "description": "Hg1223 (d-wave, Tc~146K) / Moderate hydride (lambda=1.5, omega_log=1000K)",
+    "Tc_S": 146.0,
+    "Tc_N_standalone": 94.33981111912684,
+    "best_pair_breaking": {
+      "Tc": 145.96107185731637,
+      "d_S": 10.0,
+      "d_N": 0.5,
+      "Gamma": 0.01
+    },
+    "best_cooper_limit": {
+      "Tc": 89.46635957856654,
+      "d_S": 0.5,
+      "d_N": 10.0,
+      "Gamma": 1.0,
+      "lambda_eff": 1.5115254534543456,
+      "omega_log_eff": 918.5792456422871,
+      "mu_star_eff": 0.09142857142857143
+    },
+    "best_cooperative_raw": 538.0,
+    "best_cooperative_capped": 189.8,
+    "cooperative_was_capped": true,
+    "pairing_symmetry": {
+      "symmetry": "s+d mixed",
+      "mu_star_eff": 0.05720087706818146,
+      "Delta_d_center": 10.705228570379806,
+      "Delta_s": 14.30750028247788,
+      "ratio_d_over_s": 0.7482249420896724
+    },
+    "realistic_Tc": 161.33,
+    "exceeds_241": false,
+    "reaches_300": false
+  },
+  "Model3_YBCO_HighLambda": {
+    "description": "YBCO (d-wave, Tc~93K) / High-lambda hydride (lambda=3, omega_log=1500K)",
+    "Tc_S": 93.0,
+    "Tc_N_standalone": 223.37766523863928,
+    "best_pair_breaking": {
+      "Tc": 92.96125807179554,
+      "d_S": 10.0,
+      "d_N": 0.5,
+      "Gamma": 0.01
+    },
+    "best_cooper_limit": {
+      "Tc": 216.09763876573203,
+      "d_S": 0.5,
+      "d_N": 10.0,
+      "Gamma": 1.0,
+      "lambda_eff": 2.88432998656662,
+      "omega_log_eff": 1463.2421667366625,
+      "mu_star_eff": 0.09433962264150944
+    },
+    "best_cooperative_raw": 600,
+    "best_cooperative_capped": 290.3909648102311,
+    "cooperative_was_capped": true,
+    "pairing_symmetry": {
+      "symmetry": "s-wave",
+      "mu_star_eff": 0.1,
+      "Delta_d_center": 5.37398482930342,
+      "Delta_s": 33.87727800795984,
+      "ratio_d_over_s": 0.15863095104703748
+    },
+    "realistic_Tc": 223.37766523863928,
+    "exceeds_241": false,
+    "reaches_300": false
+  }
+}
