@@ -1,8 +1,8 @@
 {
   "project_reference": {
-    "project_md_updated": "2026-03-29",
-    "core_research_question": "Can first-principles computation identify a specific material, structure, or condition that closes the 149 K gap to room-temperature superconductivity -- via multilayer cuprate engineering, nickelate lever-stacking, or hybrid superlattice design?",
-    "current_focus": "Phase 27 -- Hg1223 Pipeline Validation"
+    "project_md_updated": "2026-03-30",
+    "core_research_question": "Can beyond-Eliashberg methods (DMFT+Eliashberg, spin-fluctuation RPA) predict a material or condition that closes the 149 K gap -- and if they reproduce the 151 K Hg1223 benchmark, can they guide the design of a room-temperature superconductor?",
+    "current_focus": "Phase 34 -- DMFT Setup and Correlated Electronic Structure"
   },
   "project_contract": {
     "schema_version": 1,
@@ -524,14 +524,14 @@
     }
   },
   "position": {
-    "current_phase": "27",
-    "current_phase_name": "Hg1223 Pipeline Validation",
+    "current_phase": "34",
+    "current_phase_name": "DMFT Setup and Correlated Electronic Structure",
     "total_phases": null,
     "current_plan": "--",
-    "total_plans_in_phase": 3,
+    "total_plans_in_phase": null,
     "status": "Milestone complete",
     "last_activity": "2026-03-30",
-    "last_activity_desc": "v8.0 milestone completed and archived",
+    "last_activity_desc": "v9.0 milestone completed and archived",
     "progress_percent": 0,
     "paused_at": null
   },
@@ -539,20 +539,24 @@
   "intermediate_results": [
     "v1.0 pipeline benchmarks: H3S Tc = 182 K (10.5% error vs expt), LaH10 Tc = 276 K (10.6% error vs expt) -- pipeline accuracy established",
     "v1.0 CsInH3 result: Tc = 214 K at 3 GPa (SSCHA-corrected), E_hull = 6 meV/atom -- hydride Tc ceiling for this family",
+    "v8.0 phonon-only Tc ceiling: 26-36 K for all oxide candidates (Hg1223, Hg1234, Hg1245, strained La3Ni2O7, hybrid superlattices)",
+    "v8.0 mechanism analysis: phonon fraction 20-45% of cuprate Tc; spin fluctuations contribute 55-80%",
+    "v8.0 Hg multilayer finding: n=3 (Hg1223) is optimally layered; adding layers decreases Tc via AF inner-plane competition",
+    "v8.0 nickelate phonon lambda_ph: best 26 K phonon-only, 80 K gate not reached",
     "Carried retained benchmark: Hg1223 at 151 K after pressure quench (ref-hg1223-quench)",
     "Nickelate frontier: ambient film onset 63 K (ref-lapr327-ambient), ambient bulk 40 K (ref-smnio2-40k), pressurized single-crystal 96 K (ref-nickelate-96k)",
     "Room-temperature gap: 149 K (unchanged since v4.0)"
   ],
   "open_questions": [
-    "Can the v1.0 QE+EPW+Eliashberg pipeline (validated on H3S and LaH10 hydrides) reproduce Hg1223 Tc within 15%? Cuprates are a harder test because of correlation effects and d-orbital physics.",
-    "Does the number of CuO2 layers monotonically increase Tc in the Hg family, or is there an optimal layer count?",
-    "Is phonon-mediated Eliashberg theory sufficient for La3Ni2O7, or will spin-fluctuation contributions dominate?",
-    "Are cuprate-nickelate superlattices thermodynamically viable (E_hull < 50 meV/atom)?"
+    "Can single-site DMFT capture enough AF correlation physics for cuprates, or will cluster DMFT be needed? (scoping decision: single-site first, cluster is EXT scope)",
+    "What is the correct U/J for the Hg1223 3-band model? Constrained RPA vs literature values may differ",
+    "Is the spin-fluctuation pairing channel for La3Ni2O7 s+/- or d-wave? RPA will determine this",
+    "Will anisotropic Eliashberg (EXT-01) significantly change Tc predictions vs isotropic approximation?"
   ],
   "performance_metrics": {
     "rows": [
       {
-        "label": "v8.0 roadmap creation",
+        "label": "v9.0 roadmap creation",
         "duration": "--",
         "tasks": "--",
         "files": "`.gpd/ROADMAP.md`, `.gpd/STATE.md`"
@@ -562,39 +566,53 @@
   "decisions": [
     {
       "phase": null,
-      "summary": "[v8.0 start]: Pivoted from protocol design to computational materials design; v7.0 closeout requires compute or measure, not more planning",
+      "summary": "[v8.0 Phase 33]: Phonon-only Eliashberg cannot close 149 K gap; spin fluctuations dominate cuprate/nickelate Tc; beyond-Eliashberg methods required",
       "rationale": null
     },
     {
       "phase": null,
-      "summary": "[v6.0 Phase 23]: Primary route = Hg1223 PQP (4.15/5.00), secondary = bilayer La3Ni2O7 (2.90/5.00); ranking robust (0/10 perturbation flips)",
+      "summary": "[v9.0 start]: Three-track structure: Track A (DMFT+Eliashberg for Hg1223 with spectral gate), Track B (RPA for nickelates, parallel), Track C (guided design, contingent on Track A)",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "[v6.0 Phase 23]: Primary route = Hg1223 PQP (4.15/5.00), secondary = bilayer La3Ni2O7 (2.90/5.00)",
       "rationale": null
     },
     {
       "phase": null,
       "summary": "[v7.0 Phase 26]: Both route protocols experiment-ready; 149 K gap unchanged; next milestone must produce computed or measured Tc",
       "rationale": null
-    },
-    {
-      "phase": "0",
-      "summary": "Started milestone v9.0: Beyond-Eliashberg Computation",
-      "rationale": "v8.0 showed phonon-only Tc ceiling of 26-36 K for oxides; spin fluctuations contribute 55-80% of cuprate Tc; DMFT+Eliashberg and spin-fluctuation RPA are needed to capture the full pairing interaction and guide materials design"
     }
   ],
   "approximations": [
+    {
+      "name": "Single-site DMFT",
+      "validity_range": "Captures local correlations; misses nonlocal AF",
+      "controlling_param": "Correlation length xi_AF",
+      "current_value": "TBD",
+      "status": "Starting approximation"
+    },
     {
       "name": "Isotropic Eliashberg",
       "validity_range": "lambda < 3, no strong anisotropy",
       "controlling_param": "Fermi surface anisotropy",
       "current_value": "TBD",
-      "status": "To be checked in Phase 27"
+      "status": "To be checked"
+    },
+    {
+      "name": "RPA spin susceptibility",
+      "validity_range": "Weak-to-moderate coupling",
+      "controlling_param": "U*chi_0(Q) < 1",
+      "current_value": "TBD",
+      "status": "Must verify Stoner criterion"
     },
     {
       "name": "PBEsol exchange-correlation",
       "validity_range": "Weakly correlated metals",
-      "controlling_param": "Correlation strength U/W",
+      "controlling_param": "U/W",
       "current_value": "TBD for cuprates",
-      "status": "Marginal for cuprates; may need DFT+U"
+      "status": "Marginal; DMFT corrects"
     },
     {
       "name": "mu* = 0.10-0.13 bracket",
@@ -608,7 +626,7 @@
       "validity_range": "omega_ph << E_F",
       "controlling_param": "omega_log / E_F",
       "current_value": "TBD",
-      "status": "Expected valid for cuprates and nickelates"
+      "status": "Expected valid"
     }
   ],
   "convention_lock": {
@@ -634,19 +652,41 @@
       "custom": "SI-derived reporting (K, GPa, eV, meV); pressure in GPa; `e > 0`, electron charge `-e`"
     }
   },
-  "propagated_uncertainties": [],
+  "propagated_uncertainties": [
+    {
+      "quantity": "Hg1223 phonon-only Tc",
+      "value": "31 K",
+      "uncertainty": "+/- 5 K",
+      "phase": "Phase 27 (v8.0)",
+      "method": "Isotropic Eliashberg"
+    },
+    {
+      "quantity": "La3Ni2O7 phonon-only Tc",
+      "value": "26 K",
+      "uncertainty": "+/- 5 K",
+      "phase": "Phase 29 (v8.0)",
+      "method": "Isotropic Eliashberg"
+    },
+    {
+      "quantity": "Phonon fraction of cuprate Tc",
+      "value": "20-45%",
+      "uncertainty": "range estimate",
+      "phase": "Phase 31 (v8.0)",
+      "method": "Mechanism analysis"
+    }
+  ],
   "pending_todos": [],
   "blockers": [
-    "Cuprate correlation effects may push PBEsol beyond its validity for Fermi surface topology; DFT+U may be needed",
-    "La3Ni2O7 may require beyond-Eliashberg treatment (spin fluctuations); isotropic Eliashberg is a starting approximation",
-    "Hybrid superlattices are speculative; high probability of thermodynamic instability",
-    "The 149 K gap requires fundamentally new uplift, not incremental optimization; computational predictions may confirm that phonon-mediated Tc ceiling is below 300 K"
+    "Single-site DMFT may underestimate AF correlation effects; this is a known limitation accepted for v9.0 scope (cluster DMFT is EXT scope)",
+    "CTQMC solver requires significant computational resources; analytic continuation from Matsubara to real-frequency axis introduces additional uncertainty",
+    "The 149 K gap requires fundamentally new uplift; even if DMFT+Eliashberg reproduces 151 K, finding a structure that exceeds 200 K is not guaranteed",
+    "RPA may hit Stoner instability for nickelates at realistic U values"
   ],
   "session": {
     "last_date": "2026-03-29",
-    "stopped_at": "v8.0 roadmap created; Phase 27 ready to plan",
+    "stopped_at": "v9.0 roadmap created; Phase 34 ready to plan",
     "resume_file": "`.gpd/ROADMAP.md`"
   },
   "_version": 1,
-  "_synced_at": "2026-03-30T02:11:09.550266+00:00"
+  "_synced_at": "2026-03-30T03:21:15.915134+00:00"
 }

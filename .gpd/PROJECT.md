@@ -4,23 +4,24 @@
 
 This project started as a first-principles search for room-temperature superconductivity in lower-pressure hydrides. Milestone `v1.0` closed that route negatively for the `MXH3` perovskite family: the best repo result remains `CsInH3` at about `214 K` and `3 GPa`, with no evidence for ambient retention. Milestone `v2.0` tested whether ambient stability, pressure quenchability, or hydride-derived chemistry could rescue a consumer-relevant path; that route also closed negatively. Milestone `v3.0` widened the scope to experimentally anchored metastability and route ranking, ending with `Hg1223`-class pressure-quenched multilayer cuprates as the primary route and bilayer nickelate films as the backup. Milestone `v4.0` made the `Hg1223` route protocol-specified, control-mapped, and campaign-defined. Milestone `v5.0` then converted that route into a collaborator-facing Stage `A` runbook plus a clean evidence ladder and route-gate package.
 
-The active program now shifts from phonon-only computation to beyond-Eliashberg methods. Eight milestones established that `Hg1223` at `151 K` is the best benchmark, phonon-mediated coupling captures only `20-45%` of cuprate/nickelate `Tc`, and spin fluctuations contribute the dominant `55-80%`. No material within the phonon-only framework closes the `149 K` gap. The next milestone must capture spin-fluctuation pairing via DMFT+Eliashberg or RPA to predict whether any oxide system can reach room temperature.
+The active program now targets the highest-fidelity computational methods available. Nine milestones established: `Hg1223` at `151 K` is the benchmark (`149 K` gap), phonon-only captures `20-45%` of Tc, and single-site DMFT+Eliashberg reproduces `108 K` (`-28%`, validated). The near-miss analysis shows cluster DMFT + anisotropic Eliashberg could push predictions to the `170-217 K` range — the window where a room-temperature candidate might first appear.
 
-## Current State (after v8.0)
+## Current State (after v9.0)
 
-Milestone `v8.0` completed 2026-03-30. Phonon-only Eliashberg Tc ceiling is `26-36 K` for all oxide candidates tested (`Hg1223`, `Hg1234`, `Hg1245`, strained `La3Ni2O7`, hybrid superlattices). The `n=3` Hg1223 is optimally layered; adding layers decreases Tc via AF inner-plane competition. Nickelate lever-stacking peaks at `26 K` phonon-only; `80 K` gate not reached. Hybrid superlattices dilute lambda rather than enhance it. The `149 K` gap is unchanged.
+Milestone `v9.0` completed 2026-03-30. DMFT+Eliashberg pipeline validated: `Tc = 108 K` for Hg1223 (within `30%` of `151 K`). Best guided-design candidate: `145 K` (strained+pressured Hg1223). No candidate exceeds `200 K`. Nickelate combined Tc: `54 K` central. The `149 K` gap remains open. Near-miss analysis: cluster DMFT could add `20-50%` to `lambda_sf`, anisotropic Eliashberg adds `10-30%` Tc uplift. Combined: `170-217 K` range is theoretically accessible.
 
-## Next Milestone Goals (v9.0)
+## Next Milestone Goals (v10.0)
 
-**Beyond-Eliashberg Computation for Room-Temperature Superconductivity:**
+**Cluster DMFT + Anisotropic Eliashberg for Room-Temperature Prediction:**
 
-1. **DMFT+Eliashberg for Hg1223** — capture spin fluctuations to predict full `Tc` and test whether the method reproduces `151 K`
-2. **Spin-fluctuation RPA for strained La3Ni2O7** — compute `lambda_sf` from spin susceptibility to estimate total `Tc` when combined with phonon `lambda_ph`
-3. **Design new candidates using spin-fluctuation guidance** — if DMFT+Eliashberg reproduces cuprate `Tc`, use it to screen structures optimized for spin-fluctuation pairing, not just phonon coupling
+1. **Cluster DMFT (DCA/CDMFT) for Hg1223** — capture nonlocal AF correlations that single-site DMFT misses; expect `lambda_sf` increase from `1.8` to `2.5-3.5`
+2. **Anisotropic Eliashberg with d-wave gap** — resolve the momentum-dependent gap structure; expect `10-30%` Tc uplift over isotropic
+3. **Combined cluster-DMFT + anisotropic Eliashberg re-screening** — apply the improved method to the v9.0 candidate set; determine if any reaches `200 K+`
+4. **If `200 K+` predicted** — compute full stability (E_hull, phonons) and propose priority synthesis target
 
 ## Core Research Question
 
-Can beyond-Eliashberg methods (DMFT+Eliashberg, spin-fluctuation RPA) predict a material or condition that closes the `149 K` gap — and if they reproduce the `151 K` Hg1223 benchmark, can they guide the design of a room-temperature superconductor?
+Can cluster DMFT + anisotropic Eliashberg push the predicted Tc for optimized cuprate or nickelate structures above `200 K` — and identify a specific material worth synthesizing for room-temperature superconductivity?
 
 ## Scoping Contract Summary
 
