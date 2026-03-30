@@ -574,6 +574,11 @@
       "phase": null,
       "summary": "[v7.0 Phase 26]: Both route protocols experiment-ready; 149 K gap unchanged; next milestone must produce computed or measured Tc",
       "rationale": null
+    },
+    {
+      "phase": "0",
+      "summary": "Started milestone v9.0: Beyond-Eliashberg Computation",
+      "rationale": "v8.0 showed phonon-only Tc ceiling of 26-36 K for oxides; spin fluctuations contribute 55-80% of cuprate Tc; DMFT+Eliashberg and spin-fluctuation RPA are needed to capture the full pairing interaction and guide materials design"
     }
   ],
   "approximations": [
@@ -643,5 +648,5 @@
     "resume_file": "`.gpd/ROADMAP.md`"
   },
   "_version": 1,
-  "_synced_at": "2026-03-30T01:36:40.234453+00:00"
+  "_synced_at": "2026-03-30T02:11:09.550266+00:00"
 }

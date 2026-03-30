@@ -58,6 +58,7 @@ Full log: `.gpd/DECISIONS.md`
 - [v8.0 start]: Pivoted from protocol design to computational materials design; v7.0 closeout requires compute or measure, not more planning
 - [v6.0 Phase 23]: Primary route = Hg1223 PQP (4.15/5.00), secondary = bilayer La3Ni2O7 (2.90/5.00); ranking robust (0/10 perturbation flips)
 - [v7.0 Phase 26]: Both route protocols experiment-ready; 149 K gap unchanged; next milestone must produce computed or measured Tc
+- [Phase 0]: Started milestone v9.0: Beyond-Eliashberg Computation — v8.0 showed phonon-only Tc ceiling of 26-36 K for oxides; spin fluctuations contribute 55-80% of cuprate Tc; DMFT+Eliashberg and spin-fluctuation RPA are needed to capture the full pairing interaction and guide materials design
 
 ### Active Approximations
 
