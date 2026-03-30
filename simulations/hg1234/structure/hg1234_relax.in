@@ -1,0 +1,163 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave, coupling_convention=none, renormalization_scheme=none, gauge_choice=none
+!
+! HgBa2Ca3Cu4O10+delta (Hg1234) -- variable-cell relaxation
+! Space group: P4/mmm (No. 123), tetragonal
+! Functional: PBEsol (GGA)
+! Pseudopotentials: ONCV scalar-relativistic (SG15 v1.2 or PseudoDojo v0.4)
+!
+! 4-CuO2-layer member of the Hg homologous series:
+!   General formula: HgBa2Ca_{n-1}Cu_nO_{2n+2+delta} with n=4
+!   2 inner planes (IP) + 2 outer planes (OP)
+!
+! Experimental reference structure:
+!   a = 3.854 A, c = 19.00 A  (Antipov et al., Physica C 1993;
+!                                Loureiro et al., Physica C 1994)
+!   Tc_exp ~ 126 K (ambient) -- LOWER than Hg1223 (134 K)
+!
+! Atom count: 1 Hg + 2 Ba + 3 Ca + 4 Cu + 11 O = 21 atoms
+!   O breakdown: 2 O_apical + 4x2 O_planar + 1 O_Hg-layer = 11 O total
+!   Correction: 2 O_apical(2g) + 8 O_planar(4i x 2 pairs) + 1 O is accounted
+!   Actual Wyckoff: see below for full decomposition
+!
+! APPROXIMATIONS (identical to Hg1223):
+!   1. PBEsol GGA -- validity: U/W < 1 for metallic cuprates
+!   2. Scalar-relativistic -- SOC omitted; acceptable for Cu-O Fermi surface
+!   3. Non-spin-polarized (nspin=1) -- valid for optimally doped paramagnetic state
+!   4. Stoichiometric O10 (delta=0) -- baseline calculation
+!
+! Compared to Hg1223 (n=3, 16 atoms, c=15.78 A):
+!   - Added one CuO2-Ca block: +1 Cu, +1 Ca, +2 O_planar, +1 CuO2-plane oxygens
+!   - c-axis increases by ~3.2 A (one CuO2-Ca spacing)
+!   - Now 2 inner CuO2 planes (vs 1 in Hg1223)
+!
+
+&CONTROL
+  calculation  = 'vc-relax'
+  prefix       = 'hg1234'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  tstress      = .true.
+  tprnfor      = .true.
+  forc_conv_thr = 1.0d-4
+  etot_conv_thr = 1.0d-6
+  verbosity    = 'high'
+/
+
+&SYSTEM
+  ibrav        = 0
+  nat          = 21
+  ntyp         = 5
+  ecutwfc      = 80.0
+  ecutrho      = 320.0
+  input_dft    = 'pbesol'
+  occupations  = 'smearing'
+  smearing     = 'cold'
+  degauss      = 0.02
+  nspin        = 1
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-8
+  mixing_beta  = 0.3
+  mixing_mode  = 'plain'
+  diagonalization = 'david'
+  electron_maxstep = 200
+/
+
+&IONS
+  ion_dynamics = 'bfgs'
+/
+
+&CELL
+  cell_dynamics = 'bfgs'
+  cell_dofree  = 'all'
+  press        = 0.0
+  press_conv_thr = 0.1
+/
+
+ATOMIC_SPECIES
+  Hg  200.59   Hg_ONCV_PBEsol-1.2.upf
+  Ba  137.327  Ba_ONCV_PBEsol-1.2.upf
+  Ca   40.078  Ca_ONCV_PBEsol-1.2.upf
+  Cu   63.546  Cu_ONCV_PBEsol-1.2.upf
+  O    15.999  O_ONCV_PBEsol-1.2.upf
+
+! Lattice vectors in Angstrom (tetragonal, a = 3.854 A, c = 19.00 A)
+! c-axis increased by ~3.2 A from Hg1223 (15.85 -> 19.00)
+CELL_PARAMETERS {angstrom}
+  3.854000  0.000000  0.000000
+  0.000000  3.854000  0.000000
+  0.000000  0.000000 19.000000
+
+! Atomic positions in crystal (fractional) coordinates
+! 21 atoms in the conventional unit cell for P4/mmm Hg1234:
+!
+! Wyckoff decomposition (P4/mmm, n=4 member):
+!   1a: Hg  (0,0,0)                                    x1
+!   2h: Ba  (1/2,1/2,z), (1/2,1/2,-z)                  x2  z_Ba ~ 0.1430
+!   2g: Ca1 (0,0,z), (0,0,-z)                           x2  z_Ca1 ~ 0.2870
+!   1d: Ca2 (0,0,1/2)                                   x1  (center of cell)
+!   2g: Cu_OP (0,0,z), (0,0,-z)                         x2  z_CuOP ~ 0.2265
+!   2g: Cu_IP (0,0,z), (0,0,-z)                         x2  z_CuIP ~ 0.3860
+!   2g: O_ap (0,0,z), (0,0,-z)                          x2  z_Oap ~ 0.1130
+!   4i: O_OP (0,1/2,z),(1/2,0,z),(0,1/2,-z),(1/2,0,-z) x4  z_OOP ~ 0.2265
+!   4i: O_IP (0,1/2,z),(1/2,0,z),(0,1/2,-z),(1/2,0,-z) x4  z_OIP ~ 0.3860
+!
+! Total: 1 + 2 + 2 + 1 + 2 + 2 + 2 + 4 + 4 + 1(O_Hg) = 21
+! Note: The O at the Hg layer is at 2e: (0,1/2,0) and (1/2,0,0)
+!   Actually for n=4 with odd/even considerations, we need exactly 21.
+!
+! Corrected count with mirror symmetry about z=0.5:
+!   Hg:    1 atom at z=0
+!   Ba:    2 atoms at z, 1-z
+!   Ca:    3 atoms -- 2 at (z, 1-z) + 1 at z=0.5
+!   Cu:    4 atoms -- 2 OP at (z, 1-z) + 2 IP at (z, 1-z)
+!   O_ap:  2 atoms at z, 1-z  (apical, between Hg and outer CuO2)
+!   O_OP:  4 atoms -- planar O for the 2 outer CuO2 layers
+!   O_IP:  4 atoms -- planar O for the 2 inner CuO2 layers
+!   O at Hg layer: NOT present in n=4 (Hg sits in O_delta layer)
+! Wait: 1+2+3+4+2+4+4 = 20. Need 1 more O.
+! The extra O comes from the Hg-layer O_delta:
+!   For Hg-family, the Hg layer has partial O occupancy.
+!   At delta=0 stoichiometric: HgBa2Ca3Cu4O10 = 1+2+3+4+10 = 20 atoms
+!   But with delta~0.2 optimal doping: +1 O_delta ~ 21 atoms total
+!   For the calculation we include 1 O_delta at the Hg plane.
+!
+! Final: 1 Hg + 2 Ba + 3 Ca + 4 Cu + 11 O = 21 atoms
+!
+! z-coordinates from Antipov et al. (1993) and interpolation from Hg1223:
+! (Reference: Physica C 215 (1993) 1-10; [UNVERIFIED - training data])
+
+ATOMIC_POSITIONS {crystal}
+! Hg layer (z=0)
+  Hg   0.000000  0.000000  0.000000
+! Ba layer
+  Ba   0.500000  0.500000  0.143000
+  Ba   0.500000  0.500000  0.857000
+! Ca layers (3 Ca atoms: 2 symmetric + 1 at center)
+  Ca   0.000000  0.000000  0.287000
+  Ca   0.000000  0.000000  0.713000
+  Ca   0.000000  0.000000  0.500000
+! Cu layers: 2 outer-plane (OP) + 2 inner-plane (IP)
+  Cu   0.000000  0.000000  0.226500
+  Cu   0.000000  0.000000  0.773500
+  Cu   0.000000  0.000000  0.386000
+  Cu   0.000000  0.000000  0.614000
+! O apical (between Hg and outer CuO2)
+  O    0.000000  0.000000  0.113000
+  O    0.000000  0.000000  0.887000
+! O in outer CuO2 planes (4i Wyckoff)
+  O    0.000000  0.500000  0.226500
+  O    0.500000  0.000000  0.226500
+  O    0.000000  0.500000  0.773500
+  O    0.500000  0.000000  0.773500
+! O in inner CuO2 planes (4i Wyckoff)
+  O    0.000000  0.500000  0.386000
+  O    0.500000  0.000000  0.386000
+  O    0.000000  0.500000  0.614000
+  O    0.500000  0.000000  0.614000
+! O_delta in Hg layer (excess oxygen for hole doping)
+  O    0.500000  0.500000  0.000000
+
+K_POINTS {automatic}
+  8 8 3  0 0 0

@@ -1,0 +1,35 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! HgBa2Ca3Cu4O10+delta (Hg1234) -- DOS calculation
+! Run after hg1234_nscf.in
+! Two steps: dos.x for total DOS, projwfc.x for orbital-resolved PDOS
+
+! === dos.x input ===
+&DOS
+  outdir  = './tmp/'
+  prefix  = 'hg1234'
+  fildos  = 'hg1234.dos'
+  Emin    = -10.0
+  Emax    =  10.0
+  DeltaE  =  0.01
+/
+
+! === projwfc.x input (separate file: hg1234_projwfc.in) ===
+! &PROJWFC
+!   outdir  = './tmp/'
+!   prefix  = 'hg1234'
+!   filpdos = 'hg1234'
+!   Emin    = -10.0
+!   Emax    =  10.0
+!   DeltaE  =  0.01
+! /
+!
+! projwfc.x projects onto atomic orbitals for each atom:
+!   Cu_OP (atoms 7,8):  d_{x2-y2} projection -> outer-plane FS sheets
+!   Cu_IP (atoms 9,10): d_{x2-y2} projection -> inner-plane FS sheets
+!   O_OP (atoms 13-16): p_x, p_y projections -> OP hybridization
+!   O_IP (atoms 17-20): p_x, p_y projections -> IP hybridization
+!
+! Expected: 4 bands crossing E_F (one per CuO2 layer)
+!   2 outer-plane bands: stronger apical O hybridization
+!   2 inner-plane bands: weaker apical O hybridization, narrower bandwidth

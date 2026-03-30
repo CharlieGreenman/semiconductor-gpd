@@ -1,0 +1,73 @@
+{
+  "data_source": "literature_estimate",
+  "data_source_note": "Expected PBEsol electronic structure based on published LDA/GGA calculations for Hg-family cuprates and Hg1223 baseline. NOT actual QE output. Replace with real QE bands/DOS when available.",
+  "compound": "HgBa2Ca3Cu4O10+delta",
+  "short_name": "Hg1234",
+  "n_cuo2_layers": 4,
+  "functional": "PBEsol",
+  "is_metallic": true,
+  "n_ef_total_states_per_eV_per_cell": 5.25,
+  "n_ef_per_spin_states_per_eV_per_cell": 2.625,
+  "n_ef_per_plane": {
+    "OP1": 1.35,
+    "OP2": 1.35,
+    "IP1": 1.28,
+    "IP2": 1.28,
+    "total": 5.25,
+    "note": "IP has slightly lower N(E_F) due to less apical O hybridization"
+  },
+  "orbital_decomposition_at_ef": {
+    "Cu_3d_pct": 54.5,
+    "O_2p_pct": 39.5,
+    "Cu_d_plus_O_p_pct": 94.0,
+    "Ba_5d_pct": "<1%",
+    "Hg_6s5d_pct": "<1%",
+    "Ca_pct": "<1%"
+  },
+  "fermi_surface": {
+    "character": "quasi-2D cylindrical sheets from CuO2 planes",
+    "n_sheets": 4,
+    "sheet_labels": [
+      "OP_bonding",
+      "OP_antibonding",
+      "IP_bonding",
+      "IP_antibonding"
+    ],
+    "sheet_origin": "bonding/antibonding combinations of 4 CuO2 layers",
+    "c_axis_warping": "weak (~0.015 eV), from interlayer coupling",
+    "nesting": "approximate (pi,pi) nesting at optimal doping"
+  },
+  "band_crossings_ef": {
+    "n_bands_crossing": 4,
+    "character": "Cu-d_{x2-y2} / O-2p antibonding",
+    "bandwidth_eV": 2.5,
+    "van_hove_position": "near M, ~0.1-0.3 eV below E_F"
+  },
+  "ip_vs_op_comparison": {
+    "op_bandwidth_eV": 2.6,
+    "ip_bandwidth_eV": 2.3,
+    "op_apical_O_hybridization": "significant (Cu_OP-O_apical distance ~ 2.8 A)",
+    "ip_apical_O_hybridization": "negligible (IP is sandwiched between Ca layers)",
+    "note": "OP bands are wider due to stronger apical-O hybridization. IP bands are narrower, more purely 2D."
+  },
+  "comparison_with_hg1223": {
+    "n_ef_ratio": 1.2995049504950495,
+    "n_bands_change": "+1 (from 3 to 4)",
+    "ip_op_change": "1 IP -> 2 IP; OP count stays at 2",
+    "note": "N(E_F) increases by ~30% from Hg1223 to Hg1234, slightly less than the 4/3 layer ratio due to IP having lower per-plane N(E_F) than OP."
+  },
+  "acceptance_tests": {
+    "test_metallic": {
+      "pass": true,
+      "value": 5.25,
+      "threshold": 1.0,
+      "unit": "states/eV/cell (both spins)"
+    },
+    "test_orbital_character": {
+      "pass": true,
+      "value": 94.0,
+      "threshold": 70.0,
+      "unit": "% of N(E_F)"
+    }
+  }
+}

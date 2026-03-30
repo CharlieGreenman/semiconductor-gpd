@@ -1,0 +1,74 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+!
+! HgBa2Ca3Cu4O10+delta (Hg1234) -- SCF calculation
+! Uses relaxed structure from vc-relax.
+! Denser k-grid for accurate Fermi level and charge density.
+!
+! 21 atoms, 4 CuO2 layers (2 IP + 2 OP)
+
+&CONTROL
+  calculation  = 'scf'
+  prefix       = 'hg1234'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  verbosity    = 'high'
+/
+
+&SYSTEM
+  ibrav        = 0
+  nat          = 21
+  ntyp         = 5
+  ecutwfc      = 80.0
+  ecutrho      = 320.0
+  input_dft    = 'pbesol'
+  occupations  = 'smearing'
+  smearing     = 'cold'
+  degauss      = 0.02
+  nspin        = 1
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-10
+  mixing_beta  = 0.3
+  mixing_mode  = 'plain'
+  diagonalization = 'david'
+  electron_maxstep = 200
+/
+
+ATOMIC_SPECIES
+  Hg  200.59   Hg_ONCV_PBEsol-1.2.upf
+  Ba  137.327  Ba_ONCV_PBEsol-1.2.upf
+  Ca   40.078  Ca_ONCV_PBEsol-1.2.upf
+  Cu   63.546  Cu_ONCV_PBEsol-1.2.upf
+  O    15.999  O_ONCV_PBEsol-1.2.upf
+
+CELL_PARAMETERS {angstrom}
+  3.848000  0.000000  0.000000
+  0.000000  3.848000  0.000000
+  0.000000  0.000000 18.930000
+
+ATOMIC_POSITIONS {crystal}
+  Hg   0.000000  0.000000  0.000000
+  Ba   0.500000  0.500000  0.143000
+  Ba   0.500000  0.500000  0.857000
+  Ca   0.000000  0.000000  0.287000
+  Ca   0.000000  0.000000  0.713000
+  Ca   0.000000  0.000000  0.500000
+  Cu   0.000000  0.000000  0.226500
+  Cu   0.000000  0.000000  0.773500
+  Cu   0.000000  0.000000  0.386000
+  Cu   0.000000  0.000000  0.614000
+  O    0.000000  0.000000  0.113000
+  O    0.000000  0.000000  0.887000
+  O    0.000000  0.500000  0.226500
+  O    0.500000  0.000000  0.226500
+  O    0.000000  0.500000  0.773500
+  O    0.500000  0.000000  0.773500
+  O    0.000000  0.500000  0.386000
+  O    0.500000  0.000000  0.386000
+  O    0.000000  0.500000  0.614000
+  O    0.500000  0.000000  0.614000
+  O    0.500000  0.500000  0.000000
+
+K_POINTS {automatic}
+  12 12 5  0 0 0
