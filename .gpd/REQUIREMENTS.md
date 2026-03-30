@@ -62,12 +62,27 @@
 
 ## Traceability
 
-| Requirement | Phase | Status |
-| --- | --- | --- |
-| All | TBD | Pending |
+| Requirement | Phase | Track | Status |
+| --- | --- | --- | --- |
+| DM-01 | 34 - DMFT Setup | A | Pending |
+| DM-02 | 34 - DMFT Setup | A | Pending |
+| DM-03 | 35 - Spin Susceptibility | A | Pending |
+| DM-04 | 37 - Full Eliashberg Tc | A | Pending |
+| SF-01 | 38 - Nickelate RPA | B | Pending |
+| SF-02 | 38 - Nickelate RPA | B | Pending |
+| SF-03 | 39 - Nickelate Combined Tc | B | Pending |
+| GD-01 | 40 - Guided Design | C | Pending |
+| GD-02 | 40 - Guided Design | C | Pending |
+| GD-03 | 40 - Guided Design | C | Pending |
+| VALD-01 | 36 - Spectral Gate | A | Pending |
+| VALD-02 | 37, 39, 40, 41 | All | Pending |
+| VALD-03 | 35, 38 | A, B | Pending |
+| DEC-01 | 41 - Decision Closeout | -- | Pending |
+| DEC-02 | 41 - Decision Closeout | -- | Pending |
 
-**Coverage:** 16 primary requirements, 0 mapped (pending roadmap)
+**Coverage:** 16/16 primary requirements mapped (15 unique requirements; VALD-02 and VALD-03 appear in multiple phases)
 
 ---
 
 _Requirements defined: 2026-03-30_
+_Traceability updated: 2026-03-29_
