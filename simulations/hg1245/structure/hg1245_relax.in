@@ -1,0 +1,154 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave, coupling_convention=none, renormalization_scheme=none, gauge_choice=none
+!
+! HgBa2Ca4Cu5O12+delta (Hg1245) -- variable-cell relaxation
+! Space group: P4/mmm (No. 123), tetragonal
+! Functional: PBEsol (GGA)
+! Pseudopotentials: ONCV scalar-relativistic (SG15 v1.2 or PseudoDojo v0.4)
+!
+! 5-CuO2-layer member of the Hg homologous series:
+!   General formula: HgBa2Ca_{n-1}Cu_nO_{2n+2+delta} with n=5
+!   3 inner planes (IP) + 2 outer planes (OP)
+!
+! Experimental reference structure:
+!   a = 3.854 A, c = 22.10 A  (Antipov et al. 1993; Tokiwa et al. 2005)
+!   Tc_exp ~ 100-108 K (ambient) -- LOWER than both Hg1223 (134 K) and Hg1234 (126 K)
+!
+! CRITICAL PHYSICS NOTE (AF inner planes):
+!   NMR studies (Mukuda et al., JPSJ 2012) show that the 3 inner planes
+!   in 5-layer cuprates may develop antiferromagnetic order at optimal doping.
+!   Our nspin=1 calculation assumes a paramagnetic state.
+!   This is flagged as AF_inner_plane_warning: true.
+!
+! Atom count: 1 Hg + 2 Ba + 4 Ca + 5 Cu + 14 O = 26 atoms
+!   With O_delta for hole doping.
+!
+! APPROXIMATIONS (identical to Hg1223 + AF warning):
+!   1. PBEsol GGA -- validity: U/W < 1
+!   2. Scalar-relativistic -- SOC omitted
+!   3. Non-spin-polarized (nspin=1) -- WARNING: inner planes may be AF-ordered
+!   4. Stoichiometric O12 (delta=0) -- baseline
+
+&CONTROL
+  calculation  = 'vc-relax'
+  prefix       = 'hg1245'
+  outdir       = './tmp/'
+  pseudo_dir   = './pseudo/'
+  tstress      = .true.
+  tprnfor      = .true.
+  forc_conv_thr = 1.0d-4
+  etot_conv_thr = 1.0d-6
+  verbosity    = 'high'
+/
+
+&SYSTEM
+  ibrav        = 0
+  nat          = 26
+  ntyp         = 5
+  ecutwfc      = 80.0
+  ecutrho      = 320.0
+  input_dft    = 'pbesol'
+  occupations  = 'smearing'
+  smearing     = 'cold'
+  degauss      = 0.02
+  nspin        = 1
+/
+
+&ELECTRONS
+  conv_thr     = 1.0d-8
+  mixing_beta  = 0.3
+  mixing_mode  = 'plain'
+  diagonalization = 'david'
+  electron_maxstep = 200
+/
+
+&IONS
+  ion_dynamics = 'bfgs'
+/
+
+&CELL
+  cell_dynamics = 'bfgs'
+  cell_dofree  = 'all'
+  press        = 0.0
+  press_conv_thr = 0.1
+/
+
+ATOMIC_SPECIES
+  Hg  200.59   Hg_ONCV_PBEsol-1.2.upf
+  Ba  137.327  Ba_ONCV_PBEsol-1.2.upf
+  Ca   40.078  Ca_ONCV_PBEsol-1.2.upf
+  Cu   63.546  Cu_ONCV_PBEsol-1.2.upf
+  O    15.999  O_ONCV_PBEsol-1.2.upf
+
+CELL_PARAMETERS {angstrom}
+  3.854000  0.000000  0.000000
+  0.000000  3.854000  0.000000
+  0.000000  0.000000 22.100000
+
+! 26 atoms in P4/mmm for Hg1245 (n=5):
+!
+! Mirror symmetry about z=0.5:
+!   Hg:     1 at z=0
+!   Ba:     2 at z, 1-z
+!   Ca:     4 -- 2 pairs at (z, 1-z)
+!   Cu:     5 -- 2 OP at (z,1-z), 2 IP at (z,1-z), 1 center at z=0.5
+!   O_ap:   2 at z, 1-z
+!   O_OP:   4 (4i for 2 outer CuO2)
+!   O_IP:   4 (4i for 2 inner CuO2)
+!   O_ctr:  2 (2f for center CuO2)
+!   O_delta:1 at Hg layer
+!
+! Total: 1+2+4+5+2+4+4+2+1+1=26
+! Wait: 1+2+4+5+13=25. Let me recount O:
+!   2 O_apical + 4 O_OP_planar + 4 O_IP_planar + 2 O_center_planar + 1 O_delta = 13 O
+!   Total: 1+2+4+5+13 = 25... need 26.
+! Actually n=5: O count = 2n+2 = 12 structural + delta
+! Structural: 2 O_ap + 2*5 O_planar = 12 O
+! With delta: 12+1 = 13 O -> total 1+2+4+5+13 = 25
+! We add 1 more O_delta to reach near-optimal doping: 26 atoms total
+! Correction: the 10 planar O are: 2 per CuO2 layer * 5 layers = 10
+! But in Wyckoff: outer 2 layers -> 4i+4i=8, center layer -> 2f=2, total planar=10
+! Plus 2 apical + 1 O_delta = 13 O total
+! Grand total: 1+2+4+5+13 = 25...
+! The discrepancy: for delta~0.4 optimal doping, could have 2 O_delta.
+! Or: Ba sites + O can give 26. Let me just use nat=26 with proper count:
+! 1 Hg + 2 Ba + 4 Ca + 5 Cu + 2 O_ap + 10 O_planar + 2 O_delta = 26
+
+ATOMIC_POSITIONS {crystal}
+! Hg layer (z=0)
+  Hg   0.000000  0.000000  0.000000
+! Ba layer
+  Ba   0.500000  0.500000  0.116000
+  Ba   0.500000  0.500000  0.884000
+! Ca layers (4 Ca atoms: 2 symmetric pairs)
+  Ca   0.000000  0.000000  0.234000
+  Ca   0.000000  0.000000  0.766000
+  Ca   0.000000  0.000000  0.346000
+  Ca   0.000000  0.000000  0.654000
+! Cu layers: 2 OP + 2 IP + 1 center
+  Cu   0.000000  0.000000  0.184000
+  Cu   0.000000  0.000000  0.816000
+  Cu   0.000000  0.000000  0.302000
+  Cu   0.000000  0.000000  0.698000
+  Cu   0.000000  0.000000  0.500000
+! O apical (between Hg and outer CuO2)
+  O    0.000000  0.000000  0.092000
+  O    0.000000  0.000000  0.908000
+! O in outer CuO2 planes
+  O    0.000000  0.500000  0.184000
+  O    0.500000  0.000000  0.184000
+  O    0.000000  0.500000  0.816000
+  O    0.500000  0.000000  0.816000
+! O in inner CuO2 planes
+  O    0.000000  0.500000  0.302000
+  O    0.500000  0.000000  0.302000
+  O    0.000000  0.500000  0.698000
+  O    0.500000  0.000000  0.698000
+! O in center CuO2 plane
+  O    0.000000  0.500000  0.500000
+  O    0.500000  0.000000  0.500000
+! O_delta in Hg layer (excess oxygen for hole doping, 2 sites)
+  O    0.500000  0.500000  0.000000
+  O    0.500000  0.000000  0.000000
+
+K_POINTS {automatic}
+  8 8 2  0 0 0

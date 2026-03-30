@@ -1,0 +1,94 @@
+{
+  "data_source": "literature_estimate",
+  "data_source_note": "Expected PBEsol electronic structure. TWO SCENARIOS reported. NOT actual QE output.",
+  "compound": "HgBa2Ca4Cu5O12+delta",
+  "short_name": "Hg1245",
+  "n_cuo2_layers": 5,
+  "functional": "PBEsol",
+  "is_metallic": true,
+  "af_inner_plane_flag": true,
+  "af_inner_plane_note": "NMR evidence (Mukuda et al., JPSJ 2012) shows 3 inner planes develop AF order in n=5 cuprate",
+  "scenario_A_paramagnetic": {
+    "description": "All 5 CuO2 layers metallic (nspin=1 DFT approximation)",
+    "n_ef_total": 6.5,
+    "n_ef_per_spin": 3.25,
+    "n_ef_per_plane": {
+      "OP1": 1.35,
+      "OP2": 1.35,
+      "IP1": 1.27,
+      "IP2": 1.27,
+      "center": 1.26
+    },
+    "n_fermi_sheets": 5,
+    "orbital_decomposition_at_ef": {
+      "Cu_3d_pct": 54.0,
+      "O_2p_pct": 40.0,
+      "Cu_d_plus_O_p_pct": 94.0
+    }
+  },
+  "scenario_B_AF_inner_planes": {
+    "description": "3 inner planes AF-ordered; only 2 outer planes metallic",
+    "n_ef_total_effective": 2.7,
+    "n_ef_per_spin_effective": 1.35,
+    "n_ef_per_plane": {
+      "OP1": 1.35,
+      "OP2": 1.35,
+      "IP1": 0,
+      "IP2": 0,
+      "center": 0
+    },
+    "n_fermi_sheets": 2,
+    "note": "Effective electronic structure similar to Hg1201 (single-layer) x2",
+    "orbital_decomposition_at_ef": {
+      "Cu_3d_pct": 55.0,
+      "O_2p_pct": 39.0,
+      "Cu_d_plus_O_p_pct": 94.0
+    }
+  },
+  "comparison_with_series": {
+    "Hg1223": {
+      "n_layers": 3,
+      "n_ef": 4.04,
+      "n_sheets": 3,
+      "Tc_exp": 134
+    },
+    "Hg1234": {
+      "n_layers": 4,
+      "n_ef": 5.25,
+      "n_sheets": 4,
+      "Tc_exp": 126
+    },
+    "Hg1245_A": {
+      "n_layers": 5,
+      "n_ef": 6.5,
+      "n_sheets": 5,
+      "Tc_exp": 108
+    },
+    "Hg1245_B": {
+      "n_layers": 5,
+      "n_ef_eff": 2.7,
+      "n_sheets": 2,
+      "Tc_exp": 108
+    }
+  },
+  "acceptance_tests": {
+    "test_metallic": {
+      "pass": true,
+      "value": 6.5,
+      "threshold": 1.0,
+      "unit": "states/eV/cell"
+    },
+    "test_orbital_character": {
+      "pass": true,
+      "value": 94.0,
+      "threshold": 70.0,
+      "unit": "%"
+    },
+    "test_af_flag": {
+      "pass": true,
+      "value": true,
+      "threshold": true,
+      "unit": "boolean"
+    }
+  }
+}

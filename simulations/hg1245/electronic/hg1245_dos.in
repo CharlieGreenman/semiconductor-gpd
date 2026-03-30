@@ -1,0 +1,11 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+! HgBa2Ca4Cu5O12+delta (Hg1245) -- DOS calculation
+
+&DOS
+  outdir  = './tmp/'
+  prefix  = 'hg1245'
+  fildos  = 'hg1245.dos'
+  Emin    = -10.0
+  Emax    =  10.0
+  DeltaE  =  0.01
+/

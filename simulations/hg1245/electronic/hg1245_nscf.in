@@ -1,0 +1,58 @@
+! ASSERT_CONVENTION: natural_units=explicit_hbar_kB, fourier_convention=QE_planewave
+! HgBa2Ca4Cu5O12+delta (Hg1245) -- NSCF for DOS
+
+&CONTROL
+  calculation='nscf', prefix='hg1245', outdir='./tmp/', pseudo_dir='./pseudo/', verbosity='high'
+/
+
+&SYSTEM
+  ibrav=0, nat=26, ntyp=5, ecutwfc=80.0, ecutrho=320.0,
+  input_dft='pbesol', occupations='tetrahedra_opt', nspin=1, nbnd=100
+/
+
+&ELECTRONS
+  conv_thr = 1.0d-10
+/
+
+ATOMIC_SPECIES
+  Hg  200.59   Hg_ONCV_PBEsol-1.2.upf
+  Ba  137.327  Ba_ONCV_PBEsol-1.2.upf
+  Ca   40.078  Ca_ONCV_PBEsol-1.2.upf
+  Cu   63.546  Cu_ONCV_PBEsol-1.2.upf
+  O    15.999  O_ONCV_PBEsol-1.2.upf
+
+CELL_PARAMETERS {angstrom}
+  3.848000  0.000000  0.000000
+  0.000000  3.848000  0.000000
+  0.000000  0.000000 22.030000
+
+ATOMIC_POSITIONS {crystal}
+  Hg   0.000000  0.000000  0.000000
+  Ba   0.500000  0.500000  0.116000
+  Ba   0.500000  0.500000  0.884000
+  Ca   0.000000  0.000000  0.234000
+  Ca   0.000000  0.000000  0.766000
+  Ca   0.000000  0.000000  0.346000
+  Ca   0.000000  0.000000  0.654000
+  Cu   0.000000  0.000000  0.184000
+  Cu   0.000000  0.000000  0.816000
+  Cu   0.000000  0.000000  0.302000
+  Cu   0.000000  0.000000  0.698000
+  Cu   0.000000  0.000000  0.500000
+  O    0.000000  0.000000  0.092000
+  O    0.000000  0.000000  0.908000
+  O    0.000000  0.500000  0.184000
+  O    0.500000  0.000000  0.184000
+  O    0.000000  0.500000  0.816000
+  O    0.500000  0.000000  0.816000
+  O    0.000000  0.500000  0.302000
+  O    0.500000  0.000000  0.302000
+  O    0.000000  0.500000  0.698000
+  O    0.500000  0.000000  0.698000
+  O    0.000000  0.500000  0.500000
+  O    0.500000  0.000000  0.500000
+  O    0.500000  0.500000  0.000000
+  O    0.500000  0.000000  0.000000
+
+K_POINTS {automatic}
+  16 16 6  0 0 0
