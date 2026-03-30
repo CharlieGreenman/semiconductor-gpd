@@ -1,0 +1,321 @@
+{
+  "phase": "45-combined-rescreening",
+  "plan": "01",
+  "script_version": "1.0.0",
+  "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "numpy_version": "2.3.3",
+  "random_seed": 42,
+  "method": {
+    "lambda_sf": "Cluster DMFT (Nc=4 DCA, Phase 43), enhancement 1.6x over single-site",
+    "gap_symmetry": "d-wave (B1g), mu*=0 Coulomb evasion (Phase 44)",
+    "Tc_formula": "Modified Allen-Dynes with f1*f2 strong-coupling + 1.12x Eliashberg correction",
+    "uncertainty": "lambda_sf range [1.4x, 2.0x] enhancement + 10% v_F systematic"
+  },
+  "inputs": {
+    "lambda_sf_cluster_central": 2.8800000000000003,
+    "lambda_sf_cluster_range": [
+      2.52,
+      3.6
+    ],
+    "enhancement_factor": 1.6,
+    "mu_star_dwave": 0.0,
+    "eliashberg_ratio": 1.12
+  },
+  "results": [
+    {
+      "id": 5,
+      "name": "Hg1223 strained + 15 GPa",
+      "lambda_ph": 1.4312,
+      "lambda_sf_single_site": 2.43,
+      "lambda_sf_cluster": 3.888,
+      "lambda_sf_cluster_range": [
+        3.402,
+        4.86
+      ],
+      "lambda_total_cluster": 5.319,
+      "omega_log_eff_cluster_K": 443.5,
+      "mu_star_dwave": 0.0,
+      "Tc_cluster_aniso_central_K": 242.3,
+      "Tc_cluster_aniso_range_K": [
+        224.4,
+        275.6
+      ],
+      "Tc_total_range_K": [
+        200.1,
+        299.8
+      ],
+      "Tc_v9_single_site_K": 145.0,
+      "improvement_over_v9_pct": 67.1,
+      "exceeds_200K_central": true,
+      "exceeds_200K_bracket": true
+    },
+    {
+      "id": 4,
+      "name": "Hg1223 at 30 GPa",
+      "lambda_ph": 1.2881,
+      "lambda_sf_single_site": 2.16,
+      "lambda_sf_cluster": 3.456,
+      "lambda_sf_cluster_range": [
+        3.024,
+        4.32
+      ],
+      "lambda_total_cluster": 4.744,
+      "omega_log_eff_cluster_K": 455.8,
+      "mu_star_dwave": 0.0,
+      "Tc_cluster_aniso_central_K": 231.2,
+      "Tc_cluster_aniso_range_K": [
+        213.9,
+        263.2
+      ],
+      "Tc_total_range_K": [
+        190.8,
+        286.3
+      ],
+      "Tc_v9_single_site_K": 135.6,
+      "improvement_over_v9_pct": 70.5,
+      "exceeds_200K_central": true,
+      "exceeds_200K_bracket": true
+    },
+    {
+      "id": 1,
+      "name": "Hg1223 epitaxial strain",
+      "lambda_ph": 1.3716,
+      "lambda_sf_single_site": 2.16,
+      "lambda_sf_cluster": 3.456,
+      "lambda_sf_cluster_range": [
+        3.024,
+        4.32
+      ],
+      "lambda_total_cluster": 4.828,
+      "omega_log_eff_cluster_K": 407.9,
+      "mu_star_dwave": 0.0,
+      "Tc_cluster_aniso_central_K": 209.3,
+      "Tc_cluster_aniso_range_K": [
+        193.7,
+        238.2
+      ],
+      "Tc_total_range_K": [
+        172.7,
+        259.2
+      ],
+      "Tc_v9_single_site_K": 123.5,
+      "improvement_over_v9_pct": 69.5,
+      "exceeds_200K_central": true,
+      "exceeds_200K_bracket": true
+    },
+    {
+      "id": 2,
+      "name": "(Hg0.8Tl0.2)Ba2Ca2Cu3O8+d",
+      "lambda_ph": 1.2523,
+      "lambda_sf_single_site": 1.98,
+      "lambda_sf_cluster": 3.168,
+      "lambda_sf_cluster_range": [
+        2.772,
+        3.96
+      ],
+      "lambda_total_cluster": 4.42,
+      "omega_log_eff_cluster_K": 399.1,
+      "mu_star_dwave": 0.0,
+      "Tc_cluster_aniso_central_K": 193.1,
+      "Tc_cluster_aniso_range_K": [
+        179.0,
+        219.4
+      ],
+      "Tc_total_range_K": [
+        159.6,
+        238.7
+      ],
+      "Tc_v9_single_site_K": 112.9,
+      "improvement_over_v9_pct": 71.1,
+      "exceeds_200K_central": false,
+      "exceeds_200K_bracket": true
+    },
+    {
+      "id": 0,
+      "name": "Hg1223 (baseline)",
+      "lambda_ph": 1.1927,
+      "lambda_sf_single_site": 1.8,
+      "lambda_sf_cluster": 2.88,
+      "lambda_sf_cluster_range": [
+        2.52,
+        3.6
+      ],
+      "lambda_total_cluster": 4.073,
+      "omega_log_eff_cluster_K": 412.1,
+      "mu_star_dwave": 0.0,
+      "Tc_cluster_aniso_central_K": 188.6,
+      "Tc_cluster_aniso_range_K": [
+        174.4,
+        215.0
+      ],
+      "Tc_total_range_K": [
+        155.5,
+        233.9
+      ],
+      "Tc_v9_single_site_K": 108.3,
+      "improvement_over_v9_pct": 74.2,
+      "exceeds_200K_central": false,
+      "exceeds_200K_bracket": true
+    },
+    {
+      "id": 3,
+      "name": "Hg1223 overdoped (p=0.22)",
+      "lambda_ph": 1.3716,
+      "lambda_sf_single_site": 1.35,
+      "lambda_sf_cluster": 2.16,
+      "lambda_sf_cluster_range": [
+        1.89,
+        2.7
+      ],
+      "lambda_total_cluster": 3.532,
+      "omega_log_eff_cluster_K": 428.4,
+      "mu_star_dwave": 0.0,
+      "Tc_cluster_aniso_central_K": 177.4,
+      "Tc_cluster_aniso_range_K": [
+        164.1,
+        202.5
+      ],
+      "Tc_total_range_K": [
+        146.3,
+        220.2
+      ],
+      "Tc_v9_single_site_K": 101.7,
+      "improvement_over_v9_pct": 74.4,
+      "exceeds_200K_central": false,
+      "exceeds_200K_bracket": true
+    },
+    {
+      "id": 6,
+      "name": "Sm3Ni2O7 (max levers)",
+      "lambda_ph": 1.058,
+      "lambda_sf_single_site": 2.07,
+      "lambda_sf_cluster": 3.312,
+      "lambda_sf_cluster_range": [
+        2.898,
+        4.14
+      ],
+      "lambda_total_cluster": 4.37,
+      "omega_log_eff_cluster_K": 365.6,
+      "mu_star_dwave": 0.0,
+      "Tc_cluster_aniso_central_K": 175.5,
+      "Tc_cluster_aniso_range_K": [
+        163.1,
+        198.5
+      ],
+      "Tc_total_range_K": [
+        145.5,
+        216.0
+      ],
+      "Tc_v9_single_site_K": 101.7,
+      "improvement_over_v9_pct": 72.6,
+      "exceeds_200K_central": false,
+      "exceeds_200K_bracket": true
+    }
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "name": "Hg1223 strained + 15 GPa",
+      "Tc_K": 242.3,
+      "range_K": [
+        200.1,
+        299.8
+      ],
+      "exceeds_200K": true
+    },
+    {
+      "rank": 2,
+      "name": "Hg1223 at 30 GPa",
+      "Tc_K": 231.2,
+      "range_K": [
+        190.8,
+        286.3
+      ],
+      "exceeds_200K": true
+    },
+    {
+      "rank": 3,
+      "name": "Hg1223 epitaxial strain",
+      "Tc_K": 209.3,
+      "range_K": [
+        172.7,
+        259.2
+      ],
+      "exceeds_200K": true
+    },
+    {
+      "rank": 4,
+      "name": "(Hg0.8Tl0.2)Ba2Ca2Cu3O8+d",
+      "Tc_K": 193.1,
+      "range_K": [
+        159.6,
+        238.7
+      ],
+      "exceeds_200K": false
+    },
+    {
+      "rank": 5,
+      "name": "Hg1223 (baseline)",
+      "Tc_K": 188.6,
+      "range_K": [
+        155.5,
+        233.9
+      ],
+      "exceeds_200K": false
+    },
+    {
+      "rank": 6,
+      "name": "Hg1223 overdoped (p=0.22)",
+      "Tc_K": 177.4,
+      "range_K": [
+        146.3,
+        220.2
+      ],
+      "exceeds_200K": false
+    },
+    {
+      "rank": 7,
+      "name": "Sm3Ni2O7 (max levers)",
+      "Tc_K": 175.5,
+      "range_K": [
+        145.5,
+        216.0
+      ],
+      "exceeds_200K": false
+    }
+  ],
+  "verdict": {
+    "any_central_200K": true,
+    "any_bracket_200K": true,
+    "trigger": "CR-03",
+    "best_candidate": "Hg1223 strained + 15 GPa",
+    "best_Tc_central_K": 242.3,
+    "best_Tc_range_K": [
+      200.1,
+      299.8
+    ],
+    "shortfall_from_200K": 0.0
+  },
+  "room_temperature_gap": {
+    "experimental_benchmark_K": 151,
+    "best_prediction_K": 242.3,
+    "carried_gap_K": 149,
+    "predicted_gap_K": 58.0,
+    "note": "The 149 K gap is 300 K minus EXPERIMENTAL 151 K. Our prediction is not a measurement."
+  },
+  "VALD03_statement": "The 149 K room-temperature gap (300 K - 151 K benchmark) remains OPEN. Best v10.0 prediction is not a measured value.",
+  "confidence": {
+    "overall": "MEDIUM",
+    "rationale": "Two independent enhancements (cluster DMFT nonlocal correlations + d-wave Coulomb evasion) each validated separately. Main uncertainties: (1) lambda_sf enhancement factor from literature scaling, not ab initio (2) Allen-Dynes may not be accurate for lambda > 4 (3) 10% v_F systematic. Enhancement direction is robust; absolute Tc uncertain to +/- 25%."
+  },
+  "convention_assertions": {
+    "units": "K for Tc, eV for energies, dimensionless for lambda and mu*",
+    "natural_units": false,
+    "fourier": "QE plane-wave convention"
+  },
+  "literature_sources": [
+    "Allen & Dynes, PRB 12, 905 (1975) [UNVERIFIED]",
+    "Maier et al., RMP 77, 1027 (2005) [UNVERIFIED]",
+    "Scalapino, RMP 84, 1383 (2012) [UNVERIFIED]"
+  ]
+}
