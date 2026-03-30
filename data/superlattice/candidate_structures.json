@@ -1,0 +1,90 @@
+[
+  {
+    "candidate_id": 1,
+    "label": "[HgBa2CuO4]_1/[LaNiO2]_1",
+    "formula": "HgBa2LaCuNiO6",
+    "formula_count": {
+      "La": 1,
+      "Ni": 1,
+      "O": 6,
+      "Hg": 1,
+      "Ba": 2,
+      "Cu": 1
+    },
+    "space_group_est": "P4mm (tetragonal, broken inversion at interface)",
+    "a_angstrom": 3.9185,
+    "c_angstrom": 12.882,
+    "n_atoms": 12,
+    "mismatch_pct": 2.09,
+    "parent_cuprate": "HgBa2CuO4 (Hg1201)",
+    "parent_nickelate": "LaNiO2 (infinite-layer)",
+    "interface_type": "BaO-LaO rock-salt",
+    "min_interatomic_dist_A": 1.515,
+    "formal_valence_sum": 1,
+    "charge_balanced": true,
+    "cif_file": "simulations/superlattice/structures/hgba2cuo4_lanio2_superlattice.cif",
+    "sources": [
+      "Wagner et al., Physica C 210, 447 (1993) [UNVERIFIED - training data]",
+      "Hayward & Rosseinsky, Solid State Sciences 5, 839 (2003) [UNVERIFIED - training data]"
+    ]
+  },
+  {
+    "candidate_id": 2,
+    "label": "[Hg1223]_1/[La3Ni2O7]_1",
+    "formula": "HgBa2Ca2La6Cu3Ni4O22",
+    "formula_count": {
+      "La": 6,
+      "Ni": 4,
+      "O": 22,
+      "Hg": 1,
+      "Ba": 2,
+      "Ca": 2,
+      "Cu": 3
+    },
+    "space_group_est": "P4mm (tetragonal)",
+    "a_angstrom": 3.905,
+    "c_angstrom": 36.376,
+    "n_atoms": 40,
+    "mismatch_pct": 2.75,
+    "parent_cuprate": "HgBa2Ca2Cu3O8 (Hg1223)",
+    "parent_nickelate": "La3Ni2O7 (RP bilayer, full conv. cell = 2x f.u.)",
+    "interface_type": "BaO-LaO rock-salt",
+    "min_interatomic_dist_A": 1.141,
+    "formal_valence_sum": -2,
+    "charge_balanced": true,
+    "cif_file": "simulations/superlattice/structures/hg1223_la3ni2o7_superlattice.cif",
+    "sources": [
+      "Antipov et al., Physica C 366, 85 (2002) [UNVERIFIED - training data]",
+      "Zhang et al., Nat Phys 20, 1269 (2024) [UNVERIFIED - training data]"
+    ]
+  },
+  {
+    "candidate_id": 3,
+    "label": "[HgBa2CuO4]_1/[La3Ni2O7]_1",
+    "formula": "HgBa2La6CuNi4O20",
+    "formula_count": {
+      "La": 6,
+      "Ni": 4,
+      "O": 18,
+      "Hg": 1,
+      "Ba": 2,
+      "Cu": 1
+    },
+    "space_group_est": "P4mm (tetragonal)",
+    "a_angstrom": 3.918,
+    "c_angstrom": 30.037,
+    "n_atoms": 32,
+    "mismatch_pct": 2.06,
+    "parent_cuprate": "HgBa2CuO4 (Hg1201)",
+    "parent_nickelate": "La3Ni2O7 (RP bilayer, full conv. cell = 2x f.u.)",
+    "interface_type": "BaO-LaO rock-salt",
+    "min_interatomic_dist_A": 1.396,
+    "formal_valence_sum": -2,
+    "charge_balanced": true,
+    "cif_file": "simulations/superlattice/structures/hgba2cuo4_la3ni2o7_superlattice.cif",
+    "sources": [
+      "Wagner et al., Physica C 210, 447 (1993) [UNVERIFIED - training data]",
+      "Zhang et al., Nat Phys 20, 1269 (2024) [UNVERIFIED - training data]"
+    ]
+  }
+]

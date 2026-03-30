@@ -1,0 +1,156 @@
+{
+  "symmetry": [
+    {
+      "candidate_id": 1,
+      "cif_file": "simulations/superlattice/structures/hgba2cuo4_lanio2_superlattice.cif",
+      "space_group": "P4mm",
+      "space_group_number": 99,
+      "point_group": "4mm",
+      "crystal_system": "tetragonal",
+      "n_symmetry_ops": 8,
+      "symprec_used": 0.1,
+      "a_angstrom": 3.9185,
+      "b_angstrom": 3.9185,
+      "c_angstrom": 12.882,
+      "n_atoms": 12
+    },
+    {
+      "candidate_id": 2,
+      "cif_file": "simulations/superlattice/structures/hg1223_la3ni2o7_superlattice.cif",
+      "space_group": "P4mm",
+      "space_group_number": 99,
+      "point_group": "4mm",
+      "crystal_system": "tetragonal",
+      "n_symmetry_ops": 8,
+      "symprec_used": 0.1,
+      "a_angstrom": 3.905,
+      "b_angstrom": 3.905,
+      "c_angstrom": 36.376,
+      "n_atoms": 40
+    },
+    {
+      "candidate_id": 3,
+      "cif_file": "simulations/superlattice/structures/hgba2cuo4_la3ni2o7_superlattice.cif",
+      "space_group": "P4mm",
+      "space_group_number": 99,
+      "point_group": "4mm",
+      "crystal_system": "tetragonal",
+      "n_symmetry_ops": 8,
+      "symprec_used": 0.1,
+      "a_angstrom": 3.918,
+      "b_angstrom": 3.918,
+      "c_angstrom": 30.037,
+      "n_atoms": 32
+    }
+  ],
+  "interface_chemistry": [
+    {
+      "candidate_id": 1,
+      "interface_layers": "BaO (from Hg1201) -- LaO (from LaNiO2)",
+      "interface_type": "Rock-salt AO-AO",
+      "cation_at_interface": {
+        "cuprate_side": "Ba2+",
+        "nickelate_side": "La3+"
+      },
+      "anion_at_interface": "O2-",
+      "formal_charges": {
+        "BaO_layer": "Ba2+ O2- = neutral",
+        "LaO_layer": "La3+ O2- = +1",
+        "NiO2_plane": "Ni2+ (O2-)_2 = -2",
+        "CuO2_plane": "Cu2+ (O2-)_2 = -2"
+      },
+      "polar_discontinuity": "The BaO layer is nominally neutral; the LaO layer carries +1 charge. This creates a polar interface similar to LaAlO3/SrTiO3. Charge transfer of ~0.5 e per interface unit cell is expected to avoid the polar catastrophe. This charge transfer could dope the CuO2 or NiO2 planes, which is potentially beneficial for superconductivity.",
+      "interdiffusion_risk": "Moderate. Ba-La intermixing at interface is thermodynamically possible.",
+      "oxidation_state_concerns": "Ni formal valence in LaNiO2 is +1 (unusual, only achievable by topotactic reduction). At the interface, Ni may oxidize to +2 if O migrates from the cuprate block."
+    },
+    {
+      "candidate_id": 2,
+      "interface_layers": "BaO (from Hg1223) -- LaO (from La3Ni2O7)",
+      "interface_type": "Rock-salt AO-AO",
+      "cation_at_interface": {
+        "cuprate_side": "Ba2+",
+        "nickelate_side": "La3+"
+      },
+      "anion_at_interface": "O2-",
+      "formal_charges": {
+        "BaO_layer": "Ba2+ O2- = neutral",
+        "LaO_layer": "La3+ O2- = +1",
+        "NiO2_bilayer": "Ni2.5+ on average (mixed-valent in La3Ni2O7)",
+        "CuO2_trilayer": "Cu2+ (optimally doped with excess O in Hg layer)"
+      },
+      "polar_discontinuity": "Same BaO-LaO polar interface as Candidate 1. However, La3Ni2O7 already has mixed Ni valence (Ni2+/Ni3+), so the charge transfer at the interface may be partially accommodated by the existing mixed-valence state of the nickelate block.",
+      "interdiffusion_risk": "Higher than Candidate 1 due to Ca in the cuprate block. Ca-La mixing at the interface is possible.",
+      "oxidation_state_concerns": "Ni in La3Ni2O7 is nominally +2.5 (mixed Ni2+/Ni3+). Hg1223 requires careful oxygen stoichiometry for optimal doping. Interface may disrupt the delicate charge balance of both blocks."
+    },
+    {
+      "candidate_id": 3,
+      "interface_layers": "BaO (from Hg1201) -- LaO (from La3Ni2O7)",
+      "interface_type": "Rock-salt AO-AO",
+      "cation_at_interface": {
+        "cuprate_side": "Ba2+",
+        "nickelate_side": "La3+"
+      },
+      "anion_at_interface": "O2-",
+      "formal_charges": {
+        "BaO_layer": "Ba2+ O2- = neutral",
+        "LaO_layer": "La3+ O2- = +1",
+        "NiO2_bilayer": "Ni2.5+ on average (mixed-valent)",
+        "CuO2_plane": "Cu2+"
+      },
+      "polar_discontinuity": "Same BaO-LaO polar interface as Candidates 1 and 2. Simpler than Candidate 2 (no Ca). Charge transfer at the polar interface may dope the CuO2 plane.",
+      "interdiffusion_risk": "Lower than Candidate 2. No Ca to intermix. Simpler interface chemistry.",
+      "oxidation_state_concerns": "La3Ni2O7 has mixed Ni2+/Ni3+ valence. Interface may modify the Ni valence state, potentially enhancing or suppressing superconductivity in the nickelate block."
+    }
+  ],
+  "mbe_feasibility": [
+    {
+      "candidate_id": 1,
+      "feasibility_rank": 2,
+      "cuprate_growth": "Hg-based cuprates are challenging for MBE due to Hg volatility (vapor pressure ~0.1 Torr at 300 C). Pulsed laser deposition (PLD) is more common. Molecular beam epitaxy of Hg-cuprates has been demonstrated but requires sealed Hg atmosphere or post-anneal Hg incorporation.",
+      "nickelate_growth": "LaNiO2 is obtained by topotactic reduction of LaNiO3 films grown by MBE or PLD. LaNiO3 MBE growth is well-established (Schilling et al., Bauer et al.). Topotactic reduction with CaH2 or Al capping is routine.",
+      "interface_sharpness": "Moderate. Sequential growth possible but Hg incorporation is the bottleneck.",
+      "n_source_targets": 5,
+      "source_targets": [
+        "Hg (or HgO)",
+        "BaO (or BaF2)",
+        "Cu",
+        "La",
+        "NiO (or Ni)"
+      ],
+      "overall": "Challenging but not impossible. LaNiO2 side is well-controlled; Hg-cuprate side needs specialized setup."
+    },
+    {
+      "candidate_id": 2,
+      "feasibility_rank": 3,
+      "cuprate_growth": "Same Hg volatility challenges as Candidate 1, plus the multilayer Hg1223 structure (3 CuO2 planes + 2 CaO spacers) is more complex. Each CuO2 plane must nucleate correctly in sequence.",
+      "nickelate_growth": "La3Ni2O7 RP bilayer films have been grown by MBE and PLD (Sun et al. 2023, Puphal et al. 2023). Growth control is improving rapidly.",
+      "interface_sharpness": "Lowest of all candidates. Many layers to control precisely.",
+      "n_source_targets": 6,
+      "source_targets": [
+        "Hg (or HgO)",
+        "BaO",
+        "CaO",
+        "Cu",
+        "La",
+        "NiO"
+      ],
+      "overall": "Most challenging. Both blocks are complex multilayer structures. Proof-of-concept only."
+    },
+    {
+      "candidate_id": 3,
+      "feasibility_rank": 1,
+      "cuprate_growth": "Same as Candidate 1.",
+      "nickelate_growth": "Same as Candidate 2 (La3Ni2O7 films are achievable).",
+      "interface_sharpness": "Best of all candidates. Simpler cuprate block (single CuO2 plane) reduces the number of layers to control.",
+      "n_source_targets": 5,
+      "source_targets": [
+        "Hg (or HgO)",
+        "BaO",
+        "Cu",
+        "La",
+        "NiO"
+      ],
+      "overall": "Most MBE-realistic. La3Ni2O7 growth is established; Hg1201 is the simplest Hg-cuprate. Recommended first experimental target."
+    }
+  ]
+}
