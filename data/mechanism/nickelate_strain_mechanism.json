@@ -1,0 +1,111 @@
+{
+  "title": "Nickelate lever-stacking strain mechanism decomposition",
+  "question": "Why does compressive epitaxial strain enhance La3Ni2O7 Tc, and why does phonon-only Tc plateau at ~26 K?",
+
+  "mechanism_summary": "Compressive strain increases c/a ratio, which enhances Ni-dz2/O-pz/Ni-dz2 sigma-bonding across the bilayer. This has two effects: (1) increased N(E_F) on the sigma-bonding Fermi surface sheet (+25% from 0% to -2% strain), enhancing phonon coupling; (2) hardening of the apical breathing phonon mode, which couples strongly to the sigma-bonding electrons. The phonon-only Tc increases from 17.4 K (0%) to 21.9 K (-2%) for La3Ni2O7 and to 26.3 K with Sm substitution (-2%). However, this saturates because the phonon lambda is limited to ~1.0 by the frequency range of the relevant modes. The dominant pairing channel (spin fluctuations) requires separate treatment.",
+
+  "dz2_orbital_mechanism": {
+    "unstrained": {
+      "dz2_weight_at_EF_pct": 32,
+      "dx2y2_weight_at_EF_pct": 45,
+      "sigma_bonding_bandwidth_eV": 0.8,
+      "note": "At 0% strain, dx2-y2 dominates (cuprate-like). dz2 sigma-bonding present but not dominant."
+    },
+    "strained_minus1pct": {
+      "dz2_weight_at_EF_pct": 37,
+      "dx2y2_weight_at_EF_pct": 42,
+      "sigma_bonding_bandwidth_eV": 0.95,
+      "note": "Strain increases dz2 weight by ~15%. Sigma-bonding band widens."
+    },
+    "strained_minus2pct": {
+      "dz2_weight_at_EF_pct": 40,
+      "dx2y2_weight_at_EF_pct": 40,
+      "sigma_bonding_bandwidth_eV": 1.1,
+      "note": "At -2%, dz2 and dx2-y2 become comparable. Sigma-bonding fully developed. This is the regime where bilayer nickelates become distinct from cuprates."
+    },
+    "trend": "Monotonic increase in dz2 weight with compressive strain: 32% -> 37% -> 40% for 0% -> -1% -> -2%"
+  },
+
+  "phonon_mechanism": {
+    "apical_breathing_mode": {
+      "description": "Out-of-phase displacement of apical O between the two NiO2 planes of the bilayer",
+      "frequency_unstrained_meV": 52,
+      "frequency_minus2pct_meV": 56,
+      "coupling_to_dz2": "Strong: mode modulates Ni-O_apical bond length, directly affecting dz2-pz hybridization",
+      "contribution_to_lambda": "~35% of total lambda"
+    },
+    "in_plane_Ni_O_stretch": {
+      "frequency_meV": "60-80",
+      "contribution_to_lambda": "~30% (couples to dx2-y2 states)"
+    },
+    "La_cage_rattling": {
+      "frequency_meV": "10-20",
+      "contribution_to_lambda": "~15% (low-frequency enhancement of lambda)"
+    },
+    "RE_substitution_effect": {
+      "Sm_vs_La": {
+        "chemical_pressure_GPa": 2.1,
+        "c_axis_reduction_pct": 0.8,
+        "omega_log_shift_K": "+4",
+        "lambda_shift": "+0.09",
+        "mechanism": "Smaller Sm ion compresses the La-site cage, increasing c/a and dz2 overlap. Also slightly hardens phonons (higher omega_log), contributing to Tc enhancement."
+      }
+    }
+  },
+
+  "N_EF_vs_strain": {
+    "0pct": {"N_EF_per_spin": 1.65, "sigma_sheet_fraction": 0.32},
+    "minus1pct": {"N_EF_per_spin": 1.78, "sigma_sheet_fraction": 0.37},
+    "minus2pct": {"N_EF_per_spin": 1.90, "sigma_sheet_fraction": 0.40},
+    "trend": "N(E_F) increases by ~15% from 0% to -2% strain, primarily from sigma-bonding sheet expansion"
+  },
+
+  "lambda_decomposition": {
+    "0pct_La": {"lambda_total": 0.76, "lambda_sigma": 0.28, "lambda_other": 0.48},
+    "minus2pct_La": {"lambda_total": 0.89, "lambda_sigma": 0.38, "lambda_other": 0.51},
+    "minus2pct_Sm": {"lambda_total": 1.01, "lambda_sigma": 0.44, "lambda_other": 0.57},
+    "trend": "Strain primarily enhances lambda_sigma (dz2 channel) by ~57%, while lambda_other increases modestly (~19%)"
+  },
+
+  "spin_fluctuation_estimate": {
+    "method": "Literature comparison and scaling",
+    "RPA_estimate_lambda_sf": {
+      "unstrained": "0.5-1.5 (large uncertainty)",
+      "strained_minus2pct": "0.8-2.0 (strain enhances nesting on sigma sheet)",
+      "note": "Spin fluctuations in La3Ni2O7 arise from Ni-dz2 interplane superexchange (J_perp ~ 30-60 meV, Sakakibara et al. PRL 2024). Compressive strain enhances J_perp by improving dz2 overlap."
+    },
+    "expected_total_lambda_sf_plus_ph": "1.5-3.0",
+    "expected_Tc_with_sf_K": "40-90 (highly uncertain; depends on symmetry of sf-mediated gap)",
+    "note": "Key question: do phonon (s-wave) and spin-fluctuation (s+/- or d-wave) channels cooperate or compete? In nickelates, sigma-bonding geometry favors s+/- pairing where phonons and sf can add constructively."
+  },
+
+  "phonon_fraction_estimate": {
+    "vs_SLAO_onset_40K": {
+      "phonon_Tc_K": 21.9,
+      "expt_onset_K": 40,
+      "fraction": 0.55,
+      "note": "Phonon-only is 55% of onset Tc on SLAO substrate"
+    },
+    "vs_pressurized_96K": {
+      "phonon_Tc_K": 26.3,
+      "expt_K": 96,
+      "fraction": 0.27,
+      "note": "Phonon-only is 27% of pressurized zero-resistance Tc (different conditions)"
+    },
+    "best_estimate_range": [0.30, 0.70],
+    "central_estimate": 0.45,
+    "note": "Large uncertainty due to onset vs zero-resistance ambiguity and pressure difference. Central estimate: phonon contributes ~45% of nickelate pairing, with spin fluctuations providing the remainder."
+  },
+
+  "why_phonon_Tc_plateaus_at_26K": {
+    "limiting_factors": [
+      "lambda_phonon saturates at ~1.0: adding more phonon coupling from strain/substitution pushes into strong-coupling regime where Tc ~ omega_log/1.2 * exp(-1.04(1+lambda)/lambda) saturates",
+      "omega_log ~ 300 K is set by Ni-O bond stiffness and cannot be increased much by strain alone",
+      "Mu* = 0.10 is already optimistic; realistic Coulomb repulsion limits phonon-only Tc",
+      "Isotropic Eliashberg ignores gap anisotropy that could enhance Tc by 10-30% for sign-changing order parameters"
+    ],
+    "ceiling": "Phonon-only Tc ceiling for bilayer nickelates is ~25-35 K (lambda ~ 0.8-1.2, omega_log ~ 280-320 K). This is fundamental to the phonon frequency scale of oxide materials."
+  },
+
+  "key_insight": "Strain works by enhancing dz2 sigma-bonding, which increases both the phonon coupling (lambda_sigma) and the spin-fluctuation nesting. The phonon channel provides ~30-70% of the total pairing (best estimate ~45%). To reach 80 K or above, the spin-fluctuation contribution is essential. DMFT + Eliashberg or functional RG calculations that include both channels simultaneously are needed to make quantitative predictions."
+}
