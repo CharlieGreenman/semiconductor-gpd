@@ -9,7 +9,7 @@
 - **v5.0 Stage A Package** — Phases 19-21 (completed)
 - **v6.0 Gap-Closing Route Expansion** — Phases 22-23 (completed 2026-03-29)
 - **v7.0 Two-Track Route Testing** — Phases 24-26 (completed 2026-03-29)
-- **v8.0 Computational Materials Design** — Phases 27-33 (active)
+- **v8.0 Computational Materials Design** — Phases 27-33 (completed 2026-03-29)
 
 <details>
 <summary>v6.0 Gap-Closing Route Expansion (Phases 22-23) — COMPLETED 2026-03-29</summary>
