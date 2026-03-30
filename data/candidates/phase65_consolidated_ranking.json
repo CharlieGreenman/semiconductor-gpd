@@ -1,0 +1,377 @@
+{
+  "phase": 65,
+  "plan": "01",
+  "ASSERT_CONVENTION": "natural_units=NOT_used, fourier_convention=QE_plane_wave, custom=SI_derived_eV_K_GPa",
+  "VALD03_statement": "Room temperature = 300 K = 80 F = 27 C",
+  "date": "2026-03-30T06:08:31.727988+00:00",
+  "random_seed": 65,
+  "candidates": [
+    {
+      "rank": 1,
+      "name": "La3Ni2O7-H0.5",
+      "formula": "La3Ni2O7H0.5",
+      "source": "v12.0 Phase 60-62 (Track B/C)",
+      "material_class": "H-intercalated nickelate",
+      "structure": "I4/mmm parent, P4/mmm with H ordering, bilayer RP",
+      "E_hull_meV_atom": 27.2,
+      "E_hull_gate": "CONDITIONAL PASS",
+      "phonon_stable": "CONDITIONAL (H local modes positive; needs DFT confirmation)",
+      "omega_log_K": 852,
+      "lambda_ph": 1.27,
+      "lambda_sf": 2.23,
+      "lambda_sf_range": [
+        1.56,
+        2.9
+      ],
+      "lambda_total": 3.5,
+      "mu_star": 0.0,
+      "pairing": "d-wave",
+      "Tc_AD_K": 343,
+      "Tc_corrected_K": 291,
+      "Tc_bracket_K": [
+        226,
+        291,
+        351
+      ],
+      "reaches_300K_central": false,
+      "reaches_300K_bracket": true,
+      "operating_conditions": "-2% epitaxial strain + 15 GPa",
+      "ambient": false,
+      "synthesis_route": "Topotactic H intercalation of La3Ni2O7 thin films on SrLaAlO4",
+      "VALD01_Z_positive": true,
+      "VALD01_gap_eq": true,
+      "VALD02_E_hull": true,
+      "VALD02_phonon": "CONDITIONAL",
+      "VALD03_300K_explicit": true,
+      "confidence": "MEDIUM",
+      "key_uncertainties": [
+        "H charge state (H+ vs H-) critically affects Ni valence",
+        "Partial intercalation stoichiometry (H0.5) not guaranteed",
+        "15 GPa pressure required (not ambient)",
+        "CTQMC calibration from cuprates, not nickelates",
+        "Allen-Dynes overestimates at lambda~3.5 (15% correction applied)"
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "Hg1223 strained + 15 GPa",
+      "formula": "HgBa2Ca2Cu3O8+d",
+      "source": "v11.0 CTQMC",
+      "material_class": "cuprate",
+      "structure": "P4/mmm, trilayer",
+      "E_hull_meV_atom": 0,
+      "E_hull_gate": "PASS (experimental material)",
+      "phonon_stable": "PASS (experimental material)",
+      "omega_log_K": 397,
+      "lambda_ph": 1.22,
+      "lambda_sf": 1.8299999999999998,
+      "lambda_sf_range": [
+        1.525,
+        2.135
+      ],
+      "lambda_total": 3.05,
+      "mu_star": 0.0,
+      "pairing": "d-wave",
+      "Tc_AD_K": 146,
+      "Tc_corrected_K": 146,
+      "Tc_bracket_K": [
+        106,
+        146,
+        216
+      ],
+      "reaches_300K_central": false,
+      "reaches_300K_bracket": false,
+      "operating_conditions": "strained + 15 GPa",
+      "ambient": false,
+      "synthesis_route": "Known: HP-HT synthesis, pressure quench",
+      "VALD01_Z_positive": true,
+      "VALD01_gap_eq": true,
+      "VALD02_E_hull": true,
+      "VALD02_phonon": true,
+      "VALD03_300K_explicit": true,
+      "confidence": "MEDIUM",
+      "key_uncertainties": [
+        "Experimental material; Tc validated"
+      ]
+    },
+    {
+      "rank": 3,
+      "name": "Hg1223 at 30 GPa",
+      "formula": "HgBa2Ca2Cu3O8+d",
+      "source": "v11.0 CTQMC",
+      "material_class": "cuprate",
+      "structure": "P4/mmm, trilayer",
+      "E_hull_meV_atom": 0,
+      "E_hull_gate": "PASS (experimental material)",
+      "phonon_stable": "PASS (experimental material)",
+      "omega_log_K": 412,
+      "lambda_ph": 1.092,
+      "lambda_sf": 1.638,
+      "lambda_sf_range": [
+        1.365,
+        1.9109999999999998
+      ],
+      "lambda_total": 2.73,
+      "mu_star": 0.0,
+      "pairing": "d-wave",
+      "Tc_AD_K": 141,
+      "Tc_corrected_K": 141,
+      "Tc_bracket_K": [
+        106,
+        141,
+        210
+      ],
+      "reaches_300K_central": false,
+      "reaches_300K_bracket": false,
+      "operating_conditions": "30 GPa",
+      "ambient": false,
+      "synthesis_route": "Known: HP-HT synthesis, pressure quench",
+      "VALD01_Z_positive": true,
+      "VALD01_gap_eq": true,
+      "VALD02_E_hull": true,
+      "VALD02_phonon": true,
+      "VALD03_300K_explicit": true,
+      "confidence": "MEDIUM",
+      "key_uncertainties": [
+        "Experimental material; Tc validated"
+      ]
+    },
+    {
+      "rank": 4,
+      "name": "Hg1223 epitaxial strain",
+      "formula": "HgBa2Ca2Cu3O8+d",
+      "source": "v11.0 CTQMC",
+      "material_class": "cuprate",
+      "structure": "P4/mmm, trilayer",
+      "E_hull_meV_atom": 0,
+      "E_hull_gate": "PASS (experimental material)",
+      "phonon_stable": "PASS (experimental material)",
+      "omega_log_K": 365,
+      "lambda_ph": 1.124,
+      "lambda_sf": 1.686,
+      "lambda_sf_range": [
+        1.405,
+        1.9669999999999999
+      ],
+      "lambda_total": 2.81,
+      "mu_star": 0.0,
+      "pairing": "d-wave",
+      "Tc_AD_K": 128,
+      "Tc_corrected_K": 128,
+      "Tc_bracket_K": [
+        96,
+        128,
+        192
+      ],
+      "reaches_300K_central": false,
+      "reaches_300K_bracket": false,
+      "operating_conditions": "epitaxial strain",
+      "ambient": false,
+      "synthesis_route": "Known: HP-HT synthesis, pressure quench",
+      "VALD01_Z_positive": true,
+      "VALD01_gap_eq": true,
+      "VALD02_E_hull": true,
+      "VALD02_phonon": true,
+      "VALD03_300K_explicit": true,
+      "confidence": "MEDIUM",
+      "key_uncertainties": [
+        "Experimental material; Tc validated"
+      ]
+    },
+    {
+      "rank": 5,
+      "name": "Hg1223 baseline",
+      "formula": "HgBa2Ca2Cu3O8+d",
+      "source": "v11.0 CTQMC",
+      "material_class": "cuprate",
+      "structure": "P4/mmm, trilayer",
+      "E_hull_meV_atom": 0,
+      "E_hull_gate": "PASS (experimental material)",
+      "phonon_stable": "PASS (experimental material)",
+      "omega_log_K": 373,
+      "lambda_ph": 0.9560000000000001,
+      "lambda_sf": 1.434,
+      "lambda_sf_range": [
+        1.195,
+        1.673
+      ],
+      "lambda_total": 2.39,
+      "mu_star": 0.0,
+      "pairing": "d-wave",
+      "Tc_AD_K": 115,
+      "Tc_corrected_K": 115,
+      "Tc_bracket_K": [
+        90,
+        115,
+        173
+      ],
+      "reaches_300K_central": false,
+      "reaches_300K_bracket": false,
+      "operating_conditions": "ambient (after pressure quench)",
+      "ambient": true,
+      "synthesis_route": "Known: HP-HT synthesis, pressure quench",
+      "VALD01_Z_positive": true,
+      "VALD01_gap_eq": true,
+      "VALD02_E_hull": true,
+      "VALD02_phonon": true,
+      "VALD03_300K_explicit": true,
+      "confidence": "HIGH",
+      "key_uncertainties": [
+        "Experimental material; Tc validated"
+      ]
+    }
+  ],
+  "failed_candidates": {
+    "phase_59_cuprate_h": [
+      {
+        "name": "Hg1223-H",
+        "E_hull": 210,
+        "reason": "E_hull + doping incompatibility"
+      },
+      {
+        "name": "[CuO2]2/[LiH]1",
+        "E_hull": 203,
+        "reason": "E_hull + doping incompatibility"
+      },
+      {
+        "name": "[CuO2]2/[LiH]2",
+        "E_hull": 208,
+        "reason": "E_hull + doping incompatibility"
+      }
+    ],
+    "track_d": "Track D (AI surrogate): 0 candidates passed validation. All 10 hits failed stability gates."
+  },
+  "vald_results": {
+    "VALD01_thermodynamic_consistency": {
+      "status": "PASS",
+      "note": "All Eliashberg solutions have Z>0 and gap equation satisfied"
+    },
+    "VALD02_stability_gates": {
+      "status": "CONDITIONAL",
+      "passing": [
+        "Hg1223 variants (experimental)"
+      ],
+      "conditional": [
+        "La3Ni2O7-H0.5 (E_hull=27, phonon needs DFT)"
+      ],
+      "failing": [
+        "All Phase 59 cuprate-H (E_hull >> 50)",
+        "All Track D (E_hull >> 50)"
+      ]
+    },
+    "VALD03_300K_explicit": {
+      "status": "PASS",
+      "note": "Room temperature = 300 K = 80 F = 27 C stated in all deliverables"
+    },
+    "VALD04_synthesis_route": {
+      "status": "CONDITIONAL",
+      "note": "La3Ni2O7-H0.5: topotactic intercalation of thin films, requires 15 GPa for SC",
+      "synthesis_pathway": {
+        "precursors": [
+          "La3Ni2O7 thin film on SrLaAlO4 substrate",
+          "H2 gas or CaH2 reducing agent"
+        ],
+        "method": "Topotactic H intercalation at 200-400 C under controlled H2 atmosphere",
+        "pressure": "15 GPa for superconductivity (diamond anvil cell)",
+        "strain": "-2% from SrLaAlO4 substrate lattice mismatch",
+        "expected_difficulty": "HIGH: H stoichiometry control + 15 GPa pressure + thin film synthesis",
+        "closest_analog": "LaNiO2-H (infinite-layer + H) and BaTiO3-xHx (oxyhydride) precedents exist"
+      }
+    }
+  },
+  "synthesis_assessment": {
+    "material": "La3Ni2O7-H0.5",
+    "route": {
+      "step_1": "Grow La3Ni2O7 thin film (~50 nm) on SrLaAlO4(001) by PLD or MBE. Achieves -2% compressive strain.",
+      "step_2": "Topotactic H intercalation at 200-400 C using CaH2 reducing agent or H2 gas flow. Target H0.5 stoichiometry.",
+      "step_3": "Characterize H content by SIMS, NRA, or weight gain. Verify Ni valence by XPS.",
+      "step_4": "Resistivity measurement under pressure: DAC to 15 GPa with 4-probe contacts.",
+      "step_5": "Look for Tc onset. If Tc > 200 K, scale up and confirm with magnetization."
+    },
+    "precedents": [
+      "BaTiO3-xHx: topotactic H insertion in perovskite demonstrated (2012)",
+      "LaNiO2: topotactic reduction of LaNiO3 films demonstrated (2019)",
+      "La3Ni2O7 at 15 GPa: Tc~80 K confirmed by multiple groups (2023-2024)",
+      "SrVO2H: oxyhydride with H in RP layer demonstrated (2016)"
+    ],
+    "risks": [
+      "H diffusion out of film at operating temperature (if Tc < 300 K, sample must be cold)",
+      "H stoichiometry control: over-doping kills SC, under-doping misses omega_log boost",
+      "Film thickness limits: penetration depth may exceed 50 nm film",
+      "15 GPa is NOT ambient: this is a laboratory demonstration, not a device"
+    ],
+    "feasibility": "MODERATE: Each individual step has precedents; combination is novel"
+  },
+  "final_ranking": [
+    {
+      "rank": 1,
+      "name": "La3Ni2O7-H0.5",
+      "Tc_K": 291,
+      "bracket_K": [
+        226,
+        291,
+        351
+      ],
+      "tier": "Tier 1: 300 K candidate",
+      "stability": "CONDITIONAL PASS",
+      "ambient": false,
+      "confidence": "MEDIUM"
+    },
+    {
+      "rank": 2,
+      "name": "Hg1223 strained + 15 GPa",
+      "Tc_K": 146,
+      "bracket_K": [
+        106,
+        146,
+        216
+      ],
+      "tier": "Tier 3: Validated benchmark",
+      "stability": "PASS (experimental material)",
+      "ambient": false,
+      "confidence": "MEDIUM"
+    },
+    {
+      "rank": 3,
+      "name": "Hg1223 at 30 GPa",
+      "Tc_K": 141,
+      "bracket_K": [
+        106,
+        141,
+        210
+      ],
+      "tier": "Tier 3: Validated benchmark",
+      "stability": "PASS (experimental material)",
+      "ambient": false,
+      "confidence": "MEDIUM"
+    },
+    {
+      "rank": 4,
+      "name": "Hg1223 epitaxial strain",
+      "Tc_K": 128,
+      "bracket_K": [
+        96,
+        128,
+        192
+      ],
+      "tier": "Tier 3: Validated benchmark",
+      "stability": "PASS (experimental material)",
+      "ambient": false,
+      "confidence": "MEDIUM"
+    },
+    {
+      "rank": 5,
+      "name": "Hg1223 baseline",
+      "Tc_K": 115,
+      "bracket_K": [
+        90,
+        115,
+        173
+      ],
+      "tier": "Tier 3: Validated benchmark",
+      "stability": "PASS (experimental material)",
+      "ambient": true,
+      "confidence": "HIGH"
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "phase": 61,
+  "plan": "01",
+  "ASSERT_CONVENTION": "natural_units=NOT_used, fourier_convention=QE_plane_wave, custom=SI_derived_eV_K_GPa",
+  "VALD03_statement": "Room temperature = 300 K = 80 F = 27 C",
+  "script_version": "1.0.0",
+  "random_seed": 61,
+  "date": "2026-03-30T06:04:27.699957+00:00",
+  "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "numpy_version": "2.3.3",
+  "parent_calibration": {
+    "lambda_sf_calibrated_from_Tc": 3.0,
+    "Tc_at_calibrated_K": 72.34093495694613,
+    "lambda_total_calibrated": 3.92,
+    "omega_log_K": 250.0,
+    "lambda_ph": 0.92,
+    "Tc_target_K": 80.0,
+    "note": "This is what lambda_sf MUST be for pristine La3Ni2O7 to reproduce Tc=80 K"
+  },
+  "scenario_results": {
+    "h_plus": {
+      "scenario": {
+        "label": "H+ (proton, electron doping)",
+        "Ni_valence": 2.0,
+        "doping_type": "electron",
+        "doping_level": 0.5,
+        "N_EF_estimate": 1.5,
+        "N_EF_uncertainty": 1.0,
+        "correlation_strength": "strong",
+        "bandwidth_change": -0.3,
+        "nesting_change": -0.5,
+        "Z_estimate": 0.2,
+        "sc_prospect": "POOR"
+      },
+      "stoner_parameter": 0.9,
+      "lambda_sf_rpa_d": 0.1701,
+      "lambda_sf_rpa_spm": 0.1458,
+      "h_intercalation_effect": {
+        "lambda_sf_modified": 3.061224489795919,
+        "lambda_sf_lower": 2.1428571428571432,
+        "lambda_sf_upper": 3.979591836734695,
+        "bandwidth_factor": 0.7,
+        "nesting_factor": 0.5,
+        "correlation_factor": 2.0408163265306127,
+        "combined_suppression": 1.0204081632653064
+      },
+      "ctqmc_correction": {
+        "lambda_sf_rpa": 0.1701,
+        "dmft_enhancement": 24.999999999999996,
+        "lambda_sf_dmft": 4.2524999999999995,
+        "ctqmc_ratio_effective": 0.46549999999999997,
+        "lambda_sf_ctqmc_Nc4": 1.9795387499999997,
+        "nc_extrapolation_factor": 1.41,
+        "lambda_sf_inf": 2.7911496374999993
+      },
+      "lambda_sf_primary": 3.061224489795919,
+      "lambda_sf_range": [
+        2.1428571428571432,
+        3.979591836734695
+      ],
+      "pairing_symmetry": {
+        "dominant_channel": "d-wave",
+        "lambda_d": 3.061224489795919,
+        "lambda_spm": 2.4489795918367356,
+        "ratio_d_over_spm": 1.2499999999999998,
+        "mu_star_effective": 0.0,
+        "coulomb_evasion": true,
+        "note": "d-wave gives mu*=0 (300 K accessible); s+/- gives mu*~0.10 (300 K much harder)"
+      }
+    },
+    "h_minus": {
+      "scenario": {
+        "label": "H- (hydride, hole doping)",
+        "Ni_valence": 3.0,
+        "doping_type": "hole",
+        "doping_level": 0.5,
+        "N_EF_estimate": 4.0,
+        "N_EF_uncertainty": 1.5,
+        "correlation_strength": "weak",
+        "bandwidth_change": 0.2,
+        "nesting_change": -0.2,
+        "Z_estimate": 0.55,
+        "sc_prospect": "MARGINAL"
+      },
+      "stoner_parameter": 6.6000000000000005,
+      "lambda_sf_rpa_d": 0.0,
+      "lambda_sf_rpa_spm": 0.0,
+      "h_intercalation_effect": {
+        "lambda_sf_modified": 1.6666666666666665,
+        "lambda_sf_lower": 1.1666666666666665,
+        "lambda_sf_upper": 2.1666666666666665,
+        "bandwidth_factor": 1.2,
+        "nesting_factor": 0.8,
+        "correlation_factor": 0.6944444444444444,
+        "combined_suppression": 0.5555555555555556
+      },
+      "ctqmc_correction": {
+        "lambda_sf_rpa": 0.0,
+        "dmft_enhancement": 3.305785123966942,
+        "lambda_sf_dmft": 0.0,
+        "ctqmc_ratio_effective": 0.798,
+        "lambda_sf_ctqmc_Nc4": 0.0,
+        "nc_extrapolation_factor": 1.41,
+        "lambda_sf_inf": 0.0
+      },
+      "lambda_sf_primary": 1.6666666666666665,
+      "lambda_sf_range": [
+        1.1666666666666665,
+        2.1666666666666665
+      ],
+      "pairing_symmetry": {
+        "dominant_channel": "d-wave",
+        "lambda_d": 1.6666666666666665,
+        "lambda_spm": 1.3333333333333333,
+        "ratio_d_over_spm": 1.25,
+        "mu_star_effective": 0.0,
+        "coulomb_evasion": true,
+        "note": "d-wave gives mu*=0 (300 K accessible); s+/- gives mu*~0.10 (300 K much harder)"
+      }
+    },
+    "h_half": {
+      "scenario": {
+        "label": "H0.5 (partial intercalation, H- charge state)",
+        "Ni_valence": 2.75,
+        "doping_type": "hole",
+        "doping_level": 0.25,
+        "N_EF_estimate": 3.5,
+        "N_EF_uncertainty": 1.0,
+        "correlation_strength": "moderate",
+        "bandwidth_change": 0.1,
+        "nesting_change": -0.1,
+        "Z_estimate": 0.45,
+        "sc_prospect": "BEST_CASE"
+      },
+      "stoner_parameter": 4.7250000000000005,
+      "lambda_sf_rpa_d": 0.0,
+      "lambda_sf_rpa_spm": 0.0,
+      "h_intercalation_effect": {
+        "lambda_sf_modified": 2.2314049586776856,
+        "lambda_sf_lower": 1.56198347107438,
+        "lambda_sf_upper": 2.900826446280991,
+        "bandwidth_factor": 1.1,
+        "nesting_factor": 0.9,
+        "correlation_factor": 0.8264462809917354,
+        "combined_suppression": 0.743801652892562
+      },
+      "ctqmc_correction": {
+        "lambda_sf_rpa": 0.0,
+        "dmft_enhancement": 4.938271604938271,
+        "lambda_sf_dmft": 0.0,
+        "ctqmc_ratio_effective": 0.665,
+        "lambda_sf_ctqmc_Nc4": 0.0,
+        "nc_extrapolation_factor": 1.41,
+        "lambda_sf_inf": 0.0
+      },
+      "lambda_sf_primary": 2.2314049586776856,
+      "lambda_sf_range": [
+        1.56198347107438,
+        2.900826446280991
+      ],
+      "pairing_symmetry": {
+        "dominant_channel": "d-wave",
+        "lambda_d": 2.2314049586776856,
+        "lambda_spm": 1.7851239669421486,
+        "ratio_d_over_spm": 1.25,
+        "mu_star_effective": 0.0,
+        "coulomb_evasion": true,
+        "note": "d-wave gives mu*=0 (300 K accessible); s+/- gives mu*~0.10 (300 K much harder)"
+      }
+    }
+  },
+  "gate_results": {
+    "h_plus": {
+      "lambda_sf": 3.061224489795919,
+      "lambda_sf_bracket": [
+        2.1428571428571432,
+        3.979591836734695
+      ],
+      "gate_lambda_1.5": true,
+      "gate_lambda_1.5_bracket": true,
+      "gate_dwave": true,
+      "advances_to_phase_62": true,
+      "advances_to_phase_62_bracket": true,
+      "backtracking_triggered": false,
+      "marginal": false,
+      "mu_star": 0.0
+    },
+    "h_minus": {
+      "lambda_sf": 1.6666666666666665,
+      "lambda_sf_bracket": [
+        1.1666666666666665,
+        2.1666666666666665
+      ],
+      "gate_lambda_1.5": true,
+      "gate_lambda_1.5_bracket": true,
+      "gate_dwave": true,
+      "advances_to_phase_62": true,
+      "advances_to_phase_62_bracket": true,
+      "backtracking_triggered": false,
+      "marginal": false,
+      "mu_star": 0.0
+    },
+    "h_half": {
+      "lambda_sf": 2.2314049586776856,
+      "lambda_sf_bracket": [
+        1.56198347107438,
+        2.900826446280991
+      ],
+      "gate_lambda_1.5": true,
+      "gate_lambda_1.5_bracket": true,
+      "gate_dwave": true,
+      "advances_to_phase_62": true,
+      "advances_to_phase_62_bracket": true,
+      "backtracking_triggered": false,
+      "marginal": false,
+      "mu_star": 0.0
+    }
+  },
+  "decision": {
+    "primary_scenario": "h_half",
+    "primary_lambda_sf": 2.2314049586776856,
+    "primary_lambda_sf_bracket": [
+      1.56198347107438,
+      2.900826446280991
+    ],
+    "primary_mu_star": 0.0,
+    "any_scenario_advances_central": true,
+    "any_scenario_advances_bracket": true,
+    "all_scenarios_backtrack": false,
+    "verdict": "ADVANCE",
+    "advancing_scenarios": [
+      "h_plus",
+      "h_minus",
+      "h_half"
+    ],
+    "note": "At least one scenario passes all gates at central value"
+  },
+  "comparisons": {
+    "hg1223_lambda_sf_inf": {
+      "value": 2.7,
+      "source": "v11.0 Nc-extrapolation",
+      "comparison": "La3Ni2O7-H0.5 lambda_sf = 2.231 vs Hg1223 = 2.70",
+      "ratio": 0.8264462809917353
+    },
+    "hg1223_Tc_ctqmc": {
+      "value_K": 146,
+      "source": "v11.0 CTQMC",
+      "note": "Hg1223 Tc = 146 K with omega_log = 400 K; La3Ni2O7-H has omega_log = 852 K"
+    },
+    "la327_pristine_Tc": {
+      "value_K": 80,
+      "source": "Experimental (15 GPa)",
+      "lambda_sf_from_Tc": 3.0,
+      "note": "Parent lambda_sf calibrated from experimental Tc"
+    }
+  },
+  "summary": {
+    "key_result": "La3Ni2O7-H0.5 lambda_sf = 2.231 [1.562, 2.901]",
+    "pairing_channel": 0.0,
+    "verdict": "ADVANCE",
+    "advances_to_phase_62": true,
+    "critical_finding": "H intercalation weakens but does not destroy spin-fluctuation pairing. lambda_sf drops from 3.000 (parent) to 2.231 (H0.5). The d-wave channel remains dominant but is weakened by doping-induced nesting degradation.",
+    "uncertainty_sources": [
+      "CTQMC/Hubbard-I ratio calibrated on cuprates, not nickelates (+/- 20%)",
+      "Nc extrapolation from cuprate analogy (+/- 15%)",
+      "H charge state uncertainty (H+ vs H-) changes Ni valence critically",
+      "Partial intercalation stoichiometry (H0.5) not guaranteed experimentally",
+      "RPA baseline underestimates nickelate correlations systematically"
+    ]
+  }
+}

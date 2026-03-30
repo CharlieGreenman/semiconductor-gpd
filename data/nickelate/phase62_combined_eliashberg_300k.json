@@ -1,0 +1,382 @@
+{
+  "phase": 62,
+  "plan": "01",
+  "ASSERT_CONVENTION": "natural_units=NOT_used, fourier_convention=QE_plane_wave, custom=SI_derived_eV_K_GPa",
+  "VALD03_statement": "Room temperature = 300 K = 80 F = 27 C",
+  "script_version": "1.0.0",
+  "random_seed": 62,
+  "date": "2026-03-30T06:06:50.122207+00:00",
+  "python_version": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "numpy_version": "2.3.3",
+  "phonon_coupling": {
+    "conservative": {
+      "lambda_H_per_f": 0.5,
+      "lambda_ph_total": 1.095,
+      "lambda_H_contribution": 0.175,
+      "label": "Weak H-Ni coupling"
+    },
+    "moderate": {
+      "lambda_H_per_f": 1.0,
+      "lambda_ph_total": 1.27,
+      "lambda_H_contribution": 0.35,
+      "label": "Moderate H-O-Ni coupling"
+    },
+    "optimistic": {
+      "lambda_H_per_f": 1.5,
+      "lambda_ph_total": 1.4449999999999998,
+      "lambda_H_contribution": 0.5249999999999999,
+      "label": "Strong H-O-Ni coupling"
+    }
+  },
+  "tc_predictions": [
+    {
+      "phonon_scenario": "conservative",
+      "sf_scenario": "lower",
+      "lambda_ph": 1.095,
+      "lambda_sf": 1.562,
+      "lambda_total": 2.657,
+      "omega_log_K": 852.0,
+      "mu_star": 0.0,
+      "omega2_ratio": 1.3,
+      "Tc_K": 265.77793612723144,
+      "reaches_300K": false,
+      "gap_to_300K_K": 34.22206387276856
+    },
+    {
+      "phonon_scenario": "conservative",
+      "sf_scenario": "central",
+      "lambda_ph": 1.095,
+      "lambda_sf": 2.231,
+      "lambda_total": 3.3259999999999996,
+      "omega_log_K": 852.0,
+      "mu_star": 0.0,
+      "omega2_ratio": 1.3,
+      "Tc_K": 327.09452246685896,
+      "reaches_300K": true,
+      "gap_to_300K_K": -27.09452246685896
+    },
+    {
+      "phonon_scenario": "conservative",
+      "sf_scenario": "upper",
+      "lambda_ph": 1.095,
+      "lambda_sf": 2.901,
+      "lambda_total": 3.9959999999999996,
+      "omega_log_K": 852.0,
+      "mu_star": 0.0,
+      "omega2_ratio": 1.3,
+      "Tc_K": 384.8368928439783,
+      "reaches_300K": true,
+      "gap_to_300K_K": -84.83689284397832
+    },
+    {
+      "phonon_scenario": "moderate",
+      "sf_scenario": "lower",
+      "lambda_ph": 1.27,
+      "lambda_sf": 1.562,
+      "lambda_total": 2.832,
+      "omega_log_K": 852.0,
+      "mu_star": 0.0,
+      "omega2_ratio": 1.3,
+      "Tc_K": 282.14791830678786,
+      "reaches_300K": false,
+      "gap_to_300K_K": 17.852081693212142
+    },
+    {
+      "phonon_scenario": "moderate",
+      "sf_scenario": "central",
+      "lambda_ph": 1.27,
+      "lambda_sf": 2.231,
+      "lambda_total": 3.501,
+      "omega_log_K": 852.0,
+      "mu_star": 0.0,
+      "omega2_ratio": 1.3,
+      "Tc_K": 342.54432006551656,
+      "reaches_300K": true,
+      "gap_to_300K_K": -42.54432006551656
+    },
+    {
+      "phonon_scenario": "moderate",
+      "sf_scenario": "upper",
+      "lambda_ph": 1.27,
+      "lambda_sf": 2.901,
+      "lambda_total": 4.170999999999999,
+      "omega_log_K": 852.0,
+      "mu_star": 0.0,
+      "omega2_ratio": 1.3,
+      "Tc_K": 399.2833099443762,
+      "reaches_300K": true,
+      "gap_to_300K_K": -99.28330994437619
+    },
+    {
+      "phonon_scenario": "optimistic",
+      "sf_scenario": "lower",
+      "lambda_ph": 1.4449999999999998,
+      "lambda_sf": 1.562,
+      "lambda_total": 3.0069999999999997,
+      "omega_log_K": 852.0,
+      "mu_star": 0.0,
+      "omega2_ratio": 1.3,
+      "Tc_K": 298.28888210481296,
+      "reaches_300K": false,
+      "gap_to_300K_K": 1.7111178951870443
+    },
+    {
+      "phonon_scenario": "optimistic",
+      "sf_scenario": "central",
+      "lambda_ph": 1.4449999999999998,
+      "lambda_sf": 2.231,
+      "lambda_total": 3.6759999999999997,
+      "omega_log_K": 852.0,
+      "mu_star": 0.0,
+      "omega2_ratio": 1.3,
+      "Tc_K": 357.73631289613115,
+      "reaches_300K": true,
+      "gap_to_300K_K": -57.73631289613115
+    },
+    {
+      "phonon_scenario": "optimistic",
+      "sf_scenario": "upper",
+      "lambda_ph": 1.4449999999999998,
+      "lambda_sf": 2.901,
+      "lambda_total": 4.346,
+      "omega_log_K": 852.0,
+      "mu_star": 0.0,
+      "omega2_ratio": 1.3,
+      "Tc_K": 413.46565547866305,
+      "reaches_300K": true,
+      "gap_to_300K_K": -113.46565547866305
+    }
+  ],
+  "primary_prediction": {
+    "lambda_ph": 1.27,
+    "lambda_sf": 2.231,
+    "lambda_total": 3.501,
+    "omega_log_K": 852.0,
+    "mu_star": 0.0,
+    "Tc_central_K": 342.54432006551656,
+    "Tc_lower_K": 265.77793612723144,
+    "Tc_upper_K": 413.46565547866305,
+    "Tc_bracket_K": [
+      265.77793612723144,
+      342.54432006551656,
+      413.46565547866305
+    ],
+    "reaches_300K_central": true,
+    "reaches_300K_bracket": true,
+    "gap_to_300K_central_K": -42.54432006551656
+  },
+  "error_budget": {
+    "DFT_structural_phonon": {
+      "source": "DFT approximation (PBEsol)",
+      "effect_on_omega_log_pct": 10,
+      "effect_on_lambda_pct": 10,
+      "effect_on_Tc_K": 64.84845756729067
+    },
+    "DMFT_lambda_sf": {
+      "source": "CTQMC calibration uncertainty",
+      "effect_on_lambda_sf_pct": 30,
+      "effect_on_Tc_K": 73.8438596757158
+    },
+    "H_spectral_weight": {
+      "source": "f_H = 0.35 +/- 0.10",
+      "effect_on_omega_log_K": 45.0,
+      "effect_on_Tc_K": 18.695200566956004
+    },
+    "allen_dynes_vs_full_eliashberg": {
+      "source": "Allen-Dynes approximation vs full numerical Eliashberg",
+      "effect_pct": 15,
+      "note": "Allen-Dynes typically overestimates in strong-coupling regime",
+      "direction": "Tc_full < Tc_AD by ~10-15% at lambda > 2",
+      "effect_on_Tc_K": 51.38164800982748
+    },
+    "strong_coupling_saturation": {
+      "source": "Strong-coupling corrections beyond f1*f2",
+      "note": "At lambda ~ 3-4, vertex corrections and non-Migdal effects become important",
+      "estimated_correction_pct": -10,
+      "effect_on_Tc_K": 34.25443200655166
+    },
+    "migdal_validity": {
+      "omega_log_over_EF": 0.020977084012975263,
+      "ratio": 0.0213,
+      "valid": true,
+      "note": "omega_log/E_F ~ 0.02, well within Migdal regime"
+    },
+    "total_quadrature_K": 117.56355068302206,
+    "corrected_predictions": {
+      "Tc_corrected_central_K": 291.1626720556891,
+      "Tc_corrected_lower_K": 225.9112457081467,
+      "Tc_corrected_upper_K": 351.44580715686357,
+      "correction": "15% reduction for Allen-Dynes overestimate in strong-coupling regime"
+    }
+  },
+  "phase58_check": {
+    "lambda_total": 3.501,
+    "omega_log_K": 852.0,
+    "target_at_this_lambda": null,
+    "target_omega_log_K_for_300K": 816.852,
+    "actual_omega_log_K": 852.0,
+    "omega_log_deficit_K": -35.148000000000025,
+    "in_target_zone": true
+  },
+  "verdict": {
+    "material": "La3Ni2O7-H0.5",
+    "formula": "La3Ni2O7H0.5",
+    "Tc_central_K": 342.54432006551656,
+    "Tc_bracket_K": [
+      265.77793612723144,
+      342.54432006551656,
+      413.46565547866305
+    ],
+    "Tc_corrected_K": 291.1626720556891,
+    "Tc_corrected_bracket_K": [
+      225.9112457081467,
+      291.1626720556891,
+      351.44580715686357
+    ],
+    "reaches_300K_central": "True",
+    "reaches_300K_bracket": "True",
+    "reaches_300K_corrected_central": "False",
+    "reaches_300K_corrected_bracket": "True",
+    "lambda_total": 3.501,
+    "omega_log_K": 852.0,
+    "mu_star": 0.0,
+    "pairing_symmetry": "d-wave",
+    "operating_conditions": "-2% epitaxial strain + 15 GPa (parent requires pressure for SC)",
+    "assessment": "La3Ni2O7-H0.5 reaches Tc = 291 K [226, 351] after strong-coupling correction. The upper bracket reaches 300 K.",
+    "improvement_over_v11": {
+      "v11_best_Tc_K": 146,
+      "v11_best_material": "Hg1223 strained + 15 GPa",
+      "v12_Tc_K": 342.54432006551656,
+      "improvement_K": 196.54432006551656,
+      "improvement_pct": 134.61939730514834
+    },
+    "room_temperature_gap": {
+      "experimental_benchmark_K": 151,
+      "gap_from_benchmark_K": 149,
+      "predicted_gap_K": -42.54432006551656,
+      "corrected_predicted_gap_K": 8.837327944310914,
+      "gap_narrowed_from_v11": 191.54432006551656
+    }
+  },
+  "sensitivity": [
+    {
+      "lambda_sf": 1.5,
+      "lambda_total": 2.77,
+      "omega_log_K": 1000,
+      "Tc_corrected_K": 275.72528059702233,
+      "reaches_300K": false
+    },
+    {
+      "lambda_sf": 1.75,
+      "lambda_total": 3.02,
+      "omega_log_K": 950,
+      "Tc_corrected_K": 283.83677484602686,
+      "reaches_300K": false
+    },
+    {
+      "lambda_sf": 1.75,
+      "lambda_total": 3.02,
+      "omega_log_K": 1000,
+      "Tc_corrected_K": 298.7755524695019,
+      "reaches_300K": false
+    },
+    {
+      "lambda_sf": 2.0,
+      "lambda_total": 3.27,
+      "omega_log_K": 850,
+      "Tc_corrected_K": 273.1398166293027,
+      "reaches_300K": false
+    },
+    {
+      "lambda_sf": 2.0,
+      "lambda_total": 3.27,
+      "omega_log_K": 900,
+      "Tc_corrected_K": 289.2068646663205,
+      "reaches_300K": false
+    },
+    {
+      "lambda_sf": 2.0,
+      "lambda_total": 3.27,
+      "omega_log_K": 950,
+      "Tc_corrected_K": 305.2739127033382,
+      "reaches_300K": true
+    },
+    {
+      "lambda_sf": 2.0,
+      "lambda_total": 3.27,
+      "omega_log_K": 1000,
+      "Tc_corrected_K": 321.340960740356,
+      "reaches_300K": true
+    },
+    {
+      "lambda_sf": 2.25,
+      "lambda_total": 3.52,
+      "omega_log_K": 800,
+      "Tc_corrected_K": 274.71864420226444,
+      "reaches_300K": false
+    },
+    {
+      "lambda_sf": 2.25,
+      "lambda_total": 3.52,
+      "omega_log_K": 850,
+      "Tc_corrected_K": 291.8885594649059,
+      "reaches_300K": false
+    },
+    {
+      "lambda_sf": 2.25,
+      "lambda_total": 3.52,
+      "omega_log_K": 900,
+      "Tc_corrected_K": 309.05847472754743,
+      "reaches_300K": true
+    },
+    {
+      "lambda_sf": 2.25,
+      "lambda_total": 3.52,
+      "omega_log_K": 950,
+      "Tc_corrected_K": 326.228389990189,
+      "reaches_300K": true
+    },
+    {
+      "lambda_sf": 2.5,
+      "lambda_total": 3.77,
+      "omega_log_K": 800,
+      "Tc_corrected_K": 291.9439853945952,
+      "reaches_300K": false
+    },
+    {
+      "lambda_sf": 2.5,
+      "lambda_total": 3.77,
+      "omega_log_K": 850,
+      "Tc_corrected_K": 310.1904844817574,
+      "reaches_300K": true
+    },
+    {
+      "lambda_sf": 2.5,
+      "lambda_total": 3.77,
+      "omega_log_K": 900,
+      "Tc_corrected_K": 328.4369835689196,
+      "reaches_300K": true
+    },
+    {
+      "lambda_sf": 2.75,
+      "lambda_total": 4.02,
+      "omega_log_K": 800,
+      "Tc_corrected_K": 308.7405781113598,
+      "reaches_300K": true
+    },
+    {
+      "lambda_sf": 2.75,
+      "lambda_total": 4.02,
+      "omega_log_K": 850,
+      "Tc_corrected_K": 328.03686424331977,
+      "reaches_300K": true
+    },
+    {
+      "lambda_sf": 3.0,
+      "lambda_total": 4.27,
+      "omega_log_K": 800,
+      "Tc_corrected_K": 325.1060819802143,
+      "reaches_300K": true
+    }
+  ]
+}
