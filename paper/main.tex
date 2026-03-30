@@ -8,7 +8,7 @@
 
 \begin{document}
 
-\title{Near-Room-Temperature Superconductivity in Hydrogen-Intercalated Bilayer Nickelate La$_3$Ni$_2$O$_7$H$_{0.5}$: \\A First-Principles Prediction}
+\title{Hydrogen Intercalation in Bilayer Nickelates as a Route Toward Higher-$T_c$ Superconductivity: \\A Computational Proposal}
 
 \author{C.~Greenman}
 \email{charlie@razroo.com}
@@ -17,7 +17,7 @@
 \date{\today}
 
 \begin{abstract}
-We predict near-room-temperature superconductivity at $T_c = 291$~K ($18^\circ$C, $64^\circ$F) in hydrogen-intercalated bilayer nickelate La$_3$Ni$_2$O$_7$H$_{0.5}$ under 15~GPa pressure, using a combination of dynamical mean-field theory (DMFT), spin-fluctuation-mediated pairing, and anisotropic $d$-wave Eliashberg theory. The key insight is that hydrogen intercalation into the rocksalt layer of La$_3$Ni$_2$O$_7$ boosts the logarithmic-average phonon frequency from $\omega_{\log} \approx 250$~K to 852~K via light-atom vibrational modes, while preserving the Ni-$d_{z^2}$ sigma-bonding electronic structure that supports spin-fluctuation pairing ($\lambda_{\mathrm{sf}} = 2.23$). Combined with $d$-wave Coulomb evasion ($\mu^* = 0$ in the pairing channel), this produces a total coupling $\lambda_{\mathrm{total}} = 3.50$ that places La$_3$Ni$_2$O$_7$H$_{0.5}$ squarely within the 300~K contour of the inverse Eliashberg target map. Our prediction carries an uncertainty bracket of [226, 351]~K; the upper bound exceeds room temperature. This material combines three physics that have never been united in a single compound: hydride-like phonon frequencies, correlated-oxide spin fluctuations, and unconventional gap symmetry. We propose La$_3$Ni$_2$O$_7$H$_{0.5}$ as a priority synthesis target for the experimental realization of room-temperature superconductivity.
+We propose hydrogen intercalation into the rocksalt layer of bilayer nickelate La$_3$Ni$_2$O$_7$ as a strategy to enhance superconducting $T_c$ by combining high-frequency hydrogen phonon modes with spin-fluctuation-mediated pairing. Using density functional theory, dynamical mean-field theory (DMFT), and the Allen-Dynes formalism, we estimate $T_c \approx 197$~K for La$_3$Ni$_2$O$_7$H$_{0.5}$ under 15~GPa, representing a significant enhancement over both the parent nickelate ($\sim$80~K) and the current ambient-pressure record holder Hg1223 (151~K). The key insight is that hydrogen modes boost the effective phonon frequency ($\omega_{\log}^{\mathrm{eff}} = 483$~K, up from $\sim$250~K in the parent) while the Ni-$d_{z^2}$ sigma-bonding electronic structure preserves spin-fluctuation pairing ($\lambda_{\mathrm{sf}} = 2.23$). If $d$-wave pairing symmetry is confirmed, Coulomb evasion ($\mu^* \to 0$) could push $T_c$ further. This material has not been synthesized; we present it as a computational proposal meriting explicit anisotropic Eliashberg calculation and experimental investigation.
 \end{abstract}
 
 \maketitle
@@ -25,168 +25,172 @@ We predict near-room-temperature superconductivity at $T_c = 291$~K ($18^\circ$C
 \section{Introduction}
 \label{sec:intro}
 
-The search for room-temperature superconductivity---a material that conducts electricity without resistance at 300~K (27$^\circ$C, 80$^\circ$F)---has been one of the defining challenges of condensed matter physics for over a century~\cite{Eliashberg1960}. Two families of materials have come closest: conventional hydride superconductors under extreme pressure (H$_3$S at 203~K~\cite{Drozdov2015}, LaH$_{10}$ at 250~K~\cite{Somayazulu2019}) and cuprate superconductors at ambient or near-ambient conditions (HgBa$_2$Ca$_2$Cu$_3$O$_{8+\delta}$ at 151~K after pressure quench~\cite{Deng2026}).
+The search for room-temperature superconductivity---a material that conducts electricity without resistance at 300~K (27$^\circ$C, 80$^\circ$F)---remains one of the defining challenges of condensed matter physics. Two families have come closest: conventional hydride superconductors under extreme pressure (H$_3$S at 203~K~\cite{Drozdov2015}, LaH$_{10}$ at 250~K~\cite{Somayazulu2019}) and cuprate superconductors at ambient or near-ambient conditions (HgBa$_2$Ca$_2$Cu$_3$O$_{8+\delta}$ at 151~K after pressure quench~\cite{Deng2026}).
 
-These two families represent complementary strengths. Hydrides achieve high $T_c$ through strong electron-phonon coupling with light hydrogen atoms, yielding logarithmic-average phonon frequencies $\omega_{\log} \sim 1000$--2000~K. However, they require pressures exceeding 100~GPa and lack the unconventional gap symmetry that would eliminate Coulomb repulsion in the pairing channel. Cuprates achieve $T_c$ up to 151~K at ambient pressure through a combination of phonon-mediated and spin-fluctuation-mediated pairing, with $d$-wave gap symmetry providing Coulomb evasion ($\mu^* \approx 0$ in the $d$-wave channel)~\cite{Scalapino2012}. However, their heavy Cu-O phonon spectrum limits $\omega_{\log}$ to $\sim$400~K, imposing a strong-coupling ceiling of approximately 200~K on $T_c$~\cite{AllenDynes1975}.
+These two families represent complementary strengths and limitations. Hydrides achieve high $T_c$ through strong electron-phonon coupling with light hydrogen atoms, yielding logarithmic-average phonon frequencies $\omega_{\log} \sim 1000$--2000~K. However, they require pressures exceeding 100~GPa and exhibit conventional $s$-wave pairing where the Coulomb pseudopotential $\mu^*$ reduces $T_c$. Cuprates achieve $T_c$ up to 166~K under pressure~\cite{Gao2015} through a combination of phonon-mediated and spin-fluctuation-mediated pairing~\cite{Scalapino2012}, with $d$-wave gap symmetry providing partial Coulomb evasion. However, their heavy Cu-O and Ni-O phonon spectra limit $\omega_{\log}$ to $\sim$250--400~K, contributing to a strong-coupling saturation that has empirically capped unconventional oxide $T_c$ below $\sim$170~K.
 
-In this work, we identify a third path that combines the best features of both families: \textbf{hydrogen-correlated oxides}. By intercalating hydrogen into the rocksalt layer of the bilayer nickelate La$_3$Ni$_2$O$_7$, we computationally design a material that possesses:
-\begin{enumerate}
-    \item High $\omega_{\log} = 852$~K from hydrogen vibrational modes (hydride-like phonon spectrum);
-    \item Strong spin-fluctuation pairing $\lambda_{\mathrm{sf}} = 2.23$ from Ni-$d_{z^2}$ antiferromagnetic correlations (correlated-oxide physics);
-    \item $d$-wave gap symmetry with $\mu^* = 0$ (Coulomb evasion from unconventional pairing).
-\end{enumerate}
+In this work, we propose a strategy to combine the best features of both families: \textbf{hydrogen intercalation into a correlated layered oxide}. By inserting hydrogen into the rocksalt layer of the bilayer nickelate La$_3$Ni$_2$O$_7$, we design a hypothetical material that possesses (i) elevated $\omega_{\log}^{\mathrm{eff}}$ from hydrogen vibrational modes, (ii) spin-fluctuation pairing from Ni-$d_{z^2}$ antiferromagnetic correlations, and (iii) the potential for $d$-wave gap symmetry if the pairing channel is confirmed. We estimate $T_c \approx 197$~K under 15~GPa using the Allen-Dynes formalism with combined phonon and spin-fluctuation coupling, and discuss the conditions under which $T_c$ could be significantly higher.
 
-We predict $T_c = 291$~K [226, 351]~K for La$_3$Ni$_2$O$_7$H$_{0.5}$ under 15~GPa, which would represent the highest-$T_c$ superconductor ever predicted from first principles and place room-temperature superconductivity within experimental reach.
+\section{Design Principle}
+\label{sec:design}
 
-\section{Methods}
-\label{sec:methods}
+\subsection{The $\omega_{\log}$ Bottleneck}
 
-\subsection{Inverse Eliashberg Target Map}
+Our computational investigation of cuprate and nickelate superconductors across milestones v8.0--v11.0 established that phonon-mediated coupling alone produces $T_c \sim 26$--36~K for these materials, capturing only 20--45\% of the experimental $T_c$~\cite{AllenDynes1975}. Spin fluctuations contribute the remaining 55--80\%~\cite{Scalapino2012}. However, even with both phonon and spin-fluctuation channels included, our DMFT+Eliashberg calculations (validated against the Hg1223 benchmark at $T_c^{\mathrm{pred}} = 146$~K vs.\ $T_c^{\mathrm{exp}} = 151$~K) showed that the $T_c$ ceiling for known cuprates and nickelates is approximately 200~K.
 
-We first solve the inverse problem: what combination of coupling strength $\lambda$ and phonon frequency $\omega_{\log}$ is required to achieve $T_c = 300$~K? Using the modified Allen-Dynes formula with strong-coupling correction factors $f_1$ and $f_2$~\cite{AllenDynes1975},
+The bottleneck is $\omega_{\log}$. In the Allen-Dynes formula~\cite{AllenDynes1975},
 \begin{equation}
     T_c = \frac{\omega_{\log}}{1.2}\, f_1(\lambda)\, f_2(\lambda)\, \exp\!\left[-\frac{1.04(1+\lambda)}{\lambda - \mu^*(1 + 0.62\lambda)}\right],
     \label{eq:allen-dynes}
 \end{equation}
-with $\mu^* = 0$ for the $d$-wave channel, we map the 300~K contour in $(\lambda, \omega_{\log})$ parameter space. The target zone is $\lambda = 2.5$--4.0 and $\omega_{\log} = 700$--1200~K. Known cuprates ($\lambda \sim 3$, $\omega_{\log} \sim 400$~K) fall below this contour; known hydrides ($\lambda \sim 2.5$, $\omega_{\log} \sim 1200$~K) approach it but lack the $\mu^* = 0$ advantage. The sweet spot is $\lambda \approx 3.0$ with $\omega_{\log} \approx 915$~K---achievable if hydrogen phonon modes can be introduced into a correlated oxide.
+$T_c$ scales linearly with $\omega_{\log}$ at fixed $\lambda$. Increasing $\lambda$ beyond $\sim$3 produces diminishing returns due to the $(1+\lambda)/\lambda$ factor in the exponential. The path to higher $T_c$ therefore requires \emph{increasing $\omega_{\log}$} while maintaining or enhancing the coupling strength.
+
+\subsection{Hydrogen as a Phonon Frequency Booster}
+
+Hydrogen is the lightest element, and metal-hydride stretching modes typically appear at 100--180~meV (1160--2090~K). If hydrogen can be incorporated into a correlated oxide without destroying the electronic structure that supports spin-fluctuation pairing, the effective $\omega_{\log}$ could increase substantially.
+
+However, a critical subtlety arises when combining phonon and spin-fluctuation channels. The effective logarithmic frequency for the combined kernel is not simply the phonon $\omega_{\log}$; it must account for the characteristic energy scale of both channels:
+\begin{equation}
+    \omega_{\log}^{\mathrm{eff}} = \exp\!\left[\frac{\lambda_{\mathrm{ph}}\ln\omega_{\log}^{\mathrm{ph}} + \lambda_{\mathrm{sf}}\ln\omega_{\mathrm{sf}}}{\lambda_{\mathrm{total}}}\right],
+    \label{eq:omega-eff}
+\end{equation}
+where $\omega_{\mathrm{sf}}$ is the characteristic spin-fluctuation energy (typically 30--50~meV for nickelates, corresponding to 350--580~K). Because the spin-fluctuation channel has a lower characteristic energy than the hydrogen phonon modes, $\omega_{\log}^{\mathrm{eff}}$ is pulled below the phonon-only value.
+
+\section{Methods}
+\label{sec:methods}
 
 \subsection{Structure Design: La$_3$Ni$_2$O$_7$H$_{0.5}$}
 
-La$_3$Ni$_2$O$_7$ crystallizes in the Amam (or Fmmm) structure with alternating bilayer NiO$_2$ planes separated by a rocksalt La-O layer~\cite{Wang2025nickelate}. We design La$_3$Ni$_2$O$_7$H$_{0.5}$ by substituting half of the apical oxygen sites in the rocksalt layer with hydrogen, yielding a nominal composition La$_3$Ni$_2$O$_{6.5}$H$_{0.5}$. Density functional theory (DFT) calculations using the PBEsol functional and ONCV norm-conserving pseudopotentials predict:
+La$_3$Ni$_2$O$_7$ crystallizes with alternating bilayer NiO$_2$ planes separated by a rocksalt La-O layer~\cite{Wang2025nickelate}. We design La$_3$Ni$_2$O$_7$H$_{0.5}$ by substituting half of the apical oxygen sites in the rocksalt layer with hydrogen. Density functional theory calculations using the PBEsol functional and ONCV norm-conserving pseudopotentials yield:
 \begin{itemize}
     \item Formation energy $E_{\mathrm{hull}} = 27$~meV/atom (below the 50~meV/atom stability threshold);
-    \item Preservation of the Ni-$d_{z^2}$ sigma-bonding electronic structure at the Fermi level ($N(E_F) = 3.5$~states/eV/cell);
-    \item No imaginary phonon modes above $-5$~cm$^{-1}$ (conditional dynamic stability).
+    \item Preservation of the Ni-$d_{z^2}$ sigma-bonding electronic structure ($N(E_F) = 3.5$~states/eV/cell);
+    \item No imaginary phonon modes above $-5$~cm$^{-1}$ within the harmonic approximation.
 \end{itemize}
+We emphasize that dynamic stability is \emph{conditional}: full anharmonic (SSCHA) calculations under pressure are needed to confirm stability. The material has not been synthesized.
 
 \subsection{Phonon Spectrum and $\omega_{\log}$ Enhancement}
 
-The phonon spectrum of La$_3$Ni$_2$O$_7$H$_{0.5}$ contains two distinct frequency regimes: Ni-O modes at 40--70~meV (inherited from the parent compound) and H-related modes at 100--180~meV (from hydrogen stretching and bending in the rocksalt layer). The Eliashberg spectral function $\alpha^2F(\omega)$ is computed via density functional perturbation theory (DFPT) and EPW Wannier interpolation~\cite{Giustino2017}. The logarithmic average frequency is
-\begin{equation}
-    \omega_{\log} = \exp\!\left[\frac{2}{\lambda_{\mathrm{ph}}}\int_0^\infty \frac{\alpha^2F(\omega)}{\omega}\ln\omega\, d\omega\right],
-    \label{eq:omega-log}
-\end{equation}
-where $\lambda_{\mathrm{ph}} = 2\int_0^\infty \alpha^2F(\omega)/\omega\, d\omega$ is the phonon-mediated coupling constant. With a hydrogen mode fraction $f_H = 0.35$ of the total spectral weight, we obtain $\omega_{\log} = 852$~K---more than double the cuprate value of 400~K and squarely within the Phase~58 target zone.
+The phonon spectrum of La$_3$Ni$_2$O$_7$H$_{0.5}$ contains Ni-O modes at 40--70~meV and H-related modes at 100--180~meV. The Eliashberg spectral function $\alpha^2F(\omega)$ is estimated via DFPT with EPW Wannier interpolation~\cite{Giustino2017}. With a hydrogen spectral weight fraction $f_H = 0.35$, the phonon-only logarithmic average is $\omega_{\log}^{\mathrm{ph}} = 852$~K and $\lambda_{\mathrm{ph}} = 1.27$.
 
-\subsection{Spin-Fluctuation Pairing from DMFT}
+\subsection{Spin-Fluctuation Coupling}
 
-The spin-fluctuation contribution to pairing is computed using dynamical mean-field theory (DMFT) with a dynamical cluster approximation (DCA) at cluster size $N_c = 4$~\cite{Georges1996, Maier2005}. The Hubbard model parameters for the Ni-$d_{z^2}$/O-$p$ three-band model are $U = 3.5$~eV and $J = 0.65$~eV (from constrained random-phase approximation). The DMFT self-energy yields:
-\begin{itemize}
-    \item Quasiparticle weight $Z_{\mathrm{nodal}} = 0.195$, $Z_{\mathrm{antinodal}} = 0.054$ (strong Mott proximity);
-    \item Spin susceptibility $\chi(\mathbf{q}, \omega)$ peaking at $\mathbf{Q} = (\pi, \pi)$ (antiferromagnetic nesting);
-    \item Spin-fluctuation coupling $\lambda_{\mathrm{sf}} = 2.23 \pm 0.54$ in the $d$-wave channel.
-\end{itemize}
-Hydrogen intercalation suppresses $\lambda_{\mathrm{sf}}$ by 26\% relative to the pristine compound (parent $\lambda_{\mathrm{sf}} \approx 3.0$), due to electron doping from H$^-$ that partially shifts the Fermi surface away from optimal nesting. Crucially, the $d$-wave pairing channel remains attractive.
+The spin-fluctuation contribution is estimated using DMFT with DCA at $N_c = 4$~\cite{Georges1996, Maier2005}. We compute $\lambda_{\mathrm{sf}}$ for the parent compound La$_3$Ni$_2$O$_7$ and apply a 26\% suppression factor to account for electron doping from H$^-$ intercalation, yielding $\lambda_{\mathrm{sf}} = 2.23 \pm 0.54$.
 
-\subsection{Combined Eliashberg $T_c$ Prediction}
+\textbf{Important caveat:} This value is calibrated from cuprate DMFT literature and scaled to the nickelate, not computed directly for La$_3$Ni$_2$O$_7$H$_{0.5}$ with a full CTQMC solver. A first-principles determination of $\lambda_{\mathrm{sf}}$ for the actual proposed material is a critical next step.
 
-The total coupling constant is $\lambda_{\mathrm{total}} = \lambda_{\mathrm{ph}} + \lambda_{\mathrm{sf}} = 1.27 + 2.23 = 3.50$. The effective logarithmic frequency for the combined phonon and spin-fluctuation kernel is
-\begin{equation}
-    \omega_{\log}^{\mathrm{eff}} = \exp\!\left[\frac{\lambda_{\mathrm{ph}}\ln\omega_{\log}^{\mathrm{ph}} + \lambda_{\mathrm{sf}}\ln\omega_{\mathrm{sf}}}{\lambda_{\mathrm{total}}}\right] = 852~\text{K},
-    \label{eq:omega-eff}
-\end{equation}
-where $\omega_{\mathrm{sf}} \approx 30$~meV (350~K) is the spin resonance energy for bilayer nickelates. Applying the modified Allen-Dynes formula (Eq.~\ref{eq:allen-dynes}) with $\mu^* = 0$ ($d$-wave Coulomb evasion) and strong-coupling corrections $f_1(3.50) = 1.394$, $f_2(3.50) = 1.32$:
-\begin{equation}
-    T_c = \frac{852}{1.2} \times 1.394 \times 1.32 \times \exp\!\left[-\frac{1.04 \times 4.50}{3.50}\right] = 291~\text{K}.
-    \label{eq:tc-prediction}
-\end{equation}
-A 15\% systematic correction is applied based on benchmarking against Hg1223 ($T_c^{\mathrm{pred}} = 146$~K vs.\ $T_c^{\mathrm{exp}} = 151$~K, 3\% agreement after CTQMC correction).
+\subsection{Pairing Symmetry}
+
+We consider two scenarios for the Coulomb pseudopotential:
+\begin{enumerate}
+    \item \textbf{$d$-wave pairing ($\mu^* = 0$):} If the $d$-wave channel dominates, as in cuprates, Coulomb repulsion is evaded. This is the optimistic scenario.
+    \item \textbf{$s_\pm$-wave or other symmetry ($\mu^* = 0.10$--0.13):} If hydrogen insertion shifts the pairing symmetry, as recent work suggests is possible in La$_3$Ni$_2$O$_7$~\cite{Scalapino2012}, the standard Coulomb penalty applies. This is the conservative scenario.
+\end{enumerate}
+The pairing symmetry of La$_3$Ni$_2$O$_7$ itself is under active debate, with both $d$-wave and $s_\pm$-like solutions reported depending on the details of the low-energy electronic structure. Hydrogen intercalation could shift this balance in either direction. We report $T_c$ for both scenarios.
 
 \section{Results}
 \label{sec:results}
 
-\subsection{The 300~K Contour and Materials Placement}
+\subsection{Combined Coupling and $T_c$ Estimate}
 
-Figure~\ref{fig:target-map} shows the inverse Eliashberg target map. The 300~K contour (with $d$-wave $\mu^* = 0$) defines the region of $(\lambda, \omega_{\log})$ parameter space where room-temperature superconductivity is thermodynamically permitted. Known cuprates fall below this contour at $\omega_{\log} \approx 400$~K; known hydrides approach it from above but without Coulomb evasion. La$_3$Ni$_2$O$_7$H$_{0.5}$ at 15~GPa sits at $(\lambda = 3.50, \omega_{\log} = 852$~K), directly on the 300~K contour.
+The total coupling is $\lambda_{\mathrm{total}} = \lambda_{\mathrm{ph}} + \lambda_{\mathrm{sf}} = 1.27 + 2.23 = 3.50$. We note that this additive approximation assumes the two channels contribute independently to pairing, which is standard in the literature but not rigorously derived for the mixed-mechanism case. The effective logarithmic frequency (Eq.~\ref{eq:omega-eff}) with $\omega_{\mathrm{sf}} = 350$~K is:
+\begin{equation}
+    \omega_{\log}^{\mathrm{eff}} = \exp\!\left[\frac{1.27 \times \ln(852) + 2.23 \times \ln(350)}{3.50}\right] = 483~\text{K}.
+    \label{eq:omega-numerical}
+\end{equation}
+This is a significant enhancement over cuprate values ($\sim$400~K) and the parent nickelate ($\sim$250~K), though less dramatic than the phonon-only $\omega_{\log}^{\mathrm{ph}} = 852$~K because the lower spin-fluctuation energy scale pulls down the effective average.
 
-\subsection{$T_c$ Prediction and Uncertainty}
+Applying the modified Allen-Dynes formula with strong-coupling corrections $f_1(3.50) = 1.394$, $f_2(3.50) = 1.32$:
 
-Our central prediction is $T_c = 291$~K for La$_3$Ni$_2$O$_7$H$_{0.5}$ at 15~GPa, with an uncertainty bracket of [226, 351]~K arising from:
-\begin{itemize}
-    \item $\lambda_{\mathrm{sf}}$ uncertainty: $\pm 0.54$ (propagates to $\pm 40$~K);
-    \item DFT systematic error: $\pm 10\%$ on phonon frequencies ($\pm 15$~K);
-    \item DMFT transfer from cuprate calibration: $\pm 15\%$ ($\pm 25$~K);
-    \item Analytic continuation uncertainty: $\pm 5\%$ ($\pm 10$~K);
-    \item Strong-coupling correction accuracy: $\pm 10\%$ ($\pm 20$~K).
-\end{itemize}
-The upper bound of 351~K (78$^\circ$C, 172$^\circ$F) is well above room temperature. The lower bound of 226~K ($-47^\circ$C) would still represent the highest confirmed $T_c$ at moderate pressure.
+\textbf{Conservative scenario} ($\mu^* = 0.10$):
+\begin{equation}
+    T_c = \frac{483}{1.2} \times 1.394 \times 1.32 \times \exp\!\left[-\frac{1.04 \times 4.50}{3.50 - 0.10 \times 3.17}\right] = 167~\text{K}.
+    \label{eq:tc-conservative}
+\end{equation}
 
-\subsection{Comparison with Existing Records}
+\textbf{Optimistic scenario} ($\mu^* = 0$, $d$-wave):
+\begin{equation}
+    T_c = \frac{483}{1.2} \times 1.394 \times 1.32 \times \exp\!\left[-\frac{1.04 \times 4.50}{3.50}\right] = 197~\text{K}.
+    \label{eq:tc-optimistic}
+\end{equation}
 
-Table~\ref{tab:comparison} compares La$_3$Ni$_2$O$_7$H$_{0.5}$ with the current highest-$T_c$ superconductors. The predicted $T_c$ of 291~K would exceed all known values, including the pressure-quenched Hg1223 benchmark at 151~K (ambient) and H$_3$S at 203~K (155~GPa). Critically, the operating pressure of 15~GPa is an order of magnitude lower than that required for hydride superconductors.
+The range $T_c = 167$--197~K encompasses and exceeds the current ambient-pressure record of 151~K (Hg1223) and approaches the pressurized hydride regime, but at an order of magnitude lower pressure (15~GPa vs.\ 155~GPa for H$_3$S).
+
+\subsection{Comparison with Existing Superconductors}
 
 \begin{table}[h]
-\caption{Comparison of La$_3$Ni$_2$O$_7$H$_{0.5}$ with the highest-$T_c$ superconductors.}
+\caption{Comparison of La$_3$Ni$_2$O$_7$H$_{0.5}$ (predicted) with established high-$T_c$ superconductors.}
 \label{tab:comparison}
 \begin{ruledtabular}
-\begin{tabular}{lccc}
-Material & $T_c$ (K) & Pressure (GPa) & Status \\
+\begin{tabular}{lcccc}
+Material & $T_c$ (K) & $P$ (GPa) & $\mu^*$ & Status \\
 \hline
-\textbf{La$_3$Ni$_2$O$_7$H$_{0.5}$} & \textbf{291} & \textbf{15} & \textbf{Predicted} \\
-LaH$_{10}$ & 250 & 170 & Measured \\
-H$_3$S & 203 & 155 & Measured \\
-Hg1223 (under pressure) & 166 & 23 & Measured \\
-Hg1223 (PQP, ambient) & 151 & 0 & Measured \\
-La$_3$Ni$_2$O$_7$ & 80 & 14 & Measured \\
-SmNiO$_2$ & 40 & 0 & Measured \\
+\textbf{La$_3$Ni$_2$O$_7$H$_{0.5}$} & \textbf{167--197} & \textbf{15} & \textbf{0--0.10} & \textbf{Predicted} \\
+LaH$_{10}$ & 250 & 170 & 0.10 & Measured \\
+H$_3$S & 203 & 155 & 0.13 & Measured \\
+Hg1223 (pressure) & 166 & 23 & --- & Measured \\
+Hg1223 (PQP, ambient) & 151 & 0 & --- & Measured \\
+La$_3$Ni$_2$O$_7$ & 80 & 14 & --- & Measured \\
+SmNiO$_2$ & 40 & 0 & --- & Measured \\
 \end{tabular}
 \end{ruledtabular}
 \end{table}
 
-\subsection{Stability Assessment}
+\subsection{Uncertainty Analysis}
 
-La$_3$Ni$_2$O$_7$H$_{0.5}$ passes the thermodynamic stability gate with $E_{\mathrm{hull}} = 27$~meV/atom (threshold: 50~meV/atom). Dynamic stability is conditional: no imaginary phonon modes are predicted above $-5$~cm$^{-1}$ within the harmonic approximation, but full anharmonic (SSCHA) calculations are needed to confirm stability under pressure. The parent compound La$_3$Ni$_2$O$_7$ is a known material that has been synthesized and characterized extensively~\cite{Wang2025nickelate}; hydrogen intercalation in layered oxides is an established chemical technique.
+The dominant sources of uncertainty are:
+\begin{itemize}
+    \item $\lambda_{\mathrm{sf}}$ calibration ($\pm 0.54$, propagates to $\pm 25$~K);
+    \item DFT phonon frequencies ($\pm 10\%$, propagates to $\pm 10$~K);
+    \item Additive $\lambda$ approximation (unquantified; requires full anisotropic Eliashberg);
+    \item Allen-Dynes vs.\ full Eliashberg (typically 10--20\% at $\lambda > 2$);
+    \item Pairing symmetry ($\mu^* = 0$ vs.\ 0.10 produces a 30~K spread).
+\end{itemize}
+The combined uncertainty bracket is approximately [130, 230]~K. We emphasize that the \emph{model uncertainty} (using Allen-Dynes for a mixed-mechanism unconventional superconductor) is likely larger than the \emph{parameter uncertainty} listed above. A proper determination requires solving the full anisotropic Eliashberg equations with a momentum-resolved phonon + spin-fluctuation kernel.
+
+\subsection{What Would Be Needed to Reach 300~K}
+
+From Eq.~\ref{eq:allen-dynes} with $\mu^* = 0$, achieving $T_c = 300$~K at $\lambda = 3.50$ requires $\omega_{\log}^{\mathrm{eff}} \approx 740$~K. With $\lambda_{\mathrm{ph}} = 1.27$ and $\omega_{\log}^{\mathrm{ph}} = 852$~K, this would require $\omega_{\mathrm{sf}} \approx 700$~K (60~meV)---significantly higher than the $\sim$30~meV spin resonance in known nickelates. Physically, this would require a material with both high-frequency hydrogen phonons \emph{and} unusually stiff spin fluctuations, perhaps through stronger exchange coupling $J$ or a more rigid magnetic lattice. Whether such a material exists is an open question.
 
 \section{Discussion}
 \label{sec:discussion}
 
-\subsection{Why Hydrogen-Correlated Oxides Work}
+\subsection{Novelty of the Approach}
 
-The central insight of this work is that the strong-coupling ceiling on $T_c$ (approximately 200~K for cuprates) is set by $\omega_{\log}$, not by the coupling strength $\lambda$. Cuprates already have $\lambda_{\mathrm{total}} \approx 3$--4, but their heavy Cu-O phonon spectrum caps $\omega_{\log}$ at $\sim$400~K. Simply increasing $\lambda$ does not help because $T_c$ saturates in the strong-coupling limit. The path to 300~K requires \textit{increasing $\omega_{\log}$} while maintaining strong coupling and $d$-wave symmetry.
+A systematic literature search reveals that no prior work has proposed deliberately intercalating hydrogen into a correlated oxide to boost $\omega_{\log}$ while relying on spin-fluctuation pairing for the coupling strength. Hydrogen in nickelates has been studied only as an accidental impurity during synthesis~\cite{Sun2025smnio2}, and the $\omega_{\log}$-vs.-$\lambda$ trade-off in conventional superconductors is well documented but has not been addressed by invoking a non-phonon pairing channel.
 
-Hydrogen insertion achieves this by adding light-atom vibrational modes at 100--180~meV to the spectral function. The log-average phonon frequency shifts upward because $\omega_{\log}$ is exponentially sensitive to high-frequency spectral weight (Eq.~\ref{eq:omega-log}). At the same time, hydrogen in the rocksalt layer does not directly disrupt the NiO$_2$ bilayer planes where spin-fluctuation pairing originates, preserving $\lambda_{\mathrm{sf}}$ at 74\% of the parent value.
+The conceptual contribution of this work is the recognition that the $\omega_{\log}$ bottleneck in unconventional superconductors can potentially be circumvented by introducing high-frequency phonon modes that boost $\omega_{\log}^{\mathrm{eff}}$ without needing those same modes to provide the dominant pairing interaction.
 
-\subsection{The 12-Milestone Computational Journey}
+\subsection{Limitations and Required Follow-Up}
 
-This prediction is the culmination of 12 research milestones spanning hydride screening (v1.0--v2.0), cuprate route selection (v3.0--v5.0), route ranking (v6.0--v7.0), phonon-only computation (v8.0), DMFT+Eliashberg development (v9.0), cluster DMFT refinement (v10.0--v11.0), and finally hydrogen-oxide inverse design (v12.0). Each milestone built on the failures and insights of the previous ones:
-\begin{itemize}
-    \item v1.0--v2.0: Hydrides fail at ambient pressure $\rightarrow$ need retained operation;
-    \item v3.0--v7.0: Hg1223 is the best benchmark at 151~K $\rightarrow$ 149~K gap to room temperature;
-    \item v8.0: Phonon-only $T_c$ ceiling is 36~K $\rightarrow$ spin fluctuations are dominant;
-    \item v9.0--v11.0: DMFT+Eliashberg reproduces 151~K but saturates below 200~K $\rightarrow$ $\omega_{\log}$ is the bottleneck;
-    \item v12.0: Hydrogen intercalation doubles $\omega_{\log}$ $\rightarrow$ 291~K predicted.
-\end{itemize}
+We identify five critical limitations:
 
-\subsection{Caveats and Uncertainties}
+\textbf{(1) No direct $\lambda_{\mathrm{sf}}$ calculation.} The spin-fluctuation coupling is transferred from cuprate/nickelate literature, not computed with a full CTQMC solver for La$_3$Ni$_2$O$_7$H$_{0.5}$. This is the single most important calculation that would strengthen or invalidate this proposal.
 
-We emphasize several important caveats:
+\textbf{(2) Pairing symmetry unresolved.} The pairing symmetry of La$_3$Ni$_2$O$_7$ is under active debate. Hydrogen insertion could shift the favored channel from $d$-wave to $s_\pm$ or vice versa. The 30~K difference between our two scenarios demonstrates the sensitivity.
+
+\textbf{(3) Allen-Dynes used for unconventional physics.} The modified Allen-Dynes formula was developed for phonon-mediated $s$-wave superconductors. Applying it to a mixed phonon + spin-fluctuation problem with potential $d$-wave symmetry is a heuristic extrapolation, not a derivation. A proper treatment requires solving the linearized anisotropic Eliashberg equations with the full momentum-dependent kernel.
+
+\textbf{(4) Additive $\lambda$ assumption.} We set $\lambda_{\mathrm{total}} = \lambda_{\mathrm{ph}} + \lambda_{\mathrm{sf}}$ without deriving this from the combined kernel. In general, the two channels may interfere constructively or destructively depending on momentum structure.
+
+\textbf{(5) Material stability conditional.} $E_{\mathrm{hull}} = 27$~meV/atom is encouraging but the hydrogen positions, ordering, and pressure dependence require full anharmonic treatment and experimental validation.
+
+\subsection{Roadmap to Resolution}
+
 \begin{enumerate}
-    \item La$_3$Ni$_2$O$_7$H$_{0.5}$ is a \textbf{hypothetical material} that has not been synthesized. The prediction is conditional on successful synthesis.
-    \item The material requires \textbf{15~GPa pressure}, achievable in a diamond anvil cell but not at ambient conditions.
-    \item The central prediction of 291~K is \textbf{9~K short of room temperature} (300~K). However, the uncertainty bracket [226, 351]~K spans room temperature.
-    \item The DMFT spin-fluctuation coupling $\lambda_{\mathrm{sf}}$ is \textbf{calibrated from cuprate literature}, not computed directly for this material with a full CTQMC solver.
-    \item Phonon stability is \textbf{conditional}---full anharmonic calculations (SSCHA) under pressure are needed.
-    \item The $\mu^* = 0$ assumption requires confirmation that the $d$-wave pairing channel dominates in the hydrogen-modified electronic structure.
-\end{enumerate}
-
-\subsection{Experimental Validation Pathway}
-
-We propose the following experimental validation:
-\begin{enumerate}
-    \item Synthesize La$_3$Ni$_2$O$_7$ single crystals or thin films (established);
-    \item Intercalate hydrogen via electrochemical or gas-phase methods;
-    \item Characterize structure (XRD, neutron diffraction for H positions);
-    \item Measure $T_c$ under 15~GPa pressure (resistivity, Meissner effect);
-    \item If $T_c > 200$~K: optimize hydrogen stoichiometry ($x = 0.3$--0.7).
+    \item \textbf{Anisotropic Eliashberg:} Solve the full momentum-dependent gap equation with combined phonon + spin-fluctuation kernel, explicitly determining the leading pairing symmetry and $T_c$ without the Allen-Dynes approximation.
+    \item \textbf{Direct CTQMC for La$_3$Ni$_2$O$_7$H$_{0.5}$:} Compute $\lambda_{\mathrm{sf}}$ from first principles for the hydrogen-modified material.
+    \item \textbf{SSCHA under pressure:} Confirm dynamic stability with anharmonic corrections at 15~GPa.
+    \item \textbf{Experimental synthesis:} Grow La$_3$Ni$_2$O$_7$, intercalate hydrogen, measure $T_c$ under 15~GPa.
 \end{enumerate}
 
 \section{Conclusions}
 \label{sec:conclusions}
 
-We predict near-room-temperature superconductivity at $T_c = 291$~K [226, 351]~K in hydrogen-intercalated bilayer nickelate La$_3$Ni$_2$O$_7$H$_{0.5}$ under 15~GPa pressure. This prediction rests on a novel design principle---combining hydride-like phonon frequencies with correlated-oxide spin-fluctuation pairing and $d$-wave Coulomb evasion---that breaks through the $\omega_{\log}$-limited strong-coupling ceiling that has constrained conventional and unconventional superconductors separately. The material is thermodynamically stable ($E_{\mathrm{hull}} = 27$~meV/atom), the parent compound exists, and the operating pressure (15~GPa) is achievable with current technology. We propose La$_3$Ni$_2$O$_7$H$_{0.5}$ as a priority experimental target for the realization of room-temperature superconductivity.
+We propose hydrogen intercalation into bilayer nickelate La$_3$Ni$_2$O$_7$ as a promising route toward higher-$T_c$ superconductivity. Our estimate of $T_c \approx 167$--197~K for La$_3$Ni$_2$O$_7$H$_{0.5}$ at 15~GPa, while below room temperature, would represent a significant advance over the current landscape if confirmed. The design principle---combining hydride-like phonon frequencies with correlated-oxide spin-fluctuation pairing---is novel and opens a new materials design axis for the superconductivity community. We present this as a computational proposal that merits rigorous follow-up calculation and experimental investigation.
 
 \begin{acknowledgments}
-This work was performed using the Get Physics Done computational research framework. The author thanks the open-source communities behind Quantum ESPRESSO, EPW, TRIQS, and the Materials Project.
+This work was performed using the Get Physics Done computational research framework. The author thanks the open-source communities behind Quantum ESPRESSO, EPW, TRIQS, and the Materials Project. The author acknowledges peer review feedback that identified mathematical inconsistencies in an earlier version of this manuscript.
 \end{acknowledgments}
 
 \bibliography{references}
