@@ -1,76 +1,72 @@
-# Requirements: v14.0 Hybrid Material Design — Find the lambda_ph=3 + d-wave Material
+# Requirements: v15.0 Beyond-Eliashberg Pairing Mechanisms for 300 K
 
 **Defined:** 2026-03-30
-**Core Research Question:** Does a real material exist (or can one be designed) with lambda_ph >= 3.0, d-wave pairing symmetry (mu*=0), and omega_log_eff >= 740 K — the three conditions needed for Tc = 300 K?
+**Core Research Question:** Can non-adiabatic pairing, plasmon-mediated coupling, excitonic pairing, or an unknown mechanism break through the 240 K Eliashberg ceiling to reach 300 K?
 
-## The Physics Target (from v13.0)
+## The Physics Problem
 
-300 K requires: lambda_ph >= 3.0 + d-wave (mu*=0) + omega_log_eff >= 740 K.
-
-The obstacle: d-wave pairing requires electronic correlations (large U), but correlations ALSO produce spin fluctuations that drag omega_log_eff down. We need a material where:
-- Correlations are strong enough for d-wave symmetry
-- But phonon coupling dominates over spin-fluctuation coupling (lambda_ph >> lambda_sf)
-- And hydrogen modes keep omega_log_ph high
-
-Possible strategies:
-1. **Orbital-selective correlations** — one orbital is correlated (provides d-wave) while another couples to phonons
-2. **Interface engineering** — d-wave layer adjacent to phonon-active H layer (proximity effect)
-3. **Frustrated magnetism** — correlations present but spin fluctuations suppressed by geometric frustration
-4. **Heavy-fermion + hydrogen** — f-electron correlations for d-wave, s/p-electron phonon coupling
+v14.0 established the Eliashberg ceiling at 240 +/- 30 K from four mutually contradictory constraints. The 60-90 K irreducible gap to 300 K cannot be closed within the phonon + spin-fluctuation Eliashberg framework. We must explore fundamentally different pairing mechanisms.
 
 ## Primary Requirements
 
-### Orbital-Selective Design (Track A)
+### Non-Adiabatic Pairing (Track A — Migdal Breakdown)
 
-- [ ] **OS-01**: Identify material families where orbital-selective Mott physics creates one correlated orbital (d-wave channel) and one itinerant orbital (phonon channel); screen iron pnictides, ruthenates, and multi-orbital nickelates
-- [ ] **OS-02**: For top candidates, compute orbital-resolved lambda_ph and lambda_sf; verify lambda_ph(itinerant) >> lambda_sf and that the correlated orbital supports d-wave
-- [ ] **OS-03**: Design H-intercalated versions; compute omega_log_eff using orbital-resolved couplings
+- [ ] **NA-01**: Identify materials where the Migdal parameter omega_D/E_F > 0.3 (breakdown of adiabatic approximation); screen flat-band systems, magic-angle graphene, heavy-fermion hydrides
+- [ ] **NA-02**: Compute vertex corrections beyond Migdal-Eliashberg for the best candidate; determine whether non-adiabatic effects ENHANCE or SUPPRESS Tc
+- [ ] **NA-03**: Estimate non-adiabatic Tc for the best candidate; compare with Eliashberg ceiling (241 K)
 
-### Interface Proximity Design (Track B)
+### Plasmon-Mediated Pairing (Track B — Electronic Mechanism)
 
-- [ ] **IP-01**: Design superlattice where a d-wave superconducting layer (cuprate or nickelate) is proximity-coupled to a high-lambda_ph hydrogen-active layer
-- [ ] **IP-02**: Compute the proximity-induced gap in the phonon layer and the effective Tc of the combined system using McMillan proximity equations
-- [ ] **IP-03**: Determine whether proximity coupling can produce Tc > 241 K (beating the s-wave ceiling)
+- [ ] **PL-01**: Compute the dielectric function epsilon(q,omega) and plasmon spectrum for candidate layered metals; identify materials with low-energy plasmons (omega_pl < 1 eV) that could mediate pairing
+- [ ] **PL-02**: Evaluate the plasmon-mediated pairing interaction V_pl(q,omega) in the singlet channel; compute lambda_pl and effective omega_pl
+- [ ] **PL-03**: Solve combined phonon + plasmon Eliashberg equations; predict Tc with plasmon boost
 
-### Frustrated Magnet + Hydrogen (Track C)
+### Excitonic Pairing (Track C — Exciton-Mediated)
 
-- [ ] **FM-01**: Identify correlated materials where geometric frustration suppresses long-range AF order and spin resonance energy, keeping lambda_sf low while preserving d-wave pairing
-- [ ] **FM-02**: Screen triangular/kagome/pyrochlore lattice correlated oxides for d-wave pairing with suppressed omega_sf; compute lambda_sf
-- [ ] **FM-03**: Design H-intercalated frustrated-magnet candidates; compute omega_log_eff and Tc
+- [ ] **EX-01**: Survey materials with low-energy excitons (< 100 meV) adjacent to metallic bands: semiconductor/metal heterostructures, excitonic insulators near the metal-insulator transition, mixed-valence compounds
+- [ ] **EX-02**: Compute exciton-mediated pairing interaction from the polarization function; evaluate lambda_ex and omega_ex
+- [ ] **EX-03**: Predict Tc from combined phonon + exciton kernel; assess whether excitonic mechanism can exceed 240 K ceiling
+
+### Novel Mechanism Discovery (Track D — AI-Guided)
+
+- [ ] **NM-01**: Analyze ALL known superconductors with Tc > 30 K from the SuperCon database; identify anomalous Tc outliers that exceed Eliashberg predictions — these may signal unknown mechanisms
+- [ ] **NM-02**: For any identified anomalous material, characterize what's different about its electronic structure, phonon spectrum, or correlation physics; propose a mechanism hypothesis
+- [ ] **NM-03**: If a new mechanism is identified, estimate its contribution to Tc and whether it can be combined with known mechanisms to exceed 300 K
 
 ### Validations
 
-- [ ] **VALD-01**: All Tc from anisotropic Eliashberg (not Allen-Dynes) per v13.0 Track B finding
-- [ ] **VALD-02**: d-wave symmetry must be verified for each candidate (gap equation eigenvalue decomposition)
-- [ ] **VALD-03**: E_hull < 50 meV/atom + no imaginary phonons for all candidates
-- [ ] **VALD-04**: 300 K (80°F) target explicit
+- [ ] **VALD-01**: All Tc predictions must include full uncertainty brackets
+- [ ] **VALD-02**: 300 K (80°F) target explicit in all deliverables
+- [ ] **VALD-03**: Any beyond-Eliashberg Tc must be compared with the 240 K Eliashberg ceiling to quantify the enhancement
 
 ### Decision
 
-- [ ] **DEC-01**: Master ranking by anisotropic Eliashberg Tc
-- [ ] **DEC-02**: 300 K verdict with full accounting
+- [ ] **DEC-01**: Rank all beyond-Eliashberg candidates
+- [ ] **DEC-02**: 300 K verdict: does ANY mechanism break through?
 
 ## Traceability
 
 | Requirement | Phase | Status |
 | --- | --- | --- |
-| OS-01 | Phase 74 | Pending |
-| OS-02 | Phase 75 | Pending |
-| OS-03 | Phase 75 | Pending |
-| IP-01 | Phase 76 | Pending |
-| IP-02 | Phase 76 | Pending |
-| IP-03 | Phase 77 | Pending |
-| FM-01 | Phase 78 | Pending |
-| FM-02 | Phase 78 | Pending |
-| FM-03 | Phase 79 | Pending |
-| VALD-01 | Phase 75, 77, 79, 80 | Pending |
-| VALD-02 | Phase 75, 79, 80 | Pending |
-| VALD-03 | Phase 75, 79, 80 | Pending |
-| VALD-04 | Phase 75, 77, 79, 80 | Pending |
-| DEC-01 | Phase 80 | Pending |
-| DEC-02 | Phase 80 | Pending |
+| NA-01 | Phase 81 | Pending |
+| NA-02 | Phase 82 | Pending |
+| NA-03 | Phase 82 | Pending |
+| PL-01 | Phase 83 | Pending |
+| PL-02 | Phase 84 | Pending |
+| PL-03 | Phase 84 | Pending |
+| EX-01 | Phase 85 | Pending |
+| EX-02 | Phase 86 | Pending |
+| EX-03 | Phase 86 | Pending |
+| NM-01 | Phase 87 | Pending |
+| NM-02 | Phase 88 | Pending |
+| NM-03 | Phase 88 | Pending |
+| VALD-01 | Phases 82, 84, 86, 88, 89 | Pending |
+| VALD-02 | Phases 82, 84, 86, 88, 89 | Pending |
+| VALD-03 | Phases 82, 84, 86, 88, 89 | Pending |
+| DEC-01 | Phase 89 | Pending |
+| DEC-02 | Phase 89 | Pending |
 
-**Coverage:** 15/15 primary requirements mapped
+**Coverage:** 17/17 primary requirements mapped
 
 ---
 

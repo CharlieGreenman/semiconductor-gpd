@@ -15,7 +15,8 @@
 - **v11.0 Push Past 300 K** -- Phases 48-57 (completed 2026-03-30)
 - **v12.0 Hydrogen-Correlated Oxide Inverse Design** -- Phases 58-66 (completed 2026-03-30)
 - **v13.0 Close the Final 103 K Gap** -- Phases 67-73 (completed 2026-03-30)
-- **v14.0 Hybrid Material Design** -- Phases 74-80 (active)
+- **v14.0 Hybrid Material Design** -- Phases 74-80 (completed 2026-03-29)
+- **v15.0 Beyond-Eliashberg Pairing Mechanisms** -- Phases 81-89 (active)
 
 <details>
 <summary>v6.0-v9.0 (Phases 22-41) -- COMPLETED</summary>
@@ -91,6 +92,9 @@ See: `.gpd/milestones/v13.0-ROADMAP.md`
 </details>
 
 ---
+
+<details>
+<summary>v14.0 Hybrid Material Design (Phases 74-80) -- COMPLETED 2026-03-29</summary>
 
 ## v14.0 Hybrid Material Design -- Find the lambda_ph=3 + d-wave Material
 
@@ -363,3 +367,341 @@ The three tracks each propose a different resolution of this tension.
 | 78 | Frustrated Magnet Survey | Not started |
 | 79 | Frustrated-Magnet H-Intercalated Tc | Not started |
 | 80 | Final Verdict -- Master Ranking | Not started |
+
+</details>
+
+---
+
+## v15.0 Beyond-Eliashberg Pairing Mechanisms for 300 K
+
+**Target: Determine whether non-adiabatic corrections, plasmon-mediated pairing, excitonic pairing, or any previously unrecognized mechanism can break through the 240 K Eliashberg ceiling to reach Tc = 300 K**
+
+**Overview:** v14.0 established that the anisotropic Eliashberg ceiling is 240 +/- 30 K. The remaining 60-90 K gap to 300 K cannot be closed by tuning lambda, omega_log_eff, or pairing symmetry within the Eliashberg framework. This milestone asks whether physics BEYOND Eliashberg -- vertex corrections from Migdal breakdown, electronic (plasmon) pairing glue, excitonic pairing, or mechanisms not yet catalogued -- can provide the missing Tc uplift. Four parallel tracks investigate independent mechanisms. A final decision phase consolidates all evidence into a definitive beyond-Eliashberg verdict.
+
+**Phases:** 9 (Phases 81-89)
+**Depth:** Standard
+**Research Mode:** Balanced (four parallel tracks + decision)
+
+### Contract Overview
+
+**Target observable:** A beyond-Eliashberg mechanism (or combination) that demonstrably produces Tc > 240 K, ideally reaching 300 K, for at least one material candidate -- or a definitive assessment that no such mechanism exists within current theoretical reach.
+
+**Key physics context:**
+- Eliashberg ceiling: 240 +/- 30 K (v14.0 result)
+- Migdal parameter omega_D/E_F must be checked for high-frequency H modes
+- Plasmon-mediated pairing requires low-energy plasmons (omega_pl < 1 eV) in layered metals
+- Excitonic pairing requires low-energy excitons (< 100 meV) adjacent to metallic bands
+- Unknown mechanisms may lurk in anomalous Tc outliers that exceed Eliashberg predictions
+
+**Decisive outputs:**
+- Track A: Non-adiabatic Tc for best candidate with vertex corrections; sign of correction (enhancement vs. suppression)
+- Track B: Plasmon-boosted Tc from combined phonon + plasmon Eliashberg; lambda_pl and omega_pl
+- Track C: Exciton-mediated Tc from combined phonon + exciton kernel; lambda_ex and omega_ex
+- Track D: Anomalous-Tc material list with mechanism hypotheses; estimated Tc contribution from novel mechanism
+- Decision: Ranked beyond-Eliashberg candidates with 300 K verdict and full uncertainty brackets
+
+**Anchors carried:**
+- v14.0 Eliashberg ceiling: 240 +/- 30 K (the bar that must be exceeded)
+- v13.0 finding: 300 K requires lambda_ph >= 3.0 + d-wave (mu*=0) + omega_log_eff >= 740 K within Eliashberg
+- v12.0 omega_log_eff = 483 K, Tc = 197 K (Allen-Dynes baseline)
+- v11.0 CTQMC validated Tc = 146 K vs 151 K experimental for Hg1223
+- ref-hg1223-quench: 151 K retained benchmark (experimental)
+- 300 K (80 F) room-temperature target
+
+**Forbidden proxies:**
+- Claiming beyond-Eliashberg enhancement without computing vertex corrections or non-Eliashberg kernels explicitly
+- Treating a Tc estimate from an uncontrolled approximation as evidence for 300 K
+- Ranking a mechanism as viable without uncertainty brackets that honestly account for approximation error
+- Hiding the 240 K Eliashberg ceiling or the 149 K experimental gap
+- Promoting anomalous Tc outliers without proposing a testable mechanism hypothesis
+
+**Stop/rethink conditions:**
+- All four tracks produce Tc < 240 K: beyond-Eliashberg mechanisms do not help
+- Vertex corrections are uniformly suppressive (non-adiabatic effects reduce Tc)
+- No anomalous Tc outlier survives scrutiny (all explained by conventional Eliashberg after correction)
+- The combined best mechanism yields Tc < 260 K: marginal improvement, not a breakthrough
+
+---
+
+### Phase 81: Non-Adiabatic Candidate Screening and Migdal Parameter Survey
+
+**Track:** A (Non-Adiabatic / Migdal Breakdown)
+**Goal:** Materials where the Migdal approximation breaks down (omega_D/E_F > 0.3) are identified and characterized, establishing the landscape for non-adiabatic pairing enhancement.
+
+**Objectives:** NA-01
+**Dependencies:** None (entry point for Track A)
+
+**Success Criteria:**
+1. Survey covers flat-band systems (magic-angle graphene, kagome metals), heavy-fermion hydrides (where E_F is small due to heavy effective mass), low-carrier-density superconductors (SrTiO3, doped semiconductors), and at least one additional family with known Migdal breakdown
+2. Migdal parameter omega_D/E_F computed or collected from literature for each candidate; candidates with omega_D/E_F > 0.3 flagged as non-adiabatic
+3. For each non-adiabatic candidate: existing Eliashberg Tc prediction (if available) and experimental Tc tabulated; discrepancy between Eliashberg prediction and experiment noted (positive discrepancy = potential non-adiabatic enhancement)
+4. At least 3 candidate materials with omega_D/E_F > 0.3 and existing superconductivity tabulated: material | omega_D (K) | E_F (K) | omega_D/E_F | Tc_expt (K) | Tc_Eliashberg (K) | discrepancy
+5. Best candidate for Phase 82 vertex correction calculation identified with justification
+
+**Contract Coverage:**
+- Advances NA-01
+- Anchor: Migdal theorem validity (omega_D << E_F); v11.0 open question about omega_log > 800 K
+- Forbidden proxy: do not assume non-adiabatic = enhancement; vertex corrections can suppress Tc
+
+**Backtracking Trigger:** If no material with omega_D/E_F > 0.3 also has existing superconductivity, the non-adiabatic route has no experimental anchor. Reassess whether theoretical candidates (unsynthesized) are worth pursuing.
+
+---
+
+### Phase 82: Vertex Corrections and Non-Adiabatic Tc Prediction
+
+**Track:** A (continued)
+**Goal:** First vertex corrections beyond Migdal-Eliashberg are computed for the best non-adiabatic candidate, determining whether non-adiabatic effects enhance or suppress Tc and whether they can push beyond the 240 K Eliashberg ceiling.
+
+**Objectives:** NA-02, NA-03
+**Dependencies:** Phase 81 (candidate with Migdal breakdown)
+
+**Success Criteria:**
+1. Leading vertex correction (first non-Migdal diagram) computed for the best candidate: Gamma_1(k,k',omega) evaluated at representative momenta
+2. Sign and magnitude of vertex correction determined: does it ENHANCE lambda_eff (positive correction) or SUPPRESS it (negative correction)?
+3. Non-adiabatic Tc estimated using vertex-corrected Eliashberg equations or Pietronero-Grimaldi formalism; full uncertainty bracket provided (VALD-01)
+4. Comparison with Eliashberg ceiling: non-adiabatic Tc vs 240 K; quantify enhancement (VALD-03): Delta_Tc_NA = Tc_NA - Tc_Eliashberg
+5. 300 K test explicit (VALD-02): does the non-adiabatic mechanism reach 300 K for any candidate?
+6. Physical assessment: is the non-adiabatic enhancement fundamentally bounded (e.g., by self-consistency or by pair-breaking from incoherent vertex), or can it grow without limit as omega_D/E_F -> 1?
+
+**Contract Coverage:**
+- Advances NA-02 (vertex corrections), NA-03 (non-adiabatic Tc)
+- Validates VALD-01 (uncertainty brackets), VALD-02 (300 K explicit), VALD-03 (comparison with 240 K ceiling)
+- Anchor: 240 K Eliashberg ceiling from v14.0; Pietronero-Grimaldi (2001) non-adiabatic formalism
+- Forbidden proxy: do not extrapolate Tc from the sign of the vertex correction alone; must solve the modified gap equation
+
+**Backtracking Trigger:** If vertex corrections are uniformly suppressive (negative Delta_Tc_NA) for all candidates, the non-adiabatic route makes things worse, not better. Track A closes negatively.
+
+---
+
+### Phase 83: Plasmon Spectrum Survey in Layered Metals
+
+**Track:** B (Plasmon-Mediated Pairing)
+**Goal:** Candidate layered metals with low-energy plasmons (omega_pl < 1 eV) that could mediate electronic pairing are identified, and their dielectric response characterized.
+
+**Objectives:** PL-01
+**Dependencies:** None (entry point for Track B)
+
+**Success Criteria:**
+1. Survey covers layered metals with known low-energy plasmons: quasi-2D electron gases (LAO/STO interfaces, delta-doped semiconductors), layered transition-metal dichalcogenides (NbSe2, TaS2), layered cuprates (acoustic plasmon mode), graphene multilayers, and at least one additional family
+2. Dielectric function epsilon(q,omega) computed from RPA or collected from literature for each candidate; plasmon dispersion omega_pl(q) extracted
+3. Low-energy plasmon candidates identified: omega_pl(q=0) < 1 eV AND metallic with finite density of states at E_F (necessary for superconductivity)
+4. For each candidate: existing Tc, carrier density, screening length, and dimensionality tabulated
+5. At least 2 candidates with well-characterized low-energy plasmons selected for Phase 84 pairing calculation
+
+**Contract Coverage:**
+- Advances PL-01
+- Anchor: Takada (1978), Bill-Morel-Kresin (2003) plasmon-mediated pairing theory
+- Forbidden proxy: the mere existence of a plasmon does not mean it mediates pairing; must verify that the plasmon couples to the Cooper channel (same-spin singlet, appropriate momentum transfer)
+
+**Backtracking Trigger:** If no metallic material has omega_pl < 1 eV with significant spectral weight in the pairing channel, plasmon-mediated pairing is energetically inaccessible. Reassess whether higher-energy plasmons (1-3 eV) could still contribute.
+
+---
+
+### Phase 84: Plasmon Pairing Interaction and Combined Tc Prediction
+
+**Track:** B (continued)
+**Goal:** The plasmon-mediated pairing interaction is computed for the best candidates, combined with phonon pairing, and the total Tc predicted to test whether plasmon boost can exceed the 240 K Eliashberg ceiling.
+
+**Objectives:** PL-02, PL-03
+**Dependencies:** Phase 83 (candidates with low-energy plasmons)
+
+**Success Criteria:**
+1. Plasmon-mediated pairing interaction V_pl(q,omega) computed in the singlet channel from the screened Coulomb interaction: V_pl = V_bare / epsilon(q,omega) - V_bare / epsilon(q,0); the retarded part is attractive
+2. lambda_pl and effective omega_pl extracted from V_pl; comparison with phonon lambda_ph for the same material
+3. Combined phonon + plasmon Eliashberg equations solved: alpha^2F_total(omega) = alpha^2F_ph(omega) + alpha^2F_pl(omega); Tc_combined computed with full uncertainty bracket (VALD-01)
+4. Plasmon boost quantified: Delta_Tc_pl = Tc_combined - Tc_phonon_only; comparison with 240 K ceiling (VALD-03)
+5. 300 K test explicit (VALD-02): does any candidate reach Tc > 240 K? Does any reach 300 K?
+6. Key physics question: is the plasmon contribution additive to phonon pairing, or does the enhanced screening from the plasmon reduce lambda_ph (competing effect)?
+
+**Contract Coverage:**
+- Advances PL-02 (plasmon pairing interaction), PL-03 (combined Tc)
+- Validates VALD-01 (uncertainty brackets), VALD-02 (300 K explicit), VALD-03 (240 K comparison)
+- Anchor: 240 K Eliashberg ceiling; Bill-Morel-Kresin formalism
+- Forbidden proxy: do not simply add lambda_pl to lambda_ph without checking that the plasmon does not simultaneously screen the phonon coupling
+
+**Backtracking Trigger:** If lambda_pl < 0.1 for all candidates (plasmon contribution negligible compared to phonon), or if plasmon screening reduces lambda_ph by more than it adds lambda_pl (net suppression), Track B closes negatively.
+
+---
+
+### Phase 85: Excitonic Pairing Candidate Survey
+
+**Track:** C (Exciton-Mediated Pairing)
+**Goal:** Materials with low-energy excitons (< 100 meV) adjacent to or coexisting with metallic bands are identified, establishing the landscape for excitonic pairing enhancement.
+
+**Objectives:** EX-01
+**Dependencies:** None (entry point for Track C)
+
+**Success Criteria:**
+1. Survey covers excitonic insulator candidates near the metal-insulator transition (TmSe0.45Te0.55, 1T-TiSe2, Ta2NiSe5), semiconductor/metal heterostructures (InAs/GaSb, WTe2/NbSe2), mixed-valence compounds (SmB6, YbB12), and at least one additional family
+2. For each candidate: exciton binding energy, exciton energy scale omega_ex, metallic density of states at E_F (or proximity to metallic phase), and existing superconductivity (if any) tabulated
+3. Candidates with omega_ex < 100 meV AND metallic or near-metallic electronic structure selected; the exciton must be soft enough to mediate low-energy pairing but the system must still be metallic
+4. At least 2 candidates identified for Phase 86 pairing calculation
+5. Key distinction made: excitonic pairing requires the exciton to be a BOSON that mediates attraction between electrons (analogous to phonon), not just an excitonic instability that competes with superconductivity
+
+**Contract Coverage:**
+- Advances EX-01
+- Anchor: Little (1964), Ginzburg (1964) excitonic pairing proposals; Allender-Bray-Bardeen (1973) excitonic mechanism
+- Forbidden proxy: do not confuse an excitonic insulator (which is NOT a superconductor) with excitonic pairing (which IS); the exciton must mediate Cooper pairing, not replace it
+
+**Backtracking Trigger:** If no material combines low-energy excitons with metallic bands (excitonic insulators are insulating, metals have no low-energy excitons), the excitonic mechanism may require artificial heterostructures that do not yet exist. Document the design requirements.
+
+---
+
+### Phase 86: Excitonic Pairing Interaction and Combined Tc Prediction
+
+**Track:** C (continued)
+**Goal:** The exciton-mediated pairing interaction is computed for the best candidates, combined with phonon pairing, and the total Tc predicted to test whether excitonic pairing can exceed the 240 K Eliashberg ceiling.
+
+**Objectives:** EX-02, EX-03
+**Dependencies:** Phase 85 (candidates with low-energy excitons)
+
+**Success Criteria:**
+1. Exciton-mediated pairing interaction computed from the polarization function: V_ex(q,omega) derived from the particle-hole susceptibility chi_ph(q,omega) of the excitonic channel
+2. lambda_ex and effective omega_ex extracted; comparison with phonon lambda_ph for the same material
+3. Combined phonon + exciton kernel: alpha^2F_total = alpha^2F_ph + alpha^2F_ex; Tc_combined computed with full uncertainty bracket (VALD-01)
+4. Excitonic boost quantified: Delta_Tc_ex = Tc_combined - Tc_phonon_only; comparison with 240 K ceiling (VALD-03)
+5. 300 K test explicit (VALD-02): does any candidate reach Tc > 240 K? Does any reach 300 K?
+6. Key physics question answered: does the excitonic mechanism provide a genuinely new pairing channel, or is it effectively a renormalization of the electronic screening (already captured in mu*)?
+
+**Contract Coverage:**
+- Advances EX-02 (excitonic pairing interaction), EX-03 (combined Tc)
+- Validates VALD-01 (uncertainty brackets), VALD-02 (300 K explicit), VALD-03 (240 K comparison)
+- Anchor: 240 K Eliashberg ceiling; Allender-Bray-Bardeen formalism
+- Forbidden proxy: do not double-count the excitonic contribution if it is already partially captured in the screened Coulomb pseudopotential mu*
+
+**Backtracking Trigger:** If lambda_ex < 0.1 for all candidates (excitonic contribution negligible), or if the excitonic interaction is repulsive in the dominant pairing channel, Track C closes negatively.
+
+---
+
+### Phase 87: Anomalous-Tc Outlier Detection and Database Mining
+
+**Track:** D (Novel Mechanism Discovery / AI-Guided)
+**Goal:** Superconductors with Tc significantly exceeding their Eliashberg predictions are identified from the SuperCon database and literature, providing empirical evidence for unknown pairing mechanisms.
+
+**Objectives:** NM-01
+**Dependencies:** None (entry point for Track D)
+
+**Success Criteria:**
+1. All known superconductors with Tc > 30 K catalogued from SuperCon database and recent literature; Eliashberg-predicted Tc computed or collected where available
+2. Anomaly metric defined: Delta_Tc_anomaly = Tc_expt - Tc_Eliashberg; materials with Delta_Tc_anomaly > 30 K (> 2 sigma above typical Eliashberg error) flagged
+3. Known anomalies excluded: cuprates (already understood as spin-fluctuation mediated), heavy fermions (Kondo-mediated), organic superconductors (already catalogued); focus on materials where the anomaly is UNEXPLAINED
+4. At least 5 anomalous materials tabulated: material | Tc_expt | Tc_Eliashberg | Delta_Tc_anomaly | known mechanism? | anomaly unexplained?
+5. If no genuinely unexplained anomalies found: document that Eliashberg + known unconventional mechanisms account for all Tc > 30 K materials (this is itself a significant finding)
+
+**Contract Coverage:**
+- Advances NM-01
+- Anchor: SuperCon database; Eliashberg predictions from literature
+- Forbidden proxy: do not count cuprates or other materials with KNOWN unconventional mechanisms as "anomalous" -- the anomaly must be genuinely unexplained
+
+**Backtracking Trigger:** If the SuperCon database is inaccessible or too incomplete for systematic comparison, fall back to a targeted literature survey of claimed "anomalous" superconductors.
+
+---
+
+### Phase 88: Novel Mechanism Characterization and Tc Estimate
+
+**Track:** D (continued)
+**Goal:** For any anomalous-Tc materials identified in Phase 87, the electronic structure, phonon spectrum, and correlation physics are characterized to propose and test mechanism hypotheses.
+
+**Objectives:** NM-02, NM-03
+**Dependencies:** Phase 87 (anomalous material list)
+
+**Success Criteria:**
+1. For each anomalous material: electronic band structure (from literature or DFT), phonon spectrum, and correlation indicators (U/W, magnetic ordering) compiled
+2. Mechanism hypothesis proposed for each anomaly: what physics is missing from the Eliashberg prediction? Options include non-adiabatic corrections (-> Track A overlap), electronic pairing (-> Track B overlap), excitonic pairing (-> Track C overlap), or genuinely new physics (spin-orbit mediated, topological, bipolaronic, etc.)
+3. For any genuinely new mechanism: estimated Tc contribution from the novel channel; can it be combined with known mechanisms to exceed 300 K? (VALD-01, VALD-02)
+4. Comparison with 240 K Eliashberg ceiling: does the novel mechanism provide additive or multiplicative enhancement? (VALD-03)
+5. If no genuinely new mechanism found: document that all anomalies reduce to known unconventional mechanisms upon closer inspection; the 240 K ceiling stands for all known physics
+6. Key deliverable: mechanism hypothesis table: material | anomaly | proposed mechanism | estimated Delta_Tc | combinable with Eliashberg? | 300 K reachable?
+
+**Contract Coverage:**
+- Advances NM-02 (mechanism characterization), NM-03 (Tc estimate from novel mechanism)
+- Validates VALD-01 (uncertainty brackets), VALD-02 (300 K explicit), VALD-03 (240 K comparison)
+- Forbidden proxy: do not propose a mechanism without at least a scaling argument for its Tc contribution; "unknown mechanism" is not a mechanism hypothesis
+
+**Backtracking Trigger:** If Phase 87 found no genuinely unexplained anomalies, Phase 88 becomes a null-result documentation phase: all known superconductors are accounted for by Eliashberg + known unconventional mechanisms. Track D closes with this finding.
+
+---
+
+### Phase 89: Beyond-Eliashberg Verdict -- Consolidated Ranking and 300 K Decision
+
+**Track:** Decision (convergence of all four tracks)
+**Goal:** All beyond-Eliashberg mechanisms from Tracks A (non-adiabatic), B (plasmon), C (excitonic), and D (novel/AI-guided) are consolidated, ranked by their Tc enhancement over the 240 K Eliashberg ceiling, and a definitive 300 K verdict produced.
+
+**Objectives:** VALD-01 (final), VALD-02 (final), VALD-03 (final), DEC-01, DEC-02
+**Dependencies:** Phase 82 (Track A), Phase 84 (Track B), Phase 86 (Track C), Phase 88 (Track D)
+
+**Success Criteria:**
+1. Master ranking table: mechanism | track | best material | Tc_Eliashberg (K) | Delta_Tc_beyond (K) | Tc_total [lower, central, upper] (K) | 300 K reached? | confidence level
+2. VALD-01 (final): all Tc predictions include full uncertainty brackets accounting for approximation errors in vertex corrections, RPA dielectric functions, and excitonic polarization
+3. VALD-02 (final): 300 K (80 F) target explicit in ranking table, verdict, and all deliverables
+4. VALD-03 (final): every beyond-Eliashberg Tc compared quantitatively with the 240 K Eliashberg ceiling; enhancement factor = Tc_total / 240 K
+5. DEC-01 (ranking): mechanisms ordered by Delta_Tc_beyond; identification of which mechanism (if any) provides the largest Tc boost
+6. DEC-02 (300 K verdict): definitive answer to "can ANY known or proposed mechanism reach 300 K?" with three possible outcomes:
+   - (a) YES: at least one mechanism reaches 300 K with central Tc > 300 K and lower bound > 240 K
+   - (b) MARGINAL: at least one mechanism has 300 K within its uncertainty bracket but central Tc < 300 K
+   - (c) NO: no mechanism reaches 300 K even at the upper bound of uncertainties
+7. Cross-track assessment: are the mechanisms additive (can plasmon + non-adiabatic + excitonic be combined)? If so, what is the combined ceiling?
+8. **If any mechanism Tc >= 300 K:** Full specification of the material, mechanism, operating conditions, and key uncertainties; experimental tests that would confirm the mechanism
+9. **If no mechanism Tc >= 300 K:** Honest gap accounting: (a) best beyond-Eliashberg Tc and remaining gap, (b) which mechanism came closest, (c) whether 300 K faces a fundamental theoretical ceiling or merely a practical materials limitation, (d) v16.0 recommendation
+10. Room-temperature gap updated: gap = 300 K - max(Tc_best_total, 151 K experimental)
+11. Project-level assessment: after 15 milestones, what is the honest probability that a room-temperature ambient-pressure superconductor can be computationally designed with current theoretical tools?
+
+**Contract Coverage:**
+- Advances DEC-01 (mechanism ranking), DEC-02 (300 K verdict)
+- Final validation of VALD-01, VALD-02, VALD-03
+- Anchor: 240 K Eliashberg ceiling (v14.0); 151 K experimental retained benchmark; 300 K room-temperature target
+- Forbidden proxy: no mechanism ranked without explicit Tc prediction and uncertainty bracket; no vague "promising" assessment without quantification; no diffuse list of future directions without a single best recommendation
+- Anchor: all v1-v14 cumulative results as context for the project-level assessment
+
+**Backtracking Trigger:** None -- terminal phase. The deliverable is either a beyond-Eliashberg breakthrough candidate or an honest assessment that 300 K is unreachable with current theoretical tools. Both are valid outcomes.
+
+---
+
+## Phase Dependencies (v15.0)
+
+| Phase | Track | Depends On | Enables | Critical Path? |
+| --- | --- | --- | --- | :---: |
+| 81 - NA Candidate Screening | A | -- | 82 | No (parallel with 83, 85, 87) |
+| 82 - Vertex Corrections + NA Tc | A | 81 | 89 | Yes (if slowest track) |
+| 83 - Plasmon Spectrum Survey | B | -- | 84 | No (parallel with 81, 85, 87) |
+| 84 - Plasmon Pairing + Combined Tc | B | 83 | 89 | Yes (if slowest track) |
+| 85 - Excitonic Candidate Survey | C | -- | 86 | No (parallel with 81, 83, 87) |
+| 86 - Excitonic Pairing + Combined Tc | C | 85 | 89 | Yes (if slowest track) |
+| 87 - Anomalous-Tc Outlier Detection | D | -- | 88 | No (parallel with 81, 83, 85) |
+| 88 - Novel Mechanism Characterization | D | 87 | 89 | Yes (if slowest track) |
+| 89 - Beyond-Eliashberg Verdict | Decision | 82, 84, 86, 88 | -- | Yes |
+
+**Critical path:** longest chain is any track's two phases -> 89 (3 sequential steps)
+
+**Parallel opportunities:**
+- Wave 1: Phase 81 (Track A) + Phase 83 (Track B) + Phase 85 (Track C) + Phase 87 (Track D) -- all four entry points run in parallel
+- Wave 2: Phase 82 (after 81) + Phase 84 (after 83) + Phase 86 (after 85) + Phase 88 (after 87) -- all four continuations run in parallel
+- Wave 3: Phase 89 (after 82, 84, 86, and 88 all complete)
+
+## Risk Register (v15.0)
+
+| Phase | Top Risk | Probability | Impact | Mitigation |
+| --- | --- | :---: | :---: | --- |
+| 81 | No material with omega_D/E_F > 0.3 also superconducts | MEDIUM | MEDIUM | Theoretical candidates still inform the physics even without experimental anchor |
+| 82 | Vertex corrections suppress Tc (non-adiabatic = pair-breaking) | HIGH | HIGH | Document sign and magnitude; if uniformly negative, Track A closes with clean result |
+| 83 | No metallic material has omega_pl < 1 eV with pairing-channel weight | MEDIUM | MEDIUM | Expand to 1-3 eV plasmons; assess whether higher-energy plasmons still contribute |
+| 84 | Plasmon screening reduces lambda_ph more than lambda_pl adds | HIGH | HIGH | Net effect calculated explicitly; if negative, plasmon mechanism is self-defeating |
+| 85 | No material combines low-energy excitons with metallic bands | HIGH | MEDIUM | Document design requirements for hypothetical heterostructure |
+| 86 | Excitonic interaction already captured in mu* (double counting) | MEDIUM | HIGH | Careful subtraction of static screening; verify excitonic contribution is retarded/dynamic |
+| 87 | No genuinely unexplained Tc anomalies exist | MEDIUM | MEDIUM | Null result is itself informative: Eliashberg + known mechanisms account for everything |
+| 88 | All anomalies reduce to known mechanisms upon inspection | MEDIUM | MEDIUM | Track D closes with documentation that no new mechanism is needed |
+| 89 | All four tracks produce Tc < 240 K | MEDIUM | HIGH | Honest verdict: beyond-Eliashberg does not help; reassess whether 300 K is achievable |
+
+## Progress (v15.0)
+
+| Phase | Name | Status |
+| --- | --- | --- |
+| 81 | NA Candidate Screening | Not started |
+| 82 | Vertex Corrections + Non-Adiabatic Tc | Not started |
+| 83 | Plasmon Spectrum Survey | Not started |
+| 84 | Plasmon Pairing + Combined Tc | Not started |
+| 85 | Excitonic Candidate Survey | Not started |
+| 86 | Excitonic Pairing + Combined Tc | Not started |
+| 87 | Anomalous-Tc Outlier Detection | Not started |
+| 88 | Novel Mechanism Characterization | Not started |
+| 89 | Beyond-Eliashberg Verdict | Not started |
