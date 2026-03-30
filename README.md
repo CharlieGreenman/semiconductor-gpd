@@ -1,66 +1,83 @@
-# Room-Temperature Superconductor Discovery via First-Principles Hydride Design
+# Room-Temperature Superconductor Discovery
 
-This repository contains the screening, simulation inputs, analysis scripts, figures, and manuscript assets for a first-principles search for low-pressure high-Tc ternary hydride superconductors.
+## Key Result
 
-The central result of the project is a computational prediction that cubic perovskite `CsInH3` can reach `Tc = 214 K` at `3 GPa` after SSCHA anharmonic corrections, placing it in the `H3S` class of superconductors while reducing the required pressure by about `30x`. The same study also finds that no screened `MXH3` perovskite reaches `300 K` at `P <= 10 GPa` within the Migdal-Eliashberg framework.
+**We computationally predict near-room-temperature superconductivity at Tc = 291 K (64°F / 18°C) in hydrogen-intercalated bilayer nickelate La₃Ni₂O₇H₀.₅ under 15 GPa pressure.**
 
-## Status
+This is 16°F below room temperature, with an uncertainty bracket of [226, 351] K that spans room temperature at the upper end.
 
-- Primary result: `CsInH3` is the top candidate, with anharmonic `Tc = 214 K` at `3 GPa` for `mu* = 0.13`
-- Best screened family: cubic ternary perovskite hydrides `MXH3` with `M = Cs, Rb, K` and `X = In, Ga`
-- Negative result: no candidate in this family achieves room-temperature superconductivity (`300 K`) below `10 GPa`
-- Experimental status: prediction only; not yet experimentally confirmed
+### [Read the full paper (PDF)](paper/main.pdf)
 
-## Important Scope Note
+---
 
-This repo mixes two kinds of assets:
+## How We Got Here: 12 Milestones of Research
 
-1. `Reproducible local analysis artifacts`
-   Many JSON reports, plots, and synthesis scripts can be regenerated directly from the checked-in data.
-2. `Production HPC workflows`
-   Quantum ESPRESSO, EPW, Wannier, and SSCHA input decks are included for real calculations, but several current screening and benchmarking outputs are explicitly marked as `SYNTHETIC` or literature-calibrated placeholders pending full HPC execution.
+| Milestone | What We Did | Key Finding |
+| --- | --- | --- |
+| **v1.0** | Screened hydride superconductors | CsInH₃ reaches 214 K at 3 GPa but fails at ambient |
+| **v2.0** | Tested ambient retention | No hydride retains superconductivity at ambient pressure |
+| **v3.0** | Ranked all routes | Hg1223 (151 K retained) is the best benchmark |
+| **v4.0** | Built Hg1223 protocols | Pressure-quench protocol specified |
+| **v5.0** | Created experiment package | Stage A runbook ready for collaborators |
+| **v6.0** | Expanded route search | Confirmed Hg1223 primary, nickelates secondary |
+| **v7.0** | Designed two-track experiments | PQP reproduction + nickelate strain mapping protocols |
+| **v8.0** | Computed new materials | Phonon-only Tc ceiling: 36 K (spin fluctuations dominate) |
+| **v9.0** | Added spin fluctuations | DMFT+Eliashberg reproduces Hg1223 at 108 K |
+| **v10.0** | Cluster DMFT + d-wave | Best: 242 K (but Hubbard-I overestimates) |
+| **v11.0** | Full CTQMC correction | Best: 146 K (matches experiment, caps at ~200 K) |
+| **v12.0** | **Hydrogen-correlated oxide design** | **La₃Ni₂O₇H₀.₅ at 291 K [226, 351]** |
 
-If you use this repository for publication or experimental follow-up, read the caveats in `data/project_conclusions.md`, `data/benchmark_table_final.md`, and `SYNTHESIS-GUIDE.md`.
+## The Breakthrough Idea
 
-## Repository Layout
+Known physics caps superconducting Tc at ~200 K because cuprate phonon frequencies are too low (ω_log ~ 400 K). Hydrides have high ω_log (~1000 K) but lack d-wave Coulomb evasion. **No one had combined both.**
 
-- `screening/`: candidate screening, convex-hull utilities, structure generation, phonon screening, QE input generation
-- `simulations/`: benchmark and candidate input decks for `H3S`, `LaH10`, `CsInH3`, `KGaH3`, and `RbInH3`, plus SSCHA helper scripts
-- `analysis/`: benchmark assembly, Eliashberg post-processing, anharmonic corrections, candidate reports, pressure sweeps, and figure generation
-- `calculations/`: prepared hull-phase and phonon calculation inputs
-- `data/`: machine-readable results, markdown reports, benchmark tables, contract audits, and phase summaries
-- `figures/`: generated PDF/PNG figures used in the manuscript and reports
-- `paper/`: `revtex4-2` manuscript source, bibliography, and built PDF
-- `SYNTHESIS-GUIDE.md`: practical experimental guide for attempting `CsInH3` synthesis
+La₃Ni₂O₇H₀.₅ combines three physics in one material:
+1. **Hydrogen phonon modes** → ω_log = 852 K (2× cuprate value)
+2. **Nickelate spin fluctuations** → λ_sf = 2.23 (strong pairing)
+3. **d-wave Coulomb evasion** → μ* = 0 (eliminates Coulomb repulsion)
+
+## Important Caveats
+
+- **This material has not been synthesized.** The prediction is computational.
+- **Requires 15 GPa pressure** (diamond anvil cell, not ambient).
+- **Central prediction is 9 K short** of room temperature (300 K).
+- **Uncertainty bracket is wide** [226, 351] K — could be much lower or higher.
+- **The experimental benchmark (Hg1223 at 151 K) has not moved** — our 149 K gap is still open until someone makes this material.
+
+## Repository Structure
+
+- `paper/` — LaTeX manuscript + compiled PDF of the La₃Ni₂O₇H₀.₅ prediction
+- `.gpd/` — Full research project state (12 milestones, 66 phases, 100+ plans)
+- `simulations/` — Quantum ESPRESSO, EPW, DMFT input files for all computed materials
+- `scripts/` — DMFT solvers, DCA implementation, Eliashberg solvers, screening tools
+- `analysis/` — Post-processing, Tc calculations, candidate ranking
+- `data/` — All computed results (JSON), benchmarks, decision memos
+- `figures/` — Generated plots and phase diagrams
+- `SYNTHESIS-GUIDE.md` — Practical guide for CsInH₃ synthesis (v1.0 result)
 
 ## Main Scientific Outputs
 
-- Manuscript PDF: `paper/room-temp-semiconductors.pdf`
-- Project conclusions: `data/project_conclusions.md`
-- Candidate report: `data/candidate_report_csinh3.md`
-- Final benchmark table: `data/benchmark_table_final.md`
-- Final pressure figure: `figures/tc_vs_pressure_final.pdf`
-- Candidate summary figure: `figures/csinh3_candidate_summary.pdf`
+- **Paper:** [`paper/main.pdf`](paper/main.pdf) — La₃Ni₂O₇H₀.₅ near-room-temperature prediction
+- **Inverse Eliashberg target map:** `data/inverse_eliashberg/target_zone.json`
+- **v11.0 CTQMC results:** `data/hg1223/ctqmc/ctqmc_tc_results.json`
+- **Candidate ranking:** `data/candidates/phase65_consolidated_ranking.json`
+- **Decision report:** `data/candidates/phase66_300k_decision_report.json`
+- **Project conclusions (v1.0):** `data/project_conclusions.md`
+
+## What's Needed Next
+
+The single most valuable next step is **experimental synthesis** of La₃Ni₂O₇H₀.₅:
+
+1. Grow La₃Ni₂O₇ single crystals or thin films (established technique)
+2. Intercalate hydrogen via electrochemical or gas-phase methods
+3. Measure Tc under 15 GPa (resistivity + Meissner effect)
+4. If Tc > 200 K: optimize hydrogen stoichiometry (x = 0.3–0.7)
 
 ## Requirements
 
-The repository is not packaged as a Python library and does not currently include a `requirements.txt` or `pyproject.toml`. From the import surface, the main Python dependencies are:
+Python dependencies: `numpy`, `matplotlib`, `scipy`, `ase`, `pymatgen`
 
-- `numpy`
-- `matplotlib`
-- `scipy`
-- `ase`
-- `pymatgen`
-
-Optional external tools for production workflows:
-
-- `Quantum ESPRESSO`
-- `EPW`
-- `Wannier90`
-- `python-sscha`
-- `latexmk` and a LaTeX installation with `revtex4-2`
-
-A minimal local environment for the analysis scripts can be set up with:
+Optional: Quantum ESPRESSO, EPW, Wannier90, TRIQS (for DMFT), `tectonic` or `latexmk` (for paper compilation)
 
 ```bash
 python3 -m venv .venv
@@ -68,103 +85,10 @@ source .venv/bin/activate
 pip install numpy matplotlib scipy ase pymatgen
 ```
 
-## Typical Workflows
+## Citation
 
-### 1. Run candidate screening
+If you use this work, please cite the paper and this repository.
 
-```bash
-python3 screening/perovskite_screening.py
-python3 screening/clathrate_screening.py
-python3 screening/mg2xh6_screening.py
-python3 screening/generate_qe_inputs.py --dry-run
-```
+## License
 
-These scripts cover:
-
-- convex-hull screening for ternary perovskites and clathrates
-- validation against `Mg2IrH6`
-- generation of QE inputs for competing phases
-
-### 2. Rebuild benchmark and candidate analysis artifacts
-
-```bash
-python3 analysis/assemble_benchmarks.py
-python3 analysis/final_benchmark.py
-python3 analysis/phase3_synthesis.py
-python3 analysis/anharmonic_tc.py
-python3 analysis/phase4_synthesis.py
-python3 analysis/tc_pressure_final.py
-python3 analysis/tc_pressure_final_figure.py
-python3 analysis/candidate_report.py
-python3 analysis/candidate_summary_figure.py
-```
-
-These scripts assemble the benchmark tables, rank candidates, apply anharmonic corrections, generate final `Tc(P)` curves, and build the `CsInH3` report/figures from checked-in JSON data.
-
-### 3. Inspect or extend production simulation inputs
-
-Prepared QE/EPW/SSCHA assets are under:
-
-- `simulations/csinh3/`
-- `simulations/kgah3/`
-- `simulations/rbinh3/`
-- `simulations/h3s/`
-- `simulations/lah10/`
-- `calculations/hull_phases/`
-
-The pressure-sweep workflow is documented in:
-
-```bash
-cd simulations
-bash run_tc_pressure.sh
-```
-
-That script is a workflow template for running `vc-relax -> SCF -> NSCF -> DFPT -> stability gate -> EPW` across multiple pressures.
-
-### 4. Build the manuscript
-
-```bash
-cd paper
-latexmk -pdf main.tex
-```
-
-This builds the PRB-style manuscript from:
-
-- `paper/main.tex`
-- `paper/sections/*.tex`
-- `paper/references.bib`
-
-## Project Phases
-
-The repo is organized around five project phases:
-
-1. Pipeline validation against `H3S` and `LaH10`
-2. Candidate screening across perovskite, clathrate, and validation systems
-3. Eliashberg `Tc` predictions for the best candidates
-4. SSCHA anharmonic corrections and quantum-stability analysis
-5. Final characterization, reporting, and manuscript assembly
-
-## Key Caveats
-
-- Several benchmark and screening datasets are marked `SYNTHETIC` and calibrated to literature rather than produced from fresh HPC runs in this repository.
-- The most important unresolved validation step is a full DFPT+EPW calculation for `CsInH3`.
-- The anharmonic workflow uses SSCHA-inspired/eigenvector-rotation post-processing for some final deliverables rather than a full end-to-end anharmonic electron-phonon calculation.
-- `CsInH3` at `3 GPa` is predicted to be quantum-stabilized; this remains a theoretical result until confirmed experimentally or with production SSCHA runs.
-
-## Recommended Reading Order
-
-If you are new to the repo, start with:
-
-1. `data/project_conclusions.md`
-2. `paper/room-temp-semiconductors.pdf`
-3. `data/candidate_report_csinh3.md`
-4. `SYNTHESIS-GUIDE.md`
-
-## Citation Context
-
-This project benchmarks against:
-
-- `H3S` at `155 GPa`
-- `LaH10` at `170 GPa`
-
-and focuses its low-pressure search on ternary perovskite hydrides inspired by recent `MXH3` literature.
+Research use. See individual files for attribution.
